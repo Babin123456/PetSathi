@@ -1,0 +1,589 @@
+/* ==========================================================================
+   PetSathi — Explore Pets Landing Page Styles (pets.css)
+   Scoped specifically for frontend/pages/pets/index.html
+   Reuses base styles, variables, typography, and buttons from global.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero Section
+   -------------------------------------------------------------------------- */
+.pets-hero {
+  min-height: 520px;
+  padding-block: 50px 70px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.pets-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pets-hero-copy h1 {
+  max-width: 620px;
+  margin: 0 0 18px;
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+}
+
+.pets-hero-copy p {
+  max-width: 540px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.pets-hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.pets-hero-note {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pets-hero-note span {
+  color: var(--green);
+}
+
+.pets-hero-visual {
+  min-height: 420px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.pets-hero-blob {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  background: #e8f0e4;
+  border-radius: 46% 54% 40% 60% / 58% 42% 58% 42%;
+  z-index: 1;
+}
+
+.pets-hero-photo {
+  position: relative;
+  z-index: 2;
+  width: 82%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 40% 40% 24px 24px;
+  box-shadow: var(--shadow);
+  border: 4px solid white;
+}
+
+.pets-floating-card {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 12px 18px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  font-size: 1.15rem;
+}
+
+.pets-floating-card span {
+  display: grid;
+  line-height: 1.3;
+}
+
+.pets-floating-card b {
+  font-size: 0.84rem;
+  color: var(--ink);
+}
+
+.pets-floating-card small {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.pets-card-top {
+  top: 35px;
+  right: -5px;
+}
+
+.pets-card-bottom {
+  bottom: 25px;
+  left: -10px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Trust / Highlights Strip
+   -------------------------------------------------------------------------- */
+.pets-trust-strip {
+  text-align: center;
+  background: #f0f3eb;
+  padding: 22px 20px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.pets-trust-strip > span {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+  color: #79867b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.pets-trust-strip div {
+  font-weight: 700;
+  color: #4b584f;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   3. Search & Interactive Filter Bar
+   -------------------------------------------------------------------------- */
+.pets-filter-section {
+  padding-top: 65px;
+}
+
+.pets-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 22px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.pets-filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  border: 1px solid var(--line);
+  background: var(--soft);
+  color: var(--ink);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-tab:hover {
+  background: #e2e8dc;
+  border-color: #cbd9ce;
+}
+
+.filter-tab.active {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+  box-shadow: 0 4px 12px rgba(40, 104, 73, 0.2);
+}
+
+.pets-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 260px;
+  flex: 0 1 320px;
+}
+
+.pets-search-box input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  background: var(--soft);
+  color: var(--ink);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.pets-search-box input:focus {
+  outline: none;
+  border-color: var(--green);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(40, 104, 73, 0.12);
+}
+
+.pets-search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   4. Pet Categories Grid
+   -------------------------------------------------------------------------- */
+.pets-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 70px;
+}
+
+.pet-category-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  box-shadow: 0 4px 18px rgba(35, 57, 43, 0.04);
+}
+
+.pet-category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: #cbd9ce;
+}
+
+.pet-category-card.hidden {
+  display: none !important;
+}
+
+.card-image-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+  background: #f1f4ed;
+}
+
+.card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.pet-category-card:hover .card-image-wrap img {
+  transform: scale(1.04);
+}
+
+.card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(6px);
+  color: var(--green);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid rgba(40, 104, 73, 0.14);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card-content {
+  padding: 26px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.55rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-content h3 span.emoji {
+  font-size: 1.4rem;
+}
+
+.card-content p {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.card-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.topic-tag {
+  background: var(--soft);
+  color: #4b584f;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.card-action {
+  margin-top: auto;
+}
+
+.card-action .button {
+  width: 100%;
+}
+
+/* Empty search state */
+.pets-no-results {
+  display: none;
+  text-align: center;
+  padding: 50px 20px;
+  background: white;
+  border: 1px dashed var(--line);
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+
+.pets-no-results.visible {
+  display: block;
+}
+
+.pets-no-results span {
+  font-size: 2.8rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.pets-no-results h3 {
+  margin: 0 0 8px;
+}
+
+.pets-no-results p {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. Why Understanding Pet Care Matters Section
+   -------------------------------------------------------------------------- */
+.care-importance-section {
+  background: #f1f4ed;
+  padding-block: 80px;
+}
+
+.importance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 40px;
+}
+
+.importance-card {
+  background: white;
+  padding: 32px 28px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 15px rgba(35, 57, 43, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.importance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.importance-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #eaf2e9;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: var(--green);
+}
+
+.importance-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.22rem;
+}
+
+.importance-card p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. Call to Action Banner
+   -------------------------------------------------------------------------- */
+.pets-cta-banner {
+  margin: 80px auto;
+  padding: 44px 50px;
+  background: linear-gradient(135deg, #f2e9dc 0%, #faeee0 100%);
+  border-radius: 26px;
+  border: 1px solid #ebd9c5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.pets-cta-content h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+}
+
+.pets-cta-content p {
+  margin: 0;
+  max-width: 560px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.pets-cta-actions {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   7. Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .pets-hero {
+    grid-template-columns: 1fr;
+    padding-block: 40px 50px;
+  }
+
+  .pets-hero-copy {
+    text-align: center;
+    align-items: center;
+  }
+
+  .pets-hero-copy p {
+    margin-inline: auto;
+  }
+
+  .pets-hero-actions {
+    justify-content: center;
+  }
+
+  .pets-hero-visual {
+    min-height: 360px;
+  }
+
+  .pets-hero-photo {
+    width: 70%;
+    height: 320px;
+  }
+
+  .pets-card-top {
+    top: 15px;
+    right: 10px;
+  }
+
+  .pets-card-bottom {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .pets-category-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .importance-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .pets-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 36px 28px;
+  }
+
+  .pets-cta-content p {
+    margin-inline: auto;
+  }
+
+  .pets-cta-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .pets-hero-copy h1 {
+    font-size: 2.4rem;
+  }
+
+  .pets-hero-photo {
+    width: 86%;
+    height: 280px;
+  }
+
+  .pets-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pets-filter-tabs {
+    justify-content: center;
+  }
+
+  .pets-search-box {
+    width: 100%;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-image-wrap {
+    height: 200px;
+  }
+
+  .pets-cta-banner {
+    margin: 50px auto;
+  }
+}

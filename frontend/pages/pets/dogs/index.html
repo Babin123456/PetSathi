@@ -1,12 +1,724 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Dogs Care & Information | PetSathi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../css/global.css"><link rel="stylesheet" href="../../../css/inner.css"></head><body>
-<header class="site-header"><a class="brand" href="../../../../index.html"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a><button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-<nav class="main-nav"><a href="../../../../index.html">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a><a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started ↗</a></nav></header>
-<main><section class="page-hero"><div class="eyebrow">PetSathi • EXPLORE DOGS</div><div class="page-emoji">🐕</div><h1>Dogs Care & Information</h1><p>Welcome to the PetSathi dogs section. Explore helpful introductory information and care topics for your little companion.</p><a class="button" href="../../../../index.html">Back to Home ↗</a></section>
-<section class="section-wrap inner-grid"><article class="info-card"><div class="info-emoji">Breeds</div><h2>🦮</h2><p>Discover popular dog breeds and their general characteristics.</p></article>
-<article class="info-card"><div class="info-emoji">Food & Nutrition</div><h2>🥣</h2><p>Learn about balanced feeding and fresh water for dogs.</p></article>
-<article class="info-card"><div class="info-emoji">Exercise & Walking</div><h2>🎾</h2><p>Explore age-appropriate activity, play, and walking ideas.</p></article>
-<article class="info-card"><div class="info-emoji">Grooming & Care</div><h2>🛁</h2><p>Read about coat care, hygiene, and routine wellbeing.</p></article></section><section class="inner-cta"><h2>More happy moments are on the way.</h2><p>PetSathi is growing one feature at a time. Some services are planned for future development.</p></section></main>
-<footer class="footer"><div class="section-wrap footer-bottom"><span>© PetSathi · NSoC Winter Edition</span><span>तुमच्या Pet चा विश्वासू साथी! 🐾</span></div></footer><script src="../../../js/main.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore everything you need to know about dogs on PetSathi - dog breeds, food and nutrition, exercise, walking, grooming, care, wellness, and training.">
+  <title>Dogs Care & Information Guide | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <style>
+    /* Dogs Landing Page Specific Styles */
+    .dog-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .dog-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .dog-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .dog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
+    }
+
+    .dog-card-media {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: #f0f3eb;
+    }
+
+    .dog-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .dog-card:hover .dog-card-media img {
+      transform: scale(1.05);
+    }
+
+    .dog-card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .dog-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .dog-card-body h3 {
+      font-size: 1.25rem;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .dog-card-body p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      flex-grow: 1;
+      color: var(--muted);
+    }
+
+    .dog-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green);
+      transition: color 0.2s, transform 0.2s;
+      align-self: flex-start;
+    }
+
+    .dog-card-link:hover {
+      color: var(--dark);
+      transform: translateX(4px);
+    }
+
+    /* Quick Information Section */
+    .dog-quick-info-section {
+      background: #fbfbf8;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .quick-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .quick-info-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .quick-info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .quick-info-icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: #eaf2e9;
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      margin-bottom: 18px;
+    }
+
+    .quick-info-card h3 {
+      font-size: 1.25rem;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+
+    .quick-info-card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .quick-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .quick-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .quick-info-list li span {
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Quick Guide Navigation Strip */
+    .guides-nav-strip {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      margin-top: 40px;
+      box-shadow: 0 10px 30px rgba(35, 57, 43, 0.04);
+    }
+
+    .guides-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px;
+      background: var(--soft);
+      border: 1px solid transparent;
+      border-radius: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .guide-nav-item:hover {
+      background: white;
+      border-color: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(40, 104, 73, 0.08);
+    }
+
+    .guide-nav-item span {
+      font-size: 1.8rem;
+    }
+
+    .guide-nav-item div b {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    .guide-nav-item div small {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* Dog CTA Band */
+    .dog-cta-band {
+      background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
+      color: white;
+      border-radius: 28px;
+      padding: 50px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      margin-block: 40px 75px;
+    }
+
+    .dog-cta-band h2 {
+      color: white;
+      margin: 0 0 12px;
+    }
+
+    .dog-cta-band h2 em {
+      color: #f4c79f;
+      font-style: normal;
+    }
+
+    .dog-cta-band p {
+      color: #e0ece2;
+      font-size: 1.02rem;
+      max-width: 580px;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .dog-cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .button-translucent {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: white;
+    }
+
+    .button-translucent:hover {
+      background: rgba(255, 255, 255, 0.28);
+      color: white;
+    }
+
+    @media (max-width: 960px) {
+      .dog-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .quick-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .quick-info-grid .quick-info-card:nth-child(3) {
+        grid-column: span 2;
+      }
+      .guides-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .dog-cta-band {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 36px 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .dog-info-grid {
+        grid-template-columns: 1fr;
+      }
+      .quick-info-grid {
+        grid-template-columns: 1fr;
+      }
+      .quick-info-grid .quick-info-card:nth-child(3) {
+        grid-column: span 1;
+      }
+      .guides-nav-grid {
+        grid-template-columns: 1fr;
+      }
+      .guides-nav-strip {
+        padding: 22px 18px;
+      }
+      .dog-card-media {
+        height: 180px;
+      }
+      .dog-cta-band {
+        padding: 28px 20px;
+      }
+      .dog-cta-actions {
+        width: 100%;
+      }
+      .dog-cta-actions .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header and Navigation -->
+<header class="site-header">
+  <a class="brand" href="../../../../index.html" id="header-brand"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="main-nav" id="main-navigation">
+    <a href="../../../../index.html" id="nav-home">Home</a>
+    <div class="nav-item">
+      <a class="active" href="../index.html" id="nav-explore-pets">Explore Pets ▾</a>
+      <div class="dropdown">
+        <a href="index.html" id="dropdown-dogs">🐕 Dogs</a>
+        <a href="../cats/index.html" id="dropdown-cats">🐈 Cats</a>
+        <a href="../birds/index.html" id="dropdown-birds">🐦 Birds</a>
+        <a href="../rabbits/index.html" id="dropdown-rabbits">🐇 Rabbits</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="../../services/index.html" id="nav-services">Services ▾</a>
+      <div class="dropdown">
+        <a href="../../services/dog-walking.html" id="dropdown-service-walking">Dog Walking</a>
+        <a href="../../services/cat-care.html" id="dropdown-service-cat-care">Cat Care</a>
+        <a href="../../services/pet-care.html" id="dropdown-service-pet-care">Pet Care</a>
+        <a href="../../services/guidance.html" id="dropdown-service-guidance">Pet Guidance</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="../../walker/index.html" id="nav-walkers">Find a Walker ▾</a>
+      <div class="dropdown">
+        <a href="../../walker/dogs.html" id="dropdown-walker-dogs">Dog Walkers</a>
+        <a href="../../walker/cats.html" id="dropdown-walker-cats">Cat Caregivers</a>
+        <a href="../../walker/birds.html" id="dropdown-walker-birds">Bird Caregivers</a>
+        <a href="../../walker/rabbits.html" id="dropdown-walker-rabbits">Rabbit Caregivers</a>
+      </div>
+    </div>
+    <a href="../../about.html" id="nav-about">About Us</a>
+    <a href="../../auth/login.html" id="nav-login">Log in</a>
+    <a class="button button-small" href="../../auth/register.html" id="nav-register">Get Started ↗</a>
+  </nav>
+</header>
+
+<main id="main-content">
+  <!-- Hero Section -->
+  <section class="hero section-wrap" id="dog-hero">
+    <div class="hero-copy">
+      <div class="dog-badge-strip">🐾 PetSathi • Canine Companion Guide</div>
+      <h1>Everything You Need to Know About <em>Dogs</em></h1>
+      <p>
+        Welcome to PetSathi's dedicated dog care and companionship guide. From eager, playful puppies to calm and faithful seniors, dogs bring joyful energy, loyal protection, and wagging tails to every home. Explore breed characteristics, balanced nutrition, daily walking routines, grooming hygiene, and healthcare essentials.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="breeds.html" id="hero-cta-breeds">Explore Dog Breeds ↗</a>
+        <a class="button button-outline" href="#dog-topics" id="hero-cta-topics">Explore Care Topics ↓</a>
+      </div>
+      <div class="hero-note">♥ &nbsp; Dedicated to happy paws and wagging tails.</div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+      <img 
+        src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=85" 
+        alt="Two happy dogs running joyfully together across a sunny grass field" 
+        class="hero-photo"
+        id="hero-dog-image"
+      >
+      <div class="floating-card card-top">
+        ☀️ <span><b>Loyal & Playful</b><small>Loving family companions</small></span>
+      </div>
+      <div class="floating-card card-bottom">
+        🐾 <span><b>Walk. Wag. Repeat.</b><small>Every day is an adventure</small></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Category Strip -->
+  <section class="trust-strip" aria-label="Canine Knowledge Topics Overview">
+    <span>CANINE KNOWLEDGE BASE</span>
+    <div>🐕 Breeds　　🩺 Health & Wellness　　🥣 Food & Nutrition　　🎾 Exercise & Walking　　🛁 Grooming & Care　　🧠 Training</div>
+  </section>
+
+  <!-- Six Informative Sections / Cards -->
+  <section class="section section-wrap" id="dog-topics">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">Comprehensive Dog Guides</div>
+        <h2>Explore Essential <em>Dog Topics</em></h2>
+      </div>
+      <p>
+        Browse through curated guides crafted to assist dog parents with everyday health, 
+        wholesome diet, active outdoor walking, and attentive home care.
+      </p>
+    </div>
+
+    <div class="dog-info-grid">
+      <!-- Card 1: Dog Breeds -->
+      <article class="dog-card" id="card-breeds">
+        <div class="dog-card-media">
+          <span class="dog-card-badge">🐕 Breeds</span>
+          <img 
+            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=85" 
+            alt="Friendly Golden Retriever sitting patiently outdoors"
+            loading="lazy"
+          >
+        </div>
+        <div class="dog-card-body">
+          <h3>Dog Breeds</h3>
+          <p>
+            Different dog breeds and their characteristics. Discover popular breeds—from friendly Golden Retrievers and intelligent German Shepherds to loyal Labradors and energetic Beagles. Learn about temperaments, sizes, and home suitability.
+          </p>
+          <a class="dog-card-link" href="breeds.html" id="link-card-breeds">Explore Dog Breeds ↗</a>
+        </div>
+      </article>
+
+      <!-- Card 2: Food & Nutrition -->
+      <article class="dog-card" id="card-nutrition">
+        <div class="dog-card-media">
+          <span class="dog-card-badge">🥣 Nutrition</span>
+          <img 
+            src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=85" 
+            alt="Healthy and balanced dog food meal prepared in a bowl"
+            loading="lazy"
+          >
+        </div>
+        <div class="dog-card-body">
+          <h3>Food & Nutrition</h3>
+          <p>
+            Dog food, nutrition and healthy diet. Understand age-specific canine dietary needs, from puppy protein to senior joint support. Learn about balanced meal portions, clean hydration, healthy treats, and dangerous human foods to avoid.
+          </p>
+          <a class="dog-card-link" href="#quick-info" id="link-card-nutrition">Explore Nutrition & Diet ↗</a>
+        </div>
+      </article>
+
+      <!-- Card 3: Exercise & Walking -->
+      <article class="dog-card" id="card-walking">
+        <div class="dog-card-media">
+          <span class="dog-card-badge">🎾 Exercise</span>
+          <img 
+            src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=700&q=85" 
+            alt="Dog companion walking along a scenic nature path on a leash"
+            loading="lazy"
+          >
+        </div>
+        <div class="dog-card-body">
+          <h3>Exercise & Walking</h3>
+          <p>
+            Physical activity and walking requirements. Keep your canine fit, calm, and mentally stimulated. Discover daily walking routines by breed size, fun fetch and agility games, safe leash walking tips, and weatherproof outdoor advice.
+          </p>
+          <a class="dog-card-link" href="walking.html" id="link-card-walking">Explore Exercise & Walking ↗</a>
+        </div>
+      </article>
+
+      <!-- Card 4: Grooming & Care -->
+      <article class="dog-card" id="card-grooming">
+        <div class="dog-card-media">
+          <span class="dog-card-badge">🛁 Grooming</span>
+          <img 
+            src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=700&q=85" 
+            alt="Freshly bathed dog comfortably wrapped in a soft warm towel"
+            loading="lazy"
+          >
+        </div>
+        <div class="dog-card-body">
+          <h3>Grooming & Care</h3>
+          <p>
+            Cleaning, bathing and grooming. Maintain a lustrous coat, clean skin, and healthy paws. Find practical guidance on routine brushing for shedding control, gentle bath routines, safe nail clipping, ear cleansing, and canine dental hygiene.
+          </p>
+          <a class="dog-card-link" href="care.html" id="link-card-grooming">Explore Grooming & Care ↗</a>
+        </div>
+      </article>
+
+      <!-- Card 5: Health & Wellness -->
+      <article class="dog-card" id="card-health">
+        <div class="dog-card-media">
+          <span class="dog-card-badge">🩺 Wellness</span>
+          <img 
+            src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=700&q=85" 
+            alt="Gentle veterinarian conducting a routine physical examination on a dog"
+            loading="lazy"
+          >
+        </div>
+        <div class="dog-card-body">
+          <h3>Health & Wellness</h3>
+          <p>
+            General dog health and veterinary care. Protect your dog with routine veterinary wellness checkups, core vaccinations, timely flea and tick prevention, heartworm protection, weight management, and early signs of discomfort or illness.
+          </p>
+          <a class="dog-card-link" href="care.html" id="link-card-health">Explore Health & Wellness ↗</a>
+        </div>
+      </article>
+
+      <!-- Card 6: Training & Behaviour -->
+      <article class="dog-card" id="card-training">
+        <div class="dog-card-media">
+          <span class="dog-card-badge">🧠 Behaviour</span>
+          <img 
+            src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=700&q=85" 
+            alt="Attentive dog focused on trainer during positive reinforcement training"
+            loading="lazy"
+          >
+        </div>
+        <div class="dog-card-body">
+          <h3>Training & Behaviour</h3>
+          <p>
+            Basic training and dog behaviour. Build a harmonious relationship using positive reinforcement and reward-based training. Learn essential commands, address separation anxiety, prevent leash pulling, and decode canine body language and barking cues.
+          </p>
+          <a class="dog-card-link" href="#quick-info" id="link-card-training">Explore Training & Behaviour ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Quick Information Section -->
+  <section class="section dog-quick-info-section" id="quick-info">
+    <div class="section-wrap">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Essential Canine Insights</div>
+          <h2>Quick Information for <em>Dog Parents</em></h2>
+        </div>
+        <p>
+          Understanding your companion is the cornerstone of a fulfilling pet parenthood journey. 
+          Here is what makes dogs special and how to care for them responsibly.
+        </p>
+      </div>
+
+      <div class="quick-info-grid">
+        <!-- 1. Why dogs make wonderful companions -->
+        <article class="quick-info-card" id="info-companionship">
+          <div class="quick-info-icon-wrap">🐕</div>
+          <h3>Why Dogs Make Wonderful Companions</h3>
+          <p>
+            Dogs are renowned for their unconditional devotion, empathetic connection, and joyful companionship that enriches family life every single day.
+          </p>
+          <ul class="quick-info-list">
+            <li><span>✓</span> Unconditional love, loyalty, and affectionate bonding with all family members.</li>
+            <li><span>✓</span> Encourages a healthier, more active daily lifestyle through walks and play.</li>
+            <li><span>✓</span> Proven to reduce stress, ease feelings of loneliness, and boost overall mood.</li>
+            <li><span>✓</span> Natural protectors with keen sensory awareness and protective instincts.</li>
+          </ul>
+        </article>
+
+        <!-- 2. Responsibilities of dog owners -->
+        <article class="quick-info-card" id="info-responsibilities">
+          <div class="quick-info-icon-wrap">📋</div>
+          <h3>Responsibilities of Dog Owners</h3>
+          <p>
+            Welcoming a dog into your home is a rewarding, long-term commitment that demands time, patience, dedicated care, and attentive stewardship.
+          </p>
+          <ul class="quick-info-list">
+            <li><span>✓</span> Providing high-quality, balanced nutrition and clean, fresh water at all times.</li>
+            <li><span>✓</span> Ensuring sufficient daily exercise, outdoor walks, and mental enrichment.</li>
+            <li><span>✓</span> Creating a safe, warm, and loving indoor and outdoor living environment.</li>
+            <li><span>✓</span> Dedicated positive training, socialization, and proper identification or microchipping.</li>
+          </ul>
+        </article>
+
+        <!-- 3. Importance of regular dog care -->
+        <article class="quick-info-card" id="info-regular-care">
+          <div class="quick-info-icon-wrap">🩺</div>
+          <h3>Importance of Regular Dog Care</h3>
+          <p>
+            Consistent, preventative health routines protect your dog from preventable ailments and lay the foundation for a vibrant, long life.
+          </p>
+          <ul class="quick-info-list">
+            <li><span>✓</span> Annual or bi-annual veterinary wellness checkups and timely vaccinations.</li>
+            <li><span>✓</span> Continuous parasite prevention against fleas, ticks, and internal parasites.</li>
+            <li><span>✓</span> Regular dental care to prevent gum disease and preserve cardiac health.</li>
+            <li><span>✓</span> Routine coat grooming and paw inspections to spot any changes early.</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Quick Navigation Hub -->
+      <div class="guides-nav-strip">
+        <div class="section-heading" style="margin-bottom: 0;">
+          <div>
+            <div class="eyebrow">Quick Navigation Hub</div>
+            <h3 style="font-size: 1.5rem; margin: 0;">Explore Dedicated Dog Knowledge Chapters</h3>
+          </div>
+          <p>Direct access to specialized dog care, breed profiles, walking guidance, and walker companions.</p>
+        </div>
+
+        <div class="guides-nav-grid">
+          <a href="breeds.html" class="guide-nav-item" id="hub-link-breeds">
+            <span>🐕</span>
+            <div>
+              <b>Dog Breeds</b>
+              <small>Profiles & Characteristics</small>
+            </div>
+          </a>
+          <a href="care.html" class="guide-nav-item" id="hub-link-care">
+            <span>🩺</span>
+            <div>
+              <b>Dog Care & Health</b>
+              <small>Wellness, Grooming & Diet</small>
+            </div>
+          </a>
+          <a href="walking.html" class="guide-nav-item" id="hub-link-walking">
+            <span>🎾</span>
+            <div>
+              <b>Exercise & Walking</b>
+              <small>Activity Needs & Routines</small>
+            </div>
+          </a>
+          <a href="../../services/dog-walking.html" class="guide-nav-item" id="hub-link-walking-service">
+            <span>🚶</span>
+            <div>
+              <b>Dog Walking Service</b>
+              <small>Explore Walking Companions</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="section-wrap">
+    <div class="dog-cta-band">
+      <div>
+        <div class="eyebrow" style="color: #c3ddc8;">Start Your Dog's Journey</div>
+        <h2>Every Paw Deserves a <em>Happy Walk.</em></h2>
+        <p>
+          Whether you are preparing to adopt your first puppy or looking to give your faithful companion 
+          the best daily walks and wellness support, PetSathi is here to guide and support you every step of the way.
+        </p>
+      </div>
+      <div class="dog-cta-actions">
+        <a class="button button-light" href="../../walker/dogs.html" id="cta-find-walker">Find a Dog Walker ↗</a>
+        <a class="button button-translucent" href="../../services/dog-walking.html" id="cta-walking-service">Dog Walking Service</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div>
+      <a class="brand" href="../../../../index.html" id="footer-brand">🐾 Pet<span>Sathi</span></a>
+      <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
+    </div>
+    <div>
+      <b>Explore</b>
+      <a href="../index.html" id="footer-link-explore-pets">Pet Categories</a>
+      <a href="../../services/index.html" id="footer-link-services">Services</a>
+      <a href="../../walker/index.html" id="footer-link-walker">Find a Walker</a>
+      <a href="../../services/dog-walking.html" id="footer-link-dog-walking">Dog Walking Service</a>
+    </div>
+    <div>
+      <b>PetSathi</b>
+      <a href="../../about.html" id="footer-link-about">About Us</a>
+      <a href="../../auth/login.html" id="footer-link-login">Log in</a>
+      <a href="../../auth/register.html" id="footer-link-register">Register</a>
+    </div>
+    <div>
+      <b>Dog Guides</b>
+      <a href="breeds.html" id="footer-link-breeds">Dog Breeds</a>
+      <a href="care.html" id="footer-link-care">Dog Care & Health</a>
+      <a href="walking.html" id="footer-link-walking">Exercise & Walking</a>
+      <a href="../../walker/dogs.html" id="footer-link-dog-walkers">Find Dog Walkers</a>
+    </div>
+  </div>
+  <div class="section-wrap footer-bottom">
+    <span>© <span id="year"></span> PetSathi. Made with ♥ for pets.</span>
+    <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
+  </div>
+</footer>
+
+<script src="../../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1934 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore bird behaviour, communication, positive training, enrichment and social bonding with PetSathi.">
+  <title>Bird Behaviour & Enrichment | PetSathi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+
+  <style>
+    /* ========================================
+       PETSATHI BIRD BEHAVIOUR PAGE
+    ======================================== */
+
+    .visual-hero {
+      padding: 52px 0;
+      background: linear-gradient(135deg, #edf5e9, #fcfaf5);
+      overflow: hidden;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.7rem, 5vw, 4.5rem);
+      margin: 10px 0 18px;
+      letter-spacing: -2.5px;
+    }
+
+    .hero-copy p {
+      max-width: 530px;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin: 0 0 25px;
+    }
+
+    .hero-photo {
+      position: relative;
+      margin: 0;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: 0 20px 45px rgba(35,57,43,.13);
+    }
+
+    .photo-credit {
+      margin-top: 7px;
+      text-align: right;
+      font-size: .67rem;
+      color: #718078;
+    }
+
+    .photo-credit a {
+      color: var(--green);
+      text-decoration: underline;
+    }
+
+    .hero-sticker {
+      position: absolute;
+      bottom: 42px;
+      left: -20px;
+      background: white;
+      padding: 15px 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(35,57,43,.13);
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .hero-sticker span {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 2px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Section navigation */
+
+    .visual-nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(252,250,245,.97);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 4px 15px rgba(35,57,43,.04);
+    }
+
+    .visual-nav .section-wrap {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-block: 12px;
+      scrollbar-width: none;
+    }
+
+    .visual-nav .section-wrap::-webkit-scrollbar {
+      display: none;
+    }
+
+    .visual-nav a {
+      flex-shrink: 0;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font-size: .82rem;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .visual-nav a:hover,
+    .visual-nav a.active {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    /* Common section styling */
+
+    .visual-section {
+      padding: 75px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .visual-section.soft {
+      background: #f5f8f2;
+    }
+
+    .visual-section-header {
+      max-width: 690px;
+      margin-bottom: 32px;
+    }
+
+    .visual-section-header.center {
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    .visual-section-header h2 {
+      margin: 7px 0 12px;
+    }
+
+    .visual-section-header p {
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .visual-section-header .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    /* ========================================
+       1. BODY LANGUAGE
+    ======================================== */
+
+    .signal-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .signal-photo {
+      position: relative;
+      min-height: 360px;
+      overflow: hidden;
+      border-radius: 22px;
+    }
+
+    .signal-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+    }
+
+    .signal-photo-label {
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+      padding: 9px 14px;
+      background: white;
+      border-radius: 999px;
+      color: var(--dark);
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .signal-explorer {
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+    }
+
+    .signal-explorer h3 {
+      margin: 0 0 7px;
+      font-size: 1.3rem;
+    }
+
+    .signal-explorer > p {
+      margin: 0 0 20px;
+      font-size: .88rem;
+    }
+
+    .signal-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin-bottom: 20px;
+    }
+
+    .signal-button {
+      padding: 14px 7px;
+      border: 1px solid var(--line);
+      background: #fcfaf5;
+      border-radius: 13px;
+      color: var(--ink);
+      font: inherit;
+      cursor: pointer;
+      font-size: .8rem;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .signal-button span {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    .signal-button.active,
+    .signal-button:hover {
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+    }
+
+    .signal-output {
+      padding: 20px;
+      border-radius: 15px;
+      background: #edf4e9;
+      min-height: 135px;
+    }
+
+    .signal-output h4 {
+      margin: 0 0 8px;
+      color: var(--dark);
+      font-size: 1.1rem;
+    }
+
+    .signal-output p {
+      margin: 0;
+      font-size: .88rem;
+      line-height: 1.7;
+    }
+
+    .signal-note {
+      margin-top: 15px;
+      font-size: .77rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Vocalisations strip */
+
+    .sound-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .sound-card {
+      padding: 19px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .sound-card .sound-icon {
+      font-size: 1.8rem;
+      margin-bottom: 7px;
+    }
+
+    .sound-card h4 {
+      margin: 0 0 5px;
+      font-size: .95rem;
+    }
+
+    .sound-card p {
+      margin: 0;
+      font-size: .8rem;
+      line-height: 1.55;
+    }
+
+    /* ========================================
+       2. TRAINING
+    ======================================== */
+
+    .training-feature {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .training-feature figure {
+      margin: 0;
+    }
+
+    .training-feature img {
+      width: 100%;
+      height: 370px;
+      border-radius: 22px;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+
+    .training-copy h3 {
+      font-size: 1.7rem;
+      margin: 8px 0 12px;
+    }
+
+    .training-copy p {
+      font-size: .93rem;
+      line-height: 1.75;
+    }
+
+    .reward-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      background: #edf4e9;
+      border-radius: 999px;
+      color: var(--green);
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .training-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .training-step {
+      padding: 22px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      position: relative;
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      height: 38px;
+      width: 38px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 13px;
+    }
+
+    .training-step h4 {
+      margin: 0 0 7px;
+      font-size: 1rem;
+    }
+
+    .training-step p {
+      margin: 0;
+      font-size: .83rem;
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       3. ENRICHMENT GALLERY
+    ======================================== */
+
+    .enrichment-gallery {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+    }
+
+    .enrichment-feature {
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+      border-radius: 22px;
+      background: #eaf0e6;
+    }
+
+    .enrichment-feature img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .enrichment-feature:hover img {
+      transform: scale(1.035);
+    }
+
+    .enrichment-feature .image-caption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 17px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.94);
+    }
+
+    .image-caption h3 {
+      margin: 0 0 5px;
+      font-size: 1.1rem;
+    }
+
+    .image-caption p {
+      margin: 0;
+      font-size: .82rem;
+      line-height: 1.55;
+    }
+
+    .enrichment-side {
+      display: grid;
+      gap: 15px;
+    }
+
+    .enrichment-mini {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 20px;
+      border-radius: 17px;
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .enrichment-mini .mini-icon {
+      display: grid;
+      place-items: center;
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      border-radius: 16px;
+      background: #edf4e9;
+      font-size: 1.9rem;
+    }
+
+    .enrichment-mini h4 {
+      margin: 0 0 5px;
+      font-size: .98rem;
+    }
+
+    .enrichment-mini p {
+      margin: 0;
+      font-size: .81rem;
+      line-height: 1.55;
+    }
+
+    /* Activity picker */
+
+    .activity-picker {
+      margin-top: 25px;
+      padding: 23px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .activity-picker-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .activity-picker h3 {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    .activity-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .activity-controls button {
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fcfaf5;
+      color: var(--ink);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 700;
+      font-size: .78rem;
+    }
+
+    .activity-controls button.active,
+    .activity-controls button:hover {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .activity-result {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 17px;
+      border-radius: 13px;
+      background: #edf4e9;
+    }
+
+    .activity-result .activity-icon {
+      font-size: 2.4rem;
+    }
+
+    .activity-result h4 {
+      margin: 0 0 5px;
+      font-size: 1rem;
+      color: var(--dark);
+    }
+
+    .activity-result p {
+      margin: 0;
+      font-size: .84rem;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       4. SOCIAL INTERACTION
+    ======================================== */
+
+    .bond-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .bond-photo {
+      margin: 0;
+    }
+
+    .bond-photo img {
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+
+    .bond-content h3 {
+      margin: 7px 0 12px;
+      font-size: 1.7rem;
+    }
+
+    .bond-content > p {
+      font-size: .91rem;
+      line-height: 1.75;
+    }
+
+    .bond-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .bond-point {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .bond-point span {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: #edf4e9;
+      font-size: 1.25rem;
+    }
+
+    .bond-point strong {
+      display: block;
+      font-size: .91rem;
+      margin-bottom: 2px;
+    }
+
+    .bond-point small {
+      color: var(--muted);
+      font-size: .79rem;
+    }
+
+    /* ========================================
+       5. BEHAVIOURAL PROBLEMS
+    ======================================== */
+
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .problem-card {
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .problem-card summary {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 19px;
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
+      font-size: .96rem;
+    }
+
+    .problem-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .problem-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      background: #edf4e9;
+      font-size: 1.5rem;
+    }
+
+    .problem-card summary::after {
+      content: "+";
+      margin-left: auto;
+      color: var(--green);
+      font-size: 1.3rem;
+    }
+
+    .problem-card[open] summary::after {
+      content: "−";
+    }
+
+    .problem-info {
+      padding: 0 19px 20px 81px;
+    }
+
+    .problem-info p {
+      font-size: .85rem;
+      line-height: 1.65;
+      margin: 0 0 10px;
+    }
+
+    .problem-info .response {
+      padding: 12px;
+      border-radius: 10px;
+      background: #edf4e9;
+      color: #53675a;
+      font-size: .81rem;
+      line-height: 1.6;
+    }
+
+    .vet-reminder {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      padding: 19px;
+      margin-top: 22px;
+      border-radius: 15px;
+      border: 1px solid #f0d5bd;
+      background: #fff8f1;
+    }
+
+    .vet-reminder > span {
+      font-size: 1.5rem;
+    }
+
+    .vet-reminder strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #80451f;
+    }
+
+    .vet-reminder p {
+      margin: 0;
+      font-size: .85rem;
+      line-height: 1.65;
+    }
+
+    /* Credits and resources */
+
+    .photo-credits {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: white;
+    }
+
+    .photo-credits h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .photo-credits p {
+      margin: 7px 0;
+      font-size: .78rem;
+      line-height: 1.6;
+    }
+
+    .photo-credits a {
+      color: var(--green);
+      text-decoration: underline;
+    }
+
+    .resource-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .resource-links a {
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .resource-links a:hover {
+      background: var(--green);
+      border-color: var(--green);
+      color: white;
+    }
+
+    /* CTA */
+
+    .behaviour-cta {
+      margin: 55px auto 65px;
+      padding: 43px 25px;
+      border-radius: 23px;
+      background: #1d5039;
+      color: white;
+      text-align: center;
+    }
+
+    .behaviour-cta h2 {
+      color: white;
+      margin: 7px 0 12px;
+    }
+
+    .behaviour-cta p {
+      max-width: 620px;
+      margin: 0 auto 22px;
+      color: #dce9df;
+      line-height: 1.7;
+    }
+
+    .behaviour-cta .button {
+      color: var(--dark);
+      background: white;
+      border-color: white;
+    }
+
+    /* Back to top */
+
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 30;
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-size: 1.35rem;
+      cursor: pointer;
+      box-shadow: 0 5px 18px rgba(35,57,43,.2);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: .25s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--dark);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 850px) {
+      .hero-layout,
+      .signal-layout,
+      .training-feature,
+      .bond-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo img {
+        height: 340px;
+      }
+
+      .hero-sticker {
+        left: 12px;
+      }
+
+      .signal-photo,
+      .signal-photo img {
+        min-height: 280px;
+        height: 280px;
+      }
+
+      .training-feature img {
+        height: 330px;
+      }
+
+      .bond-photo img {
+        height: 330px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .visual-section {
+        padding: 52px 0;
+      }
+
+      .training-steps,
+      .sound-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .enrichment-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .enrichment-feature,
+      .enrichment-feature img {
+        min-height: 290px;
+        height: 290px;
+      }
+
+      .problems-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .signal-options {
+        gap: 6px;
+      }
+
+      .signal-button {
+        font-size: .72rem;
+      }
+
+      .signal-button span {
+        font-size: 1.3rem;
+      }
+
+      .problem-info {
+        padding-left: 19px;
+      }
+
+      .behaviour-cta {
+        padding: 33px 20px;
+      }
+
+      .back-to-top {
+        right: 17px;
+        bottom: 17px;
+      }
+
+      .footer .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <a class="brand" href="../../../../index.html">
+      <span class="brand-mark">🐾</span>
+      <span>Pet<span>Sathi</span></span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="main-nav">
+      <a href="../../../../index.html">Home</a>
+      <a href="../index.html">Explore Pets</a>
+      <a href="../../services/index.html">Services</a>
+      <a href="../../walker/index.html">Find a Walker</a>
+      <a href="../../about.html">About Us</a>
+      <a href="../../auth/login.html">Log in</a>
+      <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
+    </nav>
+
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="visual-hero">
+
+      <div class="section-wrap hero-layout">
+
+        <div class="hero-copy">
+
+          <div class="eyebrow">PETSATHI • BIRD BEHAVIOUR GUIDE</div>
+
+          <h1>
+            Every Chirp<br>
+            Tells a <em>Story.</em>
+          </h1>
+
+          <p>
+            Discover how birds communicate, learn, play and bond.
+            Get to know your feathered companion beyond the cage.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="#understanding">Explore Behaviour ↓</a>
+            <a class="button button-outline" href="../birds/index.html">Birds Home ↗</a>
+          </div>
+
+        </div>
+
+        <figure class="hero-photo">
+
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Budgerigar_%28Melopsittacus_undulatus%29.jpg"
+            alt="A budgerigar standing on a play perch surrounded by toys"
+            fetchpriority="high">
+
+          <div class="hero-sticker">
+            <span>🪶</span>
+            Curious minds. Happy birds.
+          </div>
+
+          <figcaption class="photo-credit">
+            Photo:
+            <a href="https://commons.wikimedia.org/wiki/File:Budgerigar_(Melopsittacus_undulatus).jpg" target="_blank" rel="noopener noreferrer">Anna Saccheri</a>
+            · <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a>
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+    </section>
+
+    <!-- QUICK NAVIGATION -->
+
+    <nav class="visual-nav" aria-label="Page sections">
+
+      <div class="section-wrap">
+        <a href="#understanding">🦜 Behaviour</a>
+        <a href="#training">🎯 Training</a>
+        <a href="#stimulation">🧩 Enrichment</a>
+        <a href="#social">💚 Bonding</a>
+        <a href="#problems">🔍 Challenges</a>
+      </div>
+
+    </nav>
+
+    <!-- 1. UNDERSTANDING BIRD BEHAVIOUR -->
+
+    <section class="visual-section" id="understanding">
+
+      <div class="section-wrap">
+
+        <div class="visual-section-header">
+
+          <div class="eyebrow">01 • READ THE SIGNS</div>
+
+          <h2>Understand Their <em>Body Language</em></h2>
+
+          <p>
+            Birds communicate through movement, posture, sounds and social cues.
+            Explore a few common patterns below.
+          </p>
+
+        </div>
+
+        <div class="signal-layout">
+
+          <div class="signal-photo">
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/60/Cockatiel_kept_as_pet.jpg"
+              alt="A pet cockatiel perched on a person's finger"
+              loading="lazy">
+
+            <span class="signal-photo-label">Look beyond the feathers</span>
+
+          </div>
+
+          <div class="signal-explorer">
+
+            <div class="eyebrow">TAP TO EXPLORE</div>
+
+            <h3>What is your bird expressing?</h3>
+
+            <p>Choose a behaviour to see possible clues.</p>
+
+            <div class="signal-options">
+
+              <button class="signal-button active" data-signal="relaxed" aria-pressed="true">
+                <span>🌿</span>
+                Relaxed
+              </button>
+
+              <button class="signal-button" data-signal="curious" aria-pressed="false">
+                <span>👀</span>
+                Curious
+              </button>
+
+              <button class="signal-button" data-signal="uneasy" aria-pressed="false">
+                <span>⚠️</span>
+                Uneasy
+              </button>
+
+            </div>
+
+            <div class="signal-output" aria-live="polite">
+              <h4 id="signalTitle">A relaxed bird</h4>
+              <p id="signalDescription">
+                Comfortable posture, gentle preening and familiar activity
+                can be signs that your bird feels at ease.
+              </p>
+            </div>
+
+            <p class="signal-note">
+              Behaviour varies by species and individual. Always consider
+              the bird's usual patterns and the surrounding situation.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="sound-strip">
+
+          <article class="sound-card">
+            <div class="sound-icon">🎵</div>
+            <h4>Singing & Chirping</h4>
+            <p>Can be used for contact, expression and communication.</p>
+          </article>
+
+          <article class="sound-card">
+            <div class="sound-icon">📣</div>
+            <h4>Contact Calls</h4>
+            <p>May help birds maintain contact with familiar companions.</p>
+          </article>
+
+          <article class="sound-card">
+            <div class="sound-icon">🪶</div>
+            <h4>Body Signals</h4>
+            <p>Posture and movement add context to vocal communication.</p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 2. BIRD TRAINING -->
+
+    <section class="visual-section soft" id="training">
+
+      <div class="section-wrap">
+
+        <div class="visual-section-header">
+          <div class="eyebrow">02 • LEARN TOGETHER</div>
+          <h2>Training Through <em>Trust</em></h2>
+          <p>
+            No force. No punishment. Just patience, clear signals and
+            positive reinforcement.
+          </p>
+        </div>
+
+        <div class="training-feature">
+
+          <figure>
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/1e/My_pet_budgerigar_sitting_on_my_shoulder.jpg"
+              alt="A pet budgerigar sitting on its owner's shoulder"
+              loading="lazy">
+
+            <figcaption class="photo-credit">
+              Photo:
+              <a href="https://commons.wikimedia.org/wiki/File:My_pet_budgerigar_sitting_on_my_shoulder.jpg" target="_blank" rel="noopener noreferrer">BudgieGuy16</a>
+              · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+            </figcaption>
+
+          </figure>
+
+          <div class="training-copy">
+
+            <span class="reward-label">⭐ Reward-based learning</span>
+
+            <h3>Make learning a happy experience.</h3>
+
+            <p>
+              Reward your bird immediately when it voluntarily performs
+              a desired action. Suitable food treats, praise or a
+              favourite activity can be positive rewards.
+            </p>
+
+            <p>
+              Keep training gentle and short. Let your bird choose
+              whether to participate.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="training-steps">
+
+          <article class="training-step">
+            <div class="step-number">1</div>
+            <h4>Build familiarity</h4>
+            <p>Start calmly. Let your bird approach at its own pace.</p>
+          </article>
+
+          <article class="training-step">
+            <div class="step-number">2</div>
+            <h4>Reward progress</h4>
+            <p>Mark and reward small voluntary steps towards the goal.</p>
+          </article>
+
+          <article class="training-step">
+            <div class="step-number">3</div>
+            <h4>Practice gently</h4>
+            <p>Repeat in short sessions and stop when your bird needs a break.</p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 3. MENTAL STIMULATION -->
+
+    <section class="visual-section" id="stimulation">
+
+      <div class="section-wrap">
+
+        <div class="visual-section-header">
+          <div class="eyebrow">03 • PLAY, EXPLORE, DISCOVER</div>
+          <h2>Make Every Day an <em>Adventure</em></h2>
+          <p>
+            Enrichment gives birds opportunities to forage, climb,
+            investigate and solve simple challenges.
+          </p>
+        </div>
+
+        <div class="enrichment-gallery">
+
+          <figure class="enrichment-feature">
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Psittacus_erithacus_erithacus_-pet_playing_with_bell-6a.jpg"
+              alt="An African grey parrot playing upside down with a hanging bell toy"
+              loading="lazy">
+
+            <figcaption class="image-caption">
+
+              <h3>Play & Exploration 🧸</h3>
+
+              <p>
+                Offer bird-safe toys for climbing, chewing and discovery.
+              </p>
+
+              <div class="photo-credit">
+                Photo:
+                <a href="https://commons.wikimedia.org/wiki/File:Psittacus_erithacus_erithacus_-pet_playing_with_bell-6a.jpg" target="_blank" rel="noopener noreferrer">Nigel Wedge</a>
+                · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>
+              </div>
+
+            </figcaption>
+
+          </figure>
+
+          <div class="enrichment-side">
+
+            <article class="enrichment-mini">
+
+              <div class="mini-icon">🌾</div>
+
+              <div>
+                <h4>Foraging</h4>
+                <p>Let your bird search for small portions of suitable food.</p>
+              </div>
+
+            </article>
+
+            <article class="enrichment-mini">
+
+              <div class="mini-icon">🧩</div>
+
+              <div>
+                <h4>Puzzle Play</h4>
+                <p>Introduce easy, bird-safe food puzzles and discovery toys.</p>
+              </div>
+
+            </article>
+
+            <article class="enrichment-mini">
+
+              <div class="mini-icon">🪜</div>
+
+              <div>
+                <h4>Climbing</h4>
+                <p>Use suitable ladders, perches and supervised play areas.</p>
+              </div>
+
+            </article>
+
+            <article class="enrichment-mini">
+
+              <div class="mini-icon">🔄</div>
+
+              <div>
+                <h4>Variety</h4>
+                <p>Rotate familiar activities gradually to encourage curiosity.</p>
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <!-- INTERACTIVE ACTIVITY PICKER -->
+
+        <div class="activity-picker">
+
+          <div class="activity-picker-head">
+
+            <h3>Need an activity idea? 💡</h3>
+
+            <div class="activity-controls">
+
+              <button class="active" data-activity="foraging" aria-pressed="true">
+                Foraging
+              </button>
+
+              <button data-activity="puzzle" aria-pressed="false">
+                Puzzle
+              </button>
+
+              <button data-activity="play" aria-pressed="false">
+                Play
+              </button>
+
+            </div>
+
+          </div>
+
+          <div class="activity-result" aria-live="polite">
+
+            <div class="activity-icon" id="activityIcon">🌾</div>
+
+            <div>
+              <h4 id="activityTitle">Food Discovery</h4>
+              <p id="activityDescription">
+                Hide a small portion of suitable food in an easy-to-open,
+                bird-safe paper wrap and let your bird investigate.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 4. SOCIAL INTERACTION -->
+
+    <section class="visual-section soft" id="social">
+
+      <div class="section-wrap">
+
+        <div class="bond-layout">
+
+          <figure class="bond-photo">
+
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/60/Cockatiel_kept_as_pet.jpg"
+              alt="A cockatiel comfortably perched on its owner's hand"
+              loading="lazy">
+
+            <figcaption class="photo-credit">
+              Photo:
+              <a href="https://commons.wikimedia.org/wiki/File:Cockatiel_kept_as_pet.jpg" target="_blank" rel="noopener noreferrer">Hrzn64</a>
+              · <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0</a>
+            </figcaption>
+
+          </figure>
+
+          <div class="bond-content">
+
+            <div class="eyebrow">04 • A BOND BUILT ON TRUST</div>
+
+            <h3>Be their favourite part of the day. 💚</h3>
+
+            <p>
+              Birds have different personalities and social needs.
+              Consistent, respectful interactions help build a
+              comfortable relationship.
+            </p>
+
+            <div class="bond-points">
+
+              <div class="bond-point">
+                <span>💬</span>
+                <div>
+                  <strong>Talk together</strong>
+                  <small>Use gentle voices and familiar interaction.</small>
+                </div>
+              </div>
+
+              <div class="bond-point">
+                <span>⏰</span>
+                <div>
+                  <strong>Make time every day</strong>
+                  <small>Balance play, training and quiet time.</small>
+                </div>
+              </div>
+
+              <div class="bond-point">
+                <span>🤝</span>
+                <div>
+                  <strong>Respect boundaries</strong>
+                  <small>Allow your bird to approach voluntarily.</small>
+                </div>
+              </div>
+
+              <div class="bond-point">
+                <span>🪺</span>
+                <div>
+                  <strong>Know their personality</strong>
+                  <small>Adapt interaction to their individual needs.</small>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 5. COMMON BEHAVIOURAL PROBLEMS -->
+
+    <section class="visual-section" id="problems">
+
+      <div class="section-wrap">
+
+        <div class="visual-section-header center">
+
+          <div class="eyebrow">05 • UNDERSTAND, DON'T PUNISH</div>
+
+          <h2>When Behaviour <em>Changes</em></h2>
+
+          <p>
+            Explore common challenges. Click a card to see what may
+            contribute and how to respond.
+          </p>
+
+        </div>
+
+        <div class="problems-grid">
+
+          <details class="problem-card">
+
+            <summary>
+              <span class="problem-icon">📢</span>
+              Excessive Screaming
+            </summary>
+
+            <div class="problem-info">
+
+              <p>
+                Frequent or sudden loud calling may relate to social
+                needs, changes in routine, fear or other triggers.
+              </p>
+
+              <div class="response">
+                <strong>Try:</strong> Observe patterns, check the bird's
+                needs and provide appropriate enrichment. Avoid shouting
+                back or punishment.
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="problem-card">
+
+            <summary>
+              <span class="problem-icon">🪶</span>
+              Feather Plucking
+            </summary>
+
+            <div class="problem-info">
+
+              <p>
+                Feather damage can have medical, environmental or
+                behavioural causes. It should never be assumed to
+                be simply boredom.
+              </p>
+
+              <div class="response">
+                <strong>Try:</strong> Arrange an avian veterinary
+                assessment and review the bird's environment with
+                professional guidance.
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="problem-card">
+
+            <summary>
+              <span class="problem-icon">🦜</span>
+              Biting
+            </summary>
+
+            <div class="problem-info">
+
+              <p>
+                Biting may be a response to fear, discomfort, unwanted
+                handling or a need for personal space.
+              </p>
+
+              <div class="response">
+                <strong>Try:</strong> Notice warning signs, respect
+                boundaries and reward calm voluntary interactions.
+                Never hit or frighten your bird.
+              </div>
+
+            </div>
+
+          </details>
+
+          <details class="problem-card">
+
+            <summary>
+              <span class="problem-icon">😕</span>
+              Boredom & Stress
+            </summary>
+
+            <div class="problem-info">
+
+              <p>
+                Limited enrichment, insufficient rest, unpredictable
+                surroundings or unmet social needs may contribute
+                to stress.
+              </p>
+
+              <div class="response">
+                <strong>Try:</strong> Offer suitable foraging,
+                enrichment, predictable routines and opportunities
+                for quiet rest.
+              </div>
+
+            </div>
+
+          </details>
+
+        </div>
+
+        <div class="vet-reminder">
+
+          <span>🩺</span>
+
+          <div>
+            <strong>When in doubt, consult an avian veterinarian.</strong>
+            <p>
+              Sudden behavioural changes, feather damage, persistent
+              screaming, unusual inactivity or aggression may need
+              professional assessment. This guide is educational,
+              not a diagnosis.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PHOTO CREDITS & LEARNING RESOURCES -->
+
+    <section class="section-wrap" style="padding-bottom:35px;">
+
+      <div class="photo-credits">
+
+        <div class="eyebrow">IMAGE CREDITS & FURTHER READING</div>
+
+        <h3>Photography Credits</h3>
+
+        <p>
+          Budgerigar play perch:
+          Anna Saccheri, Wikimedia Commons,
+          <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a>.
+        </p>
+
+        <p>
+          Budgerigar on shoulder:
+          BudgieGuy16, Wikimedia Commons,
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.
+        </p>
+
+        <p>
+          African grey playing with bell:
+          Nigel Wedge, Wikimedia Commons,
+          <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>.
+        </p>
+
+        <p>
+          Cockatiel photograph:
+          Hrzn64, Wikimedia Commons,
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0 1.0</a>.
+        </p>
+
+        <div class="resource-links">
+
+          <a href="https://www.rspca.org.uk/adviceandwelfare/pets/birds/training" target="_blank" rel="noopener noreferrer">
+            RSPCA Training ↗
+          </a>
+
+          <a href="https://www.rspca.org.uk/adviceandwelfare/pets/birds/enrichment" target="_blank" rel="noopener noreferrer">
+            RSPCA Enrichment ↗
+          </a>
+
+          <a href="https://www.merckvetmanual.com/bird-owners/choosing-and-taking-care-of-a-pet-bird/behavior-of-pet-birds" target="_blank" rel="noopener noreferrer">
+            Merck Bird Behaviour ↗
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="section-wrap">
+
+      <div class="behaviour-cta">
+
+        <div class="eyebrow" style="color:#cce5d1;">
+          THE LITTLE THINGS MATTER
+        </div>
+
+        <h2>Listen. Learn. Bond. 💚</h2>
+
+        <p>
+          Every bird has its own personality. Give it patience,
+          opportunities to explore and a relationship built on trust.
+        </p>
+
+        <a class="button" href="../birds/index.html">
+          ← Explore Bird Information
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- BACK TO TOP -->
+
+  <button
+    type="button"
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Back to top">
+    ↑
+  </button>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="section-wrap footer-bottom">
+      <span>© PetSathi · NSoC Winter Edition</span>
+      <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
+    </div>
+
+  </footer>
+
+  <script src="../../../js/main.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* 1. BODY LANGUAGE EXPLORER */
+
+      const signals = {
+        relaxed: {
+          title: "A relaxed bird",
+          description:
+            "Comfortable posture, gentle preening and familiar activity can be signs that your bird feels at ease."
+        },
+
+        curious: {
+          title: "A curious bird",
+          description:
+            "Looking around, tilting the head and investigating objects may show interest. Allow safe exploration without forcing contact."
+        },
+
+        uneasy: {
+          title: "A bird that needs space",
+          description:
+            "Moving away, leaning back, hissing or lunging can be signs of discomfort. Pause the interaction and give your bird room."
+        }
+      };
+
+      const signalButtons =
+        document.querySelectorAll(".signal-button");
+
+      const signalTitle =
+        document.getElementById("signalTitle");
+
+      const signalDescription =
+        document.getElementById("signalDescription");
+
+      signalButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+          const selected = signals[button.dataset.signal];
+
+          if (!selected) return;
+
+          signalButtons.forEach(item => {
+
+            const active = item === button;
+
+            item.classList.toggle("active", active);
+
+            item.setAttribute(
+              "aria-pressed",
+              String(active)
+            );
+
+          });
+
+          signalTitle.textContent = selected.title;
+
+          signalDescription.textContent =
+            selected.description;
+
+        });
+
+      });
+
+
+      /* 2. ENRICHMENT ACTIVITY PICKER */
+
+      const activityIdeas = {
+        foraging: {
+          icon: "🌾",
+          title: "Food Discovery",
+          description:
+            "Hide a small portion of suitable food in an easy-to-open, bird-safe paper wrap and let your bird investigate."
+        },
+
+        puzzle: {
+          icon: "🧩",
+          title: "Simple Puzzle",
+          description:
+            "Introduce a bird-safe puzzle feeder with an easy starting challenge. Let your bird discover how to reach the reward."
+        },
+
+        play: {
+          icon: "🧸",
+          title: "Toy Exploration",
+          description:
+            "Offer a suitable chew or manipulation toy. Watch which textures and activities your bird enjoys."
+        }
+      };
+
+      const activityButtons =
+        document.querySelectorAll(".activity-controls button");
+
+      const activityIcon =
+        document.getElementById("activityIcon");
+
+      const activityTitle =
+        document.getElementById("activityTitle");
+
+      const activityDescription =
+        document.getElementById("activityDescription");
+
+      activityButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+          const selected =
+            activityIdeas[button.dataset.activity];
+
+          if (!selected) return;
+
+          activityButtons.forEach(item => {
+
+            const active = item === button;
+
+            item.classList.toggle("active", active);
+
+            item.setAttribute(
+              "aria-pressed",
+              String(active)
+            );
+
+          });
+
+          activityIcon.textContent = selected.icon;
+          activityTitle.textContent = selected.title;
+          activityDescription.textContent =
+            selected.description;
+
+        });
+
+      });
+
+
+      /* 3. ONE BEHAVIOUR CARD OPEN AT A TIME */
+
+      const problemCards =
+        document.querySelectorAll(".problem-card");
+
+      problemCards.forEach(card => {
+
+        card.addEventListener("toggle", () => {
+
+          if (card.open) {
+
+            problemCards.forEach(otherCard => {
+
+              if (otherCard !== card) {
+                otherCard.open = false;
+              }
+
+            });
+
+          }
+
+        });
+
+      });
+
+
+      /* 4. ACTIVE SECTION NAVIGATION */
+
+      const navLinks = document.querySelectorAll(
+        ".visual-nav a[href^='#']"
+      );
+
+      const sections = Array.from(navLinks)
+        .map(link => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              navLinks.forEach(link => {
+
+                const active =
+                  link.getAttribute("href") ===
+                  "#" + entry.target.id;
+
+                link.classList.toggle("active", active);
+
+              });
+
+            }
+
+          });
+
+        }, {
+          rootMargin: "-20% 0px -65% 0px"
+        });
+
+        sections.forEach(section => observer.observe(section));
+
+      }
+
+
+      /* 5. BACK TO TOP */
+
+      const backToTop =
+        document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+
+        backToTop.classList.toggle(
+          "visible",
+          window.scrollY > 450
+        );
+
+      }, { passive: true });
+
+      backToTop.addEventListener("click", () => {
+
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        window.scrollTo({
+          top: 0,
+          behavior: reducedMotion ? "auto" : "smooth"
+        });
+
+      });
+
+
+      /* 6. HANDLE IMAGE LOADING ERRORS */
+
+      document.querySelectorAll("img").forEach(img => {
+
+        img.addEventListener("error", () => {
+
+          img.style.display = "none";
+
+          const figure = img.closest("figure");
+
+          if (figure) {
+            figure.classList.add("image-unavailable");
+          }
+
+        });
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>

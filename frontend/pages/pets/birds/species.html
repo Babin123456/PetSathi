@@ -1,0 +1,1648 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Discover 10 popular companion bird species, their personalities, approximate size, lifespan and care requirements with PetSathi.">
+
+    <title>Popular Pet Bird Species | PetSathi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../css/global.css">
+    <link rel="stylesheet" href="../../../css/home.css">
+    <link rel="stylesheet" href="../../../css/inner.css">
+
+    <style>
+        /* =========================================
+           BIRD SPECIES PAGE
+        ========================================= */
+
+        body {
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* Breadcrumb */
+
+        .bird-breadcrumb {
+            width: min(1160px, calc(100% - 48px));
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            flex-wrap: wrap;
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+
+        .bird-breadcrumb a {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        /* =========================================
+           INTRO / HERO
+        ========================================= */
+
+        .species-intro {
+            padding: 65px 24px 58px;
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                #f1f5ed 0%,
+                #fbfaf5 55%,
+                #f5f0e7 100%
+            );
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .species-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 7px 16px;
+            border-radius: 50px;
+            background: #e7efe5;
+            color: var(--green);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+        }
+
+        .species-intro h1 {
+            margin: 20px auto 16px;
+            max-width: 900px;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.13;
+            letter-spacing: -2px;
+            color: var(--ink);
+        }
+
+        .species-intro h1 em {
+            color: var(--green);
+            font-style: normal;
+        }
+
+        .species-intro-description {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #68766d;
+            font-size: 1.04rem;
+            line-height: 1.85;
+        }
+
+        .intro-divider {
+            width: 54px;
+            height: 3px;
+            margin: 27px auto 0;
+            border-radius: 10px;
+            background: var(--green);
+        }
+
+        /* =========================================
+           SPECIES SECTION
+        ========================================= */
+
+        .species-section {
+            width: min(1160px, calc(100% - 48px));
+            margin: auto;
+            padding: 66px 0 85px;
+        }
+
+        .species-section-heading {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 38px;
+        }
+
+        .species-section-heading h2 {
+            font-size: clamp(1.8rem, 3vw, 2.45rem);
+            margin: 10px 0;
+            color: var(--ink);
+        }
+
+        .species-section-heading p {
+            font-size: 0.94rem;
+            line-height: 1.75;
+            color: var(--muted);
+        }
+
+        /* =========================================
+           BIRD GRID
+        ========================================= */
+
+        .bird-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        align-items: stretch;
+}
+
+        .bird-card {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            overflow: hidden;
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .bird-card:hover {
+            transform: translateY(-5px);
+            border-color: #bfd1c0;
+            box-shadow: 0 13px 30px rgba(35, 57, 43, 0.09);
+        }
+
+        /* Medium-height image */
+
+        .bird-image-wrap {
+            position: relative;
+            height: 165px;
+            flex-shrink: 0;
+            overflow: hidden;
+            background: #edf2e9;
+        }
+
+        .bird-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .bird-card:hover .bird-image {
+            transform: scale(1.045);
+        }
+
+        .bird-number {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.94);
+            color: var(--green);
+            font-size: 0.76rem;
+            font-weight: 800;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Card content */
+
+        .bird-card-body {
+            padding: 17px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .bird-category {
+            align-self: flex-start;
+            margin: 0 0 9px;
+            padding: 5px 10px;
+            background: #edf4ec;
+            color: var(--green);
+            border-radius: 30px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+        }
+
+        .bird-card h3 {
+            color: var(--ink);
+            font-size: 1.05rem;
+            line-height: 1.35;
+            letter-spacing: -0.3px;
+            margin: 0 0 10px;
+            min-height: 43px;
+        }
+
+        /* Justified bird descriptions */
+
+        .bird-description {
+            color: #68766d;
+            font-size: 0.82rem;
+            line-height: 1.65;
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+            margin: 0 0 15px;
+            flex-grow: 1;
+        }
+
+        /* Facts */
+
+        .bird-facts {
+            display: grid;
+            gap: 8px;
+            padding: 12px;
+            background: #f5f7f2;
+            border-radius: 11px;
+            border: 1px solid #edf0e9;
+            margin-top: auto;
+        }
+
+        .bird-fact {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.75rem;
+            line-height: 1.45;
+        }
+
+        .bird-fact span {
+            color: var(--muted);
+            flex-shrink: 0;
+        }
+
+        .bird-fact strong {
+            color: var(--ink);
+            text-align: right;
+            font-weight: 700;
+        }
+
+        .bird-traits {
+            color: #68766d;
+            font-size: 0.77rem;
+            line-height: 1.55;
+            margin: 13px 0 0;
+            padding-top: 11px;
+            border-top: 1px solid var(--line);
+        }
+
+        .bird-traits strong {
+            color: var(--green);
+        }
+
+        /* =========================================
+           COMPARISON SECTION
+        ========================================= */
+
+        .comparison-section {
+            width: 100%;
+            padding: 75px 24px 80px;
+            background: #f0f4ed;
+            border-top: 1px solid #e2e9df;
+            border-bottom: 1px solid #e2e9df;
+        }
+
+        .comparison-inner {
+            width: min(1160px, 100%);
+            margin: 0 auto;
+        }
+
+        .comparison-heading {
+            display: block;
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .comparison-kicker {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7px 15px;
+            border-radius: 30px;
+            background: #e0ebdf;
+            color: var(--green);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .comparison-heading h2 {
+            margin: 0 0 13px;
+            color: var(--ink);
+            font-size: clamp(2rem, 3.5vw, 2.85rem);
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+        }
+
+        .comparison-heading p {
+            max-width: 690px;
+            margin: 0 auto;
+            color: #68766d;
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+
+        /* Table container */
+
+        .comparison-table-wrap {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            box-shadow: 0 9px 28px rgba(35, 57, 43, 0.05);
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .comparison-table {
+            width: 100%;
+            min-width: 760px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            padding: 17px 19px;
+            background: var(--green);
+            color: white;
+            font-size: 0.82rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .comparison-table td {
+            padding: 15px 19px;
+            color: #59675e;
+            font-size: 0.82rem;
+            border-bottom: 1px solid #e9eee7;
+            line-height: 1.5;
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .comparison-table tbody tr:nth-child(even) {
+            background: #fafbf8;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #edf4ec;
+        }
+
+        .comparison-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-scroll-hint {
+            display: none;
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 0.76rem;
+            text-align: center;
+        }
+
+        .comparison-note {
+            margin: 17px 0 0;
+            color: #718078;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        /* =========================================
+           RESPONSIBLE OWNERSHIP
+        ========================================= */
+
+        .ownership-section {
+            width: min(1000px, calc(100% - 48px));
+            margin: 70px auto;
+            padding: 36px;
+            border: 1px solid var(--line);
+            border-radius: 19px;
+            background: white;
+            text-align: center;
+        }
+
+        .ownership-icon {
+            font-size: 2.2rem;
+        }
+
+        .ownership-section h2 {
+            margin: 12px 0;
+            color: var(--ink);
+            font-size: 1.7rem;
+            letter-spacing: -0.5px;
+        }
+
+        .ownership-section p {
+            max-width: 790px;
+            margin: 0 auto;
+            color: #68766d;
+            font-size: 0.9rem;
+            line-height: 1.85;
+        }
+
+        .legal-note {
+            margin-top: 18px;
+            padding: 14px 16px;
+            border-left: 3px solid var(--green);
+            border-radius: 7px;
+            background: #f1f5ef;
+            color: #59675e;
+            text-align: left;
+            font-size: 0.83rem;
+            line-height: 1.7;
+        }
+
+        .legal-note a {
+            color: var(--green);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .bird-cta {
+            padding: 65px 24px;
+            text-align: center;
+            background: linear-gradient(135deg, #1d5039, #286849);
+            color: white;
+        }
+
+        .bird-cta h2 {
+            margin: 0 auto 12px;
+            max-width: 750px;
+            color: white;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+        }
+
+        .bird-cta p {
+            max-width: 620px;
+            margin: 0 auto 24px;
+            color: #e0eee3;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .bird-cta .button {
+            background: white;
+            color: var(--green);
+            border-color: white;
+        }
+
+        .bird-cta .button:hover {
+            background: #edf4ec;
+            color: var(--dark);
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 1050px) {
+            .bird-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 780px) {
+            .bird-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 17px;
+            }
+
+            .species-intro {
+                padding: 55px 20px 48px;
+            }
+
+            .species-section {
+                padding: 55px 0 65px;
+            }
+
+            .comparison-section {
+                padding: 60px 18px;
+            }
+
+            .bird-image-wrap {
+                height: 155px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .bird-breadcrumb,
+            .species-section,
+            .ownership-section {
+                width: calc(100% - 34px);
+            }
+
+            .bird-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .bird-image-wrap {
+                height: 205px;
+            }
+
+            .bird-card-body {
+                padding: 18px;
+            }
+
+            .bird-card h3 {
+                min-height: auto;
+                font-size: 1.12rem;
+            }
+
+            .bird-description {
+                font-size: 0.86rem;
+            }
+
+            .comparison-heading h2 {
+                font-size: 2rem;
+            }
+
+            .table-scroll-hint {
+                display: block;
+            }
+
+            .ownership-section {
+                padding: 27px 20px;
+            }
+
+            .ownership-section h2 {
+                font-size: 1.45rem;
+            }
+
+            .bird-cta {
+                padding: 52px 18px;
+            }
+        }
+
+                    /* =========================================
+                FOOTER ALIGNMENT
+                ========================================= */
+
+                .footer .footer-bottom {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    align-items: center;
+                    gap: 16px;
+                    padding: 20px 0;
+                    border-top: 1px solid #dfe5dc;
+                    font-size: 0.82rem;
+                    color: #839087;
+                }
+
+                .footer-copyright {
+                    text-align: left;
+                }
+
+                .footer-credit {
+                    text-align: center;
+                }
+
+                .footer-tagline {
+                    text-align: right;
+                }
+
+                /* Mobile footer */
+
+                @media (max-width: 620px) {
+                    .footer .footer-bottom {
+                        grid-template-columns: 1fr;
+                        justify-items: center;
+                        gap: 9px;
+                        text-align: center;
+                    }
+
+                    .footer-copyright,
+                    .footer-credit,
+                    .footer-tagline {
+                        text-align: center;
+                    }
+                }  
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER - PETSATHI HOMEPAGE STYLE
+    ========================================= -->
+
+    <header class="site-header">
+
+        <a class="brand" href="../../../../index.html">
+            <span class="brand-mark">🐾</span>
+            <span>Pet<span>Sathi</span></span>
+        </a>
+
+        <button class="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="main-nav">
+
+            <a class="active" href="../../../../index.html">Home</a>
+
+            <div class="nav-item">
+                <a href="../index.html">Explore Pets ▾</a>
+
+                <div class="dropdown">
+                    <a href="../dogs/index.html">🐕 Dogs</a>
+                    <a href="../cats/index.html">🐈 Cats</a>
+                    <a href="index.html">🐦 Birds</a>
+                    <a href="../rabbits/index.html">🐇 Rabbits</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="../../services/index.html">Services ▾</a>
+
+                <div class="dropdown">
+                    <a href="../../services/dog-walking.html">Dog Walking</a>
+                    <a href="../../services/cat-care.html">Cat Care</a>
+                    <a href="../../services/pet-care.html">Pet Care</a>
+                    <a href="../../services/guidance.html">Pet Guidance</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="../../walker/index.html">Find a Walker ▾</a>
+
+                <div class="dropdown">
+                    <a href="../../walker/dogs.html">Dog Walkers</a>
+                    <a href="../../walker/cats.html">Cat Caregivers</a>
+                    <a href="../../walker/birds.html">Bird Caregivers</a>
+                    <a href="../../walker/rabbits.html">Rabbit Caregivers</a>
+                </div>
+            </div>
+
+            <a href="../../about.html">About Us</a>
+            <a href="../../auth/login.html">Log in</a>
+
+            <a class="button button-small" href="../../auth/register.html">
+                Get Started ↗
+            </a>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+    
+
+
+        <!-- =========================================
+             INTRODUCTION
+        ========================================= -->
+
+        <section class="species-intro">
+
+            <div class="species-eyebrow">
+                <span>✦</span>
+                Explore the Bird World
+            </div>
+
+            <h1>
+                Popular Pet Bird <em>Species</em>
+            </h1>
+
+            <p class="species-intro-description">
+                Every bird has different social, dietary, environmental
+                and enrichment needs. Learn about these popular companion
+                birds, their unique personalities and care requirements
+                before deciding which species may suit your household.
+            </p>
+
+            <div class="intro-divider"></div>
+
+        </section>
+
+
+        <!-- =========================================
+             BIRD SPECIES CARDS
+        ========================================= -->
+
+        <section class="species-section" id="bird-species">
+
+            <div class="species-section-heading">
+
+                <div class="species-eyebrow">
+                    10 Popular Species
+                </div>
+
+                <h2>Meet Our Feathered Companions</h2>
+
+                <p>
+                    Explore the characteristics, approximate adult size,
+                    lifespan and care needs of different companion birds.
+                </p>
+
+            </div>
+
+
+            <div class="bird-grid">
+
+                <!-- 01 BUDGERIGAR -->
+
+                <article class="bird-card">
+
+                    <div class="bird-image-wrap">
+
+                        <img class="bird-image"
+                            src="https://images.unsplash.com/photo-1470662061953-318cd8c6c152?auto=format&fit=crop&w=900&q=85"
+                            alt="Budgerigar perched on a branch"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="bird-number">01</span>
+
+                    </div>
+
+                    <div class="bird-card-body">
+
+                        <span class="bird-category">Small Parakeet</span>
+
+                        <h3>Budgerigar (Budgie)</h3>
+
+                        <p class="bird-description">
+                            Budgerigars are small Australian parakeets
+                            known for their colourful feathers, cheerful
+                            chirping and curious personalities. They can
+                            learn whistles and may mimic simple words.
+                        </p>
+
+                        <div class="bird-facts">
+
+                            <div class="bird-fact">
+                                <span>Size</span>
+                                <strong>About 18 cm</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Lifespan</span>
+                                <strong>5–10 years</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Care difficulty</span>
+                                <strong>Moderate</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="bird-traits">
+                            <strong>Personality:</strong>
+                            Social, playful, active and curious.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <!-- 02 COCKATIEL -->
+
+                <article class="bird-card">
+
+                    <div class="bird-image-wrap">
+
+                        <img class="bird-image"
+                            src="https://images.unsplash.com/photo-1759384278309-cef132b5db63?auto=format&fit=crop&w=900&q=85"
+                            alt="Cockatiel with a distinctive crest"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="bird-number">02</span>
+
+                    </div>
+
+                    <div class="bird-card-body">
+
+                        <span class="bird-category">Small Parrot</span>
+
+                        <h3>Cockatiel</h3>
+
+                        <p class="bird-description">
+                            Cockatiels are Australian parrots recognised
+                            by their expressive crests and orange cheek
+                            patches. They often enjoy whistling, gentle
+                            interaction and spending time with familiar people.
+                        </p>
+
+                        <div class="bird-facts">
+
+                            <div class="bird-fact">
+                                <span>Size</span>
+                                <strong>30–33 cm</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Lifespan</span>
+                                <strong>15–20 years</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Care difficulty</span>
+                                <strong>Moderate</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="bird-traits">
+                            <strong>Personality:</strong>
+                            Gentle, affectionate, expressive and social.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <!-- 03 LOVEBIRD -->
+
+                <article class="bird-card">
+
+                    <div class="bird-image-wrap">
+
+                        <img class="bird-image"
+                            src="https://images.unsplash.com/photo-1748693783835-12e6d1cddbf1?auto=format&fit=crop&w=900&q=85"
+                            alt="Colourful lovebird perched on a branch"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="bird-number">03</span>
+
+                    </div>
+
+                    <div class="bird-card-body">
+
+                        <span class="bird-category">Small Parrot</span>
+
+                        <h3>Lovebird</h3>
+
+                        <p class="bird-description">
+                            Lovebirds are small African parrots known for
+                            their colourful plumage and strong social bonds.
+                            They are energetic birds that need regular
+                            interaction, toys and mental stimulation.
+                        </p>
+
+                        <div class="bird-facts">
+
+                            <div class="bird-fact">
+                                <span>Size</span>
+                                <strong>13–17 cm</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Lifespan</span>
+                                <strong>10–20 years</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Care difficulty</span>
+                                <strong>Intermediate</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="bird-traits">
+                            <strong>Personality:</strong>
+                            Energetic, bold, playful and affectionate.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <!-- 04 AFRICAN GREY -->
+
+                <article class="bird-card">
+
+                    <div class="bird-image-wrap">
+
+                        <img class="bird-image"
+                            src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=85"
+                            alt="African grey parrot"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="bird-number">04</span>
+
+                    </div>
+
+                    <div class="bird-card-body">
+
+                        <span class="bird-category">Large Parrot</span>
+
+                        <h3>African Grey Parrot</h3>
+
+                        <p class="bird-description">
+                            African Grey Parrots are highly intelligent
+                            birds known for their vocal mimicry and
+                            problem-solving abilities. They require
+                            substantial mental stimulation, social
+                            interaction and long-term commitment.
+                        </p>
+
+                        <div class="bird-facts">
+
+                            <div class="bird-fact">
+                                <span>Size</span>
+                                <strong>30–40 cm</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Lifespan</span>
+                                <strong>40–60 years</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Care difficulty</span>
+                                <strong>Advanced</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="bird-traits">
+                            <strong>Personality:</strong>
+                            Intelligent, sensitive, observant and vocal.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <!-- 05 MACAW -->
+
+                <article class="bird-card">
+
+                    <div class="bird-image-wrap">
+
+                        <img class="bird-image"
+                            src="https://images.unsplash.com/photo-1706859686040-35c1fb6bf2dd?auto=format&fit=crop&w=900&q=85"
+                            alt="Blue and yellow macaw perched on a branch"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="bird-number">05</span>
+
+                    </div>
+
+                    <div class="bird-card-body">
+
+                        <span class="bird-category">Large Parrot</span>
+
+                        <h3>Macaw</h3>
+
+                        <p class="bird-description">
+                            Macaws are large, colourful parrots native
+                            to Central and South America. Their striking
+                            plumage and intelligence make them fascinating
+                            birds, but they need substantial space,
+                            enrichment and experienced care.
+                        </p>
+
+                        <div class="bird-facts">
+
+                            <div class="bird-fact">
+                                <span>Size</span>
+                                <strong>Up to 86 cm*</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Lifespan</span>
+                                <strong>30–60 years</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Care difficulty</span>
+                                <strong>Advanced</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="bird-traits">
+                            <strong>Personality:</strong>
+                            Playful, intelligent, expressive and loud.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <!-- 06 COCKATOO -->
+
+                <article class="bird-card">
+
+                    <div class="bird-image-wrap">
+
+                        <img class="bird-image"
+                            src="https://images.unsplash.com/photo-1611081915537-f2991009d941?auto=format&fit=crop&w=900&q=85"
+                            alt="White cockatoo with an expressive crest"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="bird-number">06</span>
+
+                    </div>
+
+                    <div class="bird-card-body">
+
+                        <span class="bird-category">Large Parrot</span>
+
+                        <h3>Cockatoo</h3>
+
+                        <p class="bird-description">
+                            Cockatoos are recognisable by their expressive
+                            crests and powerful beaks. Many form strong
+                            bonds with caregivers and require extensive
+                            interaction, exercise and safe chewing activities.
+                        </p>
+
+                        <div class="bird-facts">
+
+                            <div class="bird-fact">
+                                <span>Size</span>
+                                <strong>30–60 cm*</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Lifespan</span>
+                                <strong>25–50 years</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Care difficulty</span>
+                                <strong>Advanced</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="bird-traits">
+                            <strong>Personality:</strong>
+                            Social, expressive, affectionate and demanding.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <!-- 07 CANARY -->
+
+                <article class="bird-card">
+
+                    <div class="bird-image-wrap">
+
+                        <img class="bird-image"
+                            src="https://images.unsplash.com/photo-1591198936750-16d8e15edb9e?auto=format&fit=crop&w=900&q=85"
+                            alt="Yellow canary perched on a branch"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="bird-number">07</span>
+
+                    </div>
+
+                    <div class="bird-card-body">
+
+                        <span class="bird-category">Songbird</span>
+
+                        <h3>Canary</h3>
+
+                        <p class="bird-description">
+                            Canaries are small songbirds well known
+                            for their beautiful singing and bright
+                            plumage. They are often enjoyed for their
+                            activity and varied songs, although many
+                            prefer gentle observation over handling.
+                        </p>
+
+                        <div class="bird-facts">
+
+                            <div class="bird-fact">
+                                <span>Size</span>
+                                <strong>12–13 cm</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Lifespan</span>
+                                <strong>10–15 years</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Care difficulty</span>
+                                <strong>Intermediate</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="bird-traits">
+                            <strong>Personality:</strong>
+                            Active, alert, independent and musical.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <!-- 08 FINCH -->
+
+                <article class="bird-card">
+
+                    <div class="bird-image-wrap">
+
+                        <img class="bird-image"
+                            src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=85"
+                            alt="Small finch-like bird perched on a branch"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="bird-number">08</span>
+
+                    </div>
+
+                    <div class="bird-card-body">
+
+                        <span class="bird-category">Small Songbird</span>
+
+                        <h3>Finch (Zebra Finch)</h3>
+
+                        <p class="bird-description">
+                            Finches are small, lively birds often kept
+                            in compatible groups. Zebra finches are
+                            popular for their cheerful calls and active
+                            social behaviour. They usually prefer
+                            observing rather than being handled.
+                        </p>
+
+                        <div class="bird-facts">
+
+                            <div class="bird-fact">
+                                <span>Size</span>
+                                <strong>10–12 cm</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Lifespan</span>
+                                <strong>5–10 years</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Care difficulty</span>
+                                <strong>Intermediate</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="bird-traits">
+                            <strong>Personality:</strong>
+                            Social, active, alert and gentle.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <!-- 09 CONURE -->
+
+                <article class="bird-card">
+
+                    <div class="bird-image-wrap">
+
+                        <img class="bird-image"
+                            src="https://images.unsplash.com/photo-1705603476680-1d87835e8850?auto=format&fit=crop&w=900&q=85"
+                            alt="Green conure perched on a branch"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="bird-number">09</span>
+
+                    </div>
+
+                    <div class="bird-card-body">
+
+                        <span class="bird-category">Small Parrot</span>
+
+                        <h3>Green-cheeked Conure</h3>
+
+                        <p class="bird-description">
+                            Green-cheeked conures are playful small
+                            parrots known for their curious nature.
+                            They enjoy climbing, exploring toys,
+                            learning simple activities and interacting
+                            with familiar caregivers.
+                        </p>
+
+                        <div class="bird-facts">
+
+                            <div class="bird-fact">
+                                <span>Size</span>
+                                <strong>25–27 cm</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Lifespan</span>
+                                <strong>15–25 years</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Care difficulty</span>
+                                <strong>Intermediate</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="bird-traits">
+                            <strong>Personality:</strong>
+                            Curious, energetic, playful and affectionate.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <!-- 10 INDIAN RINGNECK -->
+
+                <article class="bird-card">
+
+                    <div class="bird-image-wrap">
+
+                        <img class="bird-image"
+                            src="https://images.unsplash.com/photo-1628083371314-729e1291a595?auto=format&fit=crop&w=900&q=85"
+                            alt="Green rose-ringed parakeet perched on a branch"
+                            loading="lazy"
+                            decoding="async">
+
+                        <span class="bird-number">10</span>
+
+                    </div>
+
+                    <div class="bird-card-body">
+
+                        <span class="bird-category">Parakeet</span>
+
+                        <h3>Indian Ringneck Parakeet</h3>
+
+                        <p class="bird-description">
+                            Indian Ringneck Parakeets are recognised
+                            by their long tails and curved beaks.
+                            They are intelligent, active birds known
+                            for their vocal abilities and distinctive
+                            appearance.
+                        </p>
+
+                        <div class="bird-facts">
+
+                            <div class="bird-fact">
+                                <span>Size</span>
+                                <strong>38–42 cm*</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Lifespan</span>
+                                <strong>25–30 years</strong>
+                            </div>
+
+                            <div class="bird-fact">
+                                <span>Care difficulty</span>
+                                <strong>Advanced</strong>
+                            </div>
+
+                        </div>
+
+                        <p class="bird-traits">
+                            <strong>Personality:</strong>
+                            Independent, intelligent, active and vocal.
+                        </p>
+
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SPECIES COMPARISON
+        ========================================= -->
+
+        <section class="comparison-section" id="comparison">
+
+            <div class="comparison-inner">
+
+                <div class="comparison-heading">
+
+                    <div class="comparison-kicker">
+                        Compare Your Options
+                    </div>
+
+                    <h2>Bird Species Comparison</h2>
+
+                    <p>
+                        Compare approximate sizes, lifespans and care
+                        requirements to better understand the differences
+                        between companion birds. Use this overview as
+                        a starting point when researching their individual needs.
+                    </p>
+
+                </div>
+
+
+                <div class="comparison-table-wrap">
+
+                    <table class="comparison-table">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">Bird Species</th>
+                                <th scope="col">Size</th>
+                                <th scope="col">Lifespan</th>
+                                <th scope="col">Personality</th>
+                                <th scope="col">Care Level</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Budgerigar</td>
+                                <td>18 cm</td>
+                                <td>5–10 years</td>
+                                <td>Social and playful</td>
+                                <td>Moderate</td>
+                            </tr>
+
+                            <tr>
+                                <td>Cockatiel</td>
+                                <td>30–33 cm</td>
+                                <td>15–20 years</td>
+                                <td>Gentle and expressive</td>
+                                <td>Moderate</td>
+                            </tr>
+
+                            <tr>
+                                <td>Lovebird</td>
+                                <td>13–17 cm</td>
+                                <td>10–20 years</td>
+                                <td>Energetic and affectionate</td>
+                                <td>Intermediate</td>
+                            </tr>
+
+                            <tr>
+                                <td>African Grey</td>
+                                <td>30–40 cm</td>
+                                <td>40–60 years</td>
+                                <td>Intelligent and sensitive</td>
+                                <td>Advanced</td>
+                            </tr>
+
+                            <tr>
+                                <td>Macaw</td>
+                                <td>Varies by species</td>
+                                <td>30–60 years</td>
+                                <td>Playful and expressive</td>
+                                <td>Advanced</td>
+                            </tr>
+
+                            <tr>
+                                <td>Cockatoo</td>
+                                <td>Varies by species</td>
+                                <td>25–50 years</td>
+                                <td>Affectionate and social</td>
+                                <td>Advanced</td>
+                            </tr>
+
+                            <tr>
+                                <td>Canary</td>
+                                <td>12–13 cm</td>
+                                <td>10–15 years</td>
+                                <td>Active and musical</td>
+                                <td>Intermediate</td>
+                            </tr>
+
+                            <tr>
+                                <td>Zebra Finch</td>
+                                <td>10–12 cm</td>
+                                <td>5–10 years</td>
+                                <td>Social and active</td>
+                                <td>Intermediate</td>
+                            </tr>
+
+                            <tr>
+                                <td>Green-cheeked Conure</td>
+                                <td>25–27 cm</td>
+                                <td>15–25 years</td>
+                                <td>Curious and playful</td>
+                                <td>Intermediate</td>
+                            </tr>
+
+                            <tr>
+                                <td>Indian Ringneck</td>
+                                <td>38–42 cm*</td>
+                                <td>25–30 years</td>
+                                <td>Independent and intelligent</td>
+                                <td>Advanced</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p class="table-scroll-hint">
+                    ← Swipe horizontally to view all comparison details →
+                </p>
+
+                <p class="comparison-note">
+                    *All measurements are approximate adult estimates.
+                    Size and lifespan vary by species, subspecies, individual
+                    health and living conditions. Care levels are general
+                    guidance rather than a measure of how easy a bird is to keep.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             RESPONSIBLE BIRD OWNERSHIP
+        ========================================= -->
+
+        <section class="ownership-section">
+
+            <div class="ownership-icon">💚</div>
+
+            <h2>Responsible Bird Ownership Matters</h2>
+
+            <p>
+                Birds need much more than food and a cage. They require
+                suitable living space, a balanced species-appropriate diet,
+                safe enrichment, daily observation and access to an
+                experienced avian veterinarian. Some parrots can live
+                for several decades, so their care is a serious
+                long-term commitment. Responsible adoption and legal,
+                ethical sourcing are important.
+            </p>
+
+            <div class="legal-note">
+                <strong>Important for readers in India:</strong>
+                The Indian Ringneck profile is included for educational
+                identification, not as a recommendation to keep one.
+                The Rose-ringed Parakeet is listed under Schedule II of
+                India's Wildlife (Protection) Act. Never capture a wild
+                bird. Check current requirements with the relevant
+                Forest Department.
+                <a href="https://stateofindiasbirds.in/species/rorpar/"
+                    target="_blank" rel="noopener noreferrer">
+                    View conservation information.
+                </a>
+            </div>
+
+            <p style="margin-top: 18px; font-size: 0.82rem;">
+                Learn more about bird care:
+                <a href="https://www.aav.org/"
+                    target="_blank" rel="noopener noreferrer"
+                    style="color: var(--green); font-weight: 700;">
+                    Association of Avian Veterinarians
+                </a>
+                ·
+                <a href="https://www.merckvetmanual.com/bird-owners"
+                    target="_blank" rel="noopener noreferrer"
+                    style="color: var(--green); font-weight: 700;">
+                    Merck Veterinary Manual
+                </a>
+            </p>
+
+        </section>
+
+
+        <!-- =========================================
+             CTA
+        ========================================= -->
+
+        <section class="bird-cta">
+
+            <h2>Every Feathered Friend Deserves Care 🐦</h2>
+
+            <p>
+                Understanding a bird's unique needs is the first
+                step towards responsible care. Explore more helpful
+                information with PetSathi.
+            </p>
+
+            <a class="button" href="index.html">
+                Explore Bird Care & Information ↗
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER - PETSATHI HOMEPAGE STYLE
+    ========================================= -->
+
+    <footer class="footer">
+
+        <div class="section-wrap footer-grid">
+
+            <div>
+
+                <a class="brand" href="../../../../index.html">
+                    🐾 Pet<span>Sathi</span>
+                </a>
+
+                <p>
+                    Your pet's trusted companion. Making pet care
+                    easier, one paw at a time.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <b>Explore</b>
+
+                <a href="../index.html">Pet Categories</a>
+                <a href="../../services/index.html">Services</a>
+                <a href="../../walker/index.html">Find a Walker</a>
+
+            </div>
+
+
+            <div>
+
+                <b>PetSathi</b>
+
+                <a href="../../about.html">About Us</a>
+                <a href="../../auth/login.html">Log in</a>
+                <a href="../../auth/register.html">Register</a>
+
+            </div>
+
+
+            <div>
+
+                <b>Open Source</b>
+
+                <a href="https://github.com/Riya-Kharade/PetSathi"
+                    target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+
+                <span>NSoC Winter Edition</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="section-wrap footer-bottom">
+
+            <span class="footer-copyright">
+                © 2026 PetSathi
+            </span>
+
+    <span class="footer-credit">
+        Made with ♥ for pets.
+    </span>
+
+    <span class="footer-tagline">
+        तुमच्या Pet चा विश्वासू साथी! 🐾
+    </span>
+
+</div>
+    </footer>
+
+
+    <script src="../../../js/main.js"></script>
+
+</body>
+</html>
+

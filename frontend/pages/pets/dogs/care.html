@@ -3,133 +3,1505 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dog care and wellness essentials - grooming, nutrition, and veterinary guidance on PetSathi.">
-  <title>Dog Care & Health Guide | PetSathi</title>
+  <meta name="description" content="Complete Guide to Dog Care & Health on PetSathi. Comprehensive advice on canine nutrition, grooming routines, veterinary wellness, puppy care, and household safety.">
+  <title>Complete Guide to Dog Care & Health | PetSathi</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Global & Inner Stylesheets -->
   <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
   <link rel="stylesheet" href="../../../css/inner.css">
+
+  <style>
+    /* Custom Scoped Styles for Dog Care Page */
+    :root {
+      --dog-accent: #286849;
+      --dog-accent-hover: #1d5039;
+      --dog-accent-soft: #edf4ee;
+      --dog-accent-border: #cde1d4;
+      --dog-badge-bg: #eaf2e9;
+      --dog-badge-text: #286849;
+      --dog-card-bg: #ffffff;
+      --dog-card-border: #e2e8df;
+      --dog-soft-bg: #f5f8f3;
+      --dog-peach: #fcf6f0;
+      --dog-peach-border: #f4decb;
+      --alert-red-bg: #fff1f0;
+      --alert-red-border: #ffccc7;
+      --alert-red-text: #a8071a;
+      --alert-amber-bg: #fffbe6;
+      --alert-amber-border: #ffe58f;
+      --alert-amber-text: #ad6800;
+      --alert-green-bg: #f6ffed;
+      --alert-green-border: #b7eb8f;
+      --alert-green-text: #237804;
+      --shadow-sm: 0 4px 14px rgba(35, 57, 43, 0.05);
+      --shadow-md: 0 12px 32px rgba(35, 57, 43, 0.08);
+      --shadow-lg: 0 20px 48px rgba(35, 57, 43, 0.12);
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb-nav {
+      padding: 10px 0 14px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb-nav a {
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+    .breadcrumb-nav a:hover {
+      color: var(--green);
+    }
+    .breadcrumb-separator {
+      color: #b5c2b9;
+      font-size: 0.8rem;
+    }
+    .breadcrumb-current {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Page Hero Overrides */
+    .care-hero {
+      background: linear-gradient(180deg, #edf4ee 0%, #fcfaf5 100%);
+      padding: 36px 20px 54px;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+    }
+    .care-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(40, 104, 73, 0.1);
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .care-hero h1 {
+      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+      margin: 8px 0 16px;
+      letter-spacing: -2px;
+    }
+    .care-hero p.hero-intro {
+      max-width: 780px;
+      margin: 0 auto 24px;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: #4a5c52;
+    }
+    .hero-meta-strip {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 24px auto 0;
+      padding-top: 20px;
+      border-top: 1px dashed #d5e0d3;
+      max-width: 860px;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-align: left;
+    }
+    .hero-meta-item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.98rem;
+      font-family: Manrope, sans-serif;
+    }
+    .hero-meta-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+
+    /* Quick Jump Sticky Navigation Bar */
+    .quick-nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(252, 250, 245, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      padding: 10px 0;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+    }
+    .quick-nav-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 4px 0;
+    }
+    .quick-nav-container::-webkit-scrollbar {
+      display: none;
+    }
+    .quick-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #4f6357;
+      background: white;
+      border: 1px solid var(--line);
+      white-space: nowrap;
+      transition: all 0.22s ease;
+    }
+    .quick-nav-link:hover,
+    .quick-nav-link.active {
+      background: var(--dog-accent);
+      color: white;
+      border-color: var(--dog-accent);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Section Foundations */
+    .care-section {
+      padding-block: 75px;
+      border-bottom: 1px solid var(--line);
+    }
+    .care-section.alt-bg {
+      background: #f7f9f5;
+    }
+    .section-header-wrap {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .section-header-wrap .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: #eaf2e9;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .section-header-wrap h2 {
+      font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+      margin: 0 0 12px;
+    }
+    .section-header-wrap p {
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Layout Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* Content Cards */
+    .care-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .care-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--dog-accent-border);
+    }
+    .card-icon-bubble {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: var(--dog-accent-soft);
+      color: var(--dog-accent);
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .care-card h3 {
+      font-size: 1.25rem;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+    .care-card p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+    .care-card ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.9rem;
+      color: #4a5c52;
+      line-height: 1.7;
+    }
+    .care-card li {
+      margin-bottom: 6px;
+    }
+
+    /* Media + Text Split Banner */
+    .media-split-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 36px;
+    }
+    .media-split-image {
+      position: relative;
+      min-height: 320px;
+      background: #f0f3eb;
+    }
+    .media-split-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .media-split-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--dog-accent);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .media-split-content {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .media-split-content h3 {
+      font-size: 1.65rem;
+      margin: 0 0 14px;
+      letter-spacing: -0.5px;
+    }
+    .media-split-content p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0 0 18px;
+    }
+
+    /* Toxic & Safe Foods Table / Cards */
+    .food-status-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .food-status-column {
+      border-radius: 20px;
+      padding: 26px;
+      border: 1px solid;
+    }
+    .food-status-column.toxic {
+      background: var(--alert-red-bg);
+      border-color: var(--alert-red-border);
+    }
+    .food-status-column.safe {
+      background: var(--alert-green-bg);
+      border-color: var(--alert-green-border);
+    }
+    .food-column-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .food-column-header h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+    .food-status-column.toxic h3 {
+      color: var(--alert-red-text);
+    }
+    .food-status-column.safe h3 {
+      color: var(--alert-green-text);
+    }
+    .food-item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .food-item-entry {
+      background: white;
+      border-radius: 12px;
+      padding: 14px 18px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .food-item-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .food-item-desc {
+      font-size: 0.86rem;
+      color: #55675c;
+      line-height: 1.5;
+    }
+
+    /* Veterinary Disclaimer Banner */
+    .vet-disclaimer-box {
+      background: linear-gradient(135deg, #f0f7f3 0%, #e7efe9 100%);
+      border: 2px dashed #9bc3ac;
+      border-radius: 20px;
+      padding: 28px 32px;
+      margin: 36px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .vet-disclaimer-icon {
+      font-size: 2.2rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .vet-disclaimer-text h4 {
+      margin: 0 0 6px;
+      font-size: 1.15rem;
+      color: var(--dog-accent-hover);
+    }
+    .vet-disclaimer-text p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #334e3f;
+    }
+
+    /* Routine Checklist Tracker */
+    .checklist-wrap {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: var(--shadow-sm);
+      margin-top: 36px;
+    }
+    .checklist-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .checklist-progress-bar {
+      width: 100%;
+      height: 10px;
+      background: #eaf1ea;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .checklist-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--dog-accent);
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fafbf9;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .checklist-item:hover {
+      background: white;
+      border-color: var(--dog-accent-border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .checklist-item.checked {
+      background: #f4faf5;
+      border-color: #b7dbbf;
+    }
+    .checklist-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--dog-accent);
+      margin-top: 2px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .checklist-item-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .checklist-item-title {
+      font-weight: 700;
+      font-size: 0.94rem;
+      color: var(--ink);
+    }
+    .checklist-item-hint {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* FAQ Accordion */
+    .faq-accordion {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .faq-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .faq-item:hover {
+      border-color: var(--dog-accent-border);
+    }
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      text-align: left;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-family: Manrope, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .faq-toggle-icon {
+      font-size: 1.3rem;
+      color: var(--dog-accent);
+      transition: transform 0.28s ease;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-toggle-icon {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.32s cubic-bezier(0, 1, 0, 1), padding 0.25s ease;
+      padding: 0 24px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+      padding: 0 24px 22px;
+    }
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: #4a5c52;
+    }
+
+    /* CTA Section */
+    .care-cta-section {
+      background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
+      color: white;
+      border-radius: 28px;
+      padding: 56px 40px;
+      text-align: center;
+      margin: 60px 0;
+      box-shadow: 0 20px 50px rgba(29, 80, 57, 0.25);
+    }
+    .care-cta-section h2 {
+      color: white;
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      margin: 0 0 16px;
+    }
+    .care-cta-section p {
+      color: #e2ede6;
+      max-width: 680px;
+      margin: 0 auto 30px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    .care-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 980px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .media-split-box {
+        grid-template-columns: 1fr;
+      }
+      .media-split-image {
+        min-height: 250px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .food-status-grid,
+      .checklist-grid {
+        grid-template-columns: 1fr;
+      }
+      .care-section {
+        padding-block: 55px;
+      }
+      .care-cta-section {
+        padding: 40px 24px;
+      }
+      .vet-disclaimer-box {
+        flex-direction: column;
+        padding: 22px;
+      }
+      .checklist-wrap {
+        padding: 24px 18px;
+      }
+    }
+  </style>
 </head>
 <body>
+
+<!-- Header Navigation -->
 <header class="site-header">
-  <a class="brand" href="../../../../index.html"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a>
-  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-  <nav class="main-nav">
-    <a href="../../../../index.html">Home</a>
+  <a class="brand" href="../../../../index.html" id="header-brand"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" id="menu-toggle-btn">☰</button>
+  <nav class="main-nav" id="main-nav-bar">
+    <a href="../../../../index.html" id="nav-link-home">Home</a>
     <div class="nav-item">
-      <a class="active" href="../index.html">Explore Pets ▾</a>
+      <a class="active" href="../index.html" id="nav-link-explore">Explore Pets ▾</a>
       <div class="dropdown">
-        <a href="index.html">🐕 Dogs</a>
-        <a href="../cats/index.html">🐈 Cats</a>
-        <a href="../birds/index.html">🐦 Birds</a>
-        <a href="../rabbits/index.html">🐇 Rabbits</a>
+        <a href="index.html" id="dropdown-dogs">🐕 Dogs</a>
+        <a href="../cats/index.html" id="dropdown-cats">🐈 Cats</a>
+        <a href="../birds/index.html" id="dropdown-birds">🐦 Birds</a>
+        <a href="../rabbits/index.html" id="dropdown-rabbits">🐇 Rabbits</a>
       </div>
     </div>
     <div class="nav-item">
-      <a href="../../services/index.html">Services ▾</a>
+      <a href="../../services/index.html" id="nav-link-services">Services ▾</a>
       <div class="dropdown">
-        <a href="../../services/dog-walking.html">Dog Walking</a>
-        <a href="../../services/cat-care.html">Cat Care</a>
-        <a href="../../services/pet-care.html">Pet Care</a>
-        <a href="../../services/guidance.html">Pet Guidance</a>
+        <a href="../../services/dog-walking.html" id="dropdown-service-walking">Dog Walking</a>
+        <a href="../../services/cat-care.html" id="dropdown-service-cat">Cat Care</a>
+        <a href="../../services/pet-care.html" id="dropdown-service-pet">Pet Care</a>
+        <a href="../../services/guidance.html" id="dropdown-service-guidance">Pet Guidance</a>
       </div>
     </div>
     <div class="nav-item">
-      <a href="../../walker/index.html">Find a Walker ▾</a>
+      <a href="../../walker/index.html" id="nav-link-walkers">Find a Walker ▾</a>
       <div class="dropdown">
-        <a href="../../walker/dogs.html">Dog Walkers</a>
-        <a href="../../walker/cats.html">Cat Caregivers</a>
-        <a href="../../walker/birds.html">Bird Caregivers</a>
-        <a href="../../walker/rabbits.html">Rabbit Caregivers</a>
+        <a href="../../walker/dogs.html" id="dropdown-walker-dogs">Dog Walkers</a>
+        <a href="../../walker/cats.html" id="dropdown-walker-cats">Cat Caregivers</a>
+        <a href="../../walker/birds.html" id="dropdown-walker-birds">Bird Caregivers</a>
+        <a href="../../walker/rabbits.html" id="dropdown-walker-rabbits">Rabbit Caregivers</a>
       </div>
     </div>
-    <a href="../../about.html">About Us</a>
-    <a href="../../auth/login.html">Log in</a>
-    <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
+    <a href="../../about.html" id="nav-link-about">About Us</a>
+    <a href="../../auth/login.html" id="nav-link-login">Log in</a>
+    <a class="button button-small" href="../../auth/register.html" id="nav-link-register">Get Started ↗</a>
   </nav>
 </header>
 
-<main>
-  <section class="page-hero">
-    <div class="eyebrow">PetSathi • DOG CARE & WELLNESS</div>
-    <div class="page-emoji">🩺</div>
-    <h1>Dog Care & Health Guide</h1>
-    <p>Comprehensive care tips covering routine health checkups, coat grooming, balanced daily nutrition, and hygiene essentials for your dog.</p>
-    <a class="button" href="index.html">← Back to Dogs Landing Page</a>
-  </section>
+<main id="main-content">
 
-  <section class="section-wrap inner-grid">
-    <article class="info-card">
-      <div class="info-emoji">🩺</div>
-      <h2>Routine Veterinary Wellness</h2>
-      <p>Schedule regular veterinary checkups for core vaccinations (Rabies, DHPP), parasite control, and early health screening to ensure lifelong vitality.</p>
-    </article>
+  <!-- Hero Section -->
+  <section class="page-hero care-hero" aria-labelledby="hero-title">
+    <div class="section-wrap">
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb-nav" aria-label="Breadcrumbs">
+        <a href="../../../../index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="../index.html">Explore Pets</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="index.html">Dogs</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current" aria-current="page">Care & Health</span>
+      </nav>
 
-    <article class="info-card">
-      <div class="info-emoji">🛁</div>
-      <h2>Grooming & Coat Care</h2>
-      <p>Brush coats regularly to remove loose fur and reduce matting. Bathe monthly with dog-specific shampoo, clip nails safely, and clean ears gently.</p>
-    </article>
+      <div class="eyebrow">PetSathi • CANINE WELLNESS COMPANION</div>
+      <h1 id="hero-title">Complete Guide to Dog Care</h1>
+      <p class="hero-intro">
+        Everything you need to nurture a healthy, joyful, and thriving canine companion. From balanced daily nutrition and grooming rituals to veterinary preventative care, puppy milestones, and household safety.
+      </p>
 
-    <article class="info-card">
-      <div class="info-emoji">🥣</div>
-      <h2>Wholesome Nutrition</h2>
-      <p>Feed high-quality meals formulated for your dog's age, weight, and activity level. Always keep fresh, clean drinking water accessible 24/7.</p>
-    </article>
-
-    <article class="info-card">
-      <div class="info-emoji">🦷</div>
-      <h2>Dental Hygiene</h2>
-      <p>Prevent periodontal disease through regular tooth brushing with canine toothpaste, dental chew toys, and professional oral health evaluations.</p>
-    </article>
-
-    <article class="info-card">
-      <div class="info-emoji">🛡️</div>
-      <h2>Parasite Prevention</h2>
-      <p>Protect against fleas, ticks, and heartworms year-round with vet-recommended preventative treatments and post-walk tick inspections.</p>
-    </article>
-
-    <article class="info-card">
-      <div class="info-emoji">💚</div>
-      <h2>Comfort & Emotional Health</h2>
-      <p>Provide a quiet sleeping bed, positive bonding time, mental puzzle toys, and loving security to keep your companion emotionally fulfilled.</p>
-    </article>
-  </section>
-
-  <section class="inner-cta">
-    <h2>More Dog Care Articles In Progress</h2>
-    <p>We are continuously expanding PetSathi's pet care resources to help you provide the best possible care for your dog.</p>
-    <div style="margin-top: 20px;">
-      <a class="button" href="index.html">Back to Dogs Guide ↗</a>
+      <div class="hero-meta-strip">
+        <div class="hero-meta-item">
+          <div class="hero-meta-icon" aria-hidden="true">🐾</div>
+          <div>
+            <strong>All Life Stages</strong>
+            <span>Puppies to seniors</span>
+          </div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-icon" aria-hidden="true">🥣</div>
+          <div>
+            <strong>Balanced Diet</strong>
+            <span>Proteins, hydration, safety</span>
+          </div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-icon" aria-hidden="true">🛁</div>
+          <div>
+            <strong>Grooming Essentials</strong>
+            <span>Coat, nails, ears & dental</span>
+          </div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-icon" aria-hidden="true">🩺</div>
+          <div>
+            <strong>Veterinary Care</strong>
+            <span>Vaccines, prevention & signs</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- Sticky Quick Jump Navigation Bar -->
+  <nav class="quick-nav-bar" aria-label="Quick jump to dog care sections">
+    <div class="section-wrap">
+      <div class="quick-nav-container">
+        <a class="quick-nav-link" href="#nutrition">🥣 Food & Nutrition</a>
+        <a class="quick-nav-link" href="#grooming">🛁 Grooming & Hygiene</a>
+        <a class="quick-nav-link" href="#health">🩺 Health & Wellness</a>
+        <a class="quick-nav-link" href="#puppy">🐾 Puppy Care</a>
+        <a class="quick-nav-link" href="#safety">🛡️ Safety Tips</a>
+        <a class="quick-nav-link" href="#daily-checklist">✅ Daily Checklist</a>
+        <a class="quick-nav-link" href="#faqs">❓ FAQs</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SECTION B: Food and Nutrition -->
+  <section id="nutrition" class="care-section" aria-labelledby="heading-nutrition">
+    <div class="section-wrap">
+      <div class="section-header-wrap">
+        <div class="eyebrow">NOURISHMENT & VITALITY</div>
+        <h2 id="heading-nutrition">Canine Food & Nutrition</h2>
+        <p>
+          High-quality, balanced nutrition is the foundation of your dog's energy, immune resilience, shiny coat, and longevity. Tailoring meals to your dog's age, weight, and activity level ensures lifelong health.
+        </p>
+      </div>
+
+      <!-- Feature Split Banner -->
+      <div class="media-split-box">
+        <div class="media-split-image">
+          <span class="media-split-badge">Wholesome Diet</span>
+          <img
+            src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=85"
+            alt="Healthy dog patiently waiting beside a clean bowl of nutritious food"
+            loading="lazy"
+          >
+        </div>
+        <div class="media-split-content">
+          <h3>The Pillars of Balanced Nutrition</h3>
+          <p>
+            Dogs are omnivorous carnivores that require a precise balance of animal proteins, healthy fats, complex carbohydrates, essential vitamins, minerals, and ample hydration:
+          </p>
+          <ul>
+            <li><strong>High-Quality Protein:</strong> Provides amino acids crucial for muscle development, tissue repair, and hormone synthesis.</li>
+            <li><strong>Healthy Fats & Omega Oils:</strong> Omega-3 and Omega-6 fatty acids support cellular membranes, brain cognition, and a lustrous coat.</li>
+            <li><strong>Digestible Carbohydrates & Fiber:</strong> Provide steady cellular energy and support gentle intestinal motility.</li>
+            <li><strong>Vitamins & Minerals:</strong> Balanced calcium, phosphorus, vitamin A, and B-complex vitamins for skeletal density and immunity.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feeding Guidelines Grid -->
+      <div class="grid-3">
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">⚖️</div>
+          <h3>Consistent Feeding Guidelines</h3>
+          <p>
+            Avoid free-choice open feeding, which often leads to canine obesity. Practice controlled, measured meal times.
+          </p>
+          <ul>
+            <li><strong>Measured Portions:</strong> Use a standard measuring cup or kitchen scale based on package guidelines and vet recommendations.</li>
+            <li><strong>Predictable Routine:</strong> Feed adult dogs twice daily at set morning and evening hours to encourage regular digestion.</li>
+            <li><strong>Gradual Diet Transitions:</strong> When switching foods, transition over 7 to 10 days by blending 25%, 50%, and 75% new food to prevent stomach upset.</li>
+          </ul>
+        </article>
+
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">💧</div>
+          <h3>Continuous Fresh Water Access</h3>
+          <p>
+            Water constitutes over 60% of an adult dog's body weight and is vital for cellular metabolism, renal filtration, and thermoregulation.
+          </p>
+          <ul>
+            <li><strong>Unrestricted 24/7 Access:</strong> Dogs must always have free, continuous access to clean drinking water. Never restrict water intake unless explicitly instructed by a veterinarian before surgery.</li>
+            <li><strong>Hydration & Diet Variance:</strong> Average baseline fluid turnover is approximately 50–60 ml per kg of body weight daily in temperate conditions, but actual water drunk from a bowl varies greatly: dogs on wet or fresh diets (>70% moisture) drink far less than dogs on dry kibble (~10% moisture).</li>
+            <li><strong>Daily Sanitation:</strong> Wash water bowls daily with hot water and pet-safe soap to eliminate bacterial slime and biofilm buildup.</li>
+          </ul>
+        </article>
+
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">⏳</div>
+          <h3>Age-Appropriate Feeding</h3>
+          <p>
+            Canine nutritional requirements shift substantially across biological life stages:
+          </p>
+          <ul>
+            <li><strong>Puppies (0–12 Months):</strong> Higher caloric density, protein, and DHA for skeletal growth and brain maturation; feed 3–4 meals daily.</li>
+            <li><strong>Adult Dogs (1–7 Years):</strong> Balanced maintenance formula calibrated to daily exercise levels to sustain lean muscle mass.</li>
+            <li><strong>Senior Dogs (7+ Years):</strong> Controlled calories to prevent weight gain, elevated fiber for digestion, and joint-supporting compounds.</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Foods Dogs Should Avoid -->
+      <div style="margin-top: 48px;">
+        <div class="section-header-wrap" style="margin-bottom: 24px;">
+          <div class="eyebrow" style="background: var(--alert-red-bg); color: var(--alert-red-text);">CRITICAL KNOWLEDGE</div>
+          <h3>Foods Dogs Must Strictly Avoid</h3>
+          <p>
+            Certain foods that are delicious and safe for humans contain chemical compounds that are toxic or life-threatening to dogs. Keep these well out of reach.
+          </p>
+        </div>
+
+        <div class="food-status-grid">
+          <!-- Toxic Foods -->
+          <div class="food-status-column toxic">
+            <div class="food-column-header">
+              <span style="font-size: 1.5rem;" aria-hidden="true">🚫</span>
+              <h3>Toxic & Dangerous Foods</h3>
+            </div>
+            <div class="food-item-list">
+              <div class="food-item-entry">
+                <span class="food-item-title">🍫 Chocolate & Cocoa</span>
+                <span class="food-item-desc">Contains theobromine and caffeine; can cause severe vomiting, rapid heart rate, seizures, and cardiac distress.</span>
+              </div>
+              <div class="food-item-entry">
+                <span class="food-item-title">🍇 Grapes & Raisins</span>
+                <span class="food-item-desc">Even tiny amounts can trigger sudden acute kidney failure in dogs. Keep all raisins, trail mixes, and grapes away.</span>
+              </div>
+              <div class="food-item-entry">
+                <span class="food-item-title">🧅 Onions, Garlic & Chives</span>
+                <span class="food-item-desc">Contain thiosulfates that damage canine red blood cells, resulting in severe hemolytic anemia and weakness.</span>
+              </div>
+              <div class="food-item-entry">
+                <span class="food-item-title">🍬 Xylitol (Birch Sugar)</span>
+                <span class="food-item-desc">Found in sugar-free gum, candy, and some peanut butters; causes rapid, life-threatening hypoglycemia and acute liver failure.</span>
+              </div>
+              <div class="food-item-entry">
+                <span class="food-item-title">🦴 Cooked Bones</span>
+                <span class="food-item-desc">Brittle cooked bones easily splinter into sharp shards that can puncture the esophagus, stomach, or intestinal walls.</span>
+              </div>
+              <div class="food-item-entry">
+                <span class="food-item-title">☕ Caffeine & Alcohol</span>
+                <span class="food-item-desc">Induces dangerous central nervous system depression, hypothermia, metabolic acidosis, and cardiac arrest.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Safe Treats in Moderation -->
+          <div class="food-status-column safe">
+            <div class="food-column-header">
+              <span style="font-size: 1.5rem;" aria-hidden="true">✅</span>
+              <h3>Dog-Safe Treats (In Moderation)</h3>
+            </div>
+            <div class="food-item-list">
+              <div class="food-item-entry">
+                <span class="food-item-title">🥕 Crunchy Carrots</span>
+                <span class="food-item-desc">Low in calories, high in beta-carotene and dietary fiber; gentle scraping helps clean teeth during chewing.</span>
+              </div>
+              <div class="food-item-entry">
+                <span class="food-item-title">🍎 Crisp Apples (Without Core or Seeds)</span>
+                <span class="food-item-desc">Rich in vitamins A and C. Always remove the stem, core, and seeds as seeds contain traces of cyanide.</span>
+              </div>
+              <div class="food-item-entry">
+                <span class="food-item-title">🎃 Plain Cooked Pumpkin</span>
+                <span class="food-item-desc">Pure canned pumpkin (no spices or sugar) is wonderful for soothing mild digestive upsets and regulating bowel motility.</span>
+              </div>
+              <div class="food-item-entry">
+                <span class="food-item-title">🫐 Fresh Blueberries</span>
+                <span class="food-item-desc">Packed with natural antioxidants, fiber, and phytochemicals; excellent low-calorie training reward.</span>
+              </div>
+              <div class="food-item-entry">
+                <span class="food-item-title">🥒 Cool Cucumbers</span>
+                <span class="food-item-desc">Hydrating and virtually calorie-free treat, especially refreshing for overweight dogs during warm summer months.</span>
+              </div>
+              <div class="food-item-entry">
+                <span class="food-item-title">🥜 100% Pure Peanut Butter (Xylitol-Free)</span>
+                <span class="food-item-desc">Rich in protein and healthy fats; always verify the ingredients list has zero xylitol or artificial sweeteners.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION C: Grooming and Hygiene -->
+  <section id="grooming" class="care-section alt-bg" aria-labelledby="heading-grooming">
+    <div class="section-wrap">
+      <div class="section-header-wrap">
+        <div class="eyebrow">COAT, SKIN & HYGIENE</div>
+        <h2 id="heading-grooming">Grooming & Hygiene Rituals</h2>
+        <p>
+          Regular grooming is far more than aesthetic upkeep — it is an essential health practice. Hands-on grooming allows you to detect skin irritations, lumps, parasites, and infections early.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Bathing -->
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🛁</div>
+          <h3>Individualized Bathing Routines</h3>
+          <p>
+            Bathing frequency depends heavily on coat type, skin health, and lifestyle. Over-bathing strips the coat of natural protective lipid barriers.
+          </p>
+          <ul>
+            <li><strong>Frequency Guidelines:</strong> Most indoor dogs with healthy skin only require bathing every 2 to 3 months or when visibly dirty. Active outdoor dogs or non-shedding breeds with hair coats benefit from bathing every 4 to 8 weeks.</li>
+            <li><strong>Medical Needs:</strong> Dogs with allergic dermatitis, seborrhea, or fungal infections require specific, veterinary-directed medicated bathing protocols.</li>
+            <li><strong>Dog-Specific pH Shampoo:</strong> Canine epidermis has a near-neutral pH (~7.0–7.4), whereas human skin is acidic (~5.5). Always use dog-formulated shampoo to avoid severe pruritus and barrier disruption.</li>
+            <li><strong>Comfort & Ear Care:</strong> Use lukewarm water (test on inner wrist) and place cotton balls gently in the ears to prevent moisture that predisposes to yeast otitis.</li>
+          </ul>
+        </article>
+
+        <!-- Brushing & Coat Care -->
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🪮</div>
+          <h3>Brushing & Coat Care</h3>
+          <p>
+            Regular brushing removes loose undercoat, stimulates cutaneous circulation, distributes sebum, and prevents painful matting.
+          </p>
+          <ul>
+            <li><strong>Short-Haired Breeds:</strong> Brush weekly with a soft bristle brush or rubber curry mitt to remove dead hair and promote glossiness.</li>
+            <li><strong>Double-Coated Breeds:</strong> Use an undercoat rake and slicker brush 2–3 times weekly, increasing during seasonal spring/fall shedding.</li>
+            <li><strong>Long/Curly-Haired Breeds:</strong> Require daily combing and slicker brushing down to the skin to prevent mats that restrict blood flow.</li>
+            <li><strong>Hands-On Inspection:</strong> Use grooming sessions to examine skin for erythema, dandruff, hot spots, ectoparasites, or new masses.</li>
+          </ul>
+        </article>
+
+        <!-- Nail Trimming -->
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">✂️</div>
+          <h3>Safe Nail Trimming</h3>
+          <p>
+            Overgrown nails alter paw biomechanics, cause compensatory skeletal strain, and can curl painfully into the digital pads.
+          </p>
+          <ul>
+            <li><strong>Schedule Based on Wear:</strong> Dogs walking daily on concrete may naturally wear nails down, while indoor dogs or grass walkers typically need trims every 3 to 4 weeks. Use the 'floor click' sound as an indicator.</li>
+            <li><strong>Anatomy & The Quick:</strong> The quick contains blood vessels and nerves. In light nails, it appears as a pink inner core; in dark nails, remove small progressive slivers and stop when a central grayish/black circle appears.</li>
+            <li><strong>Safety Prep:</strong> Keep styptic powder (silver nitrate/ferric subsulfate) or cornstarch on hand to quickly stem bleeding if the quick is nicked.</li>
+            <li><strong>Positive Counter-Conditioning:</strong> Introduce clippers or motorized rotary grinders gradually with high-value treats to foster cooperation.</li>
+          </ul>
+        </article>
+
+        <!-- Ear Cleaning -->
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">👂</div>
+          <h3>Gentle Ear Cleaning</h3>
+          <p>
+            Dogs with floppy ears (like Spaniels and Retrievers) are particularly susceptible to moisture and bacterial or yeast infections.
+          </p>
+          <ul>
+            <li><strong>Weekly Visual Check:</strong> Healthy ears are pale pink, odorless, and free of excessive brown wax or discharge.</li>
+            <li><strong>Safe Cleaner:</strong> Use a veterinarian-approved ear cleaning solution; squeeze a few drops into the ear canal.</li>
+            <li><strong>Ear Base Massage:</strong> Gently massage the base of the ear for 20 seconds to dissolve wax, then let your dog shake its head.</li>
+            <li><strong>No Cotton Swabs (Q-tips):</strong> Never insert cotton swabs deep into the canal, which can rupture the eardrum; wipe only outer visible areas.</li>
+          </ul>
+        </article>
+
+        <!-- Dental Hygiene -->
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🦷</div>
+          <h3>Daily Dental Hygiene</h3>
+          <p>
+            Periodontal disease affects over 80% of dogs over 3 years old and can seed harmful bacteria into the kidneys, liver, and heart.
+          </p>
+          <ul>
+            <li><strong>Enzymatic Canine Toothpaste:</strong> Never use human toothpaste (fluoride and foaming agents are toxic). Use dog-safe poultry or malt paste.</li>
+            <li><strong>Targeted Brushing:</strong> Aim to brush teeth 3 to 7 times weekly with a soft finger brush or double-headed dog toothbrush.</li>
+            <li><strong>Veterinary Dental Chews:</strong> Approved dental chews and dental water additives complement brushing to reduce plaque and calculus.</li>
+            <li><strong>Warning Indicators:</strong> Foul breath, bleeding gums, loose teeth, or pawing at the mouth require professional veterinary dental evaluation.</li>
+          </ul>
+        </article>
+
+        <!-- Paw & Pad Care -->
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🐾</div>
+          <h3>Paw & Pad Protection</h3>
+          <p>
+            Paws endure harsh walking surfaces, hot asphalt in summer, and ice or de-icing salts in winter.
+          </p>
+          <ul>
+            <li><strong>Post-Walk Wipe Downs:</strong> Wipe paws after walks to remove road salts, toxic chemicals, and outdoor allergens.</li>
+            <li><strong>Pad Moisturizers:</strong> Apply pet-safe paw balms if pads become cracked, rough, or peeling.</li>
+            <li><strong>Interdigital Checks:</strong> Check between toes for foxtails, burrs, pebbles, ticks, or reddened skin.</li>
+            <li><strong>Surface Testing:</strong> Test hot pavement with the back of your hand for 7 seconds — if too hot for you, it will burn your dog's pads.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION D: Health and Wellness -->
+  <section id="health" class="care-section" aria-labelledby="heading-health">
+    <div class="section-wrap">
+      <div class="section-header-wrap">
+        <div class="eyebrow">PREVENTATIVE MEDICINE & CARE</div>
+        <h2 id="heading-health">Health, Wellness & Preventative Care</h2>
+        <p>
+          Proactive preventative healthcare is the most effective way to protect your dog against preventable diseases and ensure a long, energetic life by your side.
+        </p>
+      </div>
+
+      <!-- Veterinary Disclaimer Callout -->
+      <aside class="vet-disclaimer-box" role="note" aria-label="Veterinary Medical Disclaimer">
+        <div class="vet-disclaimer-icon" aria-hidden="true">🩺</div>
+        <div class="vet-disclaimer-text">
+          <h4>Veterinary Guidance & Health Disclaimer</h4>
+          <p>
+            The educational information provided on PetSathi is designed to support responsible canine companionship and awareness. <strong>PetSathi does not provide medical diagnoses, prescriptions, drug dosages, or treatments.</strong> Always consult a qualified, licensed veterinarian for specific medical examinations, vaccinations, diagnostic assessments, and personalized treatment plans for your pet.
+          </p>
+        </div>
+      </aside>
+
+      <!-- 4 Core Health Pillars -->
+      <div class="grid-2" style="margin-bottom: 32px;">
+        <!-- Veterinary Exams -->
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🏥</div>
+          <h3>Regular Veterinary Wellness Exams</h3>
+          <p>
+            Proactive physical examinations identify silent subclinical disease processes long before overt symptoms manifest:
+          </p>
+          <ul>
+            <li><strong>Annual Wellness Check:</strong> Young and healthy adult dogs should receive a comprehensive physical examination at least once per year.</li>
+            <li><strong>Senior Care Schedule (AAHA Guidelines):</strong> The American Animal Hospital Association recommends examinations every 6 months for senior dogs (typically age 7 and older, or 5+ for giant breeds) because physiological changes and degenerative diseases progress rapidly in aging canines.</li>
+            <li><strong>Clinical Scope:</strong> Veterinary teams auscultate cardiac and respiratory fields, palpate abdominal organs, assess body condition score (BCS), inspect dentition, and grade orthopedic joint mobility.</li>
+            <li><strong>Baseline Diagnostics:</strong> Periodic complete blood counts (CBC), chemistry panels, urinalysis, and fecal screenings establish reliable individual baseline markers.</li>
+          </ul>
+        </article>
+
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">💉</div>
+          <h3>Vaccination Awareness</h3>
+          <p>
+            Vaccines trigger protective antibodies against highly contagious and potentially fatal viral and bacterial diseases:
+          </p>
+          <ul>
+            <li><strong>Core Vaccines (Essential):</strong> Rabies (required by law in most jurisdictions) and DHPP / DAPP (protecting against Distemper, Infectious Hepatitis, Parvovirus, and Parainfluenza).</li>
+            <li><strong>Non-Core Vaccines (Lifestyle-Dependent):</strong> Bordetella (kennel cough for social dogs), Leptospirosis (wildlife & water exposure), and Lyme disease (tick endemic zones).</li>
+            <li><strong>Puppy Booster Series:</strong> Puppies receive a sequence of maternal antibody-clearing boosters starting at 6–8 weeks through 16 weeks of age.</li>
+            <li><strong>Adult Boosters:</strong> Boosters are administered annually or every 3 years according to veterinary protocol and antibody titer testing.</li>
+          </ul>
+        </article>
+
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🪱</div>
+          <h3>Internal Parasite Screening & Deworming</h3>
+          <p>
+            Intestinal worms steal essential nutrients, cause gastrointestinal hemorrhaging, and can transmit to human family members (zoonosis):
+          </p>
+          <ul>
+            <li><strong>Common Endoparasites:</strong> Roundworms, hookworms, whipworms, and tapeworms can inhabit the digestive tract.</li>
+            <li><strong>Microscopic Fecal Screenings:</strong> Bring a fresh stool sample to your veterinarian at least once or twice yearly for parasite egg floatation.</li>
+            <li><strong>Preventative Protocol:</strong> Many monthly heartworm medications also contain broad-spectrum dewormers to protect against intestinal parasites.</li>
+            <li><strong>Heartworm Prevention:</strong> Transmitted by mosquitoes, heartworms live in pulmonary vessels and heart ventricles; year-round preventative medication is vital.</li>
+          </ul>
+        </article>
+
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🛡️</div>
+          <h3>Flea & Tick Prevention</h3>
+          <p>
+            Ectoparasites cause acute allergic dermatitis, transmit systemic diseases, and can quickly infest your living environment:
+          </p>
+          <ul>
+            <li><strong>Year-Round Defense:</strong> Maintain vet-prescribed monthly oral chews, spot-on topical treatments, or preventative collars year-round.</li>
+            <li><strong>Lyme & Tick-Borne Illness:</strong> Ticks transmit Lyme disease, Ehrlichiosis, and Anaplasmosis. Prompt tick removal within 24 hours significantly reduces transmission.</li>
+            <li><strong>Post-Walk Tick Inspections:</strong> After outdoor walks, inspect between toes, inside ears, under the tail, around the groin, and under the collar.</li>
+            <li><strong>Safe Removal:</strong> Use fine-tipped tweezers or a specialized tick-remover tool; grasp close to the skin and pull straight upward without twisting.</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Emergency vs Urgent Clinical Signs Box -->
+      <div style="background: white; border: 1px solid var(--alert-red-border); border-radius: 20px; padding: 32px; box-shadow: var(--shadow-sm);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <span style="font-size: 2rem;" aria-hidden="true">🚨</span>
+          <div>
+            <h3 style="margin: 0; color: var(--alert-red-text); font-size: 1.35rem;">
+              Critical Emergencies vs. Prompt Veterinary Symptoms
+            </h3>
+            <p style="margin: 4px 0 0; font-size: 0.9rem; color: #5a6b61;">
+              Recognizing the clinical difference between immediate life threats and non-immediate symptoms saves lives.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 20px; gap: 20px;">
+          <!-- Critical Emergency (Immediate Hospitalization) -->
+          <div style="background: var(--alert-red-bg); padding: 22px; border-radius: 14px; border: 2px solid #ffa39e;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="font-size: 1.3rem;" aria-hidden="true">⛔</span>
+              <strong style="color: var(--alert-red-text); font-size: 1.05rem;">IMMEDIATE EMERGENCY (Go to ER Vet Now)</strong>
+            </div>
+            <p style="font-size: 0.87rem; color: #5c1118; margin: 0 0 10px; line-height: 1.5;">
+              These symptoms indicate acute decompensation or life-threatening organ failure. Transport to the nearest 24/7 veterinary emergency hospital immediately:
+            </p>
+            <ul style="margin: 0; padding-left: 18px; font-size: 0.87rem; color: #431015; line-height: 1.6;">
+              <li><strong>Suspected Gastric Dilatation-Volvulus (Bloat):</strong> Non-productive retching, pacing, severe restlessness, and an acutely distended, tight abdomen.</li>
+              <li><strong>Acute Respiratory Distress:</strong> Cyanotic (blue/purple) or pale white mucous membranes/gums, gasping, or open-mouth struggling to breathe.</li>
+              <li><strong>Severe Neurological Events:</strong> Sudden collapse, unresponsiveness, active seizures lasting >3 minutes, or multiple cluster seizures.</li>
+              <li><strong>Complete Urinary Blockage:</strong> Straining painfully with zero urine output (a critical emergency, particularly in male dogs).</li>
+              <li><strong>Acute Toxic Ingestion:</strong> Known ingestion of antifreeze, rodenticides, xylitol, human medications, or concentrated dark chocolate.</li>
+              <li><strong>Major Trauma:</strong> Hit-by-car accidents, penetrating bite wounds, or arterial hemorrhage.</li>
+            </ul>
+          </div>
+
+          <!-- Prompt Attention (Within 24 Hours) -->
+          <div style="background: var(--alert-amber-bg); padding: 22px; border-radius: 14px; border: 2px solid var(--alert-amber-border);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="font-size: 1.3rem;" aria-hidden="true">⚠️</span>
+              <strong style="color: var(--alert-amber-text); font-size: 1.05rem;">PROMPT ATTENTION (Contact Vet Within 24h)</strong>
+            </div>
+            <p style="font-size: 0.87rem; color: #613b00; margin: 0 0 10px; line-height: 1.5;">
+              These symptoms are not immediately life-threatening if the dog remains alert and responsive, but require prompt veterinary diagnosis:
+            </p>
+            <ul style="margin: 0; padding-left: 18px; font-size: 0.87rem; color: #523200; line-height: 1.6;">
+              <li><strong>Prolonged Digestive Upset:</strong> Vomiting or loose diarrhea persisting past 24 hours while remaining hydrated and alert.</li>
+              <li><strong>Persistent Musculoskeletal Lameness:</strong> Limping, stiffness, or reluctance to rise lasting more than a day without trauma.</li>
+              <li><strong>Dermatological & Ear Signs:</strong> Persistent head shaking, foul ear odor, dark waxy discharge, or intense localized skin scratching.</li>
+              <li><strong>Metabolic Shifts:</strong> Progressive decrease in appetite (anorexia >24 hours) or noticeable increases in daily water consumption and urination.</li>
+              <li><strong>Ophthalmic Signs:</strong> Squinting, cloudiness, or persistent ocular discharge.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION E: Puppy Care -->
+  <section id="puppy" class="care-section alt-bg" aria-labelledby="heading-puppy">
+    <div class="section-wrap">
+      <div class="section-header-wrap">
+        <div class="eyebrow">EARLY LIFE FOUNDATIONS</div>
+        <h2 id="heading-puppy">Puppy Care & Development</h2>
+        <p>
+          The first months of a puppy's life lay the emotional, behavioural, and physical foundation for adulthood. Gentle patience, structured routines, and positive reinforcement guide them towards becoming confident companions.
+        </p>
+      </div>
+
+      <!-- Feature Split Banner for Puppy -->
+      <div class="media-split-box">
+        <div class="media-split-image">
+          <span class="media-split-badge">Puppy Milestones</span>
+          <img
+            src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&w=800&q=85"
+            alt="Adorable young puppy exploring a safe garden environment"
+            loading="lazy"
+          >
+        </div>
+        <div class="media-split-content">
+          <h3>Preparing a Safe Sanctuary</h3>
+          <p>
+            Puppies are naturally inquisitive explorers who explore the world with their mouths. Preparing a dedicated safe environment protects both your puppy and your home:
+          </p>
+          <ul>
+            <li><strong>Conceal Electrical Cords:</strong> Use heavy-duty cord protectors or tuck wires behind heavy furniture.</li>
+            <li><strong>Remove Toxic Household Plants:</strong> Check that peace lilies, sago palms, philodendrons, and aloe are completely inaccessible.</li>
+            <li><strong>Secure Garbage & Chemicals:</strong> Install child-proof safety latches on floor-level cabinets storing cleaners or trash.</li>
+            <li><strong>Designated Sleep Zone:</strong> Position a comfortable, size-appropriate crate with washable fleece bedding in a quiet corner.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4 Pillars of Puppy Upbringing -->
+      <div class="grid-4">
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🍼</div>
+          <h3>Puppy Nutrition Basics</h3>
+          <p>
+            Young pups require double the energy per kilogram compared to adult dogs to fuel rapid cellular and skeletal development.
+          </p>
+          <ul>
+            <li>Feed specialized puppy formula high in protein and DHA for healthy cognitive and retinal growth.</li>
+            <li>Divide daily rations into 3 to 4 smaller meals to prevent hypoglycemia in small breeds.</li>
+            <li>Keep meals on a predictable schedule to make house-training potty timing easy to anticipate.</li>
+          </ul>
+        </article>
+
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🎓</div>
+          <h3>Early Positive Training</h3>
+          <p>
+            Puppy brains are sponges. Early positive reinforcement builds trust, clarity, and enthusiastic cooperation.
+          </p>
+          <ul>
+            <li>Reward desired behaviors immediately with high-value treats, praise, and gentle head scratches.</li>
+            <li>Never use physical corrections, yelling, or punishment, which foster anxiety and fear-based aggression.</li>
+            <li>Keep training lessons brief, upbeat, and fun (3 to 5 minutes multiple times per day).</li>
+          </ul>
+        </article>
+
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🌍</div>
+          <h3>The Critical Socialization Window</h3>
+          <p>
+            The primary sensitive socialization period occurs between <strong>3 and 12–14 weeks of age</strong> and permanently shapes confidence and behavioral health.
+          </p>
+          <ul>
+            <li><strong>AVSAB Standard of Care:</strong> The American Veterinary Society of Animal Behavior states that socialization should begin before complete vaccination (as early as 7–8 weeks) in controlled, clean environments, because behavioral issues—not infectious disease—are statistically the leading cause of death in young dogs.</li>
+            <li><strong>Positive Controlled Exposures:</strong> Safely expose puppies to diverse people, surface textures (grass, pavement, carpet), gentle children, and common household noises.</li>
+            <li><strong>Prerequisites for Classes:</strong> Ensure playmates are clinically healthy, up-to-date on initial puppy vaccines (at least one dose 7 days prior), and that classes take place on sanitized, non-public surfaces.</li>
+          </ul>
+        </article>
+
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">💤</div>
+          <h3>Sleep & Playtime Balance</h3>
+          <p>
+            Balancing physical exploration with abundant restorative sleep prevents over-arousal, behavioral frustration, and stress.
+          </p>
+          <ul>
+            <li><strong>16 to 20 Hours of Sleep:</strong> Growing puppies require extensive sleep for memory consolidation, immune development, and growth hormone release.</li>
+            <li><strong>Preventing Over-Tiredness:</strong> Overtired puppies exhibit hyperactive biting and distress. Enforce quiet, scheduled crate naps after 30–60 minutes of active awake time.</li>
+            <li><strong>Age-Appropriate Play:</strong> Keep structured training and gentle interactive play to brief 5–10 minute intervals to protect immature growth plates from joint strain.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION F: Safety Tips -->
+  <section id="safety" class="care-section" aria-labelledby="heading-safety">
+    <div class="section-wrap">
+      <div class="section-header-wrap">
+        <div class="eyebrow">ACCIDENT PREVENTION</div>
+        <h2 id="heading-safety">Canine Safety & Household Protection</h2>
+        <p>
+          Dogs encounter numerous hidden hazards in human domestic spaces and outdoor environments. Proactive prevention prevents emergency veterinary interventions.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🧪</div>
+          <h3>Lock Away Harmful Substances</h3>
+          <p>
+            Common domestic items present severe toxic risks if ingested by curious pets:
+          </p>
+          <ul>
+            <li><strong>Human Medications:</strong> Acetaminophen, ibuprofen, antidepressants, and ADHD prescriptions are leading causes of pet poisoning.</li>
+            <li><strong>Household Cleaners:</strong> Bleach, ammonia, drain unblockers, and disinfectant pods must be locked in high cupboards.</li>
+            <li><strong>Automotive Antifreeze:</strong> Ethylene glycol has a sweet taste but is fatal even in teaspoon amounts; immediately clean any garage puddles.</li>
+            <li><strong>Garden Pest Poisons:</strong> Rodenticides and slug pellets are extremely attractive and deadly to dogs. Avoid their use entirely.</li>
+          </ul>
+        </article>
+
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">💧</div>
+          <h3>Outdoor Water Hazards</h3>
+          <p>
+            Natural and stagnant outdoor water sources harbor invisible biological and chemical dangers:
+          </p>
+          <ul>
+            <li><strong>Stagnant Puddles:</strong> Puddles contaminated with wild animal urine frequently transmit Leptospirosis, which attacks kidneys and liver.</li>
+            <li><strong>Blue-Green Algae:</strong> Never allow dogs to swim in or drink from warm, stagnant ponds with green scum; cyanobacteria toxins cause fatal neurotoxicity.</li>
+            <li><strong>Salt Water Ingestion:</strong> Ingesting large amounts of ocean seawater on beach outings causes severe osmotic dehydration and hypernatremia.</li>
+            <li><strong>Toilet Bowl Water:</strong> Keep toilet lids closed; continuous chemical cleaner disc residue can burn oral mucosa and cause vomiting.</li>
+          </ul>
+        </article>
+
+        <article class="care-card">
+          <div class="card-icon-bubble" aria-hidden="true">🏡</div>
+          <h3>Secure Environment & Microchipping</h3>
+          <p>
+            Physical security and reliable identification ensure lost pets find their way home safely:
+          </p>
+          <ul>
+            <li><strong>Secure Yard Fencing:</strong> Inspect fence perimeter regularly for digging holes, loose boards, or climbable objects near boundaries.</li>
+            <li><strong>Registered Microchip:</strong> Ensure your dog is implanted with an ISO microchip and keep contact phone numbers up to date in the registry.</li>
+            <li><strong>Sturdy Harness & Collar:</strong> Attach a visible ID tag with your active phone number; use a secure harness for walking.</li>
+            <li><strong>Weather Extremes:</strong> Never leave dogs in parked cars during hot weather; temperatures can reach fatal levels in under 10 minutes.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Daily Care Checklist -->
+  <section id="daily-checklist" class="care-section alt-bg" aria-labelledby="heading-checklist">
+    <div class="section-wrap">
+      <div class="checklist-wrap">
+        <div class="checklist-header">
+          <div>
+            <div class="eyebrow" style="margin-bottom: 6px;">DAILY CARE COMPANION</div>
+            <h3 id="heading-checklist" style="margin: 0; font-size: 1.5rem;">Daily Dog Care Checklist</h3>
+          </div>
+          <div style="font-weight: 700; color: var(--dog-accent);" id="checklistCounter">
+            0 of 8 completed (0%)
+          </div>
+        </div>
+
+        <div class="checklist-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="checklist-progress-fill" id="checklistProgressFill"></div>
+        </div>
+
+        <div class="checklist-grid" id="checklistContainer">
+          <label class="checklist-item">
+            <input type="checkbox" data-task="water">
+            <div class="checklist-item-content">
+              <span class="checklist-item-title">Refresh Water Bowl</span>
+              <span class="checklist-item-hint">Wipe bowl clean and provide cool, fresh drinking water.</span>
+            </div>
+          </label>
+
+          <label class="checklist-item">
+            <input type="checkbox" data-task="meals">
+            <div class="checklist-item-content">
+              <span class="checklist-item-title">Measured Morning & Evening Meals</span>
+              <span class="checklist-item-hint">Feed age-appropriate portions on a consistent schedule.</span>
+            </div>
+          </label>
+
+          <label class="checklist-item">
+            <input type="checkbox" data-task="walk">
+            <div class="checklist-item-content">
+              <span class="checklist-item-title">Daily Exercise & Outdoor Walk</span>
+              <span class="checklist-item-hint">At least 30–60 minutes of physical walk and mental sniffing.</span>
+            </div>
+          </label>
+
+          <label class="checklist-item">
+            <input type="checkbox" data-task="teeth">
+            <div class="checklist-item-content">
+              <span class="checklist-item-title">Dental Tooth Brushing / Chew</span>
+              <span class="checklist-item-hint">Brush with canine toothpaste or give a veterinary dental chew.</span>
+            </div>
+          </label>
+
+          <label class="checklist-item">
+            <input type="checkbox" data-task="brush">
+            <div class="checklist-item-content">
+              <span class="checklist-item-title">Coat Brushing & Hands-On Check</span>
+              <span class="checklist-item-hint">Remove loose fur and check skin for ticks, fleas, or redness.</span>
+            </div>
+          </label>
+
+          <label class="checklist-item">
+            <input type="checkbox" data-task="mental">
+            <div class="checklist-item-content">
+              <span class="checklist-item-title">Mental Stimulation & Play</span>
+              <span class="checklist-item-hint">10–15 minutes of puzzle toys, training practice, or fetch.</span>
+            </div>
+          </label>
+
+          <label class="checklist-item">
+            <input type="checkbox" data-task="paws">
+            <div class="checklist-item-content">
+              <span class="checklist-item-title">Post-Walk Paw Wipe</span>
+              <span class="checklist-item-hint">Check paw pads for burrs, sharp pebbles, or chemical residue.</span>
+            </div>
+          </label>
+
+          <label class="checklist-item">
+            <input type="checkbox" data-task="affection">
+            <div class="checklist-item-content">
+              <span class="checklist-item-title">Loving Bonding Time</span>
+              <span class="checklist-item-hint">Cuddle, gentle petting, and relaxing companionship before sleep.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions -->
+  <section id="faqs" class="care-section" aria-labelledby="heading-faqs">
+    <div class="section-wrap">
+      <div class="section-header-wrap">
+        <div class="eyebrow">QUICK ANSWERS</div>
+        <h2 id="heading-faqs">Frequently Asked Questions</h2>
+        <p>
+          Common questions dog parents ask regarding everyday wellness, nutrition, grooming, and veterinary care.
+        </p>
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How often should I take my dog to the veterinarian?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Healthy adult dogs should visit their veterinarian at least once a year for a comprehensive wellness checkup, dental check, and booster vaccinations. Senior dogs (generally age 7 and older) benefit from biannual checkups every six months. Puppies require several visits every 3 to 4 weeks until approximately 16 weeks of age to receive core vaccine boosters and deworming treatments.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I feed my dog homemade food instead of commercial kibble?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              While homemade diets can be beneficial, dogs require very precise ratios of amino acids, calcium, phosphorus, zinc, essential fatty acids, and vitamins. Unbalanced home cooking frequently leads to severe nutritional deficiencies or skeletal imbalances. If you choose a home-prepared diet, always collaborate with a board-certified veterinary nutritionist to formulate a complete, balanced recipe tailored to your pet.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How can I tell if my dog is in pain or feeling sick?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Dogs often mask discomfort. Subtler indicators of pain include reluctance to jump or climb stairs, pacing, panting without heat or exercise, trembling, squinting, changes in sleeping posture, decreased appetite, hiding, or growling when touched in sensitive areas. If you observe behavioral changes, contact your veterinarian for an exam.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How often should I trim my dog's nails?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Most dogs need nail trims every 3 to 4 weeks. Dogs that walk regularly on concrete sidewalks may naturally wear down their nails, requiring trims less frequently, whereas indoor dogs or those walking on grass need more frequent care. If you can hear their nails clicking against hard floors, it is time for a gentle trim.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Why is human toothpaste unsafe for dogs?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Human toothpaste contains fluoride, detergents, and frequently xylitol (artificial sweetener). Because dogs cannot spit out paste and will swallow it, these ingredients can cause severe gastrointestinal irritation, fluoride toxicity, or lethal hypoglycemia. Always use veterinary-formulated enzymatic dog toothpaste, which is completely safe to swallow and available in dog-friendly flavors like poultry or malt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-wrap" aria-labelledby="cta-heading">
+    <div class="care-cta-section">
+      <h2 id="cta-heading">Be the Best Dog Parent You Can Be</h2>
+      <p>
+        Responsible pet parenthood is a rewarding journey of companionship, patience, and love. Explore more canine resources, find reliable pet walkers, or learn about different dog breeds on PetSathi.
+      </p>
+      <div class="care-cta-buttons">
+        <a class="button button-light" href="index.html" id="cta-back-dogs">← Back to Dogs Landing Page</a>
+        <a class="button button-outline" style="border-color: white; color: white;" href="breeds.html" id="cta-explore-breeds">Explore Dog Breeds ↗</a>
+        <a class="button button-outline" style="border-color: white; color: white;" href="walking.html" id="cta-walking-guide">Exercise & Walking Guide ↗</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
+<!-- Standard PetSathi Footer -->
 <footer class="footer">
   <div class="section-wrap footer-grid">
     <div>
-      <a class="brand" href="../../../../index.html">🐾 Pet<span>Sathi</span></a>
+      <a class="brand" href="../../../../index.html" id="footer-brand">🐾 Pet<span>Sathi</span></a>
       <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
     </div>
     <div>
       <b>Explore</b>
-      <a href="../index.html">Pet Categories</a>
-      <a href="../../services/index.html">Services</a>
-      <a href="../../walker/index.html">Find a Walker</a>
-      <a href="../../services/dog-walking.html">Dog Walking Service</a>
+      <a href="../index.html" id="footer-link-categories">Pet Categories</a>
+      <a href="../../services/index.html" id="footer-link-services">Services</a>
+      <a href="../../walker/index.html" id="footer-link-walkers">Find a Walker</a>
+      <a href="../../services/dog-walking.html" id="footer-link-walking">Dog Walking Service</a>
     </div>
     <div>
       <b>PetSathi</b>
-      <a href="../../about.html">About Us</a>
-      <a href="../../auth/login.html">Log in</a>
-      <a href="../../auth/register.html">Register</a>
+      <a href="../../about.html" id="footer-link-about">About Us</a>
+      <a href="../../auth/login.html" id="footer-link-login">Log in</a>
+      <a href="../../auth/register.html" id="footer-link-register">Register</a>
     </div>
     <div>
       <b>Dog Guides</b>
-      <a href="index.html">Dogs Landing Page</a>
-      <a href="breeds.html">Dog Breeds</a>
-      <a href="walking.html">Exercise & Walking</a>
+      <a href="index.html" id="footer-link-dogs">Dogs Landing Page</a>
+      <a href="breeds.html" id="footer-link-breeds">Dog Breeds</a>
+      <a href="walking.html" id="footer-link-walking-guide">Exercise & Walking</a>
+      <a href="care.html" id="footer-link-care">Dog Care & Health</a>
     </div>
   </div>
   <div class="section-wrap footer-bottom">
@@ -137,6 +1509,96 @@
     <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
   </div>
 </footer>
+
 <script src="../../../js/main.js"></script>
+<script>
+  // Interactive Daily Checklist Tracker
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('#checklistContainer input[type="checkbox"]');
+    const counter = document.getElementById('checklistCounter');
+    const fillBar = document.getElementById('checklistProgressFill');
+
+    function updateProgress() {
+      let checkedCount = 0;
+      checkboxes.forEach(cb => {
+        const item = cb.closest('.checklist-item');
+        if (cb.checked) {
+          checkedCount++;
+          if (item) item.classList.add('checked');
+        } else {
+          if (item) item.classList.remove('checked');
+        }
+      });
+
+      const total = checkboxes.length;
+      const percentage = total > 0 ? Math.round((checkedCount / total) * 100) : 0;
+
+      if (counter) {
+        counter.textContent = `${checkedCount} of ${total} completed (${percentage}%)`;
+      }
+      if (fillBar) {
+        fillBar.style.width = `${percentage}%`;
+        fillBar.parentElement.setAttribute('aria-valuenow', percentage);
+      }
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', updateProgress);
+    });
+
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        // Close other FAQ items
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('open');
+            const otherBtn = other.querySelector('.faq-question');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle current item
+        if (isOpen) {
+          item.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Quick Jump Scrollspy
+    const navLinks = document.querySelectorAll('.quick-nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    function onScroll() {
+      let currentId = '';
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 140 && rect.bottom >= 140) {
+          currentId = section.getAttribute('id');
+        }
+      });
+      if (currentId) {
+        navLinks.forEach(link => {
+          const isActive = link.getAttribute('href') === `#${currentId}`;
+          link.classList.toggle('active', isActive);
+          if (isActive) {
+            link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        });
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  });
+</script>
 </body>
 </html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet eight popular pet reptiles and learn about their size, lifespan, habitat, feeding, lighting, and responsible care.">
+  <title>Pet Reptiles &amp; Care Guide | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <style>
+    .reptile-hero {
+      padding: 58px 24px 62px;
+      text-align: center;
+      background: linear-gradient(135deg, #edf5e9, #fbfaf5 58%, #f5f0e7);
+      border-block: 1px solid var(--line);
+    }
+    .reptile-hero h1 {
+      max-width: 850px;
+      margin: 18px auto 14px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.13;
+      letter-spacing: -2px;
+    }
+    .reptile-hero h1 em { color: var(--green); font-style: normal; }
+    .reptile-hero p { max-width: 740px; margin: auto; line-height: 1.8; }
+    .reptile-breadcrumb {
+      width: min(1160px, calc(100% - 48px));
+      margin: 20px auto;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+    .reptile-breadcrumb a { color: var(--green); font-weight: 700; }
+    .reptile-section {
+      width: min(1160px, calc(100% - 48px));
+      margin: auto;
+      padding: 60px 0 30px;
+      scroll-margin-top: 95px;
+    }
+    .reptile-section-heading { max-width: 750px; margin: 0 auto 34px; text-align: center; }
+    .reptile-section-heading h2 { margin: 9px 0; font-size: clamp(1.8rem, 3vw, 2.45rem); }
+    .reptile-section-heading p { line-height: 1.75; }
+    .reptile-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .reptile-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: #fff;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .reptile-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .reptile-card figure { position: relative; margin: 0; }
+    .reptile-card figure img { width: 100%; height: 205px; object-fit: cover; background: var(--soft); }
+    .photo-credit { padding: 6px 12px; color: var(--muted); font-size: .68rem; }
+    .photo-credit a { text-decoration: underline; text-underline-offset: 2px; }
+    .reptile-card-body { display: flex; flex: 1; flex-direction: column; padding: 18px; }
+    .reptile-card h3 { margin: 0 0 9px; font-size: 1.15rem; letter-spacing: -.4px; }
+    .reptile-card p { margin: 0 0 14px; font-size: .86rem; line-height: 1.7; }
+    .reptile-facts { display: grid; gap: 8px; margin: 0 0 15px; }
+    .reptile-facts div { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 7px; border-bottom: 1px solid var(--line); font-size: .78rem; }
+    .reptile-facts dt { color: var(--muted); }
+    .reptile-facts dd { margin: 0; color: var(--ink); font-weight: 700; text-align: right; }
+    .reptile-card h4 { margin: 2px 0 5px; font: 700 .8rem "DM Sans", sans-serif; color: var(--green); }
+    .reptile-card .care-copy { margin-bottom: 0; }
+    .guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .guide-card { padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+    .guide-card h3 { margin: 0 0 9px; font-size: 1.08rem; letter-spacing: -.3px; }
+    .guide-card p, .guide-card li { color: var(--muted); font-size: .88rem; line-height: 1.75; }
+    .guide-card p { margin: 0; }
+    .guide-card ul { margin: 8px 0 0; padding-left: 20px; }
+    .safety-panel {
+      width: min(1000px, calc(100% - 48px));
+      margin: 45px auto 60px;
+      padding: 30px;
+      border: 1px solid #dfe9dc;
+      border-radius: 18px;
+      background: #f1f5ef;
+      scroll-margin-top: 95px;
+    }
+    .safety-panel h2 { margin: 0 0 14px; font-size: 1.65rem; letter-spacing: -.5px; }
+    .safety-panel ul { margin: 0; padding-left: 21px; }
+    .safety-panel li { margin: 8px 0; color: #59675e; font-size: .88rem; line-height: 1.7; }
+    .sources { width: min(1000px, calc(100% - 48px)); margin: 0 auto 55px; }
+    .sources h2 { font-size: 1.35rem; letter-spacing: -.3px; }
+    .sources p { font-size: .82rem; line-height: 1.8; }
+    .sources a { color: var(--green); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+    .page-jump-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
+    .page-jump-links a { padding: 8px 14px; border: 1px solid #dce5db; border-radius: 999px; background: rgba(255,255,255,.8); color: var(--green); font-size: .8rem; font-weight: 700; }
+    @media (max-width: 850px) {
+      .reptile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .reptile-breadcrumb, .reptile-section, .sources { width: calc(100% - 34px); }
+      .reptile-hero { padding: 45px 18px; }
+      .reptile-grid, .guide-grid { grid-template-columns: 1fr; }
+      .reptile-card figure img { height: 220px; }
+      .safety-panel { width: calc(100% - 34px); padding: 23px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../../index.html"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../../../../index.html">Home</a>
+      <a href="../index.html">Explore Pets</a>
+      <a href="../../services/index.html">Services</a>
+      <a href="../../walker/index.html">Find a Walker</a>
+      <a href="../../about.html">About Us</a>
+      <a href="../../auth/login.html">Log in</a>
+      <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <nav class="reptile-breadcrumb" aria-label="Breadcrumb">
+      <a href="../../../../index.html">Home</a> &nbsp;›&nbsp;
+      <a href="../index.html">Explore Pets</a> &nbsp;›&nbsp;
+      <span aria-current="page">Reptiles</span>
+    </nav>
+
+    <section class="reptile-hero">
+      <div class="eyebrow">PetSathi • REPTILE CARE</div>
+      <h1>Meet eight remarkable <em>pet reptiles</em></h1>
+      <p>Reptiles have specialized needs for heat, light, humidity, space and diet. Explore the basics for eight popular species, and use reputable, species-specific guidance before bringing one home.</p>
+      <nav class="page-jump-links" aria-label="Page sections">
+        <a href="#species">Meet the reptiles</a>
+        <a href="#habitat">Habitat &amp; lighting</a>
+        <a href="#feeding">Feeding</a>
+        <a href="#safety">Safe, responsible care</a>
+      </nav>
+    </section>
+
+    <section class="reptile-section" id="species">
+      <div class="reptile-section-heading">
+        <div class="eyebrow">EIGHT SPECIES, EIGHT DIFFERENT SETUPS</div>
+        <h2>Get to know your future companion</h2>
+        <p>Sizes and lifespans are approximate. Sex, genetics, diet and quality of care can affect an individual animal's adult size and longevity.</p>
+      </div>
+      <div class="reptile-grid">
+        <article class="reptile-card">
+          <figure>
+            <img src="../../../assets/images/reptiles/leopard-gecko.jpg" alt="Spotted leopard gecko resting on a branch" loading="lazy" width="960" height="640">
+            <figcaption class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Eublepharis_macularius_2009_G6.jpg" target="_blank" rel="noopener noreferrer">George Chernilevsky / public domain</a></figcaption>
+          </figure>
+          <div class="reptile-card-body">
+            <h3>Leopard Gecko</h3>
+            <p>A ground-dwelling, mostly nocturnal gecko recognized by its spotted pattern and movable eyelids. Adults are usually calm, but need gentle, supported handling.</p>
+            <dl class="reptile-facts"><div><dt>Adult size</dt><dd>7–10 in (18–25 cm)</dd></div><div><dt>Lifespan</dt><dd>10–20 years</dd></div><div><dt>Wild habitat</dt><dd>Rocky, dry parts of South Asia</dd></div></dl>
+            <h4>Care essentials</h4><p class="care-copy">Provide a secure, ground-focused enclosure with a warm-to-cool gradient, a humid hide and fresh water. Offer a range of appropriately sized, gut-loaded insects; supplement as advised by a reptile veterinarian. Low-level UVB is beneficial.</p>
+          </div>
+        </article>
+        <article class="reptile-card">
+          <figure>
+            <img src="../../../assets/images/reptiles/bearded-dragon.jpg" alt="Bearded dragon in its natural surroundings" loading="lazy" width="960" height="640">
+            <figcaption class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Pogona_vitticeps_close-up_2009_G3.jpg" target="_blank" rel="noopener noreferrer">George Chernilevsky / public domain</a></figcaption>
+          </figure>
+          <div class="reptile-card-body">
+            <h3>Bearded Dragon</h3>
+            <p>A curious, sun-loving lizard from Australia's arid interior. It basks on rocks and uses body language, including its namesake beard, to communicate.</p>
+            <dl class="reptile-facts"><div><dt>Adult size</dt><dd>18–24 in (45–60 cm)</dd></div><div><dt>Lifespan</dt><dd>10–15 years</dd></div><div><dt>Wild habitat</dt><dd>Dry woodlands and scrubland</dd></div></dl>
+            <h4>Care essentials</h4><p class="care-copy">A spacious, well-ventilated enclosure needs a measured basking zone, a cooler retreat and strong, correctly installed UVB. Feed varied leafy greens and vegetables plus appropriately sized insects; adjust the balance as the animal matures.</p>
+          </div>
+        </article>
+        <article class="reptile-card">
+          <figure>
+            <img src="../../../assets/images/reptiles/corn-snake.jpg" alt="Orange and red patterned corn snake coiled on a branch" loading="lazy" width="960" height="640">
+            <figcaption class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Corn_snake_(Pantherophis_guttatus)_1.jpg" target="_blank" rel="noopener noreferrer">Killarnee / CC BY-SA 4.0</a></figcaption>
+          </figure>
+          <div class="reptile-card-body">
+            <h3>Corn Snake</h3>
+            <p>A slender North American constrictor known for its striking patterns. Corn snakes explore actively and are skilled escape artists.</p>
+            <dl class="reptile-facts"><div><dt>Adult size</dt><dd>3–5 ft (90–150 cm)</dd></div><div><dt>Lifespan</dt><dd>15–20 years</dd></div><div><dt>Wild habitat</dt><dd>Fields, forests and farms in the southeastern US</dd></div></dl>
+            <h4>Care essentials</h4><p class="care-copy">Use a secure, escape-proof enclosure with snug hides, climbing branches and a warm-to-cool temperature gradient. Feed appropriately sized, fully thawed frozen rodents on a schedule suited to age and body condition; leave the snake undisturbed after meals.</p>
+          </div>
+        </article>
+        <article class="reptile-card">
+          <figure>
+            <img src="../../../assets/images/reptiles/ball-python.jpg" alt="Ball python resting with its body gently coiled" loading="lazy" width="960" height="640">
+            <figcaption class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Ball_python_lucy.JPG" target="_blank" rel="noopener noreferrer">HCA / CC BY-SA 3.0</a></figcaption>
+          </figure>
+          <div class="reptile-card-body">
+            <h3>Ball Python</h3>
+            <p>A stocky African python that curls into a ball when stressed. This long-lived species needs consistent husbandry and a quiet, secure retreat.</p>
+            <dl class="reptile-facts"><div><dt>Adult size</dt><dd>3–5 ft (90–150 cm)</dd></div><div><dt>Lifespan</dt><dd>20–30+ years</dd></div><div><dt>Wild habitat</dt><dd>Grasslands and open woodland in West and Central Africa</dd></div></dl>
+            <h4>Care essentials</h4><p class="care-copy">Provide snug hides at both ends of a controlled heat gradient, fresh water and species-appropriate humidity with ventilation. Feed appropriately sized, thawed rodents. Monitor weight and speak with a reptile veterinarian about persistent refusal to eat.</p>
+          </div>
+        </article>
+        <article class="reptile-card">
+          <figure>
+            <img src="../../../assets/images/reptiles/crested-gecko.png" alt="Crested gecko showing its raised eyelash-like crest" loading="lazy" width="640" height="480">
+            <figcaption class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Gekkoninae_Rhacodactylus_ciliatus_tete.png" target="_blank" rel="noopener noreferrer">annakilljoy / public domain</a></figcaption>
+          </figure>
+          <div class="reptile-card-body">
+            <h3>Crested Gecko</h3>
+            <p>An arboreal gecko from New Caledonia, with expressive crest scales and adhesive toe pads. It climbs and is most active at dusk and night.</p>
+            <dl class="reptile-facts"><div><dt>Adult size</dt><dd>6–10 in (15–25 cm), including tail</dd></div><div><dt>Lifespan</dt><dd>15–20 years</dd></div><div><dt>Wild habitat</dt><dd>Humid forests of New Caledonia</dd></div></dl>
+            <h4>Care essentials</h4><p class="care-copy">Choose a tall, ventilated enclosure with climbing cover, a moderate temperature and a daily misting-and-drying cycle. Feed a complete commercial crested-gecko diet, with occasional suitable insects. Avoid overheating.</p>
+          </div>
+        </article>
+        <article class="reptile-card">
+          <figure>
+            <img src="../../../assets/images/reptiles/blue-tongued-skink.jpg" alt="Blue-tongued skink walking over a rock" loading="lazy" width="960" height="640">
+            <figcaption class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Tiliqua_scincoides_(White,_1790).jpg" target="_blank" rel="noopener noreferrer">Michael Gäbler / CC BY-SA 3.0</a></figcaption>
+          </figure>
+          <div class="reptile-card-body">
+            <h3>Blue-Tongued Skink</h3>
+            <p>A sturdy Australian lizard that displays its bright blue tongue when threatened. It spends much of its time foraging at ground level.</p>
+            <dl class="reptile-facts"><div><dt>Adult size</dt><dd>18–24 in (45–60 cm)</dd></div><div><dt>Lifespan</dt><dd>15–20 years</dd></div><div><dt>Wild habitat</dt><dd>Open woodland, scrub and grassland in Australia</dd></div></dl>
+            <h4>Care essentials</h4><p class="care-copy">Give this active, ground-dwelling lizard a roomy enclosure, deep substrate, hides, a basking area and UVB. Offer a varied, appropriately portioned omnivore diet of leafy greens, vegetables and suitable protein.</p>
+          </div>
+        </article>
+        <article class="reptile-card">
+          <figure>
+            <img src="../../../assets/images/reptiles/russian-tortoise.jpg" alt="Russian tortoise walking on dry ground" loading="lazy" width="960" height="640">
+            <figcaption class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Testudo_horsfieldii;_Baikonur_001.jpg" target="_blank" rel="noopener noreferrer">Yuriy75 / CC BY-SA 3.0</a></figcaption>
+          </figure>
+          <div class="reptile-card-body">
+            <h3>Russian Tortoise</h3>
+            <p>A small, active tortoise adapted to hot summers and cold winters across Central Asian steppes. It digs and needs room to roam.</p>
+            <dl class="reptile-facts"><div><dt>Adult size</dt><dd>6–10 in (15–25 cm) shell length</dd></div><div><dt>Lifespan</dt><dd>40–50+ years</dd></div><div><dt>Wild habitat</dt><dd>Dry, rocky steppe and semi-desert</dd></div></dl>
+            <h4>Care essentials</h4><p class="care-copy">Provide a large, secure enclosure, a warm basking spot, UVB and suitable cool retreats. Feed a high-fibre mix of safe weeds and leafy greens. This long-lived tortoise needs lifelong veterinary care and space to exercise.</p>
+          </div>
+        </article>
+        <article class="reptile-card">
+          <figure>
+            <img src="../../../assets/images/reptiles/red-eared-slider.jpg" alt="Red-eared slider turtle basking beside water" loading="lazy" width="960" height="640">
+            <figcaption class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Red-eared_slider_(Trachemys_scripta_elegans).jpg" target="_blank" rel="noopener noreferrer">Charles J. Sharp / CC BY-SA 4.0</a></figcaption>
+          </figure>
+          <div class="reptile-card-body">
+            <h3>Red-Eared Slider</h3>
+            <p>A semi-aquatic turtle native to the south-central United States. Its distinctive red markings sit behind the eyes; adults need substantial swimming space.</p>
+            <dl class="reptile-facts"><div><dt>Adult size</dt><dd>5–12 in (13–30 cm) shell length</dd></div><div><dt>Lifespan</dt><dd>20–30+ years</dd></div><div><dt>Wild habitat</dt><dd>Warm, still or slow-moving freshwater</dd></div></dl>
+            <h4>Care essentials</h4><p class="care-copy">Set up a large, filtered aquatic habitat with clean water, a completely dry basking platform, heat and UVB. Feed a varied aquatic-turtle diet with suitable greens. Plan for adult size and long-term maintenance before acquiring one.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="reptile-section" id="habitat">
+      <div class="reptile-section-heading">
+        <div class="eyebrow">BUILD THE ENVIRONMENT FIRST</div>
+        <h2>Habitat, temperature &amp; lighting basics</h2>
+        <p>Reptiles depend on their enclosure to regulate body temperature and access the right light and humidity. The exact setup must match the species.</p>
+      </div>
+      <div class="guide-grid">
+        <article class="guide-card"><h3>Space and furnishings</h3><p>Choose an escape-proof enclosure sized for the adult animal, not just a hatchling. Include appropriate hides, climbing or digging opportunities, clean water and substrate suited to the species. Tortoises need safe floor space; aquatic turtles need swimming room and a dry basking area.</p></article>
+        <article class="guide-card"><h3>Measure a temperature gradient</h3><p>Use a thermostat with heat sources and reliable digital thermometers to create warm and cool zones. Check basking-surface and air temperatures with suitable instruments. Avoid heat rocks, unregulated heaters and relying on a single reading.</p></article>
+        <article class="guide-card"><h3>Provide suitable UVB</h3><p>Many diurnal lizards, tortoises and turtles need correctly selected UVB lighting to support normal vitamin D and calcium metabolism. Follow the lamp maker's distance and replacement guidance; mesh, glass and distance can reduce exposure. A reptile veterinarian can help assess your setup.</p></article>
+        <article class="guide-card"><h3>Match humidity and ventilation</h3><p>Use a hygrometer and species-specific guidance for humidity, misting and substrate. A humid hide can help some desert species shed safely. Keep airflow, hydration and clean substrate in balance to reduce respiratory and skin problems.</p></article>
+      </div>
+    </section>
+
+    <section class="reptile-section" id="feeding">
+      <div class="reptile-section-heading">
+        <div class="eyebrow">A SPECIES-SPECIFIC DIET</div>
+        <h2>Feeding and daily routines</h2>
+      </div>
+      <div class="guide-grid">
+        <article class="guide-card"><h3>Insect-eating lizards</h3><p>Leopard geckos need a varied diet of appropriately sized live insects; bearded dragons eat both insects and plant foods, with the balance changing as they grow. Gut-load feeder insects and use supplements only as recommended for the animal and lighting setup.</p></article>
+        <article class="guide-card"><h3>Snakes</h3><p>Corn snakes and ball pythons eat whole prey of suitable size. Many keepers use appropriately thawed frozen rodents. Never microwave prey; verify it is fully thawed and warm before offering. Track feeding and body condition, and avoid handling immediately after a meal.</p></article>
+        <article class="guide-card"><h3>Geckos, skinks and tortoises</h3><p>Crested geckos can eat a nutritionally complete prepared diet. Blue-tongued skinks need varied omnivore foods, while Russian tortoises need a high-fibre, mostly leafy-plant diet. Avoid assuming that one reptile's food is suitable for another.</p></article>
+        <article class="guide-card"><h3>Aquatic turtles</h3><p>Red-eared sliders need a varied aquatic-turtle diet, clean water and appropriate basking conditions. Offer portions that prevent chronic overfeeding and remove uneaten food promptly to protect water quality.</p></article>
+      </div>
+    </section>
+
+    <aside class="safety-panel" id="safety">
+      <h2>Safe, responsible reptile ownership</h2>
+      <ul>
+        <li>Research adult size, lifespan, specialist veterinary access, equipment costs and daily care before acquiring an animal.</li>
+        <li>Check local rules on ownership, import, transport and protected species. Buy only from a reputable, legal source; never take reptiles from the wild.</li>
+        <li>Never release a pet reptile outdoors. It may suffer, spread disease or become invasive; contact a rescue, shelter or wildlife authority if you can no longer care for it.</li>
+        <li>Wash hands with soap and water after handling reptiles, their food, water or enclosure. Keep reptiles and equipment away from food-preparation areas and supervise children.</li>
+        <li>Have a reptile-experienced veterinarian check your animal and enclosure. Seek veterinary advice for changes in appetite, breathing, movement, skin or shell.</li>
+      </ul>
+    </aside>
+
+    <section class="sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Learn more from reptile-care references</h2>
+      <p>This page is a starting point, not a husbandry prescription or veterinary diagnosis. Care needs vary by species and individual; confirm temperatures, UVB, diet and enclosure size with an experienced reptile veterinarian and current specialist guidance.</p>
+      <p>Species-specific starting points: <a href="https://reptifiles.com/leopard-gecko-care/" target="_blank" rel="noopener noreferrer">Leopard gecko</a>, <a href="https://reptifiles.com/bearded-dragon-care/" target="_blank" rel="noopener noreferrer">bearded dragon</a>, <a href="https://reptifiles.com/corn-snake-care-guide/" target="_blank" rel="noopener noreferrer">corn snake</a>, <a href="https://reptifiles.com/ball-python-care-guide/" target="_blank" rel="noopener noreferrer">ball python</a>, <a href="https://reptifiles.com/crested-gecko-care/" target="_blank" rel="noopener noreferrer">crested gecko</a>, <a href="https://reptifiles.com/blue-tongue-skink-care/" target="_blank" rel="noopener noreferrer">blue-tongued skink</a>, <a href="https://reptifiles.com/russian-tortoise-care-sheet/" target="_blank" rel="noopener noreferrer">Russian tortoise</a>, and <a href="https://reptifiles.com/red-eared-slider-care/" target="_blank" rel="noopener noreferrer">red-eared slider</a>. See also the <a href="https://www.cdc.gov/healthy-pets/about/reptiles-and-amphibians.html" target="_blank" rel="noopener noreferrer">CDC guidance on reptiles and Salmonella</a>.</p>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="section-wrap footer-bottom"><span>© PetSathi · NSoC Winter Edition</span><span>तुमच्या Pet चा विश्वासू साथी! 🐾</span></div></footer>
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

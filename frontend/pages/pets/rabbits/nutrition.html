@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practical rabbit nutrition guide covering hay, leafy greens, pellets, safe foods, foods to avoid and healthy feeding routines from PetSathi.">
+  <title>Rabbit Food & Nutrition Guide | PetSathi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+
+  <style>
+    :root {
+      --nutrition-leaf: #4d8a57;
+      --nutrition-pale: #edf5e9;
+      --nutrition-gold: #e5b85c;
+      --nutrition-red: #b84e43;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+
+    .nutrition-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 66px 20px 62px;
+      background: linear-gradient(130deg, #edf5e9 0%, #fbf8ed 58%, #f8eddf 100%);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nutrition-hero::before,
+    .nutrition-hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border-radius: 50%;
+      background: rgba(40,104,73,.07);
+    }
+
+    .nutrition-hero::before {
+      width: 330px;
+      height: 330px;
+      left: -130px;
+      top: -185px;
+    }
+
+    .nutrition-hero::after {
+      width: 260px;
+      height: 260px;
+      right: -100px;
+      bottom: -155px;
+    }
+
+    .nutrition-hero-inner {
+      width: min(1160px, calc(100% - 20px));
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .nutrition-hero-copy {
+      max-width: 640px;
+    }
+
+    .nutrition-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 15px;
+      border-radius: 50px;
+      background: #e0edda;
+    }
+
+    .nutrition-hero h1 {
+      margin: 5px 0 17px;
+      font-size: clamp(2.55rem, 5vw, 4.35rem);
+      line-height: 1.08;
+      letter-spacing: -2.6px;
+    }
+
+    .nutrition-hero h1 em {
+      color: var(--green);
+      font-style: normal;
+    }
+
+    .nutrition-hero-copy p {
+      max-width: 590px;
+      margin: 0 0 24px;
+      color: #5d7063;
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .nutrition-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nutrition-visual {
+      min-height: 330px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+    .nutrition-visual .hero-food-photo {
+      display: block;
+      width: min(100%, 510px);
+      height: 330px;
+      object-fit: cover;
+      object-position: center 48%;
+      border: 8px solid rgba(255,255,255,.82);
+      border-radius: 28px;
+      box-shadow: 0 22px 42px rgba(42,67,44,.14);
+    }
+
+    .photo-credit {
+      position: absolute;
+      left: 12px;
+      bottom: 11px;
+      z-index: 2;
+      padding: 5px 8px;
+      border-radius: 7px;
+      background: rgba(27,43,32,.72);
+      color: #fff;
+      font-size: .66rem;
+      line-height: 1.2;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .photo-credit:hover {
+      background: rgba(27,43,32,.9);
+      text-decoration: underline;
+    }
+
+    .hero-photo-credit {
+      left: 26px;
+      bottom: 25px;
+    }
+
+    .visual-note {
+      position: absolute;
+      bottom: 15px;
+      right: 6px;
+      padding: 10px 14px;
+      border: 1px solid #e1e9dc;
+      border-radius: 14px;
+      background: rgba(255,255,255,.92);
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 800;
+      box-shadow: 0 8px 20px rgba(35,57,43,.07);
+    }
+
+    /* QUICK NAVIGATION */
+
+    .nutrition-quick-nav {
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      background: rgba(252,250,245,.97);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 5px 18px rgba(35,57,43,.04);
+    }
+
+    .nutrition-quick-nav .section-wrap {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      scrollbar-width: thin;
+    }
+
+    .nutrition-quick-nav a {
+      flex: 0 0 auto;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: white;
+      color: #53675a;
+      font-size: .82rem;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+
+    .nutrition-quick-nav a:hover,
+    .nutrition-quick-nav a.active {
+      color: white;
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    /* COMMON SECTIONS */
+
+    .nutrition-section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 80px;
+    }
+
+    .nutrition-section.soft {
+      background: #f5f8f2;
+    }
+
+    .nutrition-heading {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .nutrition-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .nutrition-heading h2 {
+      margin: 5px 0 12px;
+    }
+
+    .nutrition-heading p {
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    /* DIET BREAKDOWN */
+
+    .diet-breakdown {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+      align-items: center;
+      padding: 27px;
+      border: 1px solid #e2eadd;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 10px 28px rgba(35,57,43,.045);
+    }
+
+    .diet-breakdown h3 {
+      margin: 0 0 9px;
+      font-size: 1.35rem;
+    }
+
+    .diet-breakdown p {
+      margin: 0;
+      font-size: .9rem;
+      line-height: 1.75;
+    }
+
+    .diet-stack {
+      display: grid;
+      gap: 11px;
+    }
+
+    .diet-row {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .diet-percent {
+      display: grid;
+      place-items: center;
+      width: 62px;
+      height: 48px;
+      border-radius: 13px;
+      background: #edf4e9;
+      color: var(--green);
+      font: 800 1rem Manrope,sans-serif;
+    }
+
+    .diet-row:nth-child(2) .diet-percent {
+      background: #fff4dc;
+      color: #946c20;
+    }
+
+    .diet-row:nth-child(3) .diet-percent {
+      background: #f5ece3;
+      color: #99613b;
+    }
+
+    .diet-row strong {
+      display: block;
+      color: var(--ink);
+      font-size: .91rem;
+    }
+
+    .diet-row small {
+      display: block;
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.5;
+    }
+
+    .diet-bar {
+      height: 7px;
+      margin-top: 7px;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #edf0e9;
+    }
+
+    .diet-bar span {
+      display: block;
+      height: 100%;
+      border-radius: 20px;
+      background: var(--nutrition-leaf);
+    }
+
+    .diet-row:nth-child(2) .diet-bar span {
+      background: #e5b85c;
+    }
+
+    .diet-row:nth-child(3) .diet-bar span {
+      background: #c58a62;
+    }
+
+    .diet-breakdown-note {
+      margin-top: 17px;
+      padding: 15px 18px;
+      border-left: 4px solid var(--green);
+      border-radius: 10px;
+      background: #f0f6ed;
+      color: #53675a;
+      font-size: .84rem;
+      line-height: 1.7;
+    }
+
+    /* FOOD CARDS */
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .food-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      border: 1px solid #e3eae0;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 8px 24px rgba(35,57,43,.035);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .food-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(35,57,43,.08);
+    }
+
+    .food-photo {
+      position: relative;
+      height: 178px;
+      overflow: hidden;
+      background: #edf4e9;
+    }
+
+    .food-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .35s ease;
+    }
+
+    .food-card:hover .food-photo img {
+      transform: scale(1.04);
+    }
+
+    .food-card-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 20px;
+    }
+
+    .food-tag {
+      align-self: flex-start;
+      margin-bottom: 9px;
+      padding: 5px 10px;
+      border-radius: 30px;
+      background: #edf4e9;
+      color: var(--green);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .food-card h3 {
+      margin: 0 0 9px;
+      font-size: 1.12rem;
+      letter-spacing: -.4px;
+    }
+
+    .food-card p {
+      margin: 0;
+      font-size: .87rem;
+      line-height: 1.72;
+    }
+
+    .food-card .food-meta {
+      margin-top: auto;
+      padding-top: 13px;
+      color: #68766d;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    /* SAFE FOOD NOTE */
+
+    .safe-food-callout {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-top: 24px;
+      padding: 19px 21px;
+      border: 1px solid #dce8d8;
+      border-left: 4px solid var(--green);
+      border-radius: 13px;
+      background: #f0f6ed;
+    }
+
+    .safe-food-callout .callout-icon {
+      font-size: 1.45rem;
+    }
+
+    .safe-food-callout strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--dark);
+    }
+
+    .safe-food-callout p {
+      margin: 0;
+      color: #53675a;
+      font-size: .88rem;
+      line-height: 1.7;
+    }
+
+    /* FOODS TO AVOID */
+
+    .avoid-layout {
+      display: grid;
+      grid-template-columns: 1fr .82fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .avoid-panel {
+      padding: 26px;
+      border: 1px solid #f0d5cd;
+      border-radius: 19px;
+      background: #fff8f5;
+    }
+
+    .avoid-panel h3 {
+      margin: 0 0 18px;
+      color: #984b40;
+      font-size: 1.25rem;
+    }
+
+    .avoid-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+    }
+
+    .avoid-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px;
+      border: 1px solid #f1e2dc;
+      border-radius: 12px;
+      background: white;
+      color: #714d47;
+      font-size: .85rem;
+      line-height: 1.5;
+    }
+
+    .avoid-item span {
+      flex: 0 0 auto;
+      font-weight: 800;
+      color: var(--nutrition-red);
+    }
+
+    .avoid-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px;
+      border-radius: 19px;
+      background: linear-gradient(145deg,#294f3a,#39734e);
+      color: white;
+    }
+
+    .avoid-side .big-icon {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+    }
+
+    .avoid-side h3 {
+      margin: 0 0 10px;
+      color: white;
+      font-size: 1.35rem;
+    }
+
+    .avoid-side p {
+      margin: 0;
+      color: #e0eee3;
+      font-size: .9rem;
+      line-height: 1.8;
+    }
+
+    .avoid-side strong {
+      color: white;
+    }
+
+    /* FEEDING ROUTINE */
+
+    .feeding-routine {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .routine-card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: white;
+    }
+
+    .routine-time {
+      display: inline-flex;
+      padding: 6px 11px;
+      margin-bottom: 13px;
+      border-radius: 40px;
+      background: #edf4e9;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .routine-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .routine-card p {
+      margin: 0;
+      font-size: .87rem;
+      line-height: 1.7;
+    }
+
+    .portion-panel {
+      margin-top: 23px;
+      padding: 25px;
+      border: 1px solid #e2eadd;
+      border-radius: 18px;
+      background: white;
+    }
+
+    .portion-panel h3 {
+      margin: 0 0 8px;
+      font-size: 1.18rem;
+    }
+
+    .portion-panel p {
+      margin: 0;
+      font-size: .88rem;
+      line-height: 1.75;
+    }
+
+    .portion-note {
+      margin-top: 14px !important;
+      padding: 13px 15px;
+      border-radius: 10px;
+      background: #f7f3e9;
+      color: #73664c;
+    }
+
+    /* NUTRITION TIPS */
+
+    .nutrition-tips {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .tip-card {
+      display: flex;
+      gap: 14px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: white;
+    }
+
+    .tip-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 46px;
+      height: 46px;
+      border-radius: 13px;
+      background: #edf4e9;
+      font-size: 1.35rem;
+    }
+
+    .tip-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.02rem;
+    }
+
+    .tip-card p {
+      margin: 0;
+      font-size: .86rem;
+      line-height: 1.7;
+    }
+
+    .red-flag {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-top: 22px;
+      padding: 18px 20px;
+      border: 1px solid #efcdca;
+      border-left: 4px solid #b84e43;
+      border-radius: 13px;
+      background: #fff4f2;
+    }
+
+    .red-flag strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #963a34;
+    }
+
+    .red-flag p {
+      margin: 0;
+      color: #76504b;
+      font-size: .88rem;
+      line-height: 1.7;
+    }
+
+    /* FAQ */
+
+    .nutrition-faq {
+      max-width: 850px;
+      margin: 30px auto 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: white;
+    }
+
+    .faq-item[open] {
+      border-color: #cbd9ce;
+    }
+
+    .faq-item summary {
+      position: relative;
+      padding: 18px 48px 18px 20px;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: .94rem;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--green);
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item p {
+      margin: 0;
+      padding: 0 20px 19px;
+      font-size: .88rem;
+      line-height: 1.75;
+    }
+
+    /* RESOURCES */
+
+    .sources {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: white;
+    }
+
+    .sources h3 {
+      margin: 0 0 10px;
+      font-size: 1.18rem;
+    }
+
+    .sources p {
+      margin: 0 0 14px;
+      font-size: .87rem;
+    }
+
+    .source-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .source-links a {
+      color: var(--green);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .nutrition-disclaimer {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-radius: 12px;
+      background: #f0f1ed;
+      color: #59675e;
+      font-size: .82rem;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+
+    .nutrition-cta {
+      margin: 55px auto 65px;
+      padding: 42px 28px;
+      border-radius: 22px;
+      background: linear-gradient(135deg,#1d5039,#286849);
+      color: white;
+      text-align: center;
+    }
+
+    .nutrition-cta h2 {
+      margin: 0 0 12px;
+      color: white;
+      font-size: clamp(1.8rem,3vw,2.45rem);
+    }
+
+    .nutrition-cta p {
+      max-width: 650px;
+      margin: 0 auto 22px;
+      color: #dce9df;
+      line-height: 1.75;
+    }
+
+    .nutrition-cta .button {
+      background: white;
+      border-color: white;
+      color: var(--dark);
+    }
+
+    /* BACK TO TOP */
+
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 30;
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-size: 1.35rem;
+      cursor: pointer;
+      box-shadow: 0 5px 18px rgba(35,57,43,.2);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: .25s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--dark);
+    }
+
+    .footer .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .nutrition-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .nutrition-hero-copy {
+        margin: auto;
+      }
+
+      .nutrition-hero-copy p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .nutrition-actions {
+        justify-content: center;
+      }
+
+      .nutrition-visual {
+        min-height: 260px;
+      }
+
+      .nutrition-visual .hero-food-photo {
+        height: 290px;
+      }
+
+      .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .avoid-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nutrition-section {
+        padding: 55px 0;
+      }
+
+      .diet-breakdown {
+        grid-template-columns: 1fr;
+      }
+
+      .feeding-routine {
+        grid-template-columns: 1fr;
+      }
+
+      .nutrition-tips {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nutrition-hero {
+        padding: 48px 16px;
+      }
+
+      .nutrition-hero h1 {
+        letter-spacing: -1.6px;
+      }
+
+      .nutrition-visual {
+        min-height: 210px;
+      }
+
+      .nutrition-visual .hero-food-photo {
+        height: 230px;
+        border-width: 5px;
+        border-radius: 20px;
+      }
+
+      .hero-photo-credit {
+        left: 18px;
+        bottom: 18px;
+      }
+
+      .food-grid,
+      .avoid-list {
+        grid-template-columns: 1fr;
+      }
+
+      .food-photo {
+        height: 190px;
+      }
+
+      .nutrition-heading h2 {
+        font-size: 2rem;
+      }
+
+      .diet-breakdown {
+        padding: 20px;
+      }
+
+      .avoid-panel,
+      .avoid-side {
+        padding: 20px;
+      }
+
+      .portion-panel,
+      .sources {
+        padding: 21px;
+      }
+
+      .nutrition-cta {
+        padding: 32px 20px;
+      }
+
+      .back-to-top {
+        right: 17px;
+        bottom: 17px;
+      }
+
+      .footer .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+    <a class="brand" href="../../../../index.html">
+      <span class="brand-mark">🐾</span>
+      <span>Pet<span>Sathi</span></span>
+    </a>
+
+    <button class="menu-toggle" type="button"
+      aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="main-nav">
+      <a href="../../../../index.html">Home</a>
+
+      <div class="nav-item">
+        <a class="active" href="../index.html">Explore Pets ▾</a>
+        <div class="dropdown">
+          <a href="../dogs/index.html">🐕 Dogs</a>
+          <a href="../cats/index.html">🐈 Cats</a>
+          <a href="../birds/index.html">🐦 Birds</a>
+          <a href="index.html">🐇 Rabbits</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="../../services/index.html">Services ▾</a>
+        <div class="dropdown">
+          <a href="../../services/dog-walking.html">Dog Walking</a>
+          <a href="../../services/cat-care.html">Cat Care</a>
+          <a href="../../services/pet-care.html">Pet Care</a>
+          <a href="../../services/guidance.html">Pet Guidance</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="../../walker/index.html">Find a Walker ▾</a>
+        <div class="dropdown">
+          <a href="../../walker/dogs.html">Dog Walkers</a>
+          <a href="../../walker/cats.html">Cat Caregivers</a>
+          <a href="../../walker/birds.html">Bird Caregivers</a>
+          <a href="../../walker/rabbits.html">Rabbit Caregivers</a>
+        </div>
+      </div>
+
+      <a href="../../about.html">About Us</a>
+      <a href="../../auth/login.html">Log in</a>
+      <a class="button button-small" href="../../auth/register.html">
+        Get Started ↗
+      </a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="nutrition-hero">
+      <div class="nutrition-hero-inner">
+
+        <div class="nutrition-hero-copy">
+          <div class="eyebrow">🥕 PetSathi • RABBIT NUTRITION GUIDE</div>
+          <h1>Good Food.<br><em>Happy Hops.</em></h1>
+          <p>
+            A rabbit's best menu is simple, fibre-rich and fresh.
+            Learn how hay, leafy greens, measured pellets and clean water
+            work together—and which foods should stay out of the bowl.
+          </p>
+
+          <div class="nutrition-actions">
+            <a class="button" href="#daily-diet">Explore the Food Guide ↓</a>
+            <a class="button button-outline" href="index.html">← Rabbits Home</a>
+          </div>
+        </div>
+
+        <div class="nutrition-visual">
+          <img
+            class="hero-food-photo"
+            src="https://images.pexels.com/photos/15415879/pexels-photo-15415879.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400"
+            alt="A black-and-white rabbit eating fresh green leaves"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            onerror="this.onerror=null;this.src='https://images.pexels.com/photos/11431017/pexels-photo-11431017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+          <a class="photo-credit hero-photo-credit"
+            href="https://www.pexels.com/photo/close-up-of-rabbit-eating-grass-15415879/"
+            target="_blank" rel="noopener noreferrer">
+            Photo: Nikolett Emmert / Pexels ↗
+          </a>
+
+          <div class="visual-note">Fibre first, every day 🌿</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUICK NAVIGATION -->
+
+    <nav class="nutrition-quick-nav" aria-label="Rabbit nutrition sections">
+      <div class="section-wrap">
+        <a href="#daily-diet">🌾 Daily Diet</a>
+        <a href="#safe-foods">🥬 Safe Foods</a>
+        <a href="#avoid-foods">🚫 Avoid</a>
+        <a href="#feeding-guide">🕒 Feeding Guide</a>
+        <a href="#nutrition-tips">💚 Nutrition Tips</a>
+      </div>
+    </nav>
+
+    <!-- 01 DAILY DIET -->
+
+    <section class="nutrition-section" id="daily-diet">
+      <div class="section-wrap">
+
+        <div class="nutrition-heading">
+          <div class="eyebrow">01 • THE EVERYDAY MENU</div>
+          <h2>Build a Balanced <em>Rabbit Diet</em></h2>
+          <p>
+            Rabbits are grazing herbivores. A high-fibre menu supports
+            normal digestion and helps wear down teeth that grow throughout
+            life. Hay and grass should be the foundation—not a side dish.
+          </p>
+        </div>
+
+        <div class="diet-breakdown">
+
+          <div>
+            <h3>A simple way to picture the plate</h3>
+            <p>
+              Use this approximate breakdown as a learning guide for a
+              healthy adult rabbit. The exact amount of greens and pellets
+              should be adjusted for age, weight, health and the advice of
+              a rabbit-savvy veterinarian.
+            </p>
+
+            <div class="diet-breakdown-note">
+              <strong>Remember:</strong> Keep good-quality feeding hay
+              available at all times. The “85 / 10 / 5” split is a broad
+              guide, not a weighing formula for every rabbit.
+            </div>
+          </div>
+
+          <div class="diet-stack" aria-label="Approximate rabbit diet proportions">
+
+            <div class="diet-row">
+              <div class="diet-percent">85%</div>
+              <div>
+                <strong>Hay & grass</strong>
+                <small>Unlimited access to fresh, clean feeding hay and safe grass.</small>
+                <div class="diet-bar"><span style="width:85%"></span></div>
+              </div>
+            </div>
+
+            <div class="diet-row">
+              <div class="diet-percent">10%</div>
+              <div>
+                <strong>Leafy greens</strong>
+                <small>A varied selection of washed greens, herbs and suitable vegetables.</small>
+                <div class="diet-bar"><span style="width:10%"></span></div>
+              </div>
+            </div>
+
+            <div class="diet-row">
+              <div class="diet-percent">5%</div>
+              <div>
+                <strong>Pellets / nuggets</strong>
+                <small>A small, measured amount of suitable high-fibre rabbit pellets.</small>
+                <div class="diet-bar"><span style="width:5%"></span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="food-grid" style="margin-top:22px">
+
+          <!-- HAY -->
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/13757552/pexels-photo-13757552.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="A white rabbit nibbling fresh grass"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/15415879/pexels-photo-15415879.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/close-up-shot-of-a-rabbit-13757552/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: Sam Clickx / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">The foundation</span>
+              <h3>Hay & fresh grass</h3>
+              <p>
+                Offer unlimited clean feeding hay every day. Safe fresh
+                grass can add variety; introduce it gradually if your
+                rabbit is not used to it.
+              </p>
+              <div class="food-meta">Fibre for digestion + natural tooth wear</div>
+            </div>
+          </article>
+
+          <!-- LEAFY GREENS -->
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/8599713/pexels-photo-8599713.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Fresh leafy greens and herbs arranged on a light surface"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/4113898/pexels-photo-4113898.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/fresh-green-ingredients-on-white-surface-8599713/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: Polina Tankilevitch / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Fresh variety</span>
+              <h3>Leafy vegetables & herbs</h3>
+              <p>
+                Offer a varied handful of rabbit-safe greens. Try romaine,
+                rocket, spring greens, watercress, coriander, basil or mint.
+              </p>
+              <div class="food-meta">Wash well • Rotate varieties • Introduce slowly</div>
+            </div>
+          </article>
+
+          <!-- PELLETS -->
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/11431017/pexels-photo-11431017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Two rabbits eating from a bowl of food pellets"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/15415879/pexels-photo-15415879.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/close-up-photo-of-rabbits-11431017/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: Dennis Ariel / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Measured portion</span>
+              <h3>Rabbit pellets / nuggets</h3>
+              <p>
+                Choose plain, high-fibre rabbit pellets and measure the
+                daily ration. Avoid colourful muesli-style mixes that
+                encourage selective feeding.
+              </p>
+              <div class="food-meta">Small supplement—not a hay replacement</div>
+            </div>
+          </article>
+
+          <!-- WATER -->
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/7669734/pexels-photo-7669734.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Fresh water being poured into a clean bowl"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/8599713/pexels-photo-8599713.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/a-person-pouring-water-on-the-bowl-7669734/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: Polina Tankilevitch / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Always available</span>
+              <h3>Fresh drinking water</h3>
+              <p>
+                Keep clean water available all day and refresh it daily.
+                Many rabbits find a stable, heavy water bowl easier to
+                drink from than a bottle.
+              </p>
+              <div class="food-meta">Check the bowl and refill whenever needed</div>
+            </div>
+          </article>
+
+          <!-- CARROTS -->
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/6740689/pexels-photo-6740689.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Fresh carrots with green tops arranged on a white surface"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/6978245/pexels-photo-6978245.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/fresh-carrots-over-a-white-surface-6740689/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: Dziana Hasanbekava / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Tiny treat</span>
+              <h3>Fruit & root vegetables</h3>
+              <p>
+                Small pieces of fruit or carrot can be an occasional treat
+                only. They contain more sugar than leafy greens; carrot
+                tops are a better regular green option.
+              </p>
+              <div class="food-meta">Keep treats small and infrequent</div>
+            </div>
+          </article>
+
+          <!-- HERBS -->
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/4113898/pexels-photo-4113898.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Assorted fresh basil, parsley and dill herbs"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/8599713/pexels-photo-8599713.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/photo-of-assorted-herbs-4113898/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: alleksana / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Mix it up</span>
+              <h3>Herbs for variety</h3>
+              <p>
+                Fresh basil, coriander, dill, mint, parsley and thyme can
+                add variety. Wash them, offer small amounts at first,
+                and observe your rabbit.
+              </p>
+              <div class="food-meta">Use pesticide-free, correctly identified plants</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 SAFE FOODS -->
+
+    <section class="nutrition-section soft" id="safe-foods">
+      <div class="section-wrap">
+
+        <div class="nutrition-heading center">
+          <div class="eyebrow">02 • FRESH & RABBIT-FRIENDLY</div>
+          <h2>Foods That Can Be <em>Safe</em></h2>
+          <p>
+            Variety matters, but not every vegetable belongs in the same
+            portion. Choose familiar, rabbit-safe plants and introduce
+            each new food slowly.
+          </p>
+        </div>
+
+        <div class="food-grid">
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/13252175/pexels-photo-13252175.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Fresh green lettuce leaves in close-up"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/8599713/pexels-photo-8599713.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/fresh-lettuce-leaves-13252175/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: Jennifer Braun / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Leafy greens</span>
+              <h3>Romaine & spring greens</h3>
+              <p>
+                Offer washed leaves as part of a varied daily green
+                selection. Rotate with other suitable greens rather than
+                relying on one type.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/4113884/pexels-photo-4113884.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Fresh arugula and green leaves on a clean surface"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/13252175/pexels-photo-13252175.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/photo-of-assorted-herbs-4113898/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: Pexels photographer / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Leafy greens</span>
+              <h3>Rocket & watercress</h3>
+              <p>
+                These are listed among suitable greens for rabbits.
+                Wash thoroughly and combine with other safe leaves
+                for variety.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/5620882/pexels-photo-5620882.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Red, yellow and green bell peppers photographed from above"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/6740689/pexels-photo-6740689.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/close-up-shot-of-bell-peppers-5620882/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: Anna Tarazevich / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Vegetable</span>
+              <h3>Bell peppers</h3>
+              <p>
+                Red, yellow and green bell peppers are on PDSA's
+                rabbit-safe vegetable list. Remove the stem and seeds,
+                wash, and serve a suitable amount.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/8599713/pexels-photo-8599713.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Fresh coriander-like leafy herbs and assorted greens"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/4113898/pexels-photo-4113898.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/fresh-green-ingredients-on-white-surface-8599713/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: Polina Tankilevitch / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Fresh herbs</span>
+              <h3>Coriander & basil</h3>
+              <p>
+                Fragrant herbs can make greens more interesting.
+                Offer clean, fresh leaves in small varied portions.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/4113898/pexels-photo-4113898.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Fresh mint, parsley, basil and dill herbs"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/8599713/pexels-photo-8599713.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/photo-of-assorted-herbs-4113898/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: alleksana / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Fresh herbs</span>
+              <h3>Mint, dill & parsley</h3>
+              <p>
+                PDSA lists these herbs as suitable options. Rotate them
+                with other greens; parsley and some other plants should
+                be portioned sensibly.
+              </p>
+            </div>
+          </article>
+
+          <article class="food-card">
+            <div class="food-photo">
+              <img
+                src="https://images.pexels.com/photos/6978245/pexels-photo-6978245.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200"
+                alt="Fresh sliced apples and strawberries arranged as fruit"
+                loading="lazy" decoding="async"
+                onerror="this.onerror=null;this.src='https://images.pexels.com/photos/6740689/pexels-photo-6740689.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200';">
+
+              <a class="photo-credit"
+                href="https://www.pexels.com/photo/close-up-of-sliced-fruits-6978245/"
+                target="_blank" rel="noopener noreferrer">
+                Photo: Heather Brock / Pexels ↗
+              </a>
+            </div>
+
+            <div class="food-card-body">
+              <span class="food-tag">Occasional treat</span>
+              <h3>Fruit in tiny portions</h3>
+              <p>
+                Small pieces of apple without pips, strawberry, pear or
+                banana may be occasional treats. Fruit is sugary and
+                should not be a daily staple.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="safe-food-callout">
+          <span class="callout-icon">🧼</span>
+          <div>
+            <strong>Prepare fresh food carefully</strong>
+            <p>
+              Wash produce, remove spoiled leaves and only offer plants
+              you can confidently identify. Introduce new greens one at
+              a time and gradually; stop and seek veterinary advice if
+              your rabbit develops digestive changes.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 FOODS TO AVOID -->
+
+    <section class="nutrition-section" id="avoid-foods">
+      <div class="section-wrap">
+
+        <div class="nutrition-heading">
+          <div class="eyebrow">03 • KEEP THESE OUT OF THE BOWL</div>
+          <h2>Foods to <em>Avoid</em></h2>
+          <p>
+            Some foods can be toxic, while others are too rich in sugar
+            or starch for a rabbit's digestive system. When you cannot
+            identify a plant or ingredient with confidence, do not feed it.
+          </p>
+        </div>
+
+        <div class="avoid-layout">
+
+          <div class="avoid-panel">
+            <h3>🚫 Do not feed these foods</h3>
+
+            <div class="avoid-list">
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Avocado</strong><br>Unsafe for rabbits.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Chocolate & sweets</strong><br>High-risk / unsuitable sugary foods.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Onion, garlic & leek</strong><br>Allium vegetables to avoid.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Meat, eggs & dairy</strong><br>Rabbits are herbivores.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Beans, cereals & bread</strong><br>Too starchy or unsuitable.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Rhubarb & mushrooms</strong><br>Do not offer these.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Iceberg lettuce</strong><br>Choose suitable leafy greens instead.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Fruit pips / stones</strong><br>Apple pips are poisonous.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Sweetcorn & dried corn</strong><br>Not suitable rabbit food.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Muesli-style mixes</strong><br>Encourage selective feeding.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Lawnmower clippings</strong><br>Can heat and spoil quickly.</div>
+              </div>
+
+              <div class="avoid-item">
+                <span>✕</span>
+                <div><strong>Unknown garden plants</strong><br>Some common plants are toxic.</div>
+              </div>
+
+            </div>
+          </div>
+
+          <aside class="avoid-side">
+            <div class="big-icon">🥣</div>
+            <h3>Skip the colourful muesli mix</h3>
+            <p>
+              Rabbits may pick out the sweeter, starchier pieces and leave
+              the fibrous parts. PDSA and RSPCA recommend a simple, measured
+              high-fibre pellet or nugget rather than muesli-style mixes.
+              <strong>Do not replace hay with pellets.</strong>
+            </p>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 FEEDING GUIDELINES -->
+
+    <section class="nutrition-section soft" id="feeding-guide">
+      <div class="section-wrap">
+
+        <div class="nutrition-heading center">
+          <div class="eyebrow">04 • MAKE IT A ROUTINE</div>
+          <h2>Simple <em>Feeding Guidelines</em></h2>
+          <p>
+            A consistent routine makes it easier to notice changes in
+            appetite and keep portions balanced. Rabbits naturally graze
+            throughout the day.
+          </p>
+        </div>
+
+        <div class="feeding-routine">
+
+          <article class="routine-card">
+            <span class="routine-time">Morning</span>
+            <h3>Refresh & refill</h3>
+            <p>
+              Top up fresh feeding hay, replace drinking water, offer
+              a varied portion of washed greens and measure the day's
+              pellet ration.
+            </p>
+          </article>
+
+          <article class="routine-card">
+            <span class="routine-time">Throughout the day</span>
+            <h3>Keep grazing available</h3>
+            <p>
+              Leave good-quality hay available at all times. Check that
+              the hay stays clean and dry, and watch that your rabbit
+              is eating normally.
+            </p>
+          </article>
+
+          <article class="routine-card">
+            <span class="routine-time">Evening</span>
+            <h3>Offer greens & observe</h3>
+            <p>
+              Offer the remaining planned greens if feeding twice daily,
+              refresh water and notice appetite, droppings and general
+              behaviour.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="portion-panel">
+          <h3>🥄 Portion awareness</h3>
+          <p>
+            PDSA's 2026 PAW Report describes approximately
+            <strong>15 g of commercial rabbit nuggets or pellets per kg
+            of body weight per day</strong>, alongside constant access
+            to hay or grass and fresh greens. PDSA's feeding guide also
+            describes a tablespoon-based approach. These are general
+            reference points—not a prescription for every rabbit.
+            Pellet density, age, body condition, activity and medical
+            needs can change the right amount.
+          </p>
+
+          <p class="portion-note">
+            <strong>Practical rule:</strong> Measure pellets rather than
+            topping up a bowl. Ask a rabbit-experienced vet to set the
+            right portion for your rabbit, especially for young, senior,
+            pregnant, overweight or unwell rabbits.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 05 NUTRITION TIPS -->
+
+    <section class="nutrition-section" id="nutrition-tips">
+      <div class="section-wrap">
+
+        <div class="nutrition-heading">
+          <div class="eyebrow">05 • LITTLE HABITS, BIG IMPACT</div>
+          <h2>Everyday <em>Nutrition Tips</em></h2>
+          <p>
+            Healthy feeding is about consistency and observation—not
+            adding more treats or constantly changing the menu.
+          </p>
+        </div>
+
+        <div class="nutrition-tips">
+
+          <article class="tip-card">
+            <div class="tip-icon">🌾</div>
+            <div>
+              <h3>Make hay the priority</h3>
+              <p>
+                Keep fresh, good-quality feeding hay available at all
+                times. Its fibre supports gut movement and chewing helps
+                wear down continuously growing teeth.
+              </p>
+            </div>
+          </article>
+
+          <article class="tip-card">
+            <div class="tip-icon">⚖️</div>
+            <div>
+              <h3>Watch body condition</h3>
+              <p>
+                Weigh your rabbit regularly and monitor body shape.
+                Avoid adding extra pellets and treats without accounting
+                for them in the daily ration.
+              </p>
+            </div>
+          </article>
+
+          <article class="tip-card">
+            <div class="tip-icon">🔄</div>
+            <div>
+              <h3>Change food gradually</h3>
+              <p>
+                Introduce new greens or a new pellet food slowly.
+                PDSA advises gradual transitions over around 2–4 weeks
+                when changing a rabbit's diet.
+              </p>
+            </div>
+          </article>
+
+          <article class="tip-card">
+            <div class="tip-icon">🧺</div>
+            <div>
+              <h3>Make feeding enriching</h3>
+              <p>
+                Scatter a small measured pellet ration in a clean area
+                or hide suitable greens among hay so your rabbit can
+                forage and stay engaged.
+              </p>
+            </div>
+          </article>
+
+          <article class="tip-card">
+            <div class="tip-icon">🚰</div>
+            <div>
+              <h3>Keep water clean</h3>
+              <p>
+                Provide constant access to fresh water. Check bowls daily,
+                clean them regularly and refill whenever water becomes
+                dirty or low.
+              </p>
+            </div>
+          </article>
+
+          <article class="tip-card">
+            <div class="tip-icon">🥬</div>
+            <div>
+              <h3>Keep treats occasional</h3>
+              <p>
+                Use a tiny piece of fruit or carrot only occasionally.
+                For frequent rewards, use part of the rabbit's planned
+                greens or pellet allowance.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="red-flag">
+          <div style="font-size:1.5rem" aria-hidden="true">🚨</div>
+          <div>
+            <strong>If your rabbit stops eating, contact a vet immediately.</strong>
+            <p>
+              A rabbit that is not eating or producing droppings may have
+              a serious problem such as gut stasis. Do not wait for the
+              appetite to return on its own or try to treat it at home.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+
+    <section class="nutrition-section soft" id="nutrition-faq">
+      <div class="section-wrap">
+
+        <div class="nutrition-heading center">
+          <div class="eyebrow">QUICK ANSWERS</div>
+          <h2>Rabbit Nutrition <em>FAQs</em></h2>
+          <p>Simple answers to common feeding questions.</p>
+        </div>
+
+        <div class="nutrition-faq">
+
+          <details class="faq-item">
+            <summary>Can rabbits eat carrots every day?</summary>
+            <p>
+              Carrot root is relatively sugary and should be offered only
+              as a small occasional treat. Carrot tops (the leafy greens)
+              can be part of a varied selection of rabbit-safe greens.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Is hay really that important?</summary>
+            <p>
+              Yes. Hay and grass should make up most of a rabbit's diet.
+              Their fibre supports normal gut movement, and chewing helps
+              wear down teeth that continue to grow throughout life.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I give my rabbit a new vegetable straight away?</summary>
+            <p>
+              Introduce unfamiliar greens gradually and one at a time.
+              A sudden change can upset the digestive system. Stop the
+              new food and contact a vet if you notice reduced appetite
+              or abnormal droppings.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Are store-bought rabbit treats healthy?</summary>
+            <p>
+              Many commercial treats are high in sugar. A tiny amount
+              of suitable fresh fruit, vegetables or herbs is usually
+              a better occasional treat. Avoid yoghurt drops, sweets
+              and cereal-based snacks.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What if my rabbit refuses food?</summary>
+            <p>
+              Contact a rabbit-experienced veterinarian immediately
+              if your rabbit stops eating. Reduced or absent eating
+              can quickly become an emergency in rabbits.
+            </p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUSTED RESOURCES -->
+
+    <section class="section-wrap" style="padding-top:44px">
+      <div class="sources">
+
+        <div class="eyebrow">VET-REVIEWED READING</div>
+        <h3>Trusted Rabbit Nutrition Resources</h3>
+        <p>
+          Use these references for more detailed food lists, diet
+          transitions and portion guidance.
+        </p>
+
+        <div class="source-links">
+
+          <a href="https://www.pdsa.org.uk/what-we-do/pdsa-animal-wellbeing-report/paw-report-2026/rabbits"
+            target="_blank" rel="noopener noreferrer">
+            PDSA — PAW Report 2026: Rabbits ↗
+          </a>
+
+          <a href="https://www.pdsa.org.uk/pet-help-and-advice/looking-after-your-pet/rabbits/feeding-your-rabbits"
+            target="_blank" rel="noopener noreferrer">
+            PDSA — Feeding Your Rabbits ↗
+          </a>
+
+          <a href="https://www.rspca.org.uk/adviceandwelfare/pets/rabbits/diet"
+            target="_blank" rel="noopener noreferrer">
+            RSPCA — A Healthy Diet for Your Pet Rabbit ↗
+          </a>
+
+          <a href="https://kb.rspca.org.au/categories/companion-animals/rabbits/what-should-i-feed-my-rabbits"
+            target="_blank" rel="noopener noreferrer">
+            RSPCA Knowledgebase — What Should I Feed My Rabbits? ↗
+          </a>
+
+        </div>
+      </div>
+
+      <div class="nutrition-disclaimer">
+        <strong>Photo note:</strong> Food and rabbit photographs are
+        linked from Pexels image pages and are credited beside the
+        images. The page includes alternate photo URLs if an image
+        host fails to load.
+      </div>
+
+      <div class="nutrition-disclaimer">
+        <strong>Educational note:</strong> This page provides general
+        information and is not a substitute for veterinary advice.
+        Food tolerance and portion needs vary by age, body condition
+        and health. Consult a rabbit-experienced veterinarian before
+        making major diet changes or if you are unsure whether a food
+        is safe.
+      </div>
+    </section>
+
+    <!-- CTA -->
+
+    <section class="section-wrap">
+      <div class="nutrition-cta">
+        <div class="eyebrow" style="color:#cce5d1">
+          CARE STARTS AT THE FOOD BOWL
+        </div>
+        <h2>More Fibre. More Foraging. Happier Bunnies. 💚</h2>
+        <p>
+          A balanced rabbit diet starts with unlimited hay, fresh water,
+          varied greens and carefully measured extras. Small daily habits
+          can make a big difference.
+        </p>
+        <a class="button" href="index.html">
+          ← Explore Rabbit Care & Information
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BACK TO TOP -->
+
+  <button type="button" class="back-to-top" id="backToTop"
+    aria-label="Back to top" title="Back to top">
+    ↑
+  </button>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="section-wrap footer-bottom">
+      <span>© PetSathi · NSoC Winter Edition</span>
+      <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
+    </div>
+  </footer>
+
+  <script src="../../../js/main.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      /* ACTIVE QUICK NAVIGATION */
+
+      const links = Array.from(
+        document.querySelectorAll('.nutrition-quick-nav a[href^="#"]')
+      );
+
+      const sections = links
+        .map(link => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              links.forEach(link => {
+                link.classList.toggle(
+                  "active",
+                  link.getAttribute("href") === `#${entry.target.id}`
+                );
+              });
+            }
+          });
+        }, {
+          rootMargin: "-20% 0px -65% 0px"
+        });
+
+        sections.forEach(section => observer.observe(section));
+      }
+
+      /* FAQ ACCORDION */
+
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach(item => {
+        item.addEventListener("toggle", () => {
+          if (item.open) {
+            faqItems.forEach(other => {
+              if (other !== item) {
+                other.open = false;
+              }
+            });
+          }
+        });
+      });
+
+      /* BACK TO TOP */
+
+      const topButton = document.getElementById("backToTop");
+
+      if (topButton) {
+        window.addEventListener("scroll", () => {
+          topButton.classList.toggle(
+            "visible",
+            window.scrollY > 450
+          );
+        }, {
+          passive: true
+        });
+
+        topButton.addEventListener("click", () => {
+          const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches;
+
+          window.scrollTo({
+            top: 0,
+            behavior: reducedMotion ? "auto" : "smooth"
+          });
+        });
+      }
+
+    });
+  </script>
+
+</body>
+</html>

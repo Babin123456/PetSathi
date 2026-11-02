@@ -1,8 +1,2327 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Cat Food & Nutrition | PetSathi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cat Food & Nutrition Guide on PetSathi - Learn about obligate carnivore dietary needs, protein, wet vs dry food, feeding schedules, foods to avoid, and feline hydration.">
+  <title>Cat Food & Nutrition Guide | Healthy Food, Happy Cats | PetSathi</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Global & Inner Stylesheets -->
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+
+  <style>
+    /* Custom Scoped Styles for Cat Nutrition Page */
+    :root {
+      --cat-nutrition-accent: #e27d4b;
+      --cat-nutrition-soft: #fbf3ee;
+      --cat-nutrition-border: #f4d9cc;
+      --cat-nutrition-green-soft: #eaf3ed;
+      --cat-nutrition-green-border: #cde2d3;
+      --cat-water-blue: #237a9f;
+      --cat-water-soft: #eef7fa;
+      --cat-water-border: #c8e6f1;
+      --alert-red: #c02b2b;
+      --alert-red-bg: #fff1f0;
+      --alert-red-border: #ffa39e;
+      --card-radius: 20px;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb-nav {
+      padding: 12px 0 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb-nav a {
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+    .breadcrumb-nav a:hover {
+      color: var(--green);
+    }
+    .breadcrumb-separator {
+      color: #b5c2b9;
+      font-size: 0.8rem;
+    }
+    .breadcrumb-current {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Hero Section Overrides */
+    .nutrition-hero {
+      background: linear-gradient(180deg, #edf4ee 0%, #fcfaf5 100%);
+      padding: 40px 0 65px;
+      border-bottom: 1px solid var(--line);
+    }
+    .nutrition-hero .hero {
+      min-height: auto;
+      padding-block: 20px 30px;
+      gap: 48px;
+    }
+    .hero-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #e1ede4;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero-key-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .key-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    /* Quick Jump Navigation Bar */
+    .quick-nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(252, 250, 245, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+    .quick-nav-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 2px 0;
+    }
+    .quick-nav-container::-webkit-scrollbar {
+      display: none;
+    }
+    .quick-nav-label {
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-right: 6px;
+      white-space: nowrap;
+    }
+    .quick-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .quick-pill:hover,
+    .quick-pill.active {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+      transform: translateY(-1px);
+    }
+
+    /* General Section Styling */
+    .section-spacing {
+      padding-block: 80px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-spacing:nth-child(even) {
+      background: #fafcf9;
+    }
+    .section-sublead {
+      max-width: 720px;
+      margin: 0 0 35px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #526359;
+    }
+
+    /* Nutrition Pillars (Understanding Cat Nutrition) */
+    .obligate-carnivore-banner {
+      background: #ffffff;
+      border: 1px solid var(--cat-nutrition-border);
+      border-left: 6px solid var(--cat-nutrition-accent);
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin-bottom: 35px;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      box-shadow: 0 6px 20px rgba(226, 125, 75, 0.06);
+    }
+    .carnivore-icon {
+      font-size: 2.4rem;
+      line-height: 1;
+      padding: 12px;
+      background: var(--cat-nutrition-soft);
+      border-radius: 14px;
+      flex-shrink: 0;
+    }
+    .carnivore-text h3 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      color: var(--ink);
+    }
+    .carnivore-text p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #4f6056;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 45px;
+    }
+    .pillar-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      padding: 28px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
+    }
+    .pillar-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .pillar-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #eaf2e9;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .pillar-card h3 {
+      font-size: 1.25rem;
+      margin: 0;
+      color: var(--ink);
+    }
+    .pillar-card p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin: 0 0 16px;
+      color: #55675e;
+    }
+    .pillar-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pillar-list li {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #415248;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .pillar-list li strong {
+      color: var(--ink);
+    }
+    .pillar-bullet {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* Life Stage Comparison Matrix */
+    .lifestage-wrap {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: 0 8px 30px rgba(35, 57, 43, 0.04);
+      margin-top: 40px;
+    }
+    .lifestage-heading {
+      margin-bottom: 24px;
+    }
+    .lifestage-heading h3 {
+      font-size: 1.45rem;
+      margin: 0 0 8px;
+    }
+    .lifestage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .lifestage-card {
+      background: var(--soft);
+      border: 1px solid transparent;
+      border-radius: 18px;
+      padding: 24px;
+      transition: all 0.25s ease;
+    }
+    .lifestage-card:hover {
+      background: white;
+      border-color: var(--green);
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+    .lifestage-badge {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      background: #d8e6db;
+      color: var(--dark);
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .lifestage-card h4 {
+      font-size: 1.2rem;
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-family: Manrope, sans-serif;
+    }
+    .lifestage-card p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      color: #55675e;
+    }
+    .lifestage-tags {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-top: 1px dashed #cfdad1;
+      padding-top: 14px;
+      font-size: 0.82rem;
+    }
+    .lifestage-tag-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #3b4e43;
+    }
+
+    /* Types of Cat Food Section */
+    .food-types-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 30px;
+    }
+    .food-type-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+    .food-type-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
+    }
+    .food-type-media {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: #edf2eb;
+    }
+    .food-type-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .food-type-card:hover .food-type-media img {
+      transform: scale(1.04);
+    }
+    .food-type-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(6px);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--dark);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .food-type-content {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .food-type-content h3 {
+      font-size: 1.35rem;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+    .food-type-content p.card-desc {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #55675e;
+      margin: 0 0 20px;
+    }
+    .food-pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      background: var(--soft);
+      padding: 18px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      font-size: 0.84rem;
+    }
+    .food-pros-cons b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .food-pros-cons ul {
+      margin: 0;
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      color: #506157;
+    }
+    .food-tip-box {
+      margin-top: auto;
+      padding: 12px 16px;
+      background: #f8faf7;
+      border-left: 3px solid var(--green);
+      border-radius: 6px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: #4b5d52;
+    }
+
+    /* Feeding Guidelines Section */
+    .guidelines-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .guideline-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .guideline-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .guideline-num-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: #eaf2e9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+      color: var(--green);
+    }
+    .guideline-card h3 {
+      font-size: 1.25rem;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+    .guideline-card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: #55675e;
+      margin: 0 0 14px;
+    }
+    .guideline-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: #45574c;
+    }
+    .guideline-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .guideline-bullets li::before {
+      content: "•";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    /* Clean Feeding Bowl & Whisker Fatigue Feature */
+    .whisker-station-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(35, 57, 43, 0.04);
+      margin-top: 35px;
+    }
+    .whisker-station-box h3 {
+      font-size: 1.55rem;
+      margin: 0 0 12px;
+    }
+    .whisker-station-box p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: #55675e;
+      margin: 0 0 20px;
+    }
+    .bowl-comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .bowl-spec-card {
+      padding: 18px;
+      border-radius: 14px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .bowl-spec-card.good {
+      background: var(--cat-nutrition-green-soft);
+      border: 1px solid var(--cat-nutrition-green-border);
+      color: #1e5237;
+    }
+    .bowl-spec-card.bad {
+      background: #fff4f2;
+      border: 1px solid #ffd8d3;
+      color: #9c2727;
+    }
+    .bowl-spec-card b {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.92rem;
+    }
+
+    /* Foods Cats Should Avoid Section */
+    .toxic-alert-banner {
+      background: var(--alert-red-bg);
+      border: 1px solid var(--alert-red-border);
+      border-left: 6px solid var(--alert-red);
+      border-radius: 18px;
+      padding: 26px 30px;
+      margin-bottom: 35px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .toxic-alert-icon {
+      font-size: 2.2rem;
+      color: var(--alert-red);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .toxic-alert-content h3 {
+      margin: 0 0 8px;
+      color: var(--alert-red);
+      font-size: 1.3rem;
+    }
+    .toxic-alert-content p {
+      margin: 0;
+      color: #6a1a1a;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+    .toxic-alert-actions {
+      margin-top: 12px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .emergency-phone-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      background: white;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--alert-red-border);
+      color: var(--alert-red);
+      font-size: 0.84rem;
+    }
+
+    .toxic-foods-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 35px;
+    }
+    .toxic-food-card {
+      background: white;
+      border: 1px solid #f0d5d5;
+      border-radius: 18px;
+      padding: 24px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .toxic-food-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(192, 43, 43, 0.08);
+      border-color: #e5a4a4;
+    }
+    .toxic-food-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .toxic-food-emoji {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #fdf1f1;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .toxic-food-card h4 {
+      margin: 0;
+      font-size: 1.15rem;
+      color: var(--ink);
+      font-family: Manrope, sans-serif;
+    }
+    .toxic-danger-level {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--alert-red);
+      background: #ffe8e8;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .toxic-food-card p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #5a6660;
+      margin: 0 0 12px;
+    }
+    .toxic-symptoms {
+      font-size: 0.8rem;
+      background: #fbf6f6;
+      border-radius: 8px;
+      padding: 8px 12px;
+      color: #7a3232;
+      line-height: 1.45;
+      margin-top: auto;
+    }
+
+    .secondary-hazards-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .secondary-hazards-box b {
+      color: var(--ink);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .secondary-hazards-box p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .hazard-tags-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .hazard-badge {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      background: #f4f6f2;
+      border: 1px solid #e1e7de;
+      border-radius: 999px;
+      color: #4a5c51;
+      font-weight: 600;
+    }
+
+    /* Hydration Tips Section */
+    .hydration-banner {
+      background: linear-gradient(135deg, #eef7fa 0%, #e3f2f7 100%);
+      border: 1px solid var(--cat-water-border);
+      border-radius: 24px;
+      padding: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .hydration-banner h3 {
+      font-size: 1.6rem;
+      margin: 0 0 12px;
+      color: #174b63;
+    }
+    .hydration-banner p {
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: #2e5d73;
+      margin: 0 0 20px;
+    }
+    .hydration-stat-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .hydration-stat-box {
+      background: white;
+      border-radius: 16px;
+      padding: 16px 20px;
+      box-shadow: 0 4px 12px rgba(35, 122, 159, 0.08);
+    }
+    .hydration-stat-box b {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--cat-water-blue);
+      font-family: Manrope, sans-serif;
+      margin-bottom: 4px;
+    }
+    .hydration-stat-box span {
+      font-size: 0.82rem;
+      color: #436e81;
+      line-height: 1.4;
+      display: block;
+    }
+
+    .hydration-tips-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .hydration-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .hydration-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: #b9dbe6;
+    }
+    .hydration-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--cat-water-soft);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: var(--cat-water-blue);
+    }
+    .hydration-card h4 {
+      font-size: 1.15rem;
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-family: Manrope, sans-serif;
+    }
+    .hydration-card p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #55675e;
+      margin: 0;
+    }
+
+    /* Interactive Daily Water & Feeding Estimator */
+    .calculator-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: 0 10px 32px rgba(35, 57, 43, 0.05);
+      margin-top: 45px;
+    }
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .calc-form-group {
+      margin-bottom: 18px;
+    }
+    .calc-form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .calc-input-row {
+      display: flex;
+      gap: 12px;
+    }
+    .calc-input-row input {
+      flex-grow: 1;
+      padding: 12px 16px;
+      border: 1px solid #dce4db;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+    .calc-input-row select {
+      padding: 12px 16px;
+      border: 1px solid #dce4db;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: white;
+    }
+    .calc-results-card {
+      background: var(--soft);
+      border: 1px solid #dce4db;
+      border-radius: 18px;
+      padding: 26px;
+      text-align: center;
+    }
+    .calc-results-card h4 {
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+    .calc-metric {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--green);
+      font-family: Manrope, sans-serif;
+      margin: 6px 0;
+    }
+    .calc-results-card p {
+      font-size: 0.85rem;
+      color: #55675e;
+      margin: 0 0 14px;
+      line-height: 1.5;
+    }
+    .calc-footnote {
+      font-size: 0.76rem;
+      color: #7d8f84;
+      line-height: 1.4;
+      margin: 12px 0 0;
+      display: block;
+      font-style: italic;
+    }
+
+    /* FAQ Section */
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+    .faq-item.active {
+      border-color: #b5ccb9;
+      box-shadow: 0 4px 16px rgba(40, 104, 73, 0.06);
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      font-family: Manrope, sans-serif;
+    }
+    .faq-question:hover {
+      color: var(--green);
+    }
+    .faq-icon {
+      font-size: 1.2rem;
+      color: var(--green);
+      transition: transform 0.25s ease;
+    }
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 24px 22px;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #526359;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Veterinary Guidance Disclaimer Banner */
+    .vet-disclaimer-card {
+      margin-top: 40px;
+      background: #f7f9f5;
+      border: 1px solid #dbe4d9;
+      border-left: 5px solid var(--green);
+      border-radius: 14px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .vet-disclaimer-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+      color: var(--green);
+    }
+    .vet-disclaimer-text h4 {
+      margin: 0 0 6px;
+      font-size: 0.98rem;
+      color: var(--ink);
+    }
+    .vet-disclaimer-text p {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.6;
+      color: #55675e;
+    }
+
+    /* CTA Band Overrides */
+    .cat-cta-band {
+      background: linear-gradient(135deg, #1b4934 0%, #286849 100%);
+      color: white;
+      border-radius: 28px;
+      padding: 50px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      margin-block: 40px 75px;
+    }
+    .cat-cta-band h2 {
+      color: white;
+      margin: 0 0 12px;
+    }
+    .cat-cta-band h2 em {
+      color: #f4c79f;
+      font-style: normal;
+    }
+    .cat-cta-band p {
+      color: #e0ece2;
+      font-size: 1.02rem;
+      max-width: 580px;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .cat-cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+    .button-translucent {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: white;
+    }
+    .button-translucent:hover {
+      background: rgba(255, 255, 255, 0.28);
+      color: white;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 960px) {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .lifestage-grid {
+        grid-template-columns: 1fr;
+      }
+      .food-types-grid {
+        grid-template-columns: 1fr;
+      }
+      .guidelines-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .whisker-station-box {
+        grid-template-columns: 1fr;
+      }
+      .toxic-foods-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hydration-banner {
+        grid-template-columns: 1fr;
+      }
+      .hydration-tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+      .cat-cta-band {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 36px 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .guidelines-grid {
+        grid-template-columns: 1fr;
+      }
+      .toxic-foods-grid {
+        grid-template-columns: 1fr;
+      }
+      .hydration-tips-grid {
+        grid-template-columns: 1fr;
+      }
+      .food-pros-cons {
+        grid-template-columns: 1fr;
+      }
+      .bowl-comparison-grid {
+        grid-template-columns: 1fr;
+      }
+      .obligate-carnivore-banner {
+        flex-direction: column;
+        padding: 22px;
+      }
+      .carnivore-icon {
+        align-self: flex-start;
+      }
+      .cat-cta-band {
+        padding: 28px 20px;
+      }
+      .cat-cta-actions {
+        width: 100%;
+      }
+      .cat-cta-actions .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
+
+<!-- Header and Navigation (Identical to PetSathi Homepage & Cats Portal) -->
+<header class="site-header">
+  <a class="brand" href="../../../../index.html">
+    <span class="brand-mark">🐾</span>
+    <span>Pet<span>Sathi</span></span>
+  </a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav class="main-nav">
+    <a href="../../../../index.html">Home</a>
+    <div class="nav-item">
+      <a class="active" href="../index.html">Explore Pets ▾</a>
+      <div class="dropdown">
+        <a href="../dogs/index.html">🐕 Dogs</a>
+        <a href="index.html">🐈 Cats</a>
+        <a href="../birds/index.html">🐦 Birds</a>
+        <a href="../rabbits/index.html">🐇 Rabbits</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="../../services/index.html">Services ▾</a>
+      <div class="dropdown">
+        <a href="../../services/dog-walking.html">Dog Walking</a>
+        <a href="../../services/cat-care.html">Cat Care</a>
+        <a href="../../services/pet-care.html">Pet Care</a>
+        <a href="../../services/guidance.html">Pet Guidance</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="../../walker/index.html">Find a Walker ▾</a>
+      <div class="dropdown">
+        <a href="../../walker/dogs.html">Dog Walkers</a>
+        <a href="../../walker/cats.html">Cat Caregivers</a>
+        <a href="../../walker/birds.html">Bird Caregivers</a>
+        <a href="../../walker/rabbits.html">Rabbit Caregivers</a>
+      </div>
+    </div>
+    <a href="../../about.html">About Us</a>
+    <a href="../../auth/login.html">Log in</a>
+    <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="nutrition-hero" id="top">
+    <div class="section-wrap">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="../../../../index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="../index.html">Explore Pets</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="index.html">Cats</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">Food &amp; Nutrition</span>
+      </nav>
+
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="hero-badge-strip">🥣 Cat Nutrition &amp; Feeding Guide</div>
+          <h1>Healthy Food, <em>Happy Cats</em></h1>
+          <p>
+            Cats are extraordinary biological creatures with distinct, strict nutritional requirements. 
+            As <strong>obligate carnivores</strong>, their bodies are precision-engineered to thrive on animal-derived proteins, 
+            essential amino acids, balanced fats, and vital hydration. A thoughtfully balanced diet supports lean muscle maintenance, 
+            vibrant coat shine, agile joints, and long, playful years by your side.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#food-types">Explore Food Types 🥫</a>
+            <a class="button button-outline" href="#feeding-guidelines">Feeding Guidelines ↓</a>
+          </div>
+          <div class="hero-key-points">
+            <span class="key-pill">🥩 Animal Protein First</span>
+            <span class="key-pill">💧 Moisture &amp; Hydration</span>
+            <span class="key-pill">👁️ Taurine Essential</span>
+            <span class="key-pill">🚫 Zero Toxic Foods</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-blob"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85" 
+            alt="Serene domestic cat thriving on healthy balanced nutrition" 
+            class="hero-photo"
+          >
+          <div class="floating-card card-top">
+            🥣 <span><b>Balanced Bowls</b><small>Complete daily nourishment</small></span>
+          </div>
+          <div class="floating-card card-bottom">
+            ✨ <span><b>Obligate Carnivores</b><small>True meat-first biology</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Quick Navigation Bar -->
+  <nav class="quick-nav-bar" aria-label="Page Sections Navigation">
+    <div class="section-wrap quick-nav-container">
+      <span class="quick-nav-label">Jump to:</span>
+      <a class="quick-pill" href="#understanding-nutrition"><span>🔬</span> Understanding Nutrition</a>
+      <a class="quick-pill" href="#food-types"><span>🥫</span> Types of Cat Food</a>
+      <a class="quick-pill" href="#feeding-guidelines"><span>📋</span> Feeding Guidelines</a>
+      <a class="quick-pill" href="#foods-to-avoid"><span>🚫</span> Foods to Avoid</a>
+      <a class="quick-pill" href="#hydration-tips"><span>💧</span> Hydration Tips</a>
+      <a class="quick-pill" href="#hydration-calculator"><span>🧮</span> Water &amp; Meal Estimator</a>
+      <a class="quick-pill" href="#faq-section"><span>❓</span> FAQs</a>
+    </div>
+  </nav>
+
+  <!-- 1. UNDERSTANDING CAT NUTRITION -->
+  <section class="section-spacing section-wrap" id="understanding-nutrition">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">Feline Physiology &amp; Diet</div>
+        <h2>Understanding <em>Cat Nutrition</em></h2>
+      </div>
+      <p>
+        Cats have vastly different nutritional requirements than dogs or humans. 
+        Here is what makes feline nourishment truly unique.
+      </p>
+    </div>
+
+    <!-- Obligate Carnivore Explanation -->
+    <div class="obligate-carnivore-banner">
+      <div class="carnivore-icon">🥩</div>
+      <div class="carnivore-text">
+        <h3>Why Cats Are "Obligate Carnivores"</h3>
+        <p>
+          "Obligate" means by biological necessity. Millions of years of evolution have shaped cats to obtain their 
+          vital energy and structural nutrients directly from animal prey. Unlike humans and dogs, cats have a shortened 
+          digestive tract, lack salivary amylase to break down carbohydrates, and lack the enzymatic pathways needed 
+          to synthesize essential amino acids (like taurine and arginine) from plant-based proteins. Meat is not an optional 
+          preference—it is an absolute biological requirement.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4 Nutritional Pillars -->
+    <div class="pillars-grid">
+      <!-- Pillar 1: Importance of Protein -->
+      <article class="pillar-card">
+        <div class="pillar-header">
+          <div class="pillar-icon-box">💪</div>
+          <div>
+            <h3>The Vital Role of Protein</h3>
+            <small style="color: var(--green); font-weight: 700;">High Biological Value</small>
+          </div>
+        </div>
+        <p>
+          Protein provides the amino acid building blocks for organs, muscle tissue, antibodies, enzymes, and hormones. 
+          While omnivores can adapt to low protein levels by conserving nitrogen, cats constantly burn protein for routine 
+          metabolism and energy.
+        </p>
+        <ul class="pillar-list">
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Taurine:</strong> Critical amino acid cats cannot synthesize. A deficiency leads to irreversible retinal degeneration (blindness) and dilated cardiomyopathy (heart failure).</div>
+          </li>
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Arginine:</strong> Essential for the liver's urea cycle. A single meal lacking arginine can cause acute, life-threatening ammonia toxicity.</div>
+          </li>
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Animal vs. Plant:</strong> Plant proteins lack balanced amino acid profiles and bio-availability required by cats.</div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Pillar 2: Essential Nutrients & Fatty Acids -->
+      <article class="pillar-card">
+        <div class="pillar-header">
+          <div class="pillar-icon-box">🐟</div>
+          <div>
+            <h3>Essential Fats &amp; Nutrients</h3>
+            <small style="color: var(--green); font-weight: 700;">Cellular Health &amp; Immunity</small>
+          </div>
+        </div>
+        <p>
+          Fats are the most concentrated energy source for cats, facilitating fat-soluble vitamin absorption, cellular membrane 
+          resilience, and enticing culinary aroma.
+        </p>
+        <ul class="pillar-list">
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Arachidonic Acid (Omega-6):</strong> Cats lack the delta-6-desaturase enzyme to synthesize this from plant oils; it must come from animal fat for reproductive and skin health.</div>
+          </li>
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Omega-3s (EPA &amp; DHA):</strong> Marine fish oils soothe joint inflammation, support cognitive acuity, and maintain a glossy coat.</div>
+          </li>
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Preformed Vitamin A:</strong> Cats cannot convert beta-carotene from carrots into Vitamin A; they require active retinol derived from animal tissues.</div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Pillar 3: Vitamins & Mineral Balance -->
+      <article class="pillar-card">
+        <div class="pillar-header">
+          <div class="pillar-icon-box">🔬</div>
+          <div>
+            <h3>Micronutrients &amp; Minerals</h3>
+            <small style="color: var(--green); font-weight: 700;">Skeletal &amp; Renal Protection</small>
+          </div>
+        </div>
+        <p>
+          Precise mineral ratios prevent skeletal deformities in kittens and lower the risk of urinary crystal formation in adult cats.
+        </p>
+        <ul class="pillar-list">
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Calcium to Phosphorus Ratio:</strong> Must remain tightly regulated (around 1.1:1 to 1.3:1) for strong bones and to prevent renal strain.</div>
+          </li>
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Magnesium &amp; Ash Levels:</strong> Balanced levels prevent the crystallization of struvite stones in the feline bladder.</div>
+          </li>
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>B-Complex Vitamins:</strong> Thiamine (B1), Niacin (B3), and Cobalamin (B12) are water-soluble and must be replenished daily in cat food.</div>
+          </li>
+        </ul>
+      </article>
+
+      <!-- Pillar 4: Fresh Drinking Water -->
+      <article class="pillar-card">
+        <div class="pillar-header">
+          <div class="pillar-icon-box">💧</div>
+          <div>
+            <h3>The Fresh Water Imperative</h3>
+            <small style="color: var(--green); font-weight: 700;">Urinary &amp; Kidney Safeguard</small>
+          </div>
+        </div>
+        <p>
+          Felines evolved from desert-dwelling ancestors (the African wildcat, <em>Felis lybica</em>). Consequently, cats have 
+          an inherently weak thirst reflex and naturally expect to gain water directly from their food.
+        </p>
+        <ul class="pillar-list">
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Flushing Toxins:</strong> Ample clean water keeps urine dilute, drastically lowering the risk of Feline Lower Urinary Tract Disease (FLUTD).</div>
+          </li>
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Preventing Kidney Disease:</strong> Chronic low-level dehydration stresses feline kidneys, a leading health concern for adult and senior cats.</div>
+          </li>
+          <li>
+            <span class="pillar-bullet">✓</span>
+            <div><strong>Daily Replenishment:</strong> Bowls should be refreshed with cool, clean drinking water at least twice daily.</div>
+          </li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Differences Between Kitten and Adult Nutritional Needs -->
+    <div class="lifestage-wrap">
+      <div class="lifestage-heading">
+        <div class="eyebrow" style="margin-bottom: 6px;">Life-Stage Biology</div>
+        <h3>Nutritional Needs Across Life Stages</h3>
+        <p class="section-sublead" style="margin-bottom: 0;">
+          A cat's nutritional requirements shift dramatically as they transition from energetic kittens to graceful seniors.
+        </p>
+      </div>
+
+      <div class="lifestage-grid">
+        <!-- Kitten Stage -->
+        <div class="lifestage-card">
+          <span class="lifestage-badge">0 to 12 Months</span>
+          <h4>Kittens (Growth &amp; Build)</h4>
+          <p>
+            Kittens undergo rapid skeletal, muscular, and neurological growth. They need approximately <strong>double the calories per pound</strong> 
+            of an adult cat.
+          </p>
+          <div class="lifestage-tags">
+            <div class="lifestage-tag-item"><span>🥩</span> <strong>Protein:</strong> 35% - 45% (Dry matter)</div>
+            <div class="lifestage-tag-item"><span>⚡</span> <strong>Calories:</strong> High-density energy</div>
+            <div class="lifestage-tag-item"><span>🦴</span> <strong>Minerals:</strong> Balanced Ca:P for bones</div>
+            <div class="lifestage-tag-item"><span>🧠</span> <strong>Enrichment:</strong> DHA for brain &amp; eye development</div>
+          </div>
+        </div>
+
+        <!-- Adult Stage -->
+        <div class="lifestage-card">
+          <span class="lifestage-badge">1 to 7 Years</span>
+          <h4>Adult Cats (Maintenance)</h4>
+          <p>
+            The growth phase has ended. Adult cat nutrition centers on maintaining lean muscle, preventing obesity, 
+            and safeguarding urinary function.
+          </p>
+          <div class="lifestage-tags">
+            <div class="lifestage-tag-item"><span>🥩</span> <strong>Protein:</strong> 28% - 35% (Dry matter)</div>
+            <div class="lifestage-tag-item"><span>⚖️</span> <strong>Portion:</strong> Strictly regulated to avoid excess weight</div>
+            <div class="lifestage-tag-item"><span>🌾</span> <strong>Fiber:</strong> Moderate prebiotic fiber for hairballs</div>
+            <div class="lifestage-tag-item"><span>💧</span> <strong>Moisture:</strong> High wet-food ratio encouraged</div>
+          </div>
+        </div>
+
+        <!-- Senior Stage -->
+        <div class="lifestage-card">
+          <span class="lifestage-badge">7+ Years</span>
+          <h4>Senior Cats (Longevity &amp; Care)</h4>
+          <p>
+            Metabolism slows and digestive efficiency declines. Senior cats need highly digestible, aromatic meals 
+            that protect kidney and joint function.
+          </p>
+          <div class="lifestage-tags">
+            <div class="lifestage-tag-item"><span>🥩</span> <strong>Protein:</strong> High quality, easily digestible</div>
+            <div class="lifestage-tag-item"><span>🩺</span> <strong>Kidney:</strong> Controlled phosphorus levels</div>
+            <div class="lifestage-tag-item"><span>🐾</span> <strong>Joints:</strong> Glucosamine &amp; Chondroitin support</div>
+            <div class="lifestage-tag-item"><span>♨️</span> <strong>Aroma:</strong> Gently warmed food to entice appetite</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. TYPES OF CAT FOOD -->
+  <section class="section-spacing section-wrap" id="food-types">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">Dietary Formats</div>
+        <h2>Types of <em>Cat Food</em></h2>
+      </div>
+      <p>
+        From canned patés to crunchy kibble, understand how each commercial format fits into your cat's everyday diet.
+      </p>
+    </div>
+
+    <div class="food-types-grid">
+      <!-- 1. Wet Cat Food -->
+      <article class="food-type-card">
+        <div class="food-type-media">
+          <span class="food-type-tag">💧 70%–80% Moisture</span>
+          <img 
+            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80" 
+            alt="Alert domestic cat eagerly awaiting a high-moisture wet food meal"
+          >
+        </div>
+        <div class="food-type-content">
+          <h3>Wet Cat Food (Cans &amp; Pouches)</h3>
+          <p class="card-desc">
+            Available as savory gravies, minces, shreds, and patés. Wet food closely mimics the natural hydration level of small prey, 
+            making it the gold standard for urinary and renal support.
+          </p>
+          <div class="food-pros-cons">
+            <div>
+              <b>Key Benefits</b>
+              <ul>
+                <li>Superior hydration for kidneys &amp; bladder</li>
+                <li>Naturally lower in carbohydrates</li>
+                <li>High palatability for picky eaters</li>
+              </ul>
+            </div>
+            <div>
+              <b>Considerations</b>
+              <ul>
+                <li>Perishable: discard if uneaten after 2–4 hours</li>
+                <li>Requires refrigeration once opened</li>
+                <li>Higher cost per daily feeding</li>
+              </ul>
+            </div>
+          </div>
+          <div class="food-tip-box">
+            💡 <strong>Pro Tip:</strong> Serve at room temperature or slightly warmed. Cold food straight from the fridge often gets rejected by cats!
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Dry Cat Food (Kibble) -->
+      <article class="food-type-card">
+        <div class="food-type-media">
+          <span class="food-type-tag">⏳ Convenient &amp; Shelf-Stable</span>
+          <img 
+            src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=800&q=80" 
+            alt="Tabby cat enjoying a measured serving of crunchy balanced kibble"
+          >
+        </div>
+        <div class="food-type-content">
+          <h3>Dry Cat Food (Kibble)</h3>
+          <p class="card-desc">
+            Extruded biscuits containing approximately 10% moisture. Kibble is budget-friendly, convenient for storage, 
+            and exceptionally well-suited for interactive foraging toys and slow-feeders.
+          </p>
+          <div class="food-pros-cons">
+            <div>
+              <b>Key Benefits</b>
+              <ul>
+                <li>Economical with long shelf life</li>
+                <li>Great for enrichment puzzle feeders</li>
+                <li>Easy to measure exact gram portions</li>
+              </ul>
+            </div>
+            <div>
+              <b>Considerations</b>
+              <ul>
+                <li>Low moisture content (demands proactive water intake)</li>
+                <li>Often higher in starches and carbs</li>
+                <li>Calorie-dense: high risk of overeating if free-fed</li>
+              </ul>
+            </div>
+          </div>
+          <div class="food-tip-box">
+            💡 <strong>Pro Tip:</strong> If feeding dry kibble, consider pairing it with a wet meal or adding cat-safe water fountains around your home.
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Commercially Prepared Balanced Cat Food -->
+      <article class="food-type-card">
+        <div class="food-type-media">
+          <span class="food-type-tag">✅ Scientifically Complete</span>
+          <img 
+            src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=80" 
+            alt="Curious domestic cat thriving on complete and balanced feline nutrition"
+          >
+        </div>
+        <div class="food-type-content">
+          <h3>Commercially Prepared Balanced Food</h3>
+          <p class="card-desc">
+            Formulated by animal nutritionists to adhere to international standards (AAFCO, FEDIAF, NRC). 
+            These foods guarantee that all 40+ essential vitamins, minerals, and amino acids are present in exact physiological ratios.
+          </p>
+          <div class="food-pros-cons">
+            <div>
+              <b>Key Benefits</b>
+              <ul>
+                <li>Prevents nutrient deficiencies and toxicities</li>
+                <li>Stringent quality and safety testing</li>
+                <li>Clear feeding guidelines on packaging</li>
+              </ul>
+            </div>
+            <div>
+              <b>Considerations</b>
+              <ul>
+                <li>Check label for real meat as the 1st ingredient</li>
+                <li>Avoid vague by-product meal classifications</li>
+                <li>Match formula strictly to your cat's life stage</li>
+              </ul>
+            </div>
+          </div>
+          <div class="food-tip-box">
+            💡 <strong>Label Check:</strong> Look for the phrase <em>"Complete and Balanced"</em> on the packaging to ensure it covers every biological necessity.
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Special Dietary Food -->
+      <article class="food-type-card">
+        <div class="food-type-media">
+          <span class="food-type-tag">🩺 Veterinary Awareness Only</span>
+          <img 
+            src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80" 
+            alt="Plump British Shorthair cat thriving on veterinary-guided specialized nutrition"
+          >
+        </div>
+        <div class="food-type-content">
+          <h3>Special Dietary Food (General Awareness)</h3>
+          <p class="card-desc">
+            Therapeutic and veterinary prescription diets tailored for specific feline health conditions. 
+            These include renal care, urinary stone dissolution, gastrointestinal sensitivity, diabetes management, and weight loss.
+          </p>
+          <div class="food-pros-cons">
+            <div>
+              <b>Condition Formulations</b>
+              <ul>
+                <li>Urinary care (pH-controlled formulations)</li>
+                <li>Renal support (controlled phosphorus &amp; protein)</li>
+                <li>Hairball control (specialized insoluble fiber)</li>
+              </ul>
+            </div>
+            <div>
+              <b>Essential Warning</b>
+              <ul>
+                <li>Not intended for healthy general cats</li>
+                <li>Can cause harm if used improperly</li>
+                <li><strong>Requires veterinary supervision</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="food-tip-box" style="border-left-color: #d9773b; background: #fffaf5;">
+            ⚠️ <strong>General Awareness Notice:</strong> Never transition your cat to a therapeutic or medical prescription food without direct veterinary diagnosis and supervision.
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. FEEDING GUIDELINES -->
+  <section class="section-spacing section-wrap" id="feeding-guidelines">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">Practical Everyday Habits</div>
+        <h2>Responsible <em>Feeding Guidelines</em></h2>
+      </div>
+      <p>
+        How you feed your cat is just as vital as what you put in their bowl. 
+        Follow these veterinary-endorsed feeding routines for optimal feline wellness.
+      </p>
+    </div>
+
+    <div class="guidelines-grid">
+      <!-- 1. Feeding Schedules -->
+      <article class="guideline-card">
+        <div class="guideline-num-icon">⏰</div>
+        <h3>Feeding Schedules</h3>
+        <p>
+          Establish structured meal times rather than leaving food out all day. 
+          Cats are natural hunters who thrive on routine.
+        </p>
+        <ul class="guideline-bullets">
+          <li><strong>Scheduled Meals (Recommended):</strong> 2 to 3 set meals per day. Allows monitoring appetite and prevents continuous grazing obesity.</li>
+          <li><strong>Free-Feeding Disadvantages:</strong> Leaving dry food out 24/7 disrupts natural insulin cycles and can cause rancid oxidation of fats.</li>
+        </ul>
+      </article>
+
+      <!-- 2. Portion Awareness -->
+      <article class="guideline-card">
+        <div class="guideline-num-icon">⚖️</div>
+        <h3>Portion Awareness</h3>
+        <p>
+          Feline obesity is the number one preventable health condition in domestic cats, leading to arthritis, diabetes, and hepatic lipidosis.
+        </p>
+        <ul class="guideline-bullets">
+          <li><strong>Use a Kitchen Scale:</strong> Measure in grams. Standard measuring cups can introduce up to a 20% error margin.</li>
+          <li><strong>Account for Treats:</strong> Healthy treats should constitute no more than 10% of your cat's total daily caloric allowance.</li>
+        </ul>
+      </article>
+
+      <!-- 3. Kitten Feeding Basics -->
+      <article class="guideline-card">
+        <div class="guideline-num-icon">🐾</div>
+        <h3>Kitten Feeding Basics</h3>
+        <p>
+          Small stomachs and burning energy demand frequent, calorie-dense, easy-to-digest meals.
+        </p>
+        <ul class="guideline-bullets">
+          <li><strong>Under 16 Weeks:</strong> 3 to 4 small meals daily of kitten-specific wet and dry food.</li>
+          <li><strong>4 to 12 Months:</strong> Transition gradually to 3 meals daily. Keep providing kitten formula until full 12 months of age.</li>
+        </ul>
+      </article>
+
+      <!-- 4. Adult Cat Feeding Basics -->
+      <article class="guideline-card">
+        <div class="guideline-num-icon">🐈</div>
+        <h3>Adult Cat Feeding Basics</h3>
+        <p>
+          Maintain metabolic balance and lean muscle mass with consistent daily portion control.
+        </p>
+        <ul class="guideline-bullets">
+          <li><strong>Routine:</strong> 2 balanced meals approximately 8 to 12 hours apart (e.g., breakfast and dinner).</li>
+          <li><strong>Mixed Feeding:</strong> High-moisture wet food for breakfast and dinner, with a measured portion of kibble in puzzle toys during midday.</li>
+        </ul>
+      </article>
+
+      <!-- 5. Senior Cat Considerations -->
+      <article class="guideline-card">
+        <div class="guideline-num-icon">🌿</div>
+        <h3>Senior Cat Considerations</h3>
+        <p>
+          As cats age beyond 7 to 11 years, their senses of smell and taste naturally diminish.
+        </p>
+        <ul class="guideline-bullets">
+          <li><strong>Aroma Activation:</strong> Warm wet food to body temperature (~38°C / 100°F) to release enticing scents.</li>
+          <li><strong>Soft Textures:</strong> Switch to gentle mousse or gravies if your senior cat experiences dental sensitivity or missing teeth.</li>
+        </ul>
+      </article>
+
+      <!-- 6. Slow Transitions -->
+      <article class="guideline-card">
+        <div class="guideline-num-icon">🔄</div>
+        <h3>The 7-Day Diet Transition</h3>
+        <p>
+          Feline digestive flora is sensitive to sudden switches. Transition between foods gradually over 7 to 10 days.
+        </p>
+        <ul class="guideline-bullets">
+          <li><strong>Days 1–2:</strong> 75% old food + 25% new food.</li>
+          <li><strong>Days 3–4:</strong> 50% old food + 50% new food.</li>
+          <li><strong>Days 5–6:</strong> 25% old food + 75% new food.</li>
+          <li><strong>Day 7+:</strong> 100% new food, smoothly integrated!</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Importance of Clean Feeding Bowls & Whisker Fatigue Feature -->
+    <div class="whisker-station-box">
+      <div>
+        <div class="eyebrow" style="color: var(--green);">Feeding Ergonomics &amp; Hygiene</div>
+        <h3>Clean Feeding Bowls &amp; Whisker Fatigue</h3>
+        <p>
+          Did you know your cat's whiskers are hyper-sensitive sensory organs? Deep, narrow bowls cause whiskers to repeatedly brush 
+          against high edges, transmitting constant neurological alerts that can make mealtime stressful and frustrating.
+        </p>
+        <div class="bowl-comparison-grid">
+          <div class="bowl-spec-card good">
+            <b>✅ Recommended Feeding Bowls</b>
+            <p style="margin: 0; font-size: 0.84rem;">
+              Wide, flat, shallow plates or saucers made of <strong>food-grade stainless steel, lead-free ceramic, or porcelain</strong>. 
+              Non-porous, easy to sanitize, and prevents whisker contact.
+            </p>
+          </div>
+          <div class="bowl-spec-card bad">
+            <b>❌ Bowls to Avoid</b>
+            <p style="margin: 0; font-size: 0.84rem;">
+              Narrow, deep plastic bowls. Plastic scratches easily, harboring microscopic bacteria that causes 
+              <strong>feline chin acne</strong> (black bumps and painful skin infections).
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background: var(--soft); padding: 26px; border-radius: 20px; border: 1px solid var(--line);">
+          <h4 style="margin: 0 0 12px; font-size: 1.15rem; color: var(--ink);">🧼 Daily Sanitation Checklist</h4>
+          <ul class="pillar-list" style="font-size: 0.85rem;">
+            <li><span class="pillar-bullet">✓</span> <strong>Wash after every single meal:</strong> Wash wet food plates immediately with hot water and pet-safe soap.</li>
+            <li><span class="pillar-bullet">✓</span> <strong>Never top-up over old crumbs:</strong> Empty and wipe dry food dishes before adding a new measured portion.</li>
+            <li><span class="pillar-bullet">✓</span> <strong>Rinse thoroughly:</strong> Ensure no fragrant dish soap residues remain on the bowl surface.</li>
+            <li><span class="pillar-bullet">✓</span> <strong>Use an easy-clean silicone mat:</strong> Place bowls on a wipeable placemat to prevent spills from touching the floor.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FOODS CATS SHOULD AVOID -->
+  <section class="section-spacing section-wrap" id="foods-to-avoid">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow" style="color: var(--alert-red);">Feline Toxicity Hazards</div>
+        <h2>Foods Cats Must <em>Never Eat</em></h2>
+      </div>
+      <p>
+        Common human pantry staples can be profoundly toxic or even fatal to cats. 
+        Always keep these hazardous foods strictly out of paw's reach.
+      </p>
+    </div>
+
+    <!-- Critical Veterinary Alert Box -->
+    <div class="toxic-alert-banner">
+      <div class="toxic-alert-icon">🚨</div>
+      <div class="toxic-alert-content">
+        <h3>Emergency Action Notice</h3>
+        <p>
+          If your cat has consumed any of the foods listed below—or any substance you suspect might be harmful—<strong>do not wait for symptoms to develop</strong> 
+          and <strong>never attempt to induce vomiting at home</strong> without veterinary guidance. Immediate intervention can save your cat's life.
+        </p>
+        <div class="toxic-alert-actions">
+          <span class="emergency-phone-tag">📞 Immediately Contact Your Local Vet</span>
+          <span class="emergency-phone-tag">🏥 Or Visit The Nearest 24/7 Animal Emergency Clinic</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Core Harmful Foods Required by Specification -->
+    <div class="toxic-foods-grid">
+      <!-- 1. Chocolate -->
+      <article class="toxic-food-card">
+        <div class="toxic-food-header">
+          <div class="toxic-food-emoji">🍫</div>
+          <div>
+            <h4>Chocolate &amp; Cocoa</h4>
+          </div>
+        </div>
+        <span class="toxic-danger-level">High Toxicity Danger</span>
+        <p>
+          Contains theobromine and caffeine. Cats metabolize these methylxanthines extremely slowly. 
+          Dark chocolate, cocoa powder, and baking chocolate are exceptionally hazardous.
+        </p>
+        <div class="toxic-symptoms">
+          <strong>Warning Symptoms:</strong> Rapid breathing, severe tremors, vomiting, abnormal heart rhythms, and seizures.
+        </div>
+      </article>
+
+      <!-- 2. Onions & Garlic -->
+      <article class="toxic-food-card">
+        <div class="toxic-food-header">
+          <div class="toxic-food-emoji">🧅</div>
+          <div>
+            <h4>Onions, Garlic &amp; Alliums</h4>
+          </div>
+        </div>
+        <span class="toxic-danger-level">Severe Toxicity Hazard</span>
+        <p>
+          All allium family members (onions, garlic, chives, leeks, shallots) contain thiosulfates that induce oxidative damage, 
+          rupturing feline red blood cells and triggering severe Heinz body hemolytic anemia. Toxic in raw, cooked, or powdered forms!
+        </p>
+        <div class="toxic-symptoms">
+          <strong>Warning Symptoms:</strong> Pale gums, extreme lethargy, reddish-brown urine, weakness, and elevated heart rate.
+        </div>
+      </article>
+
+      <!-- 3. Alcohol -->
+      <article class="toxic-food-card">
+        <div class="toxic-food-header">
+          <div class="toxic-food-emoji">🍷</div>
+          <div>
+            <h4>Alcohol &amp; Ethanol</h4>
+          </div>
+        </div>
+        <span class="toxic-danger-level">Fatal Even in Tiny Drops</span>
+        <p>
+          Beer, wine, liquor, and alcohol-infused desserts can cause acute poisoning. Because of their tiny body mass, 
+          even a single teaspoon of alcohol can cause profound central nervous system depression.
+        </p>
+        <div class="toxic-symptoms">
+          <strong>Warning Symptoms:</strong> Loss of coordination, drop in body temperature, metabolic acidosis, coma, and respiratory failure.
+        </div>
+      </article>
+
+      <!-- 4. Caffeinated Products -->
+      <article class="toxic-food-card">
+        <div class="toxic-food-header">
+          <div class="toxic-food-emoji">☕</div>
+          <div>
+            <h4>Caffeinated Products</h4>
+          </div>
+        </div>
+        <span class="toxic-danger-level">High Cardiac Danger</span>
+        <p>
+          Coffee, black and green tea, energy beverages, and soda are potent stimulants. Feline bodies cannot filter caffeine safely, 
+          which severely stresses their cardiovascular system.
+        </p>
+        <div class="toxic-symptoms">
+          <strong>Warning Symptoms:</strong> Hyper-excitability, panting, dangerous heart palpitations, muscle twitches, and collapse.
+        </div>
+      </article>
+
+      <!-- 5. Grapes & Raisins -->
+      <article class="toxic-food-card">
+        <div class="toxic-food-header">
+          <div class="toxic-food-emoji">🍇</div>
+          <div>
+            <h4>Grapes &amp; Raisins</h4>
+          </div>
+        </div>
+        <span class="toxic-danger-level">Acute Kidney Failure Risk</span>
+        <p>
+          Grapes and raisins contain tartaric acid compounds that are nephrotoxic to cats and dogs. 
+          Even small quantities can cause sudden, irreversible acute kidney injury.
+        </p>
+        <div class="toxic-symptoms">
+          <strong>Warning Symptoms:</strong> Persistent vomiting within hours, abdominal pain, lack of urination, and sudden lethargy.
+        </div>
+      </article>
+
+      <!-- 6. Raw Yeast Dough -->
+      <article class="toxic-food-card">
+        <div class="toxic-food-header">
+          <div class="toxic-food-emoji">🥖</div>
+          <div>
+            <h4>Raw Yeast Dough</h4>
+          </div>
+        </div>
+        <span class="toxic-danger-level">Expansion &amp; Alcohol Hazard</span>
+        <p>
+          Raw bread or pastry dough expands inside the warm, moist stomach environment, leading to severe gastric dilation 
+          or rupture. Simultaneously, fermenting yeast produces toxic ethanol directly into the bloodstream.
+        </p>
+        <div class="toxic-symptoms">
+          <strong>Warning Symptoms:</strong> Severely bloated abdomen, dry heaving, disorientation, hypothermia, and shock.
+        </div>
+      </article>
+    </div>
+
+    <!-- Secondary Common Hazards (Milk, Cooked Bones, Xylitol) -->
+    <div class="secondary-hazards-box">
+      <div>
+        <b>Other Household Foods to Strictly Keep Away:</b>
+        <p>These common kitchen items can cause intestinal obstruction, dental trauma, or severe gastrointestinal distress.</p>
+      </div>
+      <div class="hazard-tags-cloud">
+        <span class="hazard-badge">🥛 Cow's Milk (Lactose Intolerance)</span>
+        <span class="hazard-badge">🍗 Cooked Poultry Bones (Splinter Risk)</span>
+        <span class="hazard-badge">🍬 Xylitol &amp; Artificial Sweeteners</span>
+        <span class="hazard-badge">🥑 Avocado (Persin Hazard)</span>
+        <span class="hazard-badge">🧂 High-Sodium Canned Foods</span>
+        <span class="hazard-badge">🥜 Macadamia Nuts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HYDRATION TIPS -->
+  <section class="section-spacing section-wrap" id="hydration-tips">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow" style="color: var(--cat-water-blue);">Moisture &amp; Vitality</div>
+        <h2>Essential <em>Hydration Tips</em> for Cats</h2>
+      </div>
+      <p>
+        Cats are notoriously reluctant drinkers. Learn how to stimulate healthy hydration habits 
+        to safeguard your feline's bladder and kidney longevity.
+      </p>
+    </div>
+
+    <!-- Hydration Banner -->
+    <div class="hydration-banner">
+      <div>
+        <div class="eyebrow" style="color: var(--cat-water-blue);">Why Cats Need Hydration Awareness</div>
+        <h3>The Feline Thirst Paradox</h3>
+        <p>
+          In nature, a wildcat consumes mice and birds containing approximately 70% to 75% water, effortlessly covering 
+          their hydration needs during meals. Domestic cats fed dry diets (with only 10% water) rarely compensate by drinking 
+          enough from bowls alone. Concentrated urine leads directly to painful bladder stones and chronic kidney strain.
+        </p>
+        <a class="button" href="#hydration-calculator" style="background: var(--cat-water-blue); border-color: var(--cat-water-blue);">
+          Calculate Cat Water Needs 🧮
+        </a>
+      </div>
+      <div class="hydration-stat-strip">
+        <div class="hydration-stat-box">
+          <b>50–60 ml</b>
+          <span>Daily water needed per kg of healthy feline body weight</span>
+        </div>
+        <div class="hydration-stat-box">
+          <b>75%+</b>
+          <span>Water content in wet cat food pouches, naturally hydrating meals</span>
+        </div>
+        <div class="hydration-stat-box">
+          <b>2–3x</b>
+          <span>Cats drink up to 3x more water when using aerated flowing fountains</span>
+        </div>
+        <div class="hydration-stat-box">
+          <b>2x Daily</b>
+          <span>Frequency to refresh water bowls for optimal feline acceptance</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Core Hydration Guidelines Required by Specification -->
+    <div class="hydration-tips-grid">
+      <!-- 1. Importance of Clean Fresh Water -->
+      <article class="hydration-card">
+        <div class="hydration-icon-wrap">🚰</div>
+        <h4>1. Provide Clean, Fresh Water</h4>
+        <p>
+          Cats have an extraordinarily keen sense of smell. Stale water that has collected dust, floating fur, 
+          or bacterial film will be instinctively rejected. Refresh bowls with cool, filtered tap or spring water morning and evening.
+        </p>
+      </article>
+
+      <!-- 2. Keep Bowls Accessible -->
+      <article class="hydration-card">
+        <div class="hydration-icon-wrap">📍</div>
+        <h4>2. Keep Stations Accessible</h4>
+        <p>
+          Place multiple water stations in quiet, low-traffic areas of your home. If you live in a multi-story home, 
+          place at least one station on each floor. <strong>The golden rule:</strong> always keep water stations at least 
+          4–6 feet away from food dishes and well away from litter boxes.
+        </p>
+      </article>
+
+      <!-- 3. Clean Bowls Regularly -->
+      <article class="hydration-card">
+        <div class="hydration-icon-wrap">🧼</div>
+        <h4>3. Clean Bowls Regularly</h4>
+        <p>
+          A thin, slippery biofilm naturally forms on water bowls within 24 hours. Wash bowls daily using mild dish soap 
+          and hot water, rinsing thoroughly. Prefer stainless steel or glazed ceramic bowls over porous plastic.
+        </p>
+      </article>
+
+      <!-- 4. Encouraging Water Intake -->
+      <article class="hydration-card">
+        <div class="hydration-icon-wrap">⛲</div>
+        <h4>4. Encourage Active Intake</h4>
+        <p>
+          Install a circulating pet water fountain—flowing, oxygenated streams tap into cats' instinct that moving water is safe. 
+          You can also add a tablespoon of unsalted homemade chicken broth or warm water to wet food to sneak in extra hydration!
+        </p>
+      </article>
+    </div>
+
+    <!-- Interactive Daily Water & Feeding Estimator Widget -->
+    <div class="calculator-box" id="hydration-calculator">
+      <div class="calculator-grid">
+        <div>
+          <div class="eyebrow" style="color: var(--green);">Interactive Planning Tool</div>
+          <h3 style="margin: 0 0 10px; font-size: 1.45rem;">Daily Hydration &amp; Meal Estimator</h3>
+          <p style="margin: 0 0 20px; font-size: 0.92rem; color: #55675e;">
+            Estimate your cat's baseline daily hydration requirement and recommended meal frequency based on weight and diet type.
+          </p>
+
+          <form id="catHydrationForm" onsubmit="event.preventDefault(); calculateHydration();">
+            <div class="calc-form-group">
+              <label for="catWeight">Cat Weight:</label>
+              <div class="calc-input-row">
+                <input type="number" id="catWeight" min="1" max="15" step="0.1" value="4.0" required>
+                <select id="weightUnit" onchange="calculateHydration()">
+                  <option value="kg" selected>Kilograms (kg)</option>
+                  <option value="lbs">Pounds (lbs)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="catLifeStage">Life Stage:</label>
+              <select id="catLifeStage" style="width: 100%;" onchange="calculateHydration()">
+                <option value="adult" selected>Adult Cat (1–7 years)</option>
+                <option value="kitten">Growing Kitten (&lt; 12 months)</option>
+                <option value="senior">Senior Cat (7+ years)</option>
+              </select>
+            </div>
+
+            <div class="calc-form-group">
+              <label for="catDietType">Primary Diet Format:</label>
+              <select id="catDietType" style="width: 100%;" onchange="calculateHydration()">
+                <option value="mixed" selected>Mixed (Wet Food + Dry Kibble)</option>
+                <option value="wet">Predominantly Wet Food (Cans/Pouches)</option>
+                <option value="dry">Predominantly Dry Kibble</option>
+              </select>
+            </div>
+          </form>
+        </div>
+
+        <div class="calc-results-card">
+          <h4>Estimated Daily Hydration Profile</h4>
+          <span style="font-size: 0.82rem; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Target Total Water:</span>
+          <div class="calc-metric" id="totalWaterOutput">220 ml</div>
+          <p id="waterBreakdown">Approx. 130 ml from wet meals + 90 ml from fresh bowl drinking.</p>
+          
+          <div style="border-top: 1px dashed #cfdbd2; padding-top: 14px; margin-top: 10px;">
+            <span style="font-size: 0.82rem; color: var(--muted); text-transform: uppercase; font-weight: 700;">Recommended Meal Schedule:</span>
+            <div style="font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-top: 4px;" id="scheduleOutput">
+              2 Scheduled Meals Daily
+            </div>
+            <span style="font-size: 0.82rem; color: var(--green); display: block; margin-top: 4px;" id="dietTipOutput">
+              💡 Split into morning &amp; evening wet servings with measured kibble in interactive toys.
+            </span>
+          </div>
+
+          <span class="calc-footnote">
+            *General nutritional guideline for healthy cats. Actual water and caloric requirements vary with activity, climate, and medical conditions.
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FREQUENTLY ASKED QUESTIONS (FAQ) -->
+  <section class="section-spacing section-wrap" id="faq-section">
+    <div class="section-heading centered">
+      <div>
+        <div class="eyebrow">Common Queries</div>
+        <h2>Cat Nutrition <em>FAQs</em></h2>
+      </div>
+      <p style="margin: 0 auto;">Answers to the most common feeding and dietary questions cat parents ask.</p>
+    </div>
+
+    <div class="faq-grid">
+      <!-- FAQ 1 -->
+      <div class="faq-item active">
+        <button class="faq-question" type="button" aria-expanded="true">
+          <span>Can cats eat a vegan or vegetarian diet?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            <strong>No. Cats cannot survive on a vegan or vegetarian diet.</strong> As obligate carnivores, cats have a metabolic 
+            requirement for nutrients found exclusively in animal tissue—most notably preformed Vitamin A, arachidonic acid, and the 
+            amino acid taurine. Forcing a cat onto a plant-only diet causes acute malnutrition, severe heart disease (dilated cardiomyopathy), 
+            and blindness.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Is wet food strictly better than dry kibble?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Both offer distinct benefits, but wet food is widely praised by feline veterinarians because its 75%+ water content 
+            actively protects against chronic kidney disease and urinary crystals. Dry food is convenient, cost-effective, and 
+            superb for foraging puzzles. A <strong>combination approach</strong>—wet meals in the morning and evening, supplemented 
+            with measured kibble in enrichment toys—often provides the best of both worlds.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Why does my cat suddenly refuse to eat?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Cats can be finicky, but a complete loss of appetite (anorexia) is a serious veterinary concern. Unlike dogs or humans, 
+            cats who go without food for even <strong>24 to 48 hours</strong> are at extreme risk of developing <em>hepatic lipidosis</em> 
+            (fatty liver syndrome), a potentially life-threatening condition. If your cat refuses all food for more than 24 hours, 
+            contact a veterinarian immediately.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>Can I give my adult cat cow's milk as a treat?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Despite the popular storybook myth, <strong>most adult cats are lactose intolerant</strong>. After weaning off their mother's milk, 
+            kittens stop producing the lactase enzyme needed to digest lactose in dairy. Feeding cow's milk typically results in stomach cramping, 
+            painful gas, and watery diarrhea. If you wish to treat your cat, choose specifically formulated, lactose-free cat milk from pet stores.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>How can I tell if my cat is at a healthy weight?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Veterinarians use the <strong>Body Condition Score (BCS 1–9)</strong>. In an ideal cat (BCS 5/9), you should easily feel their ribs 
+            under a thin layer of fat without pressing hard, see a noticeable waistline behind the ribs when viewed from above, and observe 
+            a slight abdominal tuck from the side. If ribs cannot be felt or their belly sags heavily, consult your veterinarian for a guided, 
+            safe weight reduction strategy.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Veterinary Disclaimer Banner -->
+    <div class="vet-disclaimer-card">
+      <div class="vet-disclaimer-icon">🩺</div>
+      <div class="vet-disclaimer-text">
+        <h4>Important Veterinary Guidance Notice</h4>
+        <p>
+          The nutritional information provided on this page is for general educational awareness only. Every feline is unique in their 
+          activity level, medical history, allergies, and metabolic rate. Never replace professional veterinary advice with online information. 
+          Always consult your veterinarian for specialized dietary prescriptions, managing feline weight changes, or addressing medical issues.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CTA SECTION -->
+  <section class="section-wrap">
+    <div class="cat-cta-band">
+      <div>
+        <div class="eyebrow" style="color: #c3ddc8;">Complete Feline Care</div>
+        <h2>Ready to Explore More <em>Cat Guides?</em></h2>
+        <p>
+          Nutrition is the cornerstone of wellness, but joyful cat parenting also involves behavioral enrichment, 
+          regular grooming routines, healthcare checkups, and discovering unique breed traits. Explore our comprehensive cat library!
+        </p>
+      </div>
+      <div class="cat-cta-actions">
+        <!-- Direct button linking back to the Cats landing page as requested -->
+        <a class="button button-light" href="index.html">← Back to Cats Overview</a>
+        <a class="button button-translucent" href="care.html">Cat Care &amp; Health 🩺</a>
+        <a class="button button-translucent" href="breeds.html">Explore Cat Breeds 🐈</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer (Matches main PetSathi homepage) -->
+<footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div>
+      <a class="brand" href="../../../../index.html">🐾 Pet<span>Sathi</span></a>
+      <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
+    </div>
+    <div>
+      <b>Explore</b>
+      <a href="../index.html">Pet Categories</a>
+      <a href="../../services/index.html">Services</a>
+      <a href="../../walker/index.html">Find a Walker</a>
+    </div>
+    <div>
+      <b>PetSathi</b>
+      <a href="../../about.html">About Us</a>
+      <a href="../../auth/login.html">Log in</a>
+      <a href="../../auth/register.html">Register</a>
+    </div>
+    <div>
+      <b>Cat Guides</b>
+      <a href="breeds.html">Cat Breeds</a>
+      <a href="care.html">Cat Care &amp; Health</a>
+      <a href="nutrition.html">Food &amp; Nutrition</a>
+      <a href="behaviour.html">Behaviour &amp; Training</a>
+    </div>
+  </div>
+  <div class="section-wrap footer-bottom">
+    <span>© <span id="year"></span> PetSathi. Made with ♥ for pets.</span>
+    <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
+  </div>
+</footer>
+
+<!-- Global Main Script -->
+<script src="../../../js/main.js"></script>
+
+<!-- Scoped JavaScript for Nutrition Page -->
+<script>
+  // Interactive Daily Water & Feeding Estimator Function
+  function calculateHydration() {
+    const rawWeight = parseFloat(document.getElementById('catWeight').value);
+    const unit = document.getElementById('weightUnit').value;
+    const lifeStage = document.getElementById('catLifeStage').value;
+    const dietType = document.getElementById('catDietType').value;
+
+    if (isNaN(rawWeight) || rawWeight <= 0) return;
+
+    // Normalize to kg
+    const weightInKg = unit === 'lbs' ? rawWeight * 0.453592 : rawWeight;
+
+    // Normal healthy cat requires approximately 50-60ml water per kg
+    let baseWaterPerKg = 55;
+    if (lifeStage === 'kitten') baseWaterPerKg = 65; // kittens need slightly more
+    if (lifeStage === 'senior') baseWaterPerKg = 55;
+
+    const totalWaterMl = Math.round(weightInKg * baseWaterPerKg);
+
+    let fromFood = 0;
+    let fromBowl = 0;
+    let breakdownText = "";
+    let scheduleText = "2 Scheduled Meals Daily";
+    let tipText = "💡 Balanced routine supporting steady energy and hydration.";
+
+    if (dietType === 'wet') {
+      // Wet food is ~75% water, supplies roughly 70-80% of daily hydration
+      fromFood = Math.round(totalWaterMl * 0.75);
+      fromBowl = Math.max(20, totalWaterMl - fromFood);
+      breakdownText = `Approx. ${fromFood} ml obtained from wet food + ${fromBowl} ml needed from fresh water bowl.`;
+      tipText = "💡 High wet food intake naturally takes great care of your cat's hydration!";
+    } else if (dietType === 'dry') {
+      // Dry kibble provides only ~10% moisture
+      fromFood = Math.round(totalWaterMl * 0.10);
+      fromBowl = totalWaterMl - fromFood;
+      breakdownText = `Only ~${fromFood} ml from kibble. Cat must drink ~${fromBowl} ml from fresh bowls or pet fountains!`;
+      tipText = "⚠️ High dry food diet! Place multiple water fountains to encourage active drinking.";
+    } else {
+      // Mixed
+      fromFood = Math.round(totalWaterMl * 0.50);
+      fromBowl = totalWaterMl - fromFood;
+      breakdownText = `Approx. ${fromFood} ml from wet meals + ${fromBowl} ml to drink from clean water bowls.`;
+      tipText = "💡 Great balance! Serve wet meals for breakfast/dinner, with measured kibble in puzzle toys.";
+    }
+
+    if (lifeStage === 'kitten') {
+      scheduleText = "3 to 4 Small Meals Daily";
+      tipText = "🐾 Kittens have tiny stomachs and burn high energy. Frequent smaller meals are ideal.";
+    } else if (lifeStage === 'senior') {
+      scheduleText = "2 to 3 Easily Digestible Meals Daily";
+      tipText = "🌿 Warm senior meals slightly to body temperature to release appetizing scents.";
+    }
+
+    document.getElementById('totalWaterOutput').textContent = `${totalWaterMl} ml / day`;
+    document.getElementById('waterBreakdown').textContent = breakdownText;
+    document.getElementById('scheduleOutput').textContent = scheduleText;
+    document.getElementById('dietTipOutput').textContent = tipText;
+  }
+
+  // FAQ Accordion Toggle Interaction
+  document.addEventListener('DOMContentLoaded', () => {
+    // Run initial calculation
+    calculateHydration();
+
+    // Setup FAQ toggles
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(el => {
+          el.classList.remove('active');
+          const button = el.querySelector('.faq-question');
+          if (button) button.setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle clicked
+        if (!isActive) {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Quick Jump active state scroll spy
+    const pills = document.querySelectorAll('.quick-pill');
+    const sections = Array.from(pills).map(pill => {
+      const id = pill.getAttribute('href');
+      return id && id.startsWith('#') ? document.querySelector(id) : null;
+    }).filter(Boolean);
+
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + 120;
+      let currentSection = null;
+
+      sections.forEach(sec => {
+        if (sec.offsetTop <= scrollPos) {
+          currentSection = sec;
+        }
+      });
+
+      if (currentSection) {
+        const id = '#' + currentSection.id;
+        pills.forEach(pill => {
+          if (pill.getAttribute('href') === id) {
+            pill.classList.add('active');
+          } else {
+            pill.classList.remove('active');
+          }
+        });
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

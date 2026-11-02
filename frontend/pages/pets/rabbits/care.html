@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A practical rabbit care and health guide covering daily routines, housing, grooming, wellness, and safety from PetSathi.">
+  <meta name="theme-color" content="#fcfaf5">
+  <title>Rabbit Care & Health Guide | PetSathi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+
+  <style>
+    /* =========================================
+       RABBIT CARE PAGE — PETSATHI THEME
+    ========================================= */
+    body { overflow-x: hidden; }
+
+    .care-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 66px 20px 60px;
+      text-align: center;
+      background: linear-gradient(135deg, #edf5e9 0%, #fbf7ec 58%, #f8eee4 100%);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .care-hero::before,
+    .care-hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      background: rgba(40, 104, 73, .07);
+    }
+    .care-hero::before { width: 270px; height: 270px; top: -145px; left: -75px; }
+    .care-hero::after { width: 220px; height: 220px; right: -75px; bottom: -115px; }
+    .care-hero-content { position: relative; z-index: 1; max-width: 820px; margin: auto; }
+    .care-hero .eyebrow {
+      display: inline-block;
+      padding: 7px 15px;
+      border-radius: 999px;
+      background: rgba(40, 104, 73, .1);
+    }
+    .hero-rabbit { margin: 9px 0 5px; font-size: 4rem; line-height: 1.2; }
+    .care-hero h1 { margin: 8px 0 15px; font-size: clamp(2.5rem, 5vw, 4.1rem); letter-spacing: -2px; }
+    .care-hero p { max-width: 700px; margin: 0 auto 25px; color: #53675a; font-size: 1.02rem; line-height: 1.85; }
+    .hero-actions { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+    .care-quick-nav {
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      background: rgba(252, 250, 245, .97);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 5px 18px rgba(35, 57, 43, .04);
+      backdrop-filter: blur(10px);
+    }
+    .care-quick-nav .section-wrap { display: flex; align-items: center; gap: 10px; padding-top: 12px; padding-bottom: 12px; overflow-x: auto; scrollbar-width: thin; }
+    .care-quick-nav a { flex: 0 0 auto; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: #53675a; font-size: .82rem; font-weight: 700; transition: .2s ease; }
+    .care-quick-nav a:hover, .care-quick-nav a.active { background: var(--green); color: #fff; border-color: var(--green); }
+
+    .care-section { padding: 72px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 78px; }
+    .care-section.soft-bg { background: #f5f8f2; }
+    .care-heading { max-width: 740px; margin-bottom: 32px; }
+    .care-heading.centered { margin-left: auto; margin-right: auto; text-align: center; }
+    .care-heading h2 { margin: 5px 0 12px; }
+    .care-heading p { margin: 0; line-height: 1.8; }
+
+    .routine-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .routine-item { display: flex; align-items: flex-start; gap: 13px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .routine-icon { flex: 0 0 auto; font-size: 1.5rem; }
+    .routine-item h3 { margin: 0 0 5px; font-size: 1rem; letter-spacing: -.2px; }
+    .routine-item p { margin: 0; font-size: .87rem; line-height: 1.7; }
+
+    .daily-checklist { margin-top: 32px; padding: 27px; background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 8px 24px rgba(35, 57, 43, .04); }
+    .checklist-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .checklist-header .eyebrow { margin-bottom: 6px; }
+    .checklist-header h3 { margin: 0 0 5px; font-size: 1.25rem; }
+    .checklist-header p { margin: 0; font-size: .88rem; }
+    .checklist-count { padding: 8px 14px; border-radius: 999px; background: #edf4e9; color: var(--green); font-size: .84rem; font-weight: 700; }
+    .checklist-progress-track { height: 10px; overflow: hidden; border-radius: 999px; background: #e9eee6; margin-bottom: 20px; }
+    .checklist-progress-fill { width: 0; height: 100%; border-radius: 999px; background: var(--green); transition: width .3s ease; }
+    .checklist-items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .checklist-task { display: flex; align-items: flex-start; gap: 12px; padding: 15px; border: 1px solid var(--line); border-radius: 12px; background: #fcfaf5; cursor: pointer; transition: background .2s ease, border-color .2s ease; }
+    .checklist-task:hover { border-color: #cbd9ce; background: #f1f4ed; }
+    .checklist-task input { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--green); cursor: pointer; flex-shrink: 0; }
+    .checklist-task strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: .9rem; }
+    .checklist-task small { display: block; color: var(--muted); font-size: .79rem; line-height: 1.5; }
+    .checklist-task.is-checked { background: #edf4e9; border-color: #cbdcc9; }
+    .checklist-task.is-checked strong { color: var(--green); }
+    .checklist-actions { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 19px; padding-top: 17px; border-top: 1px solid var(--line); }
+    .checklist-actions span { color: var(--muted); font-size: .85rem; }
+    .checklist-actions button { padding: 9px 15px; border: 1px solid #cbd9ce; border-radius: 999px; background: #fff; color: var(--green); font: inherit; font-size: .82rem; font-weight: 700; cursor: pointer; transition: .2s ease; }
+    .checklist-actions button:hover { background: var(--green); border-color: var(--green); color: #fff; }
+
+    .care-tip { display: flex; align-items: flex-start; gap: 15px; margin-top: 25px; padding: 20px 22px; border: 1px solid #dce8d8; border-left: 4px solid var(--green); border-radius: 13px; background: #f0f6ed; }
+    .care-tip .tip-icon { flex: 0 0 auto; font-size: 1.5rem; line-height: 1.4; }
+    .care-tip strong { display: block; margin-bottom: 4px; color: var(--dark); }
+    .care-tip p { margin: 0; color: #53675a; font-size: .9rem; line-height: 1.7; }
+
+    .care-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .care-card { height: 100%; padding: 25px; background: #fff; border: 1px solid #e3eae0; border-radius: 18px; box-shadow: 0 8px 24px rgba(35, 57, 43, .035); transition: transform .2s ease, box-shadow .2s ease; }
+    .care-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(35, 57, 43, .08); }
+    .care-icon { display: grid; place-items: center; width: 54px; height: 54px; margin-bottom: 17px; border-radius: 15px; background: #edf4e9; font-size: 1.7rem; }
+    .care-card h3 { margin: 0 0 10px; font-size: 1.13rem; letter-spacing: -.35px; }
+    .care-card p { margin: 0; font-size: .9rem; line-height: 1.75; }
+
+    .feature-banner { display: grid; grid-template-columns: .85fr 1.15fr; gap: 28px; align-items: center; margin-top: 30px; padding: 30px; border-radius: 22px; background: linear-gradient(135deg, #234f39, #347454); color: #fff; }
+    .feature-art { display: grid; place-items: center; min-height: 210px; border: 1px solid rgba(255,255,255,.2); border-radius: 17px; background: rgba(255,255,255,.09); font-size: 5.5rem; }
+    .feature-banner h3 { margin: 0 0 12px; color: #fff; font-size: 1.55rem; }
+    .feature-banner p { margin: 0; color: #e2eee5; font-size: .92rem; line-height: 1.8; }
+
+    .environment-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .environment-card { padding: 25px; border: 1px solid var(--line); border-radius: 17px; background: #fff; }
+    .environment-card h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-size: 1.15rem; }
+    .environment-card p { margin: 0 0 12px; font-size: .9rem; line-height: 1.7; }
+    .environment-card ul { margin: 0; padding-left: 20px; color: #5f6d64; font-size: .86rem; line-height: 1.8; }
+    .environment-card.indoor { border-top: 4px solid #6c9873; }
+    .environment-card.outdoor { border-top: 4px solid #d4a16e; }
+
+    .warning-panel { padding: 27px; border: 1px solid #f0d5bd; border-radius: 18px; background: #fff8f1; }
+    .warning-panel h3 { margin: 0 0 15px; color: #8e4d23; font-size: 1.2rem; }
+    .hazard-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+    .hazard-item { padding: 17px; border: 1px solid #f0e0d2; border-radius: 13px; background: #fff; }
+    .hazard-item strong { display: block; margin-bottom: 5px; color: #80451f; font-size: .94rem; }
+    .hazard-item p { margin: 0; font-size: .85rem; line-height: 1.65; }
+
+    .health-layout { display: grid; grid-template-columns: 1.12fr .88fr; gap: 22px; align-items: start; }
+    .health-signs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .health-sign { display: flex; align-items: flex-start; gap: 10px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; font-size: .87rem; line-height: 1.6; }
+    .health-sign span { flex: 0 0 auto; font-size: 1.2rem; }
+    .vet-panel { padding: 25px; border: 1px solid #f1cccc; border-radius: 17px; background: #fff3f2; }
+    .vet-panel h3 { margin: 0 0 10px; color: #9d3434; font-size: 1.2rem; }
+    .vet-panel p { margin: 0 0 13px; color: #744b4b; font-size: .89rem; line-height: 1.7; }
+    .vet-panel ul { margin: 0; padding-left: 20px; color: #744b4b; font-size: .88rem; line-height: 1.8; }
+    .vet-checkup { margin-top: 20px; padding: 21px; border-radius: 15px; background: #edf4e9; border: 1px solid #dce8d8; }
+    .vet-checkup h3 { margin: 0 0 7px; font-size: 1.05rem; }
+    .vet-checkup p { margin: 0; font-size: .89rem; line-height: 1.7; }
+    .vaccine-note { margin-top: 18px; padding: 18px 20px; border: 1px solid #e4ddc4; border-radius: 13px; background: #fbf8ed; color: #625b43; font-size: .88rem; line-height: 1.75; }
+    .vaccine-note strong { color: #4e5e43; }
+
+    .care-faq-list { max-width: 850px; margin: 30px auto 0; display: grid; gap: 12px; }
+    .care-faq-item { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: #fff; transition: border-color .2s ease; }
+    .care-faq-item[open] { border-color: #cbd9ce; }
+    .care-faq-item summary { position: relative; padding: 19px 48px 19px 20px; color: var(--ink); font-weight: 700; font-size: .95rem; cursor: pointer; list-style: none; }
+    .care-faq-item summary::-webkit-details-marker { display: none; }
+    .care-faq-item summary::after { content: "+"; position: absolute; top: 50%; right: 20px; transform: translateY(-50%); color: var(--green); font-size: 1.4rem; font-weight: 500; }
+    .care-faq-item[open] summary::after { content: "−"; }
+    .care-faq-item p { margin: 0; padding: 0 20px 20px; color: var(--muted); font-size: .9rem; line-height: 1.75; }
+
+    .care-disclaimer { margin-top: 25px; padding: 17px 20px; border-radius: 12px; background: #f0f1ed; color: #59675e; font-size: .83rem; line-height: 1.75; }
+    .sources { padding: 32px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+    .sources h3 { margin: 0 0 12px; font-size: 1.15rem; }
+    .sources p { margin: 0 0 14px; font-size: .88rem; }
+    .source-links { display: grid; gap: 10px; }
+    .source-links a { color: var(--green); font-size: .88rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+    .care-cta { margin: 55px auto 65px; padding: 42px 28px; border-radius: 22px; background: #1d5039; color: #fff; text-align: center; }
+    .care-cta h2 { margin: 0 0 12px; color: #fff; font-size: clamp(1.7rem, 3vw, 2.5rem); }
+    .care-cta p { max-width: 660px; margin: 0 auto 22px; color: #dce9df; line-height: 1.75; }
+    .care-cta .button { background: #fff; border-color: #fff; color: var(--dark); }
+
+    .back-to-top { position: fixed; right: 24px; bottom: 24px; z-index: 30; width: 46px; height: 46px; border: 0; border-radius: 50%; background: var(--green); color: #fff; font-size: 1.35rem; cursor: pointer; box-shadow: 0 5px 18px rgba(35,57,43,.2); opacity: 0; visibility: hidden; transform: translateY(10px); transition: .25s ease; }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { background: var(--dark); }
+    .footer .footer-bottom { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+
+    @media (max-width: 850px) {
+      .care-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .health-layout { grid-template-columns: 1fr; }
+      .feature-banner { grid-template-columns: 1fr; }
+      .feature-art { min-height: 150px; }
+    }
+    @media (max-width: 600px) {
+      .care-section { padding: 52px 0; }
+      .care-grid, .routine-list, .hazard-grid, .health-signs, .checklist-items, .environment-grid { grid-template-columns: 1fr; }
+      .care-card { padding: 22px; }
+      .care-hero { padding: 48px 18px; }
+      .care-hero h1 { letter-spacing: -1.5px; }
+      .feature-banner { padding: 20px; }
+      .warning-panel { padding: 19px; }
+      .daily-checklist { padding: 20px; }
+      .checklist-actions { align-items: flex-start; flex-direction: column; }
+      .sources { padding: 22px; }
+      .care-cta { padding: 32px 20px; }
+      .back-to-top { right: 17px; bottom: 17px; }
+      .footer .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../../index.html">
+      <span class="brand-mark">🐾</span>
+      <span>Pet<span>Sathi</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../../../../index.html">Home</a>
+      <div class="nav-item">
+        <a class="active" href="../index.html">Explore Pets ▾</a>
+        <div class="dropdown">
+          <a href="../dogs/index.html">🐕 Dogs</a>
+          <a href="../cats/index.html">🐈 Cats</a>
+          <a href="../birds/index.html">🐦 Birds</a>
+          <a href="index.html">🐇 Rabbits</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="../../services/index.html">Services ▾</a>
+        <div class="dropdown">
+          <a href="../../services/dog-walking.html">Dog Walking</a>
+          <a href="../../services/cat-care.html">Cat Care</a>
+          <a href="../../services/pet-care.html">Pet Care</a>
+          <a href="../../services/guidance.html">Pet Guidance</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="../../walker/index.html">Find a Walker ▾</a>
+        <div class="dropdown">
+          <a href="../../walker/dogs.html">Dog Walkers</a>
+          <a href="../../walker/cats.html">Cat Caregivers</a>
+          <a href="../../walker/birds.html">Bird Caregivers</a>
+          <a href="../../walker/rabbits.html">Rabbit Caregivers</a>
+        </div>
+      </div>
+      <a href="../../about.html">About Us</a>
+      <a href="../../auth/login.html">Log in</a>
+      <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="care-hero">
+      <div class="care-hero-content">
+        <div class="eyebrow">PetSathi • RABBIT CARE GUIDE</div>
+        <div class="hero-rabbit" aria-hidden="true">🐰</div>
+        <h1>Small Paws,<br><em>Thoughtful Care.</em></h1>
+        <p>Healthy rabbits need space to hop, a hay-rich diet, gentle handling, regular grooming, and careful health checks. Build a safe, comfortable routine with this practical guide.</p>
+        <div class="hero-actions">
+          <a class="button" href="#daily-care">Explore the Care Guide ↓</a>
+          <a class="button button-outline" href="index.html">← Rabbits Home</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STICKY QUICK NAV -->
+    <nav class="care-quick-nav" aria-label="Rabbit care sections">
+      <div class="section-wrap">
+        <a href="#daily-care">💧 Daily Care</a>
+        <a href="#housing">🏡 Housing</a>
+        <a href="#grooming">🧼 Grooming</a>
+        <a href="#health">💚 Health</a>
+        <a href="#safety">⚠️ Safety</a>
+      </div>
+    </nav>
+
+    <!-- 1. DAILY CARE -->
+    <section class="care-section" id="daily-care">
+      <div class="section-wrap">
+        <div class="care-heading">
+          <div class="eyebrow">01 • EVERYDAY ROUTINE</div>
+          <h2>Daily Rabbit <em>Care</em></h2>
+          <p>Rabbits can hide discomfort, so a calm daily check matters. Keep food and water fresh, keep their toilet area clean, and learn what your rabbit's normal appetite, behaviour, and droppings look like.</p>
+        </div>
+
+        <div class="routine-list">
+          <article class="routine-item">
+            <span class="routine-icon" aria-hidden="true">🌾</span>
+            <div><h3>Unlimited Good-Quality Hay</h3><p>Keep fresh grass hay available throughout the day. Hay supplies fibre for digestive function and helps wear down continuously growing teeth. Choose clean, dry hay without a musty or mouldy smell.</p></div>
+          </article>
+          <article class="routine-item">
+            <span class="routine-icon" aria-hidden="true">💧</span>
+            <div><h3>Fresh Drinking Water</h3><p>Provide clean water every day in a stable bowl or a suitable bottle. Wash and refill the container daily, and check that a bottle's spout is not blocked.</p></div>
+          </article>
+          <article class="routine-item">
+            <span class="routine-icon" aria-hidden="true">🥬</span>
+            <div><h3>Balanced, Rabbit-Safe Food</h3><p>Offer suitable leafy greens and a measured amount of plain rabbit pellets alongside hay. Introduce new foods gradually. Fruit and other sugary treats should be limited, not used as main food.</p></div>
+          </article>
+          <article class="routine-item">
+            <span class="routine-icon" aria-hidden="true">🧹</span>
+            <div><h3>Clean the Litter Area</h3><p>Remove wet or soiled litter and leftover fresh food. Wash bowls and refresh bedding as needed. Clean surroundings make it easier to notice changes in urine and droppings.</p></div>
+          </article>
+          <article class="routine-item">
+            <span class="routine-icon" aria-hidden="true">🔎</span>
+            <div><h3>Observe Appetite and Droppings</h3><p>Check that your rabbit is eating, drinking, moving, and passing its usual dry droppings. A sudden reduction or stop in eating or droppings needs prompt veterinary advice.</p></div>
+          </article>
+          <article class="routine-item">
+            <span class="routine-icon" aria-hidden="true">🧸</span>
+            <div><h3>Movement and Enrichment</h3><p>Provide daily opportunities to hop, explore, forage, chew safe materials, and retreat to a hiding place. Keep exercise time supervised in a rabbit-proofed area.</p></div>
+          </article>
+          <article class="routine-item">
+            <span class="routine-icon" aria-hidden="true">🤲</span>
+            <div><h3>Gentle, Safe Handling</h3><p>Interact at floor level when possible. If lifting is necessary, support the chest and hindquarters securely and keep your rabbit close to your body. Never lift by the ears.</p></div>
+          </article>
+        </div>
+
+        <div class="daily-checklist">
+          <div class="checklist-header">
+            <div><div class="eyebrow">YOUR DAILY ROUTINE</div><h3>Today's Rabbit Care Checklist 🐇</h3><p>Tick each task as you complete it. Your progress is saved in this browser.</p></div>
+            <div class="checklist-count" id="careChecklistCount" aria-live="polite">0 of 6 completed</div>
+          </div>
+          <div class="checklist-progress-track" id="careProgressTrack" role="progressbar" aria-label="Daily rabbit care checklist progress" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><div class="checklist-progress-fill" id="careProgressFill"></div></div>
+          <div class="checklist-items">
+            <label class="checklist-task"><input type="checkbox" data-care-task="hay"><span><strong>Top up fresh hay</strong><small>Keep hay clean, dry, and available.</small></span></label>
+            <label class="checklist-task"><input type="checkbox" data-care-task="water"><span><strong>Refresh drinking water</strong><small>Wash and refill the water container.</small></span></label>
+            <label class="checklist-task"><input type="checkbox" data-care-task="food"><span><strong>Check food and remove leftovers</strong><small>Offer suitable food and remove spoiled greens.</small></span></label>
+            <label class="checklist-task"><input type="checkbox" data-care-task="litter"><span><strong>Clean the litter area</strong><small>Remove wet litter and soiled bedding.</small></span></label>
+            <label class="checklist-task"><input type="checkbox" data-care-task="observe"><span><strong>Check behaviour and droppings</strong><small>Notice appetite, movement, and toilet habits.</small></span></label>
+            <label class="checklist-task"><input type="checkbox" data-care-task="exercise"><span><strong>Provide safe activity</strong><small>Allow supervised movement and enrichment.</small></span></label>
+          </div>
+          <div class="checklist-actions"><span id="careChecklistMessage" aria-live="polite">Every little bit of care counts! 💚</span><button type="button" id="resetCareChecklist">Reset checklist ↻</button></div>
+        </div>
+
+        <div class="care-tip">
+          <span class="tip-icon" aria-hidden="true">💡</span>
+          <div><strong>Hay is a daily essential, not an occasional snack</strong><p>Grass hay should make up the largest part of a typical adult rabbit's diet. Make diet changes gradually and ask a rabbit-experienced veterinarian for advice tailored to age, health, and body condition.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. HOUSING -->
+    <section class="care-section soft-bg" id="housing">
+      <div class="section-wrap">
+        <div class="care-heading centered">
+          <div class="eyebrow">02 • A SAFE PLACE TO HOP</div>
+          <h2>Housing & <em>Environment</em></h2>
+          <p>A rabbit's home should be spacious, well ventilated, quiet, and designed for normal rabbit behaviour: hopping, stretching, hiding, digging, chewing, and resting.</p>
+        </div>
+
+        <div class="care-grid">
+          <article class="care-card"><div class="care-icon" aria-hidden="true">📏</div><h3>Room to Move</h3><p>Choose a secure exercise pen or enclosure that lets your rabbit stand fully upright, stretch out, and take several full hops in every direction. Bigger is better, especially when free-roam time is limited.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🛏️</div><h3>Comfortable Resting Space</h3><p>Provide a dry, soft resting area and at least one hideout where your rabbit can retreat. Use safe, non-slip flooring rather than bare wire floors that can injure feet.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🚽</div><h3>Suitable Litter Box</h3><p>Use a roomy litter tray with rabbit-safe paper-based litter or another vet-approved substrate. Keep it clean and place hay nearby to encourage appropriate toilet habits.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🌬️</div><h3>Good Airflow and Comfort</h3><p>Keep the enclosure dry and well ventilated, away from direct sun, draughts, smoke, and strong chemical smells. Rabbits can overheat, so watch the room temperature carefully in warm weather.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🧩</div><h3>Enrichment and Companionship</h3><p>Offer safe tunnels, cardboard hideouts, forage activities, and chew toys. Rabbits are social; discuss suitable companionship and gradual bonding with a rabbit-savvy professional.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🧽</div><h3>Clean, Dry Surfaces</h3><p>Remove soiled litter and wet bedding frequently. Clean the enclosure with rabbit-safe products, rinse where appropriate, and let surfaces dry before your rabbit returns.</p></article>
+        </div>
+
+        <div class="environment-grid" style="margin-top:24px;">
+          <article class="environment-card indoor">
+            <h3><span aria-hidden="true">🏠</span> Indoor Housing</h3>
+            <p>Indoor housing makes it easier to monitor eating, droppings, and behaviour, while protecting rabbits from many outdoor hazards.</p>
+            <ul><li>Use a secure pen or rabbit-proofed room with non-slip flooring.</li><li>Cover electrical cables and block access to unsafe furniture or plants.</li><li>Provide shade, ventilation, a hideout, and supervised exercise space.</li><li>Keep the area calm and away from loud noise and cooking fumes.</li></ul>
+          </article>
+          <article class="environment-card outdoor">
+            <h3><span aria-hidden="true">🌳</span> Outdoor Time and Housing</h3>
+            <p>Outdoor access needs careful supervision and protection. A simple hutch alone is not enough space or protection for a rabbit.</p>
+            <ul><li>Use a secure, predator-resistant run with shelter from sun, rain, and wind.</li><li>Provide shade and constant access to fresh water; avoid heat and temperature extremes.</li><li>Check for gaps, toxic plants, pesticides, parasites, and contact with wild rabbits.</li><li>Bring the rabbit to a safe indoor area when conditions are unsuitable.</li></ul>
+          </article>
+        </div>
+
+        <div class="feature-banner">
+          <div class="feature-art" aria-hidden="true">🏡🐰</div>
+          <div><div class="eyebrow" style="color:#cce5d1;">A HAPPY HABITAT</div><h3>A home should support rabbit behaviour.</h3><p>Think beyond a cage: give your rabbit room to move, a clean toilet area, a comfortable hideout, safe things to chew, and a calm place to rest. Check the setup regularly for wear, sharp edges, and escape routes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. GROOMING -->
+    <section class="care-section" id="grooming">
+      <div class="section-wrap">
+        <div class="care-heading">
+          <div class="eyebrow">03 • GENTLE, REGULAR MAINTENANCE</div>
+          <h2>Grooming & <em>Hygiene</em></h2>
+          <p>Grooming helps you keep the coat clean and spot skin changes, matting, and parasites. The right routine depends on coat length, shedding, age, and your rabbit's health.</p>
+        </div>
+
+        <div class="care-grid">
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🪮</div><h3>Brush the Coat</h3><p>Brush short-coated rabbits regularly and increase brushing during heavy shedding. Long-haired rabbits may need daily grooming to prevent painful mats. Use a gentle tool and stop if your rabbit becomes distressed.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">✂️</div><h3>Check and Trim Nails</h3><p>Check nail length often. Ask a rabbit-experienced vet or trained groomer to show you safe trimming technique, especially if the nails are dark or your rabbit struggles.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🧴</div><h3>Keep the Coat Dry</h3><p>Rabbits generally should not be given routine full-body baths. Wet fur can be stressful and difficult to dry safely. Seek veterinary advice if the coat is soiled or your rabbit cannot groom itself.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🐾</div><h3>Check Feet and Skin</h3><p>Look for sore areas, redness, hair loss, scabs, swelling, or damp fur around the feet and underside. A rabbit that is overweight or has mobility problems may need extra help staying clean.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">👂</div><h3>Eyes, Ears, and Nose</h3><p>Observe for discharge, crusting, redness, persistent scratching, or head shaking. Do not put cotton buds, oils, or unprescribed drops into the ears or eyes.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🧺</div><h3>Clean Bedding and Litter</h3><p>Remove damp litter and soiled bedding, wash food and water containers, and keep resting areas dry. Never use strongly scented cleaners or products not confirmed safe for rabbits.</p></article>
+        </div>
+
+        <div class="care-tip">
+          <span class="tip-icon" aria-hidden="true">⚠️</span>
+          <div><strong>Never pull at tight mats or cut close to the skin</strong><p>Rabbit skin is delicate. Severe matting, dirty or wet fur around the rear, or a rabbit that cannot groom itself should be assessed by a veterinarian or a suitably experienced rabbit groomer.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. HEALTH AND WELLNESS -->
+    <section class="care-section soft-bg" id="health">
+      <div class="section-wrap">
+        <div class="care-heading">
+          <div class="eyebrow">04 • NOTICE THE LITTLE CHANGES</div>
+          <h2>Health & <em>Wellness</em></h2>
+          <p>Rabbits often hide signs of pain. A change in appetite, droppings, posture, movement, or grooming can be important. Get to know your rabbit's normal patterns and contact a veterinarian when something changes.</p>
+        </div>
+
+        <div class="health-layout">
+          <div>
+            <div class="health-signs">
+              <div class="health-sign"><span aria-hidden="true">🦷</span><div><strong>Dental problems</strong><br>Overgrown or misaligned teeth may cause drooling, a wet chin, difficulty eating, or weight loss.</div></div>
+              <div class="health-sign"><span aria-hidden="true">🍽️</span><div><strong>Digestive slowdown</strong><br>Reduced appetite or fewer droppings can signal a serious gut problem that needs urgent attention.</div></div>
+              <div class="health-sign"><span aria-hidden="true">🪰</span><div><strong>Flystrike risk</strong><br>Wet or soiled fur around the rear can attract flies. Check this area daily, especially in warm weather.</div></div>
+              <div class="health-sign"><span aria-hidden="true">👂</span><div><strong>Ear and skin concerns</strong><br>Crusts, redness, itching, hair loss, or head shaking may need veterinary assessment.</div></div>
+              <div class="health-sign"><span aria-hidden="true">🐾</span><div><strong>Sore feet or mobility changes</strong><br>Limping, reluctance to move, or sore patches on the feet should not be ignored.</div></div>
+              <div class="health-sign"><span aria-hidden="true">⚖️</span><div><strong>Weight or behaviour changes</strong><br>Unexpected weight change, hiding, unusual quietness, or a hunched posture can be warning signs.</div></div>
+            </div>
+
+            <div class="vet-checkup">
+              <h3>🩺 Regular Veterinary Checkups</h3>
+              <p>Arrange routine examinations with a veterinarian who is comfortable treating rabbits. Ask for advice on body condition, teeth, nails, diet, parasite prevention, neutering, and how often follow-up visits are appropriate for your rabbit.</p>
+            </div>
+          </div>
+
+          <aside class="vet-panel">
+            <h3>🚨 When to seek urgent help</h3>
+            <p>Contact a rabbit-experienced veterinarian immediately if you notice any of the following. Do not wait overnight or try home remedies first.</p>
+            <ul>
+              <li>Not eating, eating much less, or a sudden stop in droppings.</li>
+              <li>Diarrhoea, a swollen or painful-looking abdomen, or severe weakness.</li>
+              <li>Difficulty breathing, collapse, seizures, or loss of balance.</li>
+              <li>Head tilt, severe bleeding, major injury, or suspected poisoning.</li>
+              <li>Straining to urinate or no urine being passed.</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="care-tip">
+          <span class="tip-icon" aria-hidden="true">🦷</span>
+          <div><strong>Dental health starts with the right diet</strong><p>Rabbit teeth grow continuously. A hay-rich, high-fibre diet supports normal chewing and tooth wear. Chew toys do not replace hay or a veterinary dental examination. Never try to file or trim teeth at home.</p></div>
+        </div>
+
+        <div class="vaccine-note">
+          <strong>Vaccination is location-specific.</strong> Ask a rabbit-experienced veterinarian whether vaccines for rabbit haemorrhagic disease (RHD/RHDV) or myxomatosis are relevant where you live, and whether an appropriate product is authorised and available. Disease risk, vaccine availability, and schedules differ between countries and regions. Do not copy a schedule from another country or administer a vaccine without veterinary advice.
+        </div>
+
+        <div class="care-disclaimer"><strong>Important:</strong> This guide is for general education and is not a diagnosis or a treatment plan. Rabbits can deteriorate quickly when they stop eating or passing droppings. A qualified veterinarian must assess symptoms and recommend treatment for the individual animal.</div>
+      </div>
+    </section>
+
+    <!-- 5. SAFETY -->
+    <section class="care-section" id="safety">
+      <div class="section-wrap">
+        <div class="care-heading">
+          <div class="eyebrow">05 • A RABBIT-SAFE HOME</div>
+          <h2>Everyday <em>Safety Tips</em></h2>
+          <p>Rabbit-proof the spaces your pet can reach. Many hazards are ordinary household items that become dangerous when chewed, swallowed, or encountered without supervision.</p>
+        </div>
+
+        <div class="warning-panel">
+          <h3>🚫 Common household hazards</h3>
+          <div class="hazard-grid">
+            <article class="hazard-item"><strong>Electrical cables and chargers</strong><p>Cover, route, or block access to wires. Chewing an electric cable can cause burns, shock, or serious injury.</p></article>
+            <article class="hazard-item"><strong>Toxic houseplants and garden chemicals</strong><p>Keep unknown plants, fertilisers, pesticides, weed killers, and slug pellets out of reach. Check plant safety before allowing access.</p></article>
+            <article class="hazard-item"><strong>Unsafe foods and treats</strong><p>Keep chocolate, caffeine, alcohol, and unfamiliar human foods away. Avoid sudden diet changes and large amounts of sugary treats.</p></article>
+            <article class="hazard-item"><strong>Heat, direct sun, and poor ventilation</strong><p>Provide shade, airflow, and a cool resting area. Never leave a rabbit in a parked vehicle, sunroom, or hot balcony.</p></article>
+            <article class="hazard-item"><strong>Open balconies, windows, and stairs</strong><p>Block falls and escape routes with secure barriers. Supervise access to steps, ledges, and slippery floors.</p></article>
+            <article class="hazard-item"><strong>Other pets and predators</strong><p>Never assume a dog or cat will be safe with a rabbit. Use secure separation and supervise any carefully managed introductions.</p></article>
+            <article class="hazard-item"><strong>Small objects and loose materials</strong><p>Remove plastic, string, foam, fabric, and small items that could be chewed or swallowed. Offer rabbit-safe enrichment instead.</p></article>
+            <article class="hazard-item"><strong>Harsh cleaners and strong fragrances</strong><p>Keep rabbits away while cleaning. Avoid strong fumes and use only products confirmed safe for the animal and its enclosure.</p></article>
+          </div>
+        </div>
+
+        <div class="care-grid" style="margin-top:22px;">
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🤲</div><h3>Handle with Support</h3><p>Interact at floor level whenever possible. If lifting is necessary, support the chest and hindquarters securely and keep the rabbit close to your body. Never lift by the ears or hold a rabbit on its back.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">🐕</div><h3>Give Space from Other Animals</h3><p>Rabbits are prey animals and can be frightened by chasing or sudden approaches. Provide a secure retreat and never leave a rabbit alone with a dog, cat, or other pet.</p></article>
+          <article class="care-card"><div class="care-icon" aria-hidden="true">📞</div><h3>Prepare for Emergencies</h3><p>Save the phone number and address of a rabbit-experienced clinic. Keep a secure carrier ready and know the quickest safe route for urgent veterinary care.</p></article>
+        </div>
+
+        <div class="care-tip"><span class="tip-icon" aria-hidden="true">💚</span><div><strong>Let your rabbit choose contact</strong><p>Many rabbits feel safer when people sit quietly at their level and allow them to approach. If a rabbit struggles or appears frightened during handling, lower it safely and give it space.</p></div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="care-section soft-bg" id="rabbit-faqs">
+      <div class="section-wrap">
+        <div class="care-heading centered">
+          <div class="eyebrow">QUICK ANSWERS</div>
+          <h2>Rabbit Care <em>FAQs</em></h2>
+          <p>Practical answers to common questions from rabbit owners.</p>
+        </div>
+        <div class="care-faq-list">
+          <details class="care-faq-item"><summary>What should make up most of a rabbit's diet?</summary><p>For most adult rabbits, good-quality grass hay should make up the largest part of the diet and be available at all times. Fresh water, suitable leafy greens, and a measured amount of plain pellets complete the routine. Ask your vet about the right diet for young, senior, or unwell rabbits.</p></details>
+          <details class="care-faq-item"><summary>Can I keep my rabbit in a small cage all day?</summary><p>No. Rabbits need enough room to stand upright, stretch, hop, explore, and exercise every day. A secure pen or rabbit-proofed room with a resting hideout is more suitable than long-term confinement in a small cage.</p></details>
+          <details class="care-faq-item"><summary>How often should I groom my rabbit?</summary><p>It depends on coat type and shedding. Short-haired rabbits need regular brushing, while long-haired rabbits often need daily coat care to prevent mats. Ask a vet or experienced rabbit groomer to demonstrate a safe routine.</p></details>
+          <details class="care-faq-item"><summary>Should rabbits be bathed?</summary><p>Routine full-body bathing is generally not recommended. If your rabbit is dirty, has a soiled rear, or cannot groom itself, ask a veterinarian for safe, case-specific help rather than attempting a full bath.</p></details>
+          <details class="care-faq-item"><summary>What if my rabbit stops eating or producing droppings?</summary><p>Treat this as urgent. Contact a rabbit-experienced veterinarian immediately. Do not wait to see whether the rabbit improves, and do not give human medicines or home remedies unless a vet instructs you.</p></details>
+          <details class="care-faq-item"><summary>Do rabbits need vaccinations?</summary><p>Recommendations depend on local disease risks and which vaccines are authorised and available in your region. Ask a rabbit-experienced veterinarian about RHD/RHDV and myxomatosis rather than relying on a generic schedule from another country.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUSTED RESOURCES -->
+    <section class="section-wrap" style="padding-top:45px;">
+      <div class="sources">
+        <div class="eyebrow">LEARN MORE</div>
+        <h3>Trusted Rabbit Care Resources</h3>
+        <p>Use veterinary and animal-welfare guidance for more detailed information. Local veterinary advice should take priority for health decisions.</p>
+        <div class="source-links">
+          <a href="https://www.rspca.org.uk/adviceandwelfare/pets/rabbits/health" target="_blank" rel="noopener noreferrer">RSPCA — Rabbit Health, Warning Signs, and Preventive Care ↗</a>
+          <a href="https://avs.nparks.gov.sg/pets/caring-for-a-pet/rabbit/" target="_blank" rel="noopener noreferrer">Animal & Veterinary Service (Singapore Government) — Rabbit Nutrition, Housing, and Veterinary Care ↗</a>
+          <a href="https://www.rspca.org.uk/adviceandwelfare/pets/rabbits/company/handling" target="_blank" rel="noopener noreferrer">RSPCA — How to Handle Rabbits Safely ↗</a>
+          <a href="https://rabbitwelfare.co.uk/welfare-need/handling-rabbits/" target="_blank" rel="noopener noreferrer">Rabbit Welfare Association & Fund — Safe Rabbit Handling ↗</a>
+          <a href="https://agriculture.vic.gov.au/livestock-and-animals/animal-welfare-victoria/other-pets/rabbits/guidelines-for-keeping-pet-rabbits" target="_blank" rel="noopener noreferrer">Agriculture Victoria — Guidelines for Keeping Pet Rabbits ↗</a>
+          <a href="https://smallanimal.vethospital.ufl.edu/clinical-services/zoological-medicine/how-to-care-for-your-pet-rabbit/" target="_blank" rel="noopener noreferrer">University of Florida — How to Care for Your Pet Rabbit ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-wrap">
+      <div class="care-cta">
+        <div class="eyebrow" style="color:#cce5d1;">CARE WITH LOVE</div>
+        <h2>Healthy Rabbits. Happier Hops. 💚</h2>
+        <p>Good rabbit care is built on daily observation, space to move, gentle handling, and timely veterinary support. Small routines help protect their wellbeing.</p>
+        <a class="button" href="index.html">← Explore Rabbit Information</a>
+      </div>
+    </section>
+  </main>
+
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+  <footer class="footer">
+    <div class="section-wrap footer-bottom">
+      <span>© PetSathi · NSoC Winter Edition</span>
+      <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
+    </div>
+  </footer>
+
+  <script src="../../../js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Daily checklist: saved only in this browser; it is not a medical record.
+      const tasks = Array.from(document.querySelectorAll("[data-care-task]"));
+      const progressFill = document.getElementById("careProgressFill");
+      const progressTrack = document.getElementById("careProgressTrack");
+      const countText = document.getElementById("careChecklistCount");
+      const messageText = document.getElementById("careChecklistMessage");
+      const resetButton = document.getElementById("resetCareChecklist");
+      const storageKey = "petsathi-rabbit-care-checklist";
+
+      function updateChecklist() {
+        const completed = tasks.filter(task => task.checked).length;
+        const total = tasks.length;
+        const percentage = total ? (completed / total) * 100 : 0;
+        if (progressFill) progressFill.style.width = percentage + "%";
+        if (progressTrack) {
+          progressTrack.setAttribute("aria-valuenow", String(completed));
+          progressTrack.setAttribute("aria-valuemax", String(total));
+        }
+        if (countText) countText.textContent = `${completed} of ${total} completed`;
+        if (messageText) {
+          messageText.textContent = completed === total && total > 0
+            ? "Wonderful! Today's care routine is complete. 🎉"
+            : completed > 0
+              ? "You're making progress. Keep going! 💚"
+              : "Every little bit of care counts! 💚";
+        }
+        tasks.forEach(task => {
+          const label = task.closest(".checklist-task");
+          if (label) label.classList.toggle("is-checked", task.checked);
+        });
+      }
+
+      function saveChecklist() {
+        try {
+          const saved = {};
+          tasks.forEach(task => { saved[task.dataset.careTask] = task.checked; });
+          localStorage.setItem(storageKey, JSON.stringify(saved));
+        } catch (error) {
+          console.warn("Could not save rabbit checklist progress:", error);
+        }
+      }
+
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
+        tasks.forEach(task => { task.checked = saved[task.dataset.careTask] === true; });
+      } catch (error) {
+        console.warn("Could not restore rabbit checklist:", error);
+      }
+
+      tasks.forEach(task => task.addEventListener("change", () => {
+        saveChecklist();
+        updateChecklist();
+      }));
+
+      if (resetButton) {
+        resetButton.addEventListener("click", () => {
+          tasks.forEach(task => { task.checked = false; });
+          try { localStorage.removeItem(storageKey); }
+          catch (error) { console.warn("Could not clear rabbit checklist:", error); }
+          updateChecklist();
+        });
+      }
+      updateChecklist();
+
+      // Highlight the quick-navigation link for the section in view.
+      const navigationLinks = Array.from(document.querySelectorAll(".care-quick-nav a[href^='#']"));
+      const observedSections = navigationLinks
+        .map(link => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+      if ("IntersectionObserver" in window) {
+        const sectionObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              navigationLinks.forEach(link => {
+                link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
+              });
+            }
+          });
+        }, { rootMargin: "-20% 0px -65% 0px" });
+        observedSections.forEach(section => sectionObserver.observe(section));
+      }
+
+      // Keep only one FAQ open at a time.
+      const faqItems = document.querySelectorAll(".care-faq-item");
+      faqItems.forEach(item => item.addEventListener("toggle", () => {
+        if (item.open) faqItems.forEach(other => { if (other !== item) other.open = false; });
+      }));
+
+      // Back-to-top control.
+      const backToTop = document.getElementById("backToTop");
+      if (backToTop) {
+        window.addEventListener("scroll", () => {
+          backToTop.classList.toggle("visible", window.scrollY > 450);
+        }, { passive: true });
+        backToTop.addEventListener("click", () => {
+          const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

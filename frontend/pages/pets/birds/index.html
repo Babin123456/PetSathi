@@ -1,12 +1,801 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Birds Care & Information | PetSathi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../css/global.css"><link rel="stylesheet" href="../../../css/inner.css"></head><body>
-<header class="site-header"><a class="brand" href="../../../../index.html"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a><button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-<nav class="main-nav"><a href="../../../../index.html">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a><a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started ↗</a></nav></header>
-<main><section class="page-hero"><div class="eyebrow">PetSathi • EXPLORE BIRDS</div><div class="page-emoji">🐦</div><h1>Birds Care & Information</h1><p>Welcome to the PetSathi birds section. Explore helpful introductory information and care topics for your little companion.</p><a class="button" href="../../../../index.html">Back to Home ↗</a></section>
-<section class="section-wrap inner-grid"><article class="info-card"><div class="info-emoji">Bird Species</div><h2>🦜</h2><p>Explore common companion bird types and their needs.</p></article>
-<article class="info-card"><div class="info-emoji">Food & Nutrition</div><h2>🌾</h2><p>Understand the importance of a suitable, species-aware diet.</p></article>
-<article class="info-card"><div class="info-emoji">Habitat</div><h2>🪺</h2><p>Learn about safe, clean, appropriately sized living spaces.</p></article>
-<article class="info-card"><div class="info-emoji">Daily Care</div><h2>💧</h2><p>Explore routine hygiene, enrichment, and observation.</p></article></section><section class="inner-cta"><h2>More happy moments are on the way.</h2><p>PetSathi is growing one feature at a time. Some services are planned for future development.</p></section></main>
-<footer class="footer"><div class="section-wrap footer-bottom"><span>© PetSathi · NSoC Winter Edition</span><span>तुमच्या Pet चा विश्वासू साथी! 🐾</span></div></footer><script src="../../../js/main.js"></script></body></html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birds Care & Information | PetSathi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/global.css">
+    <link rel="stylesheet" href="../../../css/home.css">
+    <link rel="stylesheet" href="../../../css/inner.css">
+
+    <style>
+        /* Birds Landing Page Specific Styles */
+
+        .bird-badge-strip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: #eaf2e9;
+            color: var(--green);
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .bird-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .bird-card {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+
+        .bird-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+            border-color: #cbd9ce;
+        }
+
+        .bird-card-media {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            background: #f0f3eb;
+        }
+
+        .bird-card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .bird-card:hover .bird-card-media img {
+            transform: scale(1.05);
+        }
+
+        .bird-card-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(4px);
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .bird-card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .bird-card-body h3 {
+            font-size: 1.25rem;
+            margin: 0 0 10px;
+            color: var(--ink);
+        }
+
+        .bird-card-body p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 20px;
+            flex-grow: 1;
+            color: var(--muted);
+        }
+
+        .bird-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--green);
+            transition: color 0.2s, transform 0.2s;
+            align-self: flex-start;
+        }
+
+        .bird-card-link:hover {
+            color: var(--dark);
+            transform: translateX(4px);
+        }
+
+        /* Quick Information Section */
+
+        .bird-quick-info-section {
+            background: #fbfbf8;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .bird-quick-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .bird-quick-info-card {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .bird-quick-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .bird-quick-info-icon-wrap {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: #eaf2e9;
+            display: grid;
+            place-items: center;
+            font-size: 1.7rem;
+            margin-bottom: 18px;
+        }
+
+        .bird-quick-info-card h3 {
+            font-size: 1.25rem;
+            margin: 0 0 12px;
+            color: var(--ink);
+        }
+
+        .bird-quick-info-card p {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin: 0 0 16px;
+            color: var(--muted);
+        }
+
+        .bird-quick-info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-top: 1px solid var(--line);
+            padding-top: 16px;
+        }
+
+        .bird-quick-info-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--ink);
+            line-height: 1.5;
+        }
+
+        .bird-quick-info-list li span {
+            color: var(--green);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Quick Guide Navigation Strip */
+
+        .bird-guides-nav-strip {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 32px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(35, 57, 43, 0.04);
+        }
+
+        .bird-guides-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .bird-guide-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+            background: var(--soft);
+            border: 1px solid transparent;
+            border-radius: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .bird-guide-nav-item:hover {
+            background: white;
+            border-color: var(--green);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(40, 104, 73, 0.08);
+        }
+
+        .bird-guide-nav-item span {
+            font-size: 1.8rem;
+        }
+
+        .bird-guide-nav-item div b {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--ink);
+        }
+
+        .bird-guide-nav-item div small {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        /* Bird CTA Band */
+
+        .bird-cta-band {
+            background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
+            color: white;
+            border-radius: 28px;
+            padding: 50px 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 36px;
+            margin-block: 40px 75px;
+        }
+
+        .bird-cta-band h2 {
+            color: white;
+            margin: 0 0 12px;
+        }
+
+        .bird-cta-band h2 em {
+            color: #f4c79f;
+            font-style: normal;
+        }
+
+        .bird-cta-band p {
+            color: #e0ece2;
+            font-size: 1.02rem;
+            max-width: 580px;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .bird-cta-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .button-translucent {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: white;
+        }
+
+        .button-translucent:hover {
+            background: rgba(255, 255, 255, 0.28);
+            color: white;
+        }
+
+        /* Responsive Layout */
+
+        @media (max-width: 960px) {
+            .bird-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bird-quick-info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bird-quick-info-grid .bird-quick-info-card:nth-child(3) {
+                grid-column: span 2;
+            }
+
+            .bird-guides-nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bird-cta-band {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 36px 30px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .bird-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bird-quick-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bird-quick-info-grid .bird-quick-info-card:nth-child(3) {
+                grid-column: span 1;
+            }
+
+            .bird-guides-nav-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bird-guides-nav-strip {
+                padding: 22px 18px;
+            }
+
+            .bird-card-media {
+                height: 180px;
+            }
+
+            .bird-cta-band {
+                padding: 28px 20px;
+            }
+
+            .bird-cta-actions {
+                width: 100%;
+            }
+
+            .bird-cta-actions .button {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="../../../../index.html" id="header-brand"><span
+                class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a>
+        <button class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="main-nav" id="main-navigation">
+            <a href="../../../../index.html" id="nav-home">Home</a>
+            <div class="nav-item">
+                <a class="active" href="../index.html" id="nav-explore-pets">Explore Pets ▾</a>
+                <div class="dropdown">
+                    <a href="../dogs/index.html" id="dropdown-dogs">🐕 Dogs</a>
+                    <a href="../cats/index.html" id="dropdown-cats">🐈 Cats</a>
+                    <a href="index.html" id="dropdown-birds">🐦 Birds</a>
+                    <a href="../rabbits/index.html" id="dropdown-rabbits">🐇 Rabbits</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="../../services/index.html" id="nav-services">Services ▾</a>
+                <div class="dropdown">
+                    <a href="../../services/dog-walking.html" id="dropdown-service-walking">Dog Walking</a>
+                    <a href="../../services/cat-care.html" id="dropdown-service-cat-care">Cat Care</a>
+                    <a href="../../services/pet-care.html" id="dropdown-service-pet-care">Pet Care</a>
+                    <a href="../../services/guidance.html" id="dropdown-service-guidance">Pet Guidance</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="../../walker/index.html" id="nav-walkers">Find a Walker ▾</a>
+                <div class="dropdown">
+                    <a href="../../walker/dogs.html" id="dropdown-walker-dogs">Dog Walkers</a>
+                    <a href="../../walker/cats.html" id="dropdown-walker-cats">Cat Caregivers</a>
+                    <a href="../../walker/birds.html" id="dropdown-walker-birds">Bird Caregivers</a>
+                    <a href="../../walker/rabbits.html" id="dropdown-walker-rabbits">Rabbit Caregivers</a>
+                </div>
+            </div>
+            <a href="../../about.html" id="nav-about">About Us</a>
+            <a href="../../auth/login.html" id="nav-login">Log in</a>
+            <a class="button button-small" href="../../auth/register.html" id="nav-register">Get Started ↗</a>
+        </nav>
+    </header>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero section-wrap" id="bird-hero">
+            <div class="hero-copy">
+                <div class="bird-badge-strip">🐾 PetSathi • Feathered Companion Guide</div>
+                <h1>Everything You Need to Know About <em>Birds</em></h1>
+                <p>
+                    Welcome to PetSathi's dedicated bird care and companionship guide.
+                    From cheerful budgies and colourful lovebirds to intelligent parrots,
+                    birds bring beauty, personality and lively energy into our homes.
+                    Explore popular bird species, balanced nutrition, suitable habitats,
+                    behaviour and training, and essential health and wellness tips to help
+                    your feathered companions thrive.
+                </p>
+                <div class="hero-actions">
+                    <a class="button" href="species.html" id="hero-cta-species">Explore Bird Species ↗</a>
+                    <a class="button button-outline" href="#bird-topics" id="hero-cta-topics">Explore Care Topics ↓</a>
+                </div>
+                <div class="hero-note">♥ &nbsp; Dedicated to happy chirps and healthy feathers.</div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-blob"></div>
+
+                <img src="https://images.unsplash.com/photo-1539664030485-a936c7d29c6e?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                    alt=" Image of Bird" class="hero-photo" id="hero-bird-image">
+
+                <div class="floating-card card-top">
+                    🌿 <span><b>Colourful & Curious</b><small>Intelligent feathered companions</small></span>
+                </div>
+
+                <div class="floating-card card-bottom">
+                    🐦 <span><b>Sing. Explore. Soar.</b><small>Every day brings a new discovery</small></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Category Strip -->
+        <section class="trust-strip" aria-label="Bird Knowledge Topics Overview">
+            <span>AVIAN KNOWLEDGE BASE</span>
+            <div>🐦 Bird Species　　🩺 Health & Wellness　　🥣 Food & Nutrition　　🏡 Habitat & Care　　🧠
+                Behaviour & Training</div>
+        </section>
+
+        <!-- Informative Sections / Cards -->
+        <section class="section section-wrap" id="bird-topics">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">Comprehensive Bird Guides</div>
+                    <h2>Explore Essential <em>Bird Topics</em></h2>
+                </div>
+
+                <p>
+                    Discover helpful guides designed to help bird parents understand
+                    different species, provide balanced nutrition, create safe habitats,
+                    encourage positive behaviour, and maintain their feathered
+                    companions' health and happiness.
+                </p>
+            </div>
+            <div class="bird-info-grid">
+
+                <!-- Card 1: Popular Bird Species -->
+                <article class="bird-card" id="card-species">
+                    <div class="bird-card-media">
+                        <span class="bird-card-badge">🐦 Species</span>
+                        <img src="https://images.unsplash.com/photo-1480044965905-02098d419e96?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                            alt="Colourful parrot perched on a branch" loading="lazy">
+                    </div>
+
+                    <div class="bird-card-body">
+                        <h3>Popular Bird Species</h3>
+                        <p>
+                            Discover the fascinating variety of pet birds, from cheerful
+                            Budgies and affectionate Lovebirds to intelligent Cockatiels
+                            and colourful Parrots. Explore their unique personalities,
+                            characteristics, lifespans, and suitability for different homes.
+                        </p>
+                        <a class="bird-card-link" href="species.html" id="link-card-species">
+                            Explore Bird Species ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 2: Bird Care -->
+                <article class="bird-card" id="card-care">
+                    <div class="bird-card-media">
+                        <span class="bird-card-badge">🪶 Daily Care</span>
+                        <img src="https://images.unsplash.com/photo-1549608276-5786777e6587?auto=format&fit=crop&w=700&q=85"
+                            alt="Bird carefully preening its feathers" loading="lazy">
+                    </div>
+
+                    <div class="bird-card-body">
+                        <h3>Bird Care</h3>
+                        <p>
+                            Give your feathered companion a comfortable and enriching
+                            environment. Learn about suitable cages, hygiene, bathing,
+                            feather maintenance, safe surroundings, daily routines,
+                            and essential care practices for different bird species.
+                        </p>
+                        <a class="bird-card-link" href="care.html" id="link-card-care">
+                            Explore Bird Care ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 3: Food & Nutrition -->
+                <article class="bird-card" id="card-nutrition">
+                    <div class="bird-card-media">
+                        <span class="bird-card-badge">🥣 Nutrition</span>
+                        <img src="https://images.unsplash.com/photo-1591198936750-16d8e15edb9e?auto=format&fit=crop&w=700&q=85"
+                            alt="Pet bird food and feeding arrangement" loading="lazy">
+                    </div>
+
+                    <div class="bird-card-body">
+                        <h3>Food & Nutrition</h3>
+                        <p>
+                            Understand the dietary needs of your feathered friend.
+                            Discover the role of balanced pellets, seeds, fresh fruits,
+                            vegetables, and clean drinking water. Learn about appropriate
+                            portions and foods that birds should avoid.
+                        </p>
+                        <a class="bird-card-link" href="care.html" id="link-card-nutrition">
+                            Explore Food & Nutrition ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 4: Behaviour & Training -->
+                <article class="bird-card" id="card-behaviour">
+                    <div class="bird-card-media">
+                        <span class="bird-card-badge">🧠 Behaviour</span>
+                        <img src="https://images.unsplash.com/photo-1470116073782-48ae2ccd8ffd?q=80&w=812&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                            alt="Curious bird observing its surroundings" loading="lazy">
+                    </div>
+
+                    <div class="bird-card-body">
+                        <h3>Behaviour & Training</h3>
+                        <p>
+                            Understand how birds communicate through sounds, body language,
+                            and everyday behaviours. Explore positive reinforcement,
+                            step-up training, socialisation, mental stimulation, and
+                            ways to build trust with your feathered companion.
+                        </p>
+                        <a class="bird-card-link" href="behaviour.html" id="link-card-behaviour">
+                            Explore Behaviour & Training ↗
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 5: Health & Wellness -->
+                <article class="bird-card" id="card-health">
+                    <div class="bird-card-media">
+                        <span class="bird-card-badge">🩺 Wellness</span>
+                        <img src="https://images.unsplash.com/photo-1530442620790-29fad255207a?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                            alt="Pet bird receiving attentive care" loading="lazy">
+                    </div>
+
+                    <div class="bird-card-body">
+                        <h3>Health & Wellness</h3>
+                        <p>
+                            Support your bird's well-being through preventive care and
+                            regular veterinary checkups. Learn to recognise changes in
+                            appetite, activity, droppings, and feather condition, along
+                            with common warning signs that need veterinary attention.
+                        </p>
+                        <a class="bird-card-link" href="care.html" id="link-card-health">
+                            Explore Health & Wellness ↗
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+        <!-- Quick Information Section -->
+        <section class="section bird-quick-info-section" id="bird-quick-info">
+            <div class="section-wrap">
+
+                <div class="section-heading">
+                    <div>
+                        <div class="eyebrow">Essential Avian Insights</div>
+                        <h2>Quick Information for <em>Bird Parents</em></h2>
+                    </div>
+                    <p>
+                        Understanding your feathered companion is the foundation of responsible
+                        bird ownership. Discover what makes pet birds unique and how to provide
+                        them with a healthy, stimulating, and comfortable life.
+                    </p>
+                </div>
+
+                <div class="bird-quick-info-grid">
+
+                    <!-- 1. Why birds make wonderful companions -->
+                    <article class="bird-quick-info-card" id="bird-info-companionship">
+                        <div class="bird-quick-info-icon-wrap">🐦</div>
+                        <h3>Why Birds Make Wonderful Companions</h3>
+                        <p>
+                            Birds are intelligent, expressive, and social companions that bring
+                            colour, personality, and cheerful sounds into everyday life.
+                        </p>
+                        <ul class="bird-quick-info-list">
+                            <li><span>✓</span> Form strong social bonds and recognise familiar people.</li>
+                            <li><span>✓</span> Display fascinating personalities, playful habits, and unique behaviours.
+                            </li>
+                            <li><span>✓</span> Provide engaging companionship through vocalisations, interaction, and
+                                play.</li>
+                            <li><span>✓</span> Encourage patience, empathy, and a deeper understanding of animal
+                                behaviour.</li>
+                        </ul>
+                    </article>
+
+                    <!-- 2. Responsibilities of bird owners -->
+                    <article class="bird-quick-info-card" id="bird-info-responsibilities">
+                        <div class="bird-quick-info-icon-wrap">📋</div>
+                        <h3>Responsibilities of Bird Owners</h3>
+                        <p>
+                            Welcoming a bird into your home is a long-term commitment that
+                            requires attention, consistency, patience, and species-specific care.
+                        </p>
+                        <ul class="bird-quick-info-list">
+                            <li><span>✓</span> Providing a balanced, species-appropriate diet and fresh drinking water.
+                            </li>
+                            <li><span>✓</span> Maintaining a spacious, clean, and safe living environment.</li>
+                            <li><span>✓</span> Offering daily interaction, mental stimulation, and suitable enrichment.
+                            </li>
+                            <li><span>✓</span> Understanding species-specific social, environmental, and behavioural
+                                needs.</li>
+                        </ul>
+                    </article>
+
+                    <!-- 3. Importance of regular bird care -->
+                    <article class="bird-quick-info-card" id="bird-info-regular-care">
+                        <div class="bird-quick-info-icon-wrap">🩺</div>
+                        <h3>Importance of Regular Bird Care</h3>
+                        <p>
+                            Consistent preventive care and close observation help identify
+                            potential health concerns early and support your bird's overall
+                            well-being.
+                        </p>
+                        <ul class="bird-quick-info-list">
+                            <li><span>✓</span> Scheduling routine checkups with a qualified avian veterinarian.</li>
+                            <li><span>✓</span> Monitoring appetite, droppings, activity levels, and feather condition.
+                            </li>
+                            <li><span>✓</span> Maintaining clean food bowls, water containers, cages, and perches.</li>
+                            <li><span>✓</span> Providing appropriate bathing opportunities and a healthy daily routine.
+                            </li>
+                        </ul>
+                    </article>
+
+                </div>
+
+                <!-- Quick Navigation Hub -->
+                <div class="bird-guides-nav-strip">
+
+                    <div class="section-heading" style="margin-bottom: 0;">
+                        <div>
+                            <div class="eyebrow">Quick Navigation Hub</div>
+                            <h3 style="font-size: 1.5rem; margin: 0;">
+                                Explore Dedicated Bird Knowledge Chapters
+                            </h3>
+                        </div>
+                        <p>
+                            Direct access to bird species profiles, everyday care guidance,
+                            behaviour insights, and specialised bird caregivers.
+                        </p>
+                    </div>
+
+                    <div class="bird-guides-nav-grid">
+
+                        <a href="species.html" class="bird-guide-nav-item" id="bird-hub-link-species">
+                            <span>🐦</span>
+                            <div>
+                                <b>Bird Species</b>
+                                <small>Profiles & Characteristics</small>
+                            </div>
+                        </a>
+
+                        <a href="care.html" class="bird-guide-nav-item" id="bird-hub-link-care">
+                            <span>🪶</span>
+                            <div>
+                                <b>Bird Care & Health</b>
+                                <small>Wellness, Grooming & Nutrition</small>
+                            </div>
+                        </a>
+
+                        <a href="behaviour.html" class="bird-guide-nav-item" id="bird-hub-link-behaviour">
+                            <span>🧠</span>
+                            <div>
+                                <b>Behaviour & Training</b>
+                                <small>Communication & Socialisation</small>
+                            </div>
+                        </a>
+
+                        <a href="../../walker/birds.html" class="bird-guide-nav-item" id="bird-hub-link-caregiver">
+                            <span>🤝</span>
+                            <div>
+                                <b>Bird Caregivers</b>
+                                <small>Explore Bird Care Support</small>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA Banner Section -->
+        <section class="section-wrap">
+            <div class="bird-cta-band">
+
+                <div>
+                    <div class="eyebrow" style="color: #c3ddc8;">
+                        Start Your Bird's Journey
+                    </div>
+                    <h2>Every Feather Deserves a <em>Happy Home.</em></h2>
+                    <p>
+                        Whether you are welcoming your first budgie or caring for an
+                        intelligent parrot, PetSathi is here to help you understand your
+                        feathered companion. Explore practical care guidance, discover
+                        fascinating bird species, and build a healthy, trusting bond
+                        with your pet.
+                    </p>
+                </div>
+
+                <div class="bird-cta-actions">
+                    <a class="button button-light" href="../../walker/birds.html" id="bird-cta-find-caregiver">
+                        Find a Bird Caregiver ↗
+                    </a>
+                    <a class="button button-translucent" href="care.html" id="bird-cta-care-guide">
+                        Explore Bird Care
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-wrap footer-grid">
+
+            <div>
+                <a class="brand" href="../../../../index.html" id="bird-footer-brand">
+                    🐾 Pet<span>Sathi</span>
+                </a>
+                <p>
+                    Your pet's trusted companion. Making pet care easier,
+                    one paw and feather at a time.
+                </p>
+            </div>
+
+            <div>
+                <b>Explore</b>
+                <a href="../index.html" id="bird-footer-link-explore-pets">Pet Categories</a>
+                <a href="../../services/index.html" id="bird-footer-link-services">Services</a>
+                <a href="../../walker/index.html" id="bird-footer-link-walker">Find a Walker</a>
+                <a href="../../services/guidance.html" id="bird-footer-link-guidance">Pet Guidance</a>
+            </div>
+
+            <div>
+                <b>PetSathi</b>
+                <a href="../../about.html" id="bird-footer-link-about">About Us</a>
+                <a href="../../auth/login.html" id="bird-footer-link-login">Log in</a>
+                <a href="../../auth/register.html" id="bird-footer-link-register">Register</a>
+            </div>
+
+            <div>
+                <b>Bird Guides</b>
+                <a href="species.html" id="bird-footer-link-species">Bird Species</a>
+                <a href="care.html" id="bird-footer-link-care">Bird Care & Health</a>
+                <a href="behaviour.html" id="bird-footer-link-behaviour">Behaviour & Training</a>
+                <a href="../../walker/birds.html" id="bird-footer-link-caregivers">Find Bird Caregivers</a>
+            </div>
+
+        </div>
+
+        <div class="section-wrap footer-bottom">
+            <span>© <span id="year"></span> PetSathi. Made with ♥ for pets.</span>
+            <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
+        </div>
+    </footer>
+
+    <script src="../../../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stay updated with your PetSathi alerts, pet care reminders, walking logs, booking confirmations, and general announcements.">
+  <title>Notifications | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/notifications.css">
+</head>
+<body>
+  <!-- ======================================================================
+       Site Header & Navigation
+       ====================================================================== -->
+  <header class="site-header">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav">
+      <a href="../../index.html">Home</a>
+      <div class="nav-item">
+        <a href="pets/index.html">Explore Pets ▾</a>
+        <div class="dropdown">
+          <a href="pets/dogs/index.html">🐕 Dogs</a>
+          <a href="pets/cats/index.html">🐈 Cats</a>
+          <a href="pets/birds/index.html">🐦 Birds</a>
+          <a href="pets/rabbits/index.html">🐇 Rabbits</a>
+          <a href="pets/other/fish.html">🐠 Aquarium Fish</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="services/index.html">Services ▾</a>
+        <div class="dropdown">
+          <a href="services/dog-walking.html">Dog Walking</a>
+          <a href="services/cat-care.html">Cat Care</a>
+          <a href="services/pet-care.html">Pet Care</a>
+          <a href="services/guidance.html">Pet Guidance</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="walker/index.html">Find a Walker ▾</a>
+        <div class="dropdown">
+          <a href="walker/dogs.html">Dog Walkers</a>
+          <a href="walker/cats.html">Cat Caregivers</a>
+          <a href="walker/birds.html">Bird Caregivers</a>
+          <a href="walker/rabbits.html">Rabbit Caregivers</a>
+        </div>
+      </div>
+      <a href="about.html">About Us</a>
+      <a class="active nav-notif-link" href="notifications.html">Notifications <span class="nav-unread-dot" id="navUnreadDot" aria-label="Unread notifications"></span></a>
+      <a href="auth/login.html">Log in</a>
+      <a class="button button-small" href="auth/register.html">Get Started ↗</a>
+    </nav>
+  </header>
+
+  <!-- ======================================================================
+       Main Content: Notifications Center
+       ====================================================================== -->
+  <main>
+    <!-- Page Hero / Heading -->
+    <section class="notif-hero">
+      <div class="eyebrow">🐾 PetSathi • Notification Center</div>
+      <div class="notif-hero-icon" aria-hidden="true">🔔</div>
+      <h1>Notifications</h1>
+      <p>Stay updated on your pet's care milestones, daily walking logs, booking confirmations, and community announcements.</p>
+      
+      <div class="notif-hero-stats">
+        <div class="stat-pill stat-unread">
+          <span class="stat-bubble" id="statUnreadCount">0</span>
+          <span>Unread Updates</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-bubble" id="statTotalCount">0</span>
+          <span>Total Notifications</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notifications Section -->
+    <section class="notif-wrapper">
+      <!-- Toolbar: Filters & Actions -->
+      <div class="notif-toolbar">
+        <!-- Filter Tabs -->
+        <div class="notif-filters" role="tablist" aria-label="Filter notifications">
+          <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">
+            All <span class="tab-count" id="countAll">0</span>
+          </button>
+          <button class="filter-tab" data-filter="unread" role="tab" aria-selected="false">
+            Unread <span class="tab-count" id="countUnread">0</span>
+          </button>
+          <button class="filter-tab" data-filter="care" role="tab" aria-selected="false">
+            🩺 Pet Care <span class="tab-count" id="countCare">0</span>
+          </button>
+          <button class="filter-tab" data-filter="walking" role="tab" aria-selected="false">
+            🐕 Pet Walking <span class="tab-count" id="countWalking">0</span>
+          </button>
+          <button class="filter-tab" data-filter="booking" role="tab" aria-selected="false">
+            📅 Bookings <span class="tab-count" id="countBooking">0</span>
+          </button>
+          <button class="filter-tab" data-filter="announcement" role="tab" aria-selected="false">
+            📢 Announcements <span class="tab-count" id="countAnnouncement">0</span>
+          </button>
+        </div>
+
+        <!-- Secondary Actions Bar -->
+        <div class="notif-actions-bar">
+          <div class="notif-actions-info" id="statusSummary">
+            Showing <span class="active-filter-label">All Notifications</span>
+          </div>
+          <div class="notif-actions-btns">
+            <button id="markAllReadBtn" class="btn-action btn-action-primary" title="Mark all notifications as read">
+              <span>✓✓</span> Mark All as Read
+            </button>
+            <button id="clearAllBtn" class="btn-action btn-action-ghost" title="Clear all notifications to view empty state">
+              <span>🗑</span> Clear All
+            </button>
+            <button id="resetDemoBtn" class="btn-action btn-action-secondary" style="display: none;" title="Restore sample notifications">
+              <span>↻</span> Restore Demo
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notifications List -->
+      <div id="notificationsList" class="notif-list" role="region" aria-label="Notifications list">
+        <!-- Notification cards rendered dynamically via JavaScript -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="notif-empty-state" style="display: none;">
+        <div class="empty-state-emoji" aria-hidden="true">🐾</div>
+        <h3 id="emptyStateTitle">No notifications yet</h3>
+        <p id="emptyStateDesc">You're all caught up! When updates about your pets, walks, or bookings arrive, they will appear right here.</p>
+        <div class="empty-state-actions">
+          <button id="emptyStateActionBtn" class="button button-small">↻ Restore Sample Notifications</button>
+          <a href="pets/index.html" class="button button-small button-outline">Explore Pets ↗</a>
+          <a href="walker/index.html" class="button button-small button-outline">Find a Walker ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification Feedback -->
+  <div id="notifToast" class="notif-toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span id="toastMessage">Action completed</span>
+  </div>
+
+  <!-- ======================================================================
+       Site Footer
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <a class="brand" href="../../index.html">🐾 Pet<span>Sathi</span></a>
+        <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
+      </div>
+      <div>
+        <b>Explore</b>
+        <a href="pets/index.html">Pet Categories</a>
+        <a href="services/index.html">Services</a>
+        <a href="walker/index.html">Find a Walker</a>
+      </div>
+      <div>
+        <b>PetSathi</b>
+        <a href="about.html">About Us</a>
+        <a href="notifications.html">Notifications</a>
+        <a href="auth/login.html">Log in</a>
+        <a href="auth/register.html">Register</a>
+      </div>
+      <div>
+        <b>Open Source</b>
+        <a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noreferrer">GitHub</a>
+        <span>NSoC Winter Edition</span>
+      </div>
+    </div>
+    <div class="section-wrap footer-bottom">
+      <span>© <span id="year"></span> PetSathi. Made with ♥ for pets.</span>
+      <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/notifications.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="We couldn't find that page, but there's always more to explore at PetSathi.">
+  <title>Page Not Found | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
+  <style>
+    .not-found {
+      min-height: calc(100vh - 84px);
+      display: grid;
+      place-items: center;
+      padding: 48px 20px;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 40%, #f0f3eb 0, var(--cream) 68%);
+      text-align: center;
+    }
+
+    .not-found-content {
+      width: min(100%, 620px);
+    }
+
+    .pet-illustration {
+      position: relative;
+      display: inline-grid;
+      place-items: center;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: var(--peach);
+      font-size: 5rem;
+    }
+
+    .pet-illustration::before,
+    .pet-illustration::after {
+      position: absolute;
+      font-size: 2rem;
+      content: "🐾";
+    }
+
+    .pet-illustration::before {
+      top: 4px;
+      right: -24px;
+      transform: rotate(20deg);
+    }
+
+    .pet-illustration::after {
+      bottom: 4px;
+      left: -24px;
+      transform: rotate(-20deg);
+    }
+
+    .error-code {
+      margin: 0;
+      color: var(--green);
+      font-size: clamp(6rem, 22vw, 10rem);
+      font-weight: 800;
+      line-height: .95;
+      letter-spacing: -.08em;
+    }
+
+    .not-found h1 {
+      margin: 16px 0 12px;
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      letter-spacing: -2px;
+    }
+
+    .not-found p {
+      max-width: 470px;
+      margin: 0 auto 28px;
+      font-size: 1.05rem;
+    }
+
+    .not-found-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .back-button {
+      cursor: pointer;
+      font: inherit;
+    }
+
+    @media (max-width: 600px) {
+      .not-found {
+        min-height: calc(100vh - 74px);
+        padding-inline: 24px;
+      }
+
+      .pet-illustration {
+        width: 122px;
+        height: 122px;
+        font-size: 4rem;
+      }
+
+      .not-found p {
+        font-size: .98rem;
+      }
+
+      .not-found-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: min(100%, 280px);
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="not-found">
+    <div class="not-found-content">
+      <div class="pet-illustration" aria-hidden="true">🐶</div>
+      <div class="eyebrow">Looks like a little detour</div>
+      <p class="error-code" aria-label="Error 404">404</p>
+      <h1>Oops! Page Not Found</h1>
+      <p>Our curious pup sniffed around, but this page seems to have wandered off. Let's get you back to somewhere familiar.</p>
+      <div class="not-found-actions">
+        <a class="button" href="../../index.html">Back to Home <span aria-hidden="true">↗</span></a>
+        <button class="button button-outline back-button" type="button" onclick="if (history.length > 1) history.back(); else location.href='../../index.html'">Go Back</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

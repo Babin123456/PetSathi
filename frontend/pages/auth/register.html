@@ -26,57 +26,26 @@
         <div class="eyebrow">Welcome to PetSathi</div>
         <h1>Create your account</h1>
         <p>Join the PetSathi community. A happier pet journey starts here.</p>
-
-        <label for="name">Full name</label>
-        <input id="name" type="text" placeholder="Your name" required />
-
-        <label for="email">Email address</label>
-        <input id="email" type="email" placeholder="you@example.com" required />
-
-        <label for="role">I want to join as</label>
-        <select id="role" onchange="toggleRoleFields()">
-          <option value="owner">Pet Owner</option>
-          <option value="walker">Pet Walker</option>
-        </select>
-        <div
-          id="walker-fields"
-          style="
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.02);
-            border-radius: 8px;
-          "
-        >
-          <label for="experience">Walking Experience & Background</label>
-          <input
-            id="experience"
-            type="text"
-            placeholder="e.g., 2 years handling large breeds"
-          />
-
-          <label for="service-area" style="margin-top: 10px"
-            >Preferred Service Area / Location</label
-          >
-          <input
-            id="service-area"
-            type="text"
-            placeholder="e.g., Downtown / North Zone"
-          />
-        </div>
-
-        <label for="password" style="margin-top: 15px">Create password</label>
-        <input
+        <label for="name">Full name</label
+        ><input id="name" type="text" placeholder="Your name" required /><label
+          for="email"
+          >Email address</label
+        ><input
+          id="email"
+          type="email"
+          placeholder="you@example.com"
+          required
+        /><label for="role">I want to join as</label
+        ><select id="role">
+          <option>Pet Owner</option>
+          <option>Pet Walker</option></select
+        ><label for="password">Create password</label
+        ><input
           id="password"
           type="password"
           placeholder="Create a password"
           required
-        />
-
-        <button class="button" type="submit" style="margin-top: 20px">
-          Create account
-        </button>
-
+        /><button class="button" type="submit">Create account</button>
         <p class="form-note">
           Already have an account? <a href="login.html">Log in</a>
         </p>
@@ -86,18 +55,6 @@
         </div>
       </form>
     </main>
-
-    <script>
-      function toggleRoleFields() {
-        const roleSelect = document.getElementById("role");
-        const walkerFields = document.getElementById("walker-fields");
-        if (roleSelect.value === "walker") {
-          walkerFields.style.display = "block";
-        } else {
-          walkerFields.style.display = "none";
-        }
-      }
-    </script>
     <script src="../../js/main.js"></script>
   </body>
 </html>

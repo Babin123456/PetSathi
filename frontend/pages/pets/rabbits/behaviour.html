@@ -15,7 +15,138 @@
     <link rel="stylesheet" href="../../../css/global.css">
     <link rel="stylesheet" href="../../../css/home.css">
     <link rel="stylesheet" href="../../../css/inner.css">
-    <style> </style>
+    <style>
+        /* Rabbit Behaviour Hero */
+        .rabbit-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 76px 24px;
+            background: linear-gradient(120deg, #edf3e9 0%, #f8f1e7 100%);
+        }
+
+        .rabbit-hero::before {
+            content: "";
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.45);
+            top: -180px;
+            left: -100px;
+        }
+
+        .rabbit-hero-inner {
+            position: relative;
+            z-index: 1;
+            width: min(1160px, 100%);
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .rabbit-hero-copy .eyebrow {
+            margin-bottom: 16px;
+            color: #52765d;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+        }
+
+        .rabbit-hero h1 {
+            max-width: 620px;
+            margin: 0 0 20px;
+            color: #263f32;
+            font-size: clamp(2.7rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .rabbit-hero h1 em {
+            color: #66866b;
+            font-style: normal;
+        }
+
+        .rabbit-hero-copy>p {
+            max-width: 570px;
+            margin: 0 0 28px;
+            color: #647267;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .rabbit-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .rabbit-hero-visual {
+            position: relative;
+            min-height: 350px;
+            display: grid;
+            place-items: center;
+        }
+
+        .rabbit-hero-image {
+            width: min(100%, 420px);
+            height: 350px;
+            object-fit: cover;
+            border-radius: 48% 48% 24px 24px;
+            box-shadow: 0 20px 50px rgba(39, 68, 48, 0.14);
+        }
+
+        .rabbit-hero-note {
+            position: absolute;
+            bottom: 18px;
+            left: -18px;
+            padding: 13px 18px;
+            border-radius: 14px;
+            background: #fff;
+            color: #365640;
+            box-shadow: 0 8px 25px rgba(39, 68, 48, 0.12);
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 760px) {
+            .rabbit-hero {
+                padding: 55px 20px;
+            }
+
+            .rabbit-hero-inner {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                text-align: center;
+            }
+
+            .rabbit-hero h1,
+            .rabbit-hero-copy>p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .rabbit-hero-actions {
+                justify-content: center;
+            }
+
+            .rabbit-hero-visual {
+                min-height: 280px;
+            }
+
+            .rabbit-hero-image {
+                height: 280px;
+                max-width: 360px;
+            }
+
+            .rabbit-hero-note {
+                left: 0;
+                bottom: 8px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -59,6 +190,49 @@
             <a class="button button-small" href="../../auth/register.html" id="nav-register">Get Started ↗</a>
         </nav>
     </header>
+
+    <section class="rabbit-hero">
+        <div class="rabbit-hero-inner">
+
+            <div class="rabbit-hero-copy">
+                <div class="eyebrow">PetSathi · Rabbit Behaviour & Enrichment</div>
+
+                <h1>
+                    Understand Your
+                    <em>Rabbit Better.</em>
+                </h1>
+
+                <p>
+                    Every binky, nose twitch and gentle nudge tells a story.
+                    Discover what your rabbit's behaviour means, understand
+                    their needs and create an environment where they can
+                    feel safe, curious and happy.
+                </p>
+
+                <div class="rabbit-hero-actions">
+                    <a href="#understanding" class="button">
+                        Explore Behaviour ↓
+                    </a>
+
+                    <a href="#enrichment" class="button button-outline">
+                        Discover Enrichment
+                    </a>
+                </div>
+            </div>
+
+            <div class="rabbit-hero-visual">
+                <img class="rabbit-hero-image"
+                    src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=1000&q=85"
+                    alt="Rabbit sitting calmly and looking towards the camera">
+
+                <div class="rabbit-hero-note">
+                    🐰 Happy rabbits, healthier habits
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 
 
     <!-- Footer -->

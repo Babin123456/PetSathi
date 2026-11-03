@@ -111,7 +111,208 @@
             font-weight: 700;
         }
 
+        /* Understanding Rabbit Behaviour */
+        .rabbit-understanding {
+            padding: 70px 24px;
+            background: #ffffff;
+        }
+
+        .rabbit-understanding-inner {
+            max-width: 1160px;
+            margin: auto;
+        }
+
+        .rabbit-section-heading {
+            max-width: 700px;
+            margin: 0 auto 42px;
+            text-align: center;
+        }
+
+        .rabbit-section-heading .section-tag {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: #648269;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .rabbit-section-heading h2 {
+            margin: 0 0 15px;
+            color: #293f32;
+            font-size: clamp(1.9rem, 3vw, 2.7rem);
+        }
+
+        .rabbit-section-heading p {
+            margin: 0;
+            color: #68746b;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .rabbit-behaviour-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .rabbit-behaviour-image {
+            display: block;
+            width: 76px;
+            height: 76px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            background: #e9f0e5;
+        }
+
+        .rabbit-behaviour-card {
+            padding: 26px 22px;
+            background: #f7f9f5;
+            border: 1px solid #e7ece4;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .rabbit-behaviour-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(39, 68, 48, 0.09);
+        }
+
+        .rabbit-behaviour-icon {
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background: #e9f0e5;
+            font-size: 1.8rem;
+        }
+
+        .rabbit-behaviour-card h3 {
+            margin: 0 0 11px;
+            color: #304b38;
+            font-size: 1.15rem;
+        }
+
+        .rabbit-behaviour-card p {
+            margin: 0;
+            color: #69746b;
+            font-size: 0.94rem;
+            line-height: 1.75;
+        }
+
+        .rabbit-behaviour-note {
+            margin-top: 30px;
+            padding: 18px 22px;
+            background: #f3f6ef;
+            border-left: 4px solid #789477;
+            color: #526354;
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+
+        /* Rabbit Communication */
+        .rabbit-communication {
+            padding: 70px 24px;
+            background: #f7f9f5;
+        }
+
+        .rabbit-communication-inner {
+            max-width: 1160px;
+            margin: auto;
+        }
+
+        .rabbit-communication-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .rabbit-communication-card {
+            display: flex;
+            gap: 22px;
+            padding: 28px;
+            background: #ffffff;
+            border: 1px solid #e7ece4;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .rabbit-communication-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(39, 68, 48, 0.08);
+        }
+
+        .communication-number {
+            flex-shrink: 0;
+            color: #789477;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .communication-content h3 {
+            margin: 0 0 12px;
+            color: #304b38;
+            font-size: 1.2rem;
+        }
+
+        .communication-content p {
+            margin: 0 0 15px;
+            color: #69746b;
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+
+        .communication-content ul {
+            margin: 0;
+            padding-left: 18px;
+            color: #68746b;
+        }
+
+        .communication-content li {
+            margin-bottom: 9px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .communication-content li strong {
+            color: #405b46;
+        }
+
+        .rabbit-communication-note {
+            margin-top: 30px;
+            padding: 20px 24px;
+            background: #eaf0e6;
+            border-left: 4px solid #789477;
+            color: #526354;
+            font-size: 0.94rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 900px) {
+
+            .rabbit-hero-inner {
+                gap: 30px;
+            }
+
+            .rabbit-hero h1 {
+                font-size: clamp(2.2rem, 4vw, 3rem);
+            }
+
+            .rabbit-behaviour-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .rabbit-communication-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
         @media (max-width: 760px) {
+
             .rabbit-hero {
                 padding: 55px 20px;
             }
@@ -144,6 +345,55 @@
             .rabbit-hero-note {
                 left: 0;
                 bottom: 8px;
+            }
+
+            .rabbit-understanding,
+            #understanding {
+                padding: 50px 18px;
+            }
+
+            .rabbit-communication {
+                padding: 50px 18px;
+            }
+
+        }
+
+        @media (max-width: 520px) {
+            .rabbit-hero {
+                padding: 40px 16px;
+            }
+
+            .rabbit-hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .rabbit-hero-actions {
+                flex-direction: column;
+            }
+
+            .rabbit-hero-visual {
+                min-height: 250px;
+            }
+
+            .rabbit-hero-image {
+                height: 250px;
+            }
+
+            .rabbit-behaviour-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rabbit-section-heading h2 {
+                font-size: 1.9rem;
+            }
+
+            .rabbit-behaviour-card {
+                padding: 23px 20px;
+            }
+
+            .rabbit-communication-card {
+                padding: 22px 18px;
+                gap: 14px;
             }
         }
     </style>
@@ -232,6 +482,175 @@
 
         </div>
     </section>
+
+    <section class="rabbit-understanding" id="understanding">
+        <div class="rabbit-understanding-inner">
+
+            <div class="rabbit-section-heading">
+                <span class="section-tag">Getting to know your rabbit</span>
+                <h2>Understanding Rabbit Behaviour</h2>
+                <p>
+                    Rabbits communicate through their movements, posture
+                    and everyday actions. Learning to recognise these
+                    behaviours can help you understand how your rabbit
+                    feels and what they might be trying to tell you.
+                </p>
+            </div>
+
+
+            <div class="rabbit-behaviour-grid">
+
+                <article class="rabbit-behaviour-card">
+                    <img src="https://cdn.mos.cms.futurecdn.net/dMXogdTY9tRhHCUZ6CR3xZ.jpg"
+                        alt="Rabbit jumping in the air during a binky" class="rabbit-behaviour-image" loading="lazy">
+                    <h3>Binkying</h3>
+                    <p>
+                        A joyful jump with a twist in mid-air.
+                        Binkying is one of the clearest signs
+                        that a rabbit is excited and happy.
+                    </p>
+                </article>
+
+                <article class="rabbit-behaviour-card">
+                    <img src="https://miro.medium.com/v2/resize%3Afit%3A1400/1%2ASIm49nN5eM54rr8XnJU2RQ.jpeg"
+                        alt="Rabbit lying stretched out in a relaxed position" class="rabbit-behaviour-image"
+                        loading="lazy">
+                    <h3>Flopping</h3>
+                    <p>
+                        When a rabbit suddenly rolls onto its
+                        side and stretches out, it often means
+                        they feel comfortable and relaxed.
+                    </p>
+                </article>
+
+                <article class="rabbit-behaviour-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Alert_Rabbit.jpg"
+                        alt="Rabbit sitting upright and alert" class="rabbit-behaviour-image" loading="lazy">
+                    <h3>Thumping</h3>
+                    <p>
+                        A strong thump from the hind legs can
+                        signal fear, alert other rabbits to
+                        danger or express frustration.
+                    </p>
+                </article>
+
+                <article class="rabbit-behaviour-card">
+                    <img src="https://static.wixstatic.com/media/9c7efc_31977240408445a0ab5edd08ce8940c2~mv2.png/v1/fill/w_1000%2Ch_667%2Cal_c%2Cq_90%2Cusm_0.66_1.00_0.01/9c7efc_31977240408445a0ab5edd08ce8940c2~mv2.png"
+                        alt="Two rabbits grooming each other" class="rabbit-behaviour-image" loading="lazy">
+                    <h3>Nudging & Licking</h3>
+                    <p>
+                        Gentle nudges may be a request for
+                        attention, while licking is commonly
+                        associated with affection and social bonding.
+                    </p>
+                </article>
+
+            </div>
+
+
+            <div class="rabbit-behaviour-note">
+                <strong>Remember:</strong> Every rabbit has a unique
+                personality. Always observe their overall body language
+                and usual habits rather than interpreting one action alone.
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="rabbit-communication" id="communication">
+        <div class="rabbit-communication-inner">
+
+            <div class="rabbit-section-heading">
+                <span class="section-tag">The language of rabbits</span>
+                <h2>What Is Your Rabbit Trying to Tell You?</h2>
+                <p>
+                    Rabbits may not speak like humans, but their body
+                    language says a lot. From ear movements to subtle
+                    sounds, every signal can offer clues about how
+                    they are feeling.
+                </p>
+            </div>
+
+            <div class="rabbit-communication-grid">
+
+                <article class="rabbit-communication-card">
+                    <span class="communication-number">01</span>
+                    <div class="communication-content">
+                        <h3>Ear Positions</h3>
+                        <p>
+                            A rabbit's ears help them detect sounds and
+                            express their attention or mood.
+                        </p>
+                        <ul>
+                            <li><strong>Ears forward:</strong> Curious or listening.</li>
+                            <li><strong>Ears relaxed:</strong> Often comfortable.</li>
+                            <li><strong>Ears tightly flattened:</strong> May indicate fear or discomfort.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="rabbit-communication-card">
+                    <span class="communication-number">02</span>
+                    <div class="communication-content">
+                        <h3>Eyes & Expressions</h3>
+                        <p>
+                            Their eyes and facial expressions can provide
+                            clues about their surroundings and comfort.
+                        </p>
+                        <ul>
+                            <li><strong>Partially closed eyes:</strong> Often relaxed.</li>
+                            <li><strong>Wide eyes:</strong> May indicate alertness or fear.</li>
+                            <li><strong>Head lowered:</strong> May be inviting grooming or petting.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="rabbit-communication-card">
+                    <span class="communication-number">03</span>
+                    <div class="communication-content">
+                        <h3>Body Posture</h3>
+                        <p>
+                            The way a rabbit sits, stretches or moves
+                            can reveal how comfortable they feel.
+                        </p>
+                        <ul>
+                            <li><strong>Relaxed stretching:</strong> Feeling comfortable.</li>
+                            <li><strong>Crouched and tense:</strong> May be frightened.</li>
+                            <li><strong>Hiding:</strong> Could indicate stress or a need for security.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="rabbit-communication-card">
+                    <span class="communication-number">04</span>
+                    <div class="communication-content">
+                        <h3>Sounds & Vocalisation</h3>
+                        <p>
+                            Rabbits are generally quiet animals, but
+                            some sounds can communicate strong feelings.
+                        </p>
+                        <ul>
+                            <li><strong>Gentle tooth clicking:</strong> Often contentment.</li>
+                            <li><strong>Grunting or growling:</strong> May signal displeasure.</li>
+                            <li><strong>Loud tooth grinding:</strong> Can indicate pain or distress.</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="rabbit-communication-note">
+                <strong>Read the whole picture:</strong>
+                One signal does not always tell the full story.
+                Observe your rabbit's ears, eyes, posture and surroundings
+                together to better understand how they feel.
+            </div>
+
+        </div>
+    </section>
+
+
 
 
 

@@ -1,1 +1,60 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Log in | PetSathi</title><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/inner.css"></head><body><header class="site-header"><a class="brand" href="../../../index.html">🐾 <span>Pet<span>Sathi</span></span></a><a class="button button-small" href="../../../index.html">Home ↗</a></header><main><form class="form-wrap" onsubmit="event.preventDefault(); alert('This is a UI preview. Account functionality will be available in a future development level.');"><div class="eyebrow">Welcome to PetSathi</div><h1>Log in</h1><p>Log in to manage your pets and explore your PetSathi journey.</p><label for="email">Email address</label><input id="email" type="email" placeholder="you@example.com" required><label for="password">Password</label><input id="password" type="password" placeholder="Enter your password" required><button class="button" type="submit">Log in</button><p class="form-note">New to PetSathi? <a href="register.html">Create an account</a></p><div class="sample-note">Demo interface only. Registration and login are not connected to a backend yet.</div></form></main><script src="../../js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in | PetSathi</title>
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/inner.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../../index.html"
+        >🐾 <span>Pet<span>Sathi</span></span></a
+      ><a class="button button-small" href="../../../index.html">Home ↗</a>
+    </header>
+    <main>
+      <form
+        class="form-wrap"
+        onsubmit="
+          event.preventDefault();
+          alert(
+            'This is a UI preview. Account functionality will be available in a future development level.',
+          );
+        "
+      >
+        <div class="eyebrow">Welcome to PetSathi</div>
+        <h1>Log in</h1>
+        <p>Log in to manage your pets and explore your PetSathi journey.</p>
+
+        <label for="login-role">I am logging in as</label>
+        <select id="login-role">
+          <option value="owner">Pet Owner</option>
+          <option value="walker">Pet Walker</option>
+        </select>
+
+        <label for="email" style="margin-top: 15px">Email address</label>
+        <input id="email" type="email" placeholder="you@example.com" required />
+
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter your password"
+          required
+        />
+
+        <button class="button" type="submit">Log in</button>
+
+        <p class="form-note">
+          New to PetSathi? <a href="register.html">Create an account</a>
+        </p>
+        <div class="sample-note">
+          Demo interface only. Registration and login are not connected to a
+          backend yet.
+        </div>
+      </form>
+    </main>
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

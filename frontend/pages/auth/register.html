@@ -1,1 +1,60 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Create your account | PetSathi</title><link rel="stylesheet" href="../../css/global.css"><link rel="stylesheet" href="../../css/inner.css"></head><body><header class="site-header"><a class="brand" href="../../../index.html">🐾 <span>Pet<span>Sathi</span></span></a><a class="button button-small" href="../../../index.html">Home ↗</a></header><main><form class="form-wrap" onsubmit="event.preventDefault(); alert('This is a UI preview. Account functionality will be available in a future development level.');"><div class="eyebrow">Welcome to PetSathi</div><h1>Create your account</h1><p>Join the PetSathi community. A happier pet journey starts here.</p><label for="name">Full name</label><input id="name" type="text" placeholder="Your name" required><label for="email">Email address</label><input id="email" type="email" placeholder="you@example.com" required><label for="role">I want to join as</label><select id="role"><option>Pet Owner</option><option>Pet Walker</option></select><label for="password">Create password</label><input id="password" type="password" placeholder="Create a password" required><button class="button" type="submit">Create account</button><p class="form-note">Already have an account? <a href="login.html">Log in</a></p><div class="sample-note">Demo interface only. Registration and login are not connected to a backend yet.</div></form></main><script src="../../js/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create your account | PetSathi</title>
+    <link rel="stylesheet" href="../../css/global.css" />
+    <link rel="stylesheet" href="../../css/inner.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../../index.html"
+        >🐾 <span>Pet<span>Sathi</span></span></a
+      ><a class="button button-small" href="../../../index.html">Home ↗</a>
+    </header>
+    <main>
+      <form
+        class="form-wrap"
+        onsubmit="
+          event.preventDefault();
+          alert(
+            'This is a UI preview. Account functionality will be available in a future development level.',
+          );
+        "
+      >
+        <div class="eyebrow">Welcome to PetSathi</div>
+        <h1>Create your account</h1>
+        <p>Join the PetSathi community. A happier pet journey starts here.</p>
+        <label for="name">Full name</label
+        ><input id="name" type="text" placeholder="Your name" required /><label
+          for="email"
+          >Email address</label
+        ><input
+          id="email"
+          type="email"
+          placeholder="you@example.com"
+          required
+        /><label for="role">I want to join as</label
+        ><select id="role">
+          <option>Pet Owner</option>
+          <option>Pet Walker</option></select
+        ><label for="password">Create password</label
+        ><input
+          id="password"
+          type="password"
+          placeholder="Create a password"
+          required
+        /><button class="button" type="submit">Create account</button>
+        <p class="form-note">
+          Already have an account? <a href="login.html">Log in</a>
+        </p>
+        <div class="sample-note">
+          Demo interface only. Registration and login are not connected to a
+          backend yet.
+        </div>
+      </form>
+    </main>
+    <script src="../../js/main.js"></script>
+  </body>
+</html>

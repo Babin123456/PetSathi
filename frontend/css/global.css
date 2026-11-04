@@ -21,7 +21,7 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--ink);
-  font-family: "DM Sans", sans-serif;
+  font-family: "Times New Roman", Times, serif;
   line-height: 1.65;
 }
 a {
@@ -35,12 +35,13 @@ img {
 h1,
 h2,
 h3 {
-  font-family: Manrope, sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
   line-height: 1.16;
   letter-spacing: -1px;
 }
 p {
-  color: var(--muted);
+  color: #26372e;
 }
 .section-wrap {
   width: min(1160px, calc(100% - 48px));
@@ -61,9 +62,9 @@ p {
   display: flex;
   align-items: center;
   gap: 9px;
-  font:
-    800 1.55rem Manrope,
-    sans-serif;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
   white-space: nowrap;
 }
 .brand span:last-child span {
@@ -72,12 +73,17 @@ p {
 .brand-mark {
   font-size: 1.6rem;
 }
+.brand-mark svg {
+  display: block;
+  width: 1.25em;
+  height: 1.25em;
+}
 .main-nav {
   display: flex;
   align-items: center;
   gap: 23px;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #59675e;
 }
 .main-nav > a:hover,
@@ -160,13 +166,13 @@ p {
   width: 42px;
   height: 42px;
   font-size: 1.2rem;
-  color: var(--green);
+  color: var(--dark);
 }
 .eyebrow {
   margin-bottom: 14px;
   color: var(--green);
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 1.7px;
   text-transform: uppercase;
 }
@@ -206,6 +212,64 @@ h2 em {
 }
 .centered .eyebrow {
   margin-bottom: 12px;
+}
+
+/* Shared card treatment across the site's page-specific card systems. */
+.pet-category-card,
+.importance-card,
+.service-card,
+.step-card,
+.purpose-card,
+.vm-card,
+.value-card,
+.help-card,
+.feature-item-card,
+.info-card,
+.contact-form-card,
+.emergency-card,
+.contact-social-card,
+.faq-channel-card,
+.faq-form-card,
+.notif-card,
+.review-card,
+.review-form-card,
+.search-result-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pet-category-card:hover,
+.importance-card:hover,
+.service-card:hover,
+.step-card:hover,
+.purpose-card:hover,
+.vm-card:hover,
+.value-card:hover,
+.help-card:hover,
+.feature-item-card:hover,
+.info-card:hover,
+.contact-form-card:hover,
+.emergency-card:hover,
+.contact-social-card:hover,
+.faq-channel-card:hover,
+.faq-form-card:hover,
+.notif-card:hover,
+.review-card:hover,
+.review-form-card:hover,
+.search-result-card:hover {
+  border-color: #b8cfbb;
+  box-shadow: 0 10px 24px rgba(35, 57, 43, 0.08);
+  transform: translateY(-3px);
+}
+
+body,
+body * {
+  font-family: "Times New Roman", Times, serif !important;
 }
 @media (max-width: 1000px) {
   .main-nav {

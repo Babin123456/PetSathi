@@ -16,6 +16,30 @@
     />
     <link rel="stylesheet" href="frontend/css/global.css" />
     <link rel="stylesheet" href="frontend/css/home.css" />
+    <style>
+/* PetSathi Homepage - Explore Pets Layout */
+
+/* Desktop: 3 cards per row */
+#pets .pet-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 18px;
+}
+
+/* Tablet: 2 cards per row */
+@media (max-width: 950px) {
+    #pets .pet-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 600px) {
+    #pets .pet-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+</style>
   </head>
   <body>
     <header class="site-header">

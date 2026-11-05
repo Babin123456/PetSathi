@@ -350,45 +350,28 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
 <!-- Header and Navigation -->
 <header class="site-header">
-  <a class="brand" href="../../../../index.html" id="header-brand"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a>
-  <button class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-  <nav class="main-nav" id="main-navigation">
-    <a href="../../../../index.html" id="nav-home">Home</a>
-    <div class="nav-item">
-      <a class="active" href="../index.html" id="nav-explore-pets">Explore Pets ▾</a>
-      <div class="dropdown">
-        <a href="index.html" id="dropdown-dogs">🐕 Dogs</a>
-        <a href="../cats/index.html" id="dropdown-cats">🐈 Cats</a>
-        <a href="../birds/index.html" id="dropdown-birds">🐦 Birds</a>
-        <a href="../rabbits/index.html" id="dropdown-rabbits">🐇 Rabbits</a>
+  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../../../index.html">Home</a>
+    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a href="../other/reptiles.html">Reptiles</a>
       </div>
     </div>
-    <div class="nav-item">
-      <a href="../../services/index.html" id="nav-services">Services ▾</a>
-      <div class="dropdown">
-        <a href="../../services/dog-walking.html" id="dropdown-service-walking">Dog Walking</a>
-        <a href="../../services/cat-care.html" id="dropdown-service-cat-care">Cat Care</a>
-        <a href="../../services/pet-care.html" id="dropdown-service-pet-care">Pet Care</a>
-        <a href="../../services/guidance.html" id="dropdown-service-guidance">Pet Guidance</a>
-      </div>
+    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
     </div>
-    <div class="nav-item">
-      <a href="../../walker/index.html" id="nav-walkers">Find a Walker ▾</a>
-      <div class="dropdown">
-        <a href="../../walker/dogs.html" id="dropdown-walker-dogs">Dog Walkers</a>
-        <a href="../../walker/cats.html" id="dropdown-walker-cats">Cat Caregivers</a>
-        <a href="../../walker/birds.html" id="dropdown-walker-birds">Bird Caregivers</a>
-        <a href="../../walker/rabbits.html" id="dropdown-walker-rabbits">Rabbit Caregivers</a>
-      </div>
+    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
     </div>
-    <a href="../../about.html" id="nav-about">About Us</a>
-    <a href="../../auth/login.html" id="nav-login">Log in</a>
-    <a class="button button-small" href="../../auth/register.html" id="nav-register">Get Started ↗</a>
+    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
   </nav>
 </header>
 
@@ -410,9 +393,9 @@
 
     <div class="hero-visual">
       <div class="hero-blob"></div>
-      <img 
-        src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=85" 
-        alt="Two happy dogs running joyfully together across a sunny grass field" 
+      <img
+        src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=85"
+        alt="Two happy dogs running joyfully together across a sunny grass field"
         class="hero-photo"
         id="hero-dog-image"
       >
@@ -439,7 +422,7 @@
         <h2>Explore Essential <em>Dog Topics</em></h2>
       </div>
       <p>
-        Browse through curated guides crafted to assist dog parents with everyday health, 
+        Browse through curated guides crafted to assist dog parents with everyday health,
         wholesome diet, active outdoor walking, and attentive home care.
       </p>
     </div>
@@ -449,8 +432,8 @@
       <article class="dog-card" id="card-breeds">
         <div class="dog-card-media">
           <span class="dog-card-badge">🐕 Breeds</span>
-          <img 
-            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=85" 
+          <img
+            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=85"
             alt="Friendly Golden Retriever sitting patiently outdoors"
             loading="lazy"
           >
@@ -468,8 +451,8 @@
       <article class="dog-card" id="card-nutrition">
         <div class="dog-card-media">
           <span class="dog-card-badge">🥣 Nutrition</span>
-          <img 
-            src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=85" 
+          <img
+            src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=700&q=85"
             alt="Healthy and balanced dog food meal prepared in a bowl"
             loading="lazy"
           >
@@ -487,8 +470,8 @@
       <article class="dog-card" id="card-walking">
         <div class="dog-card-media">
           <span class="dog-card-badge">🎾 Exercise</span>
-          <img 
-            src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=700&q=85" 
+          <img
+            src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=700&q=85"
             alt="Dog companion walking along a scenic nature path on a leash"
             loading="lazy"
           >
@@ -506,8 +489,8 @@
       <article class="dog-card" id="card-grooming">
         <div class="dog-card-media">
           <span class="dog-card-badge">🛁 Grooming</span>
-          <img 
-            src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=700&q=85" 
+          <img
+            src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=700&q=85"
             alt="Freshly bathed dog comfortably wrapped in a soft warm towel"
             loading="lazy"
           >
@@ -525,8 +508,8 @@
       <article class="dog-card" id="card-health">
         <div class="dog-card-media">
           <span class="dog-card-badge">🩺 Wellness</span>
-          <img 
-            src="https://plus.unsplash.com/premium_photo-1661916447474-235409b19e16?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" 
+          <img
+            src="https://plus.unsplash.com/premium_photo-1661916447474-235409b19e16?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
             alt="Gentle veterinarian conducting a routine physical examination on a dog"
             loading="lazy"
           >
@@ -544,8 +527,8 @@
       <article class="dog-card" id="card-training">
         <div class="dog-card-media">
           <span class="dog-card-badge">🧠 Behaviour</span>
-          <img 
-            src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=700&q=85" 
+          <img
+            src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=700&q=85"
             alt="Attentive dog focused on trainer during positive reinforcement training"
             loading="lazy"
           >
@@ -570,7 +553,7 @@
           <h2>Quick Information for <em>Dog Parents</em></h2>
         </div>
         <p>
-          Understanding your companion is the cornerstone of a fulfilling pet parenthood journey. 
+          Understanding your companion is the cornerstone of a fulfilling pet parenthood journey.
           Here is what makes dogs special and how to care for them responsibly.
         </p>
       </div>
@@ -673,7 +656,7 @@
         <div class="eyebrow" style="color: #c3ddc8;">Start Your Dog's Journey</div>
         <h2>Every Paw Deserves a <em>Happy Walk.</em></h2>
         <p>
-          Whether you are preparing to adopt your first puppy or looking to give your faithful companion 
+          Whether you are preparing to adopt your first puppy or looking to give your faithful companion
           the best daily walks and wellness support, PetSathi is here to guide and support you every step of the way.
         </p>
       </div>
@@ -688,35 +671,12 @@
 <!-- Footer -->
 <footer class="footer">
   <div class="section-wrap footer-grid">
-    <div>
-      <a class="brand" href="../../../../index.html" id="footer-brand">🐾 Pet<span>Sathi</span></a>
-      <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
-    </div>
-    <div>
-      <b>Explore</b>
-      <a href="../index.html" id="footer-link-explore-pets">Pet Categories</a>
-      <a href="../../services/index.html" id="footer-link-services">Services</a>
-      <a href="../../walker/index.html" id="footer-link-walker">Find a Walker</a>
-      <a href="../../services/dog-walking.html" id="footer-link-dog-walking">Dog Walking Service</a>
-    </div>
-    <div>
-      <b>PetSathi</b>
-      <a href="../../about.html" id="footer-link-about">About Us</a>
-      <a href="../../auth/login.html" id="footer-link-login">Log in</a>
-      <a href="../../auth/register.html" id="footer-link-register">Register</a>
-    </div>
-    <div>
-      <b>Dog Guides</b>
-      <a href="breeds.html" id="footer-link-breeds">Dog Breeds</a>
-      <a href="care.html" id="footer-link-care">Dog Care & Health</a>
-      <a href="walking.html" id="footer-link-walking">Exercise & Walking</a>
-      <a href="../../walker/dogs.html" id="footer-link-dog-walkers">Find Dog Walkers</a>
-    </div>
+    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
   </div>
-  <div class="section-wrap footer-bottom">
-    <span>© <span id="year"></span> PetSathi. Made with ♥ for pets.</span>
-    <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
-  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
 </footer>
 
 <script src="../../../js/main.js"></script>

@@ -48,15 +48,18 @@ p {
   margin: auto;
 }
 .site-header {
-  width: min(1240px, calc(100% - 48px));
+  width: 100%;
   height: 84px;
-  margin: auto;
+  max-width: none;
+  padding: 0 max(24px, calc((100% - 1240px) / 2));
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 22px;
   position: relative;
   z-index: 20;
+  background: var(--dark);
+  color: #ffffff;
 }
 .brand {
   display: flex;
@@ -69,6 +72,12 @@ p {
 }
 .brand span:last-child span {
   color: var(--green);
+}
+.site-header .brand,
+.site-header .brand span,
+.site-header .brand span:last-child span,
+.site-header .brand-mark {
+  color: #ffffff;
 }
 .brand-mark {
   font-size: 1.6rem;
@@ -84,12 +93,12 @@ p {
   gap: 23px;
   font-size: 0.9rem;
   font-weight: 700;
-  color: #59675e;
+  color: #ffffff;
 }
 .main-nav > a:hover,
 .nav-item > a:hover,
 .main-nav .active {
-  color: var(--green);
+  color: #dcebdc;
 }
 .nav-item {
   position: relative;
@@ -112,6 +121,7 @@ p {
   padding: 10px 12px;
   border-radius: 8px;
   font-size: 0.86rem;
+  color: var(--dark);
 }
 .dropdown a:hover {
   background: var(--soft);
@@ -166,7 +176,17 @@ p {
   width: 42px;
   height: 42px;
   font-size: 1.2rem;
-  color: var(--dark);
+  color: #ffffff;
+  font-size: 0;
+}
+.menu-toggle::before {
+  content: "\f0c9";
+  font-family: "Font Awesome 6 Free";
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.menu-toggle i {
+  font-size: 1.2rem;
 }
 .eyebrow {
   margin-bottom: 14px;
@@ -271,6 +291,239 @@ body,
 body * {
   font-family: "Times New Roman", Times, serif !important;
 }
+
+.site-header .main-nav > a,
+.site-header .main-nav .nav-item > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #ffffff;
+}
+.site-header .main-nav > a::before,
+.site-header .main-nav .nav-item > a::before,
+.site-header .dropdown a::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  line-height: 1;
+}
+.site-header .main-nav > a[href*="index.html"]::before {
+  content: "\f015";
+}
+.site-header .main-nav .nav-item > a[href*="pets"]::before {
+  content: "\f1b0";
+}
+.site-header .main-nav .nav-item > a[href*="services"]::before {
+  content: "\f004";
+}
+.site-header .main-nav .nav-item > a[href*="walker"]::before {
+  content: "\f554";
+}
+.site-header .main-nav > a[href*="about"]::before {
+  content: "\f05a";
+}
+.site-header .main-nav > a[href*="login"]::before {
+  content: "\f2f6";
+}
+.site-header .main-nav > a.button::before {
+  content: "\f35d";
+}
+.site-header .dropdown a::before {
+  margin-right: 8px;
+  color: var(--green);
+}
+.site-header .dropdown a[href*="pets"]::before {
+  content: "\f1b0";
+}
+.site-header .dropdown a[href*="services"]::before {
+  content: "\f004";
+}
+.site-header .dropdown a[href*="walker"]::before {
+  content: "\f554";
+}
+.site-header .dropdown a[href*="dog"]::before,
+.site-header .dropdown a[href*="cat"]::before,
+.site-header .dropdown a[href*="bird"]::before,
+.site-header .dropdown a[href*="rabbit"]::before {
+  content: "\f1b0";
+}
+.site-header .dropdown a[href*="fish"]::before,
+.site-header .dropdown a[href*="reptile"]::before {
+  content: "\f578";
+}
+.site-header .dropdown a[href*="services"]::before,
+.site-header .dropdown a[href*="walker"]::before {
+  content: "\f0c0";
+}
+.site-header .dropdown a[href*="dog-walking"]::before {
+  content: "\f554";
+}
+.site-header .dropdown a[href*="care"]::before {
+  content: "\f004";
+}
+.site-header .dropdown a[href*="guidance"]::before {
+  content: "\f05a";
+}
+.site-header .dropdown a[href*="walker"]::before {
+  content: "\f554";
+}
+.site-header .dropdown a[href*="dogs.html"]::before,
+.site-header .dropdown a[href*="cats.html"]::before,
+.site-header .dropdown a[href*="birds.html"]::before,
+.site-header .dropdown a[href*="rabbits.html"]::before {
+  content: "\f007";
+}
+
+.footer .footer-grid > div > a:not(.brand)[href*="github"]::before {
+  content: "\f09b";
+}
+.footer .footer-grid > div > a:not(.brand)[href*="linkedin"]::before {
+  content: "\f08c";
+}
+.footer .footer-grid > div > a:not(.brand)[href*="petsathi"]::before {
+  content: "\f35d";
+}
+.footer .footer-grid > div:nth-child(2) a::before {
+  content: "\f0c1";
+}
+.footer .footer-grid > div:nth-child(3) a::before {
+  content: "\f05a";
+}
+.footer .footer-grid > div:nth-child(4) a::before {
+  content: "\f0c1";
+}
+.footer .footer-grid > div > a:not(.brand)::before {
+  display: inline-block;
+  width: 1.5rem;
+  margin-right: 0.35rem;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  text-align: center;
+}
+.footer .footer-grid > div > a:not(.brand)[href*="github"]::before,
+.footer .footer-grid > div > a:not(.brand)[href*="linkedin"]::before {
+  font-family: "Font Awesome 6 Brands";
+}
+.footer .footer-link-icon {
+  font-size: 0;
+}
+.footer .footer-link-icon::before {
+  font-size: 1.05rem;
+  font-family: "Font Awesome 6 Free";
+}
+.footer a[href*="github"] .footer-link-icon::before {
+  content: "\f09b";
+  font-family: "Font Awesome 6 Brands";
+}
+.footer a[href*="linkedin"] .footer-link-icon::before {
+  content: "\f08c";
+  font-family: "Font Awesome 6 Brands";
+}
+.footer .footer-grid > div:nth-child(2) .footer-link-icon::before {
+  content: "\f015";
+}
+.footer .footer-grid > div:nth-child(3) .footer-link-icon::before {
+  content: "\f05a";
+}
+.footer .footer-grid > div:nth-child(4) .footer-link-icon::before {
+  content: "\f0c1";
+}
+.footer .footer-grid > div:nth-child(3) span .footer-link-icon::before {
+  content: "\f023";
+}
+.footer .footer-grid > div:nth-child(4) span .footer-link-icon::before {
+  content: "\f08c";
+  font-family: "Font Awesome 6 Brands";
+}
+.footer .footer-grid > div > a:not(.brand):has(.footer-link-icon)::before {
+  content: none;
+}
+.site-header > .button::before {
+  content: "\f015";
+  margin-right: 7px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+/* Shared footer treatment. */
+.footer {
+  background: var(--dark) !important;
+  color: #ffffff !important;
+  padding-top: 48px;
+}
+.footer .footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr !important;
+  gap: 35px !important;
+  padding-bottom: 35px !important;
+}
+.footer .footer-grid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  color: #ffffff !important;
+  font-size: 0.9rem;
+}
+.footer .footer-grid p,
+.footer .footer-grid b,
+.footer .footer-grid a,
+.footer .footer-grid span {
+  color: #ffffff !important;
+}
+.footer .footer-grid p {
+  max-width: 260px;
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.footer .footer-grid b {
+  margin-bottom: 2px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.footer .footer-grid a {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.footer .footer-grid a:hover,
+.footer .footer-grid a:focus-visible {
+  color: #dcebdc !important;
+  transform: translateX(3px);
+}
+.footer .footer-grid .brand,
+.footer .footer-grid .brand span,
+.footer .footer-grid .brand span:last-child span {
+  color: #ffffff !important;
+}
+.footer .footer-grid .brand {
+  margin-bottom: 4px;
+}
+.footer .footer-link-icon {
+  display: inline-flex;
+  width: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.35rem;
+  color: #ffffff !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 17px 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.28) !important;
+  color: #ffffff !important;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.footer .footer-bottom span {
+  color: #ffffff !important;
+}
+
 @media (max-width: 1000px) {
   .main-nav {
     gap: 13px;
@@ -280,6 +533,7 @@ body * {
 @media (max-width: 850px) {
   .site-header {
     height: 74px;
+    padding: 0 17px;
   }
   .menu-toggle {
     display: block;
@@ -291,8 +545,8 @@ body * {
     left: 0;
     right: 0;
     padding: 15px;
-    background: white;
-    border: 1px solid var(--line);
+    background: var(--dark);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     box-shadow: var(--shadow);
     align-items: stretch;
@@ -322,9 +576,16 @@ body * {
     font-weight: 700;
   }
 }
+@media (max-width: 850px) {
+  .footer .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr !important;
+  }
+  .footer .footer-grid > div:last-child {
+    grid-column: 1 / -1;
+  }
+}
 @media (max-width: 600px) {
-  .section-wrap,
-  .site-header {
+  .section-wrap {
     width: calc(100% - 34px);
   }
   .section {
@@ -336,4 +597,137 @@ body * {
   .section-heading > p {
     margin-top: 14px;
   }
+  .footer .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .footer .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .footer .footer-bottom {
+    display: block !important;
+    text-align: center;
+  }
+  .footer .footer-bottom span {
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+/* Final shared shell rules. Header links remain text-only; icons are reserved
+   for dropdown options and footer links. */
+.site-header .main-nav > a::before,
+.site-header .main-nav .nav-item > a::before {
+  content: none !important;
+  display: none !important;
+}
+.site-header .main-nav > a,
+.site-header .main-nav .nav-item > a {
+  gap: 0;
+}
+.site-header .nav-arrow {
+  margin-left: 5px;
+  font-size: 0.75em;
+}
+.site-header .dropdown a {
+  display: flex;
+  align-items: center;
+  color: var(--dark) !important;
+  font-weight: 700;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.site-header .dropdown a::before {
+  display: inline-flex;
+  width: 1.25rem;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+  color: var(--green) !important;
+}
+.site-header .dropdown-explore a:nth-child(1)::before { content: "\f6d3"; }
+.site-header .dropdown-explore a:nth-child(2)::before { content: "\f6be"; }
+.site-header .dropdown-explore a:nth-child(3)::before { content: "\f52d"; }
+.site-header .dropdown-explore a:nth-child(4)::before { content: "\f1b0"; }
+.site-header .dropdown-explore a:nth-child(5)::before { content: "\f578"; }
+.site-header .dropdown-explore a:nth-child(6)::before { content: "\f6d5"; }
+.site-header .dropdown-services a:nth-child(1)::before { content: "\f554"; }
+.site-header .dropdown-services a:nth-child(2)::before { content: "\f6be"; }
+.site-header .dropdown-services a:nth-child(3)::before { content: "\f1b0"; }
+.site-header .dropdown-walker a:nth-child(1)::before { content: "\f002"; }
+.site-header .dropdown-walker a:nth-child(2)::before { content: "\f007"; }
+.site-header .dropdown-walker a:nth-child(3)::before { content: "\f274"; }
+.site-header .brand-mark i,
+.footer .brand-mark i {
+  color: #ffffff;
+}
+.footer .footer-grid > div {
+  font-weight: 700;
+}
+.footer .footer-grid p {
+  font-weight: 700;
+}
+.footer .footer-grid > div > a:not(.brand)::before {
+  content: none;
+  color: #ffffff !important;
+}
+.footer .footer-grid > div:nth-child(2) > a:nth-of-type(1)::before { content: "\f015"; }
+.footer .footer-grid > div:nth-child(2) > a:nth-of-type(2)::before { content: "\f1b0"; }
+.footer .footer-grid > div:nth-child(2) > a:nth-of-type(3)::before { content: "\f004"; }
+.footer .footer-grid > div:nth-child(2) > a:nth-of-type(4)::before { content: "\f554"; }
+.footer .footer-grid > div:nth-child(3) > a:nth-of-type(1)::before { content: "\f05a"; }
+.footer .footer-grid > div:nth-child(3) > a:nth-of-type(2)::before { content: "\f0e0"; }
+.footer .footer-grid > div:nth-child(3) > a:nth-of-type(3)::before { content: "\f059"; }
+.footer .footer-grid > div:nth-child(3) > a:nth-of-type(4)::before { content: "\f3ed"; }
+.footer .footer-grid > div:nth-child(3) > a:nth-of-type(5)::before { content: "\f56f"; }
+.footer .footer-grid > div:nth-child(4) > a:nth-of-type(1)::before {
+  content: "\f09b";
+  font-family: "Font Awesome 6 Brands";
+}
+.footer .footer-grid > div:nth-child(4) > a:nth-of-type(2)::before {
+  content: "\f08c";
+  font-family: "Font Awesome 6 Brands";
+}
+.footer .footer-grid > div:nth-child(4) > a:nth-of-type(3)::before { content: "\f0ac"; }
+.footer .footer-grid > div > a:not(.brand)::before {
+  display: inline-flex;
+  width: 1.5rem;
+  margin-right: 0.35rem;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  text-align: center;
+}
+.footer .footer-grid > div > a:not(.brand),
+.footer .footer-grid > div > span,
+.footer .footer-bottom,
+.footer .footer-bottom span {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+/* Keep the logo mark identical in both shared shell locations. */
+.site-header .brand,
+.footer .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+.site-header .brand-mark,
+.footer .brand-mark {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  color: #ffffff !important;
+}
+.site-header .brand-mark,
+.footer .brand-mark {
+  vertical-align: middle;
+}
+.site-header .brand > span:last-child,
+.footer .brand > span:last-child,
+.site-header .brand > span:last-child span,
+.footer .brand > span:last-child span {
+  color: #ffffff !important;
 }

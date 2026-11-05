@@ -329,45 +329,28 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
 <!-- Header and Navigation (matches main PetSathi homepage) -->
 <header class="site-header">
-  <a class="brand" href="../../../../index.html"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a>
-  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-  <nav class="main-nav">
+  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
     <a href="../../../../index.html">Home</a>
-    <div class="nav-item">
-      <a class="active" href="../index.html">Explore Pets ▾</a>
-      <div class="dropdown">
-        <a href="../dogs/index.html">🐕 Dogs</a>
-        <a href="index.html">🐈 Cats</a>
-        <a href="../birds/index.html">🐦 Birds</a>
-        <a href="../rabbits/index.html">🐇 Rabbits</a>
+    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="../dogs/index.html">Dogs</a><a href="index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a href="../other/reptiles.html">Reptiles</a>
       </div>
     </div>
-    <div class="nav-item">
-      <a href="../../services/index.html">Services ▾</a>
-      <div class="dropdown">
-        <a href="../../services/dog-walking.html">Dog Walking</a>
-        <a href="../../services/cat-care.html">Cat Care</a>
-        <a href="../../services/pet-care.html">Pet Care</a>
-        <a href="../../services/guidance.html">Pet Guidance</a>
-      </div>
+    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
     </div>
-    <div class="nav-item">
-      <a href="../../walker/index.html">Find a Walker ▾</a>
-      <div class="dropdown">
-        <a href="../../walker/dogs.html">Dog Walkers</a>
-        <a href="../../walker/cats.html">Cat Caregivers</a>
-        <a href="../../walker/birds.html">Bird Caregivers</a>
-        <a href="../../walker/rabbits.html">Rabbit Caregivers</a>
-      </div>
+    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
     </div>
-    <a href="../../about.html">About Us</a>
-    <a href="../../auth/login.html">Log in</a>
-    <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
+    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
   </nav>
 </header>
 
@@ -378,8 +361,8 @@
       <div class="cat-badge-strip">🐾 PetSathi • Cat Companion Guide</div>
       <h1>Everything You Need to Know About <em>Cats</em></h1>
       <p>
-        Welcome to PetSathi's dedicated cat guide. From curious kittens to wise senior companions, 
-        cats bring warmth, grace, and delightful play into our homes. Explore breed characteristics, 
+        Welcome to PetSathi's dedicated cat guide. From curious kittens to wise senior companions,
+        cats bring warmth, grace, and delightful play into our homes. Explore breed characteristics,
         balanced nutrition, wellness advice, and enrichment ideas to ensure your feline companion thrives.
       </p>
       <div class="hero-actions">
@@ -391,9 +374,9 @@
 
     <div class="hero-visual">
       <div class="hero-blob"></div>
-      <img 
-        src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85" 
-        alt="Beautiful domestic cat resting serenely" 
+      <img
+        src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85"
+        alt="Beautiful domestic cat resting serenely"
         class="hero-photo"
       >
       <div class="floating-card card-top">
@@ -419,7 +402,7 @@
         <h2>Explore Essential <em>Cat Topics</em></h2>
       </div>
       <p>
-        Browse through curated guides crafted to assist cat parents with everyday health, 
+        Browse through curated guides crafted to assist cat parents with everyday health,
         nourishment, playful engagement, and attentive care.
       </p>
     </div>
@@ -429,15 +412,15 @@
       <article class="cat-card" id="breeds">
         <div class="cat-card-media">
           <span class="cat-card-badge">🐈 Breeds</span>
-          <img 
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=85" 
+          <img
+            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=85"
             alt="Adorable domestic shorthair cat with amber eyes"
           >
         </div>
         <div class="cat-card-body">
           <h3>Cat Breeds</h3>
           <p>
-            Discover popular feline breeds—from majestic Maine Coons and affectionate Persians 
+            Discover popular feline breeds—from majestic Maine Coons and affectionate Persians
             to sleek Siamese and playful Bengals. Learn their temperaments, coat patterns, and lifestyles.
           </p>
           <a class="cat-card-link" href="breeds.html">Explore Cat Breeds ↗</a>
@@ -448,15 +431,15 @@
       <article class="cat-card" id="care">
         <div class="cat-card-media">
           <span class="cat-card-badge">🩺 Wellness</span>
-          <img 
-            src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=700&q=85" 
+          <img
+            src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=700&q=85"
             alt="Fluffy ginger cat receiving gentle care"
           >
         </div>
         <div class="cat-card-body">
           <h3>Cat Care & Health</h3>
           <p>
-            Learn fundamental feline health routines, including regular veterinary visits, essential vaccinations, 
+            Learn fundamental feline health routines, including regular veterinary visits, essential vaccinations,
             dental hygiene, parasite prevention, and recognizing early warning signs of illness.
           </p>
           <a class="cat-card-link" href="care.html">Explore Care & Health ↗</a>
@@ -467,15 +450,15 @@
       <article class="cat-card" id="nutrition">
         <div class="cat-card-media">
           <span class="cat-card-badge">🥣 Nutrition</span>
-          <img 
-            src="https://images.unsplash.com/photo-1596854331442-3cf47265cefb?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" 
+          <img
+            src="https://images.unsplash.com/photo-1596854331442-3cf47265cefb?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
             alt="Cat enjoying mealtime"
           >
         </div>
         <div class="cat-card-body">
           <h3>Food & Nutrition</h3>
           <p>
-            Understand your cat's obligate carnivore diet. Find balanced recommendations for protein intake, 
+            Understand your cat's obligate carnivore diet. Find balanced recommendations for protein intake,
             wet vs. dry food, moisture requirements, fresh water fountains, and foods to avoid.
           </p>
           <a class="cat-card-link" href="nutrition.html">Explore Food & Nutrition ↗</a>
@@ -486,15 +469,15 @@
       <article class="cat-card" id="behaviour">
         <div class="cat-card-media">
           <span class="cat-card-badge">🧠 Psychology</span>
-          <img 
-            src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=700&q=85" 
+          <img
+            src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=700&q=85"
             alt="Playful cat with wide curious eyes"
           >
         </div>
         <div class="cat-card-body">
           <h3>Behaviour & Training</h3>
           <p>
-            Decode feline body language, tail twitches, slow blinks, and purrs. Master gentle litter box training, 
+            Decode feline body language, tail twitches, slow blinks, and purrs. Master gentle litter box training,
             scratching post orientation, and positive reinforcement bonding techniques.
           </p>
           <a class="cat-card-link" href="behaviour.html">Explore Behaviour & Training ↗</a>
@@ -505,15 +488,15 @@
       <article class="cat-card" id="grooming">
         <div class="cat-card-media">
           <span class="cat-card-badge">🛁 Hygiene</span>
-          <img 
-            src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=700&q=85" 
+          <img
+            src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=700&q=85"
             alt="Well-groomed cat resting comfortably"
           >
         </div>
         <div class="cat-card-body">
           <h3>Grooming & Hygiene</h3>
           <p>
-            Keep your cat's coat glossy and mat-free while reducing hairballs. Get practical advice on safe claw trimming, 
+            Keep your cat's coat glossy and mat-free while reducing hairballs. Get practical advice on safe claw trimming,
             ear cleanliness, and keeping the litter box pristine and odour-free.
           </p>
           <a class="cat-card-link" href="care.html">Explore Grooming & Hygiene ↗</a>
@@ -524,15 +507,15 @@
       <article class="cat-card" id="enrichment">
         <div class="cat-card-media">
           <span class="cat-card-badge">🧶 Enrichment</span>
-          <img 
-            src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=700&q=85" 
+          <img
+            src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=700&q=85"
             alt="Active indoor cat playing on a warm blanket"
           >
         </div>
         <div class="cat-card-body">
           <h3>Indoor Activities & Enrichment</h3>
           <p>
-            Keep indoor cats active and mentally stimulated with vertical climbing trees, feather wands, 
+            Keep indoor cats active and mentally stimulated with vertical climbing trees, feather wands,
             puzzle treat feeders, window perches, and engaging daily play sessions.
           </p>
           <a class="cat-card-link" href="behaviour.html">Explore Activities & Enrichment ↗</a>
@@ -550,7 +533,7 @@
           <h2>Why Cats Make <em>Wonderful Companions</em></h2>
         </div>
         <p>
-          Millions of pet lovers across the world cherish life with cats. Here is what makes 
+          Millions of pet lovers across the world cherish life with cats. Here is what makes
           sharing your home with a feline companion truly magical.
         </p>
       </div>
@@ -561,7 +544,7 @@
           <div class="companion-icon-wrap">🛋️</div>
           <h3>Gentle Companionship</h3>
           <p>
-            Cats offer a soothing, calming presence. Whether curled up beside you as you read or peacefully 
+            Cats offer a soothing, calming presence. Whether curled up beside you as you read or peacefully
             napping near your desk while you work, their quiet company lowers stress and fills the home with tranquility.
           </p>
         </article>
@@ -571,7 +554,7 @@
           <div class="companion-icon-wrap">🐾</div>
           <h3>Independent Nature</h3>
           <p>
-            Cats are naturally self-reliant, tidy, and respectful of personal space. They groom themselves meticulously, 
+            Cats are naturally self-reliant, tidy, and respectful of personal space. They groom themselves meticulously,
             use litter boxes instinctively, and comfortably enjoy quiet time while you are away.
           </p>
         </article>
@@ -581,7 +564,7 @@
           <div class="companion-icon-wrap">🧶</div>
           <h3>Infectious Playfulness</h3>
           <p>
-            From acrobatic leaps and comical midnight zoomies to pouncing on shadow reflections and batting toy mice, 
+            From acrobatic leaps and comical midnight zoomies to pouncing on shadow reflections and batting toy mice,
             cats never lose their playful curiosity, bringing boundless laughter to every room.
           </p>
         </article>
@@ -591,7 +574,7 @@
           <div class="companion-icon-wrap">💚</div>
           <h3>Deep Emotional Bonding</h3>
           <p>
-            Feline affection is genuine and heartfelt. Through rhythmic purrs, slow-motion blinks, and warm head bunting, 
+            Feline affection is genuine and heartfelt. Through rhythmic purrs, slow-motion blinks, and warm head bunting,
             cats establish strong, empathetic bonds of loyalty and trust with their human families.
           </p>
         </article>
@@ -601,7 +584,7 @@
           <div class="companion-icon-wrap">🛡️</div>
           <h3>Responsible Cat Ownership</h3>
           <p>
-            A happy cat thrives with committed, attentive care. Providing a safe indoor sanctuary, timely vaccinations, 
+            A happy cat thrives with committed, attentive care. Providing a safe indoor sanctuary, timely vaccinations,
             spaying/neutering, balanced nutrition, and lifelong love ensures your furry companion enjoys a long, vibrant life.
           </p>
         </article>
@@ -658,7 +641,7 @@
         <div class="eyebrow" style="color: #c3ddc8;">Start Your Feline Journey</div>
         <h2>Ready to Give Your Cat the <em>Best Care?</em></h2>
         <p>
-          Whether you are planning to welcome a new cat or looking to elevate your cat's everyday comfort, 
+          Whether you are planning to welcome a new cat or looking to elevate your cat's everyday comfort,
           PetSathi provides the knowledge and support you need for a happy, healthy companion.
         </p>
       </div>
@@ -673,34 +656,12 @@
 <!-- Footer (matches main PetSathi homepage) -->
 <footer class="footer">
   <div class="section-wrap footer-grid">
-    <div>
-      <a class="brand" href="../../../../index.html">🐾 Pet<span>Sathi</span></a>
-      <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
-    </div>
-    <div>
-      <b>Explore</b>
-      <a href="../index.html">Pet Categories</a>
-      <a href="../../services/index.html">Services</a>
-      <a href="../../walker/index.html">Find a Walker</a>
-    </div>
-    <div>
-      <b>PetSathi</b>
-      <a href="../../about.html">About Us</a>
-      <a href="../../auth/login.html">Log in</a>
-      <a href="../../auth/register.html">Register</a>
-    </div>
-    <div>
-      <b>Cat Guides</b>
-      <a href="breeds.html">Cat Breeds</a>
-      <a href="care.html">Cat Care & Health</a>
-      <a href="nutrition.html">Food & Nutrition</a>
-      <a href="behaviour.html">Behaviour & Training</a>
-    </div>
+    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
   </div>
-  <div class="section-wrap footer-bottom">
-    <span>© <span id="year"></span> PetSathi. Made with ♥ for pets.</span>
-    <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
-  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
 </footer>
 
 <script src="../../../js/main.js"></script>

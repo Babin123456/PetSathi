@@ -801,47 +801,30 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
   <!-- Site Header (Identical to Main PetSathi Homepage) -->
   <header class="site-header">
-    <a class="brand" href="../../../../index.html"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="main-nav">
-      <a href="../../../../index.html">Home</a>
-      <div class="nav-item">
-        <a class="active" href="../index.html">Explore Pets ▾</a>
-        <div class="dropdown">
-          <a href="../dogs/index.html">🐕 Dogs</a>
-          <a href="index.html">🐈 Cats</a>
-          <a href="../birds/index.html">🐦 Birds</a>
-          <a href="../rabbits/index.html">🐇 Rabbits</a>
-        </div>
+  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../../../index.html">Home</a>
+    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="../dogs/index.html">Dogs</a><a href="index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a href="../other/reptiles.html">Reptiles</a>
       </div>
-      <div class="nav-item">
-        <a href="../../services/index.html">Services ▾</a>
-        <div class="dropdown">
-          <a href="../../services/dog-walking.html">Dog Walking</a>
-          <a href="../../services/cat-care.html">Cat Care</a>
-          <a href="../../services/pet-care.html">Pet Care</a>
-          <a href="../../services/guidance.html">Pet Guidance</a>
-        </div>
-      </div>
-      <div class="nav-item">
-        <a href="../../walker/index.html">Find a Walker ▾</a>
-        <div class="dropdown">
-          <a href="../../walker/dogs.html">Dog Walkers</a>
-          <a href="../../walker/cats.html">Cat Caregivers</a>
-          <a href="../../walker/birds.html">Bird Caregivers</a>
-          <a href="../../walker/rabbits.html">Rabbit Caregivers</a>
-        </div>
-      </div>
-      <a href="../../about.html">About Us</a>
-      <a href="../../auth/login.html">Log in</a>
-      <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
-    </nav>
-  </header>
+    </div>
+    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
+  </nav>
+</header>
 
   <main>
     <!-- Page Hero -->
@@ -998,10 +981,10 @@
           </div>
           <div class="filter-search-wrap">
             <span class="filter-search-icon">🔎</span>
-            <input 
-              type="text" 
-              id="breedSearchInput" 
-              class="filter-search-input" 
+            <input
+              type="text"
+              id="breedSearchInput"
+              class="filter-search-input"
               placeholder="Search by breed, coat, trait..."
               aria-label="Search cat breeds"
             >
@@ -1036,9 +1019,9 @@
         <!-- 1. Persian Cat -->
         <article class="breed-card" data-categories="long-haired indoor-friendly" data-name="Persian Cat">
           <div class="breed-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1583795128727-6ec3642408f8?auto=format&fit=crop&w=800&q=80" 
-              alt="Fluffy white Persian Cat" 
+            <img
+              src="https://images.unsplash.com/photo-1583795128727-6ec3642408f8?auto=format&fit=crop&w=800&q=80"
+              alt="Fluffy white Persian Cat"
               class="breed-image"
               loading="lazy"
             >
@@ -1083,9 +1066,9 @@
         <!-- 2. Siamese Cat -->
         <article class="breed-card" data-categories="short-haired active-playful" data-name="Siamese Cat">
           <div class="breed-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=800&q=80" 
-              alt="Sleek Siamese Cat with blue eyes" 
+            <img
+              src="https://images.unsplash.com/photo-1513245543132-31f507417b26?auto=format&fit=crop&w=800&q=80"
+              alt="Sleek Siamese Cat with blue eyes"
               class="breed-image"
               loading="lazy"
             >
@@ -1130,9 +1113,9 @@
         <!-- 3. Maine Coon -->
         <article class="breed-card" data-categories="long-haired active-playful" data-name="Maine Coon">
           <div class="breed-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=800&q=80" 
-              alt="Majestic large Maine Coon cat" 
+            <img
+              src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=800&q=80"
+              alt="Majestic large Maine Coon cat"
               class="breed-image"
               loading="lazy"
             >
@@ -1177,9 +1160,9 @@
         <!-- 4. Bengal Cat -->
         <article class="breed-card" data-categories="short-haired active-playful" data-name="Bengal Cat">
           <div class="breed-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?auto=format&fit=crop&w=800&q=80" 
-              alt="Spotted Bengal cat with wild leopard markings" 
+            <img
+              src="https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?auto=format&fit=crop&w=800&q=80"
+              alt="Spotted Bengal cat with wild leopard markings"
               class="breed-image"
               loading="lazy"
             >
@@ -1224,9 +1207,9 @@
         <!-- 5. Ragdoll -->
         <article class="breed-card" data-categories="long-haired indoor-friendly" data-name="Ragdoll">
           <div class="breed-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=800&q=80" 
-              alt="Cute fluffy Ragdoll cat" 
+            <img
+              src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=800&q=80"
+              alt="Cute fluffy Ragdoll cat"
               class="breed-image"
               loading="lazy"
             >
@@ -1271,9 +1254,9 @@
         <!-- 6. British Shorthair -->
         <article class="breed-card" data-categories="short-haired indoor-friendly" data-name="British Shorthair">
           <div class="breed-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80" 
-              alt="Chubby cheeked British Shorthair cat" 
+            <img
+              src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80"
+              alt="Chubby cheeked British Shorthair cat"
               class="breed-image"
               loading="lazy"
             >
@@ -1318,9 +1301,9 @@
         <!-- 7. Sphynx Cat -->
         <article class="breed-card" data-categories="hairless indoor-friendly active-playful" data-name="Sphynx Cat">
           <div class="breed-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1520315342629-6ea920342047?auto=format&fit=crop&w=800&q=80" 
-              alt="Hairless Sphynx cat resting" 
+            <img
+              src="https://images.unsplash.com/photo-1520315342629-6ea920342047?auto=format&fit=crop&w=800&q=80"
+              alt="Hairless Sphynx cat resting"
               class="breed-image"
               loading="lazy"
             >
@@ -1365,9 +1348,9 @@
         <!-- 8. Scottish Fold -->
         <article class="breed-card" data-categories="short-haired indoor-friendly" data-name="Scottish Fold">
           <div class="breed-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?auto=format&fit=crop&w=800&q=80" 
-              alt="Scottish Fold cat with folded ears" 
+            <img
+              src="https://images.unsplash.com/photo-1571566882372-1598d88abd90?auto=format&fit=crop&w=800&q=80"
+              alt="Scottish Fold cat with folded ears"
               class="breed-image"
               loading="lazy"
             >
@@ -1412,9 +1395,9 @@
         <!-- 9. Russian Blue -->
         <article class="breed-card" data-categories="short-haired indoor-friendly" data-name="Russian Blue">
           <div class="breed-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=800&q=80" 
-              alt="Russian Blue cat with emerald eyes" 
+            <img
+              src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=800&q=80"
+              alt="Russian Blue cat with emerald eyes"
               class="breed-image"
               loading="lazy"
             >
@@ -1459,9 +1442,9 @@
         <!-- 10. American Shorthair -->
         <article class="breed-card" data-categories="short-haired indoor-friendly active-playful" data-name="American Shorthair">
           <div class="breed-image-wrap">
-            <img 
-              src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=800&q=80" 
-              alt="American Shorthair classic tabby cat" 
+            <img
+              src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=800&q=80"
+              alt="American Shorthair classic tabby cat"
               class="breed-image"
               loading="lazy"
             >
@@ -1526,10 +1509,10 @@
           <div class="table-hint">
             <span>⇄ Swipe horizontally on mobile to view all comparison criteria</span>
           </div>
-          <input 
-            type="text" 
-            id="tableFilterInput" 
-            class="table-search-input" 
+          <input
+            type="text"
+            id="tableFilterInput"
+            class="table-search-input"
             placeholder="Filter comparison table..."
             aria-label="Filter comparison table"
           >
@@ -1753,33 +1736,14 @@
 
   <!-- Site Footer -->
   <footer class="footer">
-    <div class="section-wrap footer-grid">
-      <div>
-        <a class="brand" href="../../../../index.html">🐾 Pet<span>Sathi</span></a>
-        <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
-      </div>
-      <div>
-        <b>Explore</b>
-        <a href="../index.html">Pet Categories</a>
-        <a href="../../services/index.html">Services</a>
-        <a href="../../walker/index.html">Find a Walker</a>
-      </div>
-      <div>
-        <b>PetSathi</b>
-        <a href="../../about.html">About Us</a>
-        <a href="../../auth/login.html">Log in</a>
-        <a href="../../auth/register.html">Register</a>
-      </div>
-      <div>
-        <b>Open Source</b>
-        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-        <span>NSoC Winter Edition</span>
-      </div>
-    </div>
-    <div class="section-wrap footer-bottom">
-      © <span id="year"></span> PetSathi. Made with ♥ for pets. <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
-    </div>
-  </footer>
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
 
   <!-- Scripts -->
   <script src="../../../js/main.js"></script>

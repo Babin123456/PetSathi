@@ -1,1 +1,250 @@
 .hero{min-height:560px;padding-block:55px 75px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}.hero h1{max-width:600px;margin:0 0 20px}.hero-copy>p{max-width:550px;font-size:1.05rem;line-height:1.85}.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:27px}.hero-note{margin-top:24px;color:var(--muted);font-size:.85rem}.hero-visual{min-height:430px;position:relative;display:grid;place-items:center}.hero-blob{position:absolute;width:85%;height:88%;background:#e8f0e4;border-radius:48% 52% 42% 58%}.hero-photo{position:relative;width:78%;height:370px;object-fit:cover;border-radius:48% 48% 24px 24px;box-shadow:var(--shadow)}.floating-card{position:absolute;z-index:2;display:flex;align-items:center;gap:10px;background:white;padding:13px 17px;border-radius:15px;box-shadow:var(--shadow);font-size:1.2rem}.floating-card span{display:grid}.floating-card b{font-size:.82rem}.floating-card small{font-size:.7rem;color:var(--muted)}.card-top{top:48px;right:0}.card-bottom{bottom:30px;left:0}.trust-strip{text-align:center;background:#f0f3eb;padding:23px}.trust-strip>span{display:block;font-size:.65rem;font-weight:800;letter-spacing:2px;color:#879188;margin-bottom:10px}.trust-strip div{font-weight:700;color:#59675e}.pet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.pet-card{overflow:hidden;background:white;border:1px solid var(--line);border-radius:18px;transition:.25s}.pet-card:hover,.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.pet-card img{width:100%;height:190px;object-fit:cover;transition:.3s}.pet-card:hover img{transform:scale(1.04)}.pet-card>div{padding:15px}.pet-card h3{margin:0 0 3px;font-size:1.15rem}.pet-card p{margin:0 0 9px;font-size:.82rem}.pet-card b,.service-card b,.text-link{font-size:.82rem;color:var(--green)}.soft-section{background:#f1f4ed}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service-card{display:block;background:white;padding:26px;border:1px solid var(--line);border-radius:18px;transition:.25s}.service-card>span{display:grid;place-items:center;width:53px;height:53px;border-radius:15px;background:#eaf2e9;font-size:1.5rem}.service-card h3{margin:18px 0 8px}.service-card p{font-size:.88rem;min-height:50px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.steps article{text-align:center;padding:20px}.steps article>b{display:block;color:#b8c7b8;font:800 2.1rem Manrope}.steps article>span{display:grid;place-items:center;width:65px;height:65px;margin:10px auto 15px;border-radius:20px;background:#eaf2e9;font-size:1.7rem}.steps h3{margin:0 0 7px}.steps p{font-size:.88rem}.green-band{background:var(--dark);color:white;padding:70px 0}.band-inner{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.band-inner .eyebrow{color:#c3ddc8}.band-inner h2 em{color:#f4c79f}.band-inner p{color:#d5e4d8;max-width:480px}.band-inner img{width:100%;height:310px;object-fit:cover;border-radius:24px}.about-preview{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}.about-emoji{display:grid;place-items:center;min-height:260px;border-radius:50%;background:#f2e9dc;font-size:7rem}.about-preview p{line-height:1.85}.cta{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-bottom:75px;padding:38px 44px;border-radius:24px;background:#f2e9dc}.cta h2{margin:0 0 8px}.cta p{margin:0}.footer{background:#f0f3eb;padding-top:48px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px;padding-bottom:35px}.footer-grid>div{display:flex;flex-direction:column;align-items:flex-start;gap:9px;font-size:.84rem;color:var(--muted)}.footer-grid p{max-width:260px}.footer-grid b{color:var(--ink)}.footer-bottom{display:flex;justify-content:space-between;padding:17px 0;border-top:1px solid #dfe5dc;font-size:.74rem;color:#839087}@media(max-width:900px){.pet-grid{grid-template-columns:repeat(2,1fr)}.hero{gap:20px}.footer-grid{grid-template-columns:1.4fr 1fr 1fr}.footer-grid>div:last-child{grid-column:1/-1}}@media(max-width:620px){.hero{grid-template-columns:1fr;padding-top:35px}.hero h1{font-size:2.9rem}.hero-visual{min-height:340px}.hero-photo{height:300px}.card-top{top:25px}.pet-card img{height:145px}.service-grid,.steps{grid-template-columns:1fr}.band-inner,.about-preview{grid-template-columns:1fr;gap:30px}.band-inner img{height:240px}.about-emoji{min-height:200px}.cta{display:block;padding:28px 24px}.cta .button{margin-top:20px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:5px}}
+
+/* Homepage feature sections share the green-band treatment without changing
+   the global header, footer, or other pages. */
+#pets,
+.how,
+.about-preview {
+  width: 100%;
+  max-width: none;
+  background: var(--dark) !important;
+  color: #ffffff !important;
+}
+
+#pets .eyebrow,
+.how .eyebrow,
+.about-preview .eyebrow {
+  color: #c3ddc8 !important;
+}
+
+#pets h2,
+.how h2,
+.about-preview h2,
+#pets h3,
+.how h3,
+.about-preview h3 {
+  color: #ffffff !important;
+}
+
+#pets h2 em,
+.how h2 em,
+.about-preview h2 em {
+  color: #f4c79f !important;
+}
+
+#pets .section-intro,
+.how .section-intro,
+.about-preview p {
+  color: #d5e4d8 !important;
+}
+
+#pets .homepage-card {
+  background: var(--cream) !important;
+  border-color: #b9d8bd !important;
+}
+
+#pets .homepage-card h3,
+#pets .homepage-card p {
+  color: var(--ink) !important;
+}
+
+#pets .card-link {
+  color: var(--green) !important;
+}
+
+.how .steps article {
+  background: var(--cream);
+  border: 1px solid #b9d8bd;
+  border-radius: 18px;
+}
+
+.how .steps article > b {
+  color: #b9d8bd !important;
+}
+
+.how .steps article > span {
+  background: #ffffff !important;
+}
+
+.how .steps p {
+  color: #d5e4d8 !important;
+}
+
+.about-preview {
+  width: 100%;
+  max-width: none;
+  padding: 90px max(24px, calc((100% - 1160px) / 2));
+}
+
+.about-preview .text-link {
+  color: #f4c79f !important;
+}
+
+@media (max-width: 600px) {
+  .about-preview {
+    padding: 65px 17px;
+  }
+}
+
+/* Keep the services, walker, and closing call-to-action sections aligned with
+   the homepage hero's cream canvas. */
+#services,
+.green-band,
+.cta {
+  width: 100%;
+  max-width: none;
+  background: var(--cream) !important;
+  color: var(--ink) !important;
+}
+
+#services .eyebrow,
+.green-band .eyebrow,
+.cta .eyebrow {
+  color: var(--green) !important;
+}
+
+#services h2,
+.green-band h2,
+.cta h2 {
+  color: var(--ink) !important;
+}
+
+#services h2 em,
+.green-band h2 em,
+.cta h2 em {
+  color: var(--green) !important;
+}
+
+#services .section-intro,
+.green-band p,
+.cta p {
+  color: var(--muted) !important;
+}
+
+#services .homepage-card,
+.green-band .button-light,
+.cta .button-light {
+  border-color: var(--line);
+}
+
+#services .homepage-card {
+  background: #ffffff !important;
+}
+
+.green-band,
+.cta {
+  padding: 90px max(24px, calc((100% - 1160px) / 2));
+}
+
+.green-band .band-inner {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .green-band,
+  .cta {
+    padding: 65px 17px;
+  }
+}
+
+/* Final homepage canvas reset to match the site-wide white content background. */
+#pets,
+#services,
+.how,
+.green-band,
+.about-preview,
+.cta {
+  background: #ffffff !important;
+  color: var(--ink) !important;
+}
+
+#pets .eyebrow,
+#services .eyebrow,
+.how .eyebrow,
+.green-band .eyebrow,
+.about-preview .eyebrow,
+.cta .eyebrow,
+#pets h2 em,
+#services h2 em,
+.how h2 em,
+.green-band h2 em,
+.about-preview h2 em,
+.cta h2 em {
+  color: var(--green) !important;
+}
+
+#pets h2,
+#pets h3,
+#services h2,
+#services h3,
+.how h2,
+.how h3,
+.green-band h2,
+.green-band h3,
+.about-preview h2,
+.about-preview h3,
+.cta h2,
+.cta h3 {
+  color: var(--ink) !important;
+}
+
+#pets .section-intro,
+#services .section-intro,
+.how .section-intro,
+.green-band p,
+.about-preview p,
+.cta p {
+  color: var(--muted) !important;
+}
+
+#pets .homepage-card,
+#services .homepage-card,
+.how .steps article {
+  background: #ffffff !important;
+}
+
+/* Match the requested warm CTA card treatment. */
+main > .cta {
+  width: 85%;
+  max-width: 1350px;
+  margin: 0 auto 75px;
+  margin-inline: auto;
+  padding: 48px 56px;
+  border: 1px solid #e6d7c3;
+  border-radius: 30px;
+  background: #f2e8d9 !important;
+  background-image: none !important;
+}
+
+.cta h2 {
+  color: var(--dark) !important;
+}
+
+.cta h2 em {
+  color: var(--green) !important;
+}
+
+.cta p {
+  color: var(--ink) !important;
+}
+
+.cta .button-light {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: var(--dark) !important;
+}
+
+@media (max-width: 600px) {
+  main > .cta {
+    width: calc(100% - 34px);
+    max-width: none;
+    margin-bottom: 65px;
+    padding: 34px 24px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  main > .cta {
+    width: calc(100% - 64px);
+  }
+}

@@ -613,6 +613,25 @@ body * {
   }
 }
 
+/* Use one white canvas for page content while leaving the shared shell intact. */
+body {
+  background: #ffffff;
+}
+
+main,
+main > section,
+main > div,
+main > article,
+main section,
+main [class*="hero"],
+main [class*="section"],
+main [class*="band"],
+main [class*="banner"],
+main [class*="page-"] {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
 /* Final shared shell rules. Header links remain text-only; icons are reserved
    for dropdown options and footer links. */
 .site-header .main-nav > a::before,

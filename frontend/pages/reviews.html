@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read sample PetSathi reviews and ratings, explore service feedback, and share your own experience.">
+  <title>Reviews & Ratings | PetSathi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/reviews.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+  <a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../index.html">Home</a>
+    <div class="nav-item"><a href="pets/index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="pets/dogs/index.html">Dogs</a><a href="pets/cats/index.html">Cats</a><a href="pets/birds/index.html">Birds</a><a href="pets/rabbits/index.html">Rabbits</a><a href="pets/other/fish.html">Aquarium Fish</a><a href="pets/other/reptiles.html">Reptiles</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="services/dog-walking.html">Dog Walking</a><a href="services/cat-care.html">Cat Care</a><a href="services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="walker/dogs.html">Search Walkers</a><a href="walker/cats.html">Walker Profiles</a><a href="walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="about.html">About Us</a><a href="auth/login.html">Log in</a><a class="button button-small" href="auth/register.html">Get Started</a>
+  </nav>
+</header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="reviews-hero">
+      <div class="reviews-hero-inner">
+
+        <div class="reviews-hero-copy">
+          <span class="reviews-kicker">💚 THE PETSATHI COMMUNITY</span>
+
+          <h1>
+            Little stories.<br>
+            <em>Big happy tails.</em>
+          </h1>
+
+          <p>
+            Explore sample feedback from pet parents about their PetSathi
+            experience. Your feedback helps shape a more caring community
+            for every pet.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="#review-list">Read reviews ↓</a>
+            <a class="button button-outline" href="#write-review">
+              Share your experience
+            </a>
+          </div>
+
+          <div class="sample-disclaimer">
+            <span aria-hidden="true">ⓘ</span>
+            These are illustrative sample reviews for the UI.
+            They are not verified customer testimonials.
+          </div>
+        </div>
+
+        <div class="reviews-hero-art" aria-hidden="true">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="hero-paw">🐾</div>
+
+          <div class="floating-review floating-review-top">
+            <span class="mini-stars">★★★★★</span>
+            <strong>Care you can count on</strong>
+          </div>
+
+          <div class="floating-review floating-review-bottom">
+            <span class="floating-heart">♥</span>
+            <span>
+              <strong>Made for pets</strong>
+              <small>Built with care</small>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OVERALL RATING -->
+    <section class="rating-section section-wrap"
+      aria-labelledby="rating-title">
+
+      <div class="section-heading reviews-section-heading">
+        <div>
+          <div class="eyebrow">A QUICK COMMUNITY SNAPSHOT</div>
+          <h2 id="rating-title">The rating <em>at a glance</em></h2>
+        </div>
+
+        <p>
+          Sample scores are displayed to demonstrate the rating summary
+          and distribution UI.
+        </p>
+      </div>
+
+      <div class="rating-panel">
+
+        <div class="rating-overall">
+          <div class="rating-number" id="averageRating">4.8</div>
+
+          <div class="rating-stars"
+            id="averageStars"
+            aria-label="Average rating 4.8 out of 5">
+            ★★★★★
+          </div>
+
+          <p>
+            <strong id="reviewCount">5 sample reviews</strong><br>
+            <span>Illustrative feedback only</span>
+          </p>
+        </div>
+
+        <div class="rating-divider" aria-hidden="true"></div>
+
+        <div class="rating-breakdown"
+          id="ratingBreakdown"
+          aria-label="Rating distribution">
+
+          <div class="rating-row" data-rating-row="5">
+            <span>5 stars</span>
+            <div class="rating-track">
+              <span class="rating-fill" style="width:80%"></span>
+            </div>
+            <strong>4</strong>
+          </div>
+
+          <div class="rating-row" data-rating-row="4">
+            <span>4 stars</span>
+            <div class="rating-track">
+              <span class="rating-fill" style="width:20%"></span>
+            </div>
+            <strong>1</strong>
+          </div>
+
+          <div class="rating-row" data-rating-row="3">
+            <span>3 stars</span>
+            <div class="rating-track">
+              <span class="rating-fill" style="width:0%"></span>
+            </div>
+            <strong>0</strong>
+          </div>
+
+          <div class="rating-row" data-rating-row="2">
+            <span>2 stars</span>
+            <div class="rating-track">
+              <span class="rating-fill" style="width:0%"></span>
+            </div>
+            <strong>0</strong>
+          </div>
+
+          <div class="rating-row" data-rating-row="1">
+            <span>1 star</span>
+            <div class="rating-track">
+              <span class="rating-fill" style="width:0%"></span>
+            </div>
+            <strong>0</strong>
+          </div>
+        </div>
+
+        <div class="rating-side-note">
+          <span class="rating-side-icon">🌟</span>
+          <strong>Every voice matters</strong>
+          <p>
+            Honest feedback helps us understand what pet parents value.
+          </p>
+          <a href="#write-review">Write a review ↗</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REVIEW LIST -->
+    <section class="reviews-list-section" id="review-list">
+      <div class="section-wrap">
+
+        <div class="section-heading reviews-section-heading">
+          <div>
+            <div class="eyebrow">KIND WORDS & COMMUNITY NOTES</div>
+            <h2>What pet parents <em>are saying</em></h2>
+          </div>
+
+          <p>
+            Browse sample experiences across pet walking and care information.
+          </p>
+        </div>
+
+        <div class="review-toolbar">
+
+          <p id="visibleReviewCount" aria-live="polite">
+            Showing 5 sample reviews
+          </p>
+
+          <label class="sort-control" for="reviewFilter">
+            Filter reviews
+            <select id="reviewFilter">
+              <option value="all">All ratings</option>
+              <option value="5">5 stars</option>
+              <option value="4">4 stars</option>
+              <option value="3">3 stars</option>
+              <option value="2">2 stars</option>
+              <option value="1">1 star</option>
+            </select>
+          </label>
+
+        </div>
+
+        <div class="review-grid" id="reviewGrid" aria-live="polite">
+
+          <!-- REVIEW 1 -->
+          <article class="review-card"
+            data-rating="5"
+            data-review-date="2026-10-26">
+
+            <div class="review-card-top">
+              <div class="reviewer-profile">
+                <div class="review-avatar avatar-sage"
+                  role="img" aria-label="Avatar initials AK">
+                  AK
+                </div>
+
+                <div>
+                  <h3>Aanya Kapoor</h3>
+                  <span class="review-service">Dog walking</span>
+                </div>
+              </div>
+
+              <span class="review-date">
+                <time datetime="2026-10-26">26 Oct 2026</time>
+              </span>
+            </div>
+
+            <div class="review-card-rating"
+              aria-label="5 out of 5 stars">
+              <span>★★★★★</span>
+              <b>5.0</b>
+            </div>
+
+            <p class="review-text">
+              The layout made it easy to understand the walking service
+              and what to look for when choosing a companion for my dog.
+              I liked how clearly the information was organised.
+            </p>
+
+            <div class="review-card-footer">
+              <span>🐾 Pet parent sample</span>
+              <span class="helpful-mark">♥ Community feedback</span>
+            </div>
+          </article>
+
+          <!-- REVIEW 2 -->
+          <article class="review-card"
+            data-rating="5"
+            data-review-date="2026-10-19">
+
+            <div class="review-card-top">
+              <div class="reviewer-profile">
+                <div class="review-avatar avatar-peach"
+                  role="img" aria-label="Avatar initials RS">
+                  RS
+                </div>
+
+                <div>
+                  <h3>Rohan Shah</h3>
+                  <span class="review-service">Pet care guidance</span>
+                </div>
+              </div>
+
+              <span class="review-date">
+                <time datetime="2026-10-19">19 Oct 2026</time>
+              </span>
+            </div>
+
+            <div class="review-card-rating"
+              aria-label="5 out of 5 stars">
+              <span>★★★★★</span>
+              <b>5.0</b>
+            </div>
+
+            <p class="review-text">
+              I appreciate having basic care topics gathered in one place.
+              The simple sections make it less overwhelming to find
+              information for a new pet parent.
+            </p>
+
+            <div class="review-card-footer">
+              <span>🐾 Pet parent sample</span>
+              <span class="helpful-mark">♥ Community feedback</span>
+            </div>
+          </article>
+
+          <!-- REVIEW 3 -->
+          <article class="review-card"
+            data-rating="5"
+            data-review-date="2026-10-12">
+
+            <div class="review-card-top">
+              <div class="reviewer-profile">
+                <div class="review-avatar avatar-lilac"
+                  role="img" aria-label="Avatar initials NP">
+                  NP
+                </div>
+
+                <div>
+                  <h3>Neha Patel</h3>
+                  <span class="review-service">Pet information</span>
+                </div>
+              </div>
+
+              <span class="review-date">
+                <time datetime="2026-10-12">12 Oct 2026</time>
+              </span>
+            </div>
+
+            <div class="review-card-rating"
+              aria-label="5 out of 5 stars">
+              <span>★★★★★</span>
+              <b>5.0</b>
+            </div>
+
+            <p class="review-text">
+              The pet guides are easy to scan and the navigation feels
+              straightforward. It is useful to have breed and care
+              information presented in a friendly way.
+            </p>
+
+            <div class="review-card-footer">
+              <span>🐾 Pet parent sample</span>
+              <span class="helpful-mark">♥ Community feedback</span>
+            </div>
+          </article>
+
+          <!-- REVIEW 4 -->
+          <article class="review-card"
+            data-rating="5"
+            data-review-date="2026-10-06">
+
+            <div class="review-card-top">
+              <div class="reviewer-profile">
+                <div class="review-avatar avatar-blue"
+                  role="img" aria-label="Avatar initials DM">
+                  DM
+                </div>
+
+                <div>
+                  <h3>Dev Mehta</h3>
+                  <span class="review-service">Website experience</span>
+                </div>
+              </div>
+
+              <span class="review-date">
+                <time datetime="2026-10-06">06 Oct 2026</time>
+              </span>
+            </div>
+
+            <div class="review-card-rating"
+              aria-label="5 out of 5 stars">
+              <span>★★★★★</span>
+              <b>5.0</b>
+            </div>
+
+            <p class="review-text">
+              The pages are clean and readable on my phone. I especially
+              like that the information is broken into smaller sections
+              instead of one very long page.
+            </p>
+
+            <div class="review-card-footer">
+              <span>🐾 Pet parent sample</span>
+              <span class="helpful-mark">♥ Community feedback</span>
+            </div>
+          </article>
+
+          <!-- REVIEW 5 -->
+          <article class="review-card"
+            data-rating="4"
+            data-review-date="2026-09-28">
+
+            <div class="review-card-top">
+              <div class="reviewer-profile">
+                <div class="review-avatar avatar-yellow"
+                  role="img" aria-label="Avatar initials IM">
+                  IM
+                </div>
+
+                <div>
+                  <h3>Ira Menon</h3>
+                  <span class="review-service">Pet care resources</span>
+                </div>
+              </div>
+
+              <span class="review-date">
+                <time datetime="2026-09-28">28 Sep 2026</time>
+              </span>
+            </div>
+
+            <div class="review-card-rating"
+              aria-label="4 out of 5 stars">
+              <span>★★★★<i>★</i></span>
+              <b>4.0</b>
+            </div>
+
+            <p class="review-text">
+              A welcoming place to start learning about pet care.
+              I would love to see even more practical examples and
+              new topics added over time.
+            </p>
+
+            <div class="review-card-footer">
+              <span>🐾 Pet parent sample</span>
+              <span class="helpful-mark">♥ Community feedback</span>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="empty-reviews" id="emptyReviews" hidden>
+          <span>🐾</span>
+          <h3>No reviews in this filter yet</h3>
+          <p>Choose another rating to see more sample feedback.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WRITE A REVIEW -->
+    <section class="write-review-section" id="write-review">
+      <div class="section-wrap write-review-layout">
+
+        <div class="write-review-copy">
+          <div class="eyebrow">YOUR TURN TO SHARE</div>
+
+          <h2>
+            How was your <em>PetSathi experience?</em>
+          </h2>
+
+          <p>
+            Share a short note about your experience. This demo form
+            adds your review to the page during this visit only;
+            it does not send or save personal information to a server.
+          </p>
+
+          <div class="review-promise">
+            <span>💬</span>
+            <div>
+              <strong>Real voices make a better community</strong>
+              <small>Keep it kind, useful and respectful.</small>
+            </div>
+          </div>
+
+          <div class="review-promise">
+            <span>🔒</span>
+            <div>
+              <strong>Frontend-only demo</strong>
+              <small>Your submitted review is not stored in a backend.</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-form-card">
+
+          <div class="form-card-heading">
+            <span class="form-heading-icon">✍️</span>
+            <div>
+              <h3>Write a review</h3>
+              <p>All fields are required.</p>
+            </div>
+          </div>
+
+          <form id="reviewForm" novalidate>
+
+            <div class="form-field">
+              <label for="reviewerName">Your name</label>
+
+              <input
+                type="text"
+                id="reviewerName"
+                name="name"
+                placeholder="e.g. Priya Sharma"
+                autocomplete="name"
+                maxlength="50"
+                required
+              >
+
+              <small class="field-error" id="nameError"></small>
+            </div>
+
+            <fieldset class="form-field rating-field">
+              <legend>Your rating</legend>
+
+              <div class="star-picker"
+                role="radiogroup"
+                aria-label="Choose a rating from one to five stars">
+
+                <input type="radio" id="rate5" name="rating" value="5" required>
+                <label for="rate5" aria-label="5 stars" title="5 stars">★</label>
+
+                <input type="radio" id="rate4" name="rating" value="4">
+                <label for="rate4" aria-label="4 stars" title="4 stars">★</label>
+
+                <input type="radio" id="rate3" name="rating" value="3">
+                <label for="rate3" aria-label="3 stars" title="3 stars">★</label>
+
+                <input type="radio" id="rate2" name="rating" value="2">
+                <label for="rate2" aria-label="2 stars" title="2 stars">★</label>
+
+                <input type="radio" id="rate1" name="rating" value="1">
+                <label for="rate1" aria-label="1 star" title="1 star">★</label>
+
+              </div>
+
+              <small class="rating-hint" id="ratingHint" aria-live="polite">
+                Select a star rating.
+              </small>
+
+              <small class="field-error" id="ratingError"></small>
+            </fieldset>
+
+            <div class="form-field">
+              <div class="label-row">
+                <label for="reviewMessage">Your review</label>
+                <small id="messageCount">0/500</small>
+              </div>
+
+              <textarea
+                id="reviewMessage"
+                name="message"
+                rows="5"
+                maxlength="500"
+                minlength="15"
+                placeholder="Tell us what went well and what could be better..."
+                required
+              ></textarea>
+
+              <small class="field-error" id="messageError"></small>
+            </div>
+
+            <button class="button submit-review" type="submit">
+              Submit review <span aria-hidden="true">↗</span>
+            </button>
+
+            <p class="form-privacy">
+              Demo only · No backend submission or permanent storage.
+            </p>
+
+            <div class="form-success"
+              id="formSuccess"
+              role="status"
+              aria-live="polite"
+              hidden>
+
+              <span>✓</span>
+
+              <div>
+                <strong>Thank you for sharing!</strong>
+                <p>Your review has been added to this page for this session.</p>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="review-bottom-cta">
+      <div class="section-wrap">
+        <span class="cta-paw">🐾</span>
+        <h2>Every pet deserves a little more love.</h2>
+        <p>
+          Explore PetSathi's guides and services built around happier,
+          healthier pet moments.
+        </p>
+        <a class="button button-light" href="pets/index.html">
+          Explore PetSathi ↗
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../index.html#home">Home</a><a href="pets/index.html">Explore Pets</a><a href="services/index.html">Services</a><a href="walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/reviews.js"></script>
+
+</body>
+</html>

@@ -1,12 +1,1144 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rabbits Care & Information | PetSathi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../css/global.css"><link rel="stylesheet" href="../../../css/inner.css"></head><body>
-<header class="site-header"><a class="brand" href="../../../../index.html"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a><button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-<nav class="main-nav"><a href="../../../../index.html">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a><a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started ↗</a></nav></header>
-<main><section class="page-hero"><div class="eyebrow">PetSathi • EXPLORE RABBITS</div><div class="page-emoji">🐇</div><h1>Rabbits Care & Information</h1><p>Welcome to the PetSathi rabbits section. Explore helpful introductory information and care topics for your little companion.</p><a class="button" href="../../../../index.html">Back to Home ↗</a></section>
-<section class="section-wrap inner-grid"><article class="info-card"><div class="info-emoji">Rabbit Breeds</div><h2>🐰</h2><p>Discover different rabbit breeds and their characteristics.</p></article>
-<article class="info-card"><div class="info-emoji">Food & Nutrition</div><h2>🥬</h2><p>Learn about hay, fresh water, and suitable rabbit food.</p></article>
-<article class="info-card"><div class="info-emoji">Exercise & Play</div><h2>🧸</h2><p>Ideas for safe movement, enrichment, and play.</p></article>
-<article class="info-card"><div class="info-emoji">Grooming & Care</div><h2>🧹</h2><p>Explore gentle grooming and clean living spaces.</p></article></section><section class="inner-cta"><h2>More happy moments are on the way.</h2><p>PetSathi is growing one feature at a time. Some services are planned for future development.</p></section></main>
-<footer class="footer"><div class="section-wrap footer-bottom"><span>© PetSathi · NSoC Winter Edition</span><span>तुमच्या Pet चा विश्वासू साथी! 🐾</span></div></footer><script src="../../../js/main.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore everything you need to know about rabbits on PetSathi - rabbit breeds, nutrition, care, housing, health, behaviour, and enrichment for your bunny companion.">
+  <title>Rabbits Care & Information Guide | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <style>
+    /* Rabbit Landing Page Specific Styles */
+    .rabbit-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .rabbit-info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .rabbit-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .rabbit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
+    }
+
+    .rabbit-card-media {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: #f0f3eb;
+    }
+
+    .rabbit-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .rabbit-card:hover .rabbit-card-media img {
+      transform: scale(1.05);
+    }
+
+    .rabbit-card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .rabbit-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .rabbit-card-body h3 {
+      font-size: 1.25rem;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .rabbit-card-body p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      flex-grow: 1;
+      color: var(--muted);
+    }
+
+    .rabbit-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green);
+      transition: color 0.2s, transform 0.2s;
+      align-self: flex-start;
+    }
+
+    .rabbit-card-link:hover {
+      color: var(--dark);
+      transform: translateX(4px);
+    }
+
+    /* Quick Information Section */
+    .rabbit-quick-info-section {
+      background: #fbfbf8;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding-block: 80px;
+    }
+
+    .quick-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .quick-info-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .quick-info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .quick-info-icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: #eaf2e9;
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      margin-bottom: 18px;
+    }
+
+    .quick-info-card h3 {
+      font-size: 1.25rem;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+
+    .quick-info-card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .quick-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .quick-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .quick-info-list li span {
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* In-Depth Topic Detail Sections */
+    .rabbit-detail-section {
+      padding-block: 70px 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-heading {
+      margin-bottom: 30px;
+    }
+
+    .detail-heading h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    }
+
+    .detail-heading p {
+      max-width: 650px;
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    /* Breeds Showcase Grid */
+    .breeds-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .breed-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .breed-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(35, 57, 43, 0.06);
+    }
+
+    .breed-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .breed-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      background: var(--soft);
+      border-radius: 999px;
+      color: var(--dark);
+    }
+
+    .breed-card h4 {
+      font-family: Manrope, sans-serif;
+      font-size: 1.15rem;
+      margin: 0 0 8px;
+      color: var(--ink);
+    }
+
+    .breed-card p {
+      font-size: 0.86rem;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      flex-grow: 1;
+      color: var(--muted);
+    }
+
+    .breed-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: 0.8rem;
+      color: var(--ink);
+    }
+
+    .breed-meta div {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .breed-meta span {
+      color: var(--muted);
+    }
+
+    /* Care & Nutrition Pillars Grid */
+    .feature-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .feature-pillar {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 26px;
+      transition: transform 0.25s ease;
+    }
+
+    .feature-pillar:hover {
+      transform: translateY(-4px);
+    }
+
+    .pillar-icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .feature-pillar h4 {
+      font-family: Manrope, sans-serif;
+      font-size: 1.15rem;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .feature-pillar p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Nutrition Breakdown Box */
+    .nutrition-banner {
+      background: #f7f9f5;
+      border: 1px solid #dce5da;
+      border-radius: 20px;
+      padding: 28px 32px;
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nutrition-stat {
+      text-align: center;
+    }
+
+    .nutrition-stat .stat-number {
+      font-family: Manrope, sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .nutrition-stat .stat-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .nutrition-stat .stat-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Behaviour Grid */
+    .behaviour-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .behaviour-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .behaviour-item .beh-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      background: var(--soft);
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+    }
+
+    .behaviour-item h4 {
+      font-family: Manrope, sans-serif;
+      font-size: 1.1rem;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+
+    .behaviour-item p {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Quick Guide Navigation Strip */
+    .guides-nav-strip {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px;
+      margin-top: 40px;
+      box-shadow: 0 10px 30px rgba(35, 57, 43, 0.04);
+    }
+
+    .guides-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px;
+      background: var(--soft);
+      border: 1px solid transparent;
+      border-radius: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .guide-nav-item:hover {
+      background: white;
+      border-color: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(40, 104, 73, 0.08);
+    }
+
+    .guide-nav-item span {
+      font-size: 1.8rem;
+    }
+
+    .guide-nav-item div b {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    .guide-nav-item div small {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* Rabbit CTA Band */
+    .rabbit-cta-band {
+      background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
+      color: white;
+      border-radius: 28px;
+      padding: 50px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+      margin-block: 40px 75px;
+    }
+
+    .rabbit-cta-band h2 {
+      color: white;
+      margin: 0 0 12px;
+    }
+
+    .rabbit-cta-band h2 em {
+      color: #f4c79f;
+      font-style: normal;
+    }
+
+    .rabbit-cta-band p {
+      color: #e0ece2;
+      font-size: 1.02rem;
+      max-width: 580px;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .rabbit-cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .button-translucent {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: white;
+    }
+
+    .button-translucent:hover {
+      background: rgba(255, 255, 255, 0.28);
+      color: white;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1080px) {
+      .rabbit-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .breeds-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nutrition-banner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .quick-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-info-grid .quick-info-card:nth-child(3) {
+        grid-column: span 2;
+      }
+
+      .feature-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature-pillars-grid .feature-pillar:nth-child(3) {
+        grid-column: span 2;
+      }
+
+      .guides-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .rabbit-cta-band {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 36px 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .rabbit-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .breeds-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-info-grid .quick-info-card:nth-child(3) {
+        grid-column: span 1;
+      }
+
+      .feature-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-pillars-grid .feature-pillar:nth-child(3) {
+        grid-column: span 1;
+      }
+
+      .nutrition-banner {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+      }
+
+      .behaviour-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guides-nav-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guides-nav-strip {
+        padding: 22px 18px;
+      }
+
+      .rabbit-card-media {
+        height: 180px;
+      }
+
+      .rabbit-cta-band {
+        padding: 28px 20px;
+      }
+
+      .rabbit-cta-actions {
+        width: 100%;
+      }
+
+      .rabbit-cta-actions .button {
+        width: 100%;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header and Navigation -->
+  <header class="site-header">
+  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../../../index.html">Home</a>
+    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="../dogs/index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a href="../other/reptiles.html">Reptiles</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
+  </nav>
+</header>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero section-wrap" id="rabbit-hero">
+      <div class="hero-copy">
+        <div class="rabbit-badge-strip">🐇 PetSathi • Rabbit Companion Guide</div>
+        <h1>Everything You Need to Know About <em>Rabbits</em></h1>
+        <p>
+          Rabbits are loving, social, and intelligent companion animals with expressive personalities and quiet charm. From energetic young bunnies doing joyful hops to calm house rabbits relaxing beside you, discover everything required to give your long-eared companion a healthy, enriched, and happy life.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#rabbit-care" id="hero-cta-care">Explore Rabbit Care ↗</a>
+          <a class="button button-outline" href="#rabbit-breeds" id="hero-cta-breeds">Discover Rabbit Breeds ↓</a>
+        </div>
+        <div class="hero-note">♥ &nbsp; Dedicated to gentle hops, happy binkies, and loving bunny homes.</div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img
+          src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=1000&q=85"
+          alt="Adorable fluffy white bunny rabbit resting contentedly on green grass"
+          class="hero-photo"
+          id="hero-rabbit-image"
+        >
+        <div class="floating-card card-top">
+          🐰 <span><b>Gentle & Social</b><small>Loving indoor companions</small></span>
+        </div>
+        <div class="floating-card card-bottom">
+          🥬 <span><b>Pure Joy & Hops</b><small>Complete rabbit wellness</small></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Knowledge Strip -->
+    <section class="trust-strip" aria-label="Rabbit Knowledge Topics Overview">
+      <span>RABBIT KNOWLEDGE BASE</span>
+      <div>🐇 Breeds　　🩺 Care & Health　　🥬 Food & Nutrition　　🥕 Behaviour & Play　　🏠 Indoor Living</div>
+    </section>
+
+    <!-- Four Category Cards Section -->
+    <section class="section section-wrap" id="rabbit-topics">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Comprehensive Rabbit Guides</div>
+          <h2>Explore Essential <em>Rabbit Topics</em></h2>
+        </div>
+        <p>
+          Browse through curated guides crafted to assist rabbit guardians with everyday health,
+          wholesome nutrition, enriching playtime, and attentive home care.
+        </p>
+      </div>
+
+      <div class="rabbit-info-grid">
+        <!-- Card 1: Rabbit Breeds -->
+        <article class="rabbit-card" id="card-breeds">
+          <div class="rabbit-card-media">
+            <span class="rabbit-card-badge">🐇 Breeds</span>
+            <img
+              src="https://images.unsplash.com/photo-1591382696684-38c427c7547a?auto=format&fit=crop&w=700&q=85"
+              alt="Curious domestic lop-eared rabbit sitting peacefully"
+              loading="lazy"
+            >
+          </div>
+          <div class="rabbit-card-body">
+            <h3>Rabbit Breeds</h3>
+            <p>
+              Different rabbit breeds and their characteristics. Explore charming breeds—from tiny Netherland Dwarfs and sweet Holland Lops to fluffy Lionheads and majestic Flemish Giants. Learn about sizes, coats, temperaments, and lifestyle compatibility.
+            </p>
+            <a class="rabbit-card-link" href="#rabbit-breeds" id="link-card-breeds">Explore Breeds ↗</a>
+          </div>
+        </article>
+
+        <!-- Card 2: Rabbit Care & Health -->
+        <article class="rabbit-card" id="card-care">
+          <div class="rabbit-card-media">
+            <span class="rabbit-card-badge">🩺 Care & Health</span>
+            <img
+              src="https://images.unsplash.com/photo-1518796745738-41048802f99a?auto=format&fit=crop&w=700&q=85"
+              alt="Attentive pet guardian gently petting a relaxed lop rabbit"
+              loading="lazy"
+            >
+          </div>
+          <div class="rabbit-card-body">
+            <h3>Rabbit Care & Health</h3>
+            <p>
+              Daily care routines, hygiene, grooming, and veterinary wellness. Protect your rabbit with bunny-proofed indoor living, routine brushing, gentle nail trimming, clean bedding hygiene, and regular checkups with a rabbit-savvy exotic veterinarian.
+            </p>
+            <a class="rabbit-card-link" href="#rabbit-care" id="link-card-care">Learn Rabbit Care ↗</a>
+          </div>
+        </article>
+
+        <!-- Card 3: Rabbit Food & Nutrition -->
+        <article class="rabbit-card" id="card-nutrition">
+          <div class="rabbit-card-media">
+            <span class="rabbit-card-badge">🥬 Nutrition</span>
+            <img
+              src="https://images.unsplash.com/photo-1535241749838-299277b6305f?auto=format&fit=crop&w=700&q=85"
+              alt="Healthy rabbit enjoying fresh crisp leafy greens and timothy hay"
+              loading="lazy"
+            >
+          </div>
+          <div class="rabbit-card-body">
+            <h3>Rabbit Food & Nutrition</h3>
+            <p>
+              Hay, fresh greens, clean water, and balanced nutrition. Understand why unlimited high-fiber grass hay forms 80% to 85% of your rabbit's daily diet, complemented by measured leafy green vegetables, clean drinking water, and quality pellets.
+            </p>
+            <a class="rabbit-card-link" href="#rabbit-nutrition" id="link-card-nutrition">Explore Nutrition ↗</a>
+          </div>
+        </article>
+
+        <!-- Card 4: Rabbit Behaviour & Enrichment -->
+        <article class="rabbit-card" id="card-behaviour">
+          <div class="rabbit-card-media">
+            <span class="rabbit-card-badge">🥕 Behaviour</span>
+            <img
+              src="https://images.unsplash.com/photo-1559214369-a6b1d7919865?auto=format&fit=crop&w=700&q=85"
+              alt="Playful brown bunny standing on hind legs exploring enrichment environment"
+              loading="lazy"
+            >
+          </div>
+          <div class="rabbit-card-body">
+            <h3>Rabbit Behaviour & Enrichment</h3>
+            <p>
+              Social behaviour, play habits, and mental stimulation. Decode fascinating lagomorph body language—from ecstatic "binkies" and contentment "tooth purrs" to warning thumps. Provide safe cardboard tunnels, chewing toys, and foraging activities.
+            </p>
+            <a class="rabbit-card-link" href="#rabbit-behaviour" id="link-card-behaviour">Discover Behaviour ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Rabbit Introduction Section: Quick Information for Guardians -->
+    <section class="section rabbit-quick-info-section" id="quick-info">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">Essential Rabbit Insights</div>
+            <h2>Introduction to <em>Pet Rabbits</em></h2>
+          </div>
+          <p>
+            Understanding your companion is the cornerstone of a fulfilling pet guardianship journey.
+            Here is what makes rabbits unique and how to care for them responsibly.
+          </p>
+        </div>
+
+        <div class="quick-info-grid">
+          <!-- 1. Rabbits as companion animals & social nature -->
+          <article class="quick-info-card" id="info-companionship">
+            <div class="quick-info-icon-wrap">🐇</div>
+            <h3>Why Rabbits Make Wonderful Companions</h3>
+            <p>
+              Rabbits are quiet, clean, and deeply affectionate indoor pets that form strong emotional bonds with their human families and thrive on companionship.
+            </p>
+            <ul class="quick-info-list">
+              <li><span>✓</span> Highly social creatures that thrive in gentle, calm household environments.</li>
+              <li><span>✓</span> Quiet and apartment-friendly with subtle, expressive body language.</li>
+              <li><span>✓</span> Naturally clean animals that can easily be litter-box trained indoors.</li>
+              <li><span>✓</span> Form deep, loyal attachments once trust and mutual respect are established.</li>
+            </ul>
+          </article>
+
+          <!-- 2. Responsibilities of rabbit ownership -->
+          <article class="quick-info-card" id="info-responsibilities">
+            <div class="quick-info-icon-wrap">📋</div>
+            <h3>Responsibilities of Rabbit Ownership</h3>
+            <p>
+              Caring for a pet rabbit is a rewarding 8 to 12 year commitment requiring dedicated indoor space, daily care routines, and watchful supervision.
+            </p>
+            <ul class="quick-info-list">
+              <li><span>✓</span> Providing a spacious, predator-proof, and bunny-proofed indoor exercise area.</li>
+              <li><span>✓</span> Ensuring unlimited fresh grass hay and clean drinking water are always available.</li>
+              <li><span>✓</span> Protecting electrical wires, baseboards, and carpet edges from natural chewing.</li>
+              <li><span>✓</span> Dedicating daily time for gentle interaction, playtime, and bonding sessions.</li>
+            </ul>
+          </article>
+
+          <!-- 3. Importance of nutrition, hygiene & veterinary care -->
+          <article class="quick-info-card" id="info-regular-care">
+            <div class="quick-info-icon-wrap">🩺</div>
+            <h3>Importance of Regular Rabbit Care</h3>
+            <p>
+              Because rabbits are prey animals who instinctively conceal illness, consistent preventative healthcare and prompt attention are vital.
+            </p>
+            <ul class="quick-info-list">
+              <li><span>✓</span> Establishing care with a specialized exotic veterinarian experienced with rabbits.</li>
+              <li><span>✓</span> Timely spaying or neutering to prevent reproductive cancers and behavioural issues.</li>
+              <li><span>✓</span> Vigilant monitoring of eating and droppings to prevent deadly GI stasis.</li>
+              <li><span>✓</span> Regular nail clipping, dental checks, and gentle coat brushing during shedding.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive Section 1: Rabbit Breeds -->
+    <section class="section-wrap rabbit-detail-section" id="rabbit-breeds">
+      <div class="detail-heading">
+        <div class="eyebrow">Breed Showcase</div>
+        <h2>Discover Popular <em>Rabbit Breeds</em></h2>
+        <p>
+          Each rabbit breed possesses unique sizes, ear shapes, coat textures, and personality traits.
+          Here are four of the most beloved companion rabbit breeds worldwide.
+        </p>
+      </div>
+
+      <div class="breeds-grid">
+        <article class="breed-card">
+          <div class="breed-card-header">
+            <span class="breed-tag">Dwarf Breed</span>
+            <span style="font-size: 1.4rem;">🐰</span>
+          </div>
+          <h4>Holland Lop</h4>
+          <p>
+            One of the most popular house rabbit breeds, famous for sweet dropped ears, rounded head, and friendly, docile temperament.
+          </p>
+          <div class="breed-meta">
+            <div><span>Adult Weight:</span> <b>2.5 – 4 lbs</b></div>
+            <div><span>Ear Type:</span> <b>Lop (Floppy)</b></div>
+            <div><span>Temperament:</span> <b>Affectionate, Calm</b></div>
+          </div>
+        </article>
+
+        <article class="breed-card">
+          <div class="breed-card-header">
+            <span class="breed-tag">Dwarf Breed</span>
+            <span style="font-size: 1.4rem;">🐇</span>
+          </div>
+          <h4>Netherland Dwarf</h4>
+          <p>
+            Tiny, spirited, and curious with short upright ears and large expressive eyes. They thrive in patient, gentle adult homes.
+          </p>
+          <div class="breed-meta">
+            <div><span>Adult Weight:</span> <b>1.8 – 2.5 lbs</b></div>
+            <div><span>Ear Type:</span> <b>Erect (Short)</b></div>
+            <div><span>Temperament:</span> <b>Lively, Inquisitive</b></div>
+          </div>
+        </article>
+
+        <article class="breed-card">
+          <div class="breed-card-header">
+            <span class="breed-tag">Medium Breed</span>
+            <span style="font-size: 1.4rem;">✨</span>
+          </div>
+          <h4>Mini Rex</h4>
+          <p>
+            Celebrated for plush, velvety fur that feels like soft suede. Incredibly gentle, intelligent, and fond of quiet cuddle sessions.
+          </p>
+          <div class="breed-meta">
+            <div><span>Adult Weight:</span> <b>3.5 – 4.5 lbs</b></div>
+            <div><span>Ear Type:</span> <b>Erect</b></div>
+            <div><span>Temperament:</span> <b>Gentle, Friendly</b></div>
+          </div>
+        </article>
+
+        <article class="breed-card">
+          <div class="breed-card-header">
+            <span class="breed-tag">Fluffy Breed</span>
+            <span style="font-size: 1.4rem;">🦁</span>
+          </div>
+          <h4>Lionhead</h4>
+          <p>
+            Distinctive woolly mane encircling their head resembling a small lion. Cheerful, highly social, and loves playful human interaction.
+          </p>
+          <div class="breed-meta">
+            <div><span>Adult Weight:</span> <b>2.5 – 3.8 lbs</b></div>
+            <div><span>Ear Type:</span> <b>Erect (Mane)</b></div>
+            <div><span>Temperament:</span> <b>Playful, Outgoing</b></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Deep Dive Section 2: Care & Health -->
+    <section class="section-wrap rabbit-detail-section" id="rabbit-care">
+      <div class="detail-heading">
+        <div class="eyebrow">Daily Care & Wellness</div>
+        <h2>Essential Rabbit <em>Care & Health</em> Guidelines</h2>
+        <p>
+          Rabbits have delicate digestive systems, sensitive skin, and continuous tooth growth.
+          Following these foundational care pillars ensures your bunny thrives in comfort.
+        </p>
+      </div>
+
+      <div class="feature-pillars-grid">
+        <div class="feature-pillar">
+          <div class="pillar-icon">🏠</div>
+          <h4>Indoor Housing & Bunny-Proofing</h4>
+          <p>
+            Keep rabbits indoors in a roomy x-pen or bunny-safe room rather than cramped wire cages. Conceal all electric wires, protect wooden baseboards, and provide soft non-slip floor rugs to cushion their delicate hocks.
+          </p>
+        </div>
+
+        <div class="feature-pillar">
+          <div class="pillar-icon">🧹</div>
+          <h4>Hygiene, Litter & Grooming</h4>
+          <p>
+            Rabbits naturally choose a corner for toileting. Line a shallow litter pan with paper-based bedding and a generous heap of fresh hay. Brush their coat weekly (daily during heavy molts) and never bathe them in water.
+          </p>
+        </div>
+
+        <div class="feature-pillar">
+          <div class="pillar-icon">🩺</div>
+          <h4>Exotic Veterinary Checkups</h4>
+          <p>
+            Schedule annual wellness exams with an exotic vet who specializes in lagomorphs. Regular checkups inspect constantly growing incisors and molars, monitor weight, and provide preventative vaccination against RVHD.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive Section 3: Food & Nutrition -->
+    <section class="section-wrap rabbit-detail-section" id="rabbit-nutrition">
+      <div class="detail-heading">
+        <div class="eyebrow">Balanced Diet</div>
+        <h2>Rabbit Food & <em>Wholesome Nutrition</em></h2>
+        <p>
+          A rabbit's digestive tract requires constant high-fiber intake to maintain healthy gut motility
+          and prevent life-threatening gastrointestinal stasis.
+        </p>
+      </div>
+
+      <div class="nutrition-banner">
+        <div class="nutrition-stat">
+          <div class="stat-number">80-85%</div>
+          <div class="stat-label">Timothy Grass Hay</div>
+          <p class="stat-desc">Unlimited fresh hay available 24/7 keeps teeth worn and digestion moving.</p>
+        </div>
+        <div class="nutrition-stat">
+          <div class="stat-number">10-15%</div>
+          <div class="stat-label">Fresh Leafy Greens</div>
+          <p class="stat-desc">Daily washed greens like romaine lettuce, cilantro, mint, and parsley.</p>
+        </div>
+        <div class="nutrition-stat">
+          <div class="stat-number">5%</div>
+          <div class="stat-label">High-Fiber Pellets</div>
+          <p class="stat-desc">Measured plain timothy-based pellets without seeds, nuts, or dried corn.</p>
+        </div>
+        <div class="nutrition-stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Fresh Water Bowl</div>
+          <p class="stat-desc">Heavy ceramic bowl cleaned daily encourages natural hydration.</p>
+        </div>
+      </div>
+
+      <div class="feature-pillars-grid" style="margin-top: 25px;">
+        <div class="feature-pillar">
+          <div class="pillar-icon">🥬</div>
+          <h4>Safe Daily Greens</h4>
+          <p>
+            Romaine lettuce, bok choy, cilantro, basil, mint, dill, celery leaves, and carrot tops. Rotate greens regularly to provide balanced micronutrients.
+          </p>
+        </div>
+        <div class="feature-pillar">
+          <div class="pillar-icon">🍎</div>
+          <h4>Healthy Occasional Treats</h4>
+          <p>
+            Small slivers of apple (seedless), blueberry, strawberry, or a thin coin of carrot. Offer treats in strict moderation to prevent obesity and upset stomachs.
+          </p>
+        </div>
+        <div class="feature-pillar">
+          <div class="pillar-icon">🚫</div>
+          <h4>Dangerous Foods to Avoid</h4>
+          <p>
+            Never feed chocolate, avocado, iceberg lettuce, onions, garlic, potatoes, bread, seeds, nuts, or sugary human snacks, which can cause severe digestive toxicity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep Dive Section 4: Behaviour & Enrichment -->
+    <section class="section-wrap rabbit-detail-section" id="rabbit-behaviour" style="border-bottom: none;">
+      <div class="detail-heading">
+        <div class="eyebrow">Play & Communication</div>
+        <h2>Rabbit Behaviour & <em>Safe Enrichment</em></h2>
+        <p>
+          Rabbits express joy, curiosity, and boundaries through distinct movements and sounds.
+          Understanding these cues helps you build a deep, trusting bond with your companion.
+        </p>
+      </div>
+
+      <div class="behaviour-grid">
+        <div class="behaviour-item">
+          <div class="beh-icon">🤸</div>
+          <div>
+            <h4>The "Binky" & Zoomies</h4>
+            <p>
+              When a rabbit leaps into the air, twists their body, and runs energetic laps, they are doing a binky—the purest expression of bunny happiness and exuberance!
+            </p>
+          </div>
+        </div>
+
+        <div class="behaviour-item">
+          <div class="beh-icon">😴</div>
+          <div>
+            <h4>The "Bunny Flop"</h4>
+            <p>
+              A rabbit rolling abruptly onto their side and lying completely flat indicates they feel 100% safe, calm, and deeply relaxed in their living environment.
+            </p>
+          </div>
+        </div>
+
+        <div class="behaviour-item">
+          <div class="beh-icon">🦷</div>
+          <div>
+            <h4>Tooth Purring vs. Grinding</h4>
+            <p>
+              Soft, gentle clicking of teeth while being stroked is a rabbit's "purr" of contentment. Loud, grating teeth chattering signifies severe discomfort or pain.
+            </p>
+          </div>
+        </div>
+
+        <div class="behaviour-item">
+          <div class="beh-icon">🪵</div>
+          <div>
+            <h4>Safe Enrichment & Chewing</h4>
+            <p>
+              Satisfy natural chewing and digging instincts with safe untreated applewood sticks, cardboard digging tunnels, willow balls, and woven seagrass mats.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Navigation Hub -->
+      <div class="guides-nav-strip">
+        <div class="section-heading" style="margin-bottom: 0;">
+          <div>
+            <div class="eyebrow">Quick Navigation Hub</div>
+            <h3 style="font-size: 1.5rem; margin: 0;">Explore Dedicated Rabbit Knowledge Chapters</h3>
+          </div>
+          <p>Direct access to specialized rabbit care, breed profiles, nutrition advice, and caregiver services.</p>
+        </div>
+
+        <div class="guides-nav-grid">
+          <a href="#rabbit-breeds" class="guide-nav-item" id="hub-link-breeds">
+            <span>🐇</span>
+            <div>
+              <b>Rabbit Breeds</b>
+              <small>Profiles & Characteristics</small>
+            </div>
+          </a>
+          <a href="#rabbit-care" class="guide-nav-item" id="hub-link-care">
+            <span>🩺</span>
+            <div>
+              <b>Care & Health</b>
+              <small>Hygiene, Habitat & Vet</small>
+            </div>
+          </a>
+          <a href="#rabbit-nutrition" class="guide-nav-item" id="hub-link-nutrition">
+            <span>🥬</span>
+            <div>
+              <b>Food & Nutrition</b>
+              <small>Hay, Greens & Diet</small>
+            </div>
+          </a>
+          <a href="../../walker/rabbits.html" class="guide-nav-item" id="hub-link-caregivers">
+            <span>🐰</span>
+            <div>
+              <b>Rabbit Caregivers</b>
+              <small>Explore Bunny Sitting</small>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagement CTA Banner Section -->
+    <section class="section-wrap">
+      <div class="rabbit-cta-band">
+        <div>
+          <div class="eyebrow" style="color: #c3ddc8;">Hop Into Joyful Companionship</div>
+          <h2>Every Bunny Deserves a <em>Loving Home.</em></h2>
+          <p>
+            Whether you are preparing to adopt your first bunny or seeking trusted caregivers, wholesome nutrition advice, and gentle handling guidance, PetSathi is here to support you every hop of the way.
+          </p>
+        </div>
+        <div class="rabbit-cta-actions">
+          <a class="button button-light" href="../../walker/rabbits.html" id="cta-find-caregiver">Find a Rabbit Caregiver ↗</a>
+          <a class="button button-translucent" href="../../services/pet-care.html" id="cta-care-services">Pet Care Services</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
+
+  <script src="../../../js/main.js"></script>
+</body>
+</html>

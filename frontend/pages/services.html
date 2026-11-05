@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover PetSathi's dedicated pet services: Pet Care Information, Pet Walking Companions, Health & Wellness Guidance, Grooming Information, Nutrition, and Training.">
+  <title>Services | Dedicated Care & Companionship | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/services.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <!-- ======================================================================
+       Site Header & Navigation
+       ====================================================================== -->
+  <header class="site-header">
+  <a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../index.html">Home</a>
+    <div class="nav-item"><a href="pets/index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="pets/dogs/index.html">Dogs</a><a href="pets/cats/index.html">Cats</a><a href="pets/birds/index.html">Birds</a><a href="pets/rabbits/index.html">Rabbits</a><a href="pets/other/fish.html">Aquarium Fish</a><a href="pets/other/reptiles.html">Reptiles</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="services/dog-walking.html">Dog Walking</a><a href="services/cat-care.html">Cat Care</a><a href="services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="walker/dogs.html">Search Walkers</a><a href="walker/cats.html">Walker Profiles</a><a href="walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="about.html">About Us</a><a href="auth/login.html">Log in</a><a class="button button-small" href="auth/register.html">Get Started</a>
+  </nav>
+</header>
+
+  <!-- ======================================================================
+       Main Content
+       ====================================================================== -->
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="services-hero section-wrap" id="services-hero">
+      <div class="services-hero-copy">
+        <div class="eyebrow">Dedicated Pet Care Services</div>
+        <h1>Thoughtful Services for <em>Every Pet.</em></h1>
+        <p>From daily walking companions to expert health guidance, grooming routines, and balanced nutrition, PetSathi brings all your pet care essentials together in one loving place.</p>
+        <div class="services-hero-actions">
+          <a class="button" href="#services-directory">Explore Services 🐾</a>
+          <a class="button button-outline" href="walker/index.html">Find a Walker ↗</a>
+        </div>
+        <div class="services-hero-note">
+          <span class="note-icon">♥</span> Handcrafted for pet lovers. Built with care and compassion.
+        </div>
+      </div>
+      <div class="services-hero-visual">
+        <div class="services-hero-blob"></div>
+        <img
+          src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=85"
+          alt="Happy dogs running together outdoors"
+          class="services-hero-photo"
+          loading="eager"
+        >
+        <div class="services-floating-card services-card-top">
+          <span class="float-emoji">🌟</span>
+          <span><b>6 Core Services</b><small>Comprehensive Pet Support</small></span>
+        </div>
+        <div class="services-floating-card services-card-bottom">
+          <span class="float-emoji">🛡️</span>
+          <span><b>Safe &amp; Loving</b><small>Verified Care Standards</small></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Trust Strip -->
+    <section class="services-trust-strip" aria-label="Services overview categories">
+      <span class="strip-label">EVERYTHING YOUR PET NEEDS TO THRIVE</span>
+      <div class="strip-tags">
+        <span>📋 Pet Care Information</span>
+        <span>🐕‍🦺 Pet Walking Companions</span>
+        <span>🩺 Health &amp; Wellness Guidance</span>
+        <span>✂️ Pet Grooming Information</span>
+        <span>🥗 Nutrition Guidance</span>
+        <span>🎾 Behaviour &amp; Training</span>
+      </div>
+    </section>
+
+    <!-- 3. Services Directory Section -->
+    <section class="section section-wrap" id="services-directory">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">What We Offer</div>
+          <h2>Explore PetSathi <em>Services.</em></h2>
+        </div>
+        <p>Browse our dedicated services and educational resources designed to make everyday life healthier and happier for your companion.</p>
+      </div>
+
+      <!-- Interactive Controls (Filter & Search) -->
+      <div class="services-controls-card">
+        <div class="services-filter-tabs" role="toolbar" aria-label="Service category filter">
+          <button class="filter-tab active" data-filter="all" aria-pressed="true">All Services (6)</button>
+          <button class="filter-tab" data-filter="care" aria-pressed="false">Care &amp; Daily Life</button>
+          <button class="filter-tab" data-filter="walking" aria-pressed="false">Walking Companions</button>
+          <button class="filter-tab" data-filter="health" aria-pressed="false">Health &amp; Wellness</button>
+          <button class="filter-tab" data-filter="grooming" aria-pressed="false">Grooming</button>
+          <button class="filter-tab" data-filter="nutrition" aria-pressed="false">Nutrition</button>
+          <button class="filter-tab" data-filter="behaviour" aria-pressed="false">Behaviour &amp; Training</button>
+        </div>
+
+        <div class="services-search-wrapper">
+          <span class="search-icon" aria-hidden="true">🔎</span>
+          <input
+            type="search"
+            id="serviceSearchInput"
+            class="services-search-input"
+            placeholder="Search services (e.g. walking, grooming, diet, wellness)..."
+            aria-label="Search services"
+          >
+          <button id="clearSearchBtn" class="clear-search-btn" aria-label="Clear search" style="display: none;">✕</button>
+        </div>
+      </div>
+
+      <!-- No Results State -->
+      <div id="servicesNoResults" class="services-no-results" aria-live="polite">
+        <div class="no-results-icon">🐾</div>
+        <h3>No matching services found</h3>
+        <p>Try searching for a different keyword or reset the category filters to view all services.</p>
+        <button id="resetFilterBtn" class="button button-small">Reset All Filters</button>
+      </div>
+
+      <!-- 6 Service Cards Grid -->
+      <div class="services-grid" id="servicesGrid">
+
+        <!-- 1. Pet Care Information -->
+        <article class="service-card" data-category="care" data-tags="care daily routine habitat hygiene home dogs cats birds rabbits">
+          <div class="service-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=800&q=80"
+              alt="Veterinarian and caregiver gently holding a small dog"
+              class="service-card-img"
+              loading="lazy"
+            >
+            <span class="service-card-badge">Daily Care</span>
+          </div>
+          <div class="service-card-content">
+            <div class="service-card-header">
+              <span class="service-card-icon" aria-hidden="true">📋</span>
+              <div>
+                <span class="service-category-label">Foundation &amp; Home</span>
+                <h3 class="service-card-title">Pet Care Information</h3>
+              </div>
+            </div>
+            <p class="service-card-desc">
+              Comprehensive guidance covering daily routines, comfortable habitats, home safety, hygiene practices, and seasonal precautions tailored for dogs, cats, birds, and small pets.
+            </p>
+            <ul class="service-features-list">
+              <li><span>✓</span> Safe habitat &amp; indoor enrichment setups</li>
+              <li><span>✓</span> Daily hygiene &amp; routine care checklists</li>
+              <li><span>✓</span> Multi-species care guidelines</li>
+            </ul>
+            <div class="service-card-footer">
+              <a class="button button-small service-action-btn" href="services/pet-care.html">Explore More ↗</a>
+              <span class="service-status-pill">Available</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Pet Walking Companions -->
+        <article class="service-card" data-category="walking" data-tags="walking walker companions outdoor exercise daily activity dogs">
+          <div class="service-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80"
+              alt="Person walking with a cheerful dog on a leafy park trail"
+              class="service-card-img"
+              loading="lazy"
+            >
+            <span class="service-card-badge">Companionship</span>
+          </div>
+          <div class="service-card-content">
+            <div class="service-card-header">
+              <span class="service-card-icon" aria-hidden="true">🐕‍🦺</span>
+              <div>
+                <span class="service-category-label">Exercise &amp; Outdoors</span>
+                <h3 class="service-card-title">Pet Walking Companions</h3>
+              </div>
+            </div>
+            <p class="service-card-desc">
+              Connect with vetted, dependable walking companions in your neighborhood who provide loving attention, safe outdoor exercise, and energetic playtime for your pet.
+            </p>
+            <ul class="service-features-list">
+              <li><span>✓</span> Tailored solo or pack walking adventures</li>
+              <li><span>✓</span> Verified and trusted community walkers</li>
+              <li><span>✓</span> Flexible scheduling &amp; walk updates</li>
+            </ul>
+            <div class="service-card-footer">
+              <a class="button button-small service-action-btn" href="walker/index.html">Explore More ↗</a>
+              <span class="service-status-pill">Active Directory</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Pet Health & Wellness Guidance -->
+        <article class="service-card" data-category="health" data-tags="health wellness guidance vet veterinary vaccine preventive checkup">
+          <div class="service-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80"
+              alt="Healthcare professional examining a healthy puppy"
+              class="service-card-img"
+              loading="lazy"
+            >
+            <span class="service-card-badge">Preventive Care</span>
+          </div>
+          <div class="service-card-content">
+            <div class="service-card-header">
+              <span class="service-card-icon" aria-hidden="true">🩺</span>
+              <div>
+                <span class="service-category-label">Wellness &amp; Health</span>
+                <h3 class="service-card-title">Pet Health &amp; Wellness Guidance</h3>
+              </div>
+            </div>
+            <p class="service-card-desc">
+              Clear, evidence-informed preventive care insights including vaccination schedules, parasite control checklists, seasonal health tips, and early symptoms to monitor closely.
+            </p>
+            <ul class="service-features-list">
+              <li><span>✓</span> Core immunization and parasite calendars</li>
+              <li><span>✓</span> Vital signs &amp; early wellness warning signs</li>
+              <li><span>✓</span> Age-specific health tips (puppies to seniors)</li>
+            </ul>
+            <div class="service-card-footer">
+              <a class="button button-small service-action-btn" href="services/guidance.html">Explore More ↗</a>
+              <span class="service-status-pill">Educational</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Pet Grooming Information -->
+        <article class="service-card" data-category="grooming" data-tags="grooming bath coat nail brush hygiene fur cleaning cats dogs">
+          <div class="service-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=800&q=80"
+              alt="Happy dog taking a pleasant bath with warm water bubbles"
+              class="service-card-img"
+              loading="lazy"
+            >
+            <span class="service-card-badge">Grooming &amp; Hygiene</span>
+          </div>
+          <div class="service-card-content">
+            <div class="service-card-header">
+              <span class="service-card-icon" aria-hidden="true">✂️</span>
+              <div>
+                <span class="service-category-label">Coat &amp; Skin Care</span>
+                <h3 class="service-card-title">Pet Grooming Information</h3>
+              </div>
+            </div>
+            <p class="service-card-desc">
+              Step-by-step techniques for stress-free coat brushing, gentle bathing routines, safe nail trimming, ear cleansing, and breed-appropriate grooming equipment selection.
+            </p>
+            <ul class="service-features-list">
+              <li><span>✓</span> De-shedding &amp; coat maintenance techniques</li>
+              <li><span>✓</span> Fear-free bathing and nail trimming tutorials</li>
+              <li><span>✓</span> Ear, eye, and dental care best practices</li>
+            </ul>
+            <div class="service-card-footer">
+              <a class="button button-small service-action-btn" href="services/guidance.html">Explore More ↗</a>
+              <span class="service-status-pill">Guide Hub</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Pet Nutrition Guidance -->
+        <article class="service-card" data-category="nutrition" data-tags="nutrition diet food feeding meals ingredients toxic allergies cat dog rabbit">
+          <div class="service-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=80"
+              alt="Fresh healthy pet food bowl with wholesome ingredients"
+              class="service-card-img"
+              loading="lazy"
+            >
+            <span class="service-card-badge">Diet &amp; Nutrition</span>
+          </div>
+          <div class="service-card-content">
+            <div class="service-card-header">
+              <span class="service-card-icon" aria-hidden="true">🥗</span>
+              <div>
+                <span class="service-category-label">Nutrition &amp; Diet</span>
+                <h3 class="service-card-title">Pet Nutrition Guidance</h3>
+              </div>
+            </div>
+            <p class="service-card-desc">
+              Nutritional wisdom for optimal vitality, essential macronutrient breakdowns, safe portion sizes, life-stage meal planning, and comprehensive toxic food warnings.
+            </p>
+            <ul class="service-features-list">
+              <li><span>✓</span> Balanced meal portioning by weight and age</li>
+              <li><span>✓</span> Dangerous &amp; toxic ingredients blacklist</li>
+              <li><span>✓</span> Hydration tips &amp; digestive wellness support</li>
+            </ul>
+            <div class="service-card-footer">
+              <a class="button button-small service-action-btn" href="pets/cats/nutrition.html">Explore More ↗</a>
+              <span class="service-status-pill">Nutrition Hub</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Pet Behaviour & Training Information -->
+        <article class="service-card" data-category="behaviour" data-tags="behaviour training obedience psychology positive reinforcement trick socialisation dogs cats birds">
+          <div class="service-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80"
+              alt="Dog obediently training and high-fiving their trainer outdoors"
+              class="service-card-img"
+              loading="lazy"
+            >
+            <span class="service-card-badge">Training &amp; Habits</span>
+          </div>
+          <div class="service-card-content">
+            <div class="service-card-header">
+              <span class="service-card-icon" aria-hidden="true">🎾</span>
+              <div>
+                <span class="service-category-label">Mind &amp; Behavior</span>
+                <h3 class="service-card-title">Pet Behaviour &amp; Training Information</h3>
+              </div>
+            </div>
+            <p class="service-card-desc">
+              Positive reinforcement training methods, decoding body language signals, puppy and kitten socialisation guides, and compassionate solutions for common anxieties.
+            </p>
+            <ul class="service-features-list">
+              <li><span>✓</span> Humane positive reinforcement cues</li>
+              <li><span>✓</span> Decoding body language, tails, and vocalizations</li>
+              <li><span>✓</span> Alleviating separation anxiety and stress</li>
+            </ul>
+            <div class="service-card-footer">
+              <a class="button button-small service-action-btn" href="pets/cats/behaviour.html">Explore More ↗</a>
+              <span class="service-status-pill">Training Hub</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 4. How PetSathi Services Work -->
+    <section class="section services-steps-section">
+      <div class="section-wrap">
+        <div class="section-heading centered">
+          <div>
+            <div class="eyebrow">A Simple Caring Journey</div>
+            <h2>How Our Services <em>Support You.</em></h2>
+          </div>
+        </div>
+
+        <div class="services-steps-grid">
+          <article class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-icon-wrap">🔍</div>
+            <h3>Select Your Service</h3>
+            <p>Browse through our specialized categories—from daily walking companions to nutrition and grooming guides tailored for your pet.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-icon-wrap">📖</div>
+            <h3>Discover Best Practices</h3>
+            <p>Read vet-aligned advice, inspect step-by-step guides, and learn actionable tips that build a safer, happier home environment.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-icon-wrap">💚</div>
+            <h3>Connect &amp; Flourish</h3>
+            <p>Connect with local walking companions, implement healthy daily routines, and watch your beloved pet flourish every single day.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Interactive FAQ Section -->
+    <section class="section section-wrap services-faq-section" id="services-faq">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Common Inquiries</div>
+          <h2>Frequently Asked <em>Questions.</em></h2>
+        </div>
+        <p>Everything you need to know about PetSathi services, community walking companions, and educational resources.</p>
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How does PetSathi connect pet owners with walking companions?</span>
+            <span class="faq-indicator">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>PetSathi provides an open community directory of registered pet lovers and walking companions. Owners can browse profiles, check experience with specific breeds or pet types, and get in touch to arrange convenient walks.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is the health and nutrition guidance a replacement for a veterinarian?</span>
+            <span class="faq-indicator">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. Our resources provide general educational information and preventive care guidance to empower pet owners. For any diagnosis, prescription, sudden symptoms, or emergencies, always consult a licensed veterinary doctor.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Are services available for pets other than dogs and cats?</span>
+            <span class="faq-indicator">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! PetSathi includes specialized care, nutrition, and habitat guidance for birds, rabbits, aquarium fish, and small companion pets, with more categories continuously expanding.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Are PetSathi services free to browse and use?</span>
+            <span class="faq-indicator">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>All informational guides, care tutorials, nutrition charts, and category directories on PetSathi are completely free and open-source. Independent walking companions may have their own mutual arrangements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Call To Action (CTA) Section -->
+    <section class="section-wrap">
+      <div class="services-cta-banner">
+        <div class="cta-content">
+          <div class="eyebrow cta-eyebrow">Ready for Happy Moments</div>
+          <h2>Give Your Pet the Best Care <em>With PetSathi.</em></h2>
+          <p>Join our caring community of pet parents and companion walkers today. Create an account, explore guides, or discover trusted walking companions nearby.</p>
+          <div class="cta-actions">
+            <a class="button button-light" href="auth/register.html">Get Started ↗</a>
+            <a class="button button-outline-light" href="walker/index.html">Find a Walker 🐾</a>
+          </div>
+        </div>
+        <div class="cta-badge-art" aria-hidden="true">
+          <div class="cta-emoji-ring">🐶 🐱 🐦 🐰</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================================================================
+       Site Footer
+       ====================================================================== -->
+  <footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../index.html#home">Home</a><a href="pets/index.html">Explore Pets</a><a href="services/index.html">Services</a><a href="walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/services.js"></script>
+</body>
+</html>
+

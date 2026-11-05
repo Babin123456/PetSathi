@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Universal exotic and companion pet care guide on PetSathi. Learn essential husbandry, enclosure sanitization, weekly health monitoring, emergency first-aid kits, and finding board-certified exotic veterinarians.">
+  <title>General Pet Care &amp; Exotic Husbandry Guide | PetSathi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core PetSathi Stylesheets -->
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+
+  <style>
+    /* ========================================================
+       GENERAL PET CARE SPECIFIC STYLES
+       ======================================================== */
+    :root {
+      --gc-accent: #0f766e;
+      --gc-accent-dark: #115e59;
+      --gc-soft: #f0fdfa;
+      --gc-line: #ccfbf1;
+      --gc-amber: #d97706;
+    }
+
+    body {
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* Breadcrumbs */
+    .gc-breadcrumb {
+      width: min(1160px, calc(100% - 48px));
+      margin: 18px auto 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .gc-breadcrumb a {
+      color: var(--green);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .gc-breadcrumb a:hover {
+      color: var(--dark);
+      text-decoration: underline;
+    }
+
+    .gc-breadcrumb .separator {
+      color: #9cb1a4;
+    }
+
+    .gc-breadcrumb .current {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    /* Hero */
+    .gc-hero {
+      text-align: center;
+      padding: 55px 24px 60px;
+      background: linear-gradient(180deg, #edf8f6 0%, #fcfdfd 60%, var(--cream) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gc-hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 16px;
+      background: #ccfbf1;
+      color: #0f766e;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .gc-hero h1 {
+      max-width: 860px;
+      margin: 0 auto 16px;
+      font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+      line-height: 1.15;
+    }
+
+    .gc-hero p.hero-subtitle {
+      max-width: 740px;
+      margin: 0 auto 28px;
+      color: #55665c;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .gc-badge-strip {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      padding-top: 24px;
+      border-top: 1px dashed #cfe0d8;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .gc-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    /* Jump Nav */
+    .gc-nav-strip {
+      background: white;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      box-shadow: 0 4px 12px rgba(35, 57, 43, 0.04);
+    }
+
+    .gc-nav-inner {
+      width: min(1160px, calc(100% - 48px));
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 12px 0;
+    }
+
+    .gc-nav-inner a {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #5d6d63;
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+
+    .gc-nav-inner a:hover {
+      background: var(--soft);
+      color: var(--green);
+    }
+
+    /* Section Headers */
+    .section-title-wrap {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 38px;
+    }
+
+    .section-title-wrap h2 {
+      margin: 8px 0 12px;
+      font-size: clamp(2rem, 3.4vw, 2.7rem);
+    }
+
+    .section-title-wrap p {
+      margin: 0;
+      font-size: 0.98rem;
+      color: #64746a;
+      line-height: 1.7;
+    }
+
+    /* Info Blocks */
+    .care-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .care-feature-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 4px 14px rgba(35, 57, 43, 0.03);
+    }
+
+    .care-feature-icon {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+
+    .care-feature-box h3 {
+      font-size: 1.25rem;
+      margin: 0 0 10px;
+    }
+
+    .care-feature-box p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: #55665c;
+      margin: 0 0 14px;
+    }
+
+    .care-feature-box ul {
+      padding-left: 20px;
+      margin: 0;
+      font-size: 0.86rem;
+      color: #48594f;
+      line-height: 1.7;
+    }
+
+    /* Two column cards */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+
+    .two-col-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(35, 57, 43, 0.03);
+    }
+
+    .two-col-card h3 {
+      font-size: 1.35rem;
+      margin-top: 0;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .two-col-card p {
+      font-size: 0.92rem;
+      color: #55665c;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .checklist-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .checklist-list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+      color: #45554c;
+      line-height: 1.6;
+    }
+
+    .checklist-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    /* Dos and Don'ts */
+    .dos-donts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .guideline-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      border: 1px solid var(--line);
+    }
+
+    .guideline-card.dos {
+      border-top: 5px solid #16a34a;
+    }
+
+    .guideline-card.donts {
+      border-top: 5px solid #dc2626;
+    }
+
+    .guideline-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .guideline-card ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: #4a5a50;
+    }
+
+    /* Back Nav Banner */
+    .back-nav-strip {
+      background: #eef4f0;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .back-nav-strip h3 {
+      margin: 0 0 6px;
+      font-size: 1.25rem;
+    }
+
+    .back-nav-strip p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #55665c;
+    }
+
+    @media (max-width: 900px) {
+      .care-feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .two-col-grid {
+        grid-template-columns: 1fr;
+      }
+      .dos-donts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+  <!-- ========================================================
+       1. PETSATHI HEADER & NAVIGATION
+       ======================================================== -->
+  <header class="site-header">
+  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../../../index.html">Home</a>
+    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="../dogs/index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="fish.html">Aquarium Fish</a><a href="reptiles.html">Reptiles</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
+  </nav>
+</header>
+
+  <!-- ========================================================
+       2. BREADCRUMBS
+       ======================================================== -->
+  <nav class="gc-breadcrumb" aria-label="Breadcrumb">
+    <a href="../../../../index.html">Home</a>
+    <span class="separator">/</span>
+    <a href="../index.html">Explore Pets</a>
+    <span class="separator">/</span>
+    <a href="index.html">Other Pets</a>
+    <span class="separator">/</span>
+    <span class="current">General Pet Care</span>
+  </nav>
+
+  <main>
+    <!-- ========================================================
+         3. HERO SECTION
+         ======================================================== -->
+    <section class="gc-hero">
+      <div class="section-wrap">
+        <div class="eyebrow">🩺 PETSATHI • UNIVERSAL HUSBANDRY</div>
+        <h1>General Pet Care &amp; <em>Husbandry Guide</em></h1>
+        <p class="hero-subtitle">
+          Whether your companion hops, scurries, swims, or basks, core husbandry principles remain universal.
+          Learn safe non-toxic cleaning protocols, early illness detection methods, home first-aid preparation,
+          and how to establish trusted care with specialized avian and exotic veterinarians.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 30px;">
+          <a class="button" href="#husbandry-pillars">View Care Protocols ↓</a>
+          <a class="button button-outline" href="index.html">All Other Pets Hub 🐾</a>
+        </div>
+
+        <div class="gc-badge-strip">
+          <div class="gc-badge-item">
+            <span>⚖️</span> <b>Weekly Weight Tracking</b>
+          </div>
+          <div class="gc-badge-item">
+            <span>🧼</span> <b>Non-Toxic Vinegar Sanitization</b>
+          </div>
+          <div class="gc-badge-item">
+            <span>🚨</span> <b>Emergency Evacuation Kits</b>
+          </div>
+          <div class="gc-badge-item">
+            <span>🩺</span> <b>Certified Exotic Veterinarians</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. JUMP NAV
+         ======================================================== -->
+    <div class="gc-nav-strip">
+      <div class="gc-nav-inner">
+        <a href="#husbandry-pillars">Daily Protocols</a>
+        <a href="#enclosure-sanitation">Sanitation &amp; Hygiene</a>
+        <a href="#health-monitoring">Health &amp; Red Flags</a>
+        <a href="#emergency-kit">First-Aid &amp; Disaster Kit</a>
+        <a href="#exotic-vets">Exotic Veterinary Care</a>
+        <a href="#dos-and-donts">Universal Do's &amp; Don'ts</a>
+        <a href="#companion-nav">Other Pet Guides</a>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         5. DAILY HUSBANDRY PROTOCOLS
+         ======================================================== -->
+    <section class="section-wrap" id="husbandry-pillars" style="padding-top: 50px;">
+      <div class="section-title-wrap">
+        <div class="eyebrow" style="color: var(--green);">Consistency Matters</div>
+        <h2>Daily Husbandry <em>Pillars</em></h2>
+        <p>A few proactive minutes every day saves your pet from preventable diseases and stress.</p>
+      </div>
+
+      <div class="care-feature-grid">
+        <div class="care-feature-box">
+          <div class="care-feature-icon">💧</div>
+          <h3>Daily Fresh Water Refresh</h3>
+          <p>Standing water quickly harbors bacterial biofilms and fungal spores:</p>
+          <ul>
+            <li>Empty, rinse, and refill water bowls and water bottles every single day.</li>
+            <li>For aquatic setups, check filters for continuous unblocked flow.</li>
+            <li>Use chlorine-free conditioned water for all small pets and amphibians.</li>
+          </ul>
+        </div>
+
+        <div class="care-feature-box">
+          <div class="care-feature-icon">🧹</div>
+          <h3>Spot-Cleaning Soiled Areas</h3>
+          <p>Remove waste promptly before harmful ammonia fumes accumulate:</p>
+          <ul>
+            <li>Scoop damp bedding corners, feces, and uneaten fresh greens daily.</li>
+            <li>In terrariums, spot-clean urates and insect debris.</li>
+            <li>In aquariums, remove uneaten fish food within 5 minutes of feeding.</li>
+          </ul>
+        </div>
+
+        <div class="care-feature-box">
+          <div class="care-feature-icon">👀</div>
+          <h3>Behavioral Check &amp; Temperament</h3>
+          <p>Prey animals instinctively mask their pain and weakness:</p>
+          <ul>
+            <li>Observe posture, swimming depth, mobility, and appetite daily.</li>
+            <li>Hiding constantly, reluctance to eat, or lethargy is an early symptom of illness.</li>
+            <li>Check breathing patterns for clicking, wheezing, or open-mouth gasping.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. ENCLOSURE SANITATION
+         ======================================================== -->
+    <section class="section-wrap" id="enclosure-sanitation">
+      <div class="section-title-wrap">
+        <div class="eyebrow" style="color: var(--green);">Safe Chemistry</div>
+        <h2>Enclosure Sanitization &amp; <em>Chemical Hazards</em></h2>
+        <p>Small animals have hypersensitive lungs and permeable skin that cannot tolerate standard household cleaners.</p>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="two-col-card">
+          <h3><span>🧪</span> Dangerous Cleaning Agents</h3>
+          <p>
+            Never use standard household cleaning chemicals in or near small animal enclosures, tanks, or terrariums.
+            Even trace residues or residual fumes can trigger fatal respiratory arrest, skin burns, or toxic shock.
+          </p>
+          <ul class="checklist-list" style="color: #b91c1c;">
+            <li><b>Bleach &amp; Chlorine:</b> Highly caustic; emits chlorine gas that burns delicate respiratory cilia.</li>
+            <li><b>Ammonia Cleaners (Windex):</b> Lethal to birds, reptiles, and pocket pets; replicates urine decomposition.</li>
+            <li><b>Aerosol sprays, scented candles, &amp; plug-in air fresheners:</b> Toxic volatile organic compounds (VOCs).</li>
+            <li><b>Pine-Sol and phenol disinfectants:</b> Severely toxic to the liver and kidneys of small mammals and reptiles.</li>
+          </ul>
+        </div>
+
+        <div class="two-col-card">
+          <h3><span>🌿</span> Safe &amp; Approved Sanitizers</h3>
+          <p>
+            Clean habitats effectively without endangering your companion by using veterinary-grade, pet-safe alternatives:
+          </p>
+          <ul class="checklist-list">
+            <li><b>Diluted Distilled White Vinegar:</b> 50/50 mix with water dissolves mineral deposits, urine scale, and odors naturally.</li>
+            <li><b>Veterinary Chlorhexidine (Nolvasan):</b> Highly effective hospital-grade antiseptic safe for cage and terrarium wipe-downs.</li>
+            <li><b>F10SC Veterinary Disinfectant:</b> Broad-spectrum bactericidal, virucidal, and fungicidal spray safe when dry.</li>
+            <li><b>Baking Soda Paste:</b> Excellent for scrubbing tough dried stains on glass before thorough rinsing with warm water.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. HEALTH MONITORING & RED FLAGS
+         ======================================================== -->
+    <section class="section-wrap" id="health-monitoring">
+      <div class="section-title-wrap">
+        <div class="eyebrow" style="color: var(--green);">Early Warning Signs</div>
+        <h2>Health Tracking &amp; <em>Red Flag Symptoms</em></h2>
+        <p>Catching health issues early is the key to successful treatment in exotic companion animals.</p>
+      </div>
+
+      <div class="care-feature-grid">
+        <div class="care-feature-box">
+          <div class="care-feature-icon">⚖️</div>
+          <h3>Weekly Gram Scale Weighing</h3>
+          <p>Weight is the most sensitive metric of health:</p>
+          <ul>
+            <li>Place a digital kitchen scale (measuring in grams) on a flat counter.</li>
+            <li>Weigh your pet at the same time each week and log it in a notebook or phone app.</li>
+            <li>A loss of <b>10% body weight</b> warrants an immediate exotic veterinary visit.</li>
+          </ul>
+        </div>
+
+        <div class="care-feature-box">
+          <div class="care-feature-icon">🩺</div>
+          <h3>Physical Inspection Check</h3>
+          <p>Conduct a gentle weekly head-to-tail physical exam:</p>
+          <ul>
+            <li><b>Eyes &amp; Nose:</b> Should be clear, bright, and free of crust, discharge, or swelling.</li>
+            <li><b>Teeth &amp; Mouth:</b> Check for overgrown incisors, drooling (slobbers), or mouth rot.</li>
+            <li><b>Skin &amp; Coat:</b> Inspect for balding patches, mites, retained sheds, or scale rot.</li>
+          </ul>
+        </div>
+
+        <div class="care-feature-box">
+          <div class="care-feature-icon">🚨</div>
+          <h3>Immediate Emergency Red Flags</h3>
+          <p>Seek urgent veterinary attention if you observe:</p>
+          <ul>
+            <li>Complete refusal to eat or drink for over 12 to 24 hours.</li>
+            <li>Severe lethargy, inability to support body weight, or head tilt.</li>
+            <li>Open-mouth breathing, audible wheezing, or raspy breathing.</li>
+            <li>Bloated, distended abdomen or severe diarrhea / lack of fecal pellets.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         8. EMERGENCY KIT PREPARATION
+         ======================================================== -->
+    <section class="section-wrap" id="emergency-kit">
+      <div class="section-title-wrap">
+        <div class="eyebrow" style="color: var(--green);">Disaster Preparedness</div>
+        <h2>Emergency <em>First-Aid &amp; Evacuation Kit</em></h2>
+        <p>Keep a dedicated emergency kit assembled and accessible in case of power outages or evacuations.</p>
+      </div>
+
+      <div class="two-col-grid">
+        <div class="two-col-card">
+          <h3><span>📦</span> Evacuation Supplies</h3>
+          <p>Be prepared to evacuate on 5 minutes notice with these essentials packed in a sealable storage tote:</p>
+          <ul class="checklist-list">
+            <li><b>Secure Travel Carrier:</b> Hard-sided carrier with secure latch, lined with absorbent fleece or towels.</li>
+            <li><b>7-Day Food &amp; Water Supply:</b> Bottled water, shelf-stable hay, pellets, and non-perishable food.</li>
+            <li><b>Thermal Heat Packs:</b> Uniheat 40-hour shipping warmers (never place directly against pet skin; wrap in towel).</li>
+            <li><b>Styrofoam Cooler:</b> Essential for transporting aquatic fish or reptiles in stable temperatures during outages.</li>
+            <li><b>Battery-Powered Aerator:</b> Keeps aquarium water oxygenated during municipal electrical blackouts.</li>
+          </ul>
+        </div>
+
+        <div class="two-col-card">
+          <h3><span>🩹</span> First-Aid Medical Kit</h3>
+          <p>Basic non-prescription medical tools for initial stabilization before veterinary arrival:</p>
+          <ul class="checklist-list">
+            <li><b>Critical Care Recovery Formula:</b> Oxbow Critical Care herbivore or carnivore powder with feeding syringes (1ml, 10ml).</li>
+            <li><b>Styptic Powder / Cornstarch:</b> Rapidly stops bleeding from broken nails or claws.</li>
+            <li><b>Sterile Saline Wash:</b> Flushes debris or dust from eyes without irritation.</li>
+            <li><b>Digital Thermometer &amp; Temp Gun:</b> Measures pet body temperature and environmental basking spots accurately.</li>
+            <li><b>Exotic Vet Contact Sheet:</b> Physical paper card listing regular and 24/7 emergency clinic phone numbers and addresses.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         9. EXOTIC VETERINARY CARE
+         ======================================================== -->
+    <section class="section-wrap" id="exotic-vets">
+      <div class="section-title-wrap">
+        <div class="eyebrow" style="color: var(--green);">Professional Care</div>
+        <h2>Finding &amp; Partnering With an <em>Exotic Veterinarian</em></h2>
+        <p>Traditional dog and cat veterinarians rarely have the diagnostic equipment or surgical training required for exotics.</p>
+      </div>
+
+      <div class="care-feature-grid">
+        <div class="care-feature-box">
+          <div class="care-feature-icon">🎓</div>
+          <h3>Specialty Associations</h3>
+          <p>Look for veterinarians accredited by official specialty boards:</p>
+          <ul>
+            <li><b>AEMV:</b> Association of Exotic Mammal Veterinarians (guinea pigs, hamsters, rabbits, rats).</li>
+            <li><b>ARAV:</b> Association of Reptilian and Amphibian Veterinarians (lizards, tortoises, snakes).</li>
+            <li><b>AAV:</b> Association of Avian Veterinarians (parrots, finches, cockatiels).</li>
+          </ul>
+        </div>
+
+        <div class="care-feature-box">
+          <div class="care-feature-icon">📋</div>
+          <h3>Pre-Visit Preparation</h3>
+          <p>Make your exotic veterinary appointment as productive as possible:</p>
+          <ul>
+            <li>Take photos or video of the home enclosure, lighting setup, and thermometers.</li>
+            <li>Bring exact brand names of pellets, hay, vitamin powders, and substrate.</li>
+            <li>Collect a fresh fecal sample in a clean zip-top bag for microscopic parasite testing.</li>
+          </ul>
+        </div>
+
+        <div class="care-feature-box">
+          <div class="care-feature-icon">🛡️</div>
+          <h3>Preventative Wellness Visits</h3>
+          <p>Annual exams prevent emergencies before symptoms arise:</p>
+          <ul>
+            <li>Schedule a baseline wellness exam within 2 to 3 weeks of bringing any new pet home.</li>
+            <li>Routine wellness checks evaluate teeth length, heart sounds, joints, and parasite loads.</li>
+            <li>Establishes an existing doctor-client-patient relationship (VCPR) for urgent prescription access.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         10. DOS & DON'TS
+         ======================================================== -->
+    <section class="section-wrap" id="dos-and-donts">
+      <div class="section-title-wrap">
+        <div class="eyebrow" style="color: var(--green);">Universal Guidelines</div>
+        <h2>General Husbandry <em>Do's &amp; Don'ts</em></h2>
+        <p>Guiding principles that protect all companion species under your roof.</p>
+      </div>
+
+      <div class="dos-donts-grid">
+        <div class="guideline-card dos">
+          <h3><span style="color: #16a34a;">✔</span> Husbandry Do's</h3>
+          <ul>
+            <li><b>DO track weekly weight in grams</b>; weight decline is the single most reliable early warning sign of sickness.</li>
+            <li><b>DO use pet-safe disinfectants (diluted vinegar or chlorhexidine)</b> rather than toxic aerosol or bleach cleaners.</li>
+            <li><b>DO quarantine new animal additions</b> in a separate room for 30–60 days before introducing them to the general area.</li>
+            <li><b>DO maintain a backup power plan</b> with battery aerators and heat packs for sudden winter power outages.</li>
+            <li><b>DO locate an emergency 24-hour exotic veterinarian</b> before you ever need one in a crisis.</li>
+          </ul>
+        </div>
+
+        <div class="guideline-card donts">
+          <h3><span style="color: #dc2626;">✖</span> Husbandry Don'ts</h3>
+          <ul>
+            <li><b>DON'T burn scented candles, incense, or spray aerosols</b> in rooms where pets reside.</li>
+            <li><b>DON'T wait to seek veterinary care</b> when a prey animal stops eating; digestive stasis can turn fatal within 24 hours.</li>
+            <li><b>DON'T use human medications, ointments, or antibiotics</b>; many human analgesics (like acetaminophen or ibuprofen) are fatal.</li>
+            <li><b>DON'T house incompatible species together</b> in the same enclosure.</li>
+            <li><b>DON'T rely on tap water without dechlorinating</b>; municipal tap water contains lethal chloramines and heavy metals.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         11. COMPANION NAVIGATION
+         ======================================================== -->
+    <section class="section-wrap" id="companion-nav">
+      <div class="back-nav-strip">
+        <div>
+          <h3>Explore Specific Pet Guides on PetSathi</h3>
+          <p>Dive deep into our dedicated species manuals or return to the main hub.</p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <a class="button button-small" href="index.html">← Other Pets Hub</a>
+          <a class="button button-small button-outline" href="small-pets.html">Small Pets Guide 🐹</a>
+          <a class="button button-small button-outline" href="fish.html">Aquarium Fish Guide 🐠</a>
+          <a class="button button-small button-outline" href="reptiles.html">Reptiles Guide 🦎</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       12. PETSATHI FOOTER
+       ======================================================== -->
+  <footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
+
+  <script src="../../../js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

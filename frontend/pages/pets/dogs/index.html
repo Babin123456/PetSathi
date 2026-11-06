@@ -160,9 +160,10 @@
 
     /* Quick Information Section */
     .dog-quick-info-section {
-      background: #fbfbf8;
-      border-top: 1px solid var(--line);
+      background: #ffffff;
+      border-top: none !important;
       border-bottom: none;
+      padding-top: 60px;
     }
 
     .quick-info-grid {
@@ -171,6 +172,7 @@
       gap: 20px;
       width: 100%;
     }
+
 
     .quick-info-card {
       display: grid;
@@ -283,84 +285,505 @@
       line-height: 1.7;
     }
 
-    /* Quick Guide Navigation Strip */
-    .guides-nav-strip {
-      background: white;
-      margin-left: 20px;
-      margin-right: 20px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 32px;
-      margin-top: 40px;
-      box-shadow: 0 10px 30px rgba(35, 57, 43, 0.04);
+    /* Dog Topics & Quick Info Heading Card - Exact User Specification */
+    .dog-topics-heading {
+      position: relative;
+      max-width: 1400px;
+      margin: 45px auto 35px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
     }
 
+    /* Curvy decorative wave layers matching reference image */
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
+    }
+
+    .heading-label i {
+      font-size: 14px;
+      color: #246b43;
+      line-height: 1;
+    }
+
+    .dog-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .dog-topics-heading h2 span {
+      color: #28764a;
+    }
+
+    /* Heading Radiating Rays / Sparkles - Clean Fan Radiating from Text */
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    /* Left burst: 3 rays radiating out to the left from the right edge */
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    /* Right burst: 3 rays radiating out to the right from the left edge */
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .dog-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* Decorative Paws (Font Awesome) - Exactly 2 on left, 2 on right */
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .paw-right-2 {
+      bottom: 35px;
+      right: 140px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw i,
+    .dog-topics-heading i,
+    .dog-topics-heading [class*="fa-"] {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      line-height: 1 !important;
+    }
+
+    @media (max-width: 768px) {
+      .dog-topics-heading {
+        margin: 25px 0;
+        padding: 35px 16px 30px;
+        border-radius: 24px;
+      }
+
+      .corner-wave {
+        width: 170px;
+        height: 110px;
+      }
+
+      .dog-topics-heading h2 {
+        font-size: clamp(20px, 5vw, 26px);
+        gap: 8px;
+      }
+
+      .dog-topics-heading p {
+        font-size: 14px;
+      }
+
+      .heading-label {
+        font-size: 11px;
+        padding: 6px 14px;
+        margin-bottom: 12px;
+      }
+
+      .paw-left-1 {
+        left: 35px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-left-2 {
+        left: 18px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .paw-right-1 {
+        right: 25px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-right-2 {
+        right: 65px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .heading-burst {
+        width: 16px;
+        height: 18px;
+      }
+
+      .heading-burst span:nth-child(1),
+      .heading-burst span:nth-child(3) {
+        width: 10px;
+      }
+
+      .heading-burst span:nth-child(2) {
+        width: 13px;
+      }
+    }
+
+    /* Quick Guide Navigation Strip - Match Reference Design */
+    .guides-nav-strip {
+      position: relative;
+      background: #ffffff;
+      margin: 40px auto;
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      padding: 42px 36px 38px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
+    }
+
+    /* Decorative Corner Paws */
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 0 0 100% 0;
+    }
+
+    .decor-bottom-right {
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 100% 0 0 0;
+    }
+
+    .decor-paw {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .decor-paw-1 {
+      top: 14px;
+      left: 28px;
+      font-size: 28px;
+      transform: rotate(-15deg);
+    }
+
+    .decor-paw-2 {
+      top: 38px;
+      left: 12px;
+      font-size: 19px;
+      transform: rotate(20deg);
+    }
+
+    .decor-paw-3 {
+      bottom: 36px;
+      right: 14px;
+      font-size: 19px;
+      transform: rotate(-25deg);
+    }
+
+    .decor-paw-4 {
+      bottom: 14px;
+      right: 28px;
+      font-size: 28px;
+      transform: rotate(15deg);
+    }
+
+    /* Centered Header & Pill Badge */
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .quick-nav-line {
+      height: 1px;
+      width: 110px;
+      background: #d6ead9;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #f4faf5;
+      border: 1px solid #b7deb8;
+      border-radius: 9999px;
+      color: #1e6f43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+    }
+
+    .quick-nav-badge i {
+      font-size: 0.95rem;
+      line-height: 1;
+      color: #1e6f43;
+      flex-shrink: 0;
+    }
+
+    .quick-nav-title {
+      font-family: 'Manrope', sans-serif !important;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      color: #1a251e;
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .quick-nav-title span {
+      color: #1e6f43;
+      font-weight: 800;
+    }
+
+    /* 4 Pill Buttons Grid */
     .guides-nav-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      margin-top: 20px;
+      margin: 0;
     }
 
     .guide-nav-item {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 16px;
-      background: var(--soft);
-      border: 1px solid transparent;
-      border-radius: 14px;
-      transition: all 0.2s ease;
+      gap: 12px;
+      padding: 9px 18px 9px 9px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
     .guide-nav-item:hover {
-      background: white;
-      border-color: var(--green);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(40, 104, 73, 0.08);
+      background: #e4f4e8;
+      border-color: #237847;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
     }
 
-    .guide-nav-item>i {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
+    .guide-nav-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
       display: grid;
       place-items: center;
-      border-radius: 12px;
-      background: #eaf2e9;
-      color: var(--green);
-      font-size: 1.2rem;
+      flex-shrink: 0;
+      font-size: 1.15rem;
+      line-height: 1;
       transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .guide-nav-item:hover>i {
-      background: var(--green);
-      color: white;
+    .guide-nav-icon i {
+      display: inline-block;
+      line-height: 1;
     }
 
-    body .guide-nav-item i,
-    body .guide-nav-item i::before,
-    body .guide-nav-item [class*="fa-"],
-    body .guide-nav-item [class*="fa-"]::before {
+    .guide-nav-item:hover .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    .guide-nav-label {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1c2b20;
+      white-space: nowrap;
+    }
+
+    /* Font Awesome font protection against global.css */
+    .guides-nav-strip i,
+    .guides-nav-strip [class*="fa-"],
+    .fa-solid,
+    .fa-regular,
+    .fa-brands {
       font-family: "Font Awesome 6 Free" !important;
-      font-weight: 900 !important;
       font-style: normal !important;
       font-variant: normal !important;
       text-rendering: auto !important;
       line-height: 1 !important;
     }
 
-    .guide-nav-item div b {
-      display: block;
-      font-size: 0.95rem;
-      color: var(--ink);
+    .guides-nav-strip .fa-solid,
+    .fa-solid {
+      font-weight: 900 !important;
     }
 
-    .guide-nav-item div small {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--muted);
+    .guides-nav-strip .fa-regular,
+    .fa-regular {
+      font-weight: 400 !important;
     }
+
+    .guides-nav-strip .fa-brands,
+    .fa-brands {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
 
     /* CTA Banner Section matching main index.html */
     .cta {
@@ -527,57 +950,98 @@
 
     <!-- Quick Navigation Hub -->
     <div class="guides-nav-strip">
-      <div class="section-heading" style="margin-bottom: 0;">
-        <div>
-          <div class="eyebrow">Quick Navigation Hub</div>
-          <h3 style="font-size: 1.5rem; margin: 0;">Explore Dedicated Dog Knowledge Chapters</h3>
-        </div>
+      <!-- Decorative Corner Paws -->
+      <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+        <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
       </div>
 
+      <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+        <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+      </div>
+
+      <!-- Centered Header -->
+      <div class="quick-nav-header">
+        <div class="quick-nav-eyebrow-wrap">
+          <span class="quick-nav-line"></span>
+          <div class="quick-nav-badge">
+            <i class="fa-regular fa-compass quick-nav-badge-icon" aria-hidden="true"></i>
+            <span>QUICK NAVIGATION</span>
+          </div>
+          <span class="quick-nav-line"></span>
+        </div>
+        <h3 class="quick-nav-title">Explore Dedicated <span>Dog Knowledge Chapters</span></h3>
+      </div>
+
+      <!-- 4 Navigation Pills -->
       <div class="guides-nav-grid">
         <a href="breeds.html" class="guide-nav-item" id="hub-link-breeds">
-          <i class="fa-solid fa-dog" aria-hidden="true"
-            style="font-family: 'Font Awesome 6 Free' !important; font-weight: 900 !important; font-style: normal !important;"></i>
-          <div>
-            <b>Dog Breeds</b>
-            <small>Profiles & Characteristics</small>
-          </div>
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Dog Breeds</span>
         </a>
+
         <a href="care.html" class="guide-nav-item" id="hub-link-care">
-          <i class="fa-solid fa-heart-pulse" aria-hidden="true"
-            style="font-family: 'Font Awesome 6 Free' !important; font-weight: 900 !important; font-style: normal !important;"></i>
-          <div>
-            <b>Dog Care & Health</b>
-            <small>Wellness, Grooming & Diet</small>
-          </div>
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Dog Care & Health</span>
         </a>
+
         <a href="walking.html" class="guide-nav-item" id="hub-link-walking">
-          <i class="fa-solid fa-person-walking" aria-hidden="true"
-            style="font-family: 'Font Awesome 6 Free' !important; font-weight: 900 !important; font-style: normal !important;"></i>
-          <div>
-            <b>Exercise & Walking</b>
-            <small>Activity Needs & Routines</small>
-          </div>
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-person-walking" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Exercise & Walking</span>
         </a>
+
         <a href="../../services/dog-walking.html" class="guide-nav-item" id="hub-link-walking-service">
-          <i class="fa-solid fa-route" aria-hidden="true"
-            style="font-family: 'Font Awesome 6 Free' !important; font-weight: 900 !important; font-style: normal !important;"></i>
-          <div>
-            <b>Dog Walking Service</b>
-            <small>Explore Walking Companions</small>
-          </div>
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-dog" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Dog Walking Service</span>
         </a>
       </div>
     </div>
     <!-- Six Informative Sections / Cards -->
     <section class="section section-wrap" id="dog-topics">
-      <div class="section-heading">
-        <div>
-          <div class="eyebrow">Comprehensive Dog Guides</div>
-          <h2>Explore Essential <em>Dog Topics</em></h2>
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-book-open"></i>
+            Comprehensive Dog Guides
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Explore Essential <span>Dog Topics</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
           <p>
-            Browse through curated guides crafted to assist dog parents with everyday health,
-            wholesome diet, active outdoor walking, and attentive home care.
+            Browse through curated guides for your dog's health, nutrition, exercise, and everyday care.
           </p>
         </div>
       </div>
@@ -709,13 +1173,42 @@
     <!-- Quick Information Section -->
     <section class="section dog-quick-info-section" id="quick-info">
       <div class="section-wrap">
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow">Essential Canine Insights</div>
-            <h2>Quick Information for <em>Dog Parents</em></h2>
+        <div class="dog-topics-heading">
+          <!-- Curvy decorative corner shapes matching reference image -->
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+              opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+              opacity="0.95" />
+          </svg>
+
+          <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-lightbulb"></i>
+              Essential Canine Insights
+            </span>
+
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Quick Information for <span>Dog Parents</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+
             <p>
-              Understanding your companion is the cornerstone of a fulfilling pet parenthood journey.
-              Here is what makes dogs special and how to care for them responsibly.
+              Understanding your companion is the cornerstone of a fulfilling pet parenthood journey. Here is what makes
+              dogs special and how to care for them responsibly.
             </p>
           </div>
         </div>

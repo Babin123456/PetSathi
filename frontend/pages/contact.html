@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact PetSathi. Have questions about pet care, finding walking companions, or joining our community? Send us a message or reach out via our contact channels.">
+  <title>Contact Us | PetSathi - Every Paw Deserves a Happy Walk</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core PetSathi Stylesheets -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+  <!-- ========================================================
+       1. PETSATHI HEADER & NAVIGATION
+       ======================================================== -->
+  <header class="site-header">
+  <a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../index.html">Home</a>
+    <div class="nav-item"><a href="pets/index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="pets/dogs/index.html">Dogs</a><a href="pets/cats/index.html">Cats</a><a href="pets/birds/index.html">Birds</a><a href="pets/rabbits/index.html">Rabbits</a><a href="pets/other/fish.html">Aquarium Fish</a><a href="pets/other/reptiles.html">Reptiles</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="services/dog-walking.html">Dog Walking</a><a href="services/cat-care.html">Cat Care</a><a href="services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="walker/dogs.html">Search Walkers</a><a href="walker/cats.html">Walker Profiles</a><a href="walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="about.html">About Us</a><a href="auth/login.html">Log in</a><a class="button button-small" href="auth/register.html">Get Started</a>
+  </nav>
+</header>
+
+  <!-- ========================================================
+       2. BREADCRUMBS
+       ======================================================== -->
+  <nav class="contact-breadcrumb" aria-label="Breadcrumb">
+    <a href="../../index.html">Home</a>
+    <span class="separator">/</span>
+    <span class="current">Contact Us</span>
+  </nav>
+
+  <main>
+    <!-- ========================================================
+         3. CONTACT HERO SECTION
+         ======================================================== -->
+    <section class="contact-hero">
+      <div class="contact-hero-inner">
+        <div class="eyebrow">
+          <span>🐾</span>
+          <span>PetSathi • GET IN TOUCH</span>
+        </div>
+
+        <h1>We're here for you and your <em>furry friends.</em></h1>
+
+        <p>
+          Have questions about pet care, want to learn more about walking companions, or wish to share feedback about the platform? Reach out anytime—our friendly community team is always excited to assist you and your pets.
+        </p>
+
+        <!-- Key Highlights -->
+        <div class="contact-hero-pills">
+          <div class="contact-pill">
+            <span aria-hidden="true">⚡</span>
+            <span>Quick Replies (Within 24 Hours)</span>
+          </div>
+          <div class="contact-pill">
+            <span aria-hidden="true">🐶</span>
+            <span>Dedicated Pet Care Support</span>
+          </div>
+          <div class="contact-pill">
+            <span aria-hidden="true">💚</span>
+            <span>100% Free &amp; Open Source</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. MAIN CONTACT CONTENT (FORM + INFO GRID)
+         ======================================================== -->
+    <section class="section-wrap contact-section">
+      <div class="contact-grid">
+
+        <!-- ====================================================
+             LEFT COLUMN: CONTACT FORM CARD
+             ==================================================== -->
+        <article class="contact-form-card">
+          <div class="contact-card-header">
+            <span class="card-tag">SEND US A MESSAGE</span>
+            <h2>How can we help today?</h2>
+            <p>
+              Fill out the details below and we will get back to you promptly. All fields marked with <span style="color: var(--contact-error);">*</span> are required.
+            </p>
+          </div>
+
+          <!-- Dynamic Success Message Banner (Visible after valid submission) -->
+          <div class="contact-success-banner" id="contactSuccessBanner" role="status" aria-live="polite">
+            <div class="contact-success-icon" aria-hidden="true">✓</div>
+            <h3>Message Sent Successfully!</h3>
+            <p id="successDetails">
+              Thank you for reaching out to PetSathi! We have received your message and will reply to your email address within 24 hours.
+            </p>
+            <button type="button" class="button button-small" id="sendAnotherBtn">
+              Send Another Note 🐾
+            </button>
+          </div>
+
+          <!-- The Contact Form -->
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <!-- Full Name -->
+            <div class="form-group" id="groupFullName">
+              <label for="fullName">
+                <span>Full Name <span class="required-star">*</span></span>
+                <span class="label-hint">First &amp; last name</span>
+              </label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                class="form-control"
+                placeholder="e.g. Ananya Sharma"
+                autocomplete="name"
+                required
+                aria-describedby="nameError"
+              >
+              <span class="field-error" id="nameError" role="alert"></span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group" id="groupEmail">
+              <label for="email">
+                <span>Email Address <span class="required-star">*</span></span>
+                <span class="label-hint">We'll reply here</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="e.g. ananya@example.com"
+                autocomplete="email"
+                required
+                aria-describedby="emailError"
+              >
+              <span class="field-error" id="emailError" role="alert"></span>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group" id="groupSubject">
+              <label for="subject">
+                <span>Subject <span class="required-star">*</span></span>
+                <span class="label-hint">Topic of inquiry</span>
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                class="form-control"
+                required
+                aria-describedby="subjectError"
+              >
+                <option value="" disabled selected>Select a topic...</option>
+                <option value="General Inquiry">General Question about PetSathi</option>
+                <option value="Find a Walker">Finding a Pet Walker or Caregiver</option>
+                <option value="Care Advice">Pet Care, Nutrition &amp; Behaviour</option>
+                <option value="Volunteer">Volunteer or Contributor Inquiry</option>
+                <option value="Feedback">Platform Feedback or Feature Idea</option>
+                <option value="Other">Other Inquiries</option>
+              </select>
+              <span class="field-error" id="subjectError" role="alert"></span>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group" id="groupMessage">
+              <label for="message">
+                <span>Your Message <span class="required-star">*</span></span>
+                <span class="label-hint">Tell us how we can help</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-control"
+                rows="5"
+                placeholder="Share your pet questions, thoughts, or suggestions..."
+                required
+                aria-describedby="messageError"
+              ></textarea>
+              <div class="char-counter-wrap">
+                <span><span id="charCount">0</span> / 1000 characters</span>
+              </div>
+              <span class="field-error" id="messageError" role="alert"></span>
+            </div>
+
+            <!-- Submit Button Action -->
+            <div class="form-action">
+              <button type="submit" class="contact-submit-btn" id="submitBtn">
+                <span>Send Message 🐾 ↗</span>
+              </button>
+
+              <div class="form-disclaimer">
+                <span>🔒 Your contact details are kept private and never shared.</span>
+              </div>
+            </div>
+
+          </form>
+        </article>
+
+        <!-- ====================================================
+             RIGHT COLUMN: CONTACT DETAILS & CHANNELS
+             ==================================================== -->
+        <div class="contact-info-column">
+
+          <!-- Direct Contact Channels -->
+          <article class="contact-info-card">
+            <h3>Contact Information</h3>
+            <p>Prefer direct communication? Reach our team through any of the channels below:</p>
+
+            <div class="contact-items-list">
+              <!-- Email -->
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">✉️</div>
+                <div class="contact-item-details">
+                  <span class="contact-item-label">Email Support</span>
+                  <a href="mailto:support@petsathi.org" class="contact-item-value">support@petsathi.org</a>
+                  <span class="contact-item-hint">Typical reply within 12–24 hours</span>
+                </div>
+              </div>
+
+              <!-- Phone / WhatsApp -->
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">📞</div>
+                <div class="contact-item-details">
+                  <span class="contact-item-label">Helpline &amp; WhatsApp</span>
+                  <a href="tel:+919876543210" class="contact-item-value">+91 98765 43210</a>
+                  <span class="contact-item-hint">Available Mon – Sat, 9:00 AM – 7:00 PM IST</span>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">📍</div>
+                <div class="contact-item-details">
+                  <span class="contact-item-label">Community Hub</span>
+                  <span class="contact-item-value">Maharashtra, India</span>
+                  <span class="contact-item-hint">Open Source Initiative • NSoC Winter Edition</span>
+                </div>
+              </div>
+
+              <!-- Operating Hours -->
+              <div class="contact-item">
+                <div class="contact-item-icon" aria-hidden="true">🕒</div>
+                <div class="contact-item-details">
+                  <span class="contact-item-label">Operating Hours</span>
+                  <span class="contact-item-value">Mon – Sat: 9:00 AM – 7:00 PM</span>
+                  <span class="contact-item-hint">Sunday: Volunteer emergency responses only</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Social Media Channels -->
+          <article class="contact-social-card">
+            <h3>Follow &amp; Connect</h3>
+            <p>Join the PetSathi online community for pet care tips, adorable stories, and open-source updates:</p>
+
+            <div class="social-links-grid">
+              <a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer" class="social-button" aria-label="PetSathi GitHub repository">
+                <span class="social-icon" aria-hidden="true">🐙</span>
+                <span>GitHub</span>
+              </a>
+
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-button" aria-label="PetSathi Twitter page">
+                <span class="social-icon" aria-hidden="true">🐦</span>
+                <span>Twitter / X</span>
+              </a>
+
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-button" aria-label="PetSathi Instagram page">
+                <span class="social-icon" aria-hidden="true">📸</span>
+                <span>Instagram</span>
+              </a>
+
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-button" aria-label="PetSathi LinkedIn page">
+                <span class="social-icon" aria-hidden="true">💼</span>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Emergency Veterinary Notice -->
+          <aside class="emergency-card" role="note">
+            <div class="emergency-icon" aria-hidden="true">🚨</div>
+            <div>
+              <h4>Medical Emergency Notice</h4>
+              <p>
+                PetSathi provides general care guidance and walking connections. In case of acute health crises, accidents, or toxic ingestion, please contact a licensed veterinarian or emergency animal hospital immediately.
+              </p>
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+
+      <!-- Quick Helpful Links Banner -->
+      <section class="contact-bottom-cta">
+        <h2>Looking for instant answers?</h2>
+        <p>
+          Check out our pet care guides or explore our community story to find tips for dogs, cats, birds, rabbits, and aquarium fish.
+        </p>
+        <div class="contact-cta-actions">
+          <a href="pets/index.html" class="button button-light">
+            Explore Pet Care ↗
+          </a>
+          <a href="about.html" class="button button-outline" style="border-color: rgba(255, 255, 255, 0.4); color: white;">
+            About PetSathi 🐾
+          </a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       5. PETSATHI FOOTER
+       ======================================================== -->
+  <footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../index.html#home">Home</a><a href="pets/index.html">Explore Pets</a><a href="services/index.html">Services</a><a href="walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/contact.js"></script>
+</body>
+
+</html>

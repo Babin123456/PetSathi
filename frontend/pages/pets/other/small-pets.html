@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Comprehensive Small Pets care guide on PetSathi. Learn about Hamsters, Guinea Pigs, Gerbils, Chinchillas, and Fancy Rats: cage requirements, diet, enrichment, and health tips.">
-  <title>Small Pets Care Guide (Hamsters, Guinea Pigs &amp; More) | PetSathi</title>
+  <meta name="description" content="Discover popular small pets on PetSathi: Hamsters, Guinea Pigs, Mice, Rats, Gerbils, Ferrets, Chinchillas, and Hedgehogs. Explore size, lifespan, temperament, care requirements, habitat setup, and comparison charts.">
+  <title>Small Pets Information Guide | Hamsters, Guinea Pigs, Ferrets & More | PetSathi</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,13 +19,23 @@
 
   <style>
     /* ========================================================
-       SMALL PETS PAGE STYLES
+       PETSATHI SMALL PETS PAGE THEME & STYLES
        ======================================================== */
     :root {
-      --sp-accent: #b45309;
-      --sp-accent-soft: #fef3c7;
-      --sp-accent-border: #fde68a;
-      --sp-green: #286849;
+      --sp-accent: #2e7d56;
+      --sp-accent-dark: #1b5338;
+      --sp-accent-soft: #edf6f0;
+      --sp-accent-border: #c4e4d0;
+      --sp-amber: #d97706;
+      --sp-amber-soft: #fef3c7;
+      --sp-amber-border: #fde68a;
+      --sp-blue: #0284c7;
+      --sp-blue-soft: #e0f2fe;
+      --sp-purple: #7c3aed;
+      --sp-purple-soft: #f3e8ff;
+      --sp-rose: #e11d48;
+      --sp-rose-soft: #ffe4e6;
+      --sp-card-radius: 20px;
     }
 
     body {
@@ -34,52 +44,52 @@
     }
 
     /* Breadcrumbs */
-    .sp-breadcrumb {
+    .small-pets-breadcrumb {
       width: min(1160px, calc(100% - 48px));
       margin: 18px auto 0;
       display: flex;
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
-      font-size: 0.83rem;
+      font-size: 0.85rem;
       color: var(--muted);
     }
 
-    .sp-breadcrumb a {
+    .small-pets-breadcrumb a {
       color: var(--green);
       font-weight: 600;
       transition: color 0.2s;
     }
 
-    .sp-breadcrumb a:hover {
+    .small-pets-breadcrumb a:hover {
       color: var(--dark);
       text-decoration: underline;
     }
 
-    .sp-breadcrumb .separator {
+    .small-pets-breadcrumb .separator {
       color: #9cb1a4;
     }
 
-    .sp-breadcrumb .current {
+    .small-pets-breadcrumb .current {
       color: var(--ink);
       font-weight: 700;
     }
 
-    /* Hero */
-    .sp-hero {
+    /* Hero Section */
+    .small-pets-hero {
       text-align: center;
-      padding: 55px 24px 60px;
-      background: linear-gradient(180deg, #fef8ee 0%, #fdfbf7 60%, var(--cream) 100%);
+      padding: 60px 24px 65px;
+      background: linear-gradient(180deg, #edf6f0 0%, #f7faf7 65%, var(--cream) 100%);
       border-bottom: 1px solid var(--line);
     }
 
-    .sp-hero .eyebrow {
+    .small-pets-hero .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 6px 16px;
-      background: #fde68a;
-      color: #92400e;
+      padding: 6px 18px;
+      background: #e1eee4;
+      color: var(--green);
       border-radius: 999px;
       font-size: 0.75rem;
       font-weight: 800;
@@ -88,43 +98,56 @@
       margin-bottom: 16px;
     }
 
-    .sp-hero h1 {
-      max-width: 860px;
+    .small-pets-hero h1 {
+      max-width: 920px;
       margin: 0 auto 16px;
-      font-size: clamp(2.3rem, 4.6vw, 3.6rem);
-      line-height: 1.15;
+      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+      line-height: 1.14;
     }
 
-    .sp-hero p.hero-subtitle {
-      max-width: 720px;
+    .small-pets-hero p.hero-subtitle {
+      max-width: 760px;
       margin: 0 auto 28px;
       color: #55665c;
       font-size: 1.05rem;
       line-height: 1.8;
     }
 
-    .sp-badge-strip {
+    .hero-btn-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .hero-badge-strip {
       display: flex;
       justify-content: center;
       gap: 28px;
       flex-wrap: wrap;
-      padding-top: 24px;
-      border-top: 1px dashed #e2e8df;
-      max-width: 900px;
+      padding-top: 26px;
+      border-top: 1px dashed #d5ded3;
+      max-width: 940px;
       margin: 0 auto;
     }
 
-    .sp-badge-item {
+    .hero-badge-item {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
       font-size: 0.88rem;
       font-weight: 700;
       color: var(--ink);
     }
 
-    /* Jump Nav */
-    .sp-nav-strip {
+    .hero-badge-item span.icon {
+      font-size: 1.35rem;
+    }
+
+    /* Sticky Anchor Nav */
+    .anchor-nav-strip {
       background: white;
       border-bottom: 1px solid var(--line);
       position: sticky;
@@ -133,27 +156,36 @@
       box-shadow: 0 4px 12px rgba(35, 57, 43, 0.04);
     }
 
-    .sp-nav-inner {
+    .anchor-nav-inner {
       width: min(1160px, calc(100% - 48px));
       margin: auto;
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 16px;
       overflow-x: auto;
       white-space: nowrap;
       padding: 12px 0;
+      scrollbar-width: thin;
     }
 
-    .sp-nav-inner a {
-      font-size: 0.85rem;
+    @media (max-width: 768px) {
+      .anchor-nav-inner {
+        justify-content: flex-start;
+      }
+    }
+
+    .anchor-nav-inner a {
+      font-size: 0.86rem;
       font-weight: 700;
       color: #5d6d63;
-      padding: 6px 14px;
+      padding: 7px 14px;
       border-radius: 20px;
       transition: all 0.2s ease;
+      text-decoration: none;
     }
 
-    .sp-nav-inner a:hover {
+    .anchor-nav-inner a:hover {
       background: var(--soft);
       color: var(--green);
     }
@@ -161,7 +193,7 @@
     /* Section Headers */
     .section-title-wrap {
       text-align: center;
-      max-width: 760px;
+      max-width: 780px;
       margin: 0 auto 38px;
     }
 
@@ -177,712 +209,2273 @@
       line-height: 1.7;
     }
 
-    /* Species Grid */
-    .sp-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 28px;
-      margin-bottom: 60px;
-    }
-
-    .sp-card {
+    /* Controls Bar: Search & Category Pills */
+    .pet-controls-box {
       background: white;
       border: 1px solid var(--line);
       border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 18px rgba(35, 57, 43, 0.04);
+      padding: 22px 24px;
+      margin-bottom: 36px;
+      box-shadow: 0 4px 18px rgba(35, 57, 43, 0.03);
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      gap: 18px;
     }
 
-    .sp-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(35, 57, 43, 0.09);
+    .controls-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .sp-card-img {
+    .search-box-wrap {
       position: relative;
-      height: 210px;
-      overflow: hidden;
-      background: #eef2ed;
+      flex: 1;
+      max-width: 420px;
+      min-width: 250px;
     }
 
-    .sp-card-img img {
+    .search-box-wrap input {
+      width: 100%;
+      padding: 12px 40px 12px 40px;
+      border: 1px solid #d5ded3;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      outline: none;
+      background: #fafbf9;
+      font-family: inherit;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .search-box-wrap input:focus {
+      border-color: var(--green);
+      background: #fff;
+    }
+
+    .search-box-wrap .search-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #8c9c91;
+      pointer-events: none;
+      font-size: 0.95rem;
+    }
+
+    .search-box-wrap .clear-search-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #9cb1a4;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: none;
+      padding: 2px 6px;
+    }
+
+    .search-box-wrap .clear-search-btn:hover {
+      color: var(--ink);
+    }
+
+    .pet-counter-badge {
+      font-size: 0.88rem;
+      color: #607267;
+      font-weight: 600;
+    }
+
+    .pet-counter-badge b {
+      color: var(--green);
+    }
+
+    .filter-pills-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pet-filter-pill {
+      background: var(--soft);
+      border: 1px solid #dbe3da;
+      padding: 7px 15px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #53645a;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .pet-filter-pill:hover {
+      background: #e4ebe1;
+      color: var(--ink);
+    }
+
+    .pet-filter-pill.active {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    /* Small Pets Grid */
+    .small-pets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .small-pet-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--sp-card-radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+      position: relative;
+    }
+
+    .small-pet-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(35, 57, 43, 0.08);
+      border-color: #cbd8cd;
+    }
+
+    .small-pet-card.highlight-card {
+      outline: 3px solid var(--green);
+      box-shadow: 0 0 25px rgba(40, 104, 73, 0.35);
+      animation: pulseHighlight 2s ease;
+    }
+
+    @keyframes pulseHighlight {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    .small-pet-media {
+      position: relative;
+      height: 230px;
+      background: #edf3ec;
+      overflow: hidden;
+    }
+
+    .small-pet-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      display: block;
+      transition: transform 0.35s ease;
     }
 
-    .sp-card:hover .sp-card-img img {
+    .small-pet-card:hover .small-pet-img {
       transform: scale(1.05);
     }
 
-    .sp-card-badge {
+    .pet-media-overlay {
       position: absolute;
       top: 14px;
       left: 14px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(4px);
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      color: #92400e;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
+      right: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
     }
 
-    .sp-card-body {
+    .pet-emoji-badge {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(6px);
+      padding: 4px 10px;
+      border-radius: 30px;
+      font-size: 1.15rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pet-level-badge {
+      background: rgba(109, 230, 171, 0.92);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      border-radius: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .pet-level-badge.intermediate {
+      background: rgba(217, 119, 6, 0.92);
+    }
+
+    .pet-level-badge.advanced {
+      background: rgba(124, 58, 237, 0.92);
+    }
+
+    .small-pet-content {
       padding: 24px;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
 
-    .sp-card-body h3 {
-      margin: 0 0 6px;
-      font-size: 1.35rem;
-      color: var(--dark);
-    }
-
-    .sp-scientific {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-style: italic;
+    .pet-header-group {
       margin-bottom: 12px;
     }
 
-    .sp-card-desc {
-      font-size: 0.92rem;
-      color: #55665c;
-      line-height: 1.65;
-      margin-bottom: 18px;
-    }
-
-    .sp-specs {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    .pet-title-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
       gap: 10px;
-      background: #fafbf9;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px;
-      margin-top: auto;
+      margin-bottom: 4px;
     }
 
-    .sp-spec-item small {
-      display: block;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #798b80;
-      font-weight: 700;
-    }
-
-    .sp-spec-item b {
-      font-size: 0.85rem;
+    .small-pet-card h3 {
+      font-size: 1.45rem;
+      margin: 0;
       color: var(--ink);
     }
 
-    /* Info Blocks */
-    .care-feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 60px;
+    .pet-scientific {
+      font-style: italic;
+      font-size: 0.82rem;
+      color: #798b80;
     }
 
-    .care-feature-box {
+    .pet-short-desc {
+      font-size: 0.92rem;
+      color: #55665c;
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+
+    /* Tag badges */
+    .pet-meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .meta-pill {
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .meta-pill.social {
+      background: var(--sp-accent-soft);
+      color: var(--sp-accent);
+      border: 1px solid var(--sp-accent-border);
+    }
+
+    .meta-pill.schedule {
+      background: var(--sp-blue-soft);
+      color: var(--sp-blue);
+      border: 1px solid #bae6fd;
+    }
+
+    .meta-pill.space {
+      background: var(--sp-amber-soft);
+      color: var(--sp-amber);
+      border: 1px solid var(--sp-amber-border);
+    }
+
+    /* Quick Specs Table */
+    .pet-specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      background: #fafbf9;
+      border: 1px solid #e7ede5;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 20px;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .spec-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #829488;
+    }
+
+    .spec-value {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    /* Characteristics accordion inside card */
+    .pet-details-wrap {
+      margin-top: auto;
+      border-top: 1px dashed #dbe4dc;
+      padding-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .detail-block {
+      background: #fdfefe;
+      border: 1px solid #edf2ec;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .detail-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--sp-accent);
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .detail-text {
+      font-size: 0.86rem;
+      color: #4b5c52;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .alert-tip-box {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-left: 3px solid #f59e0b;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: #92400e;
+      line-height: 1.5;
+      margin-top: 4px;
+    }
+
+    /* No search results box */
+    .no-results-box {
+      text-align: center;
+      padding: 50px 20px;
+      background: white;
+      border: 1px dashed #d5ded3;
+      border-radius: 20px;
+      grid-column: 1 / -1;
+      display: none;
+    }
+
+    .no-results-box .emoji {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+    }
+
+    .no-results-box h3 {
+      font-size: 1.3rem;
+      margin: 0 0 8px;
+    }
+
+    /* ========================================================
+       COMPARISON SECTION STYLES
+       ======================================================== */
+    .comparison-section-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 34px 28px;
+      box-shadow: 0 6px 24px rgba(35, 57, 43, 0.04);
+    }
+
+    .comp-controls-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .comp-filter-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .comp-filter-btn {
+      background: var(--soft);
+      border: 1px solid #dce4db;
+      padding: 6px 14px;
+      border-radius: 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #5d6e64;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .comp-filter-btn:hover {
+      background: #e4ece2;
+      color: var(--ink);
+    }
+
+    .comp-filter-btn.active {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .table-responsive-wrap {
+      overflow-x: auto;
+      border-radius: 14px;
+      border: 1px solid #e4eae2;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+      min-width: 820px;
+    }
+
+    .comparison-table th {
+      background: #f4f7f2;
+      color: var(--ink);
+      font-weight: 800;
+      padding: 14px 16px;
+      border-bottom: 2px solid #d5ded3;
+      white-space: nowrap;
+    }
+
+    .comparison-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #edf2ec;
+      color: #4a5c51;
+      vertical-align: middle;
+    }
+
+    .comparison-table tbody tr:hover {
+      background: #fafcf9;
+    }
+
+    .comparison-table .pet-cell {
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      white-space: nowrap;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .status-badge.easy {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .status-badge.moderate {
+      background: #fef3c7;
+      color: #b45309;
+    }
+
+    .status-badge.complex {
+      background: #f3e8ff;
+      color: #6b21a8;
+    }
+
+    /* ========================================================
+       SUITABLE LIVING ENVIRONMENT SECTION
+       ======================================================== */
+    .env-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin-bottom: 34px;
+    }
+
+    .env-card {
       background: white;
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 4px 14px rgba(35, 57, 43, 0.03);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .care-feature-icon {
+    .env-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(35, 57, 43, 0.05);
+    }
+
+    .env-card-icon {
       font-size: 2.2rem;
       margin-bottom: 14px;
     }
 
-    .care-feature-box h3 {
-      font-size: 1.25rem;
+    .env-card h3 {
+      font-size: 1.22rem;
       margin: 0 0 10px;
+      color: var(--ink);
     }
 
-    .care-feature-box p {
-      font-size: 0.9rem;
-      line-height: 1.65;
-      color: #55665c;
+    .env-card p {
+      font-size: 0.88rem;
+      color: #58695f;
+      line-height: 1.6;
       margin: 0 0 14px;
     }
 
-    .care-feature-box ul {
-      padding-left: 20px;
+    .env-card ul {
       margin: 0;
-      font-size: 0.86rem;
-      color: #48594f;
-      line-height: 1.7;
+      padding-left: 20px;
+      font-size: 0.84rem;
+      color: #55665c;
+      line-height: 1.65;
     }
 
-    /* Dos and Don'ts */
-    .dos-donts-grid {
+    /* Environment Tabs Box */
+    .env-tabs-box {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      margin-top: 24px;
+    }
+
+    .env-tab-nav {
+      display: flex;
+      gap: 10px;
+      border-bottom: 2px solid #e7ede5;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .env-tab-btn {
+      background: none;
+      border: none;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #6d7f74;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .env-tab-btn:hover {
+      color: var(--green);
+      background: var(--soft);
+    }
+
+    .env-tab-btn.active {
+      color: var(--green);
+      background: #e5f1ea;
+    }
+
+    .env-tab-panel {
+      display: none;
+    }
+
+    .env-tab-panel.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .safety-columns-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
-      margin-bottom: 60px;
     }
 
-    .guideline-card {
-      background: white;
-      border-radius: 18px;
-      padding: 28px;
-      border: 1px solid var(--line);
+    .safety-col {
+      padding: 20px;
+      border-radius: 16px;
     }
 
-    .guideline-card.dos {
-      border-top: 5px solid #16a34a;
+    .safety-col.safe {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
     }
 
-    .guideline-card.donts {
-      border-top: 5px solid #dc2626;
+    .safety-col.danger {
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
     }
 
-    .guideline-card h3 {
+    .safety-col h4 {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 1.25rem;
-      margin-top: 0;
-      margin-bottom: 16px;
+      gap: 8px;
     }
 
-    .guideline-card ul {
+    .safety-col.safe h4 {
+      color: #15803d;
+    }
+
+    .safety-col.danger h4 {
+      color: #be123c;
+    }
+
+    .safety-col ul {
       margin: 0;
       padding-left: 20px;
-      font-size: 0.92rem;
-      line-height: 1.75;
-      color: #4a5a50;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #4b5d52;
     }
 
-    /* Back Nav Banner */
-    .back-nav-strip {
-      background: #eef4f0;
-      border-radius: 20px;
-      padding: 28px;
-      margin-bottom: 60px;
+    /* ========================================================
+       FAQ ACCORDION STYLES
+       ======================================================== */
+    .small-pet-faq-list {
+      max-width: 860px;
+      margin: 0 auto;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .small-pet-faq-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .small-pet-faq-item:hover {
+      border-color: #cbd8ce;
+    }
+
+    .small-pet-faq-item.open {
+      border-color: var(--green);
+      box-shadow: 0 4px 18px rgba(40, 104, 73, 0.08);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 22px;
+      text-align: left;
+      font-family: inherit;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 18px;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
     }
 
-    .back-nav-strip h3 {
-      margin: 0 0 6px;
+    .faq-toggle-icon {
       font-size: 1.25rem;
+      color: var(--green);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
     }
 
-    .back-nav-strip p {
-      margin: 0;
-      font-size: 0.9rem;
+    .small-pet-faq-item.open .faq-toggle-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 22px 20px;
       color: #55665c;
+      font-size: 0.93rem;
+      line-height: 1.7;
     }
 
-    @media (max-width: 900px) {
-      .care-feature-grid {
+    .small-pet-faq-item.open .faq-answer {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    /* ========================================================
+       NAVIGATION TO OTHER PETS SECTION (ONE ROW LAYOUT)
+       ======================================================== */
+    .other-pets-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .other-pet-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px 16px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .other-pet-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--green);
+      box-shadow: 0 12px 26px rgba(35, 57, 43, 0.07);
+    }
+
+    .other-pet-icon {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+    }
+
+    .other-pet-card h3 {
+      font-size: 1.18rem;
+      margin: 0 0 8px;
+      color: var(--ink);
+    }
+
+    .other-pet-card p {
+      font-size: 0.83rem;
+      color: #65756b;
+      line-height: 1.5;
+      margin: 0 0 16px;
+      flex: 1;
+    }
+
+    .other-pet-link {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.84rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+
+    .other-pet-card:hover .other-pet-link {
+      gap: 8px;
+    }
+
+    @media (max-width: 990px) {
+      .other-pets-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 14px;
+        padding-bottom: 12px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .other-pet-card {
+        flex: 0 0 200px;
+        scroll-snap-align: start;
+      }
+    }
+
+    /* Call to Action Band */
+    .small-pets-cta-band {
+      background: var(--dark);
+      color: white;
+      padding: 65px 24px;
+      text-align: center;
+      border-top: 1px solid #23583f;
+    }
+
+    .small-pets-cta-band h2 {
+      color: white;
+      margin: 8px 0 16px;
+      font-size: clamp(2.1rem, 3.8vw, 3rem);
+    }
+
+    .small-pets-cta-band p {
+      color: #c9ded2;
+      max-width: 640px;
+      margin: 0 auto 28px;
+      font-size: 1.05rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 850px) {
+      .small-pets-grid {
         grid-template-columns: 1fr;
       }
-      .dos-donts-grid {
+
+      .safety-columns-grid {
         grid-template-columns: 1fr;
+      }
+
+      .comparison-section-box {
+        padding: 22px 16px;
+      }
+
+      .env-tabs-box {
+        padding: 20px 16px;
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
+
   <!-- ========================================================
-       1. PETSATHI HEADER & NAVIGATION
+       1. SITE HEADER & NAVIGATION
        ======================================================== -->
   <header class="site-header">
-    <a class="brand" href="../../../../index.html" aria-label="PetSathi Home">
-      <span class="brand-mark">🐾</span>
-      <span>Pet<span>Sathi</span></span>
-    </a>
-
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-      ☰
-    </button>
-
-    <nav class="main-nav">
-      <a href="../../../../index.html">Home</a>
-
-      <div class="nav-item">
-        <a class="active" href="../index.html">Explore Pets ▾</a>
-        <div class="dropdown">
-          <a href="../dogs/index.html">🐕 Dogs</a>
-          <a href="../cats/index.html">🐈 Cats</a>
-          <a href="../birds/index.html">🐦 Birds</a>
-          <a href="../rabbits/index.html">🐇 Rabbits</a>
-          <a href="index.html">🐾 Other Pets</a>
-        </div>
+  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../../../index.html">Home</a>
+    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="../dogs/index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="fish.html">Aquarium Fish</a><a href="reptiles.html">Reptiles</a>
       </div>
-
-      <div class="nav-item">
-        <a href="../../services/index.html">Services ▾</a>
-        <div class="dropdown">
-          <a href="../../services/dog-walking.html">Dog Walking</a>
-          <a href="../../services/cat-care.html">Cat Care</a>
-          <a href="../../services/pet-care.html">Pet Care</a>
-          <a href="../../services/guidance.html">Pet Guidance</a>
-        </div>
-      </div>
-
-      <div class="nav-item">
-        <a href="../../walker/index.html">Find a Walker ▾</a>
-        <div class="dropdown">
-          <a href="../../walker/dogs.html">Dog Walkers</a>
-          <a href="../../walker/cats.html">Cat Caregivers</a>
-          <a href="../../walker/birds.html">Bird Caregivers</a>
-          <a href="../../walker/rabbits.html">Rabbit Caregivers</a>
-        </div>
-      </div>
-
-      <a href="../../about.html">About Us</a>
-      <a href="../../auth/login.html">Log in</a>
-      <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
-    </nav>
-  </header>
+    </div>
+    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
+  </nav>
+</header>
 
   <!-- ========================================================
        2. BREADCRUMBS
        ======================================================== -->
-  <nav class="sp-breadcrumb" aria-label="Breadcrumb">
+  <nav class="small-pets-breadcrumb" aria-label="Breadcrumb">
     <a href="../../../../index.html">Home</a>
     <span class="separator">/</span>
     <a href="../index.html">Explore Pets</a>
     <span class="separator">/</span>
-    <a href="index.html">Other Pets</a>
+    <span>Other Pets</span>
     <span class="separator">/</span>
-    <span class="current">Small Pets</span>
+    <span class="current">Small Pets Information Guide</span>
   </nav>
 
   <main>
     <!-- ========================================================
          3. HERO SECTION
          ======================================================== -->
-    <section class="sp-hero">
-      <div class="section-wrap">
-        <div class="eyebrow">🐹 PETSATHI • POCKET COMPANIONS</div>
-        <h1>Small Pets <em>Care Guide</em></h1>
-        <p class="hero-subtitle">
-          Small mammals may be diminutive in size, but they are full of personality, intelligence, and curiosity.
-          Discover essential habitat benchmarks, balanced nutrition, safe enrichment, and gentle handling techniques
-          for hamsters, guinea pigs, gerbils, chinchillas, and fancy rats.
-        </p>
+    <section class="small-pets-hero">
+      <div class="eyebrow">🐹 PetSathi • Pocket Pets & Small Companions</div>
+      <h1>Gentle Hearts in <em>Small Wonder</em> Packages</h1>
+      <p class="hero-subtitle">
+        Welcome to PetSathi's comprehensive Small Pets Guide! Explore in-depth profiles, lifespan, adult sizes, temperaments, housing setups, and daily care essentials for 8 beloved companion animals.
+      </p>
 
-        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 30px;">
-          <a class="button" href="#species-list">View Small Pet Species ↓</a>
-          <a class="button button-outline" href="index.html">All Other Pets Hub 🐾</a>
+      <div class="hero-btn-group">
+        <a class="button" href="#species-showcase">Explore 8 Small Pets ↘</a>
+        <a class="button button-outline" href="#comparison-matrix">Compare Small Pets ⚖️</a>
+        <a class="button button-outline" href="#living-environment">Living Environment 🏡</a>
+        <a class="button button-outline" href="#small-pet-faq">Care FAQs ❓</a>
+      </div>
+
+      <div class="hero-badge-strip">
+        <div class="hero-badge-item">
+          <span class="icon">🐹</span>
+          <span>8 Detailed Small Pets</span>
         </div>
-
-        <div class="sp-badge-strip">
-          <div class="sp-badge-item">
-            <span>🌾</span> <b>Fiber-Rich Timothy Hay</b>
-          </div>
-          <div class="sp-badge-item">
-            <span>🎡</span> <b>Solid-Floor Exercise Wheels</b>
-          </div>
-          <div class="sp-badge-item">
-            <span>📦</span> <b>Spacious Chew-Safe Enclosures</b>
-          </div>
-          <div class="sp-badge-item">
-            <span>🩺</span> <b>Exotic Mammal Veterinarians</b>
-          </div>
+        <div class="hero-badge-item">
+          <span class="icon">⚖️</span>
+          <span>Side-by-Side Comparison</span>
+        </div>
+        <div class="hero-badge-item">
+          <span class="icon">🏡</span>
+          <span>Safe Housing & Bedding</span>
+        </div>
+        <div class="hero-badge-item">
+          <span class="icon">🥗</span>
+          <span>Diet & Nutrition Advice</span>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         4. JUMP NAV
+         4. STICKY QUICK-JUMP ANCHOR NAV
          ======================================================== -->
-    <div class="sp-nav-strip">
-      <div class="sp-nav-inner">
-        <a href="#species-list">Popular Species</a>
-        <a href="#housing-enclosures">Housing &amp; Bedding</a>
-        <a href="#nutrition-diet">Diet &amp; Nutrition</a>
-        <a href="#dos-and-donts">Care Do's &amp; Don'ts</a>
-        <a href="#companion-nav">Other Pet Guides</a>
+    <nav class="anchor-nav-strip" aria-label="Page Sections">
+      <div class="anchor-nav-inner">
+        <a href="#species-showcase">8 Small Pets</a>
+        <a href="#comparison-matrix">⚖️ Comparison Matrix</a>
+        <a href="#living-environment">🏡 Living Environment</a>
+        <a href="#small-pet-faq">❓ Frequently Asked Questions</a>
+        <a href="#other-pets">🌐 Explore Other Pets</a>
       </div>
-    </div>
+    </nav>
 
     <!-- ========================================================
-         5. POPULAR SMALL PET SPECIES
+         5. THE 8 SMALL PETS SHOWCASE
          ======================================================== -->
-    <section class="section-wrap" id="species-list" style="padding-top: 50px;">
+    <section class="section section-wrap" id="species-showcase">
       <div class="section-title-wrap">
-        <div class="eyebrow" style="color: var(--green);">Meet the Companions</div>
+        <div class="eyebrow">Meet Your Little Companions</div>
         <h2>Popular <em>Small Pet Species</em></h2>
-        <p>Understand the unique social structures, behavioral patterns, and space needs of each small mammal.</p>
+        <p>
+          Each small animal brings distinct charm, social needs, and activity cycles. Filter by personality or care requirements to find the ideal match for your home and lifestyle.
+        </p>
       </div>
 
-      <div class="sp-grid">
-        <!-- 1. Syrian Hamster -->
-        <article class="sp-card">
-          <div class="sp-card-img">
-            <span class="sp-card-badge">Solitary • Nocturnal</span>
-            <img
-              src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=650&auto=format&fit=crop"
-              alt="Golden Syrian Hamster"
-              loading="lazy"
-            >
+      <!-- Search & Filters -->
+      <div class="pet-controls-box">
+        <div class="controls-top-row">
+          <div class="search-box-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="small-pets-search" placeholder="Search by name, temperament, traits..." aria-label="Search small pets">
+            <button class="clear-search-btn" id="clear-small-pets-search" aria-label="Clear search">✕</button>
           </div>
-          <div class="sp-card-body">
-            <h3>Syrian Hamster</h3>
-            <div class="sp-scientific">Mesocricetus auratus</div>
-            <p class="sp-card-desc">
-              Syrian hamsters are affectionate, solitary pets that must live strictly alone once mature.
-              They are primarily nocturnal and need deep bedding (6–10 inches) for instinctive burrowing.
-            </p>
-            <div class="sp-specs">
-              <div class="sp-spec-item"><small>Lifespan</small><b>2 – 3 Years</b></div>
-              <div class="sp-spec-item"><small>Min Enclosure</small><b>450+ sq in</b></div>
-              <div class="sp-spec-item"><small>Social Need</small><b>Strictly Solitary</b></div>
-              <div class="sp-spec-item"><small>Wheel Size</small><b>11 – 12 in (Solid)</b></div>
+          <div class="pet-counter-badge">
+            Showing <b id="visible-pet-count">8</b> of 8 Small Pets
+          </div>
+        </div>
+
+        <div class="filter-pills-row">
+          <button class="pet-filter-pill active" data-filter="all">All Small Pets (8)</button>
+          <button class="pet-filter-pill" data-filter="beginner">Beginner Friendly</button>
+          <button class="pet-filter-pill" data-filter="social">Social & Pairs</button>
+          <button class="pet-filter-pill" data-filter="solitary">Solitary</button>
+          <button class="pet-filter-pill" data-filter="nocturnal">Nocturnal / Night</button>
+          <button class="pet-filter-pill" data-filter="diurnal">Day Active / Bursts</button>
+          <button class="pet-filter-pill" data-filter="active">Playful & Active</button>
+        </div>
+      </div>
+
+      <!-- Small Pets Grid -->
+      <div class="small-pets-grid" id="small-pets-list">
+
+        <!-- 1. HAMSTER -->
+        <article class="small-pet-card" id="pet-hamster" data-name="Hamster Syrian Dwarf Roborovski" data-category="beginner solitary nocturnal" data-tags="hamster rodent pocket burrow cheek cheek-pouches wheel" data-temperament="solitary curious nocturnal quiet">
+          <div class="small-pet-media">
+            <img class="small-pet-img" src="https://upload.wikimedia.org/wikipedia/commons/4/4a/European_hamster_%28Cricetus_cricetus%29_Meidling.jpg" alt="Syrian Hamster exploring with full cheek pouches" loading="lazy">
+            <div class="pet-media-overlay">
+              <span class="pet-emoji-badge">🐹</span>
+              <span class="pet-level-badge">Beginner</span>
+            </div>
+          </div>
+          <div class="small-pet-content">
+            <div class="pet-header-group">
+              <div class="pet-title-row">
+                <h3>Hamster</h3>
+                <span class="pet-scientific">Mesocricetus auratus</span>
+              </div>
+              <p class="pet-short-desc">
+                Beloved pocket pets famous for their expandable cheek pouches, adorable burrowing antics, and enthusiastic nighttime wheel running.
+              </p>
+            </div>
+
+            <div class="pet-meta-pills">
+              <span class="meta-pill social">🚫 Strictly Solitary</span>
+              <span class="meta-pill schedule">🌙 Nocturnal</span>
+              <span class="meta-pill space">📦 450–800 sq in Floor</span>
+            </div>
+
+            <div class="pet-specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Adult Size</span>
+                <span class="spec-value">4–7 in (10–18 cm)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Average Lifespan</span>
+                <span class="spec-value">2–3 Years</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Adult Weight</span>
+                <span class="spec-value">100–150g (Syrian)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Noise Level</span>
+                <span class="spec-value">Quiet (Wheel runner)</span>
+              </div>
+            </div>
+
+            <div class="pet-details-wrap">
+              <div class="detail-block">
+                <div class="detail-title">🧠 Temperament & Behavior</div>
+                <p class="detail-text">
+                  Inquisitive, solitary, and gentle when handled patiently. Hamsters awaken in the evening and can be nippy if startled or woken abruptly during daytime sleep.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🥗 Basic Care & Diet</div>
+                <p class="detail-text">
+                  Commercial fortified hamster pellet mix supplemented with safe seeds, fresh broccoli, kale, and cucumber. Fresh water bottle replaced daily.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🏡 Housing & Exercise</div>
+                <p class="detail-text">
+                  Spacious solid-bottom enclosure with 6–8+ inches of deep, dust-free paper bedding for burrowing. Upright solid-surface wheel (10–12" for Syrian to prevent spine curvature).
+                </p>
+              </div>
+
+              <div class="alert-tip-box">
+                ⚠️ <b>Golden Rule:</b> Syrian hamsters must ALWAYS live alone! Housing them together leads to deadly territorial fights.
+              </div>
             </div>
           </div>
         </article>
 
-        <!-- 2. Guinea Pig (Cavy) -->
-        <article class="sp-card">
-          <div class="sp-card-img">
-            <span class="sp-card-badge">Social in Pairs • Diurnal</span>
-            <img
-              src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?q=80&w=650&auto=format&fit=crop"
-              alt="Cute fluffy Guinea Pig"
-              loading="lazy"
-            >
+        <!-- 2. GUINEA PIG -->
+        <article class="small-pet-card" id="pet-guinea-pig" data-name="Guinea Pig Cavy Cavies" data-category="beginner social diurnal active" data-tags="guinea pig cavy herd vocal wheek lap cuddly herbivore" data-temperament="social gentle vocal affectionate docile">
+          <div class="small-pet-media">
+            <img class="small-pet-img" src="https://upload.wikimedia.org/wikipedia/commons/3/30/George_the_amazing_guinea_pig.jpg" alt="Friendly tricolor Guinea Pig resting on soft bedding" loading="lazy">
+            <div class="pet-media-overlay">
+              <span class="pet-emoji-badge">🐾</span>
+              <span class="pet-level-badge">Beginner</span>
+            </div>
           </div>
-          <div class="sp-card-body">
-            <h3>Guinea Pig (Cavy)</h3>
-            <div class="sp-scientific">Cavia porcellus</div>
-            <p class="sp-card-desc">
-              Vocal and social herd animals that thrive in bonded pairs or small groups. Unlike most pets,
-              guinea pigs cannot synthesize Vitamin C and require fresh daily bell peppers or stabilized pellets.
-            </p>
-            <div class="sp-specs">
-              <div class="sp-spec-item"><small>Lifespan</small><b>5 – 8 Years</b></div>
-              <div class="sp-spec-item"><small>Min Enclosure</small><b>8 – 10 sq ft</b></div>
-              <div class="sp-spec-item"><small>Social Need</small><b>Pairs / Groups</b></div>
-              <div class="sp-spec-item"><small>Dietary Key</small><b>Daily Vitamin C</b></div>
+          <div class="small-pet-content">
+            <div class="pet-header-group">
+              <div class="pet-title-row">
+                <h3>Guinea Pig (Cavy)</h3>
+                <span class="pet-scientific">Cavia porcellus</span>
+              </div>
+              <p class="pet-short-desc">
+                Affectionate, communicative herd herbivores that delight owners with joyful "wheek-wheek" whistles, expressive purrs, and gentle lap time cuddles.
+              </p>
+            </div>
+
+            <div class="pet-meta-pills">
+              <span class="meta-pill social">👯 Must Live in Pairs</span>
+              <span class="meta-pill schedule">☀️ Crepuscular / Diurnal</span>
+              <span class="meta-pill space">📦 7.5–10.5+ sq ft Flat</span>
+            </div>
+
+            <div class="pet-specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Adult Size</span>
+                <span class="spec-value">8–11 in (20–28 cm)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Average Lifespan</span>
+                <span class="spec-value">5–8 Years</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Adult Weight</span>
+                <span class="spec-value">700–1,200g (1.5–2.6 lbs)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Noise Level</span>
+                <span class="spec-value">Vocal (Whistling wheeks)</span>
+              </div>
+            </div>
+
+            <div class="pet-details-wrap">
+              <div class="detail-block">
+                <div class="detail-title">🧠 Temperament & Behavior</div>
+                <p class="detail-text">
+                  Docile, social, and gentle. Very rarely bite. They form deep bonds with patient caregivers and thrive on consistent routines and secure hidey spots.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🥗 Basic Care & Diet</div>
+                <p class="detail-text">
+                  80% unlimited Timothy or meadow hay daily for continuous dental wear and digestive health. Vitamin C-fortified pellets and fresh bell peppers daily.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🏡 Housing & Exercise</div>
+                <p class="detail-text">
+                  Large flat-bottom cage or C&C enclosure (min. 7.5 sq ft for 1, 10.5+ sq ft for pairs). Flat solid floors lined with washable fleece or paper; never wire bottoms.
+                </p>
+              </div>
+
+              <div class="alert-tip-box">
+                🍊 <b>Essential Nutrient:</b> Guinea pigs cannot synthesize Vitamin C! Daily bell peppers or stabilized Vitamin C supplements prevent painful scurvy.
+              </div>
             </div>
           </div>
         </article>
 
-        <!-- 3. Dwarf Hamster -->
-        <article class="sp-card">
-          <div class="sp-card-img">
-            <span class="sp-card-badge">Tiny &amp; Fast • Crepuscular</span>
-            <img
-              src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?q=80&w=650&auto=format&fit=crop"
-              alt="Small dwarf hamster"
-              loading="lazy"
-            >
+        <!-- 3. FANCY MICE -->
+        <article class="small-pet-card" id="pet-mouse" data-name="Fancy Mouse Mice" data-category="beginner social nocturnal active" data-tags="mouse mice nimble acrobat climber small agile" data-temperament="active nimble curious quick shy">
+          <div class="small-pet-media">
+            <img class="small-pet-img" src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Fancy_Mouse.jpg" alt="Nimble Fancy Mouse perched delicately on climbing branch" loading="lazy">
+            <div class="pet-media-overlay">
+              <span class="pet-emoji-badge">🐭</span>
+              <span class="pet-level-badge">Beginner</span>
+            </div>
           </div>
-          <div class="sp-card-body">
-            <h3>Roborovski &amp; Dwarf Hamster</h3>
-            <div class="sp-scientific">Phodopus sungorus / roborovskii</div>
-            <p class="sp-card-desc">
-              Extremely speedy and delightful to observe. Roborovski and Winter White hamsters love wide sand baths
-              for grooming their coats and multiple hideouts for feeling secure.
-            </p>
-            <div class="sp-specs">
-              <div class="sp-spec-item"><small>Lifespan</small><b>1.5 – 3 Years</b></div>
-              <div class="sp-spec-item"><small>Min Enclosure</small><b>450+ sq in</b></div>
-              <div class="sp-spec-item"><small>Key Feature</small><b>Sand Bath Area</b></div>
-              <div class="sp-spec-item"><small>Wheel Size</small><b>8 – 10 in (Solid)</b></div>
+          <div class="small-pet-content">
+            <div class="pet-header-group">
+              <div class="pet-title-row">
+                <h3>Fancy Mouse</h3>
+                <span class="pet-scientific">Mus musculus domestica</span>
+              </div>
+              <p class="pet-short-desc">
+                Inquisitive, acrobatic, and endlessly entertaining tiny companions that love climbing ropes, exploring mazes, and building cozy paper nests.
+              </p>
+            </div>
+
+            <div class="pet-meta-pills">
+              <span class="meta-pill social">👯 Females in Groups</span>
+              <span class="meta-pill schedule">🌙 Nocturnal</span>
+              <span class="meta-pill space">📦 20-Gallon Tank/Cage</span>
+            </div>
+
+            <div class="pet-specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Adult Size</span>
+                <span class="spec-value">3–4 in + 3 in Tail</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Average Lifespan</span>
+                <span class="spec-value">1.5–2.5 Years</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Adult Weight</span>
+                <span class="spec-value">30–50 Grams</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Noise Level</span>
+                <span class="spec-value">Very Quiet (Soft rustling)</span>
+              </div>
+            </div>
+
+            <div class="pet-details-wrap">
+              <div class="detail-block">
+                <div class="detail-title">🧠 Temperament & Behavior</div>
+                <p class="detail-text">
+                  Fast, agile, and alert. They are primarily observational pets due to their lightning speed, but can learn to take seed treats gently from open palms.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🥗 Basic Care & Diet</div>
+                <p class="detail-text">
+                  Commercial mouse lab blocks or quality seed mix (low sunflower/corn), supplemented with oats, millet, and small morsels of fresh apples or spinach.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🏡 Housing & Exercise</div>
+                <p class="detail-text">
+                  Ventilated wire cage with 1/4" bar spacing or glass tank with mesh lid. Solid 6.5–8" exercise wheel, climbing ladders, sisal ropes, and cardboard tubes.
+                </p>
+              </div>
+
+              <div class="alert-tip-box">
+                ⚠️ <b>Social Note:</b> Female mice thrive in bonded sister groups. Male mice should live solo unless neutered, as males fight fiercely over territory.
+              </div>
             </div>
           </div>
         </article>
 
-        <!-- 4. Mongolian Gerbil -->
-        <article class="sp-card">
-          <div class="sp-card-img">
-            <span class="sp-card-badge">Burrower • Social Pair</span>
-            <img
-              src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=650&auto=format&fit=crop"
-              alt="Active gerbil standing on hind legs"
-              loading="lazy"
-            >
+        <!-- 4. FANCY RATS -->
+        <article class="small-pet-card" id="pet-rat" data-name="Fancy Rat Rats Dumbo Hooded" data-category="beginner social diurnal active" data-tags="rat rats pocket puppy smart intelligent tricks affectionate" data-temperament="affectionate highly intelligent empathetic playful clean">
+          <div class="small-pet-media">
+            <img class="small-pet-img" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Lyonblackandwhitehoodedrat_%28cropped%29.jpg" alt="Curious hooded Fancy Rat standing alert on solid perch" loading="lazy">
+            <div class="pet-media-overlay">
+              <span class="pet-emoji-badge">🐀</span>
+              <span class="pet-level-badge">Beginner</span>
+            </div>
           </div>
-          <div class="sp-card-body">
-            <h3>Mongolian Gerbil</h3>
-            <div class="sp-scientific">Meriones unguiculatus</div>
-            <p class="sp-card-desc">
-              Desert diggers with boundless energy. Gerbils produce very little odor and love chewing plain
-              cardboard rolls. They should be kept in bonded same-sex pairs in high-sided glass terrariums.
-            </p>
-            <div class="sp-specs">
-              <div class="sp-spec-item"><small>Lifespan</small><b>3 – 4 Years</b></div>
-              <div class="sp-spec-item"><small>Housing</small><b>20+ Gallon Tank</b></div>
-              <div class="sp-spec-item"><small>Bedding Depth</small><b>8 – 12 Inches</b></div>
-              <div class="sp-spec-item"><small>Social Need</small><b>Pairs Only</b></div>
+          <div class="small-pet-content">
+            <div class="pet-header-group">
+              <div class="pet-title-row">
+                <h3>Fancy Rat</h3>
+                <span class="pet-scientific">Rattus norvegicus domestica</span>
+              </div>
+              <p class="pet-short-desc">
+                Known affectionately as the "pocket puppies" of small animals, rats are remarkably smart, affectionate, clean, and capable of learning complex tricks.
+              </p>
+            </div>
+
+            <div class="pet-meta-pills">
+              <span class="meta-pill social">👯 Mandatory Pairs/Groups</span>
+              <span class="meta-pill schedule">🌗 Crepuscular</span>
+              <span class="meta-pill space">📦 Multi-Tier Tall Cage</span>
+            </div>
+
+            <div class="pet-specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Adult Size</span>
+                <span class="spec-value">9–11 in + 8 in Tail</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Average Lifespan</span>
+                <span class="spec-value">2–3.5 Years</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Adult Weight</span>
+                <span class="spec-value">350–650 Grams</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Noise Level</span>
+                <span class="spec-value">Quiet (Bruxing & boggling)</span>
+              </div>
+            </div>
+
+            <div class="pet-details-wrap">
+              <div class="detail-block">
+                <div class="detail-title">🧠 Temperament & Behavior</div>
+                <p class="detail-text">
+                  Deeply empathetic, loving, and curious. Rats recognize individual humans, enjoy sitting on shoulders, groom their owners gently, and love problem solving.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🥗 Basic Care & Diet</div>
+                <p class="detail-text">
+                  Nutritionally balanced rat block pellets (e.g. Oxbow Essentials) alongside daily vegetables, cooked grains (rice, pasta), fruit treats, and occasional lean proteins.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🏡 Housing & Exercise</div>
+                <p class="detail-text">
+                  Multi-level wire cage (Critter Nation type, min. 2 cubic ft per rat) with fabric hammocks, fleece shelf liners, climbing ropes, and 1+ hour daily free roam.
+                </p>
+              </div>
+
+              <div class="alert-tip-box">
+                ❤️ <b>Pairing Essential:</b> Rats suffer severe psychological depression if kept alone. Always adopt bonded pairs or trios of the same sex!
+              </div>
             </div>
           </div>
         </article>
 
-        <!-- 5. Chinchilla -->
-        <article class="sp-card">
-          <div class="sp-card-img">
-            <span class="sp-card-badge">Velvety • Cool Climate</span>
-            <img
-              src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?q=80&w=650&auto=format&fit=crop"
-              alt="Soft chinchilla resting"
-              loading="lazy"
-            >
+        <!-- 5. MONGOLIAN GERBILS -->
+        <article class="small-pet-card" id="pet-gerbil" data-name="Mongolian Gerbil Gerbils" data-category="beginner social diurnal active" data-tags="gerbil desert burrower odorless clean tunneling drum" data-temperament="curious active odorless friendly metaturnal">
+          <div class="small-pet-media">
+            <img class="small-pet-img" src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Meriones_unguiculatus_%28wild%29.jpg" alt="Mongolian Gerbil alert on sandy burrow mound" loading="lazy">
+            <div class="pet-media-overlay">
+              <span class="pet-emoji-badge">🐾</span>
+              <span class="pet-level-badge">Beginner</span>
+            </div>
           </div>
-          <div class="sp-card-body">
-            <h3>Chinchilla</h3>
-            <div class="sp-scientific">Chinchilla lanigera</div>
-            <p class="sp-card-desc">
-              Famous for having the densest fur in the animal kingdom. Chinchillas are prone to heatstroke
-              and must be kept in rooms strictly under 70°F (21°C). They clean themselves exclusively in volcanic dust baths.
-            </p>
-            <div class="sp-specs">
-              <div class="sp-spec-item"><small>Lifespan</small><b>10 – 15+ Years</b></div>
-              <div class="sp-spec-item"><small>Temp Range</small><b>60°F – 68°F Max</b></div>
-              <div class="sp-spec-item"><small>Grooming</small><b>Volcanic Dust Bath</b></div>
-              <div class="sp-spec-item"><small>Cage Style</small><b>Multi-Level Tall</b></div>
+          <div class="small-pet-content">
+            <div class="pet-header-group">
+              <div class="pet-title-row">
+                <h3>Mongolian Gerbil</h3>
+                <span class="pet-scientific">Meriones unguiculatus</span>
+              </div>
+              <p class="pet-short-desc">
+                Desert-dwelling master burrowers with furry tails that communicate via foot-drumming, produce virtually no odor, and love shredding cardboard.
+              </p>
+            </div>
+
+            <div class="pet-meta-pills">
+              <span class="meta-pill social">👯 Keep in Bonded Pairs</span>
+              <span class="meta-pill schedule">☀️ Diurnal / Crepuscular</span>
+              <span class="meta-pill space">📦 20+ Gal Gerbilarium</span>
+            </div>
+
+            <div class="pet-specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Adult Size</span>
+                <span class="spec-value">4–5 in + 4 in Tail</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Average Lifespan</span>
+                <span class="spec-value">3–4 Years</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Adult Weight</span>
+                <span class="spec-value">60–130 Grams</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Noise Level</span>
+                <span class="spec-value">Moderate (Chewing & drumming)</span>
+              </div>
+            </div>
+
+            <div class="pet-details-wrap">
+              <div class="detail-block">
+                <div class="detail-title">🧠 Temperament & Behavior</div>
+                <p class="detail-text">
+                  Inquisitive, energetic, and clean. Active in intermittent bursts throughout both day and night. They rarely bite and thump their hind legs when excited or alert.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🥗 Basic Care & Diet</div>
+                <p class="detail-text">
+                  Formulated gerbil seed and pellet blend with controlled sunflower seeds. Plain chinchilla sand bath dish for weekly coat grooming (never water baths).
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🏡 Housing & Exercise</div>
+                <p class="detail-text">
+                  Deep glass tank or gerbilarium (min. 20 gallons for 2) filled with 8–10+ inches of compressed aspen, hay, and paper for stable tunnel structures. Lots of cardboard!
+                </p>
+              </div>
+
+              <div class="alert-tip-box">
+                🚫 <b>No Plastic:</b> Gerbils are fierce chewers. Never use plastic cages, tubes, or wheels, as chewed plastic fragments cause fatal intestinal blockages.
+              </div>
             </div>
           </div>
         </article>
 
-        <!-- 6. Fancy Pet Rat -->
-        <article class="sp-card">
-          <div class="sp-card-img">
-            <span class="sp-card-badge">High Intelligence • Affectionate</span>
-            <img
-              src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?q=80&w=650&auto=format&fit=crop"
-              alt="Friendly pet rat perched on shoulder"
-              loading="lazy"
-            >
+        <!-- 6. FERRETS -->
+        <article class="small-pet-card" id="pet-ferret" data-name="Ferret Ferrets Mustelid" data-category="active social diurnal" data-tags="ferret carnivore playful mischievous war dance energetic flexible" data-temperament="highly energetic mischievous clownish bold curious">
+          <div class="small-pet-media">
+            <img class="small-pet-img" src="https://upload.wikimedia.org/wikipedia/commons/3/32/Ferret_2008.png" alt="Inquisitive domesticated Ferret peeking with alert eyes" loading="lazy">
+            <div class="pet-media-overlay">
+              <span class="pet-emoji-badge">🦡</span>
+              <span class="pet-level-badge intermediate">Intermediate</span>
+            </div>
           </div>
-          <div class="sp-card-body">
-            <h3>Fancy Rat</h3>
-            <div class="sp-scientific">Rattus norvegicus domestica</div>
-            <p class="sp-card-desc">
-              Often described as pocket puppies, fancy rats are clean, empathetic, and easily trained to do tricks.
-              They suffer deep depression if housed alone, making bonded pairs or trios an absolute necessity.
-            </p>
-            <div class="sp-specs">
-              <div class="sp-spec-item"><small>Lifespan</small><b>2 – 3 Years</b></div>
-              <div class="sp-spec-item"><small>Social Need</small><b>Must Have Companions</b></div>
-              <div class="sp-spec-item"><small>Housing</small><b>Tall Wire Cage (½″ gap)</b></div>
-              <div class="sp-spec-item"><small>Enrichment</small><b>Hammocks &amp; Puzzles</b></div>
+          <div class="small-pet-content">
+            <div class="pet-header-group">
+              <div class="pet-title-row">
+                <h3>Ferret</h3>
+                <span class="pet-scientific">Mustela putorius furo</span>
+              </div>
+              <p class="pet-short-desc">
+                Playful, flexible carnivores famous for their energetic "weasel war dances," mischievous thievery of shiny objects, and deep slumber cycles.
+              </p>
+            </div>
+
+            <div class="pet-meta-pills">
+              <span class="meta-pill social">👯 Thrives in Pairs (Business)</span>
+              <span class="meta-pill schedule">☀️ Crepuscular / Active</span>
+              <span class="meta-pill space">🏠 Ferret-Proofed Room</span>
+            </div>
+
+            <div class="pet-specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Adult Size</span>
+                <span class="spec-value">13–16 in (33–40 cm)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Average Lifespan</span>
+                <span class="spec-value">6–10 Years</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Adult Weight</span>
+                <span class="spec-value">700–2,000g (1.5–4.5 lbs)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Noise Level</span>
+                <span class="spec-value">Moderate (Dooking & scuffling)</span>
+              </div>
+            </div>
+
+            <div class="pet-details-wrap">
+              <div class="detail-block">
+                <div class="detail-title">🧠 Temperament & Behavior</div>
+                <p class="detail-text">
+                  Boundlessly curious, comical, and bold. Sleep up to 14–18 hours daily, but wake with intense bursts of energy. They love stash games and chasing tunnels.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🥗 Basic Care & Diet</div>
+                <p class="detail-text">
+                  Strict obligate carnivores: 36–40% high animal protein and 20% fat. Near-zero carbohydrates or fiber. No fruits, veggies, or grains (which trigger insulinoma).
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🏡 Housing & Exercise</div>
+                <p class="detail-text">
+                  Large multi-level wire cage (e.g. Ferret Nation) with hammocks, tunnels, and pelleted litter box. Minimum 4 hours daily supervised out-of-cage exploration in a ferret-proof room.
+                </p>
+              </div>
+
+              <div class="alert-tip-box">
+                🩺 <b>Veterinary Care:</b> Requires specialized exotic vet care, distemper and rabies vaccinations, and vigilance against adrenal disease and swallowed rubber items.
+              </div>
             </div>
           </div>
         </article>
+
+        <!-- 7. CHINCHILLAS -->
+        <article class="small-pet-card" id="pet-chinchilla" data-name="Chinchilla Chinchillas" data-category="social nocturnal" data-tags="chinchilla dense fur acrobat dust bath jumping long-lived cool" data-temperament="timid athletic gentle crepuscular sensitive">
+          <div class="small-pet-media">
+            <img class="small-pet-img" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Chinchilla_lanigera_%28Wroclaw_zoo%29-2.JPG" alt="Silky grey Chinchilla showing extremely dense luxury fur" loading="lazy">
+            <div class="pet-media-overlay">
+              <span class="pet-emoji-badge">🐰</span>
+              <span class="pet-level-badge intermediate">Intermediate</span>
+            </div>
+          </div>
+          <div class="small-pet-content">
+            <div class="pet-header-group">
+              <div class="pet-title-row">
+                <h3>Chinchilla</h3>
+                <span class="pet-scientific">Chinchilla lanigera</span>
+              </div>
+              <p class="pet-short-desc">
+                Andean natives boasting the densest, silkiest fur of any land mammal, prized for their athletic wall-bouncing acrobatics and impressively long lifespans.
+              </p>
+            </div>
+
+            <div class="pet-meta-pills">
+              <span class="meta-pill social">👯 Social in Bonded Pairs</span>
+              <span class="meta-pill schedule">🌙 Crepuscular / Nocturnal</span>
+              <span class="meta-pill space">🏢 Tall Multi-Level Tower</span>
+            </div>
+
+            <div class="pet-specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Adult Size</span>
+                <span class="spec-value">10–14 in + 6 in Tail</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Average Lifespan</span>
+                <span class="spec-value">10–15+ Years</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Adult Weight</span>
+                <span class="spec-value">400–800 Grams</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Noise Level</span>
+                <span class="spec-value">Quiet (Soft chirps & leaps)</span>
+              </div>
+            </div>
+
+            <div class="pet-details-wrap">
+              <div class="detail-block">
+                <div class="detail-title">🧠 Temperament & Behavior</div>
+                <p class="detail-text">
+                  Gentle, timid, and routine-oriented. They dislike rough handling or being squeezed, but enjoy interactive treats, gentle chin scratches, and evening obstacle courses.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🥗 Basic Care & Diet</div>
+                <p class="detail-text">
+                  Unlimited high-grade Timothy hay (vital for continuously growing teeth) and plain chinchilla pellets. 2–3 weekly volcanic pumice dust baths (NEVER water!).
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🏡 Housing & Climate</div>
+                <p class="detail-text">
+                  Tall multi-level cage with untreated pine jump ledges. STRICT temperature control: must stay between 60°F–68°F (15°C–20°C). Air conditioning is essential in warm climates.
+                </p>
+              </div>
+
+              <div class="alert-tip-box">
+                ❄️ <b>Heatstroke Warning:</b> With 60+ hairs per follicle, chinchillas cannot sweat! Temperatures over 72°F (22°C) can cause rapid, fatal heatstroke.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. HEDGEHOGS -->
+        <article class="small-pet-card" id="pet-hedgehog" data-name="African Pygmy Hedgehog Hedgehogs" data-category="solitary nocturnal" data-tags="hedgehog quills insectivore solitary quiet warm ceramic-heater" data-temperament="solitary nocturnal shy curious quilled">
+          <div class="small-pet-media">
+            <img class="small-pet-img" src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Atelerix_albiventris.jpg" alt="African Pygmy Hedgehog displaying distinctive quills and soft snout" loading="lazy">
+            <div class="pet-media-overlay">
+              <span class="pet-emoji-badge">🦔</span>
+              <span class="pet-level-badge advanced">Advanced</span>
+            </div>
+          </div>
+          <div class="small-pet-content">
+            <div class="pet-header-group">
+              <div class="pet-title-row">
+                <h3>African Pygmy Hedgehog</h3>
+                <span class="pet-scientific">Atelerix albiventris</span>
+              </div>
+              <p class="pet-short-desc">
+                Charming, solitary nocturnal insectivores crowned with thousands of smooth quills, famous for rolling into spiky defensive balls and cute self-anointing quirks.
+              </p>
+            </div>
+
+            <div class="pet-meta-pills">
+              <span class="meta-pill social">🚫 Strictly Solitary</span>
+              <span class="meta-pill schedule">🌙 Nocturnal</span>
+              <span class="meta-pill space">📦 4x2 ft Flat Enclosure</span>
+            </div>
+
+            <div class="pet-specs-grid">
+              <div class="spec-item">
+                <span class="spec-label">Adult Size</span>
+                <span class="spec-value">5–8 in (13–20 cm)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Average Lifespan</span>
+                <span class="spec-value">4–6 Years</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Adult Weight</span>
+                <span class="spec-value">300–600 Grams</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Noise Level</span>
+                <span class="spec-value">Quiet (Huffs & nighttime wheel)</span>
+              </div>
+            </div>
+
+            <div class="pet-details-wrap">
+              <div class="detail-block">
+                <div class="detail-title">🧠 Temperament & Behavior</div>
+                <p class="detail-text">
+                  Shy initially, rolling into a prickle ball when startled. With patient, daily gentle handling in dim lighting, they uncurl, sniff happily, and explore curiously.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🥗 Basic Care & Diet</div>
+                <p class="detail-text">
+                  High-protein, low-fat insectivore diet or high-grade poultry cat kibble (30%+ protein, < 15% fat), supplemented with gut-loaded live mealworms, crickets, and roaches.
+                </p>
+              </div>
+
+              <div class="detail-block">
+                <div class="detail-title">🏡 Housing & Heating</div>
+                <p class="detail-text">
+                  Flat, solid-floor enclosure (min. 4x2 ft; no wire ramps to protect delicate feet). Large 11–12" solid-surface wheel (Carolina Storm type) for nighttime miles.
+                </p>
+              </div>
+
+              <div class="alert-tip-box">
+                🔥 <b>Critical Heating:</b> Must have a thermostatically controlled ceramic heat emitter keeping 72°F–78°F (22°C–26°C) 24/7. Drops below 70°F induce fatal pseudo-hibernation!
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- No Results Fallback -->
+        <div class="no-results-box" id="no-pets-found">
+          <div class="emoji">🔍🐹</div>
+          <h3>No matching small pets found</h3>
+          <p>Try adjusting your search keyword or selecting a different category filter pill above.</p>
+        </div>
+
       </div>
     </section>
 
     <!-- ========================================================
-         6. HOUSING & BEDDING BENCHMARKS
+         6. COMPARISON MATRIX SECTION
          ======================================================== -->
-    <section class="section-wrap" id="housing-enclosures">
+    <section class="section section-wrap" id="comparison-matrix" style="padding-top: 20px;">
       <div class="section-title-wrap">
-        <div class="eyebrow" style="color: var(--green);">Habitat Mastery</div>
-        <h2>Creating an <em>Enriching Sanctuary</em></h2>
-        <p>A spacious, well-ventilated enclosure is the foundation of lifelong health for small animals.</p>
+        <div class="eyebrow">At-a-Glance Comparison</div>
+        <h2>Side-by-Side <em>Small Pets Comparison</em></h2>
+        <p>
+          Compare lifespan, size, temperament, social needs, cage requirements, and care difficulty across all 8 species to make an informed, compassionate adoption choice.
+        </p>
       </div>
 
-      <div class="care-feature-grid">
-        <div class="care-feature-box">
-          <div class="care-feature-icon">📦</div>
-          <h3>Spacious Enclosures</h3>
-          <p>Commercial pet store cages are almost always too small. Ensure floor space meets modern ethical minimums:</p>
-          <ul>
-            <li><b>Hamsters:</b> Minimum 450 – 800 sq inches unbroken floor space.</li>
-            <li><b>Guinea Pigs:</b> Minimum 7.5 to 10.5 square feet C&amp;C grid cage.</li>
-            <li><b>Rats:</b> Minimum 2.5 cubic feet per rat in a tall, climbing cage.</li>
-          </ul>
+      <div class="comparison-section-box">
+        <div class="comp-controls-row">
+          <span style="font-size: 0.9rem; font-weight: 700; color: #53645a;">Filter Comparison Table:</span>
+          <div class="comp-filter-group">
+            <button class="comp-filter-btn active" data-comp-filter="all">All 8 Pets</button>
+            <button class="comp-filter-btn" data-comp-filter="beginner">Beginner Friendly</button>
+            <button class="comp-filter-btn" data-comp-filter="social">Social Pairs</button>
+            <button class="comp-filter-btn" data-comp-filter="longlived">Long Lifespan (5+ Yrs)</button>
+            <button class="comp-filter-btn" data-comp-filter="quiet">Low Noise</button>
+          </div>
         </div>
 
-        <div class="care-feature-box">
-          <div class="care-feature-icon">🌱</div>
-          <h3>Safe Bedding Substrates</h3>
-          <p>Respiratory health depends on choosing dust-free, non-toxic bedding:</p>
-          <ul>
-            <li><b>Recommended:</b> Unscented virgin paper pulp, Aspen shavings, or washed fleece with absorbent pads.</li>
-            <li><b>DANGEROUS:</b> Cedar and untreated Pine shavings contain toxic aromatic phenols that damage small lungs and livers.</li>
-            <li><b>Fluffy cotton nesting material:</b> Highly hazardous (causes limb entanglement and intestinal blockage).</li>
-          </ul>
-        </div>
-
-        <div class="care-feature-box">
-          <div class="care-feature-icon">🎡</div>
-          <h3>Safe Exercise Wheels</h3>
-          <p>Running is essential for small mammal cardiovascular health, but wheel design matters:</p>
-          <ul>
-            <li>Must have a <b>solid running surface</b> without wire rungs or mesh that can trap tiny paws (bumblefoot risk).</li>
-            <li>Diameter must be large enough that the animal's back remains completely straight while running.</li>
-            <li>Hamsters need 8″ (dwarf) or 11″–12″ (Syrian) wheels.</li>
-          </ul>
+        <div class="table-responsive-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Pet Species</th>
+                <th>Avg. Lifespan</th>
+                <th>Adult Size & Weight</th>
+                <th>Social Requirement</th>
+                <th>Active Schedule</th>
+                <th>Care Level</th>
+                <th>Space & Enclosure Need</th>
+                <th>Best Suited For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-category="beginner quiet">
+                <td>
+                  <div class="pet-cell"><span>🐹</span> Hamster</div>
+                </td>
+                <td>2–3 Years</td>
+                <td>4–7 in / 100–150g</td>
+                <td>🚫 Strictly Solitary</td>
+                <td>🌙 Nocturnal</td>
+                <td><span class="status-badge easy">Beginner</span></td>
+                <td>450–800 sq in floor, deep burrowing</td>
+                <td>Night owls, quieter compact rooms</td>
+              </tr>
+              <tr data-category="beginner social longlived">
+                <td>
+                  <div class="pet-cell"><span>🐾</span> Guinea Pig</div>
+                </td>
+                <td>5–8 Years</td>
+                <td>8–11 in / 700–1,200g</td>
+                <td>👯 Bonded Pairs/Group</td>
+                <td>☀️ Crepuscular / Diurnal</td>
+                <td><span class="status-badge easy">Beginner</span></td>
+                <td>7.5–10.5+ sq ft flat floor run</td>
+                <td>Families, lap lovers, daytime watchers</td>
+              </tr>
+              <tr data-category="beginner social quiet">
+                <td>
+                  <div class="pet-cell"><span>🐭</span> Fancy Mouse</div>
+                </td>
+                <td>1.5–2.5 Years</td>
+                <td>3–4 in / 30–50g</td>
+                <td>👯 Females in pairs/groups</td>
+                <td>🌙 Nocturnal</td>
+                <td><span class="status-badge easy">Beginner</span></td>
+                <td>20-gal tank or tight-bar cage</td>
+                <td>Observational hobbyists, small spaces</td>
+              </tr>
+              <tr data-category="beginner social">
+                <td>
+                  <div class="pet-cell"><span>🐀</span> Fancy Rat</div>
+                </td>
+                <td>2–3.5 Years</td>
+                <td>9–11 in / 350–650g</td>
+                <td>👯 Mandatory Pairs/Trio</td>
+                <td>🌗 Crepuscular</td>
+                <td><span class="status-badge easy">Beginner+</span></td>
+                <td>Multi-level wire cage + free roam</td>
+                <td>Hands-on owners seeking affection & tricks</td>
+              </tr>
+              <tr data-category="beginner social quiet">
+                <td>
+                  <div class="pet-cell"><span>🐾</span> Mongolian Gerbil</div>
+                </td>
+                <td>3–4 Years</td>
+                <td>4–5 in / 60–130g</td>
+                <td>👯 Bonded Pairs/Trios</td>
+                <td>☀️ Metaturnal bursts</td>
+                <td><span class="status-badge easy">Beginner</span></td>
+                <td>20-gal deep glass gerbilarium</td>
+                <td>Burrow watchers, low-odor preference</td>
+              </tr>
+              <tr data-category="social longlived">
+                <td>
+                  <div class="pet-cell"><span>🦡</span> Ferret</div>
+                </td>
+                <td>6–10 Years</td>
+                <td>13–16 in / 0.7–2 kg</td>
+                <td>👯 Thrives in pairs/group</td>
+                <td>☀️ Active cycles (14hr sleep)</td>
+                <td><span class="status-badge moderate">Intermediate</span></td>
+                <td>Multi-tier cage + 4hr room run</td>
+                <td>Active dedicated owners, comedy fans</td>
+              </tr>
+              <tr data-category="social longlived quiet">
+                <td>
+                  <div class="pet-cell"><span>🐰</span> Chinchilla</div>
+                </td>
+                <td>10–15+ Years</td>
+                <td>10–14 in / 400–800g</td>
+                <td>👯 Bonded Pairs</td>
+                <td>🌙 Crepuscular / Nocturnal</td>
+                <td><span class="status-badge moderate">Intermediate</span></td>
+                <td>Tall jumping tower, cold climate</td>
+                <td>Long-term committed owners with AC</td>
+              </tr>
+              <tr data-category="quiet">
+                <td>
+                  <div class="pet-cell"><span>🦔</span> African Hedgehog</div>
+                </td>
+                <td>4–6 Years</td>
+                <td>5–8 in / 300–600g</td>
+                <td>🚫 Strictly Solitary</td>
+                <td>🌙 Nocturnal</td>
+                <td><span class="status-badge complex">Advanced</span></td>
+                <td>4x2 ft flat cage + ceramic heat</td>
+                <td>Patient night owls with temperature setup</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         7. DIET & NUTRITION
+         7. SUITABLE LIVING ENVIRONMENT & HOUSING ESSENTIALS
          ======================================================== -->
-    <section class="section-wrap" id="nutrition-diet">
+    <section class="section section-wrap" id="living-environment">
       <div class="section-title-wrap">
-        <div class="eyebrow" style="color: var(--green);">Nutritional Balance</div>
-        <h2>Feeding for <em>Longevity &amp; Vitality</em></h2>
-        <p>Small herbivores and omnivores have delicate digestive systems that require exact fiber-to-protein balance.</p>
+        <div class="eyebrow">Habitat & Housing Science</div>
+        <h2>Suitable <em>Living Environment</em> Guide</h2>
+        <p>
+          A healthy, long small pet life begins with the right habitat. From enclosure architecture to bedding toxicity and precise temperature controls, here is what your pet needs to thrive.
+        </p>
       </div>
 
-      <div class="care-feature-grid">
-        <div class="care-feature-box">
-          <div class="care-feature-icon">🌾</div>
-          <h3>Unlimited High-Fiber Hay</h3>
-          <p>For Guinea Pigs and Chinchillas, 80% to 85% of their daily diet must consist of fresh Timothy, Orchard, or Meadow Hay.</p>
+      <div class="env-grid">
+        <div class="env-card">
+          <div class="env-card-icon">🏛️</div>
+          <h3>Enclosure Architecture</h3>
+          <p>
+            Choose the enclosure style tailored to your pet's physical locomotion and respiratory needs:
+          </p>
           <ul>
-            <li>Continuous chewing grinds down open-rooted teeth.</li>
-            <li>Fiber prevents life-threatening gastrointestinal stasis.</li>
-            <li>Provide hay in clean racks 24/7.</li>
+            <li><b>Wire Cages:</b> Excellent ventilation for rats and ferrets. Ensure horizontal bars for climbing and narrow spacing (&lt; 1/2" for rats, &lt; 1/4" for mice).</li>
+            <li><b>Glass Gerbilariums:</b> Perfect for gerbils and hamsters needing 8–10" deep bedding for burrowing without kick-out mess. Always use a ventilated mesh roof.</li>
+            <li><b>C&amp;C Open Enclosures:</b> Ideal for Guinea Pigs who do not climb or jump high but require sprawling horizontal square footage (10.5+ sq ft).</li>
+            <li><b>Vertical Jumping Towers:</b> High cages with solid wood jump shelves for athletic Chinchillas. Avoid plastic ramps.</li>
           </ul>
         </div>
 
-        <div class="care-feature-box">
-          <div class="care-feature-icon">🥦</div>
-          <h3>Fresh Veggies &amp; Vitamin C</h3>
-          <p>Guinea pigs cannot produce Vitamin C and require 10–30 mg daily from food:</p>
+        <div class="env-card">
+          <div class="env-card-icon">🪵</div>
+          <h3>Bedding &amp; Substrate Safety</h3>
+          <p>
+            Substrate choice directly determines respiratory health. Many commercial wood shavings are hazardous:
+          </p>
           <ul>
-            <li><b>Top Foods:</b> Yellow/red bell peppers, dark leafy greens (romaine, kale, cilantro).</li>
-            <li>Avoid iceberg lettuce (high water, no nutritional value).</li>
-            <li>Offer sugary fruits (apple, strawberry) as rare weekly treats only.</li>
+            <li><b>Safe Options:</b> Unscented, dust-free virgin paper bedding (Kaytee Clean &amp; Cozy, Carefresh), kiln-dried aspen shavings, or washable anti-pill fleece liners with absorbent u-haul pads underneath.</li>
+            <li><b>Dangerous Options:</b> Pine &amp; Cedar wood shavings emit volatile aromatic phenols that cause chronic respiratory disease and liver damage.</li>
+            <li><b>Avoid Cotton Fluff:</b> Synthetic nesting wool entangles tiny toes and causes fatal digestive blockages if swallowed.</li>
           </ul>
         </div>
 
-        <div class="care-feature-box">
-          <div class="care-feature-icon">💧</div>
-          <h3>Fresh Water &amp; Lab Pellets</h3>
-          <p>Feed uniform extruded pellets rather than muesli seed mixes to prevent selective feeding:</p>
+        <div class="env-card">
+          <div class="env-card-icon">🌡️</div>
+          <h3>Climate &amp; Ambient Temperature</h3>
+          <p>
+            Small animals have fragile thermoregulation and cannot handle temperature extremes:
+          </p>
           <ul>
-            <li>Provide clean water daily via heavy ceramic bowls or ball-bearing water bottles.</li>
-            <li>Clean water bottles weekly to eliminate bacteria buildup.</li>
-            <li>Avoid muesli mixes containing dyed sugary corn or sunflower seeds.</li>
+            <li><b>Chinchillas:</b> 60°F–68°F (15°C–20°C). Humidity &lt; 50%. Over 72°F (22°C) is dangerous; over 75°F (24°C) is lethal. AC is non-negotiable.</li>
+            <li><b>Hedgehogs:</b> 72°F–78°F (22°C–26°C) strictly 24/7. Requires a 100W ceramic heat emitter (no light) on a digital thermostat. Below 70°F triggers fatal pseudo-hibernation.</li>
+            <li><b>Rodents &amp; Ferrets:</b> 65°F–75°F (18°C–24°C). Keep enclosures away from drafty windows, air vents, and direct sunlight.</li>
           </ul>
+        </div>
+
+        <div class="env-card">
+          <div class="env-card-icon">🎡</div>
+          <h3>Enrichment &amp; Mental Hygiene</h3>
+          <p>
+            Small pets possess active minds that require physical stimulation and dental exercise:
+          </p>
+          <ul>
+            <li><b>Solid Running Wheels:</b> Never use wire-mesh wheels which cause bumblefoot and broken limbs. Syrians need 10–12", Dwarfs 8", hedgehogs 11–12".</li>
+            <li><b>Safe Chew Woods:</b> Apple wood sticks, kiln-dried willow, and untreated hazel branches prevent overgrown incisors.</li>
+            <li><b>Dust Baths:</b> Chinchillas need 2–3 weekly pumice dust baths to absorb fur oils without wetting skin.</li>
+            <li><b>Foraging Toys:</b> Hide treats inside cardboard egg cartons or toilet paper tubes to stimulate natural foraging instincts.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Living Environment Tabs & Deep Dive -->
+      <div class="env-tabs-box">
+        <nav class="env-tab-nav" aria-label="Environment details">
+          <button class="env-tab-btn active" data-env-tab="safety">Substrate Safety Matrix</button>
+          <button class="env-tab-btn" data-env-tab="schedule">Sanitation &amp; Cleaning Schedule</button>
+          <button class="env-tab-btn" data-env-tab="proofing">Free-Roam Proofing Checklist</button>
+        </nav>
+
+        <div class="env-tab-panel active" id="env-safety">
+          <div class="safety-columns-grid">
+            <div class="safety-col safe">
+              <h4>✅ Recommended &amp; Safe Substrates</h4>
+              <ul>
+                <li><b>Dust-Extracted Paper Bedding:</b> Soft, ultra-absorbent, hypoallergenic, and ideal for burrow holding.</li>
+                <li><b>Kiln-Dried Aspen:</b> The only wood shaving safe for rodents; free from harmful toxic phenols.</li>
+                <li><b>Washable Fleece Liners:</b> Cost-effective and dust-free for Guinea Pigs and Rats when paired with absorbent cotton pads.</li>
+                <li><b>Sterilized Chinchilla Sand/Dust:</b> Essential for voluntary dust baths; keeps coats silky and clean.</li>
+              </ul>
+            </div>
+
+            <div class="safety-col danger">
+              <h4>❌ Dangerous &amp; Hazardous Substrates</h4>
+              <ul>
+                <li><b>Cedar &amp; Pine Shavings:</b> Phenols destroy lung tissue and inflame eyes; never use in any pet habitat.</li>
+                <li><b>Scented / Perfumed Beddings:</b> Chemical fragrances irritate sensitive rodent nasal passages and trigger chronic sneezing.</li>
+                <li><b>Fluffy Cotton / Synthetic Nesting Wool:</b> Fibers do not digest; tight threads wrap around toes causing limb loss.</li>
+                <li><b>Clay / Clumping Cat Litter:</b> Swallowed bentonite expands in stomach causing fatal impaction.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="env-tab-panel" id="env-schedule">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
+            <div style="background: #fafbf9; border: 1px solid #e2eae1; border-radius: 14px; padding: 18px;">
+              <h4 style="margin: 0 0 8px; color: var(--sp-accent);">Daily Spot Cleaning (5 mins)</h4>
+              <p style="font-size: 0.86rem; color: #55665c; line-height: 1.6; margin: 0;">
+                Remove uneaten fresh vegetables after 4–6 hours to prevent spoilage and fruit flies. Scoop out soiled corner bedding or swap soiled fleece pee pads. Wash and refill water bottles with cool fresh water. Wipe down running wheel surfaces.
+              </p>
+            </div>
+            <div style="background: #fafbf9; border: 1px solid #e2eae1; border-radius: 14px; padding: 18px;">
+              <h4 style="margin: 0 0 8px; color: var(--sp-accent);">Weekly Deep Refresh (20 mins)</h4>
+              <p style="font-size: 0.86rem; color: #55665c; line-height: 1.6; margin: 0;">
+                For Guinea pigs and rats: completely wash fleece liners and sanitize litter pans. For hamsters &amp; gerbils: spot clean heavily soiled burrows while preserving 2/3 of clean bedding so familiar scent markers remain intact, reducing stress.
+              </p>
+            </div>
+            <div style="background: #fafbf9; border: 1px solid #e2eae1; border-radius: 14px; padding: 18px;">
+              <h4 style="margin: 0 0 8px; color: var(--sp-accent);">Monthly Full Disinfection (40 mins)</h4>
+              <p style="font-size: 0.86rem; color: #55665c; line-height: 1.6; margin: 0;">
+                Wash entire cage base and accessories with a pet-safe 50/50 water and white vinegar solution or veterinary disinfectant (F10SC). Rinse thoroughly and dry completely before re-bedding. Inspect wooden chews and discard worn, splintered items.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="env-tab-panel" id="env-proofing">
+          <div style="background: #fdfefe; border: 1px solid #e0e9df; border-radius: 14px; padding: 20px;">
+            <h4 style="margin: 0 0 10px; color: var(--ink);">Supervised Out-of-Cage Room Proofing</h4>
+            <p style="font-size: 0.88rem; color: #55665c; line-height: 1.65; margin: 0 0 14px;">
+              Rats, ferrets, and guinea pigs love floor exploration time! Before opening the cage doors, ensure the play zone is secured:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; font-size: 0.84rem; color: #4e5f54;">
+              <div>🔌 <b>Tuck Electrical Cords:</b> Rodents chew wires instantly. Use hard split-tubing or elevate cables out of reach.</div>
+              <div>🚪 <b>Block Gaps Under Doors:</b> Ferrets and mice squeeze through openings as narrow as 1 inch. Block baseboards.</div>
+              <div>🪴 <b>Remove Toxic Plants:</b> Keep lilies, pothos, philodendron, and aloe plants completely off the floor.</div>
+              <div>🛋️ <b>Recliner Safety:</b> Check mechanical sofas and recliner footrests before operating; ferrets love burrowing inside cushions!</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         8. DOS & DON'TS
+         8. SMALL PET CARE FAQ ACCORDION
          ======================================================== -->
-    <section class="section-wrap" id="dos-and-donts">
+    <section class="section section-wrap" id="small-pet-faq">
       <div class="section-title-wrap">
-        <div class="eyebrow" style="color: var(--green);">Best Practices</div>
-        <h2>Small Pet Care <em>Do's &amp; Don'ts</em></h2>
-        <p>Keep these fundamental guidelines at hand to ensure your pocket pet thrives.</p>
+        <div class="eyebrow">Knowledge Center</div>
+        <h2>Frequently Asked <em>Small Pet Questions</em></h2>
+        <p>
+          Expert answers to common queries regarding small animal cohabitation, nutrition, health warning signs, and gentle handling.
+        </p>
       </div>
 
-      <div class="dos-donts-grid">
-        <div class="guideline-card dos">
-          <h3><span style="color: #16a34a;">✔</span> Care Do's</h3>
-          <ul>
-            <li><b>DO provide deep bedding</b> for hamsters and gerbils so they can satisfy their innate burrowing instincts.</li>
-            <li><b>DO adopt guinea pigs and rats in pairs</b>; solitude causes severe distress in social species.</li>
-            <li><b>DO weigh your small pet weekly</b> on a gram kitchen scale; weight loss is the earliest indicator of illness.</li>
-            <li><b>DO offer safe chew toys</b> made of untreated apple wood, willow balls, or seagrass twists to keep incisors trimmed.</li>
-            <li><b>DO locate an exotic veterinarian</b> who specializes in pocket pets before bringing your pet home.</li>
-          </ul>
+      <div class="small-pet-faq-list">
+        <div class="small-pet-faq-item open">
+          <button class="faq-question" aria-expanded="true">
+            <span>Can hamsters live together in the same cage?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <b>No.</b> Syrian hamsters (<em>Mesocricetus auratus</em>) are strictly solitary in adulthood. If two Syrian hamsters are kept in the same enclosure, they will fight fiercely, frequently resulting in fatal injuries. Dwarf hamsters can occasionally cohabitate if raised together from birth in expansive setups, but solitary housing remains the safest, zero-stress choice for all pet hamsters.
+            </p>
+          </div>
         </div>
 
-        <div class="guideline-card donts">
-          <h3><span style="color: #dc2626;">✖</span> Care Don'ts</h3>
-          <ul>
-            <li><b>DON'T use exercise balls (plastic hamsters balls)</b>; they offer poor ventilation, disorient pets, and cause stress.</li>
-            <li><b>DON'T house Syrian hamsters together</b>; they will fight territorially, often with fatal consequences.</li>
-            <li><b>DON'T use scented bedding or pine/cedar</b>; aromatic oils irritate delicate rodent respiratory tracts.</li>
-            <li><b>DON'T bathe chinchillas in water</b>; water ruins their dense coat and leads to fungal rot. Use dust baths only.</li>
-            <li><b>DON'T house guinea pigs with rabbits</b>; rabbits can carry Bordetella bacteria and may injure guinea pigs with strong kicks.</li>
-          </ul>
+        <div class="small-pet-faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Why do Guinea Pigs need supplemental Vitamin C?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Like humans and fruit bats, guinea pigs lack the L-gulonolactone oxidase enzyme necessary to synthesize ascorbic acid (Vitamin C) internally. Without daily dietary Vitamin C (10–30 mg daily from fresh bell peppers, high-C leafy greens, or stabilized supplements), guinea pigs develop scurvy, leading to swollen joints, loose teeth, lethargy, and immune system collapse.
+            </p>
+          </div>
+        </div>
+
+        <div class="small-pet-faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Why should you NEVER give a Chinchilla a water bath?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Chinchillas have the densest fur of any land mammal (around 60 to 80 hairs per follicle). When submerged in water, their thick undercoat traps moisture against the skin and takes days to dry. This creates an ideal breeding ground for lethal fungal infections (ringworm) and hypothermia. Instead, chinchillas bathe in fine volcanic pumice dust 2–3 times a week to safely absorb oils and dirt.
+            </p>
+          </div>
+        </div>
+
+        <div class="small-pet-faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Are ferrets rodents? What should they eat?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <b>No, ferrets are not rodents.</b> They are mustelids (the weasel family) and are strict obligate carnivores. Their short digestive tract requires high-quality animal protein (36–40%) and animal fat (20%) with virtually zero fiber or carbohydrates. Never feed ferrets fruits, grains, or sugary treats; high-carbohydrate diets are a leading cause of insulinoma (pancreatic tumors) in pet ferrets.
+            </p>
+          </div>
+        </div>
+
+        <div class="small-pet-faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do you hold a hedgehog without getting poked?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              When uncertain, a hedgehog erects its thousands of keratin quills and rolls into a tight ball. Never grasp a curled hedgehog tightly from above. Instead, gently scoop under their un-quilled, soft furry belly with two cupped hands. Speak softly and place a fleece blanket on your lap. As the hedgehog smells your familiar scent and feels your body heat, they will gradually relax their quills flat against their back and begin exploring.
+            </p>
+          </div>
+        </div>
+
+        <div class="small-pet-faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What are the earliest warning signs of illness in small pets?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Because small pets are prey species in the wild, their instinct is to hide weakness until illness is advanced. Crucial early warning signs include: sudden decrease in appetite or water consumption, reduced fecal output or changes in pellet shape, breathing with an audible clicking/wheezing sound, crusty eyes or nasal discharge, hunched posture in cage corners, sudden weight loss (weigh weekly with a kitchen gram scale!), or dull, puffed-up fur. Consult an exotic veterinarian promptly if symptoms appear.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         9. COMPANION PAGES NAVIGATION
+         10. NAVIGATION TO OTHER PET PAGES
          ======================================================== -->
-    <section class="section-wrap" id="companion-nav">
-      <div class="back-nav-strip">
-        <div>
-          <h3>Explore More Pet Guides on PetSathi</h3>
-          <p>Dive into other specialized species guides or return to the main hub.</p>
-        </div>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <a class="button button-small" href="index.html">← Other Pets Hub</a>
-          <a class="button button-small button-outline" href="fish.html">Aquarium Fish Guide 🐠</a>
-          <a class="button button-small button-outline" href="reptiles.html">Reptiles Guide 🦎</a>
-          <a class="button button-small button-outline" href="general-care.html">General Pet Care 🩺</a>
+    <section class="section section-wrap" id="other-pets">
+      <div class="section-title-wrap">
+        <div class="eyebrow">Explore More Animals</div>
+        <h2>Discover Other <em>Pet Companions</em></h2>
+        <p>PetSathi is dedicated to loving, knowledgeable pet care across every furry, feathered, and aquatic companion.</p>
+      </div>
+
+      <div class="other-pets-grid">
+        <article class="other-pet-card">
+          <div class="other-pet-icon">🐕</div>
+          <h3>Dogs</h3>
+          <p>Explore canine breeds, nutrition, daily exercise routines, grooming, and walking tips.</p>
+          <a class="other-pet-link" href="../dogs/index.html">Explore Dogs ↗</a>
+        </article>
+
+        <article class="other-pet-card">
+          <div class="other-pet-icon">🐈</div>
+          <h3>Cats</h3>
+          <p>Learn about cat breeds, indoor enrichment, scratching behavior, grooming, and feline wellness.</p>
+          <a class="other-pet-link" href="../cats/index.html">Explore Cats ↗</a>
+        </article>
+
+        <article class="other-pet-card">
+          <div class="other-pet-icon">🐦</div>
+          <h3>Birds</h3>
+          <p>Discover companion bird species, cage requirements, avian nutrition, and daily care.</p>
+          <a class="other-pet-link" href="../birds/index.html">Explore Birds ↗</a>
+        </article>
+
+        <article class="other-pet-card">
+          <div class="other-pet-icon">🐇</div>
+          <h3>Rabbits</h3>
+          <p>Find rabbit care guides, hay nutrition, bunny-proofing tips, and gentle handling techniques.</p>
+          <a class="other-pet-link" href="../rabbits/index.html">Explore Rabbits ↗</a>
+        </article>
+
+        <article class="other-pet-card">
+          <div class="other-pet-icon">🐠</div>
+          <h3>Aquarium Fish</h3>
+          <p>Explore freshwater fish species, tank cycling, water parameters, and community setups.</p>
+          <a class="other-pet-link" href="fish.html">Explore Fish ↗</a>
+        </article>
+      </div>
+
+      <div style="text-align: center; margin-top: 28px;">
+        <a class="button button-outline" href="../index.html">Browse All Pet Categories ↗</a>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         11. CALL TO ACTION BAND
+         ======================================================== -->
+    <section class="small-pets-cta-band">
+      <div>
+        <div class="eyebrow" style="color: #a8dfbc;">Growing With Care</div>
+        <h2>Building a Better World for <em>Every Pet</em></h2>
+        <p>
+          Whether your companion has four tiny paws, feathers, or fins, PetSathi is here to provide verified care advice, loving community support, and dependable care services.
+        </p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a class="button button-light" href="../../../../index.html">Back to Home ↗</a>
+          <a class="button button-outline" href="../../services/guidance.html" style="color: white; border-color: rgba(255,255,255,0.4);">Explore Care Guidance ↗</a>
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- ========================================================
-       10. PETSATHI FOOTER
+       12. SITE FOOTER
        ======================================================== -->
   <footer class="footer">
-    <div class="section-wrap footer-grid">
-      <div>
-        <a class="brand" href="../../../../index.html">
-          🐾 Pet<span>Sathi</span>
-        </a>
-        <p>Your pet's trusted companion. Making pet care easier, one paw, fin, and scale at a time.</p>
-      </div>
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
 
-      <div>
-        <b>Explore Pets</b>
-        <a href="../dogs/index.html">🐕 Dogs</a>
-        <a href="../cats/index.html">🐈 Cats</a>
-        <a href="../birds/index.html">🐦 Birds</a>
-        <a href="../rabbits/index.html">🐇 Rabbits</a>
-        <a href="index.html">🐾 Other Pets</a>
-      </div>
-
-      <div>
-        <b>PetSathi</b>
-        <a href="../../about.html">About Us</a>
-        <a href="../../services/index.html">Services</a>
-        <a href="../../walker/index.html">Find a Walker</a>
-        <a href="../../auth/login.html">Log in</a>
-        <a href="../../auth/register.html">Register</a>
-      </div>
-
-      <div>
-        <b>Open Source</b>
-        <a href="https://github.com/ankitkr104/PetSathi" target="_blank" rel="noreferrer">GitHub Repository</a>
-        <span>NSoC Winter Edition</span>
-      </div>
-    </div>
-
-    <div class="section-wrap footer-bottom">
-      <span>© <span id="year"></span> PetSathi · NSoC Winter Edition</span>
-      <span style="text-align: center;">Made with ♥ for all pets &amp; animal lovers</span>
-      <span style="text-align: right;">तुमच्या Pet चा विश्वासू साथी! 🐾</span>
-    </div>
-  </footer>
-
+  <!-- Core Scripts -->
   <script src="../../../js/main.js"></script>
+
+  <!-- Small Pets Interactive Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    /**
+     * PetSathi - Small Pets Interactive Guide Script
+     * Features:
+     * - Real-time species search & multi-category filtering
+     * - Interactive Comparison Matrix with category filters
+     * - Suitable Living Environment interactive checklist / tabs
+     * - Collapsible FAQ Accordion with accessible attributes
+     * - Robust SVG Image Fallback generator to prevent broken images
+     */
+    document.addEventListener("DOMContentLoaded", () => {
+      initSearchAndFilter();
+      initComparisonFilter();
+      initFaqAccordion();
+      initEnvironmentTabs();
+      initImageFallbacks();
     });
+
+    /* ========================================================
+       1. SPECIES SEARCH & CATEGORY FILTERING
+       ======================================================== */
+    function initSearchAndFilter() {
+      const searchInput = document.getElementById("small-pets-search");
+      const clearBtn = document.getElementById("clear-small-pets-search");
+      const filterBtns = document.querySelectorAll(".pet-filter-pill");
+      const petCards = document.querySelectorAll(".small-pet-card");
+      const countBadge = document.getElementById("visible-pet-count");
+      const noResultsMsg = document.getElementById("no-pets-found");
+
+      let currentCategory = "all";
+      let currentSearch = "";
+
+      function applyFilters() {
+        let visibleCount = 0;
+
+        petCards.forEach((card) => {
+          const name = (card.dataset.name || "").toLowerCase();
+          const tags = (card.dataset.tags || "").toLowerCase();
+          const temperament = (card.dataset.temperament || "").toLowerCase();
+          const categories = (card.dataset.category || "").toLowerCase().split(" ");
+          const textContent = card.textContent.toLowerCase();
+
+          const matchesSearch =
+            !currentSearch ||
+            name.includes(currentSearch) ||
+            tags.includes(currentSearch) ||
+            temperament.includes(currentSearch) ||
+            textContent.includes(currentSearch);
+
+          const matchesCategory =
+            currentCategory === "all" || categories.includes(currentCategory);
+
+          if (matchesSearch && matchesCategory) {
+            card.style.display = "";
+            visibleCount++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        if (countBadge) {
+          countBadge.textContent = visibleCount;
+        }
+
+        if (noResultsMsg) {
+          noResultsMsg.style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        if (clearBtn) {
+          clearBtn.style.display = currentSearch ? "block" : "none";
+        }
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          currentSearch = e.target.value.trim().toLowerCase();
+          applyFilters();
+        });
+      }
+
+      if (clearBtn) {
+        clearBtn.addEventListener("click", () => {
+          if (searchInput) {
+            searchInput.value = "";
+            currentSearch = "";
+            searchInput.focus();
+            applyFilters();
+          }
+        });
+      }
+
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentCategory = btn.dataset.filter || "all";
+          applyFilters();
+        });
+      });
+    }
+
+    /* ========================================================
+       2. COMPARISON MATRIX FILTER
+       ======================================================== */
+    function initComparisonFilter() {
+      const compFilterBtns = document.querySelectorAll(".comp-filter-btn");
+      const tableRows = document.querySelectorAll(".comparison-table tbody tr");
+
+      if (!compFilterBtns.length || !tableRows.length) return;
+
+      compFilterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          compFilterBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filter = btn.dataset.compFilter || "all";
+
+          tableRows.forEach((row) => {
+            const rowCategory = row.dataset.category || "";
+            if (filter === "all" || rowCategory.includes(filter)) {
+              row.style.display = "";
+            } else {
+              row.style.display = "none";
+            }
+          });
+        });
+      });
+    }
+
+    /* ========================================================
+       3. LIVING ENVIRONMENT TABS
+       ======================================================== */
+    function initEnvironmentTabs() {
+      const envTabs = document.querySelectorAll(".env-tab-btn");
+      const envPanels = document.querySelectorAll(".env-tab-panel");
+
+      if (!envTabs.length || !envPanels.length) return;
+
+      envTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const targetId = tab.dataset.envTab;
+
+          envTabs.forEach((t) => t.classList.remove("active"));
+          envPanels.forEach((p) => p.classList.remove("active"));
+
+          tab.classList.add("active");
+          const targetPanel = document.getElementById(`env-${targetId}`);
+          if (targetPanel) {
+            targetPanel.classList.add("active");
+          }
+        });
+      });
+    }
+
+    /* ========================================================
+       5. ACCORDION FAQ
+       ======================================================== */
+    function initFaqAccordion() {
+      const faqItems = document.querySelectorAll(".small-pet-faq-item");
+
+      faqItems.forEach((item) => {
+        const questionBtn = item.querySelector(".faq-question");
+        const answer = item.querySelector(".faq-answer");
+
+        if (questionBtn && answer) {
+          questionBtn.addEventListener("click", () => {
+            const isOpen = item.classList.contains("open");
+
+            faqItems.forEach((other) => {
+              if (other !== item) {
+                other.classList.remove("open");
+                const otherBtn = other.querySelector(".faq-question");
+                if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+              }
+            });
+
+            if (isOpen) {
+              item.classList.remove("open");
+              questionBtn.setAttribute("aria-expanded", "false");
+            } else {
+              item.classList.add("open");
+              questionBtn.setAttribute("aria-expanded", "true");
+            }
+          });
+        }
+      });
+    }
+
+    /* ========================================================
+       6. ROBUST SVG IMAGE FALLBACK GENERATOR
+       ======================================================== */
+    function initImageFallbacks() {
+      const images = document.querySelectorAll(".small-pet-img, .env-visual-img, .pet-card-image");
+
+      const petEmojis = {
+        hamster: "🐹",
+        guinea: "🐾",
+        mouse: "🐭",
+        rat: "🐀",
+        gerbil: "🐾",
+        ferret: "🦡",
+        chinchilla: "🐰",
+        hedgehog: "🦔"
+      };
+
+      images.forEach((img) => {
+        img.addEventListener("error", () => {
+          const parent = img.parentElement;
+          if (parent) {
+            parent.classList.add("has-fallback-pattern");
+          }
+
+          const altText = img.getAttribute("alt") || "Small Pet Companion";
+          const altLower = altText.toLowerCase();
+
+          let matchedEmoji = "🐾";
+          for (const [key, emoji] of Object.entries(petEmojis)) {
+            if (altLower.includes(key)) {
+              matchedEmoji = emoji;
+              break;
+            }
+          }
+
+          const svgPlaceholder = `data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22500%22%20viewBox%3D%220%200%20800%20500%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bgGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23286849%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231d5039%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23bgGrad)%22%2F%3E%3Ccircle%20cx%3D%22400%22%20cy%3D%22210%22%20r%3D%2280%22%20fill%3D%22rgba(255%2C255%2C255%2C0.12)%22%2F%3E%3Ctext%20x%3D%22400%22%20y%3D%22230%22%20font-size%3D%2268%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%3E${encodeURIComponent(
+            matchedEmoji
+          )}%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22330%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-weight%3D%22bold%22%20font-size%3D%2222%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%3E${encodeURIComponent(
+            altText.substring(0, 36)
+          )}%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22370%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2215%22%20text-anchor%3D%22middle%22%20fill%3D%22%23cce0d4%22%3EPetSathi%20Small%20Pets%20Guide%3C%2Ftext%3E%3C%2Fsvg%3E`;
+
+          img.src = svgPlaceholder;
+        });
+      });
+    }
   </script>
 </body>
+
 </html>

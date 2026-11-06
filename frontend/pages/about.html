@@ -1,11 +1,621 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>A little more love for every paw | PetSathi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/global.css"><link rel="stylesheet" href="../css/inner.css"></head><body>
-<header class="site-header"><a class="brand" href="../../index.html"><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a><button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-<nav class="main-nav"><a href="../../index.html">Home</a><a href="pets/index.html">Explore Pets</a><a href="services/index.html">Services</a><a href="walker/index.html">Find a Walker</a><a href="about.html">About Us</a><a href="auth/login.html">Log in</a><a class="button button-small" href="auth/register.html">Get Started ↗</a></nav></header>
-<main><section class="page-hero"><div class="eyebrow">PetSathi • ABOUT PETSATHI</div><div class="page-emoji">💚</div><h1>A little more love for every paw</h1><p>PetSathi is an open-source pet care and walking platform created to bring pet owners and walking companions closer. Our goal is to make pet care information and services easier to discover.</p><a class="button" href="../../index.html">Back to Home ↗</a></section>
-<section class="section-wrap inner-grid"><article class="info-card"><div class="info-emoji">Our Vision</div><h2>🌱</h2><p>Build a friendly, accessible platform that supports responsible pet care.</p></article>
-<article class="info-card"><div class="info-emoji">Our Community</div><h2>🤝</h2><p>Bring pet owners, walkers, designers, and developers together.</p></article>
-<article class="info-card"><div class="info-emoji">Our Mission</div><h2>🐾</h2><p>Make everyday pet care simpler, one happy paw at a time.</p></article></section><section class="inner-cta"><h2>More happy moments are on the way.</h2><p>PetSathi is growing one feature at a time. Some services are planned for future development.</p></section></main>
-<footer class="footer"><div class="section-wrap footer-bottom"><span>© PetSathi · NSoC Winter Edition</span><span>तुमच्या Pet चा विश्वासू साथी! 🐾</span></div></footer><script src="../js/main.js"></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover PetSathi — an open-source pet care and pet-walking platform created during NSoC 2026. Explore our vision, mission, and how we empower pet owners and walking companions.">
+  <title>About Us | Vision, Mission & Community | PetSathi</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       Site Header & Navigation
+       ====================================================================== -->
+  <header class="site-header">
+  <a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../index.html">Home</a>
+    <div class="nav-item"><a href="pets/index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="pets/dogs/index.html">Dogs</a><a href="pets/cats/index.html">Cats</a><a href="pets/birds/index.html">Birds</a><a href="pets/rabbits/index.html">Rabbits</a><a href="pets/other/fish.html">Aquarium Fish</a><a href="pets/other/reptiles.html">Reptiles</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="services/dog-walking.html">Dog Walking</a><a href="services/cat-care.html">Cat Care</a><a href="services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="walker/dogs.html">Search Walkers</a><a href="walker/cats.html">Walker Profiles</a><a href="walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="about.html">About Us</a><a href="auth/login.html">Log in</a><a class="button button-small" href="auth/register.html">Get Started</a>
+  </nav>
+</header>
+
+  <!-- ======================================================================
+       Main Content
+       ====================================================================== -->
+  <main>
+
+    <!-- 1. HERO SECTION -->
+    <section class="about-hero section-wrap">
+      <div class="about-hero-copy">
+        <div class="hero-pill-tag">
+          <span>🐾</span> ABOUT PETSATHI • NSoC '26
+        </div>
+        <h1>Empowering every paw with <em>love, companionship & care.</em></h1>
+        <p class="about-hero-lead">
+          PetSathi was born from a simple yet powerful belief: our pets are beloved family. We are building an open-source platform that connects pet owners with trusted walking companions while making essential pet care guidance simple, joyful, and accessible to everyone.
+        </p>
+        <div class="hero-badges-row">
+          <span class="badge-item"><span>💚</span> 100% Open Source</span>
+          <span class="badge-item"><span>🐕</span> Multi-Pet Support</span>
+          <span class="badge-item"><span>🤝</span> Community Driven</span>
+        </div>
+        <div class="about-hero-actions">
+          <a class="button" href="#mission-vision">Our Mission & Vision ▾</a>
+          <a class="button button-outline" href="#how-it-helps">How PetSathi Helps ↗</a>
+        </div>
+      </div>
+
+      <div class="about-hero-visual">
+        <div class="about-hero-blob"></div>
+        <div class="about-hero-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=85" alt="Two happy dogs running in nature" class="about-hero-photo">
+          <div class="floating-badge badge-top">
+            <div class="floating-icon">🌱</div>
+            <div class="floating-text">
+              <b>NSoC Winter Edition</b>
+              <small>Open-source initiative</small>
+            </div>
+          </div>
+          <div class="floating-badge badge-bottom">
+            <div class="floating-icon">🐾</div>
+            <div class="floating-text">
+              <b>Happy Walks & Tails</b>
+              <small>Because they're family</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TRUST / CATEGORY RIBBON -->
+    <section class="trust-strip">
+      <span>ONE CARING ECOSYSTEM FOR EVERY COMPANION</span>
+      <div class="trust-items">
+        <span>🐕 Dogs</span>
+        <span>🐈 Cats</span>
+        <span>🐦 Birds</span>
+        <span>🐇 Rabbits</span>
+        <span>🐠 Aquarium Fish</span>
+        <span>🐾 Every Little Friend</span>
+      </div>
+    </section>
+
+    <!-- 3. OUR STORY & PURPOSE SECTION -->
+    <section class="story-section section-wrap" id="our-story">
+      <div class="story-grid">
+        <div class="story-content">
+          <div class="eyebrow">OUR STORY & PURPOSE</div>
+          <h2>Building a trusted <em>digital साथी (companion)</em> for every pet.</h2>
+          <p>
+            In today's fast-paced world, pet parents often face a difficult challenge: balancing long workdays, daily responsibilities, and unpredictable schedules with the critical need to ensure their pets get regular outdoor exercise, mental stimulation, and compassionate care.
+          </p>
+          <p>
+            <strong>PetSathi</strong> was founded as part of <strong>Nexus Spring of Code (NSoC) 2026 – Winter Edition</strong> to bridge this gap. The word <em>"Sathi"</em> means friend and companion. Our goal is to create an open, community-powered bridge between caring pet parents and dedicated walking companions right in their local neighborhoods.
+          </p>
+          <p>
+            More than just a walking service, PetSathi is a holistic knowledge and care platform—offering structured guidance on nutrition, exercise routines, behavioral cues, and wellness tips tailored to different species.
+          </p>
+          <div class="story-quote">
+            “We envision a world where no pet is left longing for a walk, and no owner feels overwhelmed by the responsibilities of daily care.”
+          </div>
+        </div>
+
+        <div class="story-visual-box">
+          <div class="story-image-card">
+            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=85" alt="Pet parent hugging happy dog">
+            <div class="story-card-overlay">
+              <h4>Rooted in Compassion</h4>
+              <p>Designed with unconditional love for all pets and the people who care for them.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Purpose Cards -->
+      <div class="purpose-cards">
+        <article class="purpose-card">
+          <div class="card-icon">🎯</div>
+          <h3>The Challenge</h3>
+          <p>Pet owners struggle with limited free time, irregular walking hours, lack of trusted local walkers, and scattered care advice across disparate websites.</p>
+        </article>
+        <article class="purpose-card">
+          <div class="card-icon">💡</div>
+          <h3>Our Solution</h3>
+          <p>A unified, open platform providing verified walker discovery, effortless booking requests, structured pet wellness profiles, and dedicated species care guides.</p>
+        </article>
+        <article class="purpose-card">
+          <div class="card-icon">🌟</div>
+          <h3>The Philosophy</h3>
+          <p>Open-source, community-first, and transparent. We develop tools with zero corporate clutter—centering purely on animal happiness and community safety.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. VISION, MISSION & VALUES SECTION -->
+    <section class="vision-mission-section" id="mission-vision">
+      <div class="section-wrap">
+        <div class="section-heading centered">
+          <div>
+            <div class="eyebrow">GUIDING PRINCIPLES</div>
+            <h2>Driven by purpose, <em>inspired by paws.</em></h2>
+          </div>
+        </div>
+
+        <div class="vm-cards-grid">
+          <!-- Vision Card -->
+          <article class="vm-card vision">
+            <div class="vm-header">
+              <div class="vm-icon-bubble">🌱</div>
+              <h3>Our Vision</h3>
+            </div>
+            <div class="tagline">A world where every companion pet thrives with attentive care.</div>
+            <p>
+              To cultivate an open, universally accessible ecosystem where every animal—from high-energy dogs and cozy indoor cats to gentle rabbits and chirping birds—receives timely exercise, affectionate companionship, and knowledgeable care, regardless of how demanding their owner's daily schedule might be.
+            </p>
+            <ul class="vm-highlights">
+              <li>Foster loving communities where pets never feel lonely or confined.</li>
+              <li>Promote ethical, responsible pet parenting through open technology.</li>
+              <li>Set a benchmark for transparent, reliable neighborhood pet walking.</li>
+            </ul>
+          </article>
+
+          <!-- Mission Card -->
+          <article class="vm-card mission">
+            <div class="vm-header">
+              <div class="vm-icon-bubble">🐾</div>
+              <h3>Our Mission</h3>
+            </div>
+            <div class="tagline">Simplify everyday pet care through thoughtful technology.</div>
+            <p>
+              To eliminate the stress of pet care by providing a user-friendly platform for finding verified local walkers, maintaining comprehensive digital pet profiles, and discovering expert-backed health and dietary guidance—one happy walk and wagging tail at a time.
+            </p>
+            <ul class="vm-highlights">
+              <li>Connect pet owners with passionate, trustworthy walking companions.</li>
+              <li>Provide verified, free care knowledge across multiple pet species.</li>
+              <li>Support open-source students and contributors during NSoC 2026.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Core Values -->
+        <div class="values-container">
+          <div class="values-title">
+            <h3>Our Core Values</h3>
+            <p>The heartfelt commitments that guide every feature we build.</p>
+          </div>
+          <div class="values-grid">
+            <div class="value-card">
+              <span class="value-icon">🐶</span>
+              <h4>Pet Well-being First</h4>
+              <p>Every decision prioritizes the safety, comfort, and emotional joy of our animal friends.</p>
+            </div>
+            <div class="value-card">
+              <span class="value-icon">🤝</span>
+              <h4>Unwavering Trust</h4>
+              <p>Transparent walker profiles, open community reviews, and verified information.</p>
+            </div>
+            <div class="value-card">
+              <span class="value-icon">📖</span>
+              <h4>Accessible Knowledge</h4>
+              <p>Free, comprehensive breed guides and care tips so every pet parent can make informed choices.</p>
+            </div>
+            <div class="value-card">
+              <span class="value-icon">🌍</span>
+              <h4>Open Collaboration</h4>
+              <p>Built with pride by the open-source community during NSoC Winter Edition 2026.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HOW PETSATHI HELPS PET OWNERS -->
+    <section class="how-helps-section section-wrap" id="how-it-helps">
+      <div class="section-heading centered">
+        <div>
+          <div class="eyebrow">HOW PETSATHI HELPS</div>
+          <h2>Thoughtful support for <em>every member of the family.</em></h2>
+        </div>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="tabs-navigation" role="tablist">
+        <button class="tab-btn active" role="tab" aria-selected="true" data-tab="owners">
+          <span>🏠</span> For Pet Owners
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="walkers">
+          <span>🚶</span> For Pet Walkers
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-tab="community">
+          <span>💻</span> For Contributors
+        </button>
+      </div>
+
+      <!-- Tab Content: Pet Owners -->
+      <div class="tab-panel active" id="panel-owners" role="tabpanel">
+        <div class="help-grid">
+          <div class="help-card">
+            <div class="help-card-icon">🚶‍♂️</div>
+            <div class="help-card-content">
+              <h4>Trusted Local Walkers</h4>
+              <p>Find vetted neighborhood companions who understand your pet's temperament, pacing, and exercise requirements for safe, invigorating strolls.</p>
+            </div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-icon">📋</div>
+            <div class="help-card-content">
+              <h4>Comprehensive Pet Profiles</h4>
+              <p>Keep medical records, vaccination dates, dietary guidelines, and behavioral quirks organized in one easily accessible digital profile.</p>
+            </div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-icon">📚</div>
+            <div class="help-card-content">
+              <h4>Multi-Species Care Guides</h4>
+              <p>Access curated knowledge covering nutrition, grooming, habit training, and wellness advice for dogs, cats, birds, rabbits, and aquarium fish.</p>
+            </div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-icon">💚</div>
+            <div class="help-card-content">
+              <h4>Complete Peace of Mind</h4>
+              <p>Relax knowing your companion is enjoying healthy exercise, social interactions, and fresh air while you manage busy work commitments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content: Pet Walkers -->
+      <div class="tab-panel" id="panel-walkers" role="tabpanel">
+        <div class="help-grid">
+          <div class="help-card">
+            <div class="help-card-icon">🐕</div>
+            <div class="help-card-content">
+              <h4>Turn Animal Love into Purpose</h4>
+              <p>Spend time with playful pets in your area and offer compassionate walking and sitting support to busy pet families who need a helping hand.</p>
+            </div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-icon">📍</div>
+            <div class="help-card-content">
+              <h4>Set Your Neighborhood & Hours</h4>
+              <p>Choose the localities you wish to serve, specify your animal preferences, and customize your availability around your existing schedule.</p>
+            </div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-icon">📅</div>
+            <div class="help-card-content">
+              <h4>Simple Booking Coordination</h4>
+              <p>Receive organized walk requests with clear pet notes, walking duration, and owner instructions with zero complicated middlemen.</p>
+            </div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-icon">⭐</div>
+            <div class="help-card-content">
+              <h4>Build a Trusted Reputation</h4>
+              <p>Earn verified reviews from grateful pet parents to establish yourself as the top walking companion in your local community.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content: Contributors -->
+      <div class="tab-panel" id="panel-community" role="tabpanel">
+        <div class="help-grid">
+          <div class="help-card">
+            <div class="help-card-icon">🚀</div>
+            <div class="help-card-content">
+              <h4>NSoC 2026 Collaboration</h4>
+              <p>An official project under Nexus Spring of Code Winter Edition, welcoming students, budding designers, and developers to build meaningful open-source software.</p>
+            </div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-icon">🛠️</div>
+            <div class="help-card-content">
+              <h4>Modern Tech Stack</h4>
+              <p>Gain hands-on experience working with clean HTML5, CSS3, Vanilla JavaScript, PHP, and MySQL in a structured, modular repository.</p>
+            </div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-icon">💡</div>
+            <div class="help-card-content">
+              <h4>Feature Innovation</h4>
+              <p>Propose new ideas, optimize user interfaces, design helpful pet calculators, or improve accessibility for pet parents worldwide.</p>
+            </div>
+          </div>
+          <div class="help-card">
+            <div class="help-card-icon">🤝</div>
+            <div class="help-card-content">
+              <h4>Mentorship & Growth</h4>
+              <p>Learn best practices in Git version control, collaborative code reviews, responsive web design, and open-source documentation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. KEY PLATFORM FEATURES SECTION -->
+    <section class="features-section" id="platform-features">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">WHAT WE OFFER</div>
+            <h2>Key platform features built for <em>happy pets.</em></h2>
+          </div>
+          <p>Everything you need to care for, understand, and coordinate outdoor adventures for your companion.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <article class="feature-item-card">
+            <div class="feature-top">
+              <div class="feature-icon-circle">🐕</div>
+              <span class="feature-tag">Care Hub</span>
+            </div>
+            <h3>Multispecies Pet Guides</h3>
+            <p>Comprehensive encyclopedias with breed traits, exercise needs, feeding schedules, and grooming guides across five distinct pet categories.</p>
+            <a class="feature-link" href="pets/index.html">Explore Pet Hub ↗</a>
+          </article>
+
+          <!-- Feature 2 -->
+          <article class="feature-item-card">
+            <div class="feature-top">
+              <div class="feature-icon-circle">🚶‍♀️</div>
+              <span class="feature-tag">Connect</span>
+            </div>
+            <h3>Smart Walker Discovery</h3>
+            <p>Search and filter caregivers by pet type, neighbourhood coverage, pricing, and availability to find the ideal match for your companion.</p>
+            <a class="feature-link" href="walker/index.html">Find a Walker ↗</a>
+          </article>
+
+          <!-- Feature 3 -->
+          <article class="feature-item-card">
+            <div class="feature-top">
+              <div class="feature-icon-circle">📝</div>
+              <span class="feature-tag">Profiles</span>
+            </div>
+            <h3>Digital Pet Wellness Profiles</h3>
+            <p>Keep track of emergency contacts, preferred walking routes, medication timings, and socialization notes in one centralized place.</p>
+            <a class="feature-link" href="auth/register.html">Create a Profile ↗</a>
+          </article>
+
+          <!-- Feature 4 -->
+          <article class="feature-item-card">
+            <div class="feature-top">
+              <div class="feature-icon-circle">🗓️</div>
+              <span class="feature-tag">Scheduling</span>
+            </div>
+            <h3>Walk Booking & Requests</h3>
+            <p>Streamlined request workflows that let you schedule morning, afternoon, or weekend walking sessions with prompt confirmations.</p>
+            <a class="feature-link" href="services/dog-walking.html">Walking Services ↗</a>
+          </article>
+
+          <!-- Feature 5 -->
+          <article class="feature-item-card">
+            <div class="feature-top">
+              <div class="feature-icon-circle">💡</div>
+              <span class="feature-tag">Guidance</span>
+            </div>
+            <h3>Expert Pet Guidance</h3>
+            <p>Helpful advice on first-time pet parenting, leash training, seasonal heat precautions, and recognizing early health symptoms.</p>
+            <a class="feature-link" href="services/guidance.html">Read Guidance ↗</a>
+          </article>
+
+          <!-- Feature 6 -->
+          <article class="feature-item-card">
+            <div class="feature-top">
+              <div class="feature-icon-circle">🛡️</div>
+              <span class="feature-tag">Community</span>
+            </div>
+            <h3>Verified Reviews & Safety</h3>
+            <p>Transparent community feedback, clear code of conduct, and moderation guidelines ensuring a safe environment for all animal lovers.</p>
+            <a class="feature-link" href="services/pet-care.html">Safety & Care ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. IMPACT & BY THE NUMBERS -->
+    <section class="stats-section">
+      <div class="section-wrap">
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="5">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <div class="stat-label">Pet Species Supported</div>
+            <div class="stat-subtext">Dogs, cats, birds, rabbits & fish</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="100">0</span>
+              <span class="stat-suffix">%</span>
+            </div>
+            <div class="stat-label">Open Source & Free</div>
+            <div class="stat-subtext">Community-driven under NSoC '26</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="24">0</span>
+              <span class="stat-suffix">/7</span>
+            </div>
+            <div class="stat-label">Accessible Care Knowledge</div>
+            <div class="stat-subtext">Always open for pet parents</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="1">0</span>
+              <span class="stat-suffix"> Shared Goal</span>
+            </div>
+            <div class="stat-label">Every Paw Deserves Joy</div>
+            <div class="stat-subtext">Love & companionship for all</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. PET COMMUNITY GALLERY -->
+    <section class="gallery-section section-wrap">
+      <div class="section-heading centered">
+        <div>
+          <div class="eyebrow">OUR FRIENDS</div>
+          <h2>A few of the <em>faces we celebrate.</em></h2>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=85" alt="Friendly Dog">
+          <div class="gallery-caption">🐕 Loyal Companions • Dogs</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=700&q=85" alt="Curious Cat">
+          <div class="gallery-caption">🐈 Curious Paws • Cats</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=700&q=85" alt="Bright Bird">
+          <div class="gallery-caption">🐦 Cheerful Wings • Birds</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=700&q=85" alt="Gentle Rabbit">
+          <div class="gallery-caption">🐇 Gentle Noses • Rabbits</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FREQUENTLY ASKED QUESTIONS (FAQ) -->
+    <section class="faq-section" id="faq">
+      <div class="section-wrap">
+        <div class="section-heading centered">
+          <div>
+            <div class="eyebrow">GOT QUESTIONS?</div>
+            <h2>Frequently asked <em>questions.</em></h2>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item active">
+            <button class="faq-question" aria-expanded="true">
+              <span>What is PetSathi and how did the project start?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                PetSathi is an open-source pet care and pet-walking initiative developed as part of <strong>Nexus Spring of Code (NSoC) 2026 – Winter Edition</strong>. It was created to bring pet owners, local walking companions, and animal care information together on a single welcoming platform.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Is PetSathi free to use?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes! Exploring pet care information, browsing species guides, learning about dog walking, and creating pet profiles are completely free. As an open-source initiative, PetSathi is built for community benefit.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Which pet categories are supported on PetSathi?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                PetSathi currently features dedicated content and guidance for dogs, cats, birds, rabbits, and aquarium fish. As the platform evolves, additional pet categories and specialized care sections will be introduced.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How can I offer my services as a pet walker?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                You can sign up on our registration page, specify your pet experience, walking areas, and availability. Pet parents in your neighborhood will then be able to view your profile and send walking requests.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How can developers and designers contribute to PetSathi?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Because PetSathi is an open-source project hosted on GitHub, contributors can check the issue tracker, fork the repository, pick up frontend/backend tasks, improve design, and submit pull requests following our contribution guidelines.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CALL TO ACTION (CTA) SECTION -->
+    <section class="cta-banner section-wrap">
+      <div class="cta-content">
+        <div class="eyebrow">JOIN THE PETSATHI FAMILY</div>
+        <h2>Ready to give your pet <em>a happier, healthier journey?</em></h2>
+        <p>
+          Whether you're looking for trusted walking companions, exploring breed care guides, or wanting to contribute as an open-source developer, PetSathi welcomes you with open paws.
+        </p>
+      </div>
+      <div class="cta-buttons">
+        <a class="button button-light" href="auth/register.html">Get Started Free ↗</a>
+        <a class="button button-outline" href="pets/index.html">Explore Pet Hub 🐾</a>
+        <div class="cta-subnote">No subscriptions · Free & open-source</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       Site Footer
+       ====================================================================== -->
+  <footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../index.html#home">Home</a><a href="pets/index.html">Explore Pets</a><a href="services/index.html">Services</a><a href="walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/about.js"></script>
+</body>
+</html>

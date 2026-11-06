@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Search PetSathi for pet breeds, care guides, nutrition, behaviour, walking and helpful information for your companion.">
+
+  <title>Search Results | PetSathi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/inner.css">
+  <link rel="stylesheet" href="../css/search-results.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="search-page">
+
+  <!-- Navigation -->
+  <header class="site-header">
+  <a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../index.html">Home</a>
+    <div class="nav-item"><a href="pets/index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="pets/dogs/index.html">Dogs</a><a href="pets/cats/index.html">Cats</a><a href="pets/birds/index.html">Birds</a><a href="pets/rabbits/index.html">Rabbits</a><a href="pets/other/fish.html">Aquarium Fish</a><a href="pets/other/reptiles.html">Reptiles</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="services/dog-walking.html">Dog Walking</a><a href="services/cat-care.html">Cat Care</a><a href="services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="walker/dogs.html">Search Walkers</a><a href="walker/cats.html">Walker Profiles</a><a href="walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="about.html">About Us</a><a href="auth/login.html">Log in</a><a class="button button-small" href="auth/register.html">Get Started</a>
+  </nav>
+</header>
+
+  <main>
+
+    <!-- Search Hero -->
+    <section class="search-hero">
+      <div class="search-shell">
+
+        <div class="search-breadcrumb">
+          <a href="../../index.html">Home</a>
+          <span>›</span>
+          <span>Search Results</span>
+        </div>
+
+        <div class="search-hero-content">
+
+          <div class="search-eyebrow">
+            <span>🐾</span>
+            PETSATHI DISCOVERY
+          </div>
+
+          <h1 id="results-heading">
+            Find the right guide for your pet.
+          </h1>
+
+          <p class="search-hero-description">
+            From choosing a breed to everyday care, discover helpful
+            information for every kind of companion.
+          </p>
+
+          <!-- Search Form -->
+          <form class="search-form" id="search-form" role="search">
+
+            <span class="search-icon" aria-hidden="true">⌕</span>
+
+            <label class="visually-hidden" for="search-input">
+              Search pet guides
+            </label>
+
+            <input
+              type="search"
+              id="search-input"
+              name="q"
+              placeholder="Try searching for dog breeds, cat care, bird food..."
+              autocomplete="off"
+              aria-label="Search pet guides"
+            >
+
+            <button
+              type="button"
+              class="search-clear"
+              id="clear-search"
+              aria-label="Clear search"
+              title="Clear search"
+            >
+              ×
+            </button>
+
+            <button type="submit" class="search-submit">
+              Search <span>→</span>
+            </button>
+
+          </form>
+
+          <div class="search-suggestions">
+            <span>Popular searches:</span>
+            <button type="button" data-suggestion="dog breeds">Dog breeds</button>
+            <button type="button" data-suggestion="cat care">Cat care</button>
+            <button type="button" data-suggestion="rabbit nutrition">Rabbit nutrition</button>
+          </div>
+
+        </div>
+
+        <div class="search-hero-decoration" aria-hidden="true">
+          <span class="decoration-paw paw-one">🐾</span>
+          <span class="decoration-paw paw-two">🐾</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Search Results -->
+    <section class="search-results-section">
+
+      <div class="search-shell">
+
+        <!-- Category Filters -->
+        <div class="filter-section">
+
+          <div class="filter-heading">
+            <div>
+              <span class="filter-eyebrow">EXPLORE BY CATEGORY</span>
+              <h2>What are you looking for?</h2>
+            </div>
+
+            <a href="pets/index.html" class="browse-all-link">
+              Browse all pets <span>↗</span>
+            </a>
+          </div>
+
+          <div class="category-filters" role="group" aria-label="Filter by pet category">
+
+            <button class="category-filter is-active" type="button" data-category="all" aria-pressed="true">
+              <span>✦</span> All Results
+            </button>
+
+            <button class="category-filter" type="button" data-category="dogs" aria-pressed="false">
+              <span>🐕</span> Dogs
+            </button>
+
+            <button class="category-filter" type="button" data-category="cats" aria-pressed="false">
+              <span>🐈</span> Cats
+            </button>
+
+            <button class="category-filter" type="button" data-category="birds" aria-pressed="false">
+              <span>🐦</span> Birds
+            </button>
+
+            <button class="category-filter" type="button" data-category="rabbits" aria-pressed="false">
+              <span>🐇</span> Rabbits
+            </button>
+
+            <button class="category-filter" type="button" data-category="other" aria-pressed="false">
+              <span>🐠</span> Other Pets
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Results Toolbar -->
+        <div class="results-toolbar">
+
+          <div class="results-information">
+            <h2>Discover something helpful</h2>
+            <p id="results-count" aria-live="polite">
+              Showing all pet guides
+            </p>
+          </div>
+
+          <div class="sort-wrapper">
+            <label for="sort-select">Sort by</label>
+
+            <select id="sort-select" aria-label="Sort search results">
+              <option value="relevance">Recommended</option>
+              <option value="az">Name: A to Z</option>
+              <option value="za">Name: Z to A</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Results Grid -->
+        <div class="search-results-grid" id="results-grid">
+
+          <!-- DOG RESULTS -->
+
+          <article
+            class="search-result-card"
+            data-category="dogs"
+            data-order="1"
+            data-search="dog dogs dog breeds puppy golden retriever labrador german shepherd breed selection companion"
+          >
+            <a class="result-image-link" href="pets/dogs/breeds.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=85"
+                  alt="Golden retriever sitting outdoors"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐕 Dogs</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>BREED GUIDE</span>
+                <span>01</span>
+              </div>
+
+              <h3><a href="pets/dogs/breeds.html">Popular Dog Breeds</a></h3>
+
+              <p>
+                Explore different dog breeds, their personalities,
+                characteristics and suitability for your lifestyle.
+              </p>
+
+              <a class="result-link" href="pets/dogs/breeds.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="search-result-card"
+            data-category="dogs"
+            data-order="2"
+            data-search="dog dogs dog care puppy grooming health hygiene vaccination wellness daily care"
+          >
+            <a class="result-image-link" href="pets/dogs/care.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=900&q=85"
+                  alt="Happy pet dog looking at the camera"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐕 Dogs</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>CARE & HEALTH</span>
+                <span>02</span>
+              </div>
+
+              <h3><a href="pets/dogs/care.html">Dog Care Essentials</a></h3>
+
+              <p>
+                Learn about grooming, hygiene, health check-ups and
+                everyday habits that support your dog's well-being.
+              </p>
+
+              <a class="result-link" href="pets/dogs/care.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="search-result-card"
+            data-category="dogs"
+            data-order="3"
+            data-search="dog dogs walking exercise outdoor physical activity fitness daily walk"
+          >
+            <a class="result-image-link" href="pets/dogs/walking.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=900&q=85"
+                  alt="Dog enjoying time outdoors"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐕 Dogs</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>EXERCISE</span>
+                <span>03</span>
+              </div>
+
+              <h3><a href="pets/dogs/walking.html">Dog Walking & Exercise</a></h3>
+
+              <p>
+                Discover walking routines, physical activities and
+                exercise ideas to keep your furry friend active.
+              </p>
+
+              <a class="result-link" href="pets/dogs/walking.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="search-result-card"
+            data-category="dogs"
+            data-order="4"
+            data-search="dog dogs walker walking pet walking service dog walker services"
+          >
+            <a class="result-image-link" href="walker/dogs.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=900&q=85"
+                  alt="Dog spending time outdoors"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐕 Dogs</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>WALKER SERVICE</span>
+                <span>04</span>
+              </div>
+
+              <h3><a href="walker/dogs.html">Find a Dog Walker</a></h3>
+
+              <p>
+                Explore dog-walking support and discover the walker
+                section for your canine companion.
+              </p>
+
+              <a class="result-link" href="walker/dogs.html">
+                Explore service <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- CAT RESULTS -->
+
+          <article
+            class="search-result-card"
+            data-category="cats"
+            data-order="5"
+            data-search="cat cats kitten breeds persian siamese maine coon companion breed guide"
+          >
+            <a class="result-image-link" href="pets/cats/breeds.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=85"
+                  alt="Cat looking towards the camera"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐈 Cats</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>BREED GUIDE</span>
+                <span>05</span>
+              </div>
+
+              <h3><a href="pets/cats/breeds.html">Explore Cat Breeds</a></h3>
+
+              <p>
+                Get to know popular cat breeds, their characteristics,
+                temperaments and unique needs.
+              </p>
+
+              <a class="result-link" href="pets/cats/breeds.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="search-result-card"
+            data-category="cats"
+            data-order="6"
+            data-search="cat cats kitten care health grooming hygiene food daily wellness"
+          >
+            <a class="result-image-link" href="pets/cats/care.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=85"
+                  alt="Cat resting comfortably"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐈 Cats</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>CARE & HEALTH</span>
+                <span>06</span>
+              </div>
+
+              <h3><a href="pets/cats/care.html">Everyday Cat Care</a></h3>
+
+              <p>
+                Understand your cat's daily care needs, grooming,
+                health and hygiene routines.
+              </p>
+
+              <a class="result-link" href="pets/cats/care.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- BIRD RESULTS -->
+
+          <article
+            class="search-result-card"
+            data-category="birds"
+            data-order="7"
+            data-search="bird birds species parrot budgie cockatiel finch pet bird types"
+          >
+            <a class="result-image-link" href="pets/birds/species.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=85"
+                  alt="Colourful bird perched on a branch"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐦 Birds</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>SPECIES GUIDE</span>
+                <span>07</span>
+              </div>
+
+              <h3><a href="pets/birds/species.html">Discover Bird Species</a></h3>
+
+              <p>
+                Explore different pet bird species and learn about
+                their appearances, behaviour and characteristics.
+              </p>
+
+              <a class="result-link" href="pets/birds/species.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="search-result-card"
+            data-category="birds"
+            data-order="8"
+            data-search="bird birds care health hygiene feather grooming wellness nutrition"
+          >
+            <a class="result-image-link" href="pets/birds/care.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1555169062-013468b47731?auto=format&fit=crop&w=900&q=85"
+                  alt="Small colourful bird in its natural environment"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐦 Birds</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>CARE & HEALTH</span>
+                <span>08</span>
+              </div>
+
+              <h3><a href="pets/birds/care.html">Bird Care & Health</a></h3>
+
+              <p>
+                Learn about bird nutrition, cage hygiene, feather care
+                and important health practices.
+              </p>
+
+              <a class="result-link" href="pets/birds/care.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- RABBIT RESULTS -->
+
+          <article
+            class="search-result-card"
+            data-category="rabbits"
+            data-order="9"
+            data-search="rabbit rabbits bunny breeds holland lop lionhead mini rex dutch rabbit"
+          >
+            <a class="result-image-link" href="pets/rabbits/breeds.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=900&q=85"
+                  alt="Rabbit sitting on grass"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐇 Rabbits</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>BREED GUIDE</span>
+                <span>09</span>
+              </div>
+
+              <h3><a href="pets/rabbits/breeds.html">Rabbit Breeds Guide</a></h3>
+
+              <p>
+                Discover different rabbit breeds, their personalities,
+                physical traits and care requirements.
+              </p>
+
+              <a class="result-link" href="pets/rabbits/breeds.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="search-result-card"
+            data-category="rabbits"
+            data-order="10"
+            data-search="rabbit rabbits bunny food nutrition diet hay vegetables feeding health"
+          >
+            <a class="result-image-link" href="pets/rabbits/nutrition.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1535241749838-299277b6305f?auto=format&fit=crop&w=900&q=85"
+                  alt="Rabbit enjoying fresh green vegetables"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐇 Rabbits</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>FOOD & NUTRITION</span>
+                <span>10</span>
+              </div>
+
+              <h3><a href="pets/rabbits/nutrition.html">Rabbit Food & Nutrition</a></h3>
+
+              <p>
+                Understand rabbit dietary needs, feeding routines,
+                hay, vegetables and balanced nutrition.
+              </p>
+
+              <a class="result-link" href="pets/rabbits/nutrition.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- OTHER PET RESULTS -->
+
+          <article
+            class="search-result-card"
+            data-category="other"
+            data-order="11"
+            data-search="fish fishes aquarium goldfish tropical fish water tank aquatic pets"
+          >
+            <a class="result-image-link" href="pets/other/fish.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=900&q=85"
+                  alt="Colourful fish swimming underwater"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐠 Other Pets</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>AQUATIC PETS</span>
+                <span>11</span>
+              </div>
+
+              <h3><a href="pets/other/fish.html">Aquarium Fish Guide</a></h3>
+
+              <p>
+                Explore aquarium fish and understand their habitats,
+                tank conditions and everyday care.
+              </p>
+
+              <a class="result-link" href="pets/other/fish.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="search-result-card"
+            data-category="other"
+            data-order="12"
+            data-search="reptile reptiles turtle tortoise lizard gecko exotic pets habitat care"
+          >
+            <a class="result-image-link" href="pets/other/reptiles.html" tabindex="-1" aria-hidden="true">
+              <div class="result-image">
+                <img
+                  class="search-card-image"
+                  src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&fit=crop&w=900&q=85"
+                  alt="Reptile in its habitat"
+                  loading="lazy"
+                >
+                <span class="result-badge">🐢 Other Pets</span>
+              </div>
+            </a>
+
+            <div class="result-card-body">
+              <div class="result-card-meta">
+                <span>REPTILE CARE</span>
+                <span>12</span>
+              </div>
+
+              <h3><a href="pets/other/reptiles.html">Reptile Care Guide</a></h3>
+
+              <p>
+                Discover basic habitat, temperature, feeding and
+                responsible care information for pet reptiles.
+              </p>
+
+              <a class="result-link" href="pets/other/reptiles.html">
+                Explore guide <span>→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- No Results State -->
+        <div class="no-results" id="no-results" hidden>
+
+          <div class="no-results-illustration">
+            <span>🐾</span>
+            <span>🔍</span>
+          </div>
+
+          <span class="no-results-eyebrow">NOTHING FOUND THIS TIME</span>
+
+          <h2>No results found</h2>
+
+          <p>
+            We couldn't find a guide matching your search.
+            Try another keyword or explore a different pet category.
+          </p>
+
+          <button type="button" class="button" id="reset-search">
+            Clear filters and explore <span>→</span>
+          </button>
+
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="search-bottom-cta">
+          <div class="search-cta-icon">💚</div>
+
+          <div class="search-cta-copy">
+            <h3>Still exploring?</h3>
+            <p>
+              Discover all the animals and helpful information
+              available on PetSathi.
+            </p>
+          </div>
+
+          <a href="pets/index.html" class="button button-outline">
+            Explore all pets ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../index.html#home">Home</a><a href="pets/index.html">Explore Pets</a><a href="services/index.html">Services</a><a href="walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/search-results.js"></script>
+
+</body>
+</html>

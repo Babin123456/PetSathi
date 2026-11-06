@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PetSathi FAQ & Help Center. Find answers to common questions about pet care, dog walking, finding caregivers, owner guidelines, and platform accounts.">
+  <title>FAQ &amp; Help Center | PetSathi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core PetSathi Stylesheets -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/faq.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+  <!-- ========================================================
+       1. PETSATHI HEADER & NAVIGATION
+       ======================================================== -->
+  <header class="site-header">
+  <a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../index.html">Home</a>
+    <div class="nav-item"><a href="pets/index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="pets/dogs/index.html">Dogs</a><a href="pets/cats/index.html">Cats</a><a href="pets/birds/index.html">Birds</a><a href="pets/rabbits/index.html">Rabbits</a><a href="pets/other/fish.html">Aquarium Fish</a><a href="pets/other/reptiles.html">Reptiles</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="services/dog-walking.html">Dog Walking</a><a href="services/cat-care.html">Cat Care</a><a href="services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="walker/dogs.html">Search Walkers</a><a href="walker/cats.html">Walker Profiles</a><a href="walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="about.html">About Us</a><a href="auth/login.html">Log in</a><a class="button button-small" href="auth/register.html">Get Started</a>
+  </nav>
+</header>
+
+  <!-- ========================================================
+       2. BREADCRUMBS
+       ======================================================== -->
+  <nav class="faq-breadcrumb" aria-label="Breadcrumb">
+    <a href="../../index.html">Home</a>
+    <span class="separator">/</span>
+    <span class="current">FAQ &amp; Help Center</span>
+  </nav>
+
+  <main>
+    <!-- ========================================================
+         3. FAQ HERO SECTION
+         ======================================================== -->
+    <section class="faq-hero">
+      <div class="faq-hero-inner">
+        <div class="eyebrow">🐾 PETSATHI • HELP CENTER &amp; FAQ</div>
+        <h1>How Can We Help <em>You &amp; Your Pet?</em></h1>
+        <p class="hero-subtitle">
+          Have questions about finding a trusted walking companion, species care guides, or managing your PetSathi account? Browse our categorized answers or search below for instant help.
+        </p>
+
+        <!-- Live Search Bar -->
+        <div class="faq-search-wrapper">
+          <form class="faq-search-bar" id="faq-search-form" role="search" aria-label="Search FAQs">
+            <span class="faq-search-icon" aria-hidden="true">🔍</span>
+            <input
+              type="search"
+              class="faq-search-input"
+              id="faq-search"
+              placeholder="Search by keywords (e.g. dog walking, diet, safety, account)..."
+              autocomplete="off"
+            >
+            <button type="button" class="faq-search-clear" id="faq-search-clear" aria-label="Clear search input">✕</button>
+            <button type="submit" class="faq-search-btn">Search</button>
+          </form>
+        </div>
+
+        <!-- Quick Filter Pills -->
+        <div class="faq-category-pills" role="tablist" aria-label="FAQ Categories">
+          <button class="faq-pill active" type="button" data-category="all">
+            All Questions <span class="pill-count">25</span>
+          </button>
+          <button class="faq-pill" type="button" data-category="general">
+            General <span class="pill-count">5</span>
+          </button>
+          <button class="faq-pill" type="button" data-category="pet-care">
+            Pet Care <span class="pill-count">5</span>
+          </button>
+          <button class="faq-pill" type="button" data-category="pet-walking">
+            Pet Walking <span class="pill-count">5</span>
+          </button>
+          <button class="faq-pill" type="button" data-category="pet-owners">
+            Pet Owners <span class="pill-count">5</span>
+          </button>
+          <button class="faq-pill" type="button" data-category="account">
+            Account &amp; Platform <span class="pill-count">5</span>
+          </button>
+        </div>
+
+        <!-- Support row link -->
+        <div class="faq-hero-support-row">
+          <span>Can't find the answer you're looking for?</span>
+          <a href="#contact">Contact Our Support Team ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. STATUS BAR & ACCORDION CONTROLS
+         ======================================================== -->
+    <div class="faq-status-bar">
+      <div class="faq-status-text" id="faq-matches-count">
+        Showing all <em>25</em> frequently asked questions
+      </div>
+      <div class="faq-accordion-controls">
+        <button class="faq-toggle-all-btn" id="faq-toggle-all" type="button">
+          Expand All ↓
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         5. FAQ MAIN CATEGORIES & QUESTIONS
+         ======================================================== -->
+    <div class="faq-main-content">
+      <!-- Empty Search Result State -->
+      <div class="faq-no-results" id="faq-no-results">
+        <div class="faq-no-results-emoji">🐾🔍</div>
+        <h3>No Matching Questions Found</h3>
+        <p>We couldn't find any questions matching your keywords. Try checking for typos or searching for broader terms.</p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <button class="button button-small" id="faq-reset-search" type="button">Reset Search</button>
+          <a class="button button-small button-outline" href="#contact">Contact Support</a>
+        </div>
+      </div>
+
+      <!-- CATEGORY 1: GENERAL QUESTIONS -->
+      <section class="faq-category-block" id="category-general" data-category="general">
+        <div class="faq-category-header">
+          <div class="faq-category-icon">🌱</div>
+          <div class="faq-category-title-wrap">
+            <h2>General Questions</h2>
+            <p>Fundamental information about PetSathi's mission, community, and open-source platform.</p>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <!-- Q1 -->
+          <article class="faq-item" id="faq-general-1" data-keywords="what is petsathi platform purpose mission free">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-general-1">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q1</span>
+                <span class="faq-question-text">What is PetSathi and how does it help pet lovers?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-general-1">
+              <div class="faq-answer-content">
+                <p>
+                  <b>PetSathi</b> is a community-driven, open-source platform created to bring pet owners, passionate walking companions, and animal lovers together. Our goal is to make verified pet husbandry information accessible and connect owners with trusted local caregivers.
+                </p>
+                <p>
+                  Whether you are seeking daily exercise for an energetic dog, specialized care guidance for a feline, or setting up a tranquil tropical aquarium, PetSathi provides an all-in-one trusted companion space.
+                </p>
+                <div class="faq-answer-tip">
+                  💡 <b>Tip:</b> Visit our <a href="about.html">About Us page</a> to learn more about our founding vision and open-source milestones.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q2 -->
+          <article class="faq-item" id="faq-general-2" data-keywords="cost pricing free payment subscription fees">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-general-2">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q2</span>
+                <span class="faq-question-text">Is PetSathi free to use for pet owners?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-general-2">
+              <div class="faq-answer-content">
+                <p>
+                  <b>Yes!</b> Browsing all educational care guides, breed encyclopedias, nutrition benchmarks, and community resources on PetSathi is 100% free with no paywalls or subscription fees.
+                </p>
+                <p>
+                  When connecting with local independent walking companions or booking hands-on services, any walking rates are transparently arranged directly with verified caregivers without hidden platform commission markups.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q3 -->
+          <article class="faq-item" id="faq-general-3" data-keywords="supported pets animals species dogs cats birds rabbits fish">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-general-3">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q3</span>
+                <span class="faq-question-text">Which animal companions are supported on PetSathi?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-general-3">
+              <div class="faq-answer-content">
+                <p>PetSathi provides dedicated guides and companionship services for a wide variety of household pets:</p>
+                <ul>
+                  <li><b>Dogs (🐕):</b> Breed temperaments, daily walking routines, leash training, and canine nutrition.</li>
+                  <li><b>Cats (🐈):</b> Indoor environmental enrichment, scratch post setups, and feline wellness.</li>
+                  <li><b>Birds (🐦):</b> Aviary housing, cage safety, diet diversity, and vocalization insights.</li>
+                  <li><b>Rabbits (🐇):</b> Bunny-proofing, high-fiber hay diets, and gentle handling techniques.</li>
+                  <li><b>Aquarium Fish &amp; Others (🐠):</b> Freshwater species profiles, tank water chemistry, and cycling.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q4 -->
+          <article class="faq-item" id="faq-general-4" data-keywords="open source github contribute nsoc winter edition">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-general-4">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q4</span>
+                <span class="faq-question-text">How can I contribute to PetSathi's open-source development?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-general-4">
+              <div class="faq-answer-content">
+                <p>
+                  PetSathi is actively built during the <b>NSoC Winter Edition</b>. We warmly welcome contributions from developers, designers, content writers, and pet care specialists!
+                </p>
+                <p>
+                  You can explore our source code, pick up open feature requests, report bugs, or submit pull requests directly on our <a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noreferrer">GitHub Repository</a>. Please read our repository <code>CONTRIBUTING.md</code> for setup instructions.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q5 -->
+          <article class="faq-item" id="faq-general-5" data-keywords="cities locations availability coverage regional india">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-general-5">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q5</span>
+                <span class="faq-question-text">Where is PetSathi currently available?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-general-5">
+              <div class="faq-answer-content">
+                <p>
+                  All our online pet care guides, wellness articles, and community tools are accessible globally. Walker and caregiver directories are currently expanding across tier-1 and tier-2 urban areas across India as part of our phased rollout.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CATEGORY 2: PET CARE -->
+      <section class="faq-category-block" id="category-pet-care" data-category="pet-care">
+        <div class="faq-category-header">
+          <div class="faq-category-icon">🩺</div>
+          <div class="faq-category-title-wrap">
+            <h2>Pet Care &amp; Health</h2>
+            <p>Reliable guidance on nutrition, veterinary care, preventative wellness, and daily husbandry.</p>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <!-- Q6 -->
+          <article class="faq-item" id="faq-care-1" data-keywords="nutrition food diet feeding dog cat rabbit pellets hay">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-care-1">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q6</span>
+                <span class="faq-question-text">Where can I find feeding and nutrition advice for my pet?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-care-1">
+              <div class="faq-answer-content">
+                <p>
+                  We have dedicated nutrition manuals for each animal category under our <a href="pets/index.html">Explore Pets</a> hub. For instance:
+                </p>
+                <ul>
+                  <li><b>Dogs:</b> Protein balance, portion sizing, and toxic foods to avoid (such as chocolate, xylitol, and onions).</li>
+                  <li><b>Cats:</b> Moisture-rich wet food importance, taurine requirements, and hydration fountains.</li>
+                  <li><b>Rabbits:</b> 80%+ diet consisting of fresh Timothy or Meadow hay with dark leafy greens.</li>
+                  <li><b>Fish:</b> High-grade micro-pellets and flakes balanced to prevent overfeeding and water pollution.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q7 -->
+          <article class="faq-item" id="faq-care-2" data-keywords="emergency medical sick veterinarian poisoning illness">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-care-2">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q7</span>
+                <span class="faq-question-text">What should I do if my pet has a medical emergency?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-care-2">
+              <div class="faq-answer-content">
+                <p>
+                  <b>Please contact an emergency veterinary hospital immediately!</b> While PetSathi provides preventative guidance and wellness education, online platforms cannot replace emergency clinical examination.
+                </p>
+                <div class="faq-answer-tip">
+                  🚨 <b>Red Flag Signs:</b> Difficulty breathing, pale gums, inability to stand, sudden seizures, repeated vomiting, or acute abdominal bloating require urgent emergency hospital transport without delay.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q8 -->
+          <article class="faq-item" id="faq-care-3" data-keywords="vet visits frequency checkup vaccines deworming preventive">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-care-3">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q8</span>
+                <span class="faq-question-text">How often should I take my companion pet to the veterinarian?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-care-3">
+              <div class="faq-answer-content">
+                <p>
+                  As a standard veterinary recommendation:
+                </p>
+                <ul>
+                  <li><b>Puppies &amp; Kittens:</b> Monthly checkups between 8 to 16 weeks for core immunization series and deworming.</li>
+                  <li><b>Adult Pets (1–7 Years):</b> At least one comprehensive annual physical wellness exam.</li>
+                  <li><b>Senior Pets (7+ Years):</b> Bi-annual (every 6 months) checkups with blood chemistry panels to catch arthritis or organ changes early.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q9 -->
+          <article class="faq-item" id="faq-care-4" data-keywords="aquarium fish tank water cycle ammonia nitrogen test">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-care-4">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q9</span>
+                <span class="faq-question-text">What is the most crucial step when setting up an aquarium?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-care-4">
+              <div class="faq-answer-content">
+                <p>
+                  Establishing the <b>Nitrogen Cycle</b> before adding any fish is the single most critical factor in fish health. Beneficial bacteria must colonize your biological filter media to convert toxic Ammonia into Nitrite, and then into less toxic Nitrate.
+                </p>
+                <p>
+                  Check out our dedicated <a href="pets/other/fish.html">Aquarium Fish Care Guide</a> for tank volume charts, water parameters, and compatible community fish species.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q10 -->
+          <article class="faq-item" id="faq-care-5" data-keywords="enrichment indoor bored exercise toys mental stimulation">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-care-5">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q10</span>
+                <span class="faq-question-text">How do I keep indoor pets active and prevent boredom?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-care-5">
+              <div class="faq-answer-content">
+                <p>
+                  Mental stimulation is just as vital as physical exertion. Rotate toys weekly to maintain novelty, use lick mats or puzzle feeders for meals, practice 5-minute positive reinforcement trick sessions daily, and provide vertical climbing territories for indoor cats.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CATEGORY 3: PET WALKING -->
+      <section class="faq-category-block" id="category-pet-walking" data-category="pet-walking">
+        <div class="faq-category-header">
+          <div class="faq-category-icon">🚶</div>
+          <div class="faq-category-title-wrap">
+            <h2>Pet Walking Services</h2>
+            <p>Everything you need to know about finding walkers, safety protocols, and daily exercise routines.</p>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <!-- Q11 -->
+          <article class="faq-item" id="faq-walking-1" data-keywords="how walking works book connect search companions">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-walking-1">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q11</span>
+                <span class="faq-question-text">How does finding a pet walker work on PetSathi?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-walking-1">
+              <div class="faq-answer-content">
+                <p>Finding a walking companion on PetSathi is designed to be simple and transparent:</p>
+                <ol>
+                  <li>Navigate to our <a href="walker/index.html">Find a Walker</a> section and choose your pet category (Dogs, Cats, Birds, or Rabbits).</li>
+                  <li>Review caregiver profiles, experience, neighborhood service radius, and past pet parent testimonials.</li>
+                  <li>Connect with your chosen walker to schedule an initial meet-and-greet session before finalizing walk schedules.</li>
+                </ol>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q12 -->
+          <article class="faq-item" id="faq-walking-2" data-keywords="vetting walker verification safety background check">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-walking-2">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q12</span>
+                <span class="faq-question-text">How are walkers and caregivers vetted for reliability and safety?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-walking-2">
+              <div class="faq-answer-content">
+                <p>
+                  Safety and trust are at the core of PetSathi. Registered caregivers undergo identity verification, canine body-language assessment, and reference reviews. Furthermore, our community review system allows pet owners to leave genuine ratings after completed walks.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q13 -->
+          <article class="faq-item" id="faq-walking-3" data-keywords="weather rain heat storm summer monsoon cancel reschedule">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-walking-3">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q13</span>
+                <span class="faq-question-text">What happens if the weather is too hot or stormy during a scheduled walk?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-walking-3">
+              <div class="faq-answer-content">
+                <p>
+                  The safety of the animal always comes first. During high-heat weather (when asphalt temperatures can burn sensitive paw pads) or heavy monsoon downpours, walks can be rescheduled to cooler evening hours or substituted with indoor enrichment, gentle play, and relief breaks.
+                </p>
+                <div class="faq-answer-tip">
+                  🐾 <b>7-Second Rule:</b> Place the back of your hand on the asphalt for 7 seconds. If it's too hot for your skin, it's too hot for your pet's paws!
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q14 -->
+          <article class="faq-item" id="faq-walking-4" data-keywords="recurring daily weekly schedule regular walker">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-walking-4">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q14</span>
+                <span class="faq-question-text">Can I arrange daily or weekly recurring walks?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-walking-4">
+              <div class="faq-answer-content">
+                <p>
+                  <b>Yes!</b> Consistent routines are especially beneficial for dogs. You can partner with a designated regular companion for Monday–Friday morning and evening walks, or schedule flexible weekend adventure hikes.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q15 -->
+          <article class="faq-item" id="faq-walking-5" data-keywords="updates photos tracking notifications communication during walk">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-walking-5">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q15</span>
+                <span class="faq-question-text">Do caregivers provide updates and photos during the walk?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-walking-5">
+              <div class="faq-answer-content">
+                <p>
+                  Caregivers are encouraged to send photo updates, water break confirmations, and walk summaries so you have complete peace of mind while at work or traveling.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CATEGORY 4: PET OWNERS -->
+      <section class="faq-category-block" id="category-pet-owners" data-category="pet-owners">
+        <div class="faq-category-header">
+          <div class="faq-category-icon">🐾</div>
+          <div class="faq-category-title-wrap">
+            <h2>Pet Owners &amp; Guidelines</h2>
+            <p>Best practices for preparing your pet, multi-pet households, and building positive relationships.</p>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <!-- Q16 -->
+          <article class="faq-item" id="faq-owners-1" data-keywords="prepare first walk meet greet harness leash readiness">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-owners-1">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q16</span>
+                <span class="faq-question-text">How should I prepare my pet for their first walk with a new companion?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-owners-1">
+              <div class="faq-answer-content">
+                <p>We recommend a stress-free introduction following these steps:</p>
+                <ul>
+                  <li>Schedule an initial 10–15 minute calm meet-and-greet in a familiar neutral space while offering favorite treats.</li>
+                  <li>Inspect your pet's walking gear (a secure Y-shaped harness and sturdy non-retractable 6-foot leash).</li>
+                  <li>Inform the walker of any triggers (e.g. fear of bicycles, excitement around other dogs, or resource guarding).</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q17 -->
+          <article class="faq-item" id="faq-owners-2" data-keywords="multiple pets two dogs cats group walking household">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-owners-2">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q17</span>
+                <span class="faq-question-text">Can I arrange care or walking for multiple pets at the same time?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-owners-2">
+              <div class="faq-answer-content">
+                <p>
+                  Yes! Many walkers are comfortable handling two well-mannered bonded dogs from the same household. Simply specify your pet count and temperaments when reaching out to caregivers so they can confirm comfortable handling capacity.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q18 -->
+          <article class="faq-item" id="faq-owners-3" data-keywords="pet profile details information medical vaccination">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-owners-3">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q18</span>
+                <span class="faq-question-text">What information should I include in my pet's profile?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-owners-3">
+              <div class="faq-answer-content">
+                <p>
+                  A complete pet profile ensures the safest care. We recommend including:
+                </p>
+                <ul>
+                  <li>Age, breed, weight, and vaccination history.</li>
+                  <li>Veterinarian contact details and emergency clinic address.</li>
+                  <li>Dietary allergies, medication instructions, and favorite reinforcement rewards.</li>
+                  <li>Behavioral tendencies and leash manners.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q19 -->
+          <article class="faq-item" id="faq-owners-4" data-keywords="anxiety fear reactive medical special needs medications">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-owners-4">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q19</span>
+                <span class="faq-question-text">What if my pet is nervous, shy, or has special medical requirements?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-owners-4">
+              <div class="faq-answer-content">
+                <p>
+                  Every pet has a unique temperament. PetSathi supports specialized care filters for solo-walk-only requirements, senior pets needing slow sniff walks, and caregivers trained in gentle positive-reinforcement techniques. Always disclose special needs upfront so we can pair you with the right match.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q20 -->
+          <article class="faq-item" id="faq-owners-5" data-keywords="reviews feedback rating report walker rating system">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-owners-5">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q20</span>
+                <span class="faq-question-text">How do I leave feedback or reviews for a caregiver?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-owners-5">
+              <div class="faq-answer-content">
+                <p>
+                  After completed walking or care sessions, owners can submit a star rating and written testimonial. Honest feedback helps top caregivers gain visibility and assists fellow pet parents in finding trustworthy companions.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CATEGORY 5: ACCOUNT & PLATFORM -->
+      <section class="faq-category-block" id="category-account" data-category="account">
+        <div class="faq-category-header">
+          <div class="faq-category-icon">⚙️</div>
+          <div class="faq-category-title-wrap">
+            <h2>Account &amp; Platform</h2>
+            <p>Registration, profile management, becoming a caregiver, and platform data privacy.</p>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <!-- Q21 -->
+          <article class="faq-item" id="faq-account-1" data-keywords="create account register sign up join new user">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-account-1">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q21</span>
+                <span class="faq-question-text">How do I register for a new PetSathi account?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-account-1">
+              <div class="faq-answer-content">
+                <p>
+                  Getting started takes less than two minutes! Visit our <a href="auth/register.html">Registration Page</a>, enter your name, email, and choose a secure password. Once registered, you can personalize your pet profiles and connect with caregivers immediately.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q22 -->
+          <article class="faq-item" id="faq-account-2" data-keywords="become a walker caregiver apply registration join team work">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-account-2">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q22</span>
+                <span class="faq-question-text">How can I apply to become a pet walker or caregiver?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-account-2">
+              <div class="faq-answer-content">
+                <p>
+                  If you love animals and want to offer walking or caregiving in your neighborhood, sign up as a caregiver during registration or submit an application through our <a href="services/dog-walking.html">Services Portal</a>. We will reach out to guide you through verification and profile setup.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q23 -->
+          <article class="faq-item" id="faq-account-3" data-keywords="forgot password reset login access account recovery">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-account-3">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q23</span>
+                <span class="faq-question-text">How do I reset my password if I forget it?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-account-3">
+              <div class="faq-answer-content">
+                <p>
+                  On the <a href="auth/login.html">Login Page</a>, click the &ldquo;Forgot Password?&rdquo; link. Enter the email address associated with your PetSathi account, and we will send you secure password reset instructions.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q24 -->
+          <article class="faq-item" id="faq-account-4" data-keywords="privacy security data protection safe personal information">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-account-4">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q24</span>
+                <span class="faq-question-text">How is my personal and pet data secured?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-account-4">
+              <div class="faq-answer-content">
+                <p>
+                  PetSathi adheres to ethical data privacy standards. Your sensitive contact information and residential address are never publicly exposed or sold to third-party advertisers. Only verified walkers with confirmed bookings can view essential walking pick-up details.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Q25 -->
+          <article class="faq-item" id="faq-account-5" data-keywords="mobile responsive app smartphone tablet ios android">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="ans-account-5">
+              <span class="faq-question-content">
+                <span class="faq-q-mark">Q25</span>
+                <span class="faq-question-text">Is PetSathi accessible on mobile devices and smartphones?</span>
+              </span>
+              <span class="faq-question-icon">+</span>
+            </button>
+            <div class="faq-answer-panel" id="ans-account-5">
+              <div class="faq-answer-content">
+                <p>
+                  <b>Yes!</b> PetSathi is built from the ground up with a modern, mobile-responsive layout. You can access all care guides, messaging, and search features seamlessly from any smartphone, tablet, or desktop browser with zero app installation needed.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================================
+         6. CONTACT US & DIRECT SUPPORT SECTION
+         ======================================================== -->
+    <section class="faq-contact-section" id="contact">
+      <div class="section-wrap">
+        <div class="faq-contact-grid">
+          <!-- Left Info & Channels -->
+          <div class="faq-contact-info">
+            <div class="eyebrow">WE'RE HERE TO HELP</div>
+            <h2>Still Have <em>Questions?</em></h2>
+            <p class="lead">
+              Our community team and pet care advocates are always eager to assist. Reach out through any of our channels or send us a direct message below.
+            </p>
+
+            <div class="faq-channels-list">
+              <div class="faq-channel-card">
+                <div class="faq-channel-icon">📧</div>
+                <div class="faq-channel-body">
+                  <h4>Email Support</h4>
+                  <p>Send your queries directly to <a href="mailto:support@petsathi.com">support@petsathi.com</a></p>
+                </div>
+              </div>
+
+              <div class="faq-channel-card">
+                <div class="faq-channel-icon">💬</div>
+                <div class="faq-channel-body">
+                  <h4>Community Discussions</h4>
+                  <p>Ask questions and share advice on our <a href="https://github.com/Riya-Kharade/PetSathi/discussions" target="_blank" rel="noreferrer">GitHub Community</a></p>
+                </div>
+              </div>
+
+              <div class="faq-channel-card">
+                <div class="faq-channel-icon">⚡</div>
+                <div class="faq-channel-body">
+                  <h4>Response Time</h4>
+                  <p>Our volunteer support team typically responds within <b>24 business hours</b>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Interactive Contact Form -->
+          <div class="faq-form-card">
+            <h3>Send a Message</h3>
+            <p class="form-desc">Fill in the form below and our team will get back to you promptly.</p>
+
+            <form class="faq-contact-form" id="faq-contact-form" novalidate>
+              <div class="faq-form-row">
+                <div class="faq-form-group">
+                  <label for="faq-contact-name">Your Full Name *</label>
+                  <input type="text" id="faq-contact-name" placeholder="e.g. Ananya Sharma" required>
+                </div>
+
+                <div class="faq-form-group">
+                  <label for="faq-contact-email">Email Address *</label>
+                  <input type="email" id="faq-contact-email" placeholder="name@example.com" required>
+                </div>
+              </div>
+
+              <div class="faq-form-row">
+                <div class="faq-form-group">
+                  <label for="faq-contact-pet">Pet Type</label>
+                  <select id="faq-contact-pet">
+                    <option value="">Select your pet type...</option>
+                    <option value="dog">Dog (🐕)</option>
+                    <option value="cat">Cat (🐈)</option>
+                    <option value="bird">Bird (🐦)</option>
+                    <option value="rabbit">Rabbit (🐇)</option>
+                    <option value="fish">Aquarium Fish (🐠)</option>
+                    <option value="other">Other Companion Pet (🐾)</option>
+                  </select>
+                </div>
+
+                <div class="faq-form-group">
+                  <label for="faq-contact-topic">Inquiry Category *</label>
+                  <select id="faq-contact-topic" required>
+                    <option value="general">General Inquiry</option>
+                    <option value="care">Pet Care &amp; Health Question</option>
+                    <option value="walking">Pet Walking Assistance</option>
+                    <option value="walker-apply">Become a Caregiver</option>
+                    <option value="technical">Account &amp; Technical Support</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="faq-form-group">
+                <label for="faq-contact-message">How Can We Help You? *</label>
+                <textarea id="faq-contact-message" placeholder="Please describe your question or issue in detail..." required></textarea>
+              </div>
+
+              <div class="faq-form-alert success" id="faq-form-success">
+                <span>✔</span> <span>Thank you for reaching out! We've received your message and will respond shortly.</span>
+              </div>
+
+              <div class="faq-form-alert error" id="faq-form-error">
+                <span>✖</span> <span>Please fill in all required fields with valid information.</span>
+              </div>
+
+              <button class="button" type="submit" style="width: 100%; margin-top: 8px;">
+                Send Message ↗
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. CALL TO ACTION BANNER
+         ======================================================== -->
+    <section class="section-wrap" style="padding-top: 60px;">
+      <div class="cta">
+        <div>
+          <div class="eyebrow" style="color: var(--dark);">Join the PetSathi Community</div>
+          <h2>Building a Loving World for <em>Every Pet</em></h2>
+          <p>
+            Connect with dedicated pet companions, explore verified species care guides, and give your little friend the joyful life they deserve.
+          </p>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; flex-shrink: 0;">
+          <a class="button" href="auth/register.html">Get Started ↗</a>
+          <a class="button button-outline" href="../../index.html">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================
+       8. PETSATHI FOOTER
+       ======================================================== -->
+  <footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../index.html#home">Home</a><a href="pets/index.html">Explore Pets</a><a href="services/index.html">Services</a><a href="walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/faq.js"></script>
+</body>
+</html>

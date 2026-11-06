@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cat Food & Nutrition Guide on PetSathi - Learn about obligate carnivore dietary needs, protein, wet vs dry food, feeding schedules, foods to avoid, and feline hydration.">
   <title>Cat Food & Nutrition Guide | Healthy Food, Happy Cats | PetSathi</title>
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Global & Inner Stylesheets -->
   <link rel="stylesheet" href="../../../css/global.css">
   <link rel="stylesheet" href="../../../css/home.css">
@@ -1098,48 +1098,28 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
 <!-- Header and Navigation (Identical to PetSathi Homepage & Cats Portal) -->
 <header class="site-header">
-  <a class="brand" href="../../../../index.html">
-    <span class="brand-mark">🐾</span>
-    <span>Pet<span>Sathi</span></span>
-  </a>
-  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-  <nav class="main-nav">
+  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
     <a href="../../../../index.html">Home</a>
-    <div class="nav-item">
-      <a class="active" href="../index.html">Explore Pets ▾</a>
-      <div class="dropdown">
-        <a href="../dogs/index.html">🐕 Dogs</a>
-        <a href="index.html">🐈 Cats</a>
-        <a href="../birds/index.html">🐦 Birds</a>
-        <a href="../rabbits/index.html">🐇 Rabbits</a>
+    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="../dogs/index.html">Dogs</a><a href="index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a href="../other/reptiles.html">Reptiles</a>
       </div>
     </div>
-    <div class="nav-item">
-      <a href="../../services/index.html">Services ▾</a>
-      <div class="dropdown">
-        <a href="../../services/dog-walking.html">Dog Walking</a>
-        <a href="../../services/cat-care.html">Cat Care</a>
-        <a href="../../services/pet-care.html">Pet Care</a>
-        <a href="../../services/guidance.html">Pet Guidance</a>
-      </div>
+    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
     </div>
-    <div class="nav-item">
-      <a href="../../walker/index.html">Find a Walker ▾</a>
-      <div class="dropdown">
-        <a href="../../walker/dogs.html">Dog Walkers</a>
-        <a href="../../walker/cats.html">Cat Caregivers</a>
-        <a href="../../walker/birds.html">Bird Caregivers</a>
-        <a href="../../walker/rabbits.html">Rabbit Caregivers</a>
-      </div>
+    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
     </div>
-    <a href="../../about.html">About Us</a>
-    <a href="../../auth/login.html">Log in</a>
-    <a class="button button-small" href="../../auth/register.html">Get Started ↗</a>
+    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
   </nav>
 </header>
 
@@ -1163,9 +1143,9 @@
           <div class="hero-badge-strip">🥣 Cat Nutrition &amp; Feeding Guide</div>
           <h1>Healthy Food, <em>Happy Cats</em></h1>
           <p>
-            Cats are extraordinary biological creatures with distinct, strict nutritional requirements. 
-            As <strong>obligate carnivores</strong>, their bodies are precision-engineered to thrive on animal-derived proteins, 
-            essential amino acids, balanced fats, and vital hydration. A thoughtfully balanced diet supports lean muscle maintenance, 
+            Cats are extraordinary biological creatures with distinct, strict nutritional requirements.
+            As <strong>obligate carnivores</strong>, their bodies are precision-engineered to thrive on animal-derived proteins,
+            essential amino acids, balanced fats, and vital hydration. A thoughtfully balanced diet supports lean muscle maintenance,
             vibrant coat shine, agile joints, and long, playful years by your side.
           </p>
           <div class="hero-actions">
@@ -1182,9 +1162,9 @@
 
         <div class="hero-visual">
           <div class="hero-blob"></div>
-          <img 
-            src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85" 
-            alt="Serene domestic cat thriving on healthy balanced nutrition" 
+          <img
+            src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85"
+            alt="Serene domestic cat thriving on healthy balanced nutrition"
             class="hero-photo"
           >
           <div class="floating-card card-top">
@@ -1202,12 +1182,12 @@
   <nav class="quick-nav-bar" aria-label="Page Sections Navigation">
     <div class="section-wrap quick-nav-container">
       <span class="quick-nav-label">Jump to:</span>
-      <a class="quick-pill" href="#understanding-nutrition"><span>🔬</span> Understanding Nutrition</a>
-      <a class="quick-pill" href="#food-types"><span>🥫</span> Types of Cat Food</a>
-      <a class="quick-pill" href="#feeding-guidelines"><span>📋</span> Feeding Guidelines</a>
-      <a class="quick-pill" href="#foods-to-avoid"><span>🚫</span> Foods to Avoid</a>
-      <a class="quick-pill" href="#hydration-tips"><span>💧</span> Hydration Tips</a>
-      <a class="quick-pill" href="#hydration-calculator"><span>🧮</span> Water &amp; Meal Estimator</a>
+      <a class="quick-pill" href="#understanding-nutrition"><span></span> Understanding Nutrition</a>
+      <a class="quick-pill" href="#food-types"><span></span> Types of Cat Food</a>
+      <a class="quick-pill" href="#feeding-guidelines"><span></span> Feeding Guidelines</a>
+      <a class="quick-pill" href="#foods-to-avoid"><span></span> Foods to Avoid</a>
+      <a class="quick-pill" href="#hydration-tips"><span></span> Hydration Tips</a>
+      <a class="quick-pill" href="#hydration-calculator"><span></span> Water &amp; Meal Estimator</a>
       <a class="quick-pill" href="#faq-section"><span>❓</span> FAQs</a>
     </div>
   </nav>
@@ -1220,7 +1200,7 @@
         <h2>Understanding <em>Cat Nutrition</em></h2>
       </div>
       <p>
-        Cats have vastly different nutritional requirements than dogs or humans. 
+        Cats have vastly different nutritional requirements than dogs or humans.
         Here is what makes feline nourishment truly unique.
       </p>
     </div>
@@ -1231,10 +1211,10 @@
       <div class="carnivore-text">
         <h3>Why Cats Are "Obligate Carnivores"</h3>
         <p>
-          "Obligate" means by biological necessity. Millions of years of evolution have shaped cats to obtain their 
-          vital energy and structural nutrients directly from animal prey. Unlike humans and dogs, cats have a shortened 
-          digestive tract, lack salivary amylase to break down carbohydrates, and lack the enzymatic pathways needed 
-          to synthesize essential amino acids (like taurine and arginine) from plant-based proteins. Meat is not an optional 
+          "Obligate" means by biological necessity. Millions of years of evolution have shaped cats to obtain their
+          vital energy and structural nutrients directly from animal prey. Unlike humans and dogs, cats have a shortened
+          digestive tract, lack salivary amylase to break down carbohydrates, and lack the enzymatic pathways needed
+          to synthesize essential amino acids (like taurine and arginine) from plant-based proteins. Meat is not an optional
           preference—it is an absolute biological requirement.
         </p>
       </div>
@@ -1252,8 +1232,8 @@
           </div>
         </div>
         <p>
-          Protein provides the amino acid building blocks for organs, muscle tissue, antibodies, enzymes, and hormones. 
-          While omnivores can adapt to low protein levels by conserving nitrogen, cats constantly burn protein for routine 
+          Protein provides the amino acid building blocks for organs, muscle tissue, antibodies, enzymes, and hormones.
+          While omnivores can adapt to low protein levels by conserving nitrogen, cats constantly burn protein for routine
           metabolism and energy.
         </p>
         <ul class="pillar-list">
@@ -1282,7 +1262,7 @@
           </div>
         </div>
         <p>
-          Fats are the most concentrated energy source for cats, facilitating fat-soluble vitamin absorption, cellular membrane 
+          Fats are the most concentrated energy source for cats, facilitating fat-soluble vitamin absorption, cellular membrane
           resilience, and enticing culinary aroma.
         </p>
         <ul class="pillar-list">
@@ -1339,7 +1319,7 @@
           </div>
         </div>
         <p>
-          Felines evolved from desert-dwelling ancestors (the African wildcat, <em>Felis lybica</em>). Consequently, cats have 
+          Felines evolved from desert-dwelling ancestors (the African wildcat, <em>Felis lybica</em>). Consequently, cats have
           an inherently weak thirst reflex and naturally expect to gain water directly from their food.
         </p>
         <ul class="pillar-list">
@@ -1375,7 +1355,7 @@
           <span class="lifestage-badge">0 to 12 Months</span>
           <h4>Kittens (Growth &amp; Build)</h4>
           <p>
-            Kittens undergo rapid skeletal, muscular, and neurological growth. They need approximately <strong>double the calories per pound</strong> 
+            Kittens undergo rapid skeletal, muscular, and neurological growth. They need approximately <strong>double the calories per pound</strong>
             of an adult cat.
           </p>
           <div class="lifestage-tags">
@@ -1391,7 +1371,7 @@
           <span class="lifestage-badge">1 to 7 Years</span>
           <h4>Adult Cats (Maintenance)</h4>
           <p>
-            The growth phase has ended. Adult cat nutrition centers on maintaining lean muscle, preventing obesity, 
+            The growth phase has ended. Adult cat nutrition centers on maintaining lean muscle, preventing obesity,
             and safeguarding urinary function.
           </p>
           <div class="lifestage-tags">
@@ -1407,7 +1387,7 @@
           <span class="lifestage-badge">7+ Years</span>
           <h4>Senior Cats (Longevity &amp; Care)</h4>
           <p>
-            Metabolism slows and digestive efficiency declines. Senior cats need highly digestible, aromatic meals 
+            Metabolism slows and digestive efficiency declines. Senior cats need highly digestible, aromatic meals
             that protect kidney and joint function.
           </p>
           <div class="lifestage-tags">
@@ -1438,15 +1418,15 @@
       <article class="food-type-card">
         <div class="food-type-media">
           <span class="food-type-tag">💧 70%–80% Moisture</span>
-          <img 
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80" 
+          <img
+            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80"
             alt="Alert domestic cat eagerly awaiting a high-moisture wet food meal"
           >
         </div>
         <div class="food-type-content">
           <h3>Wet Cat Food (Cans &amp; Pouches)</h3>
           <p class="card-desc">
-            Available as savory gravies, minces, shreds, and patés. Wet food closely mimics the natural hydration level of small prey, 
+            Available as savory gravies, minces, shreds, and patés. Wet food closely mimics the natural hydration level of small prey,
             making it the gold standard for urinary and renal support.
           </p>
           <div class="food-pros-cons">
@@ -1477,15 +1457,15 @@
       <article class="food-type-card">
         <div class="food-type-media">
           <span class="food-type-tag">⏳ Convenient &amp; Shelf-Stable</span>
-          <img 
-            src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=800&q=80" 
+          <img
+            src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=800&q=80"
             alt="Tabby cat enjoying a measured serving of crunchy balanced kibble"
           >
         </div>
         <div class="food-type-content">
           <h3>Dry Cat Food (Kibble)</h3>
           <p class="card-desc">
-            Extruded biscuits containing approximately 10% moisture. Kibble is budget-friendly, convenient for storage, 
+            Extruded biscuits containing approximately 10% moisture. Kibble is budget-friendly, convenient for storage,
             and exceptionally well-suited for interactive foraging toys and slow-feeders.
           </p>
           <div class="food-pros-cons">
@@ -1516,15 +1496,15 @@
       <article class="food-type-card">
         <div class="food-type-media">
           <span class="food-type-tag">✅ Scientifically Complete</span>
-          <img 
-            src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=80" 
+          <img
+            src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=800&q=80"
             alt="Curious domestic cat thriving on complete and balanced feline nutrition"
           >
         </div>
         <div class="food-type-content">
           <h3>Commercially Prepared Balanced Food</h3>
           <p class="card-desc">
-            Formulated by animal nutritionists to adhere to international standards (AAFCO, FEDIAF, NRC). 
+            Formulated by animal nutritionists to adhere to international standards (AAFCO, FEDIAF, NRC).
             These foods guarantee that all 40+ essential vitamins, minerals, and amino acids are present in exact physiological ratios.
           </p>
           <div class="food-pros-cons">
@@ -1555,15 +1535,15 @@
       <article class="food-type-card">
         <div class="food-type-media">
           <span class="food-type-tag">🩺 Veterinary Awareness Only</span>
-          <img 
-            src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80" 
+          <img
+            src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80"
             alt="Plump British Shorthair cat thriving on veterinary-guided specialized nutrition"
           >
         </div>
         <div class="food-type-content">
           <h3>Special Dietary Food (General Awareness)</h3>
           <p class="card-desc">
-            Therapeutic and veterinary prescription diets tailored for specific feline health conditions. 
+            Therapeutic and veterinary prescription diets tailored for specific feline health conditions.
             These include renal care, urinary stone dissolution, gastrointestinal sensitivity, diabetes management, and weight loss.
           </p>
           <div class="food-pros-cons">
@@ -1600,7 +1580,7 @@
         <h2>Responsible <em>Feeding Guidelines</em></h2>
       </div>
       <p>
-        How you feed your cat is just as vital as what you put in their bowl. 
+        How you feed your cat is just as vital as what you put in their bowl.
         Follow these veterinary-endorsed feeding routines for optimal feline wellness.
       </p>
     </div>
@@ -1611,7 +1591,7 @@
         <div class="guideline-num-icon">⏰</div>
         <h3>Feeding Schedules</h3>
         <p>
-          Establish structured meal times rather than leaving food out all day. 
+          Establish structured meal times rather than leaving food out all day.
           Cats are natural hunters who thrive on routine.
         </p>
         <ul class="guideline-bullets">
@@ -1694,21 +1674,21 @@
         <div class="eyebrow" style="color: var(--green);">Feeding Ergonomics &amp; Hygiene</div>
         <h3>Clean Feeding Bowls &amp; Whisker Fatigue</h3>
         <p>
-          Did you know your cat's whiskers are hyper-sensitive sensory organs? Deep, narrow bowls cause whiskers to repeatedly brush 
+          Did you know your cat's whiskers are hyper-sensitive sensory organs? Deep, narrow bowls cause whiskers to repeatedly brush
           against high edges, transmitting constant neurological alerts that can make mealtime stressful and frustrating.
         </p>
         <div class="bowl-comparison-grid">
           <div class="bowl-spec-card good">
             <b>✅ Recommended Feeding Bowls</b>
             <p style="margin: 0; font-size: 0.84rem;">
-              Wide, flat, shallow plates or saucers made of <strong>food-grade stainless steel, lead-free ceramic, or porcelain</strong>. 
+              Wide, flat, shallow plates or saucers made of <strong>food-grade stainless steel, lead-free ceramic, or porcelain</strong>.
               Non-porous, easy to sanitize, and prevents whisker contact.
             </p>
           </div>
           <div class="bowl-spec-card bad">
             <b>❌ Bowls to Avoid</b>
             <p style="margin: 0; font-size: 0.84rem;">
-              Narrow, deep plastic bowls. Plastic scratches easily, harboring microscopic bacteria that causes 
+              Narrow, deep plastic bowls. Plastic scratches easily, harboring microscopic bacteria that causes
               <strong>feline chin acne</strong> (black bumps and painful skin infections).
             </p>
           </div>
@@ -1736,7 +1716,7 @@
         <h2>Foods Cats Must <em>Never Eat</em></h2>
       </div>
       <p>
-        Common human pantry staples can be profoundly toxic or even fatal to cats. 
+        Common human pantry staples can be profoundly toxic or even fatal to cats.
         Always keep these hazardous foods strictly out of paw's reach.
       </p>
     </div>
@@ -1747,7 +1727,7 @@
       <div class="toxic-alert-content">
         <h3>Emergency Action Notice</h3>
         <p>
-          If your cat has consumed any of the foods listed below—or any substance you suspect might be harmful—<strong>do not wait for symptoms to develop</strong> 
+          If your cat has consumed any of the foods listed below—or any substance you suspect might be harmful—<strong>do not wait for symptoms to develop</strong>
           and <strong>never attempt to induce vomiting at home</strong> without veterinary guidance. Immediate intervention can save your cat's life.
         </p>
         <div class="toxic-alert-actions">
@@ -1769,7 +1749,7 @@
         </div>
         <span class="toxic-danger-level">High Toxicity Danger</span>
         <p>
-          Contains theobromine and caffeine. Cats metabolize these methylxanthines extremely slowly. 
+          Contains theobromine and caffeine. Cats metabolize these methylxanthines extremely slowly.
           Dark chocolate, cocoa powder, and baking chocolate are exceptionally hazardous.
         </p>
         <div class="toxic-symptoms">
@@ -1787,7 +1767,7 @@
         </div>
         <span class="toxic-danger-level">Severe Toxicity Hazard</span>
         <p>
-          All allium family members (onions, garlic, chives, leeks, shallots) contain thiosulfates that induce oxidative damage, 
+          All allium family members (onions, garlic, chives, leeks, shallots) contain thiosulfates that induce oxidative damage,
           rupturing feline red blood cells and triggering severe Heinz body hemolytic anemia. Toxic in raw, cooked, or powdered forms!
         </p>
         <div class="toxic-symptoms">
@@ -1805,7 +1785,7 @@
         </div>
         <span class="toxic-danger-level">Fatal Even in Tiny Drops</span>
         <p>
-          Beer, wine, liquor, and alcohol-infused desserts can cause acute poisoning. Because of their tiny body mass, 
+          Beer, wine, liquor, and alcohol-infused desserts can cause acute poisoning. Because of their tiny body mass,
           even a single teaspoon of alcohol can cause profound central nervous system depression.
         </p>
         <div class="toxic-symptoms">
@@ -1823,7 +1803,7 @@
         </div>
         <span class="toxic-danger-level">High Cardiac Danger</span>
         <p>
-          Coffee, black and green tea, energy beverages, and soda are potent stimulants. Feline bodies cannot filter caffeine safely, 
+          Coffee, black and green tea, energy beverages, and soda are potent stimulants. Feline bodies cannot filter caffeine safely,
           which severely stresses their cardiovascular system.
         </p>
         <div class="toxic-symptoms">
@@ -1841,7 +1821,7 @@
         </div>
         <span class="toxic-danger-level">Acute Kidney Failure Risk</span>
         <p>
-          Grapes and raisins contain tartaric acid compounds that are nephrotoxic to cats and dogs. 
+          Grapes and raisins contain tartaric acid compounds that are nephrotoxic to cats and dogs.
           Even small quantities can cause sudden, irreversible acute kidney injury.
         </p>
         <div class="toxic-symptoms">
@@ -1859,7 +1839,7 @@
         </div>
         <span class="toxic-danger-level">Expansion &amp; Alcohol Hazard</span>
         <p>
-          Raw bread or pastry dough expands inside the warm, moist stomach environment, leading to severe gastric dilation 
+          Raw bread or pastry dough expands inside the warm, moist stomach environment, leading to severe gastric dilation
           or rupture. Simultaneously, fermenting yeast produces toxic ethanol directly into the bloodstream.
         </p>
         <div class="toxic-symptoms">
@@ -1893,7 +1873,7 @@
         <h2>Essential <em>Hydration Tips</em> for Cats</h2>
       </div>
       <p>
-        Cats are notoriously reluctant drinkers. Learn how to stimulate healthy hydration habits 
+        Cats are notoriously reluctant drinkers. Learn how to stimulate healthy hydration habits
         to safeguard your feline's bladder and kidney longevity.
       </p>
     </div>
@@ -1904,8 +1884,8 @@
         <div class="eyebrow" style="color: var(--cat-water-blue);">Why Cats Need Hydration Awareness</div>
         <h3>The Feline Thirst Paradox</h3>
         <p>
-          In nature, a wildcat consumes mice and birds containing approximately 70% to 75% water, effortlessly covering 
-          their hydration needs during meals. Domestic cats fed dry diets (with only 10% water) rarely compensate by drinking 
+          In nature, a wildcat consumes mice and birds containing approximately 70% to 75% water, effortlessly covering
+          their hydration needs during meals. Domestic cats fed dry diets (with only 10% water) rarely compensate by drinking
           enough from bowls alone. Concentrated urine leads directly to painful bladder stones and chronic kidney strain.
         </p>
         <a class="button" href="#hydration-calculator" style="background: var(--cat-water-blue); border-color: var(--cat-water-blue);">
@@ -1939,7 +1919,7 @@
         <div class="hydration-icon-wrap">🚰</div>
         <h4>1. Provide Clean, Fresh Water</h4>
         <p>
-          Cats have an extraordinarily keen sense of smell. Stale water that has collected dust, floating fur, 
+          Cats have an extraordinarily keen sense of smell. Stale water that has collected dust, floating fur,
           or bacterial film will be instinctively rejected. Refresh bowls with cool, filtered tap or spring water morning and evening.
         </p>
       </article>
@@ -1949,8 +1929,8 @@
         <div class="hydration-icon-wrap">📍</div>
         <h4>2. Keep Stations Accessible</h4>
         <p>
-          Place multiple water stations in quiet, low-traffic areas of your home. If you live in a multi-story home, 
-          place at least one station on each floor. <strong>The golden rule:</strong> always keep water stations at least 
+          Place multiple water stations in quiet, low-traffic areas of your home. If you live in a multi-story home,
+          place at least one station on each floor. <strong>The golden rule:</strong> always keep water stations at least
           4–6 feet away from food dishes and well away from litter boxes.
         </p>
       </article>
@@ -1960,7 +1940,7 @@
         <div class="hydration-icon-wrap">🧼</div>
         <h4>3. Clean Bowls Regularly</h4>
         <p>
-          A thin, slippery biofilm naturally forms on water bowls within 24 hours. Wash bowls daily using mild dish soap 
+          A thin, slippery biofilm naturally forms on water bowls within 24 hours. Wash bowls daily using mild dish soap
           and hot water, rinsing thoroughly. Prefer stainless steel or glazed ceramic bowls over porous plastic.
         </p>
       </article>
@@ -1970,7 +1950,7 @@
         <div class="hydration-icon-wrap">⛲</div>
         <h4>4. Encourage Active Intake</h4>
         <p>
-          Install a circulating pet water fountain—flowing, oxygenated streams tap into cats' instinct that moving water is safe. 
+          Install a circulating pet water fountain—flowing, oxygenated streams tap into cats' instinct that moving water is safe.
           You can also add a tablespoon of unsalted homemade chicken broth or warm water to wet food to sneak in extra hydration!
         </p>
       </article>
@@ -2023,7 +2003,7 @@
           <span style="font-size: 0.82rem; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Target Total Water:</span>
           <div class="calc-metric" id="totalWaterOutput">220 ml</div>
           <p id="waterBreakdown">Approx. 130 ml from wet meals + 90 ml from fresh bowl drinking.</p>
-          
+
           <div style="border-top: 1px dashed #cfdbd2; padding-top: 14px; margin-top: 10px;">
             <span style="font-size: 0.82rem; color: var(--muted); text-transform: uppercase; font-weight: 700;">Recommended Meal Schedule:</span>
             <div style="font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-top: 4px;" id="scheduleOutput">
@@ -2061,9 +2041,9 @@
         </button>
         <div class="faq-answer">
           <p>
-            <strong>No. Cats cannot survive on a vegan or vegetarian diet.</strong> As obligate carnivores, cats have a metabolic 
-            requirement for nutrients found exclusively in animal tissue—most notably preformed Vitamin A, arachidonic acid, and the 
-            amino acid taurine. Forcing a cat onto a plant-only diet causes acute malnutrition, severe heart disease (dilated cardiomyopathy), 
+            <strong>No. Cats cannot survive on a vegan or vegetarian diet.</strong> As obligate carnivores, cats have a metabolic
+            requirement for nutrients found exclusively in animal tissue—most notably preformed Vitamin A, arachidonic acid, and the
+            amino acid taurine. Forcing a cat onto a plant-only diet causes acute malnutrition, severe heart disease (dilated cardiomyopathy),
             and blindness.
           </p>
         </div>
@@ -2077,9 +2057,9 @@
         </button>
         <div class="faq-answer">
           <p>
-            Both offer distinct benefits, but wet food is widely praised by feline veterinarians because its 75%+ water content 
-            actively protects against chronic kidney disease and urinary crystals. Dry food is convenient, cost-effective, and 
-            superb for foraging puzzles. A <strong>combination approach</strong>—wet meals in the morning and evening, supplemented 
+            Both offer distinct benefits, but wet food is widely praised by feline veterinarians because its 75%+ water content
+            actively protects against chronic kidney disease and urinary crystals. Dry food is convenient, cost-effective, and
+            superb for foraging puzzles. A <strong>combination approach</strong>—wet meals in the morning and evening, supplemented
             with measured kibble in enrichment toys—often provides the best of both worlds.
           </p>
         </div>
@@ -2093,9 +2073,9 @@
         </button>
         <div class="faq-answer">
           <p>
-            Cats can be finicky, but a complete loss of appetite (anorexia) is a serious veterinary concern. Unlike dogs or humans, 
-            cats who go without food for even <strong>24 to 48 hours</strong> are at extreme risk of developing <em>hepatic lipidosis</em> 
-            (fatty liver syndrome), a potentially life-threatening condition. If your cat refuses all food for more than 24 hours, 
+            Cats can be finicky, but a complete loss of appetite (anorexia) is a serious veterinary concern. Unlike dogs or humans,
+            cats who go without food for even <strong>24 to 48 hours</strong> are at extreme risk of developing <em>hepatic lipidosis</em>
+            (fatty liver syndrome), a potentially life-threatening condition. If your cat refuses all food for more than 24 hours,
             contact a veterinarian immediately.
           </p>
         </div>
@@ -2109,8 +2089,8 @@
         </button>
         <div class="faq-answer">
           <p>
-            Despite the popular storybook myth, <strong>most adult cats are lactose intolerant</strong>. After weaning off their mother's milk, 
-            kittens stop producing the lactase enzyme needed to digest lactose in dairy. Feeding cow's milk typically results in stomach cramping, 
+            Despite the popular storybook myth, <strong>most adult cats are lactose intolerant</strong>. After weaning off their mother's milk,
+            kittens stop producing the lactase enzyme needed to digest lactose in dairy. Feeding cow's milk typically results in stomach cramping,
             painful gas, and watery diarrhea. If you wish to treat your cat, choose specifically formulated, lactose-free cat milk from pet stores.
           </p>
         </div>
@@ -2124,9 +2104,9 @@
         </button>
         <div class="faq-answer">
           <p>
-            Veterinarians use the <strong>Body Condition Score (BCS 1–9)</strong>. In an ideal cat (BCS 5/9), you should easily feel their ribs 
-            under a thin layer of fat without pressing hard, see a noticeable waistline behind the ribs when viewed from above, and observe 
-            a slight abdominal tuck from the side. If ribs cannot be felt or their belly sags heavily, consult your veterinarian for a guided, 
+            Veterinarians use the <strong>Body Condition Score (BCS 1–9)</strong>. In an ideal cat (BCS 5/9), you should easily feel their ribs
+            under a thin layer of fat without pressing hard, see a noticeable waistline behind the ribs when viewed from above, and observe
+            a slight abdominal tuck from the side. If ribs cannot be felt or their belly sags heavily, consult your veterinarian for a guided,
             safe weight reduction strategy.
           </p>
         </div>
@@ -2139,8 +2119,8 @@
       <div class="vet-disclaimer-text">
         <h4>Important Veterinary Guidance Notice</h4>
         <p>
-          The nutritional information provided on this page is for general educational awareness only. Every feline is unique in their 
-          activity level, medical history, allergies, and metabolic rate. Never replace professional veterinary advice with online information. 
+          The nutritional information provided on this page is for general educational awareness only. Every feline is unique in their
+          activity level, medical history, allergies, and metabolic rate. Never replace professional veterinary advice with online information.
           Always consult your veterinarian for specialized dietary prescriptions, managing feline weight changes, or addressing medical issues.
         </p>
       </div>
@@ -2154,7 +2134,7 @@
         <div class="eyebrow" style="color: #c3ddc8;">Complete Feline Care</div>
         <h2>Ready to Explore More <em>Cat Guides?</em></h2>
         <p>
-          Nutrition is the cornerstone of wellness, but joyful cat parenting also involves behavioral enrichment, 
+          Nutrition is the cornerstone of wellness, but joyful cat parenting also involves behavioral enrichment,
           regular grooming routines, healthcare checkups, and discovering unique breed traits. Explore our comprehensive cat library!
         </p>
       </div>
@@ -2171,34 +2151,12 @@
 <!-- Footer (Matches main PetSathi homepage) -->
 <footer class="footer">
   <div class="section-wrap footer-grid">
-    <div>
-      <a class="brand" href="../../../../index.html">🐾 Pet<span>Sathi</span></a>
-      <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
-    </div>
-    <div>
-      <b>Explore</b>
-      <a href="../index.html">Pet Categories</a>
-      <a href="../../services/index.html">Services</a>
-      <a href="../../walker/index.html">Find a Walker</a>
-    </div>
-    <div>
-      <b>PetSathi</b>
-      <a href="../../about.html">About Us</a>
-      <a href="../../auth/login.html">Log in</a>
-      <a href="../../auth/register.html">Register</a>
-    </div>
-    <div>
-      <b>Cat Guides</b>
-      <a href="breeds.html">Cat Breeds</a>
-      <a href="care.html">Cat Care &amp; Health</a>
-      <a href="nutrition.html">Food &amp; Nutrition</a>
-      <a href="behaviour.html">Behaviour &amp; Training</a>
-    </div>
+    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
   </div>
-  <div class="section-wrap footer-bottom">
-    <span>© <span id="year"></span> PetSathi. Made with ♥ for pets.</span>
-    <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
-  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
 </footer>
 
 <!-- Global Main Script -->

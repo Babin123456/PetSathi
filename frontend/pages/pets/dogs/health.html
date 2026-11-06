@@ -1,0 +1,1184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog Health & Wellness | PetSathi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/inner.css" />
+    <style>
+      .health-search-bar {
+        max-width: 700px;
+        margin: 0 auto 30px;
+        display: flex;
+        gap: 12px;
+        background: white;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        box-shadow: var(--shadow);
+      }
+      .health-search-bar input {
+        border: none;
+        outline: none;
+        padding: 10px 18px;
+        flex: 1;
+        font: inherit;
+        background: transparent;
+      }
+      .filter-chips {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 40px;
+      }
+      .filter-chip {
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: white;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: 0.2s;
+      }
+      .filter-chip.active,
+      .filter-chip:hover {
+        background: var(--green);
+        color: white;
+        border-color: var(--green);
+      }
+      .health-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 50px;
+      }
+      .health-card {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      }
+      .health-card h3 {
+        font-size: 1.2rem;
+        margin: 12px 0 8px;
+      }
+      .warning-card {
+        background: #fdf6f0;
+        border: 1px solid #f5c6b8;
+        border-radius: 18px;
+        padding: 25px;
+      }
+      .warning-card h3 {
+        color: #c0392b;
+      }
+      .faq-item {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        margin-bottom: 12px;
+        overflow: hidden;
+      }
+      .faq-question {
+        padding: 18px 20px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-question span {
+        transition: transform 0.3s ease;
+      }
+      .faq-item.active .faq-question span {
+        transform: rotate(45deg);
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        color: var(--muted);
+        transition:
+          max-height 0.35s ease,
+          padding 0.35s ease;
+      }
+      .faq-item.active .faq-answer {
+        max-height: 250px;
+        padding: 0 20px 18px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--line);
+        margin-bottom: 30px;
+      }
+      .footer-grid div {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .footer-grid b {
+        color: var(--ink);
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+      }
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.88rem;
+        color: var(--muted);
+        padding-bottom: 30px;
+      }
+      @media (max-width: 850px) {
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+        }
+      }
+      @media (max-width: 900px) {
+        .health-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../../../index.html">
+        <span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span>
+      </a>
+      <button
+        class="menu-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+      <nav class="main-nav">
+        <a href="../../../index.html">Home</a>
+        <a href="../index.html">Explore Pets</a>
+        <a href="../../services/index.html">Services</a>
+        <a href="../../walker/index.html">Find a Walker</a>
+        <a href="../../about.html">About Us</a>
+        <a href="../../auth/login.html">Log in</a>
+        <a class="button button-small" href="../../auth/register.html"
+          >Get Started ↗</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="eyebrow">Dog Care & Protection</div>
+        <h1>Keeping Your Dog <em>Happy & Healthy!</em></h1>
+        <p>
+          Explore essential information on dog health, preventive care, early
+          symptom detection, and expert wellness guidelines to ensure your
+          companion lives a vibrant life.
+        </p>
+
+        <div class="health-search-bar">
+          <input
+            type="text"
+            id="healthSearch"
+            placeholder="Search health topics, symptoms, vaccines..."
+            onkeyup="filterHealthContent()"
+          />
+          <button class="button button-small" style="border-radius: 999px">
+            Search
+          </button>
+        </div>
+
+        <div class="filter-chips">
+          <button
+            class="filter-chip active"
+            onclick="filterCategory('all', this)"
+          >
+            All Topics
+          </button>
+          <button
+            class="filter-chip"
+            onclick="filterCategory('problems', this)"
+          >
+            Common Problems
+          </button>
+          <button
+            class="filter-chip"
+            onclick="filterCategory('symptoms', this)"
+          >
+            Symptoms
+          </button>
+          <button
+            class="filter-chip"
+            onclick="filterCategory('vaccination', this)"
+          >
+            Vaccination
+          </button>
+          <button
+            class="filter-chip"
+            onclick="filterCategory('firstaid', this)"
+          >
+            First Aid
+          </button>
+          <button
+            class="filter-chip"
+            onclick="filterCategory('preventive', this)"
+          >
+            Preventive Care
+          </button>
+          <button class="filter-chip" onclick="filterCategory('senior', this)">
+            Senior Health
+          </button>
+        </div>
+
+        <a class="button button-outline" href="#problems-section"
+          >Explore Health Guide ↓</a
+        >
+      </section>
+
+      <div class="section-wrap" style="padding-block: 60px">
+        <div
+          id="problems-section"
+          class="category-section"
+          data-category="problems"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Clinical Overview</div>
+              <h2>Common Dog <em>Health Problems</em></h2>
+            </div>
+            <p>
+              Be aware of frequent health issues affecting dogs across breeds.
+            </p>
+          </div>
+          <div class="health-grid">
+            <div
+              class="health-card searchable-item"
+              data-keywords="skin infections dermatitis itching"
+            >
+              <h3>Skin Infections</h3>
+              <p>
+                Caused by allergies, parasites, or bacterial growth leading to
+                persistent scratching and redness.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="ear infections otitis yeast bacteria"
+            >
+              <h3>Ear Infections</h3>
+              <p>
+                Frequent in floppy-eared dogs; marked by head shaking, odor, and
+                discharge.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="dental problems plaque tartar tooth decay"
+            >
+              <h3>Dental Problems</h3>
+              <p>
+                Periodontal disease resulting from tartar accumulation, bad
+                breath, and gum inflammation.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="digestive issues vomiting diarrhea upset stomach"
+            >
+              <h3>Digestive Issues</h3>
+              <p>
+                Stomach upsets triggered by dietary indiscretion, parasites, or
+                infections.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="allergies environmental food itching"
+            >
+              <h3>Allergies</h3>
+              <p>
+                Reactions to environmental triggers like pollen, fleas, or
+                specific food proteins.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="obesity weight gain overweight joints"
+            >
+              <h3>Obesity</h3>
+              <p>
+                A preventable condition leading to secondary joint stress,
+                diabetes, and heart complications.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="joint problems arthritis hip dysplasia mobility"
+            >
+              <h3>Joint Problems</h3>
+              <p>
+                Degenerative conditions like canine arthritis or hip dysplasia
+                causing stiffness and pain.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="parasites worms ticks fleas"
+            >
+              <h3>Parasites & Worms</h3>
+              <p>
+                Internal worms and external pests that compromise nutritional
+                intake and skin health.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="category-section"
+          data-category="symptoms"
+          style="margin-bottom: 50px"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Early Detection</div>
+              <h2>Common Symptoms & <em>Warning Signs</em></h2>
+            </div>
+            <p>
+              Know when your dog needs professional veterinary intervention.
+            </p>
+          </div>
+          <div class="health-grid">
+            <div
+              class="warning-card searchable-item"
+              data-keywords="loss of appetite not eating food refusal"
+            >
+              <h3>Loss of Appetite</h3>
+              <p>
+                Refusing meals for over 24 hours often signals underlying
+                systemic illness, pain, or dental distress.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="vomiting throwing up stomach upset"
+            >
+              <h3>Vomiting</h3>
+              <p>
+                Occasional spitting up can be minor, but frequent or violent
+                vomiting requires prompt veterinary care.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="diarrhea loose stool digestive"
+            >
+              <h3>Diarrhea</h3>
+              <p>
+                Watery or frequent stools can cause rapid dehydration and
+                indicate infection or dietary issues.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="excessive scratching itching skin"
+            >
+              <h3>Excessive Scratching</h3>
+              <p>
+                Constant biting, licking, or scratching points to allergies,
+                fleas, or skin infections.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="unusual tiredness fatigue lethargy low energy"
+            >
+              <h3>Unusual Tiredness</h3>
+              <p>
+                Lethargy and reluctance to engage in regular play or walks
+                indicate pain, fever, or organ strain.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="coughing sneezing respiratory cold"
+            >
+              <h3>Coughing or Sneezing</h3>
+              <p>
+                Persistent hacking, reverse sneezing, or nasal discharge can
+                signal kennel cough or allergies.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="excessive thirst drinking water dehydration"
+            >
+              <h3>Excessive Thirst</h3>
+              <p>
+                Unusual water consumption may point to metabolic issues like
+                diabetes or kidney conditions.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="changes in behavior aggression hiding withdrawal"
+            >
+              <h3>Changes in Behaviour</h3>
+              <p>
+                Sudden aggression, anxiety, hiding, or confusion often stem from
+                discomfort or cognitive aging.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="difficulty walking limp stiffness lameness"
+            >
+              <h3>Difficulty Walking</h3>
+              <p>
+                Limping, stiffness upon rising, or reluctance to climb stairs
+                indicate joint or neurological pain.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="category-section"
+          data-category="vaccination"
+          style="margin-bottom: 50px"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Immunization</div>
+              <h2>Vaccination <em>Guide</em></h2>
+            </div>
+            <p>Protecting your dog against preventable infectious diseases.</p>
+          </div>
+          <div class="health-grid">
+            <div
+              class="health-card searchable-item"
+              data-keywords="core vaccines rabies dhpp mandatory"
+            >
+              <h3>Core Vaccines</h3>
+              <p>
+                Essential immunizations recommended for all dogs regardless of
+                lifestyle to protect against severe contagions.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="rabies vaccination fatal virus law"
+            >
+              <h3>Rabies Vaccination</h3>
+              <p>
+                Legally required in most regions; protects against a fatal viral
+                disease transmissible to humans.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="dhpp vaccination distemper hepatitis parvovirus parainfluenza"
+            >
+              <h3>DHPP Vaccination</h3>
+              <p>
+                The standard multi-antigen shot covering Distemper, Hepatitis,
+                Parvovirus, and Parainfluenza.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="non-core vaccines lifestyle bordetella leptospirosis"
+            >
+              <h3>Non-Core Vaccines</h3>
+              <p>
+                Lifestyle-dependent vaccines such as Bordetella (kennel cough)
+                and Leptospirosis based on exposure risk.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="puppy vaccination schedule timeline boosters"
+            >
+              <h3>Puppy Schedule</h3>
+              <p>
+                Administered in a series starting at 6-8 weeks of age with
+                boosters every 3-4 weeks until 16 weeks old.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="adult dog booster vaccinations annual revaccination"
+            >
+              <h3>Adult Boosters</h3>
+              <p>
+                Periodic revaccination intervals (1 to 3 years depending on the
+                vaccine type and veterinary protocol).
+              </p>
+            </div>
+          </div>
+          <p class="sample-note" style="margin-top: 15px">
+            ⚠️
+            <em
+              >Note: Fixed vaccination schedules do not apply universally. Exact
+              timing and requirements must always be confirmed with a licensed
+              veterinarian.</em
+            >
+          </p>
+        </div>
+
+        <div
+          class="category-section"
+          data-category="preventive"
+          style="margin-bottom: 50px"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Parasite Control</div>
+              <h2>Deworming & <em>Parasite Prevention</em></h2>
+            </div>
+            <p>
+              Shielding dogs from harmful internal worms and external pests.
+            </p>
+          </div>
+          <div class="health-grid">
+            <div
+              class="health-card searchable-item"
+              data-keywords="internal parasites roundworms tapeworms hookworms whipworms"
+            >
+              <h3>Internal Parasites</h3>
+              <p>
+                Roundworms, tapeworms, and hookworms reside in the GI tract,
+                causing weight loss and nutritional deficiencies.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="external parasites ticks fleas mites lice"
+            >
+              <h3>External Parasites</h3>
+              <p>
+                Ticks, fleas, and mites trigger severe skin irritation,
+                dermatitis, and transmit tick-borne diseases.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="importance of deworming routine cleansing safety"
+            >
+              <h3>Importance of Deworming</h3>
+              <p>
+                Routine deworming prevents heavy parasitic burdens and protects
+                both canine and human household members.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="tick flea prevention topical oral collars"
+            >
+              <h3>Tick & Flea Prevention</h3>
+              <p>
+                Use vet-approved topical spot-ons, chewable tablets, or collars
+                to maintain continuous protection.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="regular veterinary checkups fecal exams screening"
+            >
+              <h3>Regular Fecal Screening</h3>
+              <p>
+                Periodic fecal examinations at the clinic ensure hidden internal
+                parasites are caught and treated early.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="category-section"
+          data-category="preventive"
+          style="margin-bottom: 50px"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Wellness Exams</div>
+              <h2>Regular Veterinary <em>Checkups</em></h2>
+            </div>
+            <p>
+              Proactive monitoring is the bedrock of lifelong canine health.
+            </p>
+          </div>
+          <div class="health-grid">
+            <div
+              class="health-card searchable-item"
+              data-keywords="routine health examinations physical wellness"
+            >
+              <h3>Routine Physical Exams</h3>
+              <p>
+                Comprehensive nose-to-tail wellness evaluations performed at
+                least once or twice a year.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="dental checkups oral hygiene tartar evaluation"
+            >
+              <h3>Dental Checkups</h3>
+              <p>
+                Professional inspection of teeth and gums to catch periodontal
+                disease in its early stages.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="weight monitoring body condition score scaling"
+            >
+              <h3>Weight Monitoring</h3>
+              <p>
+                Tracking body mass index and body condition score to prevent
+                weight-related disorders.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="blood tests senior screening wellness panels"
+            >
+              <h3>Recommended Blood Tests</h3>
+              <p>
+                Baseline bloodwork and organ function panels, especially
+                recommended for adult and senior dogs.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="preventive health screening early detection"
+            >
+              <h3>Preventive Screening</h3>
+              <p>
+                Early diagnostic testing to identify silent conditions before
+                clinical symptoms emerge.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="category-section"
+          data-category="firstaid"
+          style="margin-bottom: 50px"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Urgent Response</div>
+              <h2>First Aid & <em>Emergency Care</em></h2>
+            </div>
+            <p>Knowing what to do when critical situations arise.</p>
+          </div>
+          <div class="health-grid">
+            <div
+              class="warning-card searchable-item"
+              data-keywords="minor cuts wounds injury bleeding"
+            >
+              <h3>Minor Cuts & Wounds</h3>
+              <p>
+                Gently clean with saline solution and apply pet-safe antiseptic.
+                Monitor for signs of infection.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="bleeding pressure bandage trauma"
+            >
+              <h3>Controlling Bleeding</h3>
+              <p>
+                Apply firm, direct pressure using a clean cloth or sterile gauze
+                pad until bleeding subsides.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="suspected poisoning toxicity chocolate chemicals emergency"
+            >
+              <h3>Suspected Poisoning</h3>
+              <p>
+                Keep packaging handy and call a vet immediately. Never induce
+                vomiting unless explicitly instructed.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="heatstroke overheating panting emergency"
+            >
+              <h3>Heatstroke</h3>
+              <p>
+                Move to shade, apply cool (not cold) water to paws and fur, and
+                rush to an emergency clinic immediately.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="choking airway blockage breathing difficulty"
+            >
+              <h3>Choking</h3>
+              <p>
+                If safe, check the mouth to remove visible obstructions. Use
+                modified Heimlich maneuvers for dogs if needed.
+              </p>
+            </div>
+            <div
+              class="warning-card searchable-item"
+              data-keywords="emergency veterinary contact information numbers"
+            >
+              <h3>Emergency Contacts</h3>
+              <p>
+                Keep your 24/7 local emergency vet hospital number and poison
+                control hotline pinned visibly at home.
+              </p>
+            </div>
+          </div>
+          <p class="sample-note" style="margin-top: 15px">
+            ⚠️
+            <em
+              >Disclaimer: First-aid information does not replace professional
+              veterinary treatment. Suspected poisoning, choking, heatstroke,
+              and severe trauma require urgent veterinary attention.</em
+            >
+          </p>
+        </div>
+
+        <div
+          class="category-section"
+          data-category="preventive"
+          style="margin-bottom: 50px"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Oral Hygiene</div>
+              <h2>Dental <em>Health</em></h2>
+            </div>
+            <p>
+              Fresh breath and strong teeth are vital for overall systemic
+              health.
+            </p>
+          </div>
+          <div class="health-grid">
+            <div
+              class="health-card searchable-item"
+              data-keywords="importance of oral hygiene plaque tartar prevention"
+            >
+              <h3>Oral Hygiene Importance</h3>
+              <p>
+                Prevents bacteria from entering the bloodstream and damaging the
+                heart, kidneys, and liver.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="brushing teeth daily canine toothpaste"
+            >
+              <h3>Brushing Dog Teeth</h3>
+              <p>
+                Introduce daily or regular toothbrushing using flavored pet-safe
+                toothpaste (never human toothpaste).
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="dental chews toys plaque removal"
+            >
+              <h3>Dental Chews & Toys</h3>
+              <p>
+                Provide veterinary-approved dental chews that mechanically
+                reduce tartar buildup during chewing.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="signs of dental problems bad breath bleeding gums"
+            >
+              <h3>Signs of Dental Trouble</h3>
+              <p>
+                Look out for foul breath, yellowish-brown tartar, drooling, or
+                reluctance to chew hard kibble.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="professional dental cleaning scaling polishing"
+            >
+              <h3>Professional Cleaning</h3>
+              <p>
+                Under-anesthesia scaling and polishing performed by a vet to
+                clean beneath the gumline safely.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="category-section"
+          data-category="preventive"
+          style="margin-bottom: 50px"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Psychological Well-being</div>
+              <h2>Mental Health & <em>Emotional Wellness</em></h2>
+            </div>
+            <p>
+              A healthy mind is just as important as a healthy body for your
+              dog.
+            </p>
+          </div>
+          <div class="health-grid">
+            <div
+              class="health-card searchable-item"
+              data-keywords="separation anxiety distress alone panic"
+            >
+              <h3>Separation Anxiety</h3>
+              <p>
+                Distress when left alone; manage with gradual desensitization
+                and comfort items.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="stress fear phobias thunderstorms noise"
+            >
+              <h3>Stress & Fear</h3>
+              <p>
+                Reaction to loud noises or unfamiliar environments; provide
+                safe, quiet retreat spaces.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="mental stimulation puzzle toys training enrichment"
+            >
+              <h3>Mental Stimulation</h3>
+              <p>
+                Use puzzle toys, scent games, and obedience training to keep
+                cognitive functions sharp.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="social interaction socialization dogs humans"
+            >
+              <h3>Social Interaction</h3>
+              <p>
+                Positive exposure to other pets and people builds confidence and
+                reduces fear-based reactivity.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="category-section"
+          data-category="preventive"
+          style="margin-bottom: 50px"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Best Practices</div>
+              <h2>Preventive <em>Health Care</em></h2>
+            </div>
+            <p>Daily habits that keep common illnesses at bay.</p>
+          </div>
+          <div
+            class="health-card searchable-item"
+            data-keywords="preventive health care checklist sanitation water"
+            style="background: var(--soft)"
+          >
+            <ul style="margin: 0; padding-left: 20px; line-height: 2.2">
+              <li>
+                <strong>Regular Health Monitoring:</strong> Inspect coat, eyes,
+                ears, and paws weekly.
+              </li>
+              <li>
+                <strong>Healthy Weight Maintenance:</strong> Measure portions
+                and limit high-calorie treats.
+              </li>
+              <li>
+                <strong>Clean Drinking Water:</strong> Provide fresh, filtered
+                water in sanitized bowls daily.
+              </li>
+              <li>
+                <strong>Hygiene & Sanitation:</strong> Regular baths, brushing,
+                and clean living quarters.
+              </li>
+              <li>
+                <strong>Parasite Prevention:</strong> Consistent year-round
+                flea, tick, and worm protection.
+              </li>
+              <li>
+                <strong>Routine Veterinary Visits:</strong> Keep up with
+                wellness checks and vaccine boosters.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="category-section"
+          data-category="senior"
+          style="margin-bottom: 50px"
+        >
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Golden Years</div>
+              <h2>Senior Dog <em>Health</em></h2>
+            </div>
+            <p>Specialized care for aging canine companions.</p>
+          </div>
+          <div class="health-grid">
+            <div
+              class="health-card searchable-item"
+              data-keywords="age related health changes metabolism senior"
+            >
+              <h3>Age-Related Changes</h3>
+              <p>
+                Slowing metabolism, graying muzzle, and decreased stamina
+                require dietary and activity adjustments.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="arthritis joint problems pain relief senior"
+            >
+              <h3>Arthritis & Joint Care</h3>
+              <p>
+                Provide orthopedic bedding, non-slip rugs, and joint supplements
+                recommended by your vet.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="vision hearing changes cataracts deafness"
+            >
+              <h3>Vision & Hearing Decline</h3>
+              <p>
+                Adapt home layouts for dogs experiencing cataracts or hearing
+                loss by keeping furniture in fixed places.
+              </p>
+            </div>
+            <div
+              class="health-card searchable-item"
+              data-keywords="senior veterinary checkups bi-annual screening"
+            >
+              <h3>Bi-Annual Vet Checkups</h3>
+              <p>
+                Older dogs benefit from health screenings every 6 months to
+                detect organ decline early.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 60px">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow">Got Questions?</div>
+              <h2>Frequently Asked <em>Questions</em></h2>
+            </div>
+            <p>Clear answers to common dog health inquiries.</p>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How often should I take my dog to the vet? <span>+</span>
+            </div>
+            <div class="faq-answer">
+              Adult dogs should visit at least once a year for a routine
+              wellness exam. Puppies require more frequent visits for vaccines,
+              while senior dogs (7+ years) benefit from bi-annual checkups.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              Which vaccines are necessary for dogs? <span>+</span>
+            </div>
+            <div class="faq-answer">
+              Core vaccines, including Rabies and DHPP (Distemper, Hepatitis,
+              Parvovirus, Parainfluenza), are recommended for all dogs. Non-core
+              vaccines depend on your dog's specific lifestyle and geographical
+              exposure.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How often should dogs be dewormed? <span>+</span>
+            </div>
+            <div class="faq-answer">
+              Puppies require frequent deworming schedules. Adult dogs are
+              typically treated every 3 months or based on fecal exam results
+              and lifestyle risk factors.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              What are common signs of illness in dogs? <span>+</span>
+            </div>
+            <div class="faq-answer">
+              Common indicators include lethargy, sudden loss of appetite,
+              vomiting, diarrhea, unusual scratching, behavioral shifts, or
+              difficulty rising.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How do I know if my dog has a fever? <span>+</span>
+            </div>
+            <div class="faq-answer">
+              A dog's normal temperature ranges between 101°F and 102.5°F. Signs
+              of fever include warm ears, lethargy, shivering, and watery eyes.
+              A rectal thermometer provides the accurate reading.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              What should I do if my dog stops eating? <span>+</span>
+            </div>
+            <div class="faq-answer">
+              If food refusal lasts more than 24 hours or is accompanied by
+              vomiting or lethargy, consult your veterinarian immediately to
+              rule out illness or pain.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              How can I prevent ticks and fleas? <span>+</span>
+            </div>
+            <div class="faq-answer">
+              Use veterinarian-recommended preventive treatments such as monthly
+              topical spot-ons, chewable tablets, or seresto collars
+              consistently year-round.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+              When should I take my dog to an emergency vet? <span>+</span>
+            </div>
+            <div class="faq-answer">
+              Seek emergency care immediately for severe trauma, suspected
+              poisoning, difficulty breathing, continuous vomiting, inability to
+              urinate, or heatstroke.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="inner-cta">
+        <h2>Your dog's health is our top priority.</h2>
+        <p>
+          Explore more pet care guides or connect with trusted community members
+          on PetSathi.
+        </p>
+        <a class="button" href="../index.html" style="margin-top: 20px"
+          >Back to Explore Pets ↗</a
+        >
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="section-wrap footer-grid">
+        <div>
+          <a class="brand" href="../../../index.html"
+            >🐾 Pet<span>Sathi</span></a
+          >
+          <p>
+            Your pet's trusted companion. Making pet care easier, one paw at a
+            time.
+          </p>
+        </div>
+        <div>
+          <b>Explore</b>
+          <a href="../index.html">Pet Categories</a>
+          <a href="../../services/index.html">Services</a>
+          <a href="../../walker/index.html">Find a Walker</a>
+          <a href="../../services/dog-walking.html">Dog Walking Service</a>
+        </div>
+        <div>
+          <b>PetSathi</b>
+          <a href="../../about.html">About Us</a>
+          <a href="../../auth/login.html">Log in</a>
+          <a href="../../auth/register.html">Register</a>
+        </div>
+        <div>
+          <b>Dog Guides</b>
+          <a href="breeds.html">Dog Breeds</a>
+          <a href="health.html">Health & Wellness</a>
+          <a href="walking.html">Exercise & Walking</a>
+          <a href="../../walker/dogs.html">Find Dog Walkers</a>
+        </div>
+      </div>
+      <div class="section-wrap footer-bottom">
+        <span>© <span id="year"></span> PetSathi. Made with ♥ for pets.</span>
+        <span>तुमच्या Pet चा विश्वासू साथी! 🐾</span>
+      </div>
+    </footer>
+
+    <script src="../../../js/main.js"></script>
+    <script>
+      function toggleFaq(el) {
+        const item = el.parentElement;
+        item.classList.toggle("active");
+      }
+
+      function filterHealthContent() {
+        const query = document
+          .getElementById("healthSearch")
+          .value.toLowerCase();
+        const items = document.querySelectorAll(".searchable-item");
+
+        items.forEach((item) => {
+          const text = item.textContent.toLowerCase();
+          const keywords = item.getAttribute("data-keywords") || "";
+          if (text.includes(query) || keywords.includes(query)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+
+      function filterCategory(category, btn) {
+        document
+          .querySelectorAll(".filter-chip")
+          .forEach((c) => c.classList.remove("active"));
+        btn.classList.add("active");
+
+        const sections = document.querySelectorAll(".category-section");
+        sections.forEach((sec) => {
+          if (
+            category === "all" ||
+            sec.getAttribute("data-category") === category
+          ) {
+            sec.style.display = "block";
+          } else {
+            sec.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

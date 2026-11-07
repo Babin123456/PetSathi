@@ -59,7 +59,7 @@
         color: #fff;
       }
       #pets {
-        background-color: #FFFFED !important;
+        background-color: #ffffed !important;
         color: var(--ink);
       }
       #pets > .section-wrap {
@@ -101,11 +101,28 @@
         font-size: 1.02rem;
       }
       .center-heading {
-        margin-bottom: 14px;
         text-align: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        color: #246b43;
+        font-family: "DM Sans", "Manrope", sans-serif !important;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
       }
       .center-heading h2 {
-        margin: 0;
+        color: #263b30;
+        font-family: Georgia, "Times New Roman", serif !important;
+        font-size: clamp(24px, 3.2vw, 36px);
+        font-weight: 700;
+        margin: 0 0 12px;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
       }
       .dark-section h2 em {
         color: #f4c79f;
@@ -156,63 +173,49 @@
       }
       .homepage-card-content {
         display: flex;
-        flex: 1;
         flex-direction: column;
-        align-items: center;
-        min-width: 0;
-        padding: 22px 22px 24px;
-        text-align: center;
+        flex-grow: 1;
+        padding: 24px;
       }
       .homepage-card h3 {
-        min-height: 2.6em;
+        font-size: 1.25rem;
         margin: 0 0 10px;
-        font-family: "Manrope", sans-serif !important;
-        font-size: 1.2rem;
-        font-weight: 800;
-        line-height: 1.3;
-        letter-spacing: -0.4px;
+        color: var(--ink);
       }
       .homepage-card p {
-        min-height: 4.8em;
-        margin: 0 0 18px;
-        font-family: "DM Sans", sans-serif !important;
         font-size: 0.9rem;
-        font-weight: 400;
         line-height: 1.6;
+        margin: 0 0 20px;
+        flex-grow: 1;
+        color: var(--muted);
       }
       .homepage-card .card-link {
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        align-self: center;
-        min-height: 40px;
-        margin-top: auto;
-        padding: 9px 17px;
-        border: 1px solid #cbd9ce;
-        border-radius: 999px;
-        background: #eaf2e9;
+        align-self: flex-start;
+        gap: 6px;
         color: var(--green);
-        font-family: "DM Sans", sans-serif !important;
-        font-size: 0.84rem;
+        font-size: 0.88rem;
         font-weight: 700;
-        line-height: 1.3;
         transition:
-          background 0.2s ease,
-          border-color 0.2s ease,
+          transform 0.2s,
           color 0.2s ease;
       }
       .homepage-card .card-link:hover {
-        background: var(--green);
-        border-color: var(--green);
-        color: #ffffff;
+        color: var(--dark);
+        transform: translateX(4px);
       }
       .card-link {
         display: inline-flex;
-        margin-top: auto;
-        padding-top: 20px;
+        align-items: center;
+        align-self: flex-start;
+        gap: 6px;
         color: var(--green);
-        font-size: 0.84rem;
-        font-weight: 800;
+        font-size: 0.88rem;
+        font-weight: 700;
+        transition:
+          transform 0.2s,
+          color 0.2s ease;
       }
       .dark-section .homepage-card {
         border-color: #dfe9df;
@@ -233,13 +236,27 @@
         color: var(--green);
       }
       .service-section .homepage-card {
-        border-color: #a9c8ad;
-        background: var(--cream);
-        box-shadow: none;
+        display: flex;
+        min-width: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0 !important;
+        overflow: hidden;
+        flex-direction: column;
+        border: 1px solid #dfe9df;
+        border-radius: 18px;
+        background: #ffffff;
+        color: var(--ink);
+        box-shadow: 0 4px 14px rgba(35, 57, 43, 0.05);
+        text-decoration: none;
+        transition:
+          transform 0.22s ease,
+          border-color 0.22s ease,
+          box-shadow 0.22s ease;
       }
       .service-section .homepage-card:hover {
-        border-color: #7da987;
-        box-shadow: 0 12px 24px rgba(29, 80, 57, 0.14);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 38px rgba(35, 57, 43, 0.15);
       }
       .how {
         max-width: none;
@@ -248,8 +265,8 @@
         padding-top: 90px;
         padding-bottom: 90px;
       }
-      #how-steps{
-        background-color: #FFFFED !important;
+      #how-steps {
+        background-color: #ffffed !important;
         color: var(--ink);
       }
       #how-steps > .section-wrap {
@@ -412,26 +429,6 @@
         .footer-grid {
           grid-template-columns: 1fr;
         }
-      }
-      #pets .homepage-card .card-link,
-      #services .homepage-card .card-link {
-        color: var(--green) !important;
-        background: #eaf2e9 !important;
-        border: 1px solid #cbd9ce !important;
-      }
-      #pets .homepage-card .card-link:hover,
-      #services .homepage-card .card-link:hover {
-        color: #ffffff !important;
-        background: var(--green) !important;
-        border-color: var(--green) !important;
-      }
-      #pets .homepage-card:hover .card-link,
-      #services .homepage-card:hover .card-link {
-        color: var(--green) !important;
-      }
-      #pets .homepage-card:hover .card-link:hover,
-      #services .homepage-card:hover .card-link:hover {
-        color: #ffffff !important;
       }
       .how .steps {
         position: relative;

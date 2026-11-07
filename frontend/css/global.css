@@ -159,6 +159,9 @@ p {
   color: var(--green);
   border-color: #cbd9ce;
 }
+.button-outline:hover {
+  color: white;
+}
 .button-light {
   background: white;
   color: var(--dark);

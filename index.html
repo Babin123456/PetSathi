@@ -59,14 +59,18 @@
         color: #fff;
       }
       #pets {
-        background: #dcebdc;
+        background-color: #FFFFED !important;
         color: var(--ink);
+      }
+      #pets > .section-wrap {
+        background-color: transparent !important;
       }
       #pets .eyebrow {
         color: var(--green);
       }
       #pets .section-intro {
         color: var(--muted);
+        background-color: transparent !important;
       }
       #pets h2 em {
         color: var(--green);
@@ -109,44 +113,98 @@
       .card-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 22px;
+        gap: 24px;
+        align-items: stretch;
       }
       .homepage-card {
         display: flex;
         min-width: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0 !important;
         overflow: hidden;
         flex-direction: column;
-        border: 1px solid var(--line);
-        border-radius: 20px;
-        background: var(--cream);
-        box-shadow: none;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: 1px solid #dfe9df;
+        border-radius: 18px;
+        background: #ffffff;
+        color: var(--ink);
+        box-shadow: 0 4px 14px rgba(35, 57, 43, 0.05);
+        text-decoration: none;
+        transition:
+          transform 0.22s ease,
+          border-color 0.22s ease,
+          box-shadow 0.22s ease;
       }
       .homepage-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 20px 38px rgba(35, 57, 43, 0.15);
       }
+      .homepage-card:focus-visible {
+        outline: 3px solid #286849;
+        outline-offset: 3px;
+      }
       .homepage-card img {
+        display: block;
         width: 100%;
-        height: 205px;
-        flex: 0 0 205px;
+        max-width: 100%;
+        height: 210px;
+        flex: 0 0 210px;
         object-fit: cover;
+        object-position: center;
+        margin: 0;
+        padding: 0;
       }
       .homepage-card-content {
         display: flex;
         flex: 1;
         flex-direction: column;
         align-items: center;
+        min-width: 0;
         padding: 22px 22px 24px;
         text-align: center;
       }
       .homepage-card h3 {
-        margin: 0 0 8px;
-        font-size: 1.25rem;
+        min-height: 2.6em;
+        margin: 0 0 10px;
+        font-family: "Manrope", sans-serif !important;
+        font-size: 1.2rem;
+        font-weight: 800;
+        line-height: 1.3;
+        letter-spacing: -0.4px;
       }
       .homepage-card p {
-        margin: 0;
+        min-height: 4.8em;
+        margin: 0 0 18px;
+        font-family: "DM Sans", sans-serif !important;
         font-size: 0.9rem;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+      .homepage-card .card-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        min-height: 40px;
+        margin-top: auto;
+        padding: 9px 17px;
+        border: 1px solid #cbd9ce;
+        border-radius: 999px;
+        background: #eaf2e9;
+        color: var(--green);
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 0.84rem;
+        font-weight: 700;
+        line-height: 1.3;
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .homepage-card .card-link:hover {
+        background: var(--green);
+        border-color: var(--green);
+        color: #ffffff;
       }
       .card-link {
         display: inline-flex;
@@ -183,25 +241,31 @@
         border-color: #7da987;
         box-shadow: 0 12px 24px rgba(29, 80, 57, 0.14);
       }
-      .service-card img {
-        height: 205px;
-        flex-basis: 205px;
-        object-position: center;
-      }
-      .service-card .card-link {
-        color: var(--dark);
-      }
-      .how .section-intro {
-        margin-bottom: 42px;
-      }
       .how {
         max-width: none;
         padding-right: max(24px, calc((100% - 1160px) / 2));
         padding-left: max(24px, calc((100% - 1160px) / 2));
-        background: var(--soft);
+        padding-top: 90px;
+        padding-bottom: 90px;
+      }
+      #how-steps{
+        background-color: #FFFFED !important;
+        color: var(--ink);
+      }
+      #how-steps > .section-wrap {
+        background-color: transparent !important;
+      }
+      #how-steps .section-intro {
+        color: var(--muted);
+        background-color: transparent !important;
       }
       .how .section-intro {
-        color: var(--muted);
+        max-width: 620px;
+        margin: 0 auto 48px;
+        text-align: center;
+      }
+      .how .center-heading {
+        margin-bottom: 14px;
       }
       .steps {
         position: relative;
@@ -231,7 +295,10 @@
         border-radius: 18px;
         background: #f9fcf7;
         box-shadow: none;
-        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
       }
       .steps article:hover {
         border-color: #9fbea4;
@@ -323,11 +390,6 @@
         .about-preview {
           grid-template-columns: 1fr;
         }
-        .homepage-card img,
-        .service-card img {
-          height: 210px;
-          flex-basis: 210px;
-        }
         .steps {
           gap: 14px;
         }
@@ -351,47 +413,291 @@
           grid-template-columns: 1fr;
         }
       }
+      #pets .homepage-card .card-link,
+      #services .homepage-card .card-link {
+        color: var(--green) !important;
+        background: #eaf2e9 !important;
+        border: 1px solid #cbd9ce !important;
+      }
+      #pets .homepage-card .card-link:hover,
+      #services .homepage-card .card-link:hover {
+        color: #ffffff !important;
+        background: var(--green) !important;
+        border-color: var(--green) !important;
+      }
+      #pets .homepage-card:hover .card-link,
+      #services .homepage-card:hover .card-link {
+        color: var(--green) !important;
+      }
+      #pets .homepage-card:hover .card-link:hover,
+      #services .homepage-card:hover .card-link:hover {
+        color: #ffffff !important;
+      }
+      .how .steps {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 28px;
+      }
+      .how .steps::before {
+        content: "";
+        position: absolute;
+        top: 100px;
+        left: 16%;
+        right: 16%;
+        height: 2px;
+        background: #b9d2bd;
+        z-index: 0;
+      }
+      .how .steps article {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 0;
+        min-height: 0;
+        padding: 25px 22px 28px;
+        text-align: center;
+        background: #ffffff;
+        border: 1px solid #dce8dc;
+        border-radius: 20px;
+        box-shadow: 0 4px 14px rgba(35, 57, 43, 0.05);
+        transition:
+          transform 0.25s ease,
+          border-color 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .how .steps article > b {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--green) !important;
+        font-family: "Manrope", sans-serif !important;
+        font-size: 1.5rem;
+        font-weight: 800;
+        line-height: 1.3;
+      }
+      .how .steps article > span {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        place-items: center;
+        width: 65px;
+        height: 65px;
+        flex: 0 0 65px;
+        margin: 0 auto 18px;
+        border: 5px solid #ffffff;
+        border-radius: 50%;
+        background: #eaf2e9 !important;
+        color: var(--green) !important;
+        font-size: 1.7rem;
+        box-shadow: 0 0 0 1px #b9d2bd;
+      }
+      .how .steps article h3 {
+        margin: 0 0 10px;
+        color: var(--ink) !important;
+        font-family: "Manrope", sans-serif !important;
+        font-size: 1.12rem;
+        font-weight: 800;
+        line-height: 1.4;
+      }
+      .how .steps article p {
+        max-width: 290px;
+        margin: 0;
+        color: var(--muted) !important;
+        font-family: "DM Sans", sans-serif !important;
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
+      .how .steps article:hover {
+        transform: translateY(-5px);
+        border-color: #9fbea4;
+        box-shadow: 0 12px 26px rgba(35, 57, 43, 0.1);
+      }
+      .how .steps article:focus-within {
+        outline: 2px solid var(--green);
+        outline-offset: 3px;
+      }
+      @media (min-width: 621px) and (max-width: 900px) {
+        .how .steps {
+          gap: 16px;
+        }
+        .how .steps article {
+          padding: 22px 15px;
+        }
+        .how .steps article h3 {
+          font-size: 1.02rem;
+        }
+        .how .steps::before {
+          left: 16%;
+          right: 16%;
+        }
+      }
+      @media (max-width: 620px) {
+        .how {
+          padding-top: 65px;
+          padding-bottom: 65px;
+        }
+        .how .section-intro {
+          margin-bottom: 32px;
+        }
+        .how .steps {
+          grid-template-columns: 1fr;
+          gap: 18px;
+          max-width: 480px;
+          margin: 0 auto;
+        }
+        .how .steps::before {
+          top: 100px;
+          bottom: 100px;
+          left: 50%;
+          right: auto;
+          width: 2px;
+          height: auto;
+          transform: translateX(-50%);
+        }
+        .how .steps article {
+          padding: 22px 20px 25px;
+        }
+        .how .steps article > b {
+          margin-bottom: 8px;
+        }
+        .how .steps article > span {
+          margin-bottom: 14px;
+        }
+      }
+      /* Respect reduced-motion preferences */
+      @media (prefers-reduced-motion: reduce) {
+        .how .steps article {
+          transition: none;
+        }
+        .how .steps article:hover {
+          transform: none;
+        }
+      }
+      .button.button-light:hover {
+        background-color: #edf3ec !important;
+        color: var(--dark) !important;
+        border-color: #edf3ec !important;
+      }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
   <body>
     <header class="site-header">
-  <a class="brand" href="index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
-  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
-  <nav class="main-nav" aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <div class="nav-item"><a href="frontend/pages/pets/index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-explore">
-        <a href="frontend/pages/pets/dogs/index.html">Dogs</a><a href="frontend/pages/pets/cats/index.html">Cats</a><a href="frontend/pages/pets/birds/index.html">Birds</a><a href="frontend/pages/pets/rabbits/index.html">Rabbits</a><a href="frontend/pages/pets/other/fish.html">Aquarium Fish</a><a href="frontend/pages/pets/other/reptiles.html">Reptiles</a>
-      </div>
-    </div>
-    <div class="nav-item"><a href="frontend/pages/services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-services"><a href="frontend/pages/services/dog-walking.html">Dog Walking</a><a href="frontend/pages/services/cat-care.html">Cat Care</a><a href="frontend/pages/services/pet-care.html">Pet Care</a></div>
-    </div>
-    <div class="nav-item"><a href="frontend/pages/walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-walker"><a href="frontend/pages/walker/dogs.html">Search Walkers</a><a href="frontend/pages/walker/cats.html">Walker Profiles</a><a href="frontend/pages/walker/index.html#bookings">My Bookings</a></div>
-    </div>
-    <a href="frontend/pages/about.html">About Us</a><a href="frontend/pages/auth/login.html">Log in</a><a class="button button-small" href="frontend/pages/auth/register.html">Get Started</a>
-  </nav>
-</header>
+      <a class="brand" href="index.html" aria-label="PetSathi home"
+        ><svg
+          class="brand-mark"
+          aria-hidden="true"
+          viewBox="0 0 40 40"
+          role="img"
+          focusable="false"
+        >
+          <circle cx="12" cy="12" r="4" fill="currentColor" />
+          <circle cx="21" cy="8" r="4" fill="currentColor" />
+          <circle cx="30" cy="12" r="4" fill="currentColor" />
+          <path
+            d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
+            fill="currentColor"
+          /></svg
+        ><span>Pet<span>Sathi</span></span></a
+      >
+      <button
+        class="menu-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-item">
+          <a href="frontend/pages/pets/index.html"
+            >Explore Pets
+            <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a
+          >
+          <div class="dropdown dropdown-explore">
+            <a href="frontend/pages/pets/dogs/index.html">Dogs</a
+            ><a href="frontend/pages/pets/cats/index.html">Cats</a
+            ><a href="frontend/pages/pets/birds/index.html">Birds</a
+            ><a href="frontend/pages/pets/rabbits/index.html">Rabbits</a
+            ><a href="frontend/pages/pets/other/fish.html">Aquarium Fish</a
+            ><a href="frontend/pages/pets/other/reptiles.html">Reptiles</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="frontend/pages/services/index.html"
+            >Services
+            <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a
+          >
+          <div class="dropdown dropdown-services">
+            <a href="frontend/pages/services/dog-walking.html">Dog Walking</a
+            ><a href="frontend/pages/services/cat-care.html">Cat Care</a
+            ><a href="frontend/pages/services/pet-care.html">Pet Care</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="frontend/pages/walker/index.html"
+            >Find a Walker
+            <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a
+          >
+          <div class="dropdown dropdown-walker">
+            <a href="frontend/pages/walker/dogs.html">Search Walkers</a
+            ><a href="frontend/pages/walker/cats.html">Walker Profiles</a
+            ><a href="frontend/pages/walker/index.html#bookings">My Bookings</a>
+          </div>
+        </div>
+        <a href="frontend/pages/about.html">About Us</a
+        ><a href="frontend/pages/auth/login.html">Log in</a
+        ><a class="button button-small" href="frontend/pages/auth/register.html"
+          >Get Started</a
+        >
+      </nav>
+    </header>
 
     <main>
       <section class="hero section-wrap" id="home">
         <div class="hero-copy">
           <div class="eyebrow">A little more love for every paw</div>
           <h1>Every paw deserves a <em>happy walk.</em></h1>
-          <p>Discover a better way to care for your furry friends. Explore pet care information, find walking companions, and make every day brighter for your pets.</p>
+          <p>
+            Discover a better way to care for your furry friends. Explore pet
+            care information, find walking companions, and make every day
+            brighter for your pets.
+          </p>
           <div class="hero-actions">
-            <a class="button" href="frontend/pages/pets/index.html">Explore Pets ↗</a>
-            <a class="button button-outline" href="frontend/pages/walker/index.html">Find a Walker</a>
+            <a class="button" href="frontend/pages/pets/index.html"
+              >Explore Pets ↗</a
+            >
+            <a
+              class="button button-outline"
+              href="frontend/pages/walker/index.html"
+              >Find a Walker</a
+            >
           </div>
           <div class="hero-note">♥ &nbsp; Made for pets. Built with care.</div>
         </div>
         <div class="hero-visual">
           <div class="hero-blob"></div>
-          <img class="hero-photo" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=90" alt="Golden dog looking at the camera outdoors" />
-          <div class="floating-card card-top">☀️ <span><b>Happy pets</b><small>Happy moments</small></span></div>
-          <div class="floating-card card-bottom">🐾 <span><b>Walk. Wag. Repeat.</b><small>Every day is an adventure</small></span></div>
+          <img
+            class="hero-photo"
+            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1200&q=90"
+            alt="Golden dog looking at the camera outdoors"
+          />
+          <div class="floating-card card-top">
+            ☀️ <span><b>Happy pets</b><small>Happy moments</small></span>
+          </div>
+          <div class="floating-card card-bottom">
+            🐾
+            <span
+              ><b>Walk. Wag. Repeat.</b
+              ><small>Every day is an adventure</small></span
+            >
+          </div>
         </div>
       </section>
 
@@ -401,100 +707,303 @@
             <div class="eyebrow">Explore their world</div>
             <h2>Meet your <em>new best friend.</em></h2>
           </div>
-          <p class="section-intro">Every pet is unique. Find helpful information and care inspiration made for them.</p>
+          <p class="section-intro">
+            Every pet is unique. Find helpful information and care inspiration
+            made for them.
+          </p>
           <div class="card-grid">
             <a class="homepage-card" href="frontend/pages/pets/dogs/index.html">
-              <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=90" alt="Complete golden dog standing outdoors" />
-              <div class="homepage-card-content"><h3>Dogs</h3><p>Big love, wagging tails and joyful adventures.</p><span class="card-link">Explore dogs ↗</span></div>
+              <img
+                src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&q=90"
+                alt="Complete golden dog standing outdoors"
+              />
+              <div class="homepage-card-content">
+                <h3>Dogs</h3>
+                <p>Big love, wagging tails and joyful adventures.</p>
+                <span class="card-link">Explore dogs ↗</span>
+              </div>
             </a>
             <a class="homepage-card" href="frontend/pages/pets/cats/index.html">
-              <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=700&q=85" alt="Cat looking at the camera" />
-              <div class="homepage-card-content"><h3>Cats</h3><p>Curious hearts, cozy paws and independent spirits.</p><span class="card-link">Explore cats ↗</span></div>
+              <img
+                src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=700&q=85"
+                alt="Cat looking at the camera"
+              />
+              <div class="homepage-card-content">
+                <h3>Cats</h3>
+                <p>Curious hearts, cozy paws and independent spirits.</p>
+                <span class="card-link">Explore cats ↗</span>
+              </div>
             </a>
-            <a class="homepage-card" href="frontend/pages/pets/birds/index.html">
-              <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=700&q=85" alt="Colorful bird perched on a branch" />
-              <div class="homepage-card-content"><h3>Birds</h3><p>Little wings, bright days and lively companions.</p><span class="card-link">Explore birds ↗</span></div>
+            <a
+              class="homepage-card"
+              href="frontend/pages/pets/birds/index.html"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=700&q=85"
+                alt="Colorful bird perched on a branch"
+              />
+              <div class="homepage-card-content">
+                <h3>Birds</h3>
+                <p>Little wings, bright days and lively companions.</p>
+                <span class="card-link">Explore birds ↗</span>
+              </div>
             </a>
-            <a class="homepage-card" href="frontend/pages/pets/rabbits/index.html">
-              <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=700&q=85" alt="Rabbit resting in grass" />
-              <div class="homepage-card-content"><h3>Rabbits</h3><p>Soft noses, gentle souls and playful hops.</p><span class="card-link">Explore rabbits ↗</span></div>
+            <a
+              class="homepage-card"
+              href="frontend/pages/pets/rabbits/index.html"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=700&q=85"
+                alt="Rabbit resting in grass"
+              />
+              <div class="homepage-card-content">
+                <h3>Rabbits</h3>
+                <p>Soft noses, gentle souls and playful hops.</p>
+                <span class="card-link">Explore rabbits ↗</span>
+              </div>
             </a>
             <a class="homepage-card" href="frontend/pages/pets/other/fish.html">
-              <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=700&q=85" alt="Colorful aquarium fish swimming" />
-              <div class="homepage-card-content"><h3>Aquarium Fish</h3><p>Vibrant fins, peaceful waters and fascinating worlds.</p><span class="card-link">Explore fish ↗</span></div>
+              <img
+                src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=700&q=85"
+                alt="Colorful aquarium fish swimming"
+              />
+              <div class="homepage-card-content">
+                <h3>Aquarium Fish</h3>
+                <p>Vibrant fins, peaceful waters and fascinating worlds.</p>
+                <span class="card-link">Explore fish ↗</span>
+              </div>
             </a>
-            <a class="homepage-card" href="frontend/pages/pets/other/reptiles.html">
-              <img src="frontend/assets/images/reptiles/bearded-dragon.jpg" alt="Bearded dragon resting on a branch" />
-              <div class="homepage-card-content"><h3>Reptiles</h3><p>Remarkable companions with specialized care needs.</p><span class="card-link">Explore reptiles ↗</span></div>
+            <a
+              class="homepage-card"
+              href="frontend/pages/pets/other/reptiles.html"
+            >
+              <img
+                src="frontend/assets/images/reptiles/bearded-dragon.jpg"
+                alt="Bearded dragon resting on a branch"
+              />
+              <div class="homepage-card-content">
+                <h3>Reptiles</h3>
+                <p>Remarkable companions with specialized care needs.</p>
+                <span class="card-link">Explore reptiles ↗</span>
+              </div>
             </a>
           </div>
         </div>
       </section>
 
-      <section class="service-section dark-section homepage-section" id="services">
+      <section
+        class="service-section dark-section homepage-section"
+        id="services"
+      >
         <div class="section-wrap">
           <div class="center-heading">
             <div class="eyebrow">THOUGHTFUL CARE FOR EVERY PAW</div>
             <h2>Here for every <em>pet need.</em></h2>
           </div>
-          <p class="section-intro">From happy walks to everyday care, we're here to make life better for you and your furry friends.</p>
+          <p class="section-intro">
+            From happy walks to everyday care, we're here to make life better
+            for you and your furry friends.
+          </p>
           <div class="card-grid">
-            <a class="homepage-card service-card" href="frontend/pages/services/dog-walking.html">
-              <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=700&q=85" alt="Dog enjoying a walk outdoors" />
-              <div class="homepage-card-content"><h3>Dog Walking</h3><p>Discover walking companions for daily adventures.</p><span class="card-link">Explore service ↗</span></div>
+            <a
+              class="homepage-card service-card"
+              href="frontend/pages/services/dog-walking.html"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=700&q=85"
+                alt="Dog enjoying a walk outdoors"
+              />
+              <div class="homepage-card-content">
+                <h3>Dog Walking</h3>
+                <p>Discover walking companions for daily adventures.</p>
+                <span class="card-link">Explore service ↗</span>
+              </div>
             </a>
-            <a class="homepage-card service-card" href="frontend/pages/services/cat-care.html">
-              <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=700&q=85" alt="Cat relaxing at home" />
-              <div class="homepage-card-content"><h3>Cat Care</h3><p>Helpful care support and information for cats.</p><span class="card-link">Explore service ↗</span></div>
+            <a
+              class="homepage-card service-card"
+              href="frontend/pages/services/cat-care.html"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?auto=format&fit=crop&w=700&q=85"
+                alt="Cat relaxing at home"
+              />
+              <div class="homepage-card-content">
+                <h3>Cat Care</h3>
+                <p>Helpful care support and information for cats.</p>
+                <span class="card-link">Explore service ↗</span>
+              </div>
             </a>
-            <a class="homepage-card service-card" href="frontend/pages/services/pet-care.html">
-              <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=700&q=85" alt="Two happy dogs together" />
-              <div class="homepage-card-content"><h3>Pet Care</h3><p>Everyday care inspiration for your beloved pet.</p><span class="card-link">Explore service ↗</span></div>
+            <a
+              class="homepage-card service-card"
+              href="frontend/pages/services/pet-care.html"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=700&q=85"
+                alt="Two happy dogs together"
+              />
+              <div class="homepage-card-content">
+                <h3>Pet Care</h3>
+                <p>Everyday care inspiration for your beloved pet.</p>
+                <span class="card-link">Explore service ↗</span>
+              </div>
             </a>
           </div>
         </div>
       </section>
 
-      <section class="section section-wrap how">
+      <section class="section section-wrap how" id="how-steps">
         <div class="center-heading">
           <div class="eyebrow">Easy as one, two, three</div>
           <h2>Your pet's happiness, <em>made simple.</em></h2>
         </div>
-        <p class="section-intro">A friendly path from discovering helpful care to making happy memories together.</p>
+        <p class="section-intro">
+          A friendly path from discovering helpful care to making happy memories
+          together.
+        </p>
         <div class="steps">
-          <article><b>01</b><span>🔎</span><h3>Explore</h3><p>Discover pet categories and helpful information.</p></article>
-          <article><b>02</b><span>🐾</span><h3>Choose</h3><p>Find a suitable walking companion for your pet.</p></article>
-          <article><b>03</b><span>💚</span><h3>Connect</h3><p>Plan a convenient walk and make happy memories.</p></article>
+          <article>
+            <b>01</b><span>🔎</span>
+            <h3>Explore</h3>
+            <p>Discover pet categories and helpful information.</p>
+          </article>
+          <article>
+            <b>02</b><span>🐾</span>
+            <h3>Choose</h3>
+            <p>Find a suitable walking companion for your pet.</p>
+          </article>
+          <article>
+            <b>03</b><span>💚</span>
+            <h3>Connect</h3>
+            <p>Plan a convenient walk and make happy memories.</p>
+          </article>
         </div>
       </section>
 
       <section class="green-band">
         <div class="section-wrap band-inner">
-          <div><div class="eyebrow">A friend for the journey</div><h2>Good walks make <em>happy tails.</em></h2><p>We're working towards making it easier for pet owners to discover suitable walking companions.</p><a class="button button-light" href="frontend/pages/walker/index.html">Find a Walker ↗</a></div>
-          <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=900&q=85" alt="Person walking with a dog" />
+          <div>
+            <div class="eyebrow">A friend for the journey</div>
+            <h2>Good walks make <em>happy tails.</em></h2>
+            <p>
+              We're working towards making it easier for pet owners to discover
+              suitable walking companions.
+            </p>
+            <a
+              class="button button-outline"
+              href="frontend/pages/walker/index.html"
+              >Find a Walker ↗</a
+            >
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=900&q=85"
+            alt="Person walking with a dog"
+          />
         </div>
       </section>
 
       <section class="section section-wrap about-preview">
-        <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=900&q=85" alt="Dog and cat resting together" />
-        <div><div class="eyebrow">A little about us</div><h2>Because they're <em>family.</em></h2><p>PetSathi is an open-source project created to bring pet owners and walking companions closer. Our goal is to build a friendly, useful platform for people and their beloved pets.</p><a class="text-link" href="frontend/pages/about.html">Learn more about us ↗</a></div>
+        <img
+          src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=900&q=85"
+          alt="Dog and cat resting together"
+        />
+        <div>
+          <div class="eyebrow">A little about us</div>
+          <h2>Because they're <em>family.</em></h2>
+          <p>
+            PetSathi is an open-source project created to bring pet owners and
+            walking companions closer. Our goal is to build a friendly, useful
+            platform for people and their beloved pets.
+          </p>
+          <a class="text-link" href="frontend/pages/about.html"
+            >Learn more about us ↗</a
+          >
+        </div>
       </section>
 
       <section class="cta section-wrap">
-        <div><div class="eyebrow">Let's make tails wag</div><h2>A happier day starts with <em>PetSathi.</em></h2><p>We're building something special for pets and the people who love them.</p></div>
-        <a class="button button-light" href="frontend/pages/auth/register.html">Get Started ↗</a>
+        <div>
+          <div class="eyebrow">Let's make tails wag</div>
+          <h2>A happier day starts with <em>PetSathi.</em></h2>
+          <p>
+            We're building something special for pets and the people who love
+            them.
+          </p>
+        </div>
+        <a class="button button-light" href="frontend/pages/auth/register.html"
+          >Get Started ↗</a
+        >
       </section>
     </main>
 
     <footer class="footer">
-  <div class="section-wrap footer-grid">
-    <div><a class="brand" href="index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
-    <div><b>Explore</b><a href="index.html#home">Home</a><a href="frontend/pages/pets/index.html">Explore Pets</a><a href="frontend/pages/services/index.html">Services</a><a href="frontend/pages/walker/index.html">Find a Walker</a></div>
-    <div><b>Information</b><a href="frontend/pages/about.html">About Us</a><a href="frontend/pages/contact.html">Contact Us</a><a href="frontend/pages/faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
-    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
-  </div>
-  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
-</footer>
+      <div class="section-wrap footer-grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="PetSathi home"
+            ><svg
+              class="brand-mark"
+              aria-hidden="true"
+              viewBox="0 0 40 40"
+              role="img"
+              focusable="false"
+            >
+              <circle cx="12" cy="12" r="4" fill="currentColor" />
+              <circle cx="21" cy="8" r="4" fill="currentColor" />
+              <circle cx="30" cy="12" r="4" fill="currentColor" />
+              <path
+                d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
+                fill="currentColor"
+              /></svg
+            ><span>Pet<span>Sathi</span></span></a
+          >
+          <p>
+            Your pet's trusted companion. Making pet care easier, one paw at a
+            time.
+          </p>
+        </div>
+        <div>
+          <b>Explore</b><a href="index.html#home">Home</a
+          ><a href="frontend/pages/pets/index.html">Explore Pets</a
+          ><a href="frontend/pages/services/index.html">Services</a
+          ><a href="frontend/pages/walker/index.html">Find a Walker</a>
+        </div>
+        <div>
+          <b>Information</b><a href="frontend/pages/about.html">About Us</a
+          ><a href="frontend/pages/contact.html">Contact Us</a
+          ><a href="frontend/pages/faq.html">FAQ / Help Center</a
+          ><a href="#privacy">Privacy Policy</a
+          ><a href="#terms">Terms &amp; Conditions</a>
+        </div>
+        <div>
+          <b>Connect With Us</b
+          ><a
+            href="https://github.com/Riya-Kharade/PetSathi"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          ><a
+            href="https://www.linkedin.com/in/riyakharade/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          ><a
+            href="https://petsathi-nsoc.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Live Website</a
+          >
+        </div>
+      </div>
+      <div class="section-wrap footer-bottom">
+        <span>&copy; 2026 PetSathi. All rights reserved.</span
+        ><span>Made with &hearts; for pets.</span
+        ><span
+          >&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet
+          &#x091A;&#x093E;
+          &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942;
+          &#x0938;&#x093E;&#x0925;&#x0940;!</span
+        >
+      </div>
+    </footer>
     <script src="frontend/js/main.js"></script>
   </body>
 </html>

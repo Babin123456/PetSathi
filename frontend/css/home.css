@@ -248,3 +248,32 @@ main > .cta {
     width: calc(100% - 64px);
   }
 }
+
+main > section:not(.hero) h2 {
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(2rem, 3.2vw, 2.8rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -1.2px !important;
+}
+
+/* Consistent section subtitles */
+main > section:not(.hero) .section-intro,
+main > section:not(.hero) .band-inner > div > p,
+main > section:not(.hero) .about-preview > div > p,
+main > section:not(.hero) .cta > div > p {
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+  font-style: normal !important;
+}
+
+/* Consistent eyebrow labels */
+main > section:not(.hero) .eyebrow {
+  font-family: "DM Sans", sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.7px !important;
+  text-transform: uppercase;
+}

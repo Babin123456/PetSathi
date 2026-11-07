@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Comprehensive dog breed details guide on PetSathi - physical characteristics, temperament, grooming, history, and care advice.">
+  <title id="pageTitle">Dog Breed Details | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* Font Awesome protection */
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    body .fa-brands,
+    body .fa-brands::before,
+    body [class*="fa-brands"] {
+      font-family: "Font Awesome 6 Brands" !important;
+    }
+
+    .fa-solid {
+      font-weight: 900 !important;
+    }
+
+    .fa-regular {
+      font-weight: 400 !important;
+    }
+
+    :root {
+      --dog-green: #286849;
+      --dog-green-light: #eaf2e9;
+      --dog-amber: #e59d38;
+      --card-radius: 20px;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb-nav {
+      padding: 16px 0 8px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: var(--green);
+    }
+
+    .breadcrumb-separator {
+      opacity: 0.5;
+    }
+
+    .breadcrumb-current {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* Breed Hero Section */
+    .breed-detail-hero {
+      background: linear-gradient(180deg, #edf5eb 0%, #ffffff 100%);
+      padding: 40px 0 50px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .breed-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .breed-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .breed-detail-hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--ink);
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+
+    .breed-detail-hero h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .breed-hero-lead {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 620px;
+    }
+
+    .breed-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .breed-pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .breed-pill-tag i {
+      color: var(--green);
+      font-size: 0.9rem;
+    }
+
+    .breed-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .breed-hero-media {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 36px rgba(25, 60, 40, 0.1);
+      border: 1px solid #dbe8dd;
+      background: #f4f7f2;
+      aspect-ratio: 4 / 3;
+    }
+
+    .breed-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .breed-origin-stamp {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    .breed-origin-stamp i {
+      color: var(--green);
+    }
+
+    /* Breed Quick Switcher Dropdown */
+    .switcher-bar {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 20px;
+      margin: -24px auto 35px;
+      max-width: 900px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      position: relative;
+      z-index: 5;
+    }
+
+    .switcher-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .switcher-label i {
+      color: var(--green);
+    }
+
+    .switcher-select {
+      flex: 1;
+      min-width: 240px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid #c9d8cc;
+      background: #fdfdfd;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    /* Specifications Matrix */
+    .specs-section {
+      padding: 20px 0 60px;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 35px;
+    }
+
+    .section-title-wrap .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eaf2e9;
+      color: var(--green);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title-wrap h2 {
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .section-title-wrap h2 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px;
+      background: #fbfdfa;
+      border: 1px solid #e7efe5;
+      border-radius: 14px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .spec-item:hover {
+      border-color: #cbd9ce;
+      transform: translateY(-2px);
+    }
+
+    .spec-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #eaf2e9;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 1.15rem;
+    }
+
+    .spec-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .spec-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .spec-val {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    /* Detailed Information Blocks */
+    .details-row-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .detail-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .detail-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .detail-card-header .header-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: #eaf2e9;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+    }
+
+    .detail-card-header h3 {
+      font-size: 1.3rem;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .detail-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .detail-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .facts-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .facts-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: var(--ink);
+    }
+
+    .facts-list li i {
+      color: var(--green);
+      font-size: 0.95rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* Image Gallery */
+    .gallery-section {
+      margin-bottom: 60px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      height: 240px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #f0f3eb;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Related Breeds */
+    .related-section {
+      margin-bottom: 70px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .related-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .related-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
+    }
+
+    .related-card-media {
+      height: 180px;
+      overflow: hidden;
+      background: #f4f7f2;
+      position: relative;
+    }
+
+    .related-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .related-card:hover .related-card-media img {
+      transform: scale(1.06);
+    }
+
+    .related-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .related-card-body h4 {
+      font-size: 1.15rem;
+      margin: 0 0 6px;
+      color: var(--ink);
+    }
+
+    .related-card-body p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0 0 16px;
+      flex-grow: 1;
+    }
+
+    .related-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    /* CTA Section */
+    .dog-care-cta {
+      background: linear-gradient(135deg, #1b4b34 0%, #286849 100%);
+      border-radius: 28px;
+      padding: 48px 40px;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      margin-top: 20px;
+      margin-bottom: 85px;
+      flex-wrap: wrap;
+      box-shadow: 0 12px 32px rgba(27, 75, 52, 0.15);
+    }
+
+    .dog-care-cta h2 {
+      color: #ffffff;
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+    }
+
+    .dog-care-cta h2 em {
+      font-style: normal;
+      color: #a7e4b9;
+    }
+
+    .dog-care-cta p {
+      color: #e2f0e6;
+      max-width: 580px;
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .dog-cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .breed-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .specs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .details-row-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .switcher-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .switcher-select {
+        width: 100%;
+      }
+
+      .dog-care-cta {
+        padding: 32px 24px;
+        margin-bottom: 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header (Standard PetSathi Theme) -->
+  <header class="site-header">
+    <a class="brand" href="../../../../index.html" aria-label="PetSathi home">
+      <svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
+        <circle cx="12" cy="12" r="4" fill="currentColor" />
+        <circle cx="21" cy="8" r="4" fill="currentColor" />
+        <circle cx="30" cy="12" r="4" fill="currentColor" />
+        <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
+          fill="currentColor" />
+      </svg>
+      <span>Pet<span>Sathi</span></span>
+    </a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"
+        aria-hidden="true"></i></button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../../../../index.html">Home</a>
+      <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-explore">
+          <a href="index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a
+            href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a
+            href="../other/reptiles.html">Reptiles</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-services">
+          <a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/pet-care.html">Pet Grooming</a><a
+            href="../../services/cat-care.html">Veterinary Guidance</a>
+        </div>
+      </div>
+      <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small"
+        href="../../auth/register.html">Get Started</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Breed Hero -->
+    <section class="breed-detail-hero">
+      <div class="section-wrap">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-nav">
+          <a href="../../../../index.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="../index.html">Explore Pets</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="index.html">Dogs</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="breeds.html">Dog Breeds</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current" id="crumbBreedName">Breed Details</span>
+        </div>
+
+        <div class="breed-hero-grid">
+          <div class="breed-hero-copy">
+            <div class="breed-badge-strip">
+              <i class="fa-solid fa-paw"></i>
+              <span id="heroBadgeCategory">Large Dog Breed</span>
+            </div>
+            <h1 id="heroBreedTitle">Golden <em>Retriever</em></h1>
+            <p class="breed-hero-lead" id="heroBreedDesc">
+              Intelligent, friendly, and devoted canine companions renowned for their gentle temperament, high trainability, and deep love for family life.
+            </p>
+
+            <div class="breed-tags-row" id="heroTagsRow">
+              <span class="breed-pill-tag"><i class="fa-solid fa-ruler-combined"></i> <span id="tagSize">Large</span></span>
+              <span class="breed-pill-tag"><i class="fa-solid fa-earth-asia"></i> <span id="tagOrigin">United Kingdom</span></span>
+              <span class="breed-pill-tag"><i class="fa-solid fa-heart"></i> <span id="tagTemperament">Friendly &amp; Intelligent</span></span>
+            </div>
+
+            <div class="breed-hero-actions">
+              <a href="breeds.html#popular-breeds" class="button button-outline">
+                <i class="fa-solid fa-arrow-left"></i> All Breeds Directory
+              </a>
+              <a href="breeds.html#comparison" class="button">
+                <i class="fa-solid fa-code-compare"></i> Compare This Breed
+              </a>
+            </div>
+          </div>
+
+          <div class="breed-hero-media">
+            <img id="heroBreedImg" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80" alt="Breed Photo">
+            <div class="breed-origin-stamp">
+              <i class="fa-solid fa-location-dot"></i>
+              <span id="heroOriginStamp">Origin: United Kingdom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Switcher Bar -->
+    <div class="section-wrap">
+      <div class="switcher-bar">
+        <div class="switcher-label">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Switch to Another Popular Breed:</span>
+        </div>
+        <select id="breedSwitcherSelect" class="switcher-select" onchange="onSwitcherChange(this.value)">
+          <option value="golden-retriever">Golden Retriever</option>
+          <option value="labrador-retriever">Labrador Retriever</option>
+          <option value="german-shepherd">German Shepherd</option>
+          <option value="beagle">Beagle</option>
+          <option value="pomeranian">Pomeranian</option>
+          <option value="shih-tzu">Shih Tzu</option>
+          <option value="pug">Pug</option>
+          <option value="siberian-husky">Siberian Husky</option>
+          <option value="rottweiler">Rottweiler</option>
+          <option value="indian-pariah">Indian Pariah Dog</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Specifications Matrix Section -->
+    <section class="section-wrap specs-section">
+      <div class="section-title-wrap">
+        <div class="eyebrow"><i class="fa-solid fa-list-check"></i> Standardized Profile</div>
+        <h2>Breed Specifications &amp; <em>Characteristics</em></h2>
+        <p>Essential physical standards, coat care requirements, and life expectancy details recognized for this breed.</p>
+      </div>
+
+      <div class="specs-grid">
+        <!-- 1. Breed Name -->
+        <div class="spec-item">
+          <div class="spec-icon-box"><i class="fa-solid fa-id-card"></i></div>
+          <div class="spec-content">
+            <span class="spec-label">Breed Name</span>
+            <span class="spec-val" id="specName">Golden Retriever</span>
+          </div>
+        </div>
+
+        <!-- 2. Origin -->
+        <div class="spec-item">
+          <div class="spec-icon-box"><i class="fa-solid fa-earth-americas"></i></div>
+          <div class="spec-content">
+            <span class="spec-label">Origin Country</span>
+            <span class="spec-val" id="specOrigin">United Kingdom (Scotland)</span>
+          </div>
+        </div>
+
+        <!-- 3. Size -->
+        <div class="spec-item">
+          <div class="spec-icon-box"><i class="fa-solid fa-ruler-combined"></i></div>
+          <div class="spec-content">
+            <span class="spec-label">Size Category</span>
+            <span class="spec-val" id="specSize">Large Breed</span>
+          </div>
+        </div>
+
+        <!-- 4. Average Weight -->
+        <div class="spec-item">
+          <div class="spec-icon-box"><i class="fa-solid fa-weight-scale"></i></div>
+          <div class="spec-content">
+            <span class="spec-label">Average Weight</span>
+            <span class="spec-val" id="specWeight">Male: 65–75 lbs | Female: 55–65 lbs</span>
+          </div>
+        </div>
+
+        <!-- 5. Average Height -->
+        <div class="spec-item">
+          <div class="spec-icon-box"><i class="fa-solid fa-arrows-up-down"></i></div>
+          <div class="spec-content">
+            <span class="spec-label">Average Height</span>
+            <span class="spec-val" id="specHeight">Male: 23–24 in | Female: 21.5–22.5 in</span>
+          </div>
+        </div>
+
+        <!-- 6. Life Expectancy -->
+        <div class="spec-item">
+          <div class="spec-icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="spec-content">
+            <span class="spec-label">Life Expectancy</span>
+            <span class="spec-val" id="specLifespan">10–12 Years</span>
+          </div>
+        </div>
+
+        <!-- 7. Coat Type -->
+        <div class="spec-item">
+          <div class="spec-icon-box"><i class="fa-solid fa-shield-dog"></i></div>
+          <div class="spec-content">
+            <span class="spec-label">Coat Type</span>
+            <span class="spec-val" id="specCoatType">Dense, water-repellent double coat with feathering</span>
+          </div>
+        </div>
+
+        <!-- 8. Coat Colours -->
+        <div class="spec-item">
+          <div class="spec-icon-box"><i class="fa-solid fa-palette"></i></div>
+          <div class="spec-content">
+            <span class="spec-label">Coat Colours</span>
+            <span class="spec-val" id="specCoatColors">Light Golden, Golden, Dark Golden</span>
+          </div>
+        </div>
+
+        <!-- 9. Temperament -->
+        <div class="spec-item">
+          <div class="spec-icon-box"><i class="fa-solid fa-face-smile"></i></div>
+          <div class="spec-content">
+            <span class="spec-label">Temperament</span>
+            <span class="spec-val" id="specTemperament">Friendly, intelligent, devoted, reliable</span>
+          </div>
+        </div>
+
+        <!-- 10. Shedding Level -->
+        <div class="spec-item">
+          <div class="spec-icon-box"><i class="fa-solid fa-scissors"></i></div>
+          <div class="spec-content">
+            <span class="spec-label">Shedding Level</span>
+            <span class="spec-val" id="specShedding">Moderate to High (Seasonal blowout)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breed History & Interesting Facts -->
+    <section class="section-wrap">
+      <div class="details-row-grid">
+        <!-- History Block -->
+        <article class="detail-card">
+          <div class="detail-card-header">
+            <div class="header-icon"><i class="fa-solid fa-landmark"></i></div>
+            <h3>Breed History &amp; Heritage</h3>
+          </div>
+          <div id="breedHistoryText">
+            <p>Golden Retrievers were originally bred in the Scottish Highlands during the reign of Queen Victoria by Dudley Marjoribanks, later known as Lord Tweedmouth.</p>
+            <p>Between 1840 and 1890, Tweedmouth sought an ultimate gundog capable of retrieving waterfowl seamlessly across both dense vegetation and cold highland lochs. The resulting breed combined superior scenting, gentle soft-mouth retrieval, and unfailing loyalty.</p>
+          </div>
+        </article>
+
+        <!-- Interesting Facts Block -->
+        <article class="detail-card">
+          <div class="detail-card-header">
+            <div class="header-icon"><i class="fa-solid fa-star"></i></div>
+            <h3>Interesting &amp; Fun Facts</h3>
+          </div>
+          <ul class="facts-list" id="breedFactsList">
+            <li><i class="fa-solid fa-check"></i> Known for their "soft mouth" instinct, gentle enough to carry a raw egg unbroken.</li>
+            <li><i class="fa-solid fa-check"></i> Ranked among the top 4 most intelligent dog breeds globally.</li>
+            <li><i class="fa-solid fa-check"></i> Frequently serve as service, therapy, guide, and search-and-rescue companions.</li>
+            <li><i class="fa-solid fa-check"></i> Have webbed toes and water-repellent undercoats that make them exceptional swimmers.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="section-wrap gallery-section">
+      <div class="section-title-wrap">
+        <div class="eyebrow"><i class="fa-solid fa-images"></i> Visual Showcase</div>
+        <h2>Breed Photo <em>Gallery</em></h2>
+        <p>A closer look at this breed at rest, at play, and exploring the outdoors.</p>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item"><img id="galImg1" src="" alt="Gallery Image 1" loading="lazy"></div>
+        <div class="gallery-item"><img id="galImg2" src="" alt="Gallery Image 2" loading="lazy"></div>
+        <div class="gallery-item"><img id="galImg3" src="" alt="Gallery Image 3" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- Related Breeds -->
+    <section class="section-wrap related-section">
+      <div class="section-title-wrap">
+        <div class="eyebrow"><i class="fa-solid fa-network-wired"></i> Similar Companions</div>
+        <h2>Related Dog <em>Breeds</em></h2>
+        <p>Explore other popular breeds with matching size profiles, temperaments, or care routines.</p>
+      </div>
+
+      <div class="related-grid" id="relatedGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-wrap">
+      <div class="dog-care-cta">
+        <div>
+          <div class="eyebrow" style="color: #c4e4cc; margin-bottom: 10px;">Companionship &amp; Daily Care</div>
+          <h2>Ready to Care for Your <em>Dog?</em></h2>
+          <p>
+            Learn more about nutrition, exercise routines, grooming schedules, and professional walking services on PetSathi.
+          </p>
+        </div>
+        <div class="dog-cta-actions">
+          <a class="button button-light" href="breeds.html" style="background: #ffffff; color: var(--green); border-color: #ffffff;">
+            <i class="fa-solid fa-arrow-left"></i> All Dog Breeds
+          </a>
+          <a class="button button-outline" href="care.html" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+            <i class="fa-solid fa-heart-pulse"></i> Dog Care Guide
+          </a>
+          <a class="button button-outline" href="../../services/dog-walking.html" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+            <i class="fa-solid fa-person-walking"></i> Dog Walking Services
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Identical to Main PetSathi Theme) -->
+  <footer class="footer">
+    <div class="section-wrap footer-grid">
+      <div>
+        <a class="brand" href="../../../../index.html" aria-label="PetSathi home">
+          <svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
+            <circle cx="12" cy="12" r="4" fill="currentColor" />
+            <circle cx="21" cy="8" r="4" fill="currentColor" />
+            <circle cx="30" cy="12" r="4" fill="currentColor" />
+            <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
+              fill="currentColor" />
+          </svg>
+          <span>Pet<span>Sathi</span></span>
+        </a>
+        <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
+      </div>
+      <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a
+          href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+      <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a
+          href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp;
+          Conditions</a></div>
+      <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank"
+          rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank"
+          rel="noopener noreferrer">Live Website</a></div>
+    </div>
+    <div class="section-wrap footer-bottom">
+      <span>&copy; 2026 PetSathi. All rights reserved.</span>
+      <span>Made with &hearts; for pets.</span>
+      <span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span>
+    </div>
+  </footer>
+
+  <script src="../../../js/main.js"></script>
+
+  <!-- Dedicated Breed Data Store & Dynamic Renderer -->
+  <script>
+    const breedsDB = {
+      "golden-retriever": {
+        name: "Golden Retriever",
+        titleEm: "Retriever",
+        titlePrefix: "Golden",
+        origin: "United Kingdom (Scotland)",
+        size: "Large",
+        categoryBadge: "Large • Devoted Family Companion",
+        weight: "Male: 65–75 lbs (29–34 kg) | Female: 55–65 lbs (25–29 kg)",
+        height: "Male: 23–24 in (58–61 cm) | Female: 21.5–22.5 in (55–57 cm)",
+        lifespan: "10–12 Years",
+        coatType: "Dense, water-repellent double coat with feathering",
+        coatColors: "Light Golden, Golden, Dark Golden",
+        temperament: "Friendly, intelligent, devoted, reliable, gentle",
+        shedding: "Moderate to High (Seasonal blowout)",
+        shortDesc: "Intelligent, friendly, and devoted companions celebrated for their gentle disposition, luxurious water-repellent golden coats, and supreme loyalty to families.",
+        history: [
+          "Golden Retrievers were first developed in the mid-19th century in the Scottish Highlands by Dudley Marjoribanks (Lord Tweedmouth).",
+          "Tweedmouth bred a yellow retriever with the now-extinct Tweed Water Spaniel, later crossing with Bloodhound and Irish Setter lines to produce an incomparable retriever for hunting both on land and in marshy Scottish lochs.",
+          "Official kennel recognition followed in 1913, quickly propelling the Golden Retriever into one of the world's most cherished family companions and service dogs."
+        ],
+        facts: [
+          "Possess a renowned 'soft mouth' instinct, allowing them to carry delicate objects such as raw eggs without breaking them.",
+          "Consistently ranked in the top 4 most intelligent dog breeds worldwide.",
+          "Widely employed in guide assistance, scent detection, and search-and-rescue work.",
+          "Possess webbed feet and a double-layered water-shedding coat making them natural swimmers."
+        ],
+        mainImage: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80",
+        gallery: [
+          "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=600&q=80"
+        ],
+        related: ["labrador-retriever", "beagle", "german-shepherd"]
+      },
+      "labrador-retriever": {
+        name: "Labrador Retriever",
+        titlePrefix: "Labrador",
+        titleEm: "Retriever",
+        origin: "Canada / United Kingdom",
+        size: "Large",
+        categoryBadge: "Large • Energetic Sporting Companion",
+        weight: "Male: 65–80 lbs (29–36 kg) | Female: 55–70 lbs (25–32 kg)",
+        height: "Male: 22.5–24.5 in (57–62 cm) | Female: 21.5–23.5 in (55–60 cm)",
+        lifespan: "11–13 Years",
+        coatType: "Short, dense, weather-resistant double coat with otter tail",
+        coatColors: "Yellow, Black, Chocolate",
+        temperament: "Outgoing, even-tempered, gentle, eager to please, loyal",
+        shedding: "Moderate to High",
+        shortDesc: "Outgoing, spirited, and gentle family dogs renowned for their friendly temperament, high trainability, deep devotion, and love for water and fetch games.",
+        history: [
+          "Originating in Newfoundland, Canada, Labradors were originally known as the St. John's water dog, assisting fishermen with nets and cold water retrieval.",
+          "During the 1830s, British nobles imported these hardy working canines to England, refining their sporting and retrieving pedigree.",
+          "Labradors have held the title of the world's most registered family breed for decades due to their unmatched adaptability and warmth."
+        ],
+        facts: [
+          "Possess a distinctive 'otter tail' that acts as a powerful rudder when swimming.",
+          "Their short, water-resistant coat naturally sheds dirt and protects against ice-cold water.",
+          "Labradors are the primary breed chosen globally for search-and-rescue and guide dog programs.",
+          "They have an exceptional appetite and need structured portion control to maintain optimal weight."
+        ],
+        mainImage: "https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=900&q=80",
+        gallery: [
+          "https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=600&q=80"
+        ],
+        related: ["golden-retriever", "beagle", "rottweiler"]
+      },
+      "german-shepherd": {
+        name: "German Shepherd",
+        titlePrefix: "German",
+        titleEm: "Shepherd",
+        origin: "Germany",
+        size: "Large",
+        categoryBadge: "Large • Loyal Working & Protective Dog",
+        weight: "Male: 65–90 lbs (30–40 kg) | Female: 50–70 lbs (22–32 kg)",
+        height: "Male: 24–26 in (60–65 cm) | Female: 22–24 in (55–60 cm)",
+        lifespan: "9–13 Years",
+        coatType: "Medium-length, harsh double coat with dense undercoat",
+        coatColors: "Black & Tan, Sable, Bi-color, Solid Black",
+        temperament: "Courageous, confident, loyal, alert, highly trainable",
+        shedding: "High (Nicknamed 'German Shedder')",
+        shortDesc: "Courageous, devoted, and exceptionally intelligent working dogs known for their keen protective instincts, noble stature, and versatility.",
+        history: [
+          "Developed in Germany in 1899 by Captain Max von Stephanitz from various regional herding sheepdogs.",
+          "Von Stephanitz focused on producing an intelligent, working dog of superior utility, endurance, and obedience.",
+          "During WWI and WWII, German Shepherds served bravely as messengers, guard dogs, and medical search companions."
+        ],
+        facts: [
+          "Ranked third most intelligent dog breed, capable of learning new commands in under 5 repetitions.",
+          "Their bite force is estimated at 238 pounds of pressure, backed by gentle restraint when properly trained.",
+          "Extensively serving as police, military, and search-and-rescue partners around the globe.",
+          "Exhibit deep loyalty, creating an unbreakable bond with their primary handler and family."
+        ],
+        mainImage: "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=900&q=80",
+        gallery: [
+          "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1567752881298-894bb81f9379?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=600&q=80"
+        ],
+        related: ["rottweiler", "siberian-husky", "labrador-retriever"]
+      },
+      "beagle": {
+        name: "Beagle",
+        titlePrefix: "Merry",
+        titleEm: "Beagle",
+        origin: "United Kingdom",
+        size: "Medium",
+        categoryBadge: "Medium • Scent-Driven Hound",
+        weight: "Male: 22–26 lbs (10–12 kg) | Female: 20–24 lbs (9–11 kg)",
+        height: "Male: 13–15 in (33–38 cm) | Female: 12–14 in (30–36 cm)",
+        lifespan: "12–15 Years",
+        coatType: "Short, dense, weather-resistant hound coat",
+        coatColors: "Tricolor (Black, White & Tan), Red & White, Lemon",
+        temperament: "Merry, curious, friendly, scent-driven, determined",
+        shedding: "Moderate",
+        shortDesc: "Merry, curious, and gentle scent hounds characterized by expressive hazel eyes, musical bays, and an insatiable nose for scents and trail adventures.",
+        history: [
+          "Beagle-type hounds date back to ancient Greece, with modern Beagles standardized in 19th-century England for tracking hare and rabbit.",
+          "English huntsmen developed the breed to be tracked on foot rather than horseback, fostering a friendly, cooperative disposition.",
+          "Their small size and amiable personality made them a global family favorite alongside their hunting roots."
+        ],
+        facts: [
+          "Equipped with roughly 220 million scent receptors, making them superior tracking detectors.",
+          "Possess three distinct vocalizations: a standard bark, a musical baying howl, and a hunting yip.",
+          "All purebred Beagles have a distinctive white tip on their tail, historically bred so hunters could see them in tall grass.",
+          "Extremely food-motivated and known for cheerful curiosity."
+        ],
+        mainImage: "https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=900&q=80",
+        gallery: [
+          "https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80"
+        ],
+        related: ["golden-retriever", "indian-pariah", "pug"]
+      },
+      "pomeranian": {
+        name: "Pomeranian",
+        titlePrefix: "Spirited",
+        titleEm: "Pomeranian",
+        origin: "North-West Poland / North-East Germany (Pomerania)",
+        size: "Small",
+        categoryBadge: "Small / Toy • Lively City Companion",
+        weight: "Male: 3–7 lbs (1.4–3.2 kg) | Female: 3–7 lbs (1.4–3.2 kg)",
+        height: "Male: 7–12 in (18–30 cm) | Female: 7–11 in (18–28 cm)",
+        lifespan: "12–16 Years",
+        coatType: "Abundant, fluffy double coat with distinct neck ruff and plumed tail",
+        coatColors: "Orange, Red, Cream, Sable, Black, Pure White",
+        temperament: "Lively, bold, affectionate, vocal, alert, extroverted",
+        shedding: "Moderate",
+        shortDesc: "Vibrant, miniature spitz dogs featuring luxurious coats, foxy expressions, and huge personalities packed into a compact, playful frame.",
+        history: [
+          "Descended from large Arctic sled dogs belonging to the Spitz family in the historic Baltic region of Pomerania.",
+          "British royalty, particularly Queen Victoria, fell in love with the breed in the late 19th century and established a breeding kennel that reduced their size to modern toy proportions.",
+          "Today, Pomeranians enjoy immense popularity as affectionate indoor companions and alert watchdogs."
+        ],
+        facts: [
+          "Two Pomeranians famously survived the sinking of the Titanic in 1912 safely in their owners' arms.",
+          "Despite their small size, they retain the fearless spirit and thick insulation of Arctic sled dogs.",
+          "Their plumed tail curls tightly over their back, a trademark spitz trait.",
+          "Highly vocal and alert, providing excellent watchdog awareness for households."
+        ],
+        mainImage: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80",
+        gallery: [
+          "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80"
+        ],
+        related: ["shih-tzu", "pug", "beagle"]
+      },
+      "shih-tzu": {
+        name: "Shih Tzu",
+        titlePrefix: "Gentle",
+        titleEm: "Shih Tzu",
+        origin: "Tibet / China",
+        size: "Small",
+        categoryBadge: "Small / Toy • Calm Royal Companion",
+        weight: "Male: 9–16 lbs (4–7.5 kg) | Female: 9–16 lbs (4–7.5 kg)",
+        height: "Male: 9–10.5 in (23–27 cm) | Female: 9–10.5 in (23–27 cm)",
+        lifespan: "10–16 Years",
+        coatType: "Long, flowing, silky double coat or trimmed puppy clip",
+        coatColors: "Gold & White, Black & White, Solid Black, Brindle, Liver",
+        temperament: "Affectionate, playful, gentle, adaptable lap dog, friendly",
+        shedding: "Low (Hypoallergenic qualities)",
+        shortDesc: "Ancient, sweet-tempered companion dogs cherished for centuries in imperial Chinese palaces for their affectionate lap-dog nature and flowing coats.",
+        history: [
+          "Bred by Tibetan monks as sacred temple companions and presented as tribute to Chinese emperors in the Forbidden City.",
+          "Chinese royalty referred to them as 'Little Lion Dogs', pampering them in palaces with custom palace attendants.",
+          "The breed was introduced to Europe and North America during the 1930s and has since flourished as a premier apartment pet."
+        ],
+        facts: [
+          "The name 'Shih Tzu' translates literally to 'Lion Dog' in Mandarin.",
+          "Unlike many dogs with fur that sheds seasonally, Shih Tzus have hair that grows continuously, reducing indoor allergens.",
+          "They were bred solely to be affectionate companions, without any hunting or guarding pressure.",
+          "Naturally friendly and gentle around children and other small animals."
+        ],
+        mainImage: "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=900&q=80",
+        gallery: [
+          "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80"
+        ],
+        related: ["pomeranian", "pug", "beagle"]
+      },
+      "pug": {
+        name: "Pug",
+        titlePrefix: "Charming",
+        titleEm: "Pug",
+        origin: "China",
+        size: "Small",
+        categoryBadge: "Small • Charming & Docile Friend",
+        weight: "Male: 14–18 lbs (6.3–8.2 kg) | Female: 14–18 lbs (6.3–8.2 kg)",
+        height: "Male: 10–13 in (25–33 cm) | Female: 10–12 in (25–30 cm)",
+        lifespan: "12–15 Years",
+        coatType: "Short, smooth, fine glossy coat",
+        coatColors: "Fawn (with black mask), Solid Black, Silver Fawn",
+        temperament: "Charming, mischievous, affectionate, docile, sociable",
+        shedding: "High (Requires regular brushing)",
+        shortDesc: "Charming, humorous, and affectionate companions recognizable by their wrinkly faces, curled tails, expressive eyes, and calm indoor lifestyle.",
+        history: [
+          "Originated in ancient China over 2,000 years ago during the Han Dynasty as royal companions to emperors.",
+          "Dutch traders brought Pugs to Europe during the 16th century, where they became the official dog of the royal House of Orange in the Netherlands.",
+          "Later adored across Victorian England, Pugs became celebrated family companions globally for their gentle nature."
+        ],
+        facts: [
+          "The Latin motto of the Pug breed is 'Multum in Parvo', meaning 'A lot in a little'—referring to their big personality.",
+          "A group of Pugs is affectionately called a 'Grumble'.",
+          "The distinct wrinkles on a Pug's forehead were prized in ancient China for resembling the character for 'Prince' (王).",
+          "Their curled tail often makes a complete double loop, considered a prized standard."
+        ],
+        mainImage: "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80",
+        gallery: [
+          "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=600&q=80"
+        ],
+        related: ["shih-tzu", "pomeranian", "beagle"]
+      },
+      "siberian-husky": {
+        name: "Siberian Husky",
+        titlePrefix: "Athletic",
+        titleEm: "Siberian Husky",
+        origin: "Siberia, Russia",
+        size: "Medium",
+        categoryBadge: "Medium-Large • Endurance Working Dog",
+        weight: "Male: 45–60 lbs (20–27 kg) | Female: 35–50 lbs (16–23 kg)",
+        height: "Male: 21–23.5 in (53–60 cm) | Female: 20–22 in (51–56 cm)",
+        lifespan: "12–14 Years",
+        coatType: "Thick, insulating plush double coat with dense undercoat",
+        coatColors: "Black & White, Gray & White, Red & White, Pure White",
+        temperament: "Outgoing, energetic, mischievous, vocal, friendly",
+        shedding: "Very High (Heavy blowing twice a year)",
+        shortDesc: "Athletic, intelligent, and free-spirited northern working dogs famous for their striking almond eyes, thick wolf-like coats, and endurance pulling.",
+        history: [
+          "Bred by the semi-nomadic Chukchi people of northeastern Siberia as endurance sled dogs and affectionate family companions.",
+          "In 1925, Siberian Huskies captured world attention during the 'Great Race of Mercy', relaying life-saving diphtheria antitoxin 674 miles across Alaskan blizzard ice.",
+          "Renowned for their gentle demeanor around humans combined with high working stamina."
+        ],
+        facts: [
+          "Can comfortably withstand arctic temperatures down to -60°F (-51°C) thanks to their dense undercoat.",
+          "Frequently display heterochromia—having one striking blue eye and one warm brown eye.",
+          "Huskies rarely bark; instead, they communicate through a famous vocal repertoire of singing and talking howls.",
+          "Capable of altering their metabolism to run for hours without depleting internal glycogen reserves."
+        ],
+        mainImage: "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=900&q=80",
+        gallery: [
+          "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1567752881298-894bb81f9379?auto=format&fit=crop&w=600&q=80"
+        ],
+        related: ["german-shepherd", "rottweiler", "golden-retriever"]
+      },
+      "rottweiler": {
+        name: "Rottweiler",
+        titlePrefix: "Powerful",
+        titleEm: "Rottweiler",
+        origin: "Germany",
+        size: "Large",
+        categoryBadge: "Large • Loyal Protector & Working Guardian",
+        weight: "Male: 95–135 lbs (43–61 kg) | Female: 80–100 lbs (36–45 kg)",
+        height: "Male: 24–27 in (61–69 cm) | Female: 22–25 in (56–63 cm)",
+        lifespan: "9–11 Years",
+        coatType: "Short, dense, flat and coarse topcoat with undercoat",
+        coatColors: "Black with clearly demarcated rich Rust or Mahogany markings",
+        temperament: "Confident, loyal, courageous, calm, obedient, protective",
+        shedding: "Moderate",
+        shortDesc: "Robust, noble, and deeply loyal working dogs with clear protective instincts, remarkable strength, and an affectionate devotion to their households.",
+        history: [
+          "Descended from Roman drover cattle dogs who marched with legions across the Alps to protect supplies and livestock.",
+          "Standardized in the market town of Rottweil, Germany, where they guarded butcher wares and pulled heavy carts.",
+          "Served as among the earliest official police dogs and continue to excel as brave family guardians and working companions."
+        ],
+        facts: [
+          "Known in Germany as 'Rottweiler Metzgerhund', meaning 'Butcher's Dog of Rottweil'.",
+          "Despite an intimidating presence, well-socialized Rottweilers are calm, goofy, and deeply loving lap-sitters at home.",
+          "Possess one of the strongest bite forces among all domestic dog breeds.",
+          "Have distinct rust-colored markings that must appear in precise locations above the eyes, cheeks, muzzle, and chest."
+        ],
+        mainImage: "https://images.unsplash.com/photo-1567752881298-894bb81f9379?auto=format&fit=crop&w=900&q=80",
+        gallery: [
+          "https://images.unsplash.com/photo-1567752881298-894bb81f9379?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=600&q=80"
+        ],
+        related: ["german-shepherd", "siberian-husky", "labrador-retriever"]
+      },
+      "indian-pariah": {
+        name: "Indian Pariah Dog",
+        titlePrefix: "Indigenous",
+        titleEm: "Indian Pariah",
+        origin: "Indian Subcontinent",
+        size: "Medium",
+        categoryBadge: "Medium • Ancient Indigenous Companion",
+        weight: "Male: 33–55 lbs (15–25 kg) | Female: 30–45 lbs (14–20 kg)",
+        height: "Male: 20–25 in (51–64 cm) | Female: 18–23 in (46–58 cm)",
+        lifespan: "13–16 Years",
+        coatType: "Short, coarse single coat, naturally odor-free and weather-resistant",
+        coatColors: "Fawn, Biscuit, Brown, Piebald, Black & Tan, White with patches",
+        temperament: "Highly intelligent, hardy, alert, deeply loyal, naturally hygienic",
+        shedding: "Low (Minimal shedding throughout year)",
+        shortDesc: "Ancient indigenous landrace dogs of India celebrated for their natural genetic vigor, low grooming needs, high intelligence, and exceptional devotion.",
+        history: [
+          "Among the oldest dog lineages in the world, archaeological records and cave paintings in Bhimbetka date their ancestors back over 4,500 years.",
+          "Evolved through millennia of natural selection in tropical climates, rendering them naturally immune to many hereditary ailments seen in selective breeds.",
+          "Today recognized as the premier indigenous companion dog of India, celebrated for their sharp instincts and family loyalty."
+        ],
+        facts: [
+          "One of the healthiest canine breeds on Earth, virtually free of genetic hip dysplasia or ear infections.",
+          "Possess a self-cleaning coat that rarely smells doggy or needs frequent bathing.",
+          "Extremely intelligent and alert, naturally excelling as both gentle companions and watchful sentinels.",
+          "Remarkably adaptable to Indian weather extremes, from hot dry summers to wet monsoons."
+        ],
+        mainImage: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=900&q=80",
+        gallery: [
+          "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=600&q=80"
+        ],
+        related: ["beagle", "labrador-retriever", "golden-retriever"]
+      }
+    };
+
+    function loadBreedData() {
+      const urlParams = new URLSearchParams(window.location.search);
+      let breedSlug = (urlParams.get('breed') || window.location.hash.replace(/^#/, '') || '').toLowerCase().trim();
+
+      // Default or alias mappings
+      if (!breedsDB[breedSlug]) {
+        if (breedSlug === 'golden') breedSlug = 'golden-retriever';
+        else if (breedSlug === 'labrador') breedSlug = 'labrador-retriever';
+        else if (breedSlug === 'germanshepherd') breedSlug = 'german-shepherd';
+        else if (breedSlug === 'shihtzu') breedSlug = 'shih-tzu';
+        else if (breedSlug === 'husky') breedSlug = 'siberian-husky';
+        else if (breedSlug === 'indianpariah' || breedSlug === 'pariah') breedSlug = 'indian-pariah';
+        else breedSlug = 'golden-retriever';
+      }
+
+      const breed = breedsDB[breedSlug];
+      if (!breed) return;
+
+      // Update dropdown switcher
+      const select = document.getElementById('breedSwitcherSelect');
+      if (select) select.value = breedSlug;
+
+      // Update page title & breadcrumbs
+      document.title = `${breed.name} - Breed Details & Care Guide | PetSathi`;
+      document.getElementById('crumbBreedName').textContent = breed.name;
+
+      // Hero Elements
+      document.getElementById('heroBadgeCategory').textContent = breed.categoryBadge;
+      document.getElementById('heroBreedTitle').innerHTML = `${breed.titlePrefix} <em>${breed.titleEm}</em>`;
+      document.getElementById('heroBreedDesc').textContent = breed.shortDesc;
+      document.getElementById('heroBreedImg').src = breed.mainImage;
+      document.getElementById('heroBreedImg').alt = `${breed.name} portrait`;
+      document.getElementById('heroOriginStamp').textContent = `Origin: ${breed.origin}`;
+
+      document.getElementById('tagSize').textContent = `${breed.size} Size`;
+      document.getElementById('tagOrigin').textContent = breed.origin;
+      document.getElementById('tagTemperament').textContent = breed.temperament.split(',').slice(0, 2).join(' & ');
+
+      // Specifications Table
+      document.getElementById('specName').textContent = breed.name;
+      document.getElementById('specOrigin').textContent = breed.origin;
+      document.getElementById('specSize').textContent = `${breed.size} Breed`;
+      document.getElementById('specWeight').textContent = breed.weight;
+      document.getElementById('specHeight').textContent = breed.height;
+      document.getElementById('specLifespan').textContent = breed.lifespan;
+      document.getElementById('specCoatType').textContent = breed.coatType;
+      document.getElementById('specCoatColors').textContent = breed.coatColors;
+      document.getElementById('specTemperament').textContent = breed.temperament;
+      document.getElementById('specShedding').textContent = breed.shedding;
+
+      // History
+      const histContainer = document.getElementById('breedHistoryText');
+      histContainer.innerHTML = breed.history.map(p => `<p>${p}</p>`).join('');
+
+      // Facts
+      const factsContainer = document.getElementById('breedFactsList');
+      factsContainer.innerHTML = breed.facts.map(f => `<li><i class="fa-solid fa-check"></i> <span>${f}</span></li>`).join('');
+
+      // Gallery
+      if (breed.gallery && breed.gallery.length >= 3) {
+        document.getElementById('galImg1').src = breed.gallery[0];
+        document.getElementById('galImg1').alt = `${breed.name} Photo 1`;
+        document.getElementById('galImg2').src = breed.gallery[1];
+        document.getElementById('galImg2').alt = `${breed.name} Photo 2`;
+        document.getElementById('galImg3').src = breed.gallery[2];
+        document.getElementById('galImg3').alt = `${breed.name} Photo 3`;
+      }
+
+      // Related Breeds
+      const relContainer = document.getElementById('relatedGrid');
+      const currentPage = window.location.pathname.split('/').pop() || 'breed-detail.html';
+      relContainer.innerHTML = (breed.related || []).map(relSlug => {
+        const relBreed = breedsDB[relSlug];
+        if (!relBreed) return '';
+        return `
+          <a href="${currentPage}?breed=${relSlug}" class="related-card">
+            <div class="related-card-media">
+              <img src="${relBreed.mainImage}" alt="${relBreed.name}" loading="lazy">
+            </div>
+            <div class="related-card-body">
+              <h4>${relBreed.name}</h4>
+              <p>${relBreed.size} Breed • ${relBreed.origin}</p>
+              <span class="related-card-link">View Full Profile <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+
+    function onSwitcherChange(slug) {
+      const currentPage = window.location.pathname.split('/').pop() || 'breed-detail.html';
+      window.location.href = `${currentPage}?breed=${slug}`;
+    }
+
+    document.addEventListener("DOMContentLoaded", loadBreedData);
+    window.addEventListener("hashchange", loadBreedData);
+  </script>
+</body>
+</html>

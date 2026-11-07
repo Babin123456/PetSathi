@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore popular dog breeds on PetSathi. Learn about breed sizes, temperaments, care requirements, grooming needs, and compare canine companions side by side.">
+  <meta name="description"
+    content="Explore popular dog breeds on PetSathi. Learn about breed sizes, temperaments, care requirements, grooming needs, and compare canine companions side by side.">
   <title>Explore Dog Breeds & Characteristics | PetSathi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
   <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <style>
-    /* Custom Styling for Dog Breeds Page */
+    /* Font Awesome 6 Protection */
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    body .fa-brands,
+    body .fa-brands::before,
+    body [class*="fa-brands"] {
+      font-family: "Font Awesome 6 Brands" !important;
+    }
+
+    .fa-solid {
+      font-weight: 900 !important;
+    }
+
+    .fa-regular {
+      font-weight: 400 !important;
+    }
+
+    /* Page Theme Tokens */
     :root {
-      --dog-gold: #e59d38;
-      --dog-accent: #286849;
-      --dog-accent-light: #eaf2e9;
+      --dog-green: #286849;
+      --dog-green-dark: #1b4b34;
+      --dog-green-light: #eaf2e9;
+      --dog-gold: #d9822b;
+      --dog-blue: #2563eb;
+      --dog-purple: #7c3aed;
+      --dog-teal: #0d9488;
       --card-radius: 20px;
     }
 
     /* Breadcrumbs */
     .breadcrumb-nav {
-      padding: 14px 0 0;
+      padding: 18px 0 8px;
       font-size: 0.84rem;
       color: var(--muted);
       display: flex;
@@ -29,302 +64,640 @@
       gap: 8px;
       flex-wrap: wrap;
     }
+
     .breadcrumb-nav a {
       color: var(--muted);
+      text-decoration: none;
       transition: color 0.2s;
     }
+
     .breadcrumb-nav a:hover {
       color: var(--green);
     }
+
     .breadcrumb-separator {
       opacity: 0.5;
     }
+
     .breadcrumb-current {
       color: var(--green);
+      font-weight: 700;
+    }
+
+    /* Hero Section (Consistent with dogs/index.html) */
+    .dog-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .dog-badge-strip i {
+      color: var(--green);
+      font-size: 0.85rem;
+    }
+
+    #breeds-hero {
+      padding-top: 24px;
+      padding-bottom: 40px;
+    }
+
+    #breeds-hero .hero-copy h1 {
+      font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+      line-height: 1.15;
+      margin: 0 0 16px;
+      color: var(--ink);
+    }
+
+    #breeds-hero .hero-copy h1 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    #breeds-hero .hero-copy p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      margin: 0 0 24px;
+      max-width: 600px;
+    }
+
+    #breeds-hero .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    #breeds-hero .hero-actions .button i {
+      margin-right: 6px;
+    }
+
+    /* Hero Stats Bar */
+    .hero-stats-container {
+      margin: 0 auto 50px;
+    }
+
+    .hero-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .stat-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 6px 12px;
+      border-right: 1px solid #eef2ed;
+    }
+
+    .stat-card:last-child {
+      border-right: none;
+    }
+
+    .stat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #eaf2e9;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .stat-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-info b {
+      font-size: 1.25rem;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .stat-info span {
+      font-size: 0.8rem;
+      color: var(--muted);
       font-weight: 600;
     }
 
-    /* Enhanced Hero */
-    .page-hero {
-      position: relative;
-      background: linear-gradient(180deg, #edf3ea 0%, #f7f9f5 100%);
-      padding: 48px 24px 60px;
+    /* Section Headers */
+    .section-title-wrap {
       text-align: center;
-      border-bottom: 1px solid var(--line);
+      max-width: 720px;
+      margin: 0 auto 36px;
     }
-    .page-hero .eyebrow {
+
+    .section-title-wrap .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(40, 104, 73, 0.09);
-      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      padding: 5px 14px;
       border-radius: 999px;
-      margin-bottom: 14px;
-    }
-    .page-hero h1 {
-      margin: 8px auto 16px;
-      max-width: 820px;
-      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
-      line-height: 1.15;
-    }
-    .page-hero h1 em {
-      color: var(--green);
-      font-style: normal;
-    }
-    .page-hero p {
-      max-width: 700px;
-      margin: 0 auto 28px;
-      font-size: 1.05rem;
-      line-height: 1.75;
-      color: #516258;
-    }
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 36px;
-      margin-top: 40px;
-      padding-top: 26px;
-      border-top: 1px dashed #d5ded3;
-      flex-wrap: wrap;
-    }
-    .hero-stat-item b {
-      display: block;
-      font: 800 1.65rem Manrope, sans-serif;
-      color: var(--green);
-      line-height: 1.1;
-    }
-    .hero-stat-item span {
-      font-size: 0.82rem;
-      color: var(--muted);
-      font-weight: 500;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
-    /* Section Headings */
-    .section-title-wrap {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 40px;
-    }
     .section-title-wrap h2 {
-      margin: 8px 0 14px;
-    }
-    .section-title-wrap p {
-      margin: 0;
-      font-size: 0.98rem;
-      line-height: 1.7;
+      font-size: clamp(1.85rem, 3.2vw, 2.4rem);
+      margin: 0 0 12px;
+      color: var(--ink);
     }
 
-    /* Breed Information Overview Grid */
+    .section-title-wrap h2 em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .section-title-wrap p {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Section 3: Dog Breed Information (Equal Height Cards) */
     .info-overview-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-bottom: 28px;
     }
+
     .overview-card {
-      background: white;
+      background: #ffffff;
       border: 1px solid var(--line);
       border-radius: var(--card-radius);
-      padding: 30px 26px;
+      padding: 26px 22px;
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      position: relative;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
+
     .overview-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow);
       border-color: #cbd9ce;
     }
+
+    .overview-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .overview-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
+
+    .icon-size { background: #eff6ff; color: #2563eb; }
+    .icon-family { background: #fdf2f8; color: #db2777; }
+    .icon-energy { background: #fefce8; color: #ca8a04; }
+    .icon-groom { background: #f0fdfa; color: #0d9488; }
+
     .overview-badge {
-      display: inline-block;
-      align-self: flex-start;
       font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       padding: 4px 10px;
       border-radius: 999px;
-      background: var(--soft);
-      color: var(--green);
-      margin-bottom: 14px;
+      background: #f4f7f2;
+      color: var(--muted);
     }
-    .overview-icon {
-      font-size: 2.3rem;
-      margin-bottom: 12px;
-      display: inline-block;
-    }
+
     .overview-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.15rem;
       margin: 0 0 10px;
       color: var(--ink);
     }
+
     .overview-card p {
-      font-size: 0.92rem;
-      line-height: 1.65;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--muted);
       margin: 0 0 18px;
       flex-grow: 1;
     }
+
     .overview-specs {
-      background: #fafbfa;
-      border: 1px solid var(--line);
+      background: #fafcf8;
+      border: 1px solid #edf2e9;
       border-radius: 12px;
-      padding: 14px 16px;
-      font-size: 0.84rem;
+      padding: 12px;
+      font-size: 0.82rem;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-bottom: 18px;
+      gap: 6px;
+      margin-bottom: 16px;
     }
+
     .overview-specs div {
       display: flex;
-      justify-content: space-between;
-      gap: 10px;
+      flex-direction: column;
+      gap: 2px;
     }
-    .overview-specs span.spec-label {
-      color: var(--muted);
-      font-weight: 500;
-    }
-    .overview-specs span.spec-val {
-      color: var(--ink);
+
+    .spec-label {
       font-weight: 700;
-      text-align: right;
+      color: var(--ink);
+      font-size: 0.78rem;
     }
-    .overview-card .filter-trigger {
+
+    .spec-val {
+      color: var(--muted);
+    }
+
+    .filter-trigger {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      font-size: 0.85rem;
-      font-weight: 700;
+      padding: 8px 14px;
+      background: #edf7f0;
       color: var(--green);
-      padding: 10px 16px;
-      background: transparent;
-      border: 1px solid #cbd9ce;
+      border: 1px solid #cce4d2;
       border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
       cursor: pointer;
       transition: all 0.2s ease;
-      width: 100%;
+      text-decoration: none;
     }
-    .overview-card .filter-trigger:hover {
+
+    .filter-trigger:hover {
       background: var(--green);
-      color: white;
+      color: #ffffff;
       border-color: var(--green);
     }
 
-    /* Filter & Search Bar */
-    .filter-section {
-      background: white;
+    /* Full-Width General Canine Characteristics Card */
+    .char-full-width-card {
+      background: #ffffff;
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 22px 26px;
-      margin-bottom: 34px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+      border-radius: var(--card-radius);
+      padding: 32px 36px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      margin-bottom: 60px;
     }
-    .filter-header {
+
+    .char-header {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 24px;
     }
-    .filter-title {
-      font-size: 0.95rem;
-      font-weight: 700;
+
+    .char-icon-main {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .char-header-text h3 {
+      font-size: 1.35rem;
       color: var(--ink);
+      margin: 0 0 6px;
+    }
+
+    .char-header-text p {
+      font-size: 0.94rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+      max-width: 900px;
+    }
+
+    .char-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid #edf2e9;
+    }
+
+    .char-pillar-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #fafcf9;
+      border: 1px solid #ebf2e8;
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .pillar-icon {
+      color: var(--green);
+      font-size: 1.05rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .pillar-info b {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .pillar-info span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* Section 5: Breed Categories Section */
+    .categories-section {
+      margin-bottom: 70px;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .category-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 18px;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
-    .filter-search-wrap {
+
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
+    }
+
+    .cat-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: #edf7f0;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .category-card:hover .cat-icon-box {
+      background: var(--green);
+      color: #ffffff;
+    }
+
+    .cat-content h4 {
+      font-size: 1.08rem;
+      margin: 0 0 4px;
+      color: var(--ink);
+    }
+
+    .cat-content p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin: 0 0 6px;
+      line-height: 1.4;
+    }
+
+    .cat-content span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Section 2: Search & Filter Box */
+    .filter-section-container {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 26px 28px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      margin-bottom: 35px;
+    }
+
+    .filter-top-bar {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .search-input-wrap {
       position: relative;
-      flex: 1;
-      max-width: 340px;
+      display: flex;
+      align-items: center;
     }
+
+    .search-input-wrap i {
+      position: absolute;
+      left: 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
     .filter-search-input {
       width: 100%;
       padding: 10px 14px 10px 38px;
-      border: 1px solid #d5ded3;
       border-radius: 999px;
-      font-size: 0.88rem;
+      border: 1px solid #d4e3d7;
+      background: #fafcf8;
       font-family: inherit;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      background: #fafbfa;
+      font-size: 0.88rem;
+      color: var(--ink);
+      transition: border-color 0.2s, background 0.2s;
     }
+
     .filter-search-input:focus {
+      outline: none;
       border-color: var(--green);
-      background: white;
-      box-shadow: 0 0 0 3px rgba(40, 104, 73, 0.12);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(40, 104, 73, 0.1);
     }
-    .filter-search-icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.9rem;
-      color: var(--muted);
-      pointer-events: none;
+
+    .filter-select {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid #d4e3d7;
+      background: #fafcf8;
+      font-family: inherit;
+      font-size: 0.86rem;
+      color: var(--ink);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
     }
-    .filter-pills {
+
+    .filter-select:focus {
+      outline: none;
+      border-color: var(--green);
+      background: #ffffff;
+    }
+
+    .filter-pills-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 16px;
+      border-top: 1px solid #eef2ed;
+    }
+
+    .filter-pills-list {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
+      align-items: center;
     }
-    .filter-btn {
-      background: var(--soft);
-      border: 1px solid transparent;
-      padding: 8px 16px;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: #55665d;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      white-space: nowrap;
+
+    .pill-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-    }
-    .filter-btn:hover {
-      background: #e4ebe0;
-      color: var(--ink);
-    }
-    .filter-btn.active {
-      background: var(--green);
-      color: white;
-      border-color: var(--green);
-      box-shadow: 0 4px 12px rgba(40, 104, 73, 0.25);
-    }
-    .filter-count-badge {
-      font-size: 0.72rem;
-      padding: 2px 7px;
+      padding: 6px 14px;
       border-radius: 999px;
-      background: rgba(0,0,0,0.08);
-      font-weight: 700;
-    }
-    .filter-btn.active .filter-count-badge {
-      background: rgba(255,255,255,0.25);
-      color: white;
+      border: 1px solid #dbe8dd;
+      background: #f8faf6;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
-    /* Popular Breeds Cards Grid */
+    .pill-btn i {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .pill-btn:hover {
+      background: #edf5eb;
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .pill-btn:hover i {
+      color: var(--green);
+    }
+
+    .pill-btn.active {
+      background: var(--green);
+      color: #ffffff;
+      border-color: var(--green);
+    }
+
+    .pill-btn.active i {
+      color: #ffffff;
+    }
+
+    .filter-count-badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: rgba(0, 0, 0, 0.08);
+      margin-left: 2px;
+    }
+
+    .pill-btn.active .filter-count-badge {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+
+    .filter-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .results-count-text {
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .reset-filters-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .reset-filters-btn:hover {
+      color: #dc2626;
+      border-color: #fca5a5;
+      background: #fef2f2;
+    }
+
+    /* Section 4: Popular Dog Breeds (Matching dogs/index.html cards) */
     .breeds-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      margin-bottom: 70px;
     }
-    .breed-card {
-      background: white;
+
+    .dog-card {
+      background: #ffffff;
       border: 1px solid var(--line);
       border-radius: var(--card-radius);
       overflow: hidden;
@@ -332,623 +705,616 @@
       flex-direction: column;
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
-    .breed-card:hover {
+
+    .dog-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow);
       border-color: #cbd9ce;
     }
-    .breed-card.hidden {
+
+    .dog-card.hidden {
       display: none !important;
     }
-    .breed-image-wrap {
+
+    .dog-card-media {
       position: relative;
-      height: 240px;
+      height: 210px;
       overflow: hidden;
-      background: #eef2eb;
+      background: #f0f3eb;
     }
-    .breed-image {
+
+    .dog-card-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.35s ease;
     }
-    .breed-card:hover .breed-image {
+
+    .dog-card:hover .dog-card-media img {
       transform: scale(1.05);
     }
-    .breed-tag-pill {
+
+    .dog-card-badge {
       position: absolute;
       top: 14px;
       left: 14px;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(4px);
-      color: var(--dark);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 4px 11px;
+      padding: 5px 12px;
       border-radius: 999px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
-    .breed-origin-badge {
+
+    .dog-card-badge i {
+      color: var(--green);
+      font-size: 0.85rem;
+    }
+
+    .dog-origin-badge {
       position: absolute;
       top: 14px;
       right: 14px;
-      background: rgba(23, 40, 31, 0.8);
+      background: rgba(40, 104, 73, 0.9);
+      color: #ffffff;
       backdrop-filter: blur(4px);
-      color: white;
-      font-size: 0.72rem;
-      font-weight: 600;
       padding: 4px 10px;
       border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
-    .breed-body {
-      padding: 24px;
+
+    .dog-card-body {
+      padding: 22px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
-    .breed-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 8px;
-    }
-    .breed-name {
-      margin: 0;
-      font-size: 1.35rem;
+
+    .dog-card-body h3 {
+      font-size: 1.25rem;
+      margin: 0 0 6px;
       color: var(--ink);
-      font-family: Manrope, sans-serif;
-    }
-    .breed-size-indicator {
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: var(--green);
-      background: var(--soft);
-      padding: 4px 9px;
-      border-radius: 6px;
-      white-space: nowrap;
-    }
-    .breed-desc {
-      font-size: 0.92rem;
-      line-height: 1.6;
-      color: var(--muted);
-      margin: 0 0 20px;
-      min-height: 48px;
-    }
-    .breed-details-list {
-      background: #fafbfa;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-      margin-top: auto;
-    }
-    .breed-detail-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-    .breed-detail-icon {
-      font-size: 1.1rem;
-      line-height: 1.3;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .breed-detail-content b {
-      display: block;
-      color: var(--ink);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 2px;
-    }
-    .breed-detail-content span {
-      color: #4a5951;
-    }
-    .detail-tag {
-      display: inline-block;
-      margin-top: 5px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 6px;
-      text-transform: uppercase;
-    }
-    .detail-tag.high {
-      background: #fde8e8;
-      color: #b91c1c;
-    }
-    .detail-tag.moderate {
-      background: #fef3c7;
-      color: #b45309;
-    }
-    .detail-tag.low {
-      background: #dcfce7;
-      color: #15803d;
-    }
-    .detail-tag.special {
-      background: #f3e8ff;
-      color: #7e22ce;
     }
 
-    /* Comparison Section Layout */
-    .comparison-section-box {
-      margin-top: 30px;
+    .dog-card-subtitle {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    .comparator-widget {
-      background: white;
+
+    .dog-card-body p {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--muted);
+      margin: 0 0 16px;
+      flex-grow: 1;
+    }
+
+    .breed-meta-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 18px;
+      padding-top: 12px;
+      border-top: 1px solid #edf2e9;
+    }
+
+    .breed-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--ink);
+    }
+
+    .breed-meta-row i {
+      font-size: 0.85rem;
+      width: 16px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .meta-size i { color: #2563eb; }
+    .meta-origin i { color: #0d9488; }
+    .meta-temp i { color: #db2777; }
+    .meta-life i { color: #0d9488; }
+
+    .dog-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid #edf2e9;
+    }
+
+    .view-details-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green);
+      text-decoration: none;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .view-details-btn:hover {
+      color: var(--dark);
+      transform: translateX(4px);
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      background: #ffffff;
       border: 1px solid var(--line);
       border-radius: var(--card-radius);
-      padding: 32px 28px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
-      margin-bottom: 36px;
     }
-    .comparator-header {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 24px;
+
+    .empty-state-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #fef2f2;
+      color: #ef4444;
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      margin: 0 auto 16px;
     }
-    .comparator-header h3 {
-      font-size: 1.4rem;
+
+    .empty-state h3 {
+      font-size: 1.25rem;
       margin: 0 0 8px;
       color: var(--ink);
     }
+
+    .empty-state p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    /* Section 7: Compact Comparison Section */
+    .comparison-section-box {
+      margin-bottom: 70px;
+    }
+
+    .comparator-widget {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      padding: 32px 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      margin-bottom: 35px;
+    }
+
+    .comparator-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 28px;
+    }
+
+    .comparator-header h3 {
+      font-size: 1.35rem;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+
     .comparator-header p {
-      margin: 0;
       font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
     }
+
     .comparator-selectors {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      display: flex;
       align-items: center;
-      gap: 16px;
-      margin-bottom: 28px;
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
     }
+
+    .select-box-wrap {
+      flex: 1;
+      max-width: 320px;
+      min-width: 220px;
+    }
+
     .select-box-wrap label {
       display: block;
       font-size: 0.8rem;
       font-weight: 700;
-      color: var(--ink);
+      color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
       margin-bottom: 6px;
     }
+
     .comparator-select {
       width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #cbd9ce;
+      padding: 10px 14px;
       border-radius: 12px;
-      font-size: 0.9rem;
+      border: 1px solid #c9d8cc;
+      background: #fafcf8;
       font-family: inherit;
+      font-size: 0.9rem;
       color: var(--ink);
-      background: white;
-      outline: none;
+      font-weight: 600;
       cursor: pointer;
-      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .comparator-select:focus {
-      border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(40, 104, 73, 0.12);
-    }
+
     .vs-circle {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: var(--green);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #eaf2e9;
+      color: var(--green);
       font-weight: 800;
       font-size: 0.85rem;
-      margin-top: 20px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
     }
+
     .comparison-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
+
     .comparison-card {
-      background: #fafbfa;
-      border: 1px solid var(--line);
-      border-radius: 16px;
+      background: #fafcf9;
+      border: 1px solid #e4ede2;
+      border-radius: 18px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
     }
+
     .comp-card-media {
+      position: relative;
       height: 180px;
       overflow: hidden;
-      position: relative;
+      background: #f0f3eb;
     }
+
     .comp-card-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
     .comp-card-badge {
       position: absolute;
-      bottom: 12px;
+      top: 12px;
       left: 12px;
-      background: rgba(23, 40, 31, 0.85);
-      backdrop-filter: blur(4px);
-      color: white;
-      font-size: 0.74rem;
-      font-weight: 700;
+      background: rgba(255, 255, 255, 0.95);
       padding: 4px 10px;
       border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--green);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
+
     .comp-card-body {
-      padding: 22px;
-      flex-grow: 1;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 10px;
+      flex-grow: 1;
     }
+
     .comp-card-title {
-      margin: 0;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
+      margin: 0 0 4px;
       color: var(--ink);
     }
+
     .comp-card-row {
       display: flex;
       flex-direction: column;
-      gap: 3px;
-      border-bottom: 1px dashed #e2e8df;
-      padding-bottom: 10px;
+      gap: 2px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #edf2e9;
     }
+
     .comp-card-row:last-child {
       border-bottom: none;
       padding-bottom: 0;
     }
+
     .comp-card-label {
       font-size: 0.74rem;
-      text-transform: uppercase;
       font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--muted);
-    }
-    .comp-card-val {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    /* Comparison Table Section */
-    .comparison-wrapper {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: var(--card-radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .table-controls {
-      padding: 18px 24px;
-      background: #f8faf7;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .table-hint {
-      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
       color: var(--muted);
       display: flex;
       align-items: center;
       gap: 6px;
     }
+
+    .comp-card-label i {
+      color: var(--green);
+    }
+
+    .comp-card-val {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* Comparison Table */
+    .comparison-wrapper {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--card-radius);
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .table-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .table-hint {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .table-hint i {
+      color: var(--green);
+    }
+
     .table-search-input {
-      padding: 9px 16px;
-      border: 1px solid #d5ded3;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      min-width: 260px;
-      outline: none;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #d4e3d7;
       font-family: inherit;
+      font-size: 0.84rem;
+      min-width: 240px;
     }
-    .table-search-input:focus {
-      border-color: var(--green);
-    }
+
     .table-responsive {
-      width: 100%;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
+
     .comparison-table {
       width: 100%;
       border-collapse: collapse;
+      font-size: 0.86rem;
       text-align: left;
-      font-size: 0.88rem;
-      min-width: 860px;
     }
+
     .comparison-table th {
-      background: #f1f5ee;
-      color: var(--ink);
+      background: #f7faf5;
+      padding: 12px 14px;
       font-weight: 700;
-      font-family: Manrope, sans-serif;
-      padding: 15px 18px;
-      border-bottom: 2px solid var(--line);
+      color: var(--ink);
+      border-bottom: 2px solid #e2ede0;
       white-space: nowrap;
-      font-size: 0.84rem;
-      letter-spacing: 0.2px;
     }
+
     .comparison-table td {
-      padding: 16px 18px;
-      border-bottom: 1px solid #edf0ea;
+      padding: 12px 14px;
+      border-bottom: 1px solid #edf2e9;
+      color: var(--muted);
       vertical-align: middle;
-      color: #4a5951;
     }
-    .comparison-table tbody tr {
-      transition: background-color 0.15s ease;
-    }
-    .comparison-table tbody tr:hover {
-      background-color: #f7faf5;
-    }
+
     .table-breed-cell {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 700;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .table-breed-img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .table-breed-cell b {
       color: var(--ink);
     }
-    .table-breed-img {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      flex-shrink: 0;
-    }
+
     .badge-pill {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      padding: 4px 10px;
+      gap: 5px;
+      padding: 4px 9px;
       border-radius: 999px;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       font-weight: 700;
       white-space: nowrap;
     }
-    .badge-act-high {
-      background: #fef2f2;
-      color: #dc2626;
-      border: 1px solid #fecaca;
-    }
-    .badge-act-mod {
-      background: #fefce8;
-      color: #ca8a04;
-      border: 1px solid #fef08a;
-    }
-    .badge-act-calm {
-      background: #ecfdf5;
-      color: #059669;
-      border: 1px solid #a7f3d0;
-    }
-    .badge-groom-daily {
-      background: #fee2e2;
-      color: #991b1b;
-    }
-    .badge-groom-mod {
-      background: #fef3c7;
-      color: #92400e;
-    }
-    .badge-groom-low {
-      background: #dcfce7;
-      color: #166534;
-    }
 
-    /* Dog Care CTA Section */
+    .badge-act-high { background: #fef2f2; color: #dc2626; }
+    .badge-act-mod { background: #eff6ff; color: #2563eb; }
+    .badge-act-low { background: #f0fdf4; color: #16a34a; }
+
+    .badge-groom-low { background: #f0fdf4; color: #16a34a; }
+    .badge-groom-mod { background: #fffbeb; color: #b45309; }
+    .badge-groom-high { background: #fef2f2; color: #dc2626; }
+
+    /* CTA Section */
     .dog-care-cta {
-      background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
-      color: white;
-      border-radius: 26px;
-      padding: 50px 48px;
-      margin: 70px auto 40px;
-      display: grid;
-      grid-template-columns: 1fr auto;
+      background: linear-gradient(135deg, #1b4b34 0%, #286849 100%);
+      border-radius: 28px;
+      padding: 48px 40px;
+      color: #ffffff;
+      display: flex;
       align-items: center;
-      gap: 36px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(29, 80, 57, 0.15);
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 80px;
+      flex-wrap: wrap;
     }
-    .dog-care-cta::after {
-      content: "🐕";
-      position: absolute;
-      right: -25px;
-      bottom: -35px;
-      font-size: 14rem;
-      opacity: 0.08;
-      pointer-events: none;
-    }
+
     .dog-care-cta h2 {
-      margin: 0 0 12px;
-      color: white;
-      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      color: #ffffff;
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
     }
+
     .dog-care-cta h2 em {
-      color: #fbd6b1;
       font-style: normal;
+      color: #a7e4b9;
     }
+
     .dog-care-cta p {
+      color: #e2f0e6;
+      max-width: 580px;
       margin: 0;
-      max-width: 620px;
-      color: #e0eee4;
-      font-size: 1.02rem;
-      line-height: 1.7;
-    }
-    .dog-cta-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      min-width: 230px;
-    }
-    .dog-cta-actions .button {
-      white-space: nowrap;
-    }
-
-    .no-results-msg {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 50px 20px;
-      background: white;
-      border-radius: 16px;
-      border: 1px dashed var(--line);
-      color: var(--muted);
-      display: none;
-    }
-
-    /* Footer styling */
-    .footer {
-      background: #f0f3eb;
-      padding-top: 48px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 35px;
-      padding-bottom: 35px;
-    }
-    .footer-grid > div {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 9px;
-      font-size: 0.84rem;
-      color: var(--muted);
-    }
-    .footer-grid p {
-      max-width: 260px;
-      margin: 0;
+      font-size: 0.95rem;
       line-height: 1.6;
     }
-    .footer-grid b {
-      color: var(--ink);
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-    .footer-grid a {
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    .footer-grid a:hover {
-      color: var(--green);
-    }
-    .footer-grid .brand {
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-    .footer-grid .brand span {
-      color: var(--green);
-    }
-    .footer-bottom {
+
+    .dog-cta-actions {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 17px 0;
-      border-top: 1px solid #dfe5dc;
-      font-size: 0.74rem;
-      color: #839087;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    /* Responsiveness */
-    @media (max-width: 900px) {
-      .dog-care-cta {
-        grid-template-columns: 1fr;
-        padding: 38px 28px;
-        text-align: center;
+    /* Responsive Queries */
+    @media (max-width: 1024px) {
+      .info-overview-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .dog-care-cta p {
-        margin: 0 auto;
+
+      .char-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .dog-cta-actions {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
+
+      .filter-top-bar {
+        grid-template-columns: 1fr 1fr;
       }
-      .footer-grid {
-        grid-template-columns: 1.4fr 1fr 1fr;
-      }
-      .footer-grid > div:last-child {
+
+      .search-input-wrap {
         grid-column: 1 / -1;
       }
-      .comparator-selectors {
-        grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 900px) {
+      .breeds-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .vs-circle {
-        margin: 0 auto;
+
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .comparison-grid {
-        grid-template-columns: 1fr;
+
+      .hero-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-card {
+        border-right: none;
+        border-bottom: 1px solid #eef2ed;
+        padding-bottom: 12px;
+      }
+
+      .stat-card:nth-child(3),
+      .stat-card:nth-child(4) {
+        border-bottom: none;
       }
     }
 
-    @media (max-width: 768px) {
-      .page-hero {
-        padding: 38px 16px 45px;
-      }
-      .hero-stats {
-        gap: 20px;
-      }
-      .info-overview-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 640px) {
       .breeds-grid {
         grid-template-columns: 1fr;
       }
-      .filter-header {
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-overview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .char-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-card {
+        border-bottom: 1px solid #eef2ed;
+      }
+
+      .stat-card:last-child {
+        border-bottom: none;
+      }
+
+      .filter-top-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-pills-row {
         flex-direction: column;
         align-items: stretch;
       }
-      .filter-search-wrap {
-        max-width: 100%;
-      }
-      .filter-pills {
-        overflow-x: auto;
-        padding-bottom: 6px;
-        flex-wrap: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    }
 
-    @media (max-width: 620px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
+      .filter-actions {
+        justify-content: space-between;
       }
-      .footer-grid > div:first-child {
-        grid-column: 1 / -1;
+
+      .comparator-selectors {
+        flex-direction: column;
       }
-      .footer-bottom {
-        display: block;
-        text-align: center;
-      }
-      .footer-bottom span {
-        display: block;
-        margin-top: 5px;
-      }
-      .hero-actions .button {
+
+      .select-box-wrap {
+        max-width: 100%;
         width: 100%;
       }
-      .dog-cta-actions .button {
-        width: 100%;
+
+      .char-full-width-card {
+        padding: 24px 20px;
+      }
+
+      .dog-care-cta {
+        padding: 32px 24px;
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
 <!-- Header and Navigation (Identical to Main PetSathi Homepage) -->
@@ -972,701 +1338,698 @@
   </nav>
 </header>
 
-<main>
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <div class="section-wrap">
-      <div class="breadcrumb-nav">
-        <a href="../../../../index.html">Home</a>
-        <span class="breadcrumb-separator">/</span>
-        <a href="../index.html">Explore Pets</a>
-        <span class="breadcrumb-separator">/</span>
-        <a href="index.html">Dogs</a>
-        <span class="breadcrumb-separator">/</span>
-        <span class="breadcrumb-current">Dog Breeds</span>
-      </div>
-
-      <div class="eyebrow">🐾 PetSathi • CANINE BREEDS DIRECTORY</div>
-      <div class="page-emoji">🐕</div>
-      <h1>Explore Dog <em>Breeds</em></h1>
-      <p>
-        Discover popular canine breeds, temperaments, physical traits, and basic care requirements. Whether you are looking for an energetic trail buddy, a gentle family guardian, or a relaxed indoor lap companion, find the ideal match for your home and lifestyle.
-      </p>
-
-      <div class="hero-actions">
-        <a class="button" href="#popular-breeds">Explore 10 Breeds ↓</a>
-        <a class="button button-outline" href="#breed-info">Breed Information</a>
-        <a class="button button-outline" href="#comparison">Compare Breeds</a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="hero-stat-item">
-          <b>10</b>
-          <span>Popular Breeds</span>
+  <main>
+    <!-- Section 1: Page Introduction – Explore Dog Breeds -->
+    <section class="hero section-wrap" id="breeds-hero">
+      <div class="hero-copy">
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-nav">
+          <a href="../../../../index.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="../index.html">Explore Pets</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="index.html">Dogs</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Dog Breeds</span>
         </div>
-        <div class="hero-stat-item">
-          <b>3</b>
-          <span>Size Classes</span>
-        </div>
-        <div class="hero-stat-item">
-          <b>100%</b>
-          <span>Static &amp; Fast</span>
-        </div>
-        <div class="hero-stat-item">
-          <b>🐾</b>
-          <span>Pet-First Care Advice</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SECTION 1: Breed Information (Requirement 3) -->
-  <section class="section section-wrap" id="breed-info">
-    <div class="section-title-wrap">
-      <div class="eyebrow">Canine Classification &amp; Traits</div>
-      <h2>Dog Breed <em>Information</em></h2>
-      <p>Every breed carries unique physical characteristics, energy drives, and grooming commitments. Explore how size categories, family temperaments, exercise needs, and coat care shape each dog's daily life.</p>
-    </div>
+        <div class="dog-badge-strip">
+          <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          PetSathi • CANINE BREEDS DIRECTORY
+        </div>
 
-    <div class="info-overview-grid">
-      <!-- 1. Small, Medium & Large Dogs -->
-      <article class="overview-card">
-        <span class="overview-badge">Size Spectrum</span>
-        <div class="overview-icon">📐</div>
-        <h3>Small, Medium &amp; Large Breeds</h3>
+        <h1>Explore Dog <em>Breeds</em></h1>
         <p>
-          Dog sizes range from compact toy breeds under 15 lbs to noble working guardians over 100 lbs. Size affects living space needs, daily feeding portions, joint health, and exercise equipment.
+          Discover popular canine breeds, physical characteristics, distinct temperaments, and essential care guidelines. Find the ideal match for your family routine and lifestyle.
         </p>
-        <div class="overview-specs">
-          <div><span class="spec-label">Small Breeds (&lt; 25 lbs):</span> <span class="spec-val">Pomeranian, Shih Tzu, Pug</span></div>
-          <div><span class="spec-label">Medium Breeds (25–55 lbs):</span> <span class="spec-val">Beagle, Siberian Husky</span></div>
-          <div><span class="spec-label">Large Breeds (55–100+ lbs):</span> <span class="spec-val">Labrador, Golden, GSD, Rottweiler</span></div>
-        </div>
-        <button class="filter-trigger" onclick="setBreedFilter('small')">Explore Small Breeds →</button>
-      </article>
 
-      <!-- 2. Family-Friendly Breeds -->
-      <article class="overview-card">
-        <span class="overview-badge">Home &amp; Kids</span>
-        <div class="overview-icon">🏡</div>
-        <h3>Family-Friendly Breeds</h3>
-        <p>
-          Renowned for their gentle patience, reliable loyalty, and eager sociability with children and multi-pet households. They form affectionate bonds and thrive on inclusive household activities.
-        </p>
-        <div class="overview-specs">
-          <div><span class="spec-label">Key Traits:</span> <span class="spec-val">Patient, Tolerant, Affectionate</span></div>
-          <div><span class="spec-label">Best Matches:</span> <span class="spec-val">Labrador, Golden Retriever, Beagle</span></div>
-          <div><span class="spec-label">Social Need:</span> <span class="spec-val">High interaction &amp; indoor companionship</span></div>
+        <div class="hero-actions">
+          <a class="button" href="#popular-breeds"><i class="fa-solid fa-dog"></i> Explore 10 Breeds ↓</a>
+          <a class="button button-outline" href="#breed-info"><i class="fa-solid fa-circle-info"></i> Breed Information</a>
+          <a class="button button-outline" href="#comparison"><i class="fa-solid fa-code-compare"></i> Compare Breeds</a>
         </div>
-        <button class="filter-trigger" onclick="setBreedFilter('family-friendly')">View Family-Friendly Dogs →</button>
-      </article>
 
-      <!-- 3. Active & Low-Energy Breeds -->
-      <article class="overview-card">
-        <span class="overview-badge">Activity Balance</span>
-        <div class="overview-icon">⚡</div>
-        <h3>Active vs. Low-Energy Breeds</h3>
-        <p>
-          High-energy working dogs need 60–90+ minutes of aerobic activity and brain games daily, whereas calm, low-energy companions are content with gentle scenic strolls and cozy indoor relaxation.
-        </p>
-        <div class="overview-specs">
-          <div><span class="spec-label">High-Energy (60–90m+):</span> <span class="spec-val">Husky, German Shepherd, Labrador</span></div>
-          <div><span class="spec-label">Low-Energy (20–30m):</span> <span class="spec-val">Pug, Shih Tzu, Pomeranian</span></div>
-          <div><span class="spec-label">Mental Stimulation:</span> <span class="spec-val">Puzzle feeders, scent games, agility</span></div>
-        </div>
-        <button class="filter-trigger" onclick="setBreedFilter('active')">View Active Breeds →</button>
-      </article>
-
-      <!-- 4. Basic Grooming Requirements -->
-      <article class="overview-card">
-        <span class="overview-badge">Hygiene &amp; Coat Care</span>
-        <div class="overview-icon">🧼</div>
-        <h3>Basic Grooming Requirements</h3>
-        <p>
-          Coat care depends on fur architecture. Double coats need regular de-shedding raking without shaving; smooth coats require quick weekly brushing; and flat-faced breeds require daily wrinkle hygiene.
-        </p>
-        <div class="overview-specs">
-          <div><span class="spec-label">Double Coats:</span> <span class="spec-val">Husky, GSD, Golden, Pomeranian</span></div>
-          <div><span class="spec-label">Smooth Short Coats:</span> <span class="spec-val">Rottweiler, Dachshund, Beagle</span></div>
-          <div><span class="spec-label">Wrinkle Cleaning:</span> <span class="spec-val">Pug (daily fold wiping &amp; drying)</span></div>
-        </div>
-        <button class="filter-trigger" onclick="setBreedFilter('low-energy')">View Low-Energy Breeds →</button>
-      </article>
-
-      <!-- 5. General Breed Characteristics -->
-      <article class="overview-card" style="grid-column: 1 / -1;">
-        <span class="overview-badge">Core Canine Foundations</span>
-        <div class="overview-icon">🐾</div>
-        <h3>General Canine Characteristics &amp; Lifespan</h3>
-        <p>
-          While breed genetics shape natural instincts (such as tracking in Beagles or retrieving in Labradors), early puppy socialization, consistent positive reinforcement, and balanced daily routines have a profound impact on temperament. Toy and small breeds frequently enjoy lifespans of 12–16 years, while large and giant breeds average 9–13 years.
-        </p>
-        <div class="overview-specs" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
-          <div><span class="spec-label">Pack Mentality:</span> <span class="spec-val">Craves structure, praise &amp; family inclusion</span></div>
-          <div><span class="spec-label">Exercise Rhythm:</span> <span class="spec-val">Daily walks stimulate senses &amp; reduce anxiety</span></div>
-          <div><span class="spec-label">Dental Care:</span> <span class="spec-val">Weekly brushing prevents periodontal disease</span></div>
-          <div><span class="spec-label">Vet Checkups:</span> <span class="spec-val">Annual wellness exams &amp; core vaccinations</span></div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- SECTION 2: Popular Dog Breeds (Requirement 2) -->
-  <section class="section section-wrap" id="popular-breeds">
-    <div class="section-title-wrap">
-      <div class="eyebrow">Canine Profiles</div>
-      <h2>Popular <em>Dog Breeds</em></h2>
-      <p>Explore detailed cards for 10 world-renowned breeds with high-resolution imagery, size classifications, distinct temperaments, and general care requirements.</p>
-    </div>
-
-    <!-- Filter Controls & Search -->
-    <div class="filter-section">
-      <div class="filter-header">
-        <div class="filter-title">
-          <span>🔍 Filter Breeds:</span>
-        </div>
-        <div class="filter-search-wrap">
-          <span class="filter-search-icon">🔎</span>
-          <input
-            type="text"
-            id="breedSearchInput"
-            class="filter-search-input"
-            placeholder="Search by breed name, size, or trait..."
-            aria-label="Search dog breeds"
-          >
-        </div>
+        <div class="hero-note"><i class="fa-solid fa-heart" style="color: #e58b5f;"></i> &nbsp; Dedicated to healthy paws and informed pet parents.</div>
       </div>
 
-      <div class="filter-pills" role="tablist">
-        <button class="filter-btn active" data-category="all" onclick="setBreedFilter('all')">
-          🐾 All Breeds <span class="filter-count-badge">10</span>
-        </button>
-        <button class="filter-btn" data-category="small" onclick="setBreedFilter('small')">
-          🐕 Small Breeds <span class="filter-count-badge">4</span>
-        </button>
-        <button class="filter-btn" data-category="medium" onclick="setBreedFilter('medium')">
-          🐕‍🦺 Medium Breeds <span class="filter-count-badge">2</span>
-        </button>
-        <button class="filter-btn" data-category="large" onclick="setBreedFilter('large')">
-          🦮 Large Breeds <span class="filter-count-badge">5</span>
-        </button>
-        <button class="filter-btn" data-category="family-friendly" onclick="setBreedFilter('family-friendly')">
-          💖 Family-Friendly <span class="filter-count-badge">6</span>
-        </button>
-        <button class="filter-btn" data-category="active" onclick="setBreedFilter('active')">
-          ⚡ Active Breeds <span class="filter-count-badge">5</span>
-        </button>
-        <button class="filter-btn" data-category="low-energy" onclick="setBreedFilter('low-energy')">
-          🛋️ Low-Energy <span class="filter-count-badge">3</span>
-        </button>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img
+          src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=85"
+          alt="Two happy dogs running joyfully together across a sunny grass field"
+          class="hero-photo"
+        >
+        <div class="floating-card card-top">
+          <i class="fa-solid fa-sun" style="color: #f59e0b;"></i>
+          <span><b>10 Popular Breeds</b><small>Verified care profiles</small></span>
+        </div>
+        <div class="floating-card card-bottom">
+          <i class="fa-solid fa-shield-dog" style="color: var(--green);"></i>
+          <span><b>Pet-First Guidance</b><small>Expert care recommendations</small></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compact Statistics Section -->
+    <div class="section-wrap hero-stats-container">
+      <div class="hero-stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-dog"></i></div>
+          <div class="stat-info">
+            <b>10</b>
+            <span>Popular Breeds</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+          <div class="stat-info">
+            <b>3</b>
+            <span>Size Spectrum</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <div class="stat-info">
+            <b>6</b>
+            <span>Breed Categories</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="stat-info">
+            <b>100%</b>
+            <span>Pet-First Care Advice</span>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Breeds Grid (All 10 Breeds) -->
-    <div class="breeds-grid" id="breedsGrid">
-
-      <!-- 1. Labrador Retriever -->
-      <article class="breed-card" data-categories="large family-friendly active" data-name="Labrador Retriever">
-        <div class="breed-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80"
-            alt="Friendly Labrador Retriever sitting happily outdoors"
-            class="breed-image"
-            loading="lazy"
-          >
-          <span class="breed-tag-pill">Large • Family Favorite</span>
-          <span class="breed-origin-badge">Canada / UK</span>
-        </div>
-        <div class="breed-body">
-          <div class="breed-header">
-            <h3 class="breed-name">Labrador Retriever</h3>
-            <span class="breed-size-indicator">Large • 55–80 lbs</span>
-          </div>
-          <p class="breed-desc">
-            Outgoing, spirited, and gentle companions. Renowned for their friendly disposition, high trainability, deep devotion to family, and great love for swimming and fetch games.
-          </p>
-          <div class="breed-details-list">
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">💖</span>
-              <div class="breed-detail-content">
-                <b>Temperament</b>
-                <span>Friendly, outgoing, gentle, eager to please, intelligent, and highly patient with children.</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">📏</span>
-              <div class="breed-detail-content">
-                <b>Size Category</b>
-                <span>Large Breed • Height: 21.5–24.5 in • Weight: 55–80 lbs (25–36 kg)</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">🧼</span>
-              <div class="breed-detail-content">
-                <b>General Care Requirements</b>
-                <span>Needs 60+ mins of daily aerobic exercise; weekly brushing (daily in seasonal shedding); portion control to avoid obesity.</span>
-                <span class="detail-tag moderate">Moderate Care • High Exercise</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 2. Golden Retriever -->
-      <article class="breed-card" data-categories="large family-friendly active" data-name="Golden Retriever">
-        <div class="breed-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80"
-            alt="Golden Retriever looking affectionately at camera"
-            class="breed-image"
-            loading="lazy"
-          >
-          <span class="breed-tag-pill">Large • Devoted Companion</span>
-          <span class="breed-origin-badge">Scotland</span>
-        </div>
-        <div class="breed-body">
-          <div class="breed-header">
-            <h3 class="breed-name">Golden Retriever</h3>
-            <span class="breed-size-indicator">Large • 55–75 lbs</span>
-          </div>
-          <p class="breed-desc">
-            Gentle, affectionate, and joyful. Celebrated for their luxurious water-repellent golden coat, supreme intelligence, eager-to-please work ethic, and sunny personality.
-          </p>
-          <div class="breed-details-list">
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">💖</span>
-              <div class="breed-detail-content">
-                <b>Temperament</b>
-                <span>Intelligent, friendly, devoted, reliable, calm with children, affectionate, and trusting.</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">📏</span>
-              <div class="breed-detail-content">
-                <b>Size Category</b>
-                <span>Large Breed • Height: 21.5–24 in • Weight: 55–75 lbs (25–34 kg)</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">🧼</span>
-              <div class="breed-detail-content">
-                <b>General Care Requirements</b>
-                <span>60 mins daily walks and fetch games; brush 2–3 times weekly to prevent feathering mats; dry ears after swimming.</span>
-                <span class="detail-tag moderate">Moderate Grooming • Daily Play</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 3. German Shepherd -->
-      <article class="breed-card" data-categories="large active" data-name="German Shepherd">
-        <div class="breed-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=800&q=80"
-            alt="Noble German Shepherd sitting alert in nature"
-            class="breed-image"
-            loading="lazy"
-          >
-          <span class="breed-tag-pill">Large • Loyal Guardian</span>
-          <span class="breed-origin-badge">Germany</span>
-        </div>
-        <div class="breed-body">
-          <div class="breed-header">
-            <h3 class="breed-name">German Shepherd</h3>
-            <span class="breed-size-indicator">Large • 50–90 lbs</span>
-          </div>
-          <p class="breed-desc">
-            Confident, courageous, and exceptionally smart. Remarkable working dogs and steadfast family protectors who thrive with structured mental challenges and active tasks.
-          </p>
-          <div class="breed-details-list">
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">💖</span>
-              <div class="breed-detail-content">
-                <b>Temperament</b>
-                <span>Courageous, confident, loyal, alert, watchful, obedient, and protective of family.</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">📏</span>
-              <div class="breed-detail-content">
-                <b>Size Category</b>
-                <span>Large Breed • Height: 22–26 in • Weight: 50–90 lbs (23–41 kg)</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">🧼</span>
-              <div class="breed-detail-content">
-                <b>General Care Requirements</b>
-                <span>Requires 90 mins daily vigorous exercise and obedience training; brush thick double coat twice weekly.</span>
-                <span class="detail-tag high">High Activity &amp; Training</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 4. Beagle -->
-      <article class="breed-card" data-categories="medium family-friendly active" data-name="Beagle">
-        <div class="breed-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=800&q=80"
-            alt="Curious Beagle puppy standing in grass"
-            class="breed-image"
-            loading="lazy"
-          >
-          <span class="breed-tag-pill">Medium • Scent Hound</span>
-          <span class="breed-origin-badge">United Kingdom</span>
-        </div>
-        <div class="breed-body">
-          <div class="breed-header">
-            <h3 class="breed-name">Beagle</h3>
-            <span class="breed-size-indicator">Medium • 20–30 lbs</span>
-          </div>
-          <p class="breed-desc">
-            Curious, merry, and scent-driven pack hounds. Loving family companions with a gentle nature, adorable floppy ears, and an enduring passion for lively sniff walks.
-          </p>
-          <div class="breed-details-list">
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">💖</span>
-              <div class="breed-detail-content">
-                <b>Temperament</b>
-                <span>Merry, curious, friendly, determined, gentle with children, sociable, and vocal.</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">📏</span>
-              <div class="breed-detail-content">
-                <b>Size Category</b>
-                <span>Medium Breed • Height: 13–15 in • Weight: 20–30 lbs (9–14 kg)</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">🧼</span>
-              <div class="breed-detail-content">
-                <b>General Care Requirements</b>
-                <span>45–60 mins daily on-leash walks; weekly coat brushing with a hound mitt; routine inspection of floppy ears.</span>
-                <span class="detail-tag low">Low Grooming • Leash Walks</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 5. Pomeranian -->
-      <article class="breed-card" data-categories="small low-energy" data-name="Pomeranian">
-        <div class="breed-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80"
-            alt="Fluffy Pomeranian with smiling fox face"
-            class="breed-image"
-            loading="lazy"
-          >
-          <span class="breed-tag-pill">Small / Toy • Spunky &amp; Fluffy</span>
-          <span class="breed-origin-badge">Germany / Poland</span>
-        </div>
-        <div class="breed-body">
-          <div class="breed-header">
-            <h3 class="breed-name">Pomeranian</h3>
-            <span class="breed-size-indicator">Small / Toy • 3–7 lbs</span>
-          </div>
-          <p class="breed-desc">
-            Tiny, vivacious extroverts with a lush fox-like plume and lion's ruff. They pack giant personality, sharp intelligence, and affectionate loyalty into an apartment-friendly size.
-          </p>
-          <div class="breed-details-list">
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">💖</span>
-              <div class="breed-detail-content">
-                <b>Temperament</b>
-                <span>Lively, bold, affectionate, intelligent, playful, vocal watchdog, and deeply devoted.</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">📏</span>
-              <div class="breed-detail-content">
-                <b>Size Category</b>
-                <span>Small / Toy Breed • Height: 7–12 in • Weight: 3–7 lbs (1.5–3.5 kg)</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">🧼</span>
-              <div class="breed-detail-content">
-                <b>General Care Requirements</b>
-                <span>20–30 mins daily walking and indoor play; brush double coat 2–3 times weekly; routine toy dog dental cleanings.</span>
-                <span class="detail-tag moderate">Moderate Grooming • Low Exercise</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 6. Shih Tzu -->
-      <article class="breed-card" data-categories="small family-friendly low-energy" data-name="Shih Tzu">
-        <div class="breed-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=80"
-            alt="Sweet Shih Tzu with groomed silky coat"
-            class="breed-image"
-            loading="lazy"
-          >
-          <span class="breed-tag-pill">Small / Toy • Sweet Palace Dog</span>
-          <span class="breed-origin-badge">Tibet / China</span>
-        </div>
-        <div class="breed-body">
-          <div class="breed-header">
-            <h3 class="breed-name">Shih Tzu</h3>
-            <span class="breed-size-indicator">Small / Toy • 9–16 lbs</span>
-          </div>
-          <p class="breed-desc">
-            Bred for centuries to grace imperial palaces as affectionate companion lap dogs. They are warm, cheerful, trustful companions who adore spending quality time with human family.
-          </p>
-          <div class="breed-details-list">
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">💖</span>
-              <div class="breed-detail-content">
-                <b>Temperament</b>
-                <span>Affectionate, playful, outgoing, gentle, friendly with strangers and kids, and peaceful.</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">📏</span>
-              <div class="breed-detail-content">
-                <b>Size Category</b>
-                <span>Small / Toy Breed • Height: 9–10.5 in • Weight: 9–16 lbs (4–7.5 kg)</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">🧼</span>
-              <div class="breed-detail-content">
-                <b>General Care Requirements</b>
-                <span>20–30 mins leisurely walks; daily combing or professional puppy clip; gentle eye wiping; avoid heat exhaustion.</span>
-                <span class="detail-tag high">High Grooming • Apartment Friendly</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 7. Pug -->
-      <article class="breed-card" data-categories="small family-friendly low-energy" data-name="Pug">
-        <div class="breed-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80"
-            alt="Cute Pug with expressive eyes and wrinkled brow"
-            class="breed-image"
-            loading="lazy"
-          >
-          <span class="breed-tag-pill">Small • Charming Comedian</span>
-          <span class="breed-origin-badge">Ancient China</span>
-        </div>
-        <div class="breed-body">
-          <div class="breed-header">
-            <h3 class="breed-name">Pug</h3>
-            <span class="breed-size-indicator">Small • 14–18 lbs</span>
-          </div>
-          <p class="breed-desc">
-            Charming, comical, and endlessly loving. Known for their expressive wrinkled faces, curled tail, gentle disposition, and natural gift for bringing laughter to every home.
-          </p>
-          <div class="breed-details-list">
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">💖</span>
-              <div class="breed-detail-content">
-                <b>Temperament</b>
-                <span>Charming, mischievous, loving, docile, even-tempered, sociable, quiet, and people-focused.</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">📏</span>
-              <div class="breed-detail-content">
-                <b>Size Category</b>
-                <span>Small Breed • Height: 10–13 in • Weight: 14–18 lbs (6.5–8 kg)</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">🧼</span>
-              <div class="breed-detail-content">
-                <b>General Care Requirements</b>
-                <span>20 mins gentle walks; daily cleaning and drying of facial folds; weekly brushing; avoid hot, humid conditions.</span>
-                <span class="detail-tag special">Wrinkle Hygiene • Low Activity</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 8. Siberian Husky -->
-      <article class="breed-card" data-categories="medium large active" data-name="Siberian Husky">
-        <div class="breed-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=800&q=80"
-            alt="Majestic Siberian Husky in snowy outdoors"
-            class="breed-image"
-            loading="lazy"
-          >
-          <span class="breed-tag-pill">Med-Large • Arctic Athlete</span>
-          <span class="breed-origin-badge">Siberia</span>
-        </div>
-        <div class="breed-body">
-          <div class="breed-header">
-            <h3 class="breed-name">Siberian Husky</h3>
-            <span class="breed-size-indicator">Med-Large • 35–60 lbs</span>
-          </div>
-          <p class="breed-desc">
-            Breathtakingly athletic sled dogs with piercing eyes and arctic resilience. Famous for boundless endurance, playful mischief, pack mentality, and conversational vocal chatter.
-          </p>
-          <div class="breed-details-list">
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">💖</span>
-              <div class="breed-detail-content">
-                <b>Temperament</b>
-                <span>Outgoing, mischievous, loyal, energetic, friendly, vocal chatterer, pack-oriented, and gentle.</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">📏</span>
-              <div class="breed-detail-content">
-                <b>Size Category</b>
-                <span>Medium to Large Breed • Height: 20–23.5 in • Weight: 35–60 lbs (16–27 kg)</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">🧼</span>
-              <div class="breed-detail-content">
-                <b>General Care Requirements</b>
-                <span>Needs 90+ mins daily vigorous cardio; brush double coat 2x weekly (daily in coat blow); secure tall fencing required.</span>
-                <span class="detail-tag high">High Exercise • Secure Yard</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 9. Rottweiler -->
-      <article class="breed-card" data-categories="large active" data-name="Rottweiler">
-        <div class="breed-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1567752881298-894bb81f9379?auto=format&fit=crop&w=800&q=80"
-            alt="Strong and alert Rottweiler standing proud"
-            class="breed-image"
-            loading="lazy"
-          >
-          <span class="breed-tag-pill">Large • Stalwart Protector</span>
-          <span class="breed-origin-badge">Germany</span>
-        </div>
-        <div class="breed-body">
-          <div class="breed-header">
-            <h3 class="breed-name">Rottweiler</h3>
-            <span class="breed-size-indicator">Large • 80–135 lbs</span>
-          </div>
-          <p class="breed-desc">
-            Robust, steadfast, and deeply devoted guardians with profound loyalty, calm confidence, and an affectionate heart for family members when raised with positive guidance.
-          </p>
-          <div class="breed-details-list">
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">💖</span>
-              <div class="breed-detail-content">
-                <b>Temperament</b>
-                <span>Confident, loyal, courageous, calm, obedient, affectionate with family, and naturally protective.</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">📏</span>
-              <div class="breed-detail-content">
-                <b>Size Category</b>
-                <span>Large to Giant Breed • Height: 22–27 in • Weight: 80–135 lbs (36–61 kg)</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">🧼</span>
-              <div class="breed-detail-content">
-                <b>General Care Requirements</b>
-                <span>60 mins daily structured exercise; weekly brushing with rubber curry comb; early socialization and positive reinforcement.</span>
-                <span class="detail-tag moderate">Low Grooming • Structured Training</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- 10. Dachshund -->
-      <article class="breed-card" data-categories="small family-friendly" data-name="Dachshund">
-        <div class="breed-image-wrap">
-          <img
-            src="https://images.unsplash.com/photo-1612195583950-b8fd34c87093?auto=format&fit=crop&w=800&q=80"
-            alt="Alert Dachshund sitting on grass"
-            class="breed-image"
-            loading="lazy"
-          >
-          <span class="breed-tag-pill">Small • Spunky Badger Dog</span>
-          <span class="breed-origin-badge">Germany</span>
-        </div>
-        <div class="breed-body">
-          <div class="breed-header">
-            <h3 class="breed-name">Dachshund</h3>
-            <span class="breed-size-indicator">Small • 11–32 lbs</span>
-          </div>
-          <p class="breed-desc">
-            Clever, spunky, and courageous dogs with iconic long silhouettes and big hearts. Originally bred to scent and dig out badgers, they make alert, devoted companions.
-          </p>
-          <div class="breed-details-list">
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">💖</span>
-              <div class="breed-detail-content">
-                <b>Temperament</b>
-                <span>Clever, brave, lively, stubborn, devoted, affectionate, alert watchdog, and spirited.</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">📏</span>
-              <div class="breed-detail-content">
-                <b>Size Category</b>
-                <span>Small Breed (Miniature &amp; Standard) • Height: 5–9 in • Weight: 11–32 lbs</span>
-              </div>
-            </div>
-            <div class="breed-detail-row">
-              <span class="breed-detail-icon">🧼</span>
-              <div class="breed-detail-content">
-                <b>General Care Requirements</b>
-                <span>30–45 mins daily moderate walking; avoid stair jumping to protect long spine (IVDD prevention); weekly brushing.</span>
-                <span class="detail-tag low">Low-Mod Grooming • Spine Care</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- No Results Fallback -->
-      <div id="noResults" class="no-results-msg">
-        <h3>🐕 No matching dog breeds found</h3>
-        <p>Try searching for a different breed name, temperament trait, or reset the category filter.</p>
-        <button class="button button-small" onclick="resetFilters()">Reset All Filters</button>
+    <!-- Section 3: Dog Breed Information -->
+    <section class="section-wrap" id="breed-info">
+      <div class="section-title-wrap">
+        <div class="eyebrow"><i class="fa-solid fa-circle-info"></i> Canine Classification</div>
+        <h2>Dog Breed <em>Information</em></h2>
+        <p>Essential canine fundamentals across size tiers, family compatibility, daily activity, and coat maintenance.</p>
       </div>
 
-    </div>
-  </section>
+      <!-- 4 Equal Height Information Cards -->
+      <div class="info-overview-grid">
+        <!-- 1. Size Spectrum -->
+        <article class="overview-card">
+          <div class="overview-top">
+            <div class="overview-icon icon-size"><i class="fa-solid fa-ruler-combined"></i></div>
+            <span class="overview-badge">Size Spectrum</span>
+          </div>
+          <h3>Small, Medium &amp; Large Breeds</h3>
+          <p>Dog sizes range from compact toy breeds under 15 lbs to working guardians over 90 lbs, shaping living space, gear, and food needs.</p>
+          <div class="overview-specs">
+            <div><span class="spec-label">Small (&lt; 25 lbs):</span> <span class="spec-val">Pomeranian, Shih Tzu, Pug</span></div>
+            <div><span class="spec-label">Medium (25–55 lbs):</span> <span class="spec-val">Beagle, Indian Pariah Dog</span></div>
+            <div><span class="spec-label">Large (55–100+ lbs):</span> <span class="spec-val">Labrador, Golden, GSD, Rottweiler</span></div>
+          </div>
+          <button class="filter-trigger" onclick="selectCategory('small')">Explore Small Breeds →</button>
+        </article>
 
-  <!-- SECTION 3: Comparison Section (Requirement 4) -->
-  <section class="section section-wrap" id="comparison">
-    <div class="section-title-wrap">
-      <div class="eyebrow">Side-by-Side Analysis</div>
-      <h2>Dog Breed <em>Comparison</em></h2>
-      <p>Compare breed sizes, energy levels, grooming commitments, and general temperaments side-by-side or scan the full matrix to determine which breed aligns with your routine.</p>
-    </div>
+        <!-- 2. Family-Friendly Breeds -->
+        <article class="overview-card">
+          <div class="overview-top">
+            <div class="overview-icon icon-family"><i class="fa-solid fa-heart"></i></div>
+            <span class="overview-badge">Family &amp; Kids</span>
+          </div>
+          <h3>Family-Friendly Breeds</h3>
+          <p>Celebrated for patient temperaments, reliable loyalty, and eager sociability with children and multi-pet households.</p>
+          <div class="overview-specs">
+            <div><span class="spec-label">Key Traits:</span> <span class="spec-val">Patient, Tolerant, Affectionate</span></div>
+            <div><span class="spec-label">Best Matches:</span> <span class="spec-val">Golden Retriever, Labrador, Beagle</span></div>
+            <div><span class="spec-label">Social Need:</span> <span class="spec-val">High household companionship</span></div>
+          </div>
+          <button class="filter-trigger" onclick="selectCategory('family')">View Family Dogs →</button>
+        </article>
 
-    <div class="comparison-section-box">
-      <!-- Interactive Side-by-Side Comparator Tool -->
+        <!-- 3. Active vs. Low-Energy Breeds -->
+        <article class="overview-card">
+          <div class="overview-top">
+            <div class="overview-icon icon-energy"><i class="fa-solid fa-bolt"></i></div>
+            <span class="overview-badge">Activity Balance</span>
+          </div>
+          <h3>Active vs. Low-Energy</h3>
+          <p>High-energy working breeds require 60–90+ mins of daily aerobic exercise, while calm lap companions prefer short scenic walks.</p>
+          <div class="overview-specs">
+            <div><span class="spec-label">High Energy (60m+):</span> <span class="spec-val">Husky, German Shepherd, Labrador</span></div>
+            <div><span class="spec-label">Moderate/Low (30m):</span> <span class="spec-val">Pug, Shih Tzu, Pomeranian</span></div>
+            <div><span class="spec-label">Mind Games:</span> <span class="spec-val">Puzzle feeders, scent games, agility</span></div>
+          </div>
+          <button class="filter-trigger" onclick="selectCategory('active')">View Active Breeds →</button>
+        </article>
+
+        <!-- 4. Basic Grooming Requirements -->
+        <article class="overview-card">
+          <div class="overview-top">
+            <div class="overview-icon icon-groom"><i class="fa-solid fa-soap"></i></div>
+            <span class="overview-badge">Hygiene &amp; Coat</span>
+          </div>
+          <h3>Basic Grooming Requirements</h3>
+          <p>Coat care varies from regular de-shedding raking on double coats to quick weekly brushing and daily facial wrinkle hygiene.</p>
+          <div class="overview-specs">
+            <div><span class="spec-label">Double Coats:</span> <span class="spec-val">Husky, GSD, Golden, Pomeranian</span></div>
+            <div><span class="spec-label">Smooth Short Coats:</span> <span class="spec-val">Indian Pariah, Rottweiler, Beagle</span></div>
+            <div><span class="spec-label">Wrinkle Cleaning:</span> <span class="spec-val">Pug (daily facial fold wiping)</span></div>
+          </div>
+          <button class="filter-trigger" onclick="selectCategory('all')">View Breeds &amp; Care →</button>
+        </article>
+      </div>
+
+      <!-- Dedicated Full-Width Characteristics & Lifespan Card -->
+      <article class="char-full-width-card">
+        <div class="char-header">
+          <div class="char-icon-main"><i class="fa-solid fa-shield-dog"></i></div>
+          <div class="char-header-text">
+            <h3>General Canine Characteristics &amp; Lifespan</h3>
+            <p>
+              While genetics guide natural traits, early socialization and balanced routines define individual temperaments. Toy and small breeds often enjoy lifespans of 12–16 years, medium breeds reach 12–15 years, and large working breeds average 9–13 years.
+            </p>
+          </div>
+        </div>
+
+        <div class="char-pillars-grid">
+          <div class="char-pillar-item">
+            <i class="fa-solid fa-users pillar-icon"></i>
+            <div class="pillar-info">
+              <b>Pack Mentality</b>
+              <span>Craves family structure, positive praise, and daily togetherness.</span>
+            </div>
+          </div>
+          <div class="char-pillar-item">
+            <i class="fa-solid fa-person-walking pillar-icon"></i>
+            <div class="pillar-info">
+              <b>Daily Exercise</b>
+              <span>Regular walking stimulates canine senses and prevents behavioral anxiety.</span>
+            </div>
+          </div>
+          <div class="char-pillar-item">
+            <i class="fa-solid fa-tooth pillar-icon"></i>
+            <div class="pillar-info">
+              <b>Dental Hygiene</b>
+              <span>Weekly brushing and dental chews protect against periodontal infections.</span>
+            </div>
+          </div>
+          <div class="char-pillar-item">
+            <i class="fa-solid fa-heart-pulse pillar-icon"></i>
+            <div class="pillar-info">
+              <b>Preventive Wellness</b>
+              <span>Annual veterinarian examinations, core vaccinations, and parasite control.</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Section 4: Popular Dog Breeds -->
+    <section class="section-wrap" id="popular-breeds">
+      <div class="section-title-wrap">
+        <div class="eyebrow"><i class="fa-solid fa-dog"></i> Canine Profiles</div>
+        <h2>Popular <em>Dog Breeds</em></h2>
+        <p>Explore comprehensive profiles for 10 world-renowned breeds with standardized sizes, temperaments, and care details.</p>
+      </div>
+
+      <!-- Section 2: Clean Search & Filter Section -->
+      <div class="filter-section-container">
+        <div class="filter-top-bar">
+          <!-- 1. Search by breed name -->
+          <div class="search-input-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              id="breedSearchInput"
+              class="filter-search-input"
+              placeholder="Search breed by name, origin, or trait..."
+              aria-label="Search dog breeds"
+            >
+          </div>
+
+          <!-- 2. Filter by size -->
+          <div>
+            <select id="filterSize" class="filter-select" onchange="applyFilters()" aria-label="Filter by size">
+              <option value="all">All Sizes (10)</option>
+              <option value="small">Small Breed (&lt; 25 lbs)</option>
+              <option value="medium">Medium Breed (25–55 lbs)</option>
+              <option value="large">Large Breed (55+ lbs)</option>
+            </select>
+          </div>
+
+          <!-- 3. Filter by origin -->
+          <div>
+            <select id="filterOrigin" class="filter-select" onchange="applyFilters()" aria-label="Filter by origin">
+              <option value="all">All Origins</option>
+              <option value="uk">United Kingdom / Scotland</option>
+              <option value="canada">Canada</option>
+              <option value="germany">Germany</option>
+              <option value="china">China / Tibet</option>
+              <option value="russia">Russia (Siberia)</option>
+              <option value="india">India</option>
+            </select>
+          </div>
+
+          <!-- 4. Filter by lifespan -->
+          <div>
+            <select id="filterLifespan" class="filter-select" onchange="applyFilters()" aria-label="Filter by lifespan">
+              <option value="all">All Lifespans</option>
+              <option value="short">Under 12 Years</option>
+              <option value="medium">10–13 Years</option>
+              <option value="long">13+ Years</option>
+            </select>
+          </div>
+
+          <!-- 5. Filter by temperament -->
+          <div>
+            <select id="filterTemperament" class="filter-select" onchange="applyFilters()" aria-label="Filter by temperament">
+              <option value="all">All Temperaments</option>
+              <option value="friendly">Friendly &amp; Gentle</option>
+              <option value="loyal">Loyal &amp; Devoted</option>
+              <option value="active">Active &amp; Energetic</option>
+              <option value="calm">Calm &amp; Docile</option>
+              <option value="protective">Protective &amp; Alert</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Filter Pills & Counter Row -->
+        <div class="filter-pills-row">
+          <div class="filter-pills-list">
+            <button class="pill-btn active" data-pill="all" onclick="setPillFilter('all')">
+              <i class="fa-solid fa-list"></i> All Breeds <span class="filter-count-badge">10</span>
+            </button>
+            <button class="pill-btn" data-pill="small" onclick="setPillFilter('small')">
+              <i class="fa-solid fa-paw"></i> Small <span class="filter-count-badge">3</span>
+            </button>
+            <button class="pill-btn" data-pill="medium" onclick="setPillFilter('medium')">
+              <i class="fa-solid fa-dog"></i> Medium <span class="filter-count-badge">3</span>
+            </button>
+            <button class="pill-btn" data-pill="large" onclick="setPillFilter('large')">
+              <i class="fa-solid fa-shield-dog"></i> Large <span class="filter-count-badge">4</span>
+            </button>
+            <button class="pill-btn" data-pill="family" onclick="setPillFilter('family')">
+              <i class="fa-solid fa-heart"></i> Family-Friendly
+            </button>
+            <button class="pill-btn" data-pill="indian" onclick="setPillFilter('indian')">
+              <i class="fa-solid fa-earth-asia"></i> Indian Breeds
+            </button>
+          </div>
+
+          <div class="filter-actions">
+            <span class="results-count-text" id="resultsCount">Showing 10 of 10 Breeds</span>
+            <button class="reset-filters-btn" onclick="resetFilters()">
+              <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 Popular Dog Breeds Cards -->
+      <div class="breeds-grid" id="breedsGrid">
+
+        <!-- 1. Golden Retriever -->
+        <article class="dog-card"
+          data-name="Golden Retriever"
+          data-size="large"
+          data-origin="uk"
+          data-lifespan="medium"
+          data-temperament="friendly loyal active"
+          data-category="large family active">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80" alt="Golden Retriever sitting happily outdoors" loading="lazy">
+            <span class="dog-card-badge"><i class="fa-solid fa-ruler-combined"></i> Large Breed</span>
+            <span class="dog-origin-badge">Scotland / UK</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Golden Retriever</h3>
+            <span class="dog-card-subtitle"><i class="fa-solid fa-heart"></i> Devoted Family Companion</span>
+            <p>Gentle, affectionate, and joyful. Celebrated for luxurious golden double coats, supreme trainability, and sunny dispositions.</p>
+            <div class="breed-meta-list">
+              <div class="breed-meta-row meta-size"><i class="fa-solid fa-ruler-combined"></i> <b>Size:</b> Large Breed (55–75 lbs)</div>
+              <div class="breed-meta-row meta-origin"><i class="fa-solid fa-earth-asia"></i> <b>Origin:</b> Scotland, UK</div>
+              <div class="breed-meta-row meta-temp"><i class="fa-solid fa-heart"></i> <b>Temperament:</b> Friendly, intelligent, devoted</div>
+            </div>
+            <div class="dog-card-footer">
+              <a href="breed-detail.html?breed=golden-retriever" class="dog-card-link view-details-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Labrador Retriever -->
+        <article class="dog-card"
+          data-name="Labrador Retriever"
+          data-size="large"
+          data-origin="canada"
+          data-lifespan="medium"
+          data-temperament="friendly loyal active"
+          data-category="large family active">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80" alt="Friendly Labrador Retriever" loading="lazy">
+            <span class="dog-card-badge"><i class="fa-solid fa-ruler-combined"></i> Large Breed</span>
+            <span class="dog-origin-badge">Canada / UK</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Labrador Retriever</h3>
+            <span class="dog-card-subtitle"><i class="fa-solid fa-heart"></i> Spirited Sporting Companion</span>
+            <p>Outgoing, spirited, and gentle dogs renowned for high intelligence, water retrieval skills, and supreme devotion to family.</p>
+            <div class="breed-meta-list">
+              <div class="breed-meta-row meta-size"><i class="fa-solid fa-ruler-combined"></i> <b>Size:</b> Large Breed (55–80 lbs)</div>
+              <div class="breed-meta-row meta-origin"><i class="fa-solid fa-earth-asia"></i> <b>Origin:</b> Canada / UK</div>
+              <div class="breed-meta-row meta-temp"><i class="fa-solid fa-heart"></i> <b>Temperament:</b> Outgoing, gentle, eager to please</div>
+            </div>
+            <div class="dog-card-footer">
+              <a href="breed-detail.html?breed=labrador-retriever" class="dog-card-link view-details-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. German Shepherd -->
+        <article class="dog-card"
+          data-name="German Shepherd"
+          data-size="large"
+          data-origin="germany"
+          data-lifespan="medium"
+          data-temperament="loyal protective active"
+          data-category="large active">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=800&q=80" alt="Noble German Shepherd" loading="lazy">
+            <span class="dog-card-badge"><i class="fa-solid fa-ruler-combined"></i> Large Breed</span>
+            <span class="dog-origin-badge">Germany</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>German Shepherd</h3>
+            <span class="dog-card-subtitle"><i class="fa-solid fa-shield-dog"></i> Working Guardian</span>
+            <p>Courageous, devoted, and exceptionally intelligent working dogs known for protective loyalty and remarkable obedience.</p>
+            <div class="breed-meta-list">
+              <div class="breed-meta-row meta-size"><i class="fa-solid fa-ruler-combined"></i> <b>Size:</b> Large Breed (50–90 lbs)</div>
+              <div class="breed-meta-row meta-origin"><i class="fa-solid fa-earth-asia"></i> <b>Origin:</b> Germany</div>
+              <div class="breed-meta-row meta-temp"><i class="fa-solid fa-heart"></i> <b>Temperament:</b> Courageous, confident, alert</div>
+            </div>
+            <div class="dog-card-footer">
+              <a href="breed-detail.html?breed=german-shepherd" class="dog-card-link view-details-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Beagle -->
+        <article class="dog-card"
+          data-name="Beagle"
+          data-size="medium"
+          data-origin="uk"
+          data-lifespan="long"
+          data-temperament="friendly active"
+          data-category="medium family">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=800&q=80" alt="Curious Beagle looking forward" loading="lazy">
+            <span class="dog-card-badge"><i class="fa-solid fa-ruler-combined"></i> Medium Breed</span>
+            <span class="dog-origin-badge">United Kingdom</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Beagle</h3>
+            <span class="dog-card-subtitle"><i class="fa-solid fa-compass"></i> Merry Scent Hound</span>
+            <p>Merry, curious, and gentle scent hounds characterized by warm expressions, musical bays, and an insatiable nose for trails.</p>
+            <div class="breed-meta-list">
+              <div class="breed-meta-row meta-size"><i class="fa-solid fa-ruler-combined"></i> <b>Size:</b> Medium Breed (20–30 lbs)</div>
+              <div class="breed-meta-row meta-origin"><i class="fa-solid fa-earth-asia"></i> <b>Origin:</b> United Kingdom</div>
+              <div class="breed-meta-row meta-temp"><i class="fa-solid fa-heart"></i> <b>Temperament:</b> Curious, friendly, scent-driven</div>
+            </div>
+            <div class="dog-card-footer">
+              <a href="breed-detail.html?breed=beagle" class="dog-card-link view-details-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Pomeranian -->
+        <article class="dog-card"
+          data-name="Pomeranian"
+          data-size="small"
+          data-origin="germany"
+          data-lifespan="long"
+          data-temperament="friendly active"
+          data-category="small apartment">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80" alt="Fluffy Pomeranian smiling" loading="lazy">
+            <span class="dog-card-badge"><i class="fa-solid fa-ruler-combined"></i> Small Breed</span>
+            <span class="dog-origin-badge">Germany / Poland</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Pomeranian</h3>
+            <span class="dog-card-subtitle"><i class="fa-solid fa-paw"></i> Lively Toy Spitz</span>
+            <p>Spirited, miniature spitz dogs featuring fluffy double coats, foxy expressions, and vibrant personalities suited for city homes.</p>
+            <div class="breed-meta-list">
+              <div class="breed-meta-row meta-size"><i class="fa-solid fa-ruler-combined"></i> <b>Size:</b> Small Breed (3–7 lbs)</div>
+              <div class="breed-meta-row meta-origin"><i class="fa-solid fa-earth-asia"></i> <b>Origin:</b> Germany / Poland</div>
+              <div class="breed-meta-row meta-temp"><i class="fa-solid fa-heart"></i> <b>Temperament:</b> Lively, bold, affectionate, alert</div>
+            </div>
+            <div class="dog-card-footer">
+              <a href="breed-detail.html?breed=pomeranian" class="dog-card-link view-details-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Shih Tzu -->
+        <article class="dog-card"
+          data-name="Shih Tzu"
+          data-size="small"
+          data-origin="china"
+          data-lifespan="long"
+          data-temperament="friendly calm"
+          data-category="small apartment family">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=80" alt="Adorable Shih Tzu" loading="lazy">
+            <span class="dog-card-badge"><i class="fa-solid fa-ruler-combined"></i> Small Breed</span>
+            <span class="dog-origin-badge">Tibet / China</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Shih Tzu</h3>
+            <span class="dog-card-subtitle"><i class="fa-solid fa-crown"></i> Gentle Royal Companion</span>
+            <p>Ancient, sweet-tempered companion dogs cherished for flowing coats, gentle lap-dog companionship, and affectionate patience.</p>
+            <div class="breed-meta-list">
+              <div class="breed-meta-row meta-size"><i class="fa-solid fa-ruler-combined"></i> <b>Size:</b> Small Breed (9–16 lbs)</div>
+              <div class="breed-meta-row meta-origin"><i class="fa-solid fa-earth-asia"></i> <b>Origin:</b> Tibet / China</div>
+              <div class="breed-meta-row meta-temp"><i class="fa-solid fa-heart"></i> <b>Temperament:</b> Affectionate, gentle, playful</div>
+            </div>
+            <div class="dog-card-footer">
+              <a href="breed-detail.html?breed=shih-tzu" class="dog-card-link view-details-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Pug -->
+        <article class="dog-card"
+          data-name="Pug"
+          data-size="small"
+          data-origin="china"
+          data-lifespan="long"
+          data-temperament="friendly calm"
+          data-category="small apartment">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" alt="Charming fawn Pug" loading="lazy">
+            <span class="dog-card-badge"><i class="fa-solid fa-ruler-combined"></i> Small Breed</span>
+            <span class="dog-origin-badge">China</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Pug</h3>
+            <span class="dog-card-subtitle"><i class="fa-solid fa-face-laugh-beam"></i> Charming &amp; Mischievous</span>
+            <p>Charming, humorous, and docile companions recognizable by wrinkly faces, curled tails, expressive eyes, and calm indoor habits.</p>
+            <div class="breed-meta-list">
+              <div class="breed-meta-row meta-size"><i class="fa-solid fa-ruler-combined"></i> <b>Size:</b> Small Breed (14–18 lbs)</div>
+              <div class="breed-meta-row meta-origin"><i class="fa-solid fa-earth-asia"></i> <b>Origin:</b> China</div>
+              <div class="breed-meta-row meta-temp"><i class="fa-solid fa-heart"></i> <b>Temperament:</b> Charming, loving, docile, sociable</div>
+            </div>
+            <div class="dog-card-footer">
+              <a href="breed-detail.html?breed=pug" class="dog-card-link view-details-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Siberian Husky -->
+        <article class="dog-card"
+          data-name="Siberian Husky"
+          data-size="medium"
+          data-origin="russia"
+          data-lifespan="long"
+          data-temperament="friendly active"
+          data-category="medium active">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=800&q=80" alt="Striking Siberian Husky" loading="lazy">
+            <span class="dog-card-badge"><i class="fa-solid fa-ruler-combined"></i> Med-Large</span>
+            <span class="dog-origin-badge">Siberia, Russia</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Siberian Husky</h3>
+            <span class="dog-card-subtitle"><i class="fa-solid fa-snowflake"></i> Endurance Sled Dog</span>
+            <p>Athletic, vocal, and free-spirited northern working dogs famous for almond eyes, insulating coats, and incredible stamina.</p>
+            <div class="breed-meta-list">
+              <div class="breed-meta-row meta-size"><i class="fa-solid fa-ruler-combined"></i> <b>Size:</b> Medium Breed (35–60 lbs)</div>
+              <div class="breed-meta-row meta-origin"><i class="fa-solid fa-earth-asia"></i> <b>Origin:</b> Siberia, Russia</div>
+              <div class="breed-meta-row meta-temp"><i class="fa-solid fa-heart"></i> <b>Temperament:</b> Outgoing, energetic, vocal, playful</div>
+            </div>
+            <div class="dog-card-footer">
+              <a href="breed-detail.html?breed=siberian-husky" class="dog-card-link view-details-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Rottweiler -->
+        <article class="dog-card"
+          data-name="Rottweiler"
+          data-size="large"
+          data-origin="germany"
+          data-lifespan="short"
+          data-temperament="loyal protective"
+          data-category="large">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1567752881298-894bb81f9379?auto=format&fit=crop&w=800&q=80" alt="Robust Rottweiler portrait" loading="lazy">
+            <span class="dog-card-badge"><i class="fa-solid fa-ruler-combined"></i> Large Breed</span>
+            <span class="dog-origin-badge">Germany</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Rottweiler</h3>
+            <span class="dog-card-subtitle"><i class="fa-solid fa-shield-halved"></i> Loyal Working Guardian</span>
+            <p>Robust, noble, and deeply loyal working guardians with clear protective instincts, remarkable strength, and calm home loyalty.</p>
+            <div class="breed-meta-list">
+              <div class="breed-meta-row meta-size"><i class="fa-solid fa-ruler-combined"></i> <b>Size:</b> Large Breed (80–135 lbs)</div>
+              <div class="breed-meta-row meta-origin"><i class="fa-solid fa-earth-asia"></i> <b>Origin:</b> Germany</div>
+              <div class="breed-meta-row meta-temp"><i class="fa-solid fa-heart"></i> <b>Temperament:</b> Confident, loyal, courageous, calm</div>
+            </div>
+            <div class="dog-card-footer">
+              <a href="breed-detail.html?breed=rottweiler" class="dog-card-link view-details-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Indian Pariah Dog -->
+        <article class="dog-card"
+          data-name="Indian Pariah Dog"
+          data-size="medium"
+          data-origin="india"
+          data-lifespan="long"
+          data-temperament="loyal active"
+          data-category="medium indian family">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80" alt="Alert Indian Pariah Dog outdoors" loading="lazy">
+            <span class="dog-card-badge"><i class="fa-solid fa-ruler-combined"></i> Medium Breed</span>
+            <span class="dog-origin-badge">Indian Subcontinent</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Indian Pariah Dog</h3>
+            <span class="dog-card-subtitle"><i class="fa-solid fa-sun"></i> Indigenous Desi Dog</span>
+            <p>Ancient indigenous companions celebrated for genetic vigor, self-cleaning coats, natural alertness, and supreme devotion.</p>
+            <div class="breed-meta-list">
+              <div class="breed-meta-row meta-size"><i class="fa-solid fa-ruler-combined"></i> <b>Size:</b> Medium Breed (30–55 lbs)</div>
+              <div class="breed-meta-row meta-origin"><i class="fa-solid fa-earth-asia"></i> <b>Origin:</b> Indian Subcontinent</div>
+              <div class="breed-meta-row meta-temp"><i class="fa-solid fa-heart"></i> <b>Temperament:</b> Highly intelligent, hardy, alert</div>
+            </div>
+            <div class="dog-card-footer">
+              <a href="breed-detail.html?breed=indian-pariah" class="dog-card-link view-details-btn">View Details <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Empty State (No Search Results) -->
+        <div class="empty-state" id="noResults" style="display: none;">
+          <div class="empty-state-icon"><i class="fa-solid fa-circle-question"></i></div>
+          <h3>No matching dog breeds found</h3>
+          <p>Try searching for a different breed name or trait, or reset your active filters.</p>
+          <button class="button button-small" onclick="resetFilters()">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Breed Categories (Browsing Section) -->
+    <section class="section-wrap categories-section" id="breed-categories">
+      <div class="section-title-wrap">
+        <div class="eyebrow"><i class="fa-solid fa-layer-group"></i> Breed Directory</div>
+        <h2>Browse Breeds by <em>Category</em></h2>
+        <p>Find canine companions tailored to your living space, family dynamics, and daily activity habits.</p>
+      </div>
+
+      <div class="categories-grid">
+        <!-- 1. Small Dog Breeds -->
+        <a class="category-card" onclick="selectCategory('small')">
+          <div class="cat-icon-box"><i class="fa-solid fa-paw"></i></div>
+          <div class="cat-content">
+            <h4>Small Dog Breeds</h4>
+            <p>Compact companions under 25 lbs, perfect for apartment living and cozy spaces.</p>
+            <span>View Small Breeds <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 2. Medium Dog Breeds -->
+        <a class="category-card" onclick="selectCategory('medium')">
+          <div class="cat-icon-box"><i class="fa-solid fa-dog"></i></div>
+          <div class="cat-content">
+            <h4>Medium Dog Breeds</h4>
+            <p>Balanced companions weighing 25–55 lbs, offering versatility and adaptability.</p>
+            <span>View Medium Breeds <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 3. Large Dog Breeds -->
+        <a class="category-card" onclick="selectCategory('large')">
+          <div class="cat-icon-box"><i class="fa-solid fa-shield-dog"></i></div>
+          <div class="cat-content">
+            <h4>Large Dog Breeds</h4>
+            <p>Noble working guardians over 55 lbs with athletic stamina and protective devotion.</p>
+            <span>View Large Breeds <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 4. Popular Indian Dog Breeds -->
+        <a class="category-card" onclick="selectCategory('indian')">
+          <div class="cat-icon-box"><i class="fa-solid fa-earth-asia"></i></div>
+          <div class="cat-content">
+            <h4>Popular Indian Dog Breeds</h4>
+            <p>Naturally hardy, resilient indigenous breeds adapted to local climates with low grooming.</p>
+            <span>View Indian Breeds <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 5. Family-Friendly Dog Breeds -->
+        <a class="category-card" onclick="selectCategory('family')">
+          <div class="cat-icon-box"><i class="fa-solid fa-heart"></i></div>
+          <div class="cat-content">
+            <h4>Family-Friendly Dog Breeds</h4>
+            <p>Affectionate, patient dogs celebrated for gentle interactions with children and guests.</p>
+            <span>View Family Dogs <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 6. Apartment-Friendly Dog Breeds -->
+        <a class="category-card" onclick="selectCategory('apartment')">
+          <div class="cat-icon-box"><i class="fa-solid fa-building"></i></div>
+          <div class="cat-content">
+            <h4>Apartment-Friendly Dog Breeds</h4>
+            <p>Calm, low-barking companions content with indoor comfort and structured daily strolls.</p>
+            <span>View Apartment Dogs <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 7: Dog Breed Comparison -->
+    <section class="section-wrap comparison-section-box" id="comparison">
+      <div class="section-title-wrap">
+        <div class="eyebrow"><i class="fa-solid fa-code-compare"></i> Side-by-Side Analysis</div>
+        <h2>Dog Breed <em>Comparison</em></h2>
+        <p>Compare physical specs, energy levels, and temperaments between any two breeds side by side.</p>
+      </div>
+
+      <!-- Compact Side-by-Side Comparator Widget -->
       <div class="comparator-widget">
         <div class="comparator-header">
-          <h3>⚡ Quick Breed-to-Breed Comparator</h3>
-          <p>Select any two breeds from the dropdown menus to compare their physical specs, energy drives, and temperaments side-by-side.</p>
+          <h3>Quick Breed-to-Breed Comparator</h3>
+          <p>Select any two breeds to compare their size, weight, lifespan, energy, temperament, and grooming needs.</p>
         </div>
 
         <div class="comparator-selectors">
           <div class="select-box-wrap">
             <label for="breedSelectA">First Breed:</label>
             <select id="breedSelectA" class="comparator-select" onchange="updateComparison()">
+              <option value="golden" selected>Golden Retriever</option>
               <option value="labrador">Labrador Retriever</option>
-              <option value="golden">Golden Retriever</option>
               <option value="germanshepherd">German Shepherd</option>
               <option value="beagle">Beagle</option>
               <option value="pomeranian">Pomeranian</option>
@@ -1674,7 +2037,7 @@
               <option value="pug">Pug</option>
               <option value="husky">Siberian Husky</option>
               <option value="rottweiler">Rottweiler</option>
-              <option value="dachshund">Dachshund</option>
+              <option value="indianpariah">Indian Pariah Dog</option>
             </select>
           </div>
 
@@ -1683,8 +2046,8 @@
           <div class="select-box-wrap">
             <label for="breedSelectB">Second Breed:</label>
             <select id="breedSelectB" class="comparator-select" onchange="updateComparison()">
-              <option value="labrador">Labrador Retriever</option>
-              <option value="golden" selected>Golden Retriever</option>
+              <option value="golden">Golden Retriever</option>
+              <option value="labrador" selected>Labrador Retriever</option>
               <option value="germanshepherd">German Shepherd</option>
               <option value="beagle">Beagle</option>
               <option value="pomeranian">Pomeranian</option>
@@ -1692,39 +2055,48 @@
               <option value="pug">Pug</option>
               <option value="husky">Siberian Husky</option>
               <option value="rottweiler">Rottweiler</option>
-              <option value="dachshund">Dachshund</option>
+              <option value="indianpariah">Indian Pariah Dog</option>
             </select>
           </div>
         </div>
 
+        <!-- 2 Equal-Sized Comparison Cards with 7 Key Points -->
         <div class="comparison-grid" id="comparisonCardsContainer">
           <!-- Card A -->
           <article class="comparison-card" id="cardA">
             <div class="comp-card-media">
-              <img id="compImgA" src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80" alt="Breed A">
+              <img id="compImgA" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80" alt="Breed A">
               <span class="comp-card-badge" id="compBadgeA">Large Breed</span>
             </div>
             <div class="comp-card-body">
-              <h4 class="comp-card-title" id="compTitleA">Labrador Retriever</h4>
+              <h4 class="comp-card-title" id="compTitleA">Golden Retriever</h4>
               <div class="comp-card-row">
-                <span class="comp-card-label">Size &amp; Weight</span>
-                <span class="comp-card-val" id="compSizeA">Large • 55–80 lbs (25–36 kg)</span>
+                <span class="comp-card-label"><i class="fa-solid fa-ruler-combined"></i> Size</span>
+                <span class="comp-card-val" id="compSizeA">Large Breed</span>
               </div>
               <div class="comp-card-row">
-                <span class="comp-card-label">Energy Level</span>
-                <span class="comp-card-val" id="compEnergyA">⚡ High / Active Outdoor Companion</span>
+                <span class="comp-card-label"><i class="fa-solid fa-weight-scale"></i> Average Weight</span>
+                <span class="comp-card-val" id="compWeightA">55–75 lbs (25–34 kg)</span>
               </div>
               <div class="comp-card-row">
-                <span class="comp-card-label">Grooming Needs</span>
-                <span class="comp-card-val" id="compGroomA">🪮 Moderate (Weekly brush, seasonal shed)</span>
+                <span class="comp-card-label"><i class="fa-solid fa-arrows-up-down"></i> Height</span>
+                <span class="comp-card-val" id="compHeightA">21.5–24 inches</span>
               </div>
               <div class="comp-card-row">
-                <span class="comp-card-label">General Temperament</span>
-                <span class="comp-card-val" id="compTemperamentA">Friendly, outgoing, gentle, eager to please</span>
+                <span class="comp-card-label"><i class="fa-solid fa-heart-pulse"></i> Lifespan</span>
+                <span class="comp-card-val" id="compLifespanA">10–12 Years</span>
               </div>
               <div class="comp-card-row">
-                <span class="comp-card-label">Best Living Space</span>
-                <span class="comp-card-val" id="compSpaceA">Houses with yard, active families</span>
+                <span class="comp-card-label"><i class="fa-solid fa-bolt"></i> Energy Level</span>
+                <span class="comp-card-val" id="compEnergyA">High (Daily play &amp; fetch)</span>
+              </div>
+              <div class="comp-card-row">
+                <span class="comp-card-label"><i class="fa-solid fa-face-smile"></i> Temperament</span>
+                <span class="comp-card-val" id="compTemperamentA">Friendly, intelligent, devoted</span>
+              </div>
+              <div class="comp-card-row">
+                <span class="comp-card-label"><i class="fa-solid fa-scissors"></i> Grooming Needs</span>
+                <span class="comp-card-val" id="compGroomA">Moderate (2–3x weekly brush)</span>
               </div>
             </div>
           </article>
@@ -1732,47 +2104,56 @@
           <!-- Card B -->
           <article class="comparison-card" id="cardB">
             <div class="comp-card-media">
-              <img id="compImgB" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80" alt="Breed B">
+              <img id="compImgB" src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80" alt="Breed B">
               <span class="comp-card-badge" id="compBadgeB">Large Breed</span>
             </div>
             <div class="comp-card-body">
-              <h4 class="comp-card-title" id="compTitleB">Golden Retriever</h4>
+              <h4 class="comp-card-title" id="compTitleB">Labrador Retriever</h4>
               <div class="comp-card-row">
-                <span class="comp-card-label">Size &amp; Weight</span>
-                <span class="comp-card-val" id="compSizeB">Large • 55–75 lbs (25–34 kg)</span>
+                <span class="comp-card-label"><i class="fa-solid fa-ruler-combined"></i> Size</span>
+                <span class="comp-card-val" id="compSizeB">Large Breed</span>
               </div>
               <div class="comp-card-row">
-                <span class="comp-card-label">Energy Level</span>
-                <span class="comp-card-val" id="compEnergyB">⚡ High / Playful &amp; Sporty</span>
+                <span class="comp-card-label"><i class="fa-solid fa-weight-scale"></i> Average Weight</span>
+                <span class="comp-card-val" id="compWeightB">55–80 lbs (25–36 kg)</span>
               </div>
               <div class="comp-card-row">
-                <span class="comp-card-label">Grooming Needs</span>
-                <span class="comp-card-val" id="compGroomB">✂️ Moderate (2–3x weekly brush &amp; feathering)</span>
+                <span class="comp-card-label"><i class="fa-solid fa-arrows-up-down"></i> Height</span>
+                <span class="comp-card-val" id="compHeightB">21.5–24.5 inches</span>
               </div>
               <div class="comp-card-row">
-                <span class="comp-card-label">General Temperament</span>
-                <span class="comp-card-val" id="compTemperamentB">Intelligent, devoted, gentle, patient, joyful</span>
+                <span class="comp-card-label"><i class="fa-solid fa-heart-pulse"></i> Lifespan</span>
+                <span class="comp-card-val" id="compLifespanB">11–13 Years</span>
               </div>
               <div class="comp-card-row">
-                <span class="comp-card-label">Best Living Space</span>
-                <span class="comp-card-val" id="compSpaceB">Houses with yard, suburban or rural</span>
+                <span class="comp-card-label"><i class="fa-solid fa-bolt"></i> Energy Level</span>
+                <span class="comp-card-val" id="compEnergyB">High (60+ mins activity)</span>
+              </div>
+              <div class="comp-card-row">
+                <span class="comp-card-label"><i class="fa-solid fa-face-smile"></i> Temperament</span>
+                <span class="comp-card-val" id="compTemperamentB">Outgoing, gentle, eager to please</span>
+              </div>
+              <div class="comp-card-row">
+                <span class="comp-card-label"><i class="fa-solid fa-scissors"></i> Grooming Needs</span>
+                <span class="comp-card-val" id="compGroomB">Moderate (Weekly brushing)</span>
               </div>
             </div>
           </article>
         </div>
       </div>
 
-      <!-- Comprehensive 10-Breed Comparison Table -->
+      <!-- Compact 10-Breed Comparison Matrix Table -->
       <div class="comparison-wrapper">
         <div class="table-controls">
           <div class="table-hint">
-            <span>⇄ Swipe horizontally on mobile to view full breed comparison matrix</span>
+            <i class="fa-solid fa-arrows-left-right"></i>
+            <span>Swipe horizontally on mobile to view the full breed matrix</span>
           </div>
           <input
             type="text"
             id="tableFilterInput"
             class="table-search-input"
-            placeholder="Search table by name, size, trait..."
+            placeholder="Search table by breed name, size, or trait..."
             aria-label="Filter comparison table"
           >
         </div>
@@ -1783,61 +2164,64 @@
               <tr>
                 <th>Breed Name</th>
                 <th>Size</th>
+                <th>Avg Weight</th>
+                <th>Height</th>
+                <th>Lifespan</th>
                 <th>Energy Level</th>
-                <th>Grooming Needs</th>
-                <th>General Temperament</th>
+                <th>Temperament</th>
+                <th>Grooming</th>
               </tr>
             </thead>
             <tbody>
-              <!-- 1. Labrador -->
+              <!-- 1. Golden Retriever -->
               <tr>
                 <td>
                   <div class="table-breed-cell">
-                    <img src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=120&q=80" alt="Labrador Retriever" class="table-breed-img">
-                    <div>
-                      <b>Labrador Retriever</b>
-                      <small style="display:block; color:var(--muted); font-weight:normal;">Large Breed</small>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=120&q=80" alt="Golden" class="table-breed-img">
+                    <b>Golden Retriever</b>
                   </div>
                 </td>
-                <td>Large (55–80 lbs)</td>
-                <td><span class="badge-pill badge-act-high">⚡ High / Active</span></td>
-                <td><span class="badge-pill badge-groom-mod">🪮 Moderate (Weekly)</span></td>
-                <td>Outgoing, gentle, eager to please, friendly, trusting</td>
+                <td>Large</td>
+                <td>55–75 lbs</td>
+                <td>21.5–24 in</td>
+                <td>10–12 Yrs</td>
+                <td><span class="badge-pill badge-act-high"><i class="fa-solid fa-bolt"></i> High</span></td>
+                <td>Friendly, intelligent, devoted</td>
+                <td><span class="badge-pill badge-groom-mod"><i class="fa-solid fa-scissors"></i> Moderate</span></td>
               </tr>
 
-              <!-- 2. Golden Retriever -->
+              <!-- 2. Labrador Retriever -->
               <tr>
                 <td>
                   <div class="table-breed-cell">
-                    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=120&q=80" alt="Golden Retriever" class="table-breed-img">
-                    <div>
-                      <b>Golden Retriever</b>
-                      <small style="display:block; color:var(--muted); font-weight:normal;">Large Breed</small>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=120&q=80" alt="Labrador" class="table-breed-img">
+                    <b>Labrador Retriever</b>
                   </div>
                 </td>
-                <td>Large (55–75 lbs)</td>
-                <td><span class="badge-pill badge-act-high">⚡ High / Playful</span></td>
-                <td><span class="badge-pill badge-groom-mod">✂️ Moderate (2–3x Wk)</span></td>
-                <td>Intelligent, devoted, gentle, patient, joyful with kids</td>
+                <td>Large</td>
+                <td>55–80 lbs</td>
+                <td>21.5–24.5 in</td>
+                <td>11–13 Yrs</td>
+                <td><span class="badge-pill badge-act-high"><i class="fa-solid fa-bolt"></i> High</span></td>
+                <td>Outgoing, gentle, eager to please</td>
+                <td><span class="badge-pill badge-groom-mod"><i class="fa-solid fa-scissors"></i> Moderate</span></td>
               </tr>
 
               <!-- 3. German Shepherd -->
               <tr>
                 <td>
                   <div class="table-breed-cell">
-                    <img src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=120&q=80" alt="German Shepherd" class="table-breed-img">
-                    <div>
-                      <b>German Shepherd</b>
-                      <small style="display:block; color:var(--muted); font-weight:normal;">Large Breed</small>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=120&q=80" alt="GSD" class="table-breed-img">
+                    <b>German Shepherd</b>
                   </div>
                 </td>
-                <td>Large (50–90 lbs)</td>
-                <td><span class="badge-pill badge-act-high">⚡ Very High (90m+)</span></td>
-                <td><span class="badge-pill badge-groom-mod">✂️ Moderate (2x Wk)</span></td>
-                <td>Courageous, confident, loyal, alert, protective</td>
+                <td>Large</td>
+                <td>50–90 lbs</td>
+                <td>22–26 in</td>
+                <td>9–13 Yrs</td>
+                <td><span class="badge-pill badge-act-high"><i class="fa-solid fa-bolt"></i> Very High</span></td>
+                <td>Courageous, confident, alert</td>
+                <td><span class="badge-pill badge-groom-mod"><i class="fa-solid fa-scissors"></i> Moderate</span></td>
               </tr>
 
               <!-- 4. Beagle -->
@@ -1845,16 +2229,16 @@
                 <td>
                   <div class="table-breed-cell">
                     <img src="https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=120&q=80" alt="Beagle" class="table-breed-img">
-                    <div>
-                      <b>Beagle</b>
-                      <small style="display:block; color:var(--muted); font-weight:normal;">Medium Breed</small>
-                    </div>
+                    <b>Beagle</b>
                   </div>
                 </td>
-                <td>Medium (20–30 lbs)</td>
-                <td><span class="badge-pill badge-act-mod">🐾 Moderate to High</span></td>
-                <td><span class="badge-pill badge-groom-low">🪮 Low (Weekly)</span></td>
-                <td>Merry, curious, friendly, scent-driven, determined</td>
+                <td>Medium</td>
+                <td>20–30 lbs</td>
+                <td>13–15 in</td>
+                <td>12–15 Yrs</td>
+                <td><span class="badge-pill badge-act-mod"><i class="fa-solid fa-bolt"></i> Mod-High</span></td>
+                <td>Curious, friendly, scent-driven</td>
+                <td><span class="badge-pill badge-groom-low"><i class="fa-solid fa-check"></i> Low</span></td>
               </tr>
 
               <!-- 5. Pomeranian -->
@@ -1862,16 +2246,16 @@
                 <td>
                   <div class="table-breed-cell">
                     <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=120&q=80" alt="Pomeranian" class="table-breed-img">
-                    <div>
-                      <b>Pomeranian</b>
-                      <small style="display:block; color:var(--muted); font-weight:normal;">Small / Toy</small>
-                    </div>
+                    <b>Pomeranian</b>
                   </div>
                 </td>
-                <td>Small / Toy (3–7 lbs)</td>
-                <td><span class="badge-pill badge-act-mod">🐾 Moderate / Spirited</span></td>
-                <td><span class="badge-pill badge-groom-mod">✂️ Moderate (2–3x Wk)</span></td>
-                <td>Lively, bold, affectionate, intelligent, alert watchdog</td>
+                <td>Small</td>
+                <td>3–7 lbs</td>
+                <td>7–12 in</td>
+                <td>12–16 Yrs</td>
+                <td><span class="badge-pill badge-act-mod"><i class="fa-solid fa-bolt"></i> Moderate</span></td>
+                <td>Lively, bold, affectionate, alert</td>
+                <td><span class="badge-pill badge-groom-mod"><i class="fa-solid fa-scissors"></i> Moderate</span></td>
               </tr>
 
               <!-- 6. Shih Tzu -->
@@ -1879,16 +2263,16 @@
                 <td>
                   <div class="table-breed-cell">
                     <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=120&q=80" alt="Shih Tzu" class="table-breed-img">
-                    <div>
-                      <b>Shih Tzu</b>
-                      <small style="display:block; color:var(--muted); font-weight:normal;">Small / Toy</small>
-                    </div>
+                    <b>Shih Tzu</b>
                   </div>
                 </td>
-                <td>Small / Toy (9–16 lbs)</td>
-                <td><span class="badge-pill badge-act-calm">💤 Calm / Low</span></td>
-                <td><span class="badge-pill badge-groom-daily">🧼 High (Daily Brush)</span></td>
-                <td>Affectionate, playful, gentle, adaptable, friendly</td>
+                <td>Small</td>
+                <td>9–16 lbs</td>
+                <td>9–10.5 in</td>
+                <td>10–16 Yrs</td>
+                <td><span class="badge-pill badge-act-low"><i class="fa-solid fa-couch"></i> Calm</span></td>
+                <td>Affectionate, gentle, playful</td>
+                <td><span class="badge-pill badge-groom-high"><i class="fa-solid fa-scissors"></i> High</span></td>
               </tr>
 
               <!-- 7. Pug -->
@@ -1896,33 +2280,33 @@
                 <td>
                   <div class="table-breed-cell">
                     <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=120&q=80" alt="Pug" class="table-breed-img">
-                    <div>
-                      <b>Pug</b>
-                      <small style="display:block; color:var(--muted); font-weight:normal;">Small Breed</small>
-                    </div>
+                    <b>Pug</b>
                   </div>
                 </td>
-                <td>Small (14–18 lbs)</td>
-                <td><span class="badge-pill badge-act-calm">💤 Low / Couch Lounger</span></td>
-                <td><span class="badge-pill badge-groom-low">🧴 Wrinkle Care Daily</span></td>
-                <td>Charming, mischievous, loving, docile, sociable</td>
+                <td>Small</td>
+                <td>14–18 lbs</td>
+                <td>10–13 in</td>
+                <td>12–15 Yrs</td>
+                <td><span class="badge-pill badge-act-low"><i class="fa-solid fa-couch"></i> Calm</span></td>
+                <td>Charming, mischievous, loving</td>
+                <td><span class="badge-pill badge-groom-mod"><i class="fa-solid fa-soap"></i> Wrinkles</span></td>
               </tr>
 
               <!-- 8. Siberian Husky -->
               <tr>
                 <td>
                   <div class="table-breed-cell">
-                    <img src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=120&q=80" alt="Siberian Husky" class="table-breed-img">
-                    <div>
-                      <b>Siberian Husky</b>
-                      <small style="display:block; color:var(--muted); font-weight:normal;">Med-Large Breed</small>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=120&q=80" alt="Husky" class="table-breed-img">
+                    <b>Siberian Husky</b>
                   </div>
                 </td>
-                <td>Medium-Large (35–60 lbs)</td>
-                <td><span class="badge-pill badge-act-high">⚡ Very High (Endurance)</span></td>
-                <td><span class="badge-pill badge-groom-mod">✂️ Moderate (2x Wk)</span></td>
-                <td>Outgoing, energetic, mischievous, vocal, pack-oriented</td>
+                <td>Medium</td>
+                <td>35–60 lbs</td>
+                <td>20–23.5 in</td>
+                <td>12–14 Yrs</td>
+                <td><span class="badge-pill badge-act-high"><i class="fa-solid fa-bolt"></i> Very High</span></td>
+                <td>Outgoing, energetic, vocal</td>
+                <td><span class="badge-pill badge-groom-mod"><i class="fa-solid fa-scissors"></i> Moderate</span></td>
               </tr>
 
               <!-- 9. Rottweiler -->
@@ -1930,59 +2314,64 @@
                 <td>
                   <div class="table-breed-cell">
                     <img src="https://images.unsplash.com/photo-1567752881298-894bb81f9379?auto=format&fit=crop&w=120&q=80" alt="Rottweiler" class="table-breed-img">
-                    <div>
-                      <b>Rottweiler</b>
-                      <small style="display:block; color:var(--muted); font-weight:normal;">Large to Giant</small>
-                    </div>
+                    <b>Rottweiler</b>
                   </div>
                 </td>
-                <td>Large (80–135 lbs)</td>
-                <td><span class="badge-pill badge-act-mod">🐾 Moderate to High</span></td>
-                <td><span class="badge-pill badge-groom-low">🪮 Low (Weekly)</span></td>
-                <td>Confident, loyal, courageous, calm, obedient, protective</td>
+                <td>Large</td>
+                <td>80–135 lbs</td>
+                <td>22–27 in</td>
+                <td>9–11 Yrs</td>
+                <td><span class="badge-pill badge-act-mod"><i class="fa-solid fa-bolt"></i> Mod-High</span></td>
+                <td>Confident, loyal, courageous</td>
+                <td><span class="badge-pill badge-groom-low"><i class="fa-solid fa-check"></i> Low</span></td>
               </tr>
 
-              <!-- 10. Dachshund -->
+              <!-- 10. Indian Pariah Dog -->
               <tr>
                 <td>
                   <div class="table-breed-cell">
-                    <img src="https://images.unsplash.com/photo-1612195583950-b8fd34c87093?auto=format&fit=crop&w=120&q=80" alt="Dachshund" class="table-breed-img">
-                    <div>
-                      <b>Dachshund</b>
-                      <small style="display:block; color:var(--muted); font-weight:normal;">Small Breed</small>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=120&q=80" alt="Indian Pariah" class="table-breed-img">
+                    <b>Indian Pariah Dog</b>
                   </div>
                 </td>
-                <td>Small (11–32 lbs)</td>
-                <td><span class="badge-pill badge-act-mod">🐾 Moderate</span></td>
-                <td><span class="badge-pill badge-groom-low">🪮 Low-Moderate</span></td>
-                <td>Clever, brave, lively, stubborn, devoted, alert</td>
+                <td>Medium</td>
+                <td>30–55 lbs</td>
+                <td>18–25 in</td>
+                <td>13–16 Yrs</td>
+                <td><span class="badge-pill badge-act-mod"><i class="fa-solid fa-bolt"></i> Moderate</span></td>
+                <td>Highly intelligent, hardy, alert</td>
+                <td><span class="badge-pill badge-groom-low"><i class="fa-solid fa-check"></i> Low</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION 4: CTA Section (Requirement 5) -->
-  <section class="section-wrap">
-    <div class="dog-care-cta">
-      <div>
-        <div class="eyebrow" style="color: #c4e4cc;">Canine Health &amp; Daily Companionship</div>
-        <h2>Ready to Learn More About <em>Dog Care &amp; Walking?</em></h2>
-        <p>
-          Understanding breed traits is only the first step. Give your canine friend the best life with comprehensive guidance on daily exercise routines, balanced canine nutrition, grooming habits, and trusted dog walking companions.
-        </p>
+    <!-- Section: CTA Banner -->
+    <section class="section-wrap">
+      <div class="dog-care-cta">
+        <div>
+          <div class="eyebrow" style="color: #c4e4cc; margin-bottom: 10px;">Health &amp; Daily Companionship</div>
+          <h2>Ready to Learn More About <em>Dog Care &amp; Walking?</em></h2>
+          <p>
+            Understanding breed traits is just the start. Provide your canine companion with top care through balanced nutrition, exercise habits, and dedicated walking services.
+          </p>
+        </div>
+        <div class="dog-cta-actions">
+          <a class="button button-light" href="index.html" style="background: #ffffff; color: var(--green); border-color: #ffffff;">
+            <i class="fa-solid fa-arrow-left"></i> Dogs Hub
+          </a>
+          <a class="button button-outline" href="care.html" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+            <i class="fa-solid fa-heart-pulse"></i> Dog Care Guide
+          </a>
+          <a class="button button-outline" href="../../services/dog-walking.html" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+            <i class="fa-solid fa-person-walking"></i> Dog Walking Services
+          </a>
+        </div>
       </div>
-      <div class="dog-cta-actions">
-        <a class="button button-light" href="index.html">← Back to Dogs Landing Page</a>
-        <a class="button button-outline" href="care.html" style="color: white; border-color: rgba(255,255,255,0.4);">Dog Care &amp; Health ↗</a>
-        <a class="button button-outline" href="../../services/dog-walking.html" style="color: white; border-color: rgba(255,255,255,0.4);">Dog Walking Services ↗</a>
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 
 <!-- Footer (Identical to Main PetSathi Theme) -->
 <footer class="footer">
@@ -1995,231 +2384,320 @@
   <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
 </footer>
 
-<!-- Shared main.js script -->
-<script src="../../../js/main.js"></script>
+  <script src="../../../js/main.js"></script>
 
-<!-- Page Specific Vanilla JavaScript -->
-<script>
-  // Breed Database for Dynamic Side-by-Side Comparator
-  const breedData = {
-    labrador: {
-      name: "Labrador Retriever",
-      image: "https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80",
-      badge: "Large Breed",
-      size: "Large • 55–80 lbs (25–36 kg)",
-      energy: "⚡ High / Active Outdoor Companion",
-      grooming: "🪮 Moderate (Weekly brush, seasonal shed)",
-      temperament: "Friendly, outgoing, gentle, eager to please",
-      space: "Houses with yard, active families"
-    },
-    golden: {
-      name: "Golden Retriever",
-      image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80",
-      badge: "Large Breed",
-      size: "Large • 55–75 lbs (25–34 kg)",
-      energy: "⚡ High / Playful & Sporty",
-      grooming: "✂️ Moderate (2–3x weekly brush & feathering)",
-      temperament: "Intelligent, devoted, gentle, patient, joyful",
-      space: "Houses with yard, suburban or rural"
-    },
-    germanshepherd: {
-      name: "German Shepherd",
-      image: "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=800&q=80",
-      badge: "Large Breed",
-      size: "Large • 50–90 lbs (23–41 kg)",
-      energy: "⚡ Very High (90+ mins structured activity)",
-      grooming: "✂️ Moderate (2x weekly de-shedding rake)",
-      temperament: "Courageous, confident, loyal, alert, protective",
-      space: "Spacious homes with secure fencing & active owners"
-    },
-    beagle: {
-      name: "Beagle",
-      image: "https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=800&q=80",
-      badge: "Medium Breed",
-      size: "Medium • 20–30 lbs (9–14 kg)",
-      energy: "🐾 Moderate to High (Sniff walks needed)",
-      grooming: "🪮 Low (Weekly brush with hound mitt)",
-      temperament: "Merry, curious, friendly, scent-driven, gentle",
-      space: "Apartments & houses (must be walked on leash)"
-    },
-    pomeranian: {
-      name: "Pomeranian",
-      image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
-      badge: "Small / Toy",
-      size: "Small / Toy • 3–7 lbs (1.5–3.5 kg)",
-      energy: "🐾 Moderate / Spirited indoor play bursts",
-      grooming: "✂️ Moderate (2–3x weekly combing)",
-      temperament: "Lively, bold, affectionate, intelligent, alert",
-      space: "Apartment friendly, easy city companion"
-    },
-    shihtzu: {
-      name: "Shih Tzu",
-      image: "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=80",
-      badge: "Small / Toy",
-      size: "Small / Toy • 9–16 lbs (4–7.5 kg)",
-      energy: "💤 Calm / Low (Gentle scenic strolls)",
-      grooming: "🧼 High (Daily combing or monthly puppy clip)",
-      temperament: "Affectionate, playful, gentle, adaptable lap dog",
-      space: "Apartment friendly, perfect for relaxed homes"
-    },
-    pug: {
-      name: "Pug",
-      image: "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80",
-      badge: "Small Breed",
-      size: "Small • 14–18 lbs (6.5–8 kg)",
-      energy: "💤 Low (Short walks, avoid hot weather)",
-      grooming: "🧴 Low fur maintenance; daily wrinkle wipe",
-      temperament: "Charming, mischievous, loving, docile, sociable",
-      space: "Apartments, city living, air-conditioned homes"
-    },
-    husky: {
-      name: "Siberian Husky",
-      image: "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=800&q=80",
-      badge: "Med-Large Breed",
-      size: "Med-Large • 35–60 lbs (16–27 kg)",
-      energy: "⚡ Very High (Endurance running & pulling)",
-      grooming: "✂️ Moderate (Never shave double coat)",
-      temperament: "Outgoing, energetic, mischievous, vocal, friendly",
-      space: "Houses with escape-proof high fencing, cool climates"
-    },
-    rottweiler: {
-      name: "Rottweiler",
-      image: "https://images.unsplash.com/photo-1567752881298-894bb81f9379?auto=format&fit=crop&w=800&q=80",
-      badge: "Large to Giant",
-      size: "Large • 80–135 lbs (36–61 kg)",
-      energy: "🐾 Moderate to High (Structured exercise)",
-      grooming: "🪮 Low (Weekly rubber curry brushing)",
-      temperament: "Confident, loyal, courageous, calm, obedient",
-      space: "Homes with yards, experienced confident owners"
-    },
-    dachshund: {
-      name: "Dachshund",
-      image: "https://images.unsplash.com/photo-1612195583950-b8fd34c87093?auto=format&fit=crop&w=800&q=80",
-      badge: "Small Breed",
-      size: "Small • 11–32 lbs (5–15 kg)",
-      energy: "🐾 Moderate (30–45 mins daily walking)",
-      grooming: "🪮 Low to Moderate (Protect long spine)",
-      temperament: "Clever, brave, lively, stubborn, devoted, alert",
-      space: "Apartments & houses (use ramps, avoid stairs)"
-    }
-  };
-
-  // Update Side-by-Side Comparison Cards
-  function updateComparison() {
-    const keyA = document.getElementById("breedSelectA")?.value || "labrador";
-    const keyB = document.getElementById("breedSelectB")?.value || "golden";
-
-    const dataA = breedData[keyA];
-    const dataB = breedData[keyB];
-
-    if (dataA) {
-      document.getElementById("compImgA").src = dataA.image;
-      document.getElementById("compImgA").alt = dataA.name;
-      document.getElementById("compBadgeA").textContent = dataA.badge;
-      document.getElementById("compTitleA").textContent = dataA.name;
-      document.getElementById("compSizeA").textContent = dataA.size;
-      document.getElementById("compEnergyA").textContent = dataA.energy;
-      document.getElementById("compGroomA").textContent = dataA.grooming;
-      document.getElementById("compTemperamentA").textContent = dataA.temperament;
-      document.getElementById("compSpaceA").textContent = dataA.space;
-    }
-
-    if (dataB) {
-      document.getElementById("compImgB").src = dataB.image;
-      document.getElementById("compImgB").alt = dataB.name;
-      document.getElementById("compBadgeB").textContent = dataB.badge;
-      document.getElementById("compTitleB").textContent = dataB.name;
-      document.getElementById("compSizeB").textContent = dataB.size;
-      document.getElementById("compEnergyB").textContent = dataB.energy;
-      document.getElementById("compGroomB").textContent = dataB.grooming;
-      document.getElementById("compTemperamentB").textContent = dataB.temperament;
-      document.getElementById("compSpaceB").textContent = dataB.space;
-    }
-  }
-
-  // Breed Filter & Search Logic
-  let currentCategory = 'all';
-
-  function setBreedFilter(category) {
-    currentCategory = category;
-
-    // Update active pill button
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      if (btn.getAttribute('data-category') === category) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
+  <!-- Interactive Search, Filter & Comparison Engine -->
+  <script>
+    // 10 Breeds Database for Side-by-Side Comparison
+    const breedData = {
+      golden: {
+        name: "Golden Retriever",
+        image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80",
+        badge: "Large Breed",
+        size: "Large Breed",
+        weight: "55–75 lbs (25–34 kg)",
+        height: "21.5–24 inches",
+        lifespan: "10–12 Years",
+        energy: "High (Playful & Sporting)",
+        temperament: "Friendly, intelligent, devoted",
+        grooming: "Moderate (2–3x weekly brush)"
+      },
+      labrador: {
+        name: "Labrador Retriever",
+        image: "https://images.unsplash.com/photo-1587402092301-725e37c70fd8?auto=format&fit=crop&w=800&q=80",
+        badge: "Large Breed",
+        size: "Large Breed",
+        weight: "55–80 lbs (25–36 kg)",
+        height: "21.5–24.5 inches",
+        lifespan: "11–13 Years",
+        energy: "High (60+ mins aerobic)",
+        temperament: "Outgoing, gentle, eager to please",
+        grooming: "Moderate (Weekly brushing)"
+      },
+      germanshepherd: {
+        name: "German Shepherd",
+        image: "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=800&q=80",
+        badge: "Large Breed",
+        size: "Large Breed",
+        weight: "50–90 lbs (23–41 kg)",
+        height: "22–26 inches",
+        lifespan: "9–13 Years",
+        energy: "Very High (Structured exercise)",
+        temperament: "Courageous, confident, alert",
+        grooming: "Moderate (2x weekly rake)"
+      },
+      beagle: {
+        name: "Beagle",
+        image: "https://images.unsplash.com/photo-1505628346881-b72b27e84530?auto=format&fit=crop&w=800&q=80",
+        badge: "Medium Breed",
+        size: "Medium Breed",
+        weight: "20–30 lbs (9–14 kg)",
+        height: "13–15 inches",
+        lifespan: "12–15 Years",
+        energy: "Moderate to High (Sniff walks)",
+        temperament: "Curious, friendly, scent-driven",
+        grooming: "Low (Weekly hound mitt)"
+      },
+      pomeranian: {
+        name: "Pomeranian",
+        image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80",
+        badge: "Small / Toy",
+        size: "Small / Toy",
+        weight: "3–7 lbs (1.5–3.5 kg)",
+        height: "7–12 inches",
+        lifespan: "12–16 Years",
+        energy: "Moderate (Short indoor bursts)",
+        temperament: "Lively, bold, affectionate, alert",
+        grooming: "Moderate to High (2–3x weekly)"
+      },
+      shihtzu: {
+        name: "Shih Tzu",
+        image: "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=800&q=80",
+        badge: "Small / Toy",
+        size: "Small / Toy",
+        weight: "9–16 lbs (4–7.5 kg)",
+        height: "9–10.5 inches",
+        lifespan: "10–16 Years",
+        energy: "Calm / Low (Gentle strolls)",
+        temperament: "Affectionate, playful, gentle",
+        grooming: "High (Daily comb or puppy clip)"
+      },
+      pug: {
+        name: "Pug",
+        image: "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80",
+        badge: "Small Breed",
+        size: "Small Breed",
+        weight: "14–18 lbs (6.5–8 kg)",
+        height: "10–13 inches",
+        lifespan: "12–15 Years",
+        energy: "Low (Short scenic strolls)",
+        temperament: "Charming, mischievous, loving",
+        grooming: "Moderate (Daily wrinkle hygiene)"
+      },
+      husky: {
+        name: "Siberian Husky",
+        image: "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?auto=format&fit=crop&w=800&q=80",
+        badge: "Med-Large",
+        size: "Med-Large",
+        weight: "35–60 lbs (16–27 kg)",
+        height: "20–23.5 inches",
+        lifespan: "12–14 Years",
+        energy: "Very High (Endurance exercise)",
+        temperament: "Outgoing, energetic, vocal, playful",
+        grooming: "Moderate (Never shave double coat)"
+      },
+      rottweiler: {
+        name: "Rottweiler",
+        image: "https://images.unsplash.com/photo-1567752881298-894bb81f9379?auto=format&fit=crop&w=800&q=80",
+        badge: "Large Breed",
+        size: "Large Breed",
+        weight: "80–135 lbs (36–61 kg)",
+        height: "22–27 inches",
+        lifespan: "9–11 Years",
+        energy: "Moderate to High",
+        temperament: "Confident, loyal, courageous, calm",
+        grooming: "Low (Weekly rubber curry brush)"
+      },
+      indianpariah: {
+        name: "Indian Pariah Dog",
+        image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80",
+        badge: "Medium Breed",
+        size: "Medium Breed",
+        weight: "30–55 lbs (14–25 kg)",
+        height: "18–25 inches",
+        lifespan: "13–16 Years",
+        energy: "Moderate (Athletic & alert)",
+        temperament: "Highly intelligent, hardy, alert",
+        grooming: "Low (Naturally clean coat)"
       }
-    });
+    };
 
-    applyFilters();
+    // Update Comparison Cards
+    function updateComparison() {
+      const keyA = document.getElementById("breedSelectA")?.value || "golden";
+      const keyB = document.getElementById("breedSelectB")?.value || "labrador";
 
-    // If triggered from breed info overview cards, scroll smoothly to popular breeds section
-    const breedsSection = document.getElementById('popular-breeds');
-    if (breedsSection && category !== 'all') {
-      const top = breedsSection.getBoundingClientRect().top + window.pageYOffset - 85;
-      window.scrollTo({ top: top, behavior: 'smooth' });
-    }
-  }
+      const dataA = breedData[keyA];
+      const dataB = breedData[keyB];
 
-  function applyFilters() {
-    const query = (document.getElementById('breedSearchInput')?.value || '').trim().toLowerCase();
-    const cards = document.querySelectorAll('.breed-card');
-    let visibleCount = 0;
-
-    cards.forEach(card => {
-      const categories = (card.getAttribute('data-categories') || '').toLowerCase();
-      const breedName = (card.getAttribute('data-name') || '').toLowerCase();
-      const cardText = card.textContent.toLowerCase();
-
-      const matchesCategory = currentCategory === 'all' || categories.includes(currentCategory);
-      const matchesQuery = !query || breedName.includes(query) || cardText.includes(query);
-
-      if (matchesCategory && matchesQuery) {
-        card.classList.remove('hidden');
-        visibleCount++;
-      } else {
-        card.classList.add('hidden');
+      if (dataA) {
+        document.getElementById("compImgA").src = dataA.image;
+        document.getElementById("compImgA").alt = dataA.name;
+        document.getElementById("compBadgeA").textContent = dataA.badge;
+        document.getElementById("compTitleA").textContent = dataA.name;
+        document.getElementById("compSizeA").textContent = dataA.size;
+        document.getElementById("compWeightA").textContent = dataA.weight;
+        document.getElementById("compHeightA").textContent = dataA.height;
+        document.getElementById("compLifespanA").textContent = dataA.lifespan;
+        document.getElementById("compEnergyA").textContent = dataA.energy;
+        document.getElementById("compTemperamentA").textContent = dataA.temperament;
+        document.getElementById("compGroomA").textContent = dataA.grooming;
       }
-    });
 
-    const noResults = document.getElementById('noResults');
-    if (noResults) {
-      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      if (dataB) {
+        document.getElementById("compImgB").src = dataB.image;
+        document.getElementById("compImgB").alt = dataB.name;
+        document.getElementById("compBadgeB").textContent = dataB.badge;
+        document.getElementById("compTitleB").textContent = dataB.name;
+        document.getElementById("compSizeB").textContent = dataB.size;
+        document.getElementById("compWeightB").textContent = dataB.weight;
+        document.getElementById("compHeightB").textContent = dataB.height;
+        document.getElementById("compLifespanB").textContent = dataB.lifespan;
+        document.getElementById("compEnergyB").textContent = dataB.energy;
+        document.getElementById("compTemperamentB").textContent = dataB.temperament;
+        document.getElementById("compGroomB").textContent = dataB.grooming;
+      }
     }
-  }
 
-  function resetFilters() {
-    const searchInput = document.getElementById('breedSearchInput');
-    if (searchInput) searchInput.value = '';
-    setBreedFilter('all');
-  }
+    // Active Filter State
+    let activePill = 'all';
 
-  // Live breed search input listener
-  document.getElementById('breedSearchInput')?.addEventListener('input', applyFilters);
+    function setPillFilter(pill) {
+      activePill = pill;
 
-  // Live table search input listener
-  document.getElementById('tableFilterInput')?.addEventListener('input', function(e) {
-    const query = e.target.value.toLowerCase().trim();
-    const rows = document.querySelectorAll('#comparisonTable tbody tr');
+      document.querySelectorAll('.pill-btn').forEach(btn => {
+        if (btn.getAttribute('data-pill') === pill) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
 
-    rows.forEach(row => {
-      const text = row.textContent.toLowerCase();
-      row.style.display = !query || text.includes(query) ? '' : 'none';
+      applyFilters();
+    }
+
+    function selectCategory(category) {
+      // Map category to filters
+      if (category === 'small' || category === 'medium' || category === 'large') {
+        const sizeSelect = document.getElementById('filterSize');
+        if (sizeSelect) sizeSelect.value = category;
+        setPillFilter(category);
+      } else if (category === 'indian') {
+        const originSelect = document.getElementById('filterOrigin');
+        if (originSelect) originSelect.value = 'india';
+        setPillFilter('indian');
+      } else if (category === 'family') {
+        const tempSelect = document.getElementById('filterTemperament');
+        if (tempSelect) tempSelect.value = 'friendly';
+        setPillFilter('family');
+      } else if (category === 'apartment') {
+        setPillFilter('small');
+      } else {
+        setPillFilter('all');
+      }
+
+      // Smooth scroll to popular breeds
+      const section = document.getElementById('popular-breeds');
+      if (section) {
+        const top = section.getBoundingClientRect().top + window.pageYOffset - 75;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    }
+
+    function applyFilters() {
+      const query = (document.getElementById('breedSearchInput')?.value || '').trim().toLowerCase();
+      const sizeVal = document.getElementById('filterSize')?.value || 'all';
+      const originVal = document.getElementById('filterOrigin')?.value || 'all';
+      const lifespanVal = document.getElementById('filterLifespan')?.value || 'all';
+      const tempVal = document.getElementById('filterTemperament')?.value || 'all';
+
+      const cards = document.querySelectorAll('.dog-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const name = (card.getAttribute('data-name') || '').toLowerCase();
+        const size = (card.getAttribute('data-size') || '').toLowerCase();
+        const origin = (card.getAttribute('data-origin') || '').toLowerCase();
+        const lifespan = (card.getAttribute('data-lifespan') || '').toLowerCase();
+        const temperament = (card.getAttribute('data-temperament') || '').toLowerCase();
+        const category = (card.getAttribute('data-category') || '').toLowerCase();
+        const text = card.textContent.toLowerCase();
+
+        // 1. Search Query Match
+        const matchesQuery = !query || name.includes(query) || text.includes(query);
+
+        // 2. Dropdown Matches
+        const matchesSize = sizeVal === 'all' || size === sizeVal;
+        const matchesOrigin = originVal === 'all' || origin === originVal;
+        const matchesLifespan = lifespanVal === 'all' || lifespan === lifespanVal;
+        const matchesTemp = tempVal === 'all' || temperament.includes(tempVal);
+
+        // 3. Pill Category Match
+        let matchesPill = true;
+        if (activePill === 'small' || activePill === 'medium' || activePill === 'large') {
+          matchesPill = size === activePill;
+        } else if (activePill === 'family') {
+          matchesPill = category.includes('family');
+        } else if (activePill === 'indian') {
+          matchesPill = origin === 'india';
+        }
+
+        if (matchesQuery && matchesSize && matchesOrigin && matchesLifespan && matchesTemp && matchesPill) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update Result Counter
+      const countEl = document.getElementById('resultsCount');
+      if (countEl) {
+        countEl.textContent = `Showing ${visibleCount} of ${cards.length} Breeds`;
+      }
+
+      // Empty State
+      const noResults = document.getElementById('noResults');
+      if (noResults) {
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+
+    function resetFilters() {
+      const search = document.getElementById('breedSearchInput');
+      if (search) search.value = '';
+
+      const size = document.getElementById('filterSize');
+      if (size) size.value = 'all';
+
+      const origin = document.getElementById('filterOrigin');
+      if (origin) origin.value = 'all';
+
+      const life = document.getElementById('filterLifespan');
+      if (life) life.value = 'all';
+
+      const temp = document.getElementById('filterTemperament');
+      if (temp) temp.value = 'all';
+
+      setPillFilter('all');
+    }
+
+    // Live search listener
+    document.getElementById('breedSearchInput')?.addEventListener('input', applyFilters);
+
+    // Live Table search listener
+    document.getElementById('tableFilterInput')?.addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase().trim();
+      const rows = document.querySelectorAll('#comparisonTable tbody tr');
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = !query || text.includes(query) ? '' : 'none';
+      });
     });
-  });
 
-  // Fallback image error handler
-  document.querySelectorAll('.breed-image, .table-breed-img, .comp-card-media img').forEach(img => {
-    img.addEventListener('error', function() {
-      this.src = 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80';
+    // Image Fallback
+    document.querySelectorAll('.dog-card-media img, .table-breed-img, .comp-card-media img').forEach(img => {
+      img.addEventListener('error', function() {
+        this.src = 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80';
+      });
     });
-  });
 
-  // Run initial comparator setup
-  document.addEventListener("DOMContentLoaded", () => {
-    updateComparison();
-  });
-</script>
+    // Initialize Comparator on DOM Ready
+    document.addEventListener("DOMContentLoaded", () => {
+      updateComparison();
+      applyFilters();
+    });
+  </script>
 </body>
 </html>

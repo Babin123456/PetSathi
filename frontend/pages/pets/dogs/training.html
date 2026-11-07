@@ -1,0 +1,3147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Comprehensive Guide to Dog Training & Behaviour on PetSathi. Learn positive reinforcement techniques, foundational obedience, puppy care, house training, leash manners, and solving common behavioral problems.">
+  <title>Dog Training & Behaviour Guide | PetSathi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Core PetSathi Stylesheets -->
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* Font Awesome 6 Webfont fallback protection matching dogs/index.html */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+    }
+
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    /* Page-Scoped CSS Custom Properties */
+    :root {
+      --dog-green: #286849;
+      --dog-green-dark: #1d5039;
+      --dog-green-light: #eaf2e9;
+      --dog-green-border: #d2e4d7;
+      --dog-card-border: #e8ebe4;
+      --dog-cream: #fcfaf5;
+      --dog-ink: #26372e;
+      --dog-muted: #718078;
+      --dog-soft-bg: #f8faf6;
+      --dog-warn-bg: #fdf6ec;
+      --dog-warn-border: #f8ddbe;
+      --dog-warn-text: #a05c12;
+      --dog-alert-bg: #fff1f0;
+      --dog-alert-border: #ffccc7;
+      --dog-alert-text: #a8071a;
+      --dog-shadow-sm: 0 4px 14px rgba(35, 57, 43, 0.04);
+      --dog-shadow-md: 0 12px 32px rgba(35, 57, 43, 0.08);
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb-nav {
+      width: min(1160px, calc(100% - 48px));
+      margin: 16px auto 0;
+      padding: 0 4px;
+      font-size: 0.84rem;
+      color: var(--dog-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--dog-green);
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: var(--dog-green-dark);
+      text-decoration: underline;
+    }
+
+    .breadcrumb-nav .separator {
+      color: #b5c2b9;
+      font-size: 0.75rem;
+    }
+
+    .breadcrumb-nav .current {
+      color: var(--dog-ink);
+      font-weight: 700;
+    }
+
+    /* Badge Strip (reused from dogs/index.html) */
+    .dog-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--dog-green-light);
+      color: var(--dog-green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* Hero Section Enhancements */
+    #dog-training-hero {
+      padding-block: 45px 65px;
+    }
+
+    #dog-training-hero h1 em {
+      color: var(--dog-green);
+      font-style: normal;
+    }
+
+    /* Section Decorative Heading Card (reused pattern from dogs/index.html) */
+    .dog-topics-heading {
+      position: relative;
+      max-width: 1160px;
+      margin: 45px auto 32px;
+      padding: 40px 32px 34px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 32px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+    }
+
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 120px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 200px;
+      height: 120px;
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      margin-bottom: 14px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .heading-label i {
+      font-size: 13px;
+      color: #246b43;
+    }
+
+    .dog-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(23px, 3.2vw, 34px);
+      font-weight: 700;
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .dog-topics-heading h2 em {
+      color: #28764a;
+      font-style: normal;
+    }
+
+    .dog-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* Decorative Paws on Headings */
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.22);
+      z-index: 1;
+      pointer-events: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .paw-left-1 {
+      top: 36px;
+      left: 70px;
+      font-size: 46px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 20px;
+      left: 45px;
+      font-size: 30px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 36px;
+      right: 60px;
+      font-size: 44px;
+      transform: rotate(18deg);
+    }
+
+    .paw-right-2 {
+      bottom: 24px;
+      right: 95px;
+      font-size: 30px;
+      transform: rotate(-15deg);
+    }
+
+    /* SEARCH & FILTER SECTION */
+    .training-search-filter-section {
+      background: #ffffff;
+      border: 1px solid var(--dog-green-border);
+      border-radius: 28px;
+      padding: 32px 30px 28px;
+      box-shadow: var(--dog-shadow-sm);
+      margin-top: 15px;
+      margin-bottom: 40px;
+    }
+
+    .search-filter-header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .search-filter-header h2 {
+      font-size: 1.65rem;
+      margin: 0 0 8px;
+      color: var(--dog-ink);
+    }
+
+    .search-filter-header p {
+      margin: 0 auto;
+      color: var(--dog-muted);
+      font-size: 0.92rem;
+      max-width: 640px;
+    }
+
+    .search-bar-wrap {
+      position: relative;
+      max-width: 680px;
+      margin: 0 auto 20px;
+    }
+
+    .search-bar-inner {
+      display: flex;
+      align-items: center;
+      background: var(--dog-soft-bg);
+      border: 2px solid #dce5dd;
+      border-radius: 999px;
+      padding: 6px 14px 6px 20px;
+      transition: all 0.25s ease;
+    }
+
+    .search-bar-inner:focus-within {
+      border-color: var(--dog-green);
+      background: #ffffff;
+      box-shadow: 0 6px 22px rgba(40, 104, 73, 0.12);
+    }
+
+    .search-icon {
+      font-size: 1.15rem;
+      color: var(--dog-green);
+      margin-right: 12px;
+    }
+
+    .training-search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 0.98rem;
+      color: var(--dog-ink);
+      outline: none;
+      padding: 10px 0;
+    }
+
+    .training-search-input::placeholder {
+      color: #8c9e94;
+    }
+
+    .search-clear-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #e4ebe5;
+      border: none;
+      color: #55675c;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-left: 8px;
+    }
+
+    .search-clear-btn:hover {
+      background: #d1ddd3;
+      color: var(--dog-ink);
+    }
+
+    .search-clear-btn.visible {
+      display: inline-flex;
+    }
+
+    /* Filter Category Pills */
+    .filter-pills-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .filter-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      background: var(--dog-soft-bg);
+      border: 1px solid #dce4dd;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #4f6356;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      user-select: none;
+    }
+
+    .filter-pill:hover {
+      border-color: var(--dog-green);
+      color: var(--dog-green);
+      background: var(--dog-green-light);
+      transform: translateY(-1px);
+    }
+
+    .filter-pill.active {
+      background: var(--dog-green);
+      border-color: var(--dog-green);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(40, 104, 73, 0.2);
+    }
+
+    .filter-pill.active i {
+      color: #ffffff;
+    }
+
+    .search-status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 14px;
+      background: var(--dog-soft-bg);
+      border-radius: 12px;
+      font-size: 0.84rem;
+      color: var(--dog-muted);
+      flex-wrap: wrap;
+    }
+
+    .results-count-text b {
+      color: var(--dog-green);
+    }
+
+    .reset-all-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border: 1px solid #d0ded3;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--dog-green);
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .reset-all-btn:hover {
+      background: var(--dog-green-light);
+      border-color: var(--dog-green);
+    }
+
+    /* No Results Found Box */
+    .no-results-box {
+      display: none;
+      text-align: center;
+      padding: 50px 24px;
+      background: #ffffff;
+      border: 2px dashed #dbe5dc;
+      border-radius: 24px;
+      margin: 35px 0;
+    }
+
+    .no-results-icon {
+      font-size: 3rem;
+      color: #a4b6ab;
+      margin-bottom: 14px;
+    }
+
+    .no-results-box h3 {
+      font-size: 1.35rem;
+      margin: 0 0 8px;
+      color: var(--dog-ink);
+    }
+
+    .no-results-box p {
+      color: var(--dog-muted);
+      max-width: 500px;
+      margin: 0 auto 20px;
+      font-size: 0.92rem;
+    }
+
+    /* CARD GRIDS & CARDS (3 Desktop, 2 Tablet, 1 Mobile) */
+    .training-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .training-card {
+      background: #ffffff;
+      border: 1px solid var(--dog-card-border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+      box-shadow: var(--dog-shadow-sm);
+    }
+
+    .training-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--dog-shadow-md);
+      border-color: #cbd9ce;
+    }
+
+    .training-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .training-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--dog-green-light);
+      color: var(--dog-green);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .training-card:hover .training-card-icon {
+      background: var(--dog-green);
+      color: #ffffff;
+    }
+
+    .training-card h3 {
+      font-size: 1.15rem;
+      margin: 0;
+      color: var(--dog-ink);
+      line-height: 1.3;
+    }
+
+    .training-card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--dog-muted);
+      margin: 0 0 12px;
+      flex-grow: 1;
+    }
+
+    /* Practical Beginner Tip Box */
+    .card-tip-box {
+      margin-top: auto;
+      padding: 11px 14px;
+      background: var(--dog-soft-bg);
+      border-left: 3px solid var(--dog-green);
+      border-radius: 8px;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: #42554a;
+    }
+
+    .card-tip-box strong {
+      color: var(--dog-green-dark);
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Problem Cards Approach Box */
+    .card-approach-box {
+      margin-top: auto;
+      padding: 11px 14px;
+      background: #fdfaf5;
+      border-left: 3px solid #d4934b;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: #55442e;
+    }
+
+    .card-approach-box strong {
+      color: #a05c12;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Section Banner Image Strip */
+    .section-banner-photo {
+      width: 100%;
+      height: 220px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      position: relative;
+      border: 1px solid var(--dog-card-border);
+      box-shadow: var(--dog-shadow-sm);
+    }
+
+    .section-banner-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .section-banner-photo:hover img {
+      transform: scale(1.03);
+    }
+
+    .banner-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--dog-ink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .banner-badge i {
+      color: var(--dog-green);
+    }
+
+    /* POSITIVE REINFORCEMENT PROCESS STEPS */
+    .reinforcement-feature {
+      background: linear-gradient(180deg, #f7faf7 0%, #ffffff 100%);
+      border: 1px solid #d5e5d9;
+      border-radius: 28px;
+      padding: 38px 30px;
+      margin-bottom: 35px;
+      box-shadow: var(--dog-shadow-sm);
+    }
+
+    .reinforcement-cycle-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 30px;
+    }
+
+    .reinforcement-cycle-header h3 {
+      font-size: 1.5rem;
+      margin: 0 0 8px;
+      color: var(--dog-ink);
+    }
+
+    .reinforcement-cycle-header p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--dog-muted);
+    }
+
+    .cycle-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .cycle-step-card {
+      background: #ffffff;
+      border: 1px solid #dbe6de;
+      border-radius: 18px;
+      padding: 22px 18px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(40, 104, 73, 0.04);
+      transition: transform 0.22s ease, border-color 0.22s ease;
+    }
+
+    .cycle-step-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--dog-green);
+    }
+
+    .cycle-step-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--dog-green);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+    }
+
+    .cycle-step-icon {
+      font-size: 1.7rem;
+      color: var(--dog-green);
+      margin-bottom: 10px;
+    }
+
+    .cycle-step-card h4 {
+      font-size: 1.02rem;
+      margin: 0 0 8px;
+      color: var(--dog-ink);
+    }
+
+    .cycle-step-card p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--dog-muted);
+      margin: 0;
+    }
+
+    /* TIPS CHECKLIST SECTION (7 cards) */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-bottom: 40px;
+    }
+
+    .tip-item-card {
+      background: #ffffff;
+      border: 1px solid var(--dog-card-border);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+      box-shadow: var(--dog-shadow-sm);
+    }
+
+    .tip-item-card:hover {
+      transform: translateY(-4px);
+      border-color: #cbd9ce;
+      box-shadow: var(--dog-shadow-md);
+    }
+
+    .tip-item-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--dog-green-light);
+      color: var(--dog-green);
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .tip-item-content h3 {
+      font-size: 1.08rem;
+      margin: 0 0 6px;
+      color: var(--dog-ink);
+    }
+
+    .tip-item-content p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--dog-muted);
+      margin: 0;
+    }
+
+    /* PROFESSIONAL HELP SECTION */
+    .pro-help-section {
+      background: #ffffff;
+      border: 1px solid #e5ddd0;
+      border-radius: 28px;
+      padding: 38px 30px;
+      margin-bottom: 40px;
+      box-shadow: var(--dog-shadow-sm);
+    }
+
+    .pro-help-notice-box {
+      background: #fcf9f2;
+      border: 1px solid #ebdcc8;
+      border-left: 5px solid #d4934b;
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-top: 30px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .pro-help-notice-icon {
+      font-size: 1.8rem;
+      color: #a05c12;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pro-help-notice-content h4 {
+      font-size: 1.05rem;
+      margin: 0 0 6px;
+      color: #7d4910;
+    }
+
+    .pro-help-notice-content p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: #55442e;
+      margin: 0;
+    }
+
+    /* FAQ ACCORDION SECTION */
+    .faq-container {
+      max-width: 960px;
+      margin: 0 auto 50px;
+    }
+
+    .faq-controls-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+    }
+
+    .faq-toggle-all-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border: 1px solid #d2ded5;
+      border-radius: 999px;
+      background: #ffffff;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--dog-green);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .faq-toggle-all-btn:hover {
+      background: var(--dog-green-light);
+      border-color: var(--dog-green);
+    }
+
+    .faq-accordion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid var(--dog-card-border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--dog-shadow-sm);
+      transition: border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .faq-item:hover {
+      border-color: #cbd9ce;
+      box-shadow: 0 6px 20px rgba(35, 57, 43, 0.06);
+    }
+
+    .faq-item.active {
+      border-color: var(--dog-green-border);
+      box-shadow: 0 8px 24px rgba(40, 104, 73, 0.08);
+    }
+
+    .faq-question-btn {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      font-family: inherit;
+      color: var(--dog-ink);
+      transition: background 0.2s ease;
+    }
+
+    .faq-item.active .faq-question-btn {
+      background: #f7faf7;
+    }
+
+    .faq-question-btn:focus-visible {
+      outline: 2px solid var(--dog-green);
+      outline-offset: -2px;
+    }
+
+    .faq-question-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .faq-q-badge {
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: var(--dog-green-light);
+      color: var(--dog-green);
+      font-size: 0.78rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .faq-question-text {
+      font-size: 1.04rem;
+      font-weight: 700;
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.4;
+      color: var(--dog-ink);
+    }
+
+    .faq-toggle-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--dog-soft-bg);
+      color: var(--dog-green);
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(45deg);
+      background: var(--dog-green);
+      color: #ffffff;
+    }
+
+    .faq-answer-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.32s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+      opacity: 0;
+    }
+
+    .faq-item.active .faq-answer-panel {
+      opacity: 1;
+    }
+
+    .faq-answer-content {
+      padding: 0 22px 22px 60px;
+      font-size: 0.94rem;
+      line-height: 1.75;
+      color: #495c51;
+    }
+
+    .faq-answer-content p {
+      margin: 0;
+      color: #495c51;
+    }
+
+    /* CTA Section matching dogs/index.html */
+    .cta {
+      margin-top: 10px;
+      margin-bottom: 85px;
+      border: 1px solid #e6d6c6;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .cta .button-outline {
+      background: transparent;
+      color: var(--dog-green);
+      border-color: var(--dog-green);
+    }
+
+    .cta .button-outline:hover {
+      background: var(--dog-green);
+      color: #ffffff;
+    }
+
+    /* RESPONSIVE BREAKPOINTS (Desktop: 3 cols, Tablet: 2 cols, Mobile: 1 col) */
+    @media (max-width: 960px) {
+      .training-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cycle-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .paw-left-1,
+      .paw-right-1 {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .training-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cycle-steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .training-search-filter-section {
+        padding: 24px 16px 20px;
+        border-radius: 20px;
+      }
+
+      .dog-topics-heading {
+        padding: 30px 16px 26px;
+        border-radius: 22px;
+        margin: 30px auto 24px;
+      }
+
+      .filter-pills-row {
+        justify-content: flex-start;
+      }
+
+      .filter-pill {
+        font-size: 0.78rem;
+        padding: 6px 12px;
+      }
+
+      .search-status-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .faq-answer-content {
+        padding: 0 18px 18px 18px;
+      }
+
+      .pro-help-notice-box {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .cta-actions {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 18px;
+      }
+
+      .cta-actions .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header and Navigation (Preserved exactly matching repository convention) -->
+  <header class="site-header">
+    <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true"
+        viewBox="0 0 40 40" role="img" focusable="false">
+        <circle cx="12" cy="12" r="4" fill="currentColor" />
+        <circle cx="21" cy="8" r="4" fill="currentColor" />
+        <circle cx="30" cy="12" r="4" fill="currentColor" />
+        <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
+          fill="currentColor" />
+      </svg><span>Pet<span>Sathi</span></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"
+        aria-hidden="true"></i></button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../../../../index.html">Home</a>
+      <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-explore">
+          <a href="index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a
+            href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a
+            href="../other/reptiles.html">Reptiles</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a
+            href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
+      </div>
+      <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a
+            href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a>
+        </div>
+      </div>
+      <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small"
+        href="../../auth/register.html">Get Started</a>
+    </nav>
+  </header>
+
+  <!-- Breadcrumb Navigation -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <a href="../../../../index.html">Home</a>
+    <span class="separator" aria-hidden="true">/</span>
+    <a href="../index.html">Explore Pets</a>
+    <span class="separator" aria-hidden="true">/</span>
+    <a href="index.html">Dogs</a>
+    <span class="separator" aria-hidden="true">/</span>
+    <span class="current" aria-current="page">Dog Training & Behaviour</span>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ========================================================
+         SECTION 1: HERO SECTION
+         ======================================================== -->
+    <section class="hero section-wrap" id="dog-training-hero">
+      <div class="hero-copy">
+        <div class="dog-badge-strip">🐾 PetSathi • Canine Training & Behaviour Guide</div>
+        <h1>Train Better, <em>Live Happier!</em></h1>
+        <p>
+          Build a stronger bond with your dog through positive training, clear communication, and consistent practice.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#training-search-filter" id="hero-cta-training">Explore Training Guide ↓</a>
+          <a class="button button-outline" href="#faq-section" id="hero-cta-faq">Training FAQs ↗</a>
+        </div>
+        <div class="hero-note">♥ &nbsp; Dedicated to happy paws, calm minds, and lifelong canine friendship.</div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=1000&q=85"
+          alt="Attentive dog focused on trainer during positive reinforcement training" class="hero-photo"
+          id="hero-dog-image">
+        <div class="floating-card card-top">
+          🐕 <span><b>Positive Reinforcement</b><small>Reward good behaviour</small></span>
+        </div>
+        <div class="floating-card card-bottom">
+          🤝 <span><b>Lifelong Bond</b><small>Trust & clear communication</small></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 2: SEARCH AND FILTER SECTION
+         ======================================================== -->
+    <section class="section-wrap" id="training-search-filter" aria-label="Search and Filter Training Topics">
+      <div class="training-search-filter-section">
+        <div class="search-filter-header">
+          <h2>Find Training Topics & Guidance</h2>
+          <p>Search by command, behaviour challenge, puppy skill, or filter by category to find instant practical advice.</p>
+        </div>
+
+        <div class="search-bar-wrap">
+          <div class="search-bar-inner">
+            <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+            <input type="search" id="training-search-input" class="training-search-input"
+              placeholder="Search topics (e.g., sit, barking, leash pulling, puppy, crate)..."
+              aria-label="Search dog training topics, commands, and behaviour tips">
+            <button type="button" id="search-clear-btn" class="search-clear-btn" aria-label="Clear search input">×</button>
+          </div>
+        </div>
+
+        <!-- Filter Category Pills (7 required categories + All) -->
+        <div class="filter-pills-row" role="group" aria-label="Filter topics by category">
+          <button type="button" class="filter-pill active" data-category="all">
+            <i class="fa-solid fa-border-all" aria-hidden="true"></i> All Topics
+          </button>
+          <button type="button" class="filter-pill" data-category="behaviour">
+            <i class="fa-solid fa-dog" aria-hidden="true"></i> Dog Behaviour
+          </button>
+          <button type="button" class="filter-pill" data-category="basic">
+            <i class="fa-solid fa-award" aria-hidden="true"></i> Basic Training
+          </button>
+          <button type="button" class="filter-pill" data-category="puppy">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i> Puppy Training
+          </button>
+          <button type="button" class="filter-pill" data-category="house">
+            <i class="fa-solid fa-house-chimney" aria-hidden="true"></i> House Training
+          </button>
+          <button type="button" class="filter-pill" data-category="leash">
+            <i class="fa-solid fa-route" aria-hidden="true"></i> Leash Training
+          </button>
+          <button type="button" class="filter-pill" data-category="problems">
+            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Behavioural Problems
+          </button>
+          <button type="button" class="filter-pill" data-category="advanced">
+            <i class="fa-solid fa-medal" aria-hidden="true"></i> Advanced Training
+          </button>
+        </div>
+
+        <!-- Live Status Bar -->
+        <div class="search-status-bar">
+          <span class="results-count-text" id="results-count-text" aria-live="polite">
+            Showing all <b>67</b> training topics & insights
+          </span>
+          <button type="button" class="reset-all-btn" id="reset-all-btn">
+            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Reset Search & Filters
+          </button>
+        </div>
+
+        <!-- Empty Results Message -->
+        <div class="no-results-box" id="no-results-box" role="status" aria-live="polite">
+          <i class="fa-solid fa-paw no-results-icon" aria-hidden="true"></i>
+          <h3>No training topics found</h3>
+          <p>We couldn't find any training cards matching your search query. Try typing another keyword (like "stay", "chewing", or "leash") or reset your filters.</p>
+          <button type="button" class="button button-small" id="no-results-reset-btn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 3: UNDERSTANDING DOG BEHAVIOUR (8 Cards)
+         ======================================================== -->
+    <section class="section section-wrap training-section" id="section-behaviour" data-section-category="behaviour">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-eye"></i> Canine Communication</span>
+          <h2>Understanding <em>Dog Behaviour</em></h2>
+          <p>
+            Dogs communicate continuously through body postures, vocalizations, and facial expressions. Always interpret signals together within their full environmental context rather than relying on one isolated sign.
+          </p>
+        </div>
+      </div>
+
+      <div class="training-grid-3">
+        <!-- 1. Body Language -->
+        <article class="training-card" data-category="behaviour" data-title="Body Language"
+          data-keywords="body posture spine tension loose stiffness weight forward appeasement context">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-dog" aria-hidden="true"></i></span>
+            <h3>Body Language</h3>
+          </div>
+          <p>
+            Whole-body posture reveals genuine emotional state: a soft, loose spine indicates comfort, while stiff, forward-pitched stance signals high arousal or vigilance.
+          </p>
+          <div class="card-tip-box">
+            <strong>Context Reminder</strong>
+            Always observe your dog's complete posture—from snout to tail tip—before deciding how they feel.
+          </div>
+        </article>
+
+        <!-- 2. Tail Movements -->
+        <article class="training-card" data-category="behaviour" data-title="Tail Movements"
+          data-keywords="tail movements wag wagging high low slow circular fast stiff emotions">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i></span>
+            <h3>Tail Movements</h3>
+          </div>
+          <p>
+            A wag does not always mean friendliness. Low, sweeping wags indicate relaxed appeasement, whereas a high, rigid, vibrating tail signals alert tension.
+          </p>
+          <div class="card-tip-box">
+            <strong>Context Reminder</strong>
+            Note wag speed and height: broad hip-swaying wags indicate genuine joy, while stiff tips require caution.
+          </div>
+        </article>
+
+        <!-- 3. Ear Positions -->
+        <article class="training-card" data-category="behaviour" data-title="Ear Positions"
+          data-keywords="ear positions pinned forward alert relaxed curiosity fear appeasement orientation">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-ear-listen" aria-hidden="true"></i></span>
+            <h3>Ear Positions</h3>
+          </div>
+          <p>
+            Naturally positioned ears reflect calm. Pinned-back flat ears convey fear or submissive appeasement, while upright pricked ears display keen curiosity or focus.
+          </p>
+          <div class="card-tip-box">
+            <strong>Context Reminder</strong>
+            Account for breed anatomy; floppy-eared dogs shift the base of their ears rather than the tips.
+          </div>
+        </article>
+
+        <!-- 4. Barking and Whining -->
+        <article class="training-card" data-category="behaviour" data-title="Barking and Whining"
+          data-keywords="barking whining vocalizations pitch distress alert play demand vocal cues">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span>
+            <h3>Barking and Whining</h3>
+          </div>
+          <p>
+            Vocal pitch conveys intent: high-pitched staccato barks indicate playful excitement, rhythmic low barks sound an alert, and continuous whining signals distress.
+          </p>
+          <div class="card-tip-box">
+            <strong>Context Reminder</strong>
+            Identify the trigger behind vocalizations instead of shouting, which dogs often interpret as joining in.
+          </div>
+        </article>
+
+        <!-- 5. Playful Behaviour -->
+        <article class="training-card" data-category="behaviour" data-title="Playful Behaviour"
+          data-keywords="playful behaviour play bow bouncy gait loose mouth chase social fun engagement">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-baseball" aria-hidden="true"></i></span>
+            <h3>Playful Behaviour</h3>
+          </div>
+          <p>
+            Classic play bows (front chest down, rear in the air), exaggerated bouncy movements, and reciprocal chasing indicate healthy, mutual canine socialization.
+          </p>
+          <div class="card-tip-box">
+            <strong>Context Reminder</strong>
+            Healthy play features frequent natural pauses where both dogs take brief 3-second breathers.
+          </div>
+        </article>
+
+        <!-- 6. Fear and Anxiety -->
+        <article class="training-card" data-category="behaviour" data-title="Fear and Anxiety"
+          data-keywords="fear anxiety stress whale eye lip licking yawning trembling low posture avoidance">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-heart-crack" aria-hidden="true"></i></span>
+            <h3>Fear and Anxiety</h3>
+          </div>
+          <p>
+            Subtle early stress markers include lip licking, yawning when not tired, showing the whites of eyes (whale eye), low body carriage, and avoidance.
+          </p>
+          <div class="card-tip-box">
+            <strong>Context Reminder</strong>
+            When stress signals appear, increase distance from the perceived trigger immediately to prevent panic.
+          </div>
+        </article>
+
+        <!-- 7. Aggressive Behaviour -->
+        <article class="training-card" data-category="behaviour" data-title="Aggressive Behaviour"
+          data-keywords="aggressive behaviour growl snarl hard stare freeze lunging distance warnings safety">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
+            <h3>Aggressive Behaviour</h3>
+          </div>
+          <p>
+            Hard stares, sudden freezing, lip curling, and low growls are distance-increasing warnings that a dog feels overwhelmed and urgently needs physical space.
+          </p>
+          <div class="card-tip-box">
+            <strong>Context Reminder</strong>
+            Never punish a growl; growling is vital communication that prevents escalation to snapping or biting.
+          </div>
+        </article>
+
+        <!-- 8. Understanding Dog Communication -->
+        <article class="training-card" data-category="behaviour" data-title="Understanding Dog Communication"
+          data-keywords="understanding dog communication composite signals environmental context emotional state whole picture">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></span>
+            <h3>Understanding Dog Communication</h3>
+          </div>
+          <p>
+            Canine language is rich and composite. Accurate interpretation requires evaluating the environment, your dog's baseline temperament, and multiple simultaneous signals.
+          </p>
+          <div class="card-tip-box">
+            <strong>Context Reminder</strong>
+            Recognize that a dog in a noisy clinic expresses stress differently than in a quiet living room.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 4: BASIC OBEDIENCE TRAINING (7 Cards)
+         ======================================================== -->
+    <section class="section section-wrap training-section" id="section-basic" data-section-category="basic">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-award"></i> Core Commands</span>
+          <h2>Basic Obedience <em>Training</em></h2>
+          <p>
+            Mastering essential obedience commands establishes reliable communication, keeps your dog safe in public spaces, and builds everyday impulse control.
+          </p>
+        </div>
+      </div>
+
+      <div class="training-grid-3">
+        <!-- 1. Sit Command -->
+        <article class="training-card" data-category="basic" data-title="Sit Command"
+          data-keywords="sit command foundational obedience lure treat impulse control">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i></span>
+            <h3>Sit Command</h3>
+          </div>
+          <p>
+            The fundamental cornerstone cue that teaches polite patience before mealtimes, door greetings, and street crossings.
+          </p>
+          <div class="card-tip-box">
+            <strong>Beginner Training Tip</strong>
+            Hold a treat right by their nose and sweep it gently backwards over their head; reward the instant their rump touches the floor.
+          </div>
+        </article>
+
+        <!-- 2. Stay Command -->
+        <article class="training-card" data-category="basic" data-title="Stay Command"
+          data-keywords="stay command stationary patience duration distance release cue">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-hand" aria-hidden="true"></i></span>
+            <h3>Stay Command</h3>
+          </div>
+          <p>
+            Keeps your dog safely in place until released, preventing bolting through open front doors and kitchen gates.
+          </p>
+          <div class="card-tip-box">
+            <strong>Beginner Training Tip</strong>
+            Build duration before adding distance. Return to reward while they are still stationary instead of calling them out of position.
+          </div>
+        </article>
+
+        <!-- 3. Come Command -->
+        <article class="training-card" data-category="basic" data-title="Come Command"
+          data-keywords="come command recall safety emergency return outdoor praise">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-person-walking-arrow-right" aria-hidden="true"></i></span>
+            <h3>Come Command</h3>
+          </div>
+          <p>
+            The life-saving recall command ensuring your dog returns immediately when called outdoors or near busy streets.
+          </p>
+          <div class="card-tip-box">
+            <strong>Beginner Training Tip</strong>
+            Always make recall a joyous celebration with high-value treats; never call your dog to you to scold, bathe, or clip nails.
+          </div>
+        </article>
+
+        <!-- 4. Down Command -->
+        <article class="training-card" data-category="basic" data-title="Down Command"
+          data-keywords="down command lie down resting relaxation public calmness">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-bed" aria-hidden="true"></i></span>
+            <h3>Down Command</h3>
+          </div>
+          <p>
+            A calm, settled resting position ideal for dining patios, family living rooms, and veterinary waiting rooms.
+          </p>
+          <div class="card-tip-box">
+            <strong>Beginner Training Tip</strong>
+            From a sit, lure a treat from their nose straight down between front paws and slide it forward along the floor in an 'L' shape.
+          </div>
+        </article>
+
+        <!-- 5. Leave It Command -->
+        <article class="training-card" data-category="basic" data-title="Leave It Command"
+          data-keywords="leave it command impulse control dropped food toxic street safety">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-ban" aria-hidden="true"></i></span>
+            <h3>Leave It Command</h3>
+          </div>
+          <p>
+            Protects your dog from ingesting dropped medications, chicken bones, chocolate, or hazardous street trash.
+          </p>
+          <div class="card-tip-box">
+            <strong>Beginner Training Tip</strong>
+            Present a closed fist with a treat; the second your dog pulls their nose back from the fist, reward from your other hand.
+          </div>
+        </article>
+
+        <!-- 6. Heel Command -->
+        <article class="training-card" data-category="basic" data-title="Heel Command"
+          data-keywords="heel command loose leash walking alignment crowded focus stride">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-person-walking" aria-hidden="true"></i></span>
+            <h3>Heel Command</h3>
+          </div>
+          <p>
+            Guides your dog to walk attentively beside your leg, making navigation through busy sidewalks and tight corridors effortless.
+          </p>
+          <div class="card-tip-box">
+            <strong>Beginner Training Tip</strong>
+            Hold pea-sized treats at your hip seam, rewarding every 2–3 strides whenever their shoulder aligns comfortably with your knee.
+          </div>
+        </article>
+
+        <!-- 7. Wait Command -->
+        <article class="training-card" data-category="basic" data-title="Wait Command"
+          data-keywords="wait command boundary pause door curb car exit release cue">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-pause" aria-hidden="true"></i></span>
+            <h3>Wait Command</h3>
+          </div>
+          <p>
+            A polite momentary boundary pause before stepping through car doors, crossing street curbs, or eating meals.
+          </p>
+          <div class="card-tip-box">
+            <strong>Beginner Training Tip</strong>
+            Hold your open flat palm out and say "Wait". Open the door an inch; if they move, close it gently, releasing with an upbeat "Free!".
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 5: PUPPY TRAINING BASICS (7 Items + Imagery)
+         ======================================================== -->
+    <section class="section section-wrap training-section" id="section-puppy" data-section-category="puppy">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-paw"></i> Young Paws Foundation</span>
+          <h2>Puppy Training <em>Basics</em></h2>
+          <p>
+            The first 16 weeks of puppyhood shape lifelong behavior. Guide your young pup with gentle structure, positive associations, and predictable daily routines.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-banner-photo">
+        <span class="banner-badge"><i class="fa-solid fa-shield-cat"></i> Early Learning Period</span>
+        <img src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&w=800&q=85"
+          alt="Golden retriever puppy sitting alertly outdoors during early training" loading="lazy">
+      </div>
+
+      <div class="training-grid-3">
+        <!-- 1. Early Socialisation -->
+        <article class="training-card" data-category="puppy" data-title="Early Socialisation"
+          data-keywords="early socialisation puppy 8 16 weeks sounds surfaces people novel vaccinated dogs">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
+            <h3>Early Socialisation</h3>
+          </div>
+          <p>
+            Safely introduce your pup to diverse surfaces, household noises, different people, and calm vaccinated dogs during the critical 8–16 week developmental window.
+          </p>
+          <div class="card-tip-box">
+            <strong>Puppy Tip</strong>
+            Prioritize positive quality over overwhelming quantity. Always allow the pup to retreat if they feel unsure.
+          </div>
+        </article>
+
+        <!-- 2. Name Recognition -->
+        <article class="training-card" data-category="puppy" data-title="Name Recognition"
+          data-keywords="name recognition attention name game eye contact focus puppy">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-tag" aria-hidden="true"></i></span>
+            <h3>Name Recognition</h3>
+          </div>
+          <p>
+            Teach your puppy that hearing their name predicts good things. Build an immediate reflex for joyful eye contact whenever you speak their name.
+          </p>
+          <div class="card-tip-box">
+            <strong>Puppy Tip</strong>
+            Play the 'Name Game': say their name once in a happy tone, and immediately mark with a treat the second their eyes meet yours.
+          </div>
+        </article>
+
+        <!-- 3. Basic Commands for Puppies -->
+        <article class="training-card" data-category="puppy" data-title="Basic Commands"
+          data-keywords="basic commands puppy short sessions kibble fun focus micro lessons">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></span>
+            <h3>Basic Commands</h3>
+          </div>
+          <p>
+            Introduce gentle foundational cues like sit, look, and hand touch in micro-sessions lasting 2 to 3 minutes, using portions of their daily kibble as rewards.
+          </p>
+          <div class="card-tip-box">
+            <strong>Puppy Tip</strong>
+            Puppies have tiny attention spans; train right before meals when their focus and food motivation are highest.
+          </div>
+        </article>
+
+        <!-- 4. Potty Training -->
+        <article class="training-card" data-category="puppy" data-title="Puppy Potty Training"
+          data-keywords="potty training schedule waking eating outdoor bathroom crate breaks">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-tree" aria-hidden="true"></i></span>
+            <h3>Potty Training</h3>
+          </div>
+          <p>
+            Take puppies to their designated outdoor spot every 2 hours, immediately after waking, eating, drinking, or vigorous play sessions.
+          </p>
+          <div class="card-tip-box">
+            <strong>Puppy Tip</strong>
+            Praise and treat warmly outside the exact moment they finish, never inside after they return indoors.
+          </div>
+        </article>
+
+        <!-- 5. Crate Training -->
+        <article class="training-card" data-category="puppy" data-title="Crate Training"
+          data-keywords="crate training cozy den safe space sleep chew toys resting security">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-house-chimney-window" aria-hidden="true"></i></span>
+            <h3>Crate Training</h3>
+          </div>
+          <p>
+            Establish the crate as a secure, restful sleeping den where your pup relaxes with comfortable bedding and safe chew toys.
+          </p>
+          <div class="card-tip-box">
+            <strong>Puppy Tip</strong>
+            Never use the crate as punishment; feed regular meals inside with the door open to foster positive associations.
+          </div>
+        </article>
+
+        <!-- 6. Bite Inhibition -->
+        <article class="training-card" data-category="puppy" data-title="Bite Inhibition"
+          data-keywords="bite inhibition mouthiness puppy teeth chewing redirect skin nip play">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-tooth" aria-hidden="true"></i></span>
+            <h3>Bite Inhibition</h3>
+          </div>
+          <p>
+            Puppies explore the world with needle-sharp teeth. Teach soft-mouth control by promptly redirecting mouthiness onto durable rubber toys.
+          </p>
+          <div class="card-tip-box">
+            <strong>Puppy Tip</strong>
+            If teeth touch human skin, give a gentle high-pitched 'Ouch!' and pause play for 10 seconds so they learn biting stops fun.
+          </div>
+        </article>
+
+        <!-- 7. Leash Introduction -->
+        <article class="training-card" data-category="puppy" data-title="Leash Introduction"
+          data-keywords="leash introduction harness indoor dragging lightweight collar fun walk">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-link" aria-hidden="true"></i></span>
+            <h3>Leash Introduction</h3>
+          </div>
+          <p>
+            Let puppies wear a lightweight harness indoors and drag a light leash around during supervised play to normalize the sensation before outdoor walks.
+          </p>
+          <div class="card-tip-box">
+            <strong>Puppy Tip</strong>
+            Pair clip-on moments with a tasty treat so putting on equipment always predicts fun adventures.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 6: HOUSE TRAINING (6 Cards)
+         ======================================================== -->
+    <section class="section section-wrap training-section" id="section-house" data-section-category="house">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-house-chimney"></i> Clean & Harmonious Living</span>
+          <h2>House <em>Training</em></h2>
+          <p>
+            Establish clean habits and calm indoor manners through structured schedules, safe boundary setting, and proactive reinforcement.
+          </p>
+        </div>
+      </div>
+
+      <div class="training-grid-3">
+        <!-- 1. Potty Training Routine -->
+        <article class="training-card" data-category="house" data-title="Potty Training Routine"
+          data-keywords="potty training bathroom spot routine schedule rewards hygiene">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
+            <h3>Potty Training Routine</h3>
+          </div>
+          <p>
+            Designate a specific outdoor bathroom spot and escort your dog there on leash on a dependable schedule to reinforce biological habits.
+          </p>
+          <div class="card-tip-box">
+            <strong>Positive Advice</strong>
+            Clean indoor accidents with enzymatic cleaners to eliminate lingering scent markers that tempt repeat visits.
+          </div>
+        </article>
+
+        <!-- 2. Creating a Daily Routine -->
+        <article class="training-card" data-category="house" data-title="Creating a Daily Routine"
+          data-keywords="daily routine schedule feeding times walks naps biological clock consistency">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></span>
+            <h3>Creating a Daily Routine</h3>
+          </div>
+          <p>
+            Synchronize regular mealtimes, morning walks, interactive play, and evening wind-down periods to give your dog predictable comfort.
+          </p>
+          <div class="card-tip-box">
+            <strong>Positive Advice</strong>
+            Predictable daily feeding schedules produce predictable bathroom schedules, making house training significantly easier.
+          </div>
+        </article>
+
+        <!-- 3. Indoor Behaviour -->
+        <article class="training-card" data-category="house" data-title="Indoor Behaviour"
+          data-keywords="indoor behaviour manners calm mat resting zone settling home">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-couch" aria-hidden="true"></i></span>
+            <h3>Indoor Behaviour</h3>
+          </div>
+          <p>
+            Establish a dedicated 'place' mat or dog bed in living areas where your companion can settle calmly while remaining close to the family.
+          </p>
+          <div class="card-tip-box">
+            <strong>Positive Advice</strong>
+            Teach a 'Go to Mat' cue with treats so your dog has an enjoyable default spot during busy dinner prep or guest visits.
+          </div>
+        </article>
+
+        <!-- 4. Preventing Furniture Chewing -->
+        <article class="training-card" data-category="house" data-title="Preventing Furniture Chewing"
+          data-keywords="preventing furniture chewing chew toys safe alternatives kong redirection">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-bone" aria-hidden="true"></i></span>
+            <h3>Preventing Furniture Chewing</h3>
+          </div>
+          <p>
+            Chewing is a natural biological need for dogs. Provide rotating durable puzzle toys and safe chew sticks to protect household furniture.
+          </p>
+          <div class="card-tip-box">
+            <strong>Positive Advice</strong>
+            Keep chewable shoes and remote controls out of reach, and supply frozen peanut butter Kongs to occupy active jaws.
+          </div>
+        </article>
+
+        <!-- 5. Teaching Boundaries -->
+        <article class="training-card" data-category="house" data-title="Teaching Boundaries"
+          data-keywords="teaching boundaries baby gates kitchen safe zones rooms threshold">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-door-open" aria-hidden="true"></i></span>
+            <h3>Teaching Boundaries</h3>
+          </div>
+          <p>
+            Use temporary baby gates and positive zone training to designate pet-safe rooms and establish off-limits areas like kitchen counters.
+          </p>
+          <div class="card-tip-box">
+            <strong>Positive Advice</strong>
+            Reward your dog handsomely whenever they choose to wait patiently outside the kitchen threshold while you cook.
+          </div>
+        </article>
+
+        <!-- 6. Rewarding Good Behaviour -->
+        <article class="training-card" data-category="house" data-title="Rewarding Good Behaviour"
+          data-keywords="rewarding good behaviour catching dog good calm resting quiet praise">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+            <h3>Rewarding Good Behaviour</h3>
+          </div>
+          <p>
+            Practice 'catching your dog being good'. Calmly drop a treat between their front paws when they voluntarily choose to rest quietly.
+          </p>
+          <div class="card-tip-box">
+            <strong>Positive Advice</strong>
+            Dogs repeat what is rewarded; noticing calm relaxation teaches your dog that peaceful behavior earns wonderful attention.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 7: LEASH TRAINING & WALKING MANNERS (6 Items + Imagery)
+         ======================================================== -->
+    <section class="section section-wrap training-section" id="section-leash" data-section-category="leash">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-route"></i> Relaxed Outings</span>
+          <h2>Leash Training & <em>Walking Manners</em></h2>
+          <p>
+            Transform stressful pulling into enjoyable neighborhood strolls. Learn how to foster loose-leash walking, outdoor focus, and respectful greeting etiquette.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-banner-photo">
+        <span class="banner-badge"><i class="fa-solid fa-person-walking"></i> Outdoor Harmony</span>
+        <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=85"
+          alt="Dog walking peacefully on a loose leash along a scenic nature path" loading="lazy">
+      </div>
+
+      <div class="training-grid-3">
+        <!-- 1. Introducing a Leash -->
+        <article class="training-card" data-category="leash" data-title="Introducing a Leash"
+          data-keywords="introducing a leash harness equipment indoor positive associations treats">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-vest" aria-hidden="true"></i></span>
+            <h3>Introducing a Leash</h3>
+          </div>
+          <p>
+            Pair your leash and ergonomic Y-shaped harness with delicious treats inside the house so wearing equipment always predicts fun, rewarding walks.
+          </p>
+          <div class="card-tip-box">
+            <strong>Walking Tip</strong>
+            Avoid neck-straining choke chains; a padded front-clip harness gently discourages pulling without compressing the trachea.
+          </div>
+        </article>
+
+        <!-- 2. Walking Without Pulling -->
+        <article class="training-card" data-category="leash" data-title="Walking Without Pulling"
+          data-keywords="walking without pulling be a tree stop freeze leash tension forward motion">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-anchor" aria-hidden="true"></i></span>
+            <h3>Walking Without Pulling</h3>
+          </div>
+          <p>
+            Master the 'Be a Tree' principle: the instant the leash tightens, stop moving forward completely until your dog turns and creates slack.
+          </p>
+          <div class="card-tip-box">
+            <strong>Walking Tip</strong>
+            Moving forward is the ultimate reward for dogs; never let pulling succeed in getting them to a smell.
+          </div>
+        </article>
+
+        <!-- 3. Loose-Leash Walking -->
+        <article class="training-card" data-category="leash" data-title="Loose-Leash Walking"
+          data-keywords="loose-leash walking j curve slack treats focus hip seam pacing">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span>
+            <h3>Loose-Leash Walking</h3>
+          </div>
+          <p>
+            Keep a relaxed 'J' loop in your leash by frequently rewarding attention and proximity near your leg with high-value treats while moving.
+          </p>
+          <div class="card-tip-box">
+            <strong>Walking Tip</strong>
+            Reward right at your pant seam so your dog associates walking close to your side with frequent treat drops.
+          </div>
+        </article>
+
+        <!-- 4. Following Commands Outdoors -->
+        <article class="training-card" data-category="leash" data-title="Following Commands Outdoors"
+          data-keywords="following commands outdoors distractions sidewalks proofing focus scents">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-compass" aria-hidden="true"></i></span>
+            <h3>Following Commands Outdoors</h3>
+          </div>
+          <p>
+            Generalize your basic cues by practicing sits and focus pauses amidst outdoor scents, passing strollers, and gentle neighborhood breezes.
+          </p>
+          <div class="card-tip-box">
+            <strong>Walking Tip</strong>
+            Step up the treat value outdoors: upgrade from dry biscuits to roast chicken or cheese to compete with outdoor smells.
+          </div>
+        </article>
+
+        <!-- 5. Greeting Other Dogs -->
+        <article class="training-card" data-category="leash" data-title="Greeting Other Dogs"
+          data-keywords="greeting other dogs 3-second rule curved approach greetings polite etiquette">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+            <h3>Greeting Other Dogs</h3>
+          </div>
+          <p>
+            Follow the 3-second greeting rule: allow a brief 3-second curved sniff greeting, then cheerfully call your dog along before tension can build.
+          </p>
+          <div class="card-tip-box">
+            <strong>Walking Tip</strong>
+            Never force on-leash greetings with oncoming dogs; ask the other owner first and respect dogs that prefer space.
+          </div>
+        </article>
+
+        <!-- 6. Walking Etiquette -->
+        <article class="training-card" data-category="leash" data-title="Walking Etiquette"
+          data-keywords="walking etiquette waste bags yellow ribbon space reactive dogs community">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-signs-post" aria-hidden="true"></i></span>
+            <h3>Walking Etiquette</h3>
+          </div>
+          <p>
+            Be a considerate neighbor: always pack waste bags, keep off private lawns, and give wide clearance to dogs wearing yellow ribbons.
+          </p>
+          <div class="card-tip-box">
+            <strong>Walking Tip</strong>
+            A yellow ribbon or bandana indicates a dog that needs space due to medical recovery, fear, or training.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 8: POSITIVE REINFORCEMENT TRAINING
+         ======================================================== -->
+    <section class="section section-wrap" id="section-reinforcement">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-heart"></i> Science-Based Methodology</span>
+          <h2>Positive Reinforcement <em>Training</em></h2>
+          <p>
+            Modern behavioural science proves dogs learn faster and retain habits longer when rewarded for desirable actions rather than punished for mistakes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step-by-Step Training Process Box -->
+      <div class="reinforcement-feature">
+        <div class="reinforcement-cycle-header">
+          <h3>The 4-Step Positive Reinforcement Cycle</h3>
+          <p>Every successful skill is built through this clear, humane, and predictable feedback loop:</p>
+        </div>
+
+        <div class="cycle-steps-grid">
+          <!-- Step 1 -->
+          <div class="cycle-step-card">
+            <span class="cycle-step-badge">1</span>
+            <i class="fa-solid fa-dog cycle-step-icon" aria-hidden="true"></i>
+            <h4>Desired Behaviour</h4>
+            <p>Your dog performs or offers the desired action (such as sitting politely when the doorbell chimes).</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="cycle-step-card">
+            <span class="cycle-step-badge">2</span>
+            <i class="fa-solid fa-bullseye cycle-step-icon" aria-hidden="true"></i>
+            <h4>Mark Behaviour</h4>
+            <p>You immediately mark the exact millisecond of success with a crisp verbal "Yes!" or clicker sound.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="cycle-step-card">
+            <span class="cycle-step-badge">3</span>
+            <i class="fa-solid fa-cookie-bite cycle-step-icon" aria-hidden="true"></i>
+            <h4>Reward Delivered</h4>
+            <p>Your dog receives an appropriate reward (a pea-sized treat, favourite toy, or joyful affection) within 1–2 seconds.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="cycle-step-card">
+            <span class="cycle-step-badge">4</span>
+            <i class="fa-solid fa-arrows-spin cycle-step-icon" aria-hidden="true"></i>
+            <h4>Repetition Builds Habit</h4>
+            <p>Repetition strengthens neural pathways, transforming conscious choices into automatic lifelong good habits.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Explanatory Components -->
+      <div class="training-grid-3">
+        <!-- 1. Reward-Based Training -->
+        <article class="training-card" data-category="basic" data-title="Reward-Based Training"
+          data-keywords="reward-based training motivation food toys freedom affection desire choices">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-gift" aria-hidden="true"></i></span>
+            <h3>Reward-Based Training</h3>
+          </div>
+          <p>
+            Utilizes your dog's natural motivations—food, toys, sniffing freedom, and social praise—to create an enthusiastic, willing partner in learning.
+          </p>
+        </article>
+
+        <!-- 2. Treat Training -->
+        <article class="training-card" data-category="basic" data-title="Treat Training"
+          data-keywords="treat training pea-sized high value nutrition calorie control liver cheese">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-bone" aria-hidden="true"></i></span>
+            <h3>Treat Training</h3>
+          </div>
+          <p>
+            Use pea-sized, fragrant treats (like freeze-dried liver or cheese) to keep calorie intake low while maintaining high training focus and drive.
+          </p>
+        </article>
+
+        <!-- 3. Verbal Praise -->
+        <article class="training-card" data-category="basic" data-title="Verbal Praise"
+          data-keywords="verbal praise marker tone yes good dog enthusiasm verbal approval dopamine">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i></span>
+            <h3>Verbal Praise</h3>
+          </div>
+          <p>
+            A cheerful, sincere marker word like "Yes!" or "Good dog!" clearly communicates approval and releases feel-good dopamine in your dog's brain.
+          </p>
+        </article>
+
+        <!-- 4. Clicker Training -->
+        <article class="training-card" data-category="basic" data-title="Clicker Training"
+          data-keywords="clicker training mechanical sound precision bridging stimulus timing acquisition">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i></span>
+            <h3>Clicker Training</h3>
+          </div>
+          <p>
+            A clicker provides an unmistakable mechanical sound that marks the precise split-second your dog executes a skill, speeding up learning dramatically.
+          </p>
+        </article>
+
+        <!-- 5. Consistency and Patience -->
+        <article class="training-card" data-category="basic" data-title="Consistency and Patience"
+          data-keywords="consistency patience family members cue words house rules uniform understanding">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></span>
+            <h3>Consistency and Patience</h3>
+          </div>
+          <p>
+            Ensure every family member uses identical verbal cues and household rules to prevent frustrating confusion and foster steady learning.
+          </p>
+        </article>
+
+        <!-- 6. Building Good Habits -->
+        <article class="training-card" data-category="basic" data-title="Building Good Habits"
+          data-keywords="building good habits fading treats variable schedule random reinforcement reliability">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i></span>
+            <h3>Building Good Habits</h3>
+          </div>
+          <p>
+            Once a cue is 85% reliable, fade constant treats into a variable schedule of surprise rewards, verbal affection, and real-life privileges.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 9: COMMON BEHAVIOURAL PROBLEMS (8 Cards)
+         ======================================================== -->
+    <section class="section section-wrap training-section" id="section-problems" data-section-category="problems">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-triangle-exclamation"></i> Compassionate Solutions</span>
+          <h2>Common Behavioural <em>Problems</em></h2>
+          <p>
+            Unwanted behaviours are expressions of unmet canine needs, anxiety, or natural instincts. Address root causes using positive, humane training—never physical force or intimidation.
+          </p>
+        </div>
+      </div>
+
+      <div class="training-grid-3">
+        <!-- 1. Excessive Barking -->
+        <article class="training-card" data-category="problems" data-title="Excessive Barking"
+          data-keywords="excessive barking alert boredom demand anxiety quiet cue redirect">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-volume-high" aria-hidden="true"></i></span>
+            <h3>Excessive Barking</h3>
+          </div>
+          <p>
+            <strong>What it indicates:</strong> Boredom, territorial alarm, social frustration, or learned demand for treats and attention.
+          </p>
+          <div class="card-approach-box">
+            <strong>Positive Training Approach</strong>
+            Identify the trigger, teach a calm "Quiet" or "Go to Place" cue, and reward silence after one acknowledgement bark.
+          </div>
+        </article>
+
+        <!-- 2. Separation Anxiety -->
+        <article class="training-card" data-category="problems" data-title="Separation Anxiety"
+          data-keywords="separation anxiety distress alone panic departure desensitization lick mats">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-house-crack" aria-hidden="true"></i></span>
+            <h3>Separation Anxiety</h3>
+          </div>
+          <p>
+            <strong>What it indicates:</strong> Genuine panic and emotional distress triggered by isolation from attachment figures.
+          </p>
+          <div class="card-approach-box">
+            <strong>Positive Training Approach</strong>
+            Practice gradual desensitization to departure cues (keys, coats), provide long-lasting lick mats, and keep departures and arrivals calm.
+          </div>
+        </article>
+
+        <!-- 3. Chewing Furniture -->
+        <article class="training-card" data-category="problems" data-title="Chewing Furniture"
+          data-keywords="chewing furniture teething boredom stress understimulation kongs durable">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-couch" aria-hidden="true"></i></span>
+            <h3>Chewing Furniture</h3>
+          </div>
+          <p>
+            <strong>What it indicates:</strong> Puppy teething discomfort, physical energy surplus, or stress-relief chewing.
+          </p>
+          <div class="card-approach-box">
+            <strong>Positive Training Approach</strong>
+            Dog-proof furniture legs with pet-safe deterrent spray, and redirect mouthiness immediately to irresistible frozen peanut butter Kongs.
+          </div>
+        </article>
+
+        <!-- 4. Digging -->
+        <article class="training-card" data-category="problems" data-title="Digging"
+          data-keywords="digging yard sandbox cooling scent burrowing energy outlets">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-shovel" aria-hidden="true"></i></span>
+            <h3>Digging</h3>
+          </div>
+          <p>
+            <strong>What it indicates:</strong> Instinctual denning, cooling off in warm weather, pursuing underground scents, or boredom.
+          </p>
+          <div class="card-approach-box">
+            <strong>Positive Training Approach</strong>
+            Provide a designated legal sandbox pit in your yard with buried toys where digging is permitted and enthusiastically praised.
+          </div>
+        </article>
+
+        <!-- 5. Jumping on People -->
+        <article class="training-card" data-category="problems" data-title="Jumping on People"
+          data-keywords="jumping on people greeting overexcitement four on floor turn away">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-person-falling" aria-hidden="true"></i></span>
+            <h3>Jumping on People</h3>
+          </div>
+          <p>
+            <strong>What it indicates:</strong> Overexcited greeting behavior aimed at reaching human eye level for face-to-face social contact.
+          </p>
+          <div class="card-approach-box">
+            <strong>Positive Training Approach</strong>
+            Turn away and cross your arms the second paws leave the ground; only greet and treat when all four paws are planted on the floor.
+          </div>
+        </article>
+
+        <!-- 6. Food Guarding -->
+        <article class="training-card" data-category="problems" data-title="Food Guarding"
+          data-keywords="food guarding resource guarding bowls trading up professional safety distance">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+            <h3>Food Guarding</h3>
+          </div>
+          <p>
+            <strong>What it indicates:</strong> Deep-seated fear that valued food, bowls, or treats will be taken away.
+          </p>
+          <div class="card-approach-box">
+            <strong>Positive Training Approach</strong>
+            Never snatch bowls; practice 'trading up' by tossing higher-value chicken into their bowl from a safe distance. Seek a certified trainer for severe cases.
+          </div>
+        </article>
+
+        <!-- 7. Fear of Strangers -->
+        <article class="training-card" data-category="problems" data-title="Fear of Strangers"
+          data-keywords="fear of strangers guests socialization avoidance treats distance pace">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-person-circle-question" aria-hidden="true"></i></span>
+            <h3>Fear of Strangers</h3>
+          </div>
+          <p>
+            <strong>What it indicates:</strong> Incomplete early socialization, genetic sensitivity, or frightening past experiences.
+          </p>
+          <div class="card-approach-box">
+            <strong>Positive Training Approach</strong>
+            Instruct visitors to ignore your dog completely and avoid direct eye contact. Let the dog set the distance and toss treats from afar.
+          </div>
+        </article>
+
+        <!-- 8. Destructive Behaviour -->
+        <article class="training-card" data-category="problems" data-title="Destructive Behaviour"
+          data-keywords="destructive behaviour boredom mental stimulation sniff walks enrichment toys">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></span>
+            <h3>Destructive Behaviour</h3>
+          </div>
+          <p>
+            <strong>What it indicates:</strong> Chronic understimulation, insufficient physical exercise, or severe containment anxiety.
+          </p>
+          <div class="card-approach-box">
+            <strong>Positive Training Approach</strong>
+            Provide daily aerobic sniff-walks, introduce interactive brain puzzles, and rotate toys weekly to keep their mind engaged.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 10: SOCIALISATION & INTERACTION (6 Items + Imagery)
+         ======================================================== -->
+    <section class="section section-wrap training-section" id="section-social" data-section-category="social">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-handshake"></i> Confident Social Connections</span>
+          <h2>Socialisation & <em>Interaction</em></h2>
+          <p>
+            True socialisation is about fostering calm, confident neutrality across diverse environments. Emphasize gradual, controlled introductions and comfortable physical distances.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-banner-photo">
+        <span class="banner-badge"><i class="fa-solid fa-heart"></i> Friendly Canine Connections</span>
+        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=85"
+          alt="Two friendly dogs meeting gently and socializing outdoors" loading="lazy">
+      </div>
+
+      <div class="training-grid-3">
+        <!-- 1. Introducing New People -->
+        <article class="training-card" data-category="behaviour" data-title="Introducing New People"
+          data-keywords="introducing new people guests sideways treats comfort distance">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span>
+            <h3>Introducing New People</h3>
+          </div>
+          <p>
+            Ask visitors to sit sideways, avoid looming over the dog, and allow your companion to initiate contact on their own comfortable terms.
+          </p>
+          <div class="card-tip-box">
+            <strong>Social Tip</strong>
+            Have guests gently drop treats behind the dog so approaching always remains a stress-free choice.
+          </div>
+        </article>
+
+        <!-- 2. Meeting Other Dogs -->
+        <article class="training-card" data-category="behaviour" data-title="Meeting Other Dogs"
+          data-keywords="meeting other dogs parallel walking distance curve approach calm">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i></span>
+            <h3>Meeting Other Dogs</h3>
+          </div>
+          <p>
+            Begin by walking parallel side-by-side at a comfortable 15-foot distance before allowing curved, loose body sniffs to avoid head-on tension.
+          </p>
+          <div class="card-tip-box">
+            <strong>Social Tip</strong>
+            Avoid tight leash greetings, which restrict natural canine body language and can cause defensive reactions.
+          </div>
+        </article>
+
+        <!-- 3. Getting Comfortable in New Environments -->
+        <article class="training-card" data-category="behaviour" data-title="Comfortable in New Environments"
+          data-keywords="new environments cafes parks blanket perimeter calm observation">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span>
+            <h3>Getting Comfortable in New Environments</h3>
+          </div>
+          <p>
+            Bring a familiar mat and high-value treats to outdoor cafes and parks, rewarding calm observation from quiet outer perimeters.
+          </p>
+          <div class="card-tip-box">
+            <strong>Social Tip</strong>
+            Let your dog take in sounds and sights at their own pace without forcing them into crowded center areas.
+          </div>
+        </article>
+
+        <!-- 4. Socialising Puppies -->
+        <article class="training-card" data-category="puppy" data-title="Socialising Puppies"
+          data-keywords="socialising puppies positive experiences novel sounds textures calm">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+            <h3>Socialising Puppies</h3>
+          </div>
+          <p>
+            Introduce puppies gently to 100 new sounds, surfaces, and sights before 16 weeks without ever overwhelming their senses.
+          </p>
+          <div class="card-tip-box">
+            <strong>Social Tip</strong>
+            Keep all exposures brief, fun, and paired with treats so new experiences build lasting confidence.
+          </div>
+        </article>
+
+        <!-- 5. Safe Playtime -->
+        <article class="training-card" data-category="behaviour" data-title="Safe Playtime"
+          data-keywords="safe playtime reciprocal bouncy role reversal natural breaks monitoring">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-dice" aria-hidden="true"></i></span>
+            <h3>Safe Playtime</h3>
+          </div>
+          <p>
+            Monitor play for loose, bouncy postures and mutual role reversals where chasers take turns being chased with frequent natural pauses.
+          </p>
+          <div class="card-tip-box">
+            <strong>Social Tip</strong>
+            Step in with cheerful redirection if one dog pins another repeatedly without trading places.
+          </div>
+        </article>
+
+        <!-- 6. Building Confidence -->
+        <article class="training-card" data-category="behaviour" data-title="Building Confidence"
+          data-keywords="building confidence obstacles balance novel textures courage praise">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-mountain-sun" aria-hidden="true"></i></span>
+            <h3>Building Confidence</h3>
+          </div>
+          <p>
+            Encourage your dog to explore low obstacles, tree stumps, and varied sidewalk textures, celebrating every brave inspection with praise.
+          </p>
+          <div class="card-tip-box">
+            <strong>Social Tip</strong>
+            Overcoming gentle physical challenges builds mental resilience and strengthens handler trust.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 11: ADVANCED TRAINING (6 Cards)
+         ======================================================== -->
+    <section class="section section-wrap training-section" id="section-advanced" data-section-category="advanced">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-medal"></i> Elevate Canine Skills</span>
+          <h2>Advanced <em>Training</em></h2>
+          <p>
+            Challenge your dog's athletic agility, mental stamina, and emergency responsiveness through beginner-friendly advanced obedience and safe off-leash protocols.
+          </p>
+        </div>
+      </div>
+
+      <div class="training-grid-3">
+        <!-- 1. Fetch Training -->
+        <article class="training-card" data-category="advanced" data-title="Fetch Training"
+          data-keywords="fetch training retrieve ball drop two toy game exercise">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-baseball-bat-ball" aria-hidden="true"></i></span>
+            <h3>Fetch Training</h3>
+          </div>
+          <p>
+            Master the complete fetch sequence—chase, grab, return, and drop—using the two-ball game where dropping ball one triggers the exciting throw of ball two.
+          </p>
+          <div class="card-tip-box">
+            <strong>Advanced Tip</strong>
+            Never chase a dog playing 'keep away'; turn and run in the opposite direction so they chase you instead.
+          </div>
+        </article>
+
+        <!-- 2. Recall Training -->
+        <article class="training-card" data-category="advanced" data-title="Advanced Recall Training"
+          data-keywords="recall training emergency whistle jackpot rewards distance distractions">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span>
+            <h3>Recall Training</h3>
+          </div>
+          <p>
+            Build an emergency recall whistle or distinct cue paired exclusively with super-premium jackpot treats (like roast beef) practiced weekly.
+          </p>
+          <div class="card-tip-box">
+            <strong>Advanced Tip</strong>
+            Keep emergency recall rewards rare and extraordinarily delicious to maintain an unbreakable reflex.
+          </div>
+        </article>
+
+        <!-- 3. Trick Training -->
+        <article class="training-card" data-category="advanced" data-title="Trick Training"
+          data-keywords="trick training spin roll over high five weave cognitive enrichment fun">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span>
+            <h3>Trick Training</h3>
+          </div>
+          <p>
+            Stimulate your dog's brain with enjoyable tricks like spin, roll over, leg weaves, gentle high-fives, and putting toys away into a basket.
+          </p>
+          <div class="card-tip-box">
+            <strong>Advanced Tip</strong>
+            Trick training relieves indoor boredom on rainy days and deepens your dog's eagerness to learn.
+          </div>
+        </article>
+
+        <!-- 4. Agility Basics -->
+        <article class="training-card" data-category="advanced" data-title="Agility Basics"
+          data-keywords="agility basics tunnels hurdles weave poles balance coordination athletic">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></span>
+            <h3>Agility Basics</h3>
+          </div>
+          <p>
+            Introduce low-impact agility: guide through collapsible tunnels, weave around garden stakes, and step over low bars to build canine athleticism.
+          </p>
+          <div class="card-tip-box">
+            <strong>Advanced Tip</strong>
+            Wait until your dog's growth plates close (12–18 months depending on breed) before introducing high jumps.
+          </div>
+        </article>
+
+        <!-- 5. Off-Leash Training -->
+        <article class="training-card" data-category="advanced" data-title="Off-Leash Training"
+          data-keywords="off-leash training enclosed areas legally permitted safe parks fenced control">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-shield" aria-hidden="true"></i></span>
+            <h3>Off-Leash Training</h3>
+          </div>
+          <p>
+            Practice off-leash obedience exclusively in safe, legally permitted enclosed dog parks or secure fenced training paddocks before reliable voice control is proven.
+          </p>
+          <div class="card-tip-box">
+            <strong>Safety Note</strong>
+            Never attempt off-leash work in unfenced public areas; use a 30-foot long line to practice distance safety.
+          </div>
+        </article>
+
+        <!-- 6. Advanced Obedience -->
+        <article class="training-card" data-category="advanced" data-title="Advanced Obedience"
+          data-keywords="advanced obedience distance down stay out of sight focus distractions">
+          <div class="training-card-header">
+            <span class="training-card-icon"><i class="fa-solid fa-medal" aria-hidden="true"></i></span>
+            <h3>Advanced Obedience</h3>
+          </div>
+          <p>
+            Develop long-distance downs, out-of-sight stays, drop-on-recall, and attentive heelwork past distractions in complex public environments.
+          </p>
+          <div class="card-tip-box">
+            <strong>Advanced Tip</strong>
+            Change only one variable at a time: distance, duration, or distraction level—never all three at once.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 12: TRAINING TIPS FOR DOG OWNERS (7 Clean Items)
+         ======================================================== -->
+    <section class="section section-wrap" id="section-tips">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-lightbulb"></i> Trainer's Golden Rules</span>
+          <h2>Training Tips for <em>Dog Owners</em></h2>
+          <p>
+            Keep these seven essential principles in mind to make every training moment enjoyable, productive, and stress-free for both you and your canine friend.
+          </p>
+        </div>
+      </div>
+
+      <div class="tips-grid">
+        <!-- Tip 1 -->
+        <article class="tip-item-card">
+          <span class="tip-item-icon"><i class="fa-solid fa-stopwatch" aria-hidden="true"></i></span>
+          <div class="tip-item-content">
+            <h3>Keep Training Sessions Short</h3>
+            <p>5 to 10 minutes daily is vastly more effective than one exhausting hour. Frequent mini-lessons prevent mental fatigue.</p>
+          </div>
+        </article>
+
+        <!-- Tip 2 -->
+        <article class="tip-item-card">
+          <span class="tip-item-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+          <div class="tip-item-content">
+            <h3>Use Positive Rewards</h3>
+            <p>Tailor rewards to your dog: high-value treats, toy tosses, or joyful praise generate an eager, cooperative learner.</p>
+          </div>
+        </article>
+
+        <!-- Tip 3 -->
+        <article class="tip-item-card">
+          <span class="tip-item-icon"><i class="fa-solid fa-spell-check" aria-hidden="true"></i></span>
+          <div class="tip-item-content">
+            <h3>Be Consistent with Commands</h3>
+            <p>Ensure all family members use the exact same verbal cues and hand signals to prevent confusing your pet.</p>
+          </div>
+        </article>
+
+        <!-- Tip 4 -->
+        <article class="tip-item-card">
+          <span class="tip-item-icon"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i></span>
+          <div class="tip-item-content">
+            <h3>Avoid Punishment & Force</h3>
+            <p>Harsh methods cause fear, distrust, and defensive aggression. Guide and reward correct alternatives instead.</p>
+          </div>
+        </article>
+
+        <!-- Tip 5 -->
+        <article class="tip-item-card">
+          <span class="tip-item-icon"><i class="fa-solid fa-repeat" aria-hidden="true"></i></span>
+          <div class="tip-item-content">
+            <h3>Practise Regularly</h3>
+            <p>Integrate micro-training into daily life: ask for a polite sit before meals, leash clipping, and opening exterior doors.</p>
+          </div>
+        </article>
+
+        <!-- Tip 6 -->
+        <article class="tip-item-card">
+          <span class="tip-item-icon"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></span>
+          <div class="tip-item-content">
+            <h3>Understand Learning Pace</h3>
+            <p>Every dog learns at their own pace based on age, breed, and history. Break complex exercises into tiny achievable steps.</p>
+          </div>
+        </article>
+
+        <!-- Tip 7 -->
+        <article class="tip-item-card">
+          <span class="tip-item-icon"><i class="fa-solid fa-face-smile" aria-hidden="true"></i></span>
+          <div class="tip-item-content">
+            <h3>End on Encouragement</h3>
+            <p>Always conclude training on a guaranteed success with an easy cue and joyful celebration so your dog looks forward to next time.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 13: WHEN TO SEEK PROFESSIONAL HELP (7 Items + Note)
+         ======================================================== -->
+    <section class="section section-wrap" id="section-pro-help">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-user-doctor"></i> Expert Behavioral Guidance</span>
+          <h2>When to Seek <em>Professional Help</em></h2>
+          <p>
+            Certain behavioral challenges require hands-on evaluation by certified specialists to safeguard canine wellbeing, family peace, and neighborhood safety.
+          </p>
+        </div>
+      </div>
+
+      <div class="pro-help-section">
+        <div class="training-grid-3">
+          <!-- 1. Persistent Aggression -->
+          <article class="training-card" data-category="problems" data-title="Persistent Aggression"
+            data-keywords="persistent aggression snapping biting lunging safety professional evaluation">
+            <div class="training-card-header">
+              <span class="training-card-icon"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i></span>
+              <h3>Persistent Aggression</h3>
+            </div>
+            <p>
+              Snapping, biting, growling, or lunging towards family members, strangers, or other animals that does not improve with space.
+            </p>
+          </article>
+
+          <!-- 2. Severe Separation Anxiety -->
+          <article class="training-card" data-category="problems" data-title="Severe Separation Anxiety"
+            data-keywords="severe separation anxiety self-harm panic door destruction howling alone">
+            <div class="training-card-header">
+              <span class="training-card-icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span>
+              <h3>Severe Separation Anxiety</h3>
+            </div>
+            <p>
+              Self-injurious panic, frantic window or door scratching, non-stop vocalization, or refusal to eat whenever left alone.
+            </p>
+          </article>
+
+          <!-- 3. Excessive Fear -->
+          <article class="training-card" data-category="problems" data-title="Excessive Fear"
+            data-keywords="excessive fear phobias complete shutdown trembling panic inability outdoors">
+            <div class="training-card-header">
+              <span class="training-card-icon"><i class="fa-solid fa-cloud-bolt" aria-hidden="true"></i></span>
+              <h3>Excessive Fear</h3>
+            </div>
+            <p>
+              Complete physical shutdown, uncontrollable trembling, panic during storms, or intense dread of ordinary household sounds.
+            </p>
+          </article>
+
+          <!-- 4. Uncontrollable Behaviour -->
+          <article class="training-card" data-category="problems" data-title="Uncontrollable Behaviour"
+            data-keywords="uncontrollable behaviour compulsive spinning hyperactivity redirection">
+            <div class="training-card-header">
+              <span class="training-card-icon"><i class="fa-solid fa-arrows-spin" aria-hidden="true"></i></span>
+              <h3>Uncontrollable Behaviour</h3>
+            </div>
+            <p>
+              Compulsive tail-chasing, shadow stalking, or extreme frantic hyperactivity that fails to respond to redirection.
+            </p>
+          </article>
+
+          <!-- 5. Resource Guarding -->
+          <article class="training-card" data-category="problems" data-title="Resource Guarding"
+            data-keywords="resource guarding escalating bowls toys bed snapping human safety">
+            <div class="training-card-header">
+              <span class="training-card-icon"><i class="fa-solid fa-shield-virus" aria-hidden="true"></i></span>
+              <h3>Resource Guarding</h3>
+            </div>
+            <p>
+              Escalating aggressive defense of food bowls, sleeping beds, found items, or specific family members when approached.
+            </p>
+          </article>
+
+          <!-- 6. Sudden Behaviour Changes -->
+          <article class="training-card" data-category="problems" data-title="Sudden Behaviour Changes"
+            data-keywords="sudden behaviour changes adult dog house-soiling aggression veterinary medical">
+            <div class="training-card-header">
+              <span class="training-card-icon"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span>
+              <h3>Sudden Behaviour Changes</h3>
+            </div>
+            <p>
+              Abrupt aggression, irritability, or house-soiling in a previously calm, house-trained adult dog.
+            </p>
+          </article>
+
+          <!-- 7. Finding a Certified Trainer -->
+          <article class="training-card" data-category="problems" data-title="Finding a Certified Dog Trainer"
+            data-keywords="finding certified dog trainer veterinary behaviourist cpdt iaabc dacvb force-free">
+            <div class="training-card-header">
+              <span class="training-card-icon"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
+              <h3>Finding a Certified Specialist</h3>
+            </div>
+            <p>
+              Look for force-free credentials (CPDT-KA, IAABC, DACVB, KPA-CTP); avoid trainers using shock, prong, or alpha-dominance methods.
+            </p>
+          </article>
+        </div>
+
+        <!-- Mandatory Advisory Box -->
+        <div class="pro-help-notice-box" role="note">
+          <i class="fa-solid fa-circle-exclamation pro-help-notice-icon" aria-hidden="true"></i>
+          <div class="pro-help-notice-content">
+            <h4>Important Professional & Veterinary Guidance</h4>
+            <p>
+              Serious or persistent behavioural concerns should be assessed by a qualified professional. Sudden behavioural changes may also indicate an underlying medical problem (such as hidden pain, thyroid imbalances, or neurological conditions), so consult a veterinarian first. PetSathi is an educational resource and does not replace professional veterinary or behavioural advice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 14: FREQUENTLY ASKED QUESTIONS (9 Questions)
+         ======================================================== -->
+    <section class="section section-wrap" id="faq-section" aria-label="Frequently Asked Questions">
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label"><i class="fa-solid fa-circle-question"></i> Common Inquiries</span>
+          <h2>Frequently Asked <em>Questions</em></h2>
+          <p>
+            Quick, expert answers to the most common canine training and behavior questions asked by dog parents.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-controls-bar">
+          <button type="button" class="faq-toggle-all-btn" id="faq-toggle-all-btn" aria-expanded="false">
+            <i class="fa-solid fa-angles-down" aria-hidden="true"></i> Expand All Questions
+          </button>
+        </div>
+
+        <div class="faq-accordion-list">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-ans-1" id="faq-q-1">
+              <span class="faq-question-title-wrap">
+                <span class="faq-q-badge">1</span>
+                <span class="faq-question-text">At what age should I start training my puppy?</span>
+              </span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-ans-1" class="faq-answer-panel" role="region" aria-labelledby="faq-q-1">
+              <div class="faq-answer-content">
+                <p>
+                  You can begin gentle training as early as 8 weeks old. Start with fun, low-pressure games for name recognition, potty training routines, crate comfort, and gentle cues like 'Sit'. Keep sessions under 5 minutes and focus heavily on positive reinforcement and pleasant socialization.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-ans-2" id="faq-q-2">
+              <span class="faq-question-title-wrap">
+                <span class="faq-q-badge">2</span>
+                <span class="faq-question-text">How long should a training session last?</span>
+              </span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-ans-2" class="faq-answer-panel" role="region" aria-labelledby="faq-q-2">
+              <div class="faq-answer-content">
+                <p>
+                  Ideal training sessions should last between 5 and 10 minutes, held 2 to 3 times per day. Dogs, especially puppies, learn best through short, frequent, and enthusiastic micro-sessions rather than marathon training that leads to mental fatigue and loss of focus.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-ans-3" id="faq-q-3">
+              <span class="faq-question-title-wrap">
+                <span class="faq-q-badge">3</span>
+                <span class="faq-question-text">How do I stop my dog from barking excessively?</span>
+              </span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-ans-3" class="faq-answer-panel" role="region" aria-labelledby="faq-q-3">
+              <div class="faq-answer-content">
+                <p>
+                  Identify the root trigger first: boredom, alert reactivity, demand, or fear. Avoid yelling, which sounds like barking to a dog. Instead, acknowledge the alert once, redirect their attention to a mat or chew toy, and reward quiet moments. Provide adequate daily physical exercise and mental puzzles.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-ans-4" id="faq-q-4">
+              <span class="faq-question-title-wrap">
+                <span class="faq-q-badge">4</span>
+                <span class="faq-question-text">How can I teach my dog to sit?</span>
+              </span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-ans-4" class="faq-answer-panel" role="region" aria-labelledby="faq-q-4">
+              <div class="faq-answer-content">
+                <p>
+                  Hold a small, aromatic treat right in front of your dog's nose. Slowly move your hand back over their head towards their tail. As their nose tilts up to follow the treat, their hindquarters will naturally lower. The instant their bottom touches the floor, say 'Yes!', click, and give the treat.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-ans-5" id="faq-q-5">
+              <span class="faq-question-title-wrap">
+                <span class="faq-q-badge">5</span>
+                <span class="faq-question-text">How do I stop my dog from biting?</span>
+              </span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-ans-5" class="faq-answer-panel" role="region" aria-labelledby="faq-q-5">
+              <div class="faq-answer-content">
+                <p>
+                  Mouthing is natural exploratory puppy behavior. Teach bite inhibition by instantly redirecting their mouth to a soft toy or chew bone. If their teeth touch human skin, give a soft high-pitched 'Ouch!', gently remove your attention, and freeze play for 15 seconds. This teaches them that biting makes the fun stop.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-ans-6" id="faq-q-6">
+              <span class="faq-question-title-wrap">
+                <span class="faq-q-badge">6</span>
+                <span class="faq-question-text">Why does my dog chew furniture?</span>
+              </span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-ans-6" class="faq-answer-panel" role="region" aria-labelledby="faq-q-6">
+              <div class="faq-answer-content">
+                <p>
+                  Dogs chew furniture due to teething pain, pent-up physical energy, boredom, or separation distress. To stop it, apply a non-toxic pet-safe bitter spray to exposed wooden legs, ensure your dog gets sufficient daily exercise, and provide enticing legal alternatives like frozen stuffed Kongs and durable chew toys.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-ans-7" id="faq-q-7">
+              <span class="faq-question-title-wrap">
+                <span class="faq-q-badge">7</span>
+                <span class="faq-question-text">How can I train my dog to walk without pulling?</span>
+              </span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-ans-7" class="faq-answer-panel" role="region" aria-labelledby="faq-q-7">
+              <div class="faq-answer-content">
+                <p>
+                  Use a well-fitted Y-shaped front-clip harness. When walking, practice the 'Be a Tree' rule: the second the leash tightens, immediately stop moving forward. Wait silently until your dog slackens the leash and turns back toward you, then immediately mark with 'Yes!' and resume walking. Reward loose-leash walking by your hip every few steps.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-ans-8" id="faq-q-8">
+              <span class="faq-question-title-wrap">
+                <span class="faq-q-badge">8</span>
+                <span class="faq-question-text">Is positive reinforcement better than punishment?</span>
+              </span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-ans-8" class="faq-answer-panel" role="region" aria-labelledby="faq-q-8">
+              <div class="faq-answer-content">
+                <p>
+                  Yes, conclusively. Scientific studies in animal behavior consistently prove that positive reinforcement training creates faster learning, superior retention, and a trusting bond without causing fear, anxiety, or defensive aggression. Punishment suppresses outward behavior without addressing underlying emotional causes and damages your relationship with your pet.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 9 -->
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button" aria-expanded="false" aria-controls="faq-ans-9" id="faq-q-9">
+              <span class="faq-question-title-wrap">
+                <span class="faq-q-badge">9</span>
+                <span class="faq-question-text">How long does it take to train a dog?</span>
+              </span>
+              <span class="faq-toggle-icon" aria-hidden="true">+</span>
+            </button>
+            <div id="faq-ans-9" class="faq-answer-panel" role="region" aria-labelledby="faq-q-9">
+              <div class="faq-answer-content">
+                <p>
+                  Basic obedience cues (sit, down, come) can be introduced within 1 to 2 weeks of consistent daily practice. However, complete reliability with heavy outdoor distractions takes several months of gradual proofing. Training is an ongoing lifelong journey of communication, enrichment, and bonding.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 15: CALL TO ACTION BANNER (Matching dogs/index.html)
+         ======================================================== -->
+    <section class="cta section-wrap">
+      <div>
+        <div class="eyebrow">START TRAINING TODAY</div>
+        <h2>Every Dog Deserves <em>Patience & Love.</em></h2>
+        <p>
+          Equip yourself with the tools, treats, and understanding your companion needs to thrive. Explore our dog breed guides or connect with trusted dog walkers in your area.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="button button-light" href="breeds.html" id="cta-explore-breeds">Explore Dog Breeds ↗</a>
+        <a class="button button-outline" href="../../walker/dogs.html" id="cta-find-walker">Find a Dog Walker</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer (Preserved exactly matching repository convention) -->
+  <footer class="footer">
+    <div class="section-wrap footer-grid">
+      <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark"
+            aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
+            <circle cx="12" cy="12" r="4" fill="currentColor" />
+            <circle cx="21" cy="8" r="4" fill="currentColor" />
+            <circle cx="30" cy="12" r="4" fill="currentColor" />
+            <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
+              fill="currentColor" />
+          </svg><span>Pet<span>Sathi</span></span></a>
+        <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
+      </div>
+      <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a
+          href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+      <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a
+          href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp;
+          Conditions</a></div>
+      <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank"
+          rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank"
+          rel="noopener noreferrer">Live Website</a></div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with
+        &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E;
+        &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+  </footer>
+
+  <!-- Global PetSathi Scripts -->
+  <script src="../../../js/main.js"></script>
+
+  <!-- Page-Specific Accessible Interactive Logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      /* ========================================================
+         SEARCH AND FILTER FUNCTIONALITY
+         ======================================================== */
+      const searchInput = document.getElementById("training-search-input");
+      const clearSearchBtn = document.getElementById("search-clear-btn");
+      const filterPills = document.querySelectorAll(".filter-pill");
+      const resultsCountText = document.getElementById("results-count-text");
+      const resetAllBtn = document.getElementById("reset-all-btn");
+      const noResultsBox = document.getElementById("no-results-box");
+      const noResultsResetBtn = document.getElementById("no-results-reset-btn");
+      const trainingCards = document.querySelectorAll(".training-card");
+      const trainingSections = document.querySelectorAll(".training-section");
+
+      let currentCategory = "all";
+      let currentQuery = "";
+      const totalCards = trainingCards.length;
+
+      function filterContent() {
+        let visibleCount = 0;
+        const normalizedQuery = currentQuery.trim().toLowerCase();
+
+        trainingCards.forEach(card => {
+          const category = card.getAttribute("data-category") || "";
+          const title = (card.getAttribute("data-title") || card.querySelector("h3")?.textContent || "").toLowerCase();
+          const keywords = (card.getAttribute("data-keywords") || "").toLowerCase();
+          const bodyText = card.textContent.toLowerCase();
+
+          // Category match check
+          const matchesCategory = (currentCategory === "all") || (category === currentCategory);
+
+          // Search query check
+          let matchesSearch = true;
+          if (normalizedQuery.length > 0) {
+            matchesSearch = title.includes(normalizedQuery) ||
+                            keywords.includes(normalizedQuery) ||
+                            bodyText.includes(normalizedQuery);
+          }
+
+          if (matchesCategory && matchesSearch) {
+            card.style.display = "";
+            visibleCount++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        // Toggle sections depending on whether they contain visible cards
+        trainingSections.forEach(section => {
+          const sectionCategory = section.getAttribute("data-section-category");
+          const visibleCardsInSection = section.querySelectorAll('.training-card:not([style*="display: none"])').length;
+
+          if (visibleCardsInSection > 0) {
+            section.style.display = "";
+          } else if (currentCategory !== "all" && sectionCategory !== currentCategory) {
+            section.style.display = "none";
+          } else if (normalizedQuery.length > 0 && visibleCardsInSection === 0) {
+            section.style.display = "none";
+          } else {
+            section.style.display = "";
+          }
+        });
+
+        // Update live results count
+        if (resultsCountText) {
+          if (visibleCount === totalCards) {
+            resultsCountText.innerHTML = `Showing all <b>${totalCards}</b> training topics & insights`;
+          } else {
+            resultsCountText.innerHTML = `Showing <b>${visibleCount}</b> of <b>${totalCards}</b> training topics`;
+          }
+        }
+
+        // Handle empty state message
+        if (visibleCount === 0) {
+          if (noResultsBox) noResultsBox.style.display = "block";
+        } else {
+          if (noResultsBox) noResultsBox.style.display = "none";
+        }
+
+        // Toggle clear search button visibility
+        if (clearSearchBtn) {
+          if (normalizedQuery.length > 0) {
+            clearSearchBtn.classList.add("visible");
+          } else {
+            clearSearchBtn.classList.remove("visible");
+          }
+        }
+      }
+
+      // Search input live filtering
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          currentQuery = e.target.value;
+          filterContent();
+        });
+      }
+
+      // Clear search button
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener("click", () => {
+          if (searchInput) {
+            searchInput.value = "";
+            searchInput.focus();
+          }
+          currentQuery = "";
+          filterContent();
+        });
+      }
+
+      // Filter pills clicking
+      filterPills.forEach(pill => {
+        pill.addEventListener("click", () => {
+          filterPills.forEach(p => p.classList.remove("active"));
+          pill.classList.add("active");
+          currentCategory = pill.getAttribute("data-category") || "all";
+          filterContent();
+        });
+      });
+
+      // Reset function
+      function resetFilters() {
+        currentCategory = "all";
+        currentQuery = "";
+        if (searchInput) searchInput.value = "";
+        filterPills.forEach(p => {
+          if (p.getAttribute("data-category") === "all") {
+            p.classList.add("active");
+          } else {
+            p.classList.remove("active");
+          }
+        });
+        filterContent();
+      }
+
+      if (resetAllBtn) resetAllBtn.addEventListener("click", resetFilters);
+      if (noResultsResetBtn) noResultsResetBtn.addEventListener("click", resetFilters);
+
+      /* ========================================================
+         ACCESSIBLE FAQ ACCORDION
+         ======================================================== */
+      const faqItems = document.querySelectorAll(".faq-item");
+      const faqToggleAllBtn = document.getElementById("faq-toggle-all-btn");
+
+      faqItems.forEach(item => {
+        const btn = item.querySelector(".faq-question-btn");
+        const panel = item.querySelector(".faq-answer-panel");
+
+        if (btn && panel) {
+          btn.addEventListener("click", () => {
+            const isExpanded = btn.getAttribute("aria-expanded") === "true";
+
+            if (isExpanded) {
+              btn.setAttribute("aria-expanded", "false");
+              item.classList.remove("active");
+              panel.style.maxHeight = null;
+            } else {
+              btn.setAttribute("aria-expanded", "true");
+              item.classList.add("active");
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+
+            updateToggleAllState();
+          });
+        }
+      });
+
+      // Expand / Collapse all questions
+      if (faqToggleAllBtn) {
+        faqToggleAllBtn.addEventListener("click", () => {
+          const isAllExpanded = faqToggleAllBtn.getAttribute("aria-expanded") === "true";
+
+          faqItems.forEach(item => {
+            const btn = item.querySelector(".faq-question-btn");
+            const panel = item.querySelector(".faq-answer-panel");
+            if (btn && panel) {
+              if (isAllExpanded) {
+                btn.setAttribute("aria-expanded", "false");
+                item.classList.remove("active");
+                panel.style.maxHeight = null;
+              } else {
+                btn.setAttribute("aria-expanded", "true");
+                item.classList.add("active");
+                panel.style.maxHeight = panel.scrollHeight + "px";
+              }
+            }
+          });
+
+          faqToggleAllBtn.setAttribute("aria-expanded", String(!isAllExpanded));
+          faqToggleAllBtn.innerHTML = !isAllExpanded
+            ? '<i class="fa-solid fa-angles-up" aria-hidden="true"></i> Collapse All Questions'
+            : '<i class="fa-solid fa-angles-down" aria-hidden="true"></i> Expand All Questions';
+        });
+      }
+
+      function updateToggleAllState() {
+        if (!faqToggleAllBtn) return;
+        const allExpanded = Array.from(faqItems).every(item => item.classList.contains("active"));
+        faqToggleAllBtn.setAttribute("aria-expanded", String(allExpanded));
+        faqToggleAllBtn.innerHTML = allExpanded
+          ? '<i class="fa-solid fa-angles-up" aria-hidden="true"></i> Collapse All Questions'
+          : '<i class="fa-solid fa-angles-down" aria-hidden="true"></i> Expand All Questions';
+      }
+
+      // Initial filter run
+      filterContent();
+    });
+  </script>
+</body>
+
+</html>

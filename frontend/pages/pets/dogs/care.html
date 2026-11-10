@@ -42,7 +42,7 @@
     }
 
     .care-page .care-hero {
-      padding: 28px 0 52px;
+      padding: 0;
       background: linear-gradient(135deg, #f0f5ed 0%, #fcfaf5 70%) !important;
     }
 
@@ -67,9 +67,11 @@
 
     .care-hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+      min-height: 560px;
+      grid-template-columns: 1.15fr 0.85fr;
       align-items: center;
-      gap: clamp(32px, 6vw, 72px);
+      gap: 48px;
+      padding-block: 34px 52px;
     }
 
     .care-eyebrow {
@@ -89,37 +91,99 @@
 
     .care-hero h1 {
       max-width: 650px;
-      margin: 0 0 14px;
-      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-      letter-spacing: -0.06em;
+      margin: 0 0 20px;
+      font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
+    }
+
+    .care-hero h1 em {
+      color: var(--care-green);
+      font-style: normal;
     }
 
     .care-hero-copy > p {
-      max-width: 570px;
+      max-width: 550px;
       margin: 0;
-      color: var(--care-copy);
-      font-size: 1.02rem;
-      line-height: 1.7;
+      color: #4f6155;
+      font-size: 1.05rem;
+      line-height: 1.85;
     }
 
     .care-hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 24px;
+      margin-top: 27px;
     }
 
     .care-hero-actions .button {
       min-height: 46px;
     }
 
+    .care-hero-visual {
+      position: relative;
+      display: grid;
+      min-height: 430px;
+      place-items: center;
+    }
+
+    .care-hero-blob {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      border-radius: 46% 54% 48% 52% / 54% 46% 54% 46%;
+      background: #e9f0e6;
+    }
+
     .care-hero-image {
-      width: 100%;
-      height: clamp(260px, 34vw, 390px);
-      border: 6px solid #fff;
-      border-radius: 26px;
+      position: relative;
+      width: 86%;
+      max-width: 420px;
+      height: 400px;
+      border: 4px solid #fff;
+      border-radius: 36px;
       object-fit: cover;
       box-shadow: var(--shadow);
+    }
+
+    .care-floating-card {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      color: var(--care-green);
+      font-size: 1.2rem;
+    }
+
+    .care-floating-card span {
+      display: grid;
+    }
+
+    .care-floating-card b {
+      color: var(--ink);
+      font-size: 0.82rem;
+    }
+
+    .care-floating-card small {
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
+
+    .care-floating-card-top {
+      top: 24px;
+      right: -12px;
+    }
+
+    .care-floating-card-bottom {
+      bottom: 18px;
+      left: -12px;
     }
 
     .care-tools {
@@ -212,63 +276,373 @@
     }
 
     .care-quick-nav {
-      padding: 16px 0;
-      background: #fcfaf5;
-      border-bottom: 1px solid var(--line);
+      position: relative;
+      width: calc(100% - 40px);
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 42px 36px 38px;
+      overflow: hidden;
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+    }
+
+    .care-quick-header {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .care-quick-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .care-quick-line {
+      width: 110px;
+      height: 1px;
+      background: #d6ead9;
+    }
+
+    .care-quick-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid #b7deb8;
+      border-radius: 999px;
+      background: #f4faf5;
+      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+      color: #1e6f43;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .care-quick-title {
+      margin: 0;
+      color: #1a251e;
+      font-family: Manrope, sans-serif !important;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .care-quick-title span {
+      color: #1e6f43;
     }
 
     .care-quick-links {
-      display: flex;
-      gap: 9px;
-      overflow-x: auto;
-      padding: 2px 1px 5px;
-      scrollbar-width: thin;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .care-quick-decor {
+      position: absolute;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .care-decor-top-left,
+    .care-decor-bottom-right {
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+    }
+
+    .care-decor-top-left {
+      top: -8px;
+      left: -8px;
+      border-radius: 0 0 100% 0;
+    }
+
+    .care-decor-bottom-right {
+      right: -8px;
+      bottom: -8px;
+      border-radius: 100% 0 0 0;
+    }
+
+    .care-decor-paw {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .care-decor-paw-1 {
+      top: 14px;
+      left: 28px;
+      font-size: 28px;
+      transform: rotate(-15deg);
+    }
+
+    .care-decor-paw-2 {
+      top: 38px;
+      left: 12px;
+      font-size: 19px;
+      transform: rotate(20deg);
+    }
+
+    .care-decor-paw-3 {
+      right: 14px;
+      bottom: 36px;
+      font-size: 19px;
+      transform: rotate(-25deg);
+    }
+
+    .care-decor-paw-4 {
+      right: 28px;
+      bottom: 14px;
+      font-size: 28px;
+      transform: rotate(15deg);
     }
 
     .care-quick-link {
-      display: inline-flex;
-      flex: 0 0 auto;
+      display: flex;
       align-items: center;
-      gap: 7px;
-      padding: 8px 13px;
-      border: 1px solid var(--line);
+      min-width: 0;
+      gap: 12px;
+      padding: 9px 18px 9px 9px;
+      border: 1px solid #cce4d2;
       border-radius: 999px;
-      background: #fff;
-      color: var(--care-green);
-      font-size: 0.82rem;
+      background: #edf7f0;
+      color: #1c2b20;
+      font-size: 0.95rem;
       font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .care-quick-link:hover {
+      transform: translateY(-2px);
+      border-color: #237847;
+      background: #e4f4e8;
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    }
+
+    .care-quick-link > i {
+      display: grid;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
+      font-size: 1.05rem;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .care-quick-link:hover > i {
+      background: #1e6f43;
+      color: #fff;
     }
 
     .care-sections {
-      padding: 18px 0 12px;
+      padding: 8px 0 12px;
     }
 
     .care-page .care-section {
-      padding: 44px 0;
+      padding: 22px 0;
       border-bottom: 1px solid var(--line);
       background: transparent !important;
       scroll-margin-top: 28px;
     }
 
-    .care-page .care-section:nth-child(even) {
-      background: #f7f9f5 !important;
+    .care-heading {
+      position: relative;
+      display: flex;
+      min-height: 200px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 45px auto 35px;
+      padding: 44px 35px 38px;
+      border: 1px solid #dcebc9;
+      border-radius: 35px;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      text-align: center;
     }
 
-    .care-heading {
-      margin-bottom: 22px;
+    .care-heading .corner-wave {
+      position: absolute;
+      width: 220px;
+      height: 130px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .care-heading .wave-tl {
+      top: 0;
+      left: 0;
+    }
+
+    .care-heading .wave-br {
+      right: 0;
+      bottom: 0;
+    }
+
+    .care-heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 16px;
+      padding: 7px 20px;
+      border: 1px solid #dcebc9;
+      border-radius: 999px;
+      background: #edf6df;
+      color: #246b43;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
+    }
+
+    .care-heading .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .care-heading-label i {
+      font-size: 0.9rem;
     }
 
     .care-heading h2 {
-      margin: 0 0 7px;
-      font-size: clamp(1.55rem, 3vw, 2.1rem);
-      letter-spacing: -0.04em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0 0 12px;
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    .care-heading h2 > span:not(.heading-burst) {
+      color: #28764a;
+    }
+
+    .care-heading .heading-burst {
+      position: relative;
+      display: inline-block;
+      flex: 0 0 24px;
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+
+    .care-heading .heading-burst span {
+      position: absolute;
+      border-radius: 9999px;
+      background: #60a872;
+    }
+
+    .care-heading .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .care-heading .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .care-heading .heading-burst.left span:nth-child(1),
+    .care-heading .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+    }
+
+    .care-heading .heading-burst.left span:nth-child(1) {
+      transform: rotate(35deg);
+    }
+
+    .care-heading .heading-burst.right span:nth-child(1) {
+      transform: rotate(-35deg);
+    }
+
+    .care-heading .heading-burst span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .care-heading .heading-burst.left span:nth-child(3),
+    .care-heading .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+    }
+
+    .care-heading .heading-burst.left span:nth-child(3) {
+      transform: rotate(-35deg);
+    }
+
+    .care-heading .heading-burst.right span:nth-child(3) {
+      transform: rotate(35deg);
+    }
+
+    .care-heading .paw {
+      position: absolute;
+      z-index: 1;
+      display: inline-block;
+      color: rgba(115, 173, 91, 0.28);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .care-heading .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .care-heading .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .care-heading .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .care-heading .paw-right-2 {
+      right: 140px;
+      bottom: 35px;
+      font-size: 38px;
+      transform: rotate(-15deg);
     }
 
     .care-heading p {
-      max-width: 680px;
+      max-width: 760px;
       margin: 0;
-      color: var(--care-copy);
-      font-size: 0.94rem;
+      color: #64736a;
+      font-size: 0.98rem;
+      line-height: 1.65;
     }
 
     .care-card-grid {
@@ -396,8 +770,12 @@
 
     @media (max-width: 960px) {
       .care-hero-layout {
-        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
+        grid-template-columns: 1.1fr 0.9fr;
         gap: 28px;
+      }
+
+      .care-quick-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .care-card-grid {
@@ -407,7 +785,7 @@
 
     @media (max-width: 640px) {
       .care-hero {
-        padding: 20px 0 36px;
+        padding: 0;
       }
 
       .care-hero-layout,
@@ -415,16 +793,145 @@
         grid-template-columns: 1fr;
       }
 
+      .care-hero-layout {
+        min-height: 0;
+        gap: 10px;
+        padding-block: 20px 36px;
+      }
+
+      .care-hero-copy {
+        padding-top: 4px;
+      }
+
+      .care-hero h1 {
+        font-size: clamp(2.35rem, 10vw, 2.9rem);
+      }
+
+      .care-hero-visual {
+        min-height: 340px;
+      }
+
+      .care-hero-blob {
+        width: 82%;
+      }
+
       .care-hero-image {
-        height: 245px;
+        width: 78%;
+        height: 300px;
+        border-radius: 48% 48% 24px 24px;
+      }
+
+      .care-floating-card-top {
+        top: 24px;
+        right: 0;
+      }
+
+      .care-floating-card-bottom {
+        bottom: 8px;
+        left: 0;
       }
 
       .care-results {
         grid-column: auto;
       }
 
+      .care-quick-nav {
+        width: calc(100% - 32px);
+        margin: 26px auto;
+        padding: 28px 18px;
+        border-radius: 24px;
+      }
+
+      .care-quick-eyebrow {
+        gap: 9px;
+      }
+
+      .care-quick-line {
+        width: 38px;
+      }
+
+      .care-quick-links {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .care-quick-link {
+        padding-right: 14px;
+        font-size: 0.88rem;
+      }
+
       .care-section {
         padding: 34px 0;
+      }
+
+      .care-heading {
+        min-height: 190px;
+        margin: 25px 0;
+        padding: 35px 16px 30px;
+        border-radius: 24px;
+      }
+
+      .care-heading .corner-wave {
+        width: 170px;
+        height: 110px;
+      }
+
+      .care-heading h2 {
+        gap: 8px;
+        font-size: clamp(20px, 5vw, 26px);
+      }
+
+      .care-heading .heading-burst {
+        flex-basis: 16px;
+        width: 16px;
+        height: 18px;
+      }
+
+      .care-heading .heading-burst span:nth-child(1),
+      .care-heading .heading-burst span:nth-child(3) {
+        width: 10px;
+      }
+
+      .care-heading .heading-burst span:nth-child(2) {
+        width: 13px;
+      }
+
+      .care-heading .care-heading-label {
+        margin-bottom: 12px;
+        padding: 6px 14px;
+        font-size: 11px;
+      }
+
+      .care-heading .paw-left-1,
+      .care-heading .paw-right-1 {
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .care-heading .paw-left-1 {
+        left: 35px;
+      }
+
+      .care-heading .paw-right-1 {
+        right: 25px;
+      }
+
+      .care-heading .paw-left-2,
+      .care-heading .paw-right-2 {
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .care-heading .paw-left-2 {
+        left: 18px;
+      }
+
+      .care-heading .paw-right-2 {
+        right: 65px;
+      }
+
+      .care-heading p {
+        font-size: 0.9rem;
       }
 
       .care-card-grid {
@@ -448,6 +955,10 @@
       }
 
       .care-card-media img {
+        transition: none;
+      }
+
+      .care-quick-link {
         transition: none;
       }
     }
@@ -488,14 +999,25 @@
       <div class="care-hero-layout">
         <div class="care-hero-copy">
           <div class="care-eyebrow"><i class="fa-solid fa-paw" aria-hidden="true"></i> PetSathi Dog Care</div>
-          <h1 id="care-hero-title">Complete Guide to Dog Care</h1>
+          <h1 id="care-hero-title">Complete Guide to <em>Dog Care</em></h1>
           <p>Everything you need to keep your dog healthy, clean, comfortable, and happy.</p>
           <div class="care-hero-actions">
             <a class="button" href="#daily-care">Explore daily care <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
             <a class="button button-outline" href="#vet-care">Preventive health</a>
           </div>
         </div>
-        <img class="care-hero-image" src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="A dog checking out a box of pet supplies at home" fetchpriority="high">
+        <div class="care-hero-visual">
+          <div class="care-hero-blob" aria-hidden="true"></div>
+          <img class="care-hero-image" src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="A dog checking out a box of pet supplies at home" fetchpriority="high">
+          <div class="care-floating-card care-floating-card-top">
+            <span aria-hidden="true">💚</span>
+            <span><b>Healthy & Happy</b><small>Everyday care matters</small></span>
+          </div>
+          <div class="care-floating-card care-floating-card-bottom">
+            <span aria-hidden="true">🐾</span>
+            <span><b>Care with Confidence</b><small>Guidance for every life stage</small></span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -526,18 +1048,27 @@
   </section>
 
   <nav class="care-quick-nav" aria-label="Dog care sections">
-    <div class="section-wrap care-quick-links">
-      <a class="care-quick-link" href="#daily-care"><i class="fa-solid fa-sun" aria-hidden="true"></i> Daily care</a>
-      <a class="care-quick-link" href="#bathing"><i class="fa-solid fa-bath" aria-hidden="true"></i> Bathing</a>
-      <a class="care-quick-link" href="#coat-care"><i class="fa-solid fa-brush" aria-hidden="true"></i> Coat care</a>
-      <a class="care-quick-link" href="#dental-care"><i class="fa-solid fa-tooth" aria-hidden="true"></i> Dental</a>
-      <a class="care-quick-link" href="#paw-care"><i class="fa-solid fa-paw" aria-hidden="true"></i> Paws</a>
-      <a class="care-quick-link" href="#ear-eye-care"><i class="fa-solid fa-eye" aria-hidden="true"></i> Ears &amp; eyes</a>
-      <a class="care-quick-link" href="#seasonal-care"><i class="fa-solid fa-cloud-sun" aria-hidden="true"></i> Seasonal</a>
-      <a class="care-quick-link" href="#puppy-care"><i class="fa-solid fa-dog" aria-hidden="true"></i> Puppy</a>
-      <a class="care-quick-link" href="#senior-care"><i class="fa-solid fa-heart" aria-hidden="true"></i> Senior</a>
-      <a class="care-quick-link" href="#safety"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Safety</a>
-      <a class="care-quick-link" href="#vet-care"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Vet visits</a>
+    <div class="care-quick-decor care-decor-top-left" aria-hidden="true">
+      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-1"></i>
+      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-2"></i>
+    </div>
+    <div class="care-quick-decor care-decor-bottom-right" aria-hidden="true">
+      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-3"></i>
+      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-4"></i>
+    </div>
+    <div class="care-quick-header">
+      <div class="care-quick-eyebrow">
+        <span class="care-quick-line" aria-hidden="true"></span>
+        <span class="care-quick-badge"><i class="fa-solid fa-compass" aria-hidden="true"></i> Quick Navigation</span>
+        <span class="care-quick-line" aria-hidden="true"></span>
+      </div>
+      <h2 class="care-quick-title">Explore Dedicated <span>Dog Care Chapters</span></h2>
+    </div>
+    <div class="care-quick-links">
+      <a class="care-quick-link" href="#daily-care"><i class="fa-solid fa-sun" aria-hidden="true"></i><span>Daily Care</span></a>
+      <a class="care-quick-link" href="#coat-care"><i class="fa-solid fa-brush" aria-hidden="true"></i><span>Grooming</span></a>
+      <a class="care-quick-link" href="#puppy-care"><i class="fa-solid fa-dog" aria-hidden="true"></i><span>Life Stages</span></a>
+      <a class="care-quick-link" href="#safety"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Health &amp; Safety</span></a>
     </div>
   </nav>
 
@@ -761,12 +1292,57 @@
 
     const heading = document.createElement("div");
     heading.className = "care-heading";
+    const waveTop = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    waveTop.classList.add("corner-wave", "wave-tl");
+    waveTop.setAttribute("viewBox", "0 0 220 130");
+    waveTop.setAttribute("fill", "none");
+    waveTop.setAttribute("aria-hidden", "true");
+    waveTop.innerHTML = '<path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity=".7"></path><path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity=".95"></path>';
+    const waveBottom = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    waveBottom.classList.add("corner-wave", "wave-br");
+    waveBottom.setAttribute("viewBox", "0 0 220 130");
+    waveBottom.setAttribute("fill", "none");
+    waveBottom.setAttribute("aria-hidden", "true");
+    waveBottom.innerHTML = '<path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity=".7"></path><path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity=".95"></path>';
+    const makePaw = (className) => {
+      const paw = document.createElement("i");
+      paw.className = `fa-solid fa-paw paw ${className}`;
+      paw.setAttribute("aria-hidden", "true");
+      return paw;
+    };
+    const content = document.createElement("div");
+    content.className = "heading-content";
+    const label = document.createElement("span");
+    label.className = "care-heading-label";
+    const labelIcon = document.createElement("i");
+    labelIcon.className = "fa-solid fa-book-open";
+    labelIcon.setAttribute("aria-hidden", "true");
+    label.append(labelIcon, document.createTextNode(" Dog Care Guide"));
     const title = document.createElement("h2");
     title.id = `${section.id}-title`;
-    title.textContent = section.title;
+    const words = section.title.split(" ");
+    const titleAccent = document.createElement("span");
+    titleAccent.textContent = words.pop();
+    const burst = (side) => {
+      const ornament = document.createElement("span");
+      ornament.className = `heading-burst ${side}`;
+      ornament.setAttribute("aria-hidden", "true");
+      ornament.innerHTML = "<span></span><span></span><span></span>";
+      return ornament;
+    };
+    title.append(burst("left"), document.createTextNode(`${words.join(" ")} `), titleAccent, burst("right"));
     const description = document.createElement("p");
     description.textContent = section.description;
-    heading.append(title, description);
+    content.append(label, title, description);
+    heading.append(
+      waveTop,
+      waveBottom,
+      makePaw("paw-left-1"),
+      makePaw("paw-left-2"),
+      makePaw("paw-right-1"),
+      makePaw("paw-right-2"),
+      content
+    );
 
     const grid = document.createElement("div");
     grid.className = "care-card-grid";

@@ -1,0 +1,2830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Healthy Food, Happy Paws! Comprehensive Dog Food & Nutrition Guide on PetSathi - balanced diet, safe & toxic foods, feeding guide by age, feeding schedules, recipes, and FAQs.">
+  <title>Dog Food &amp; Nutrition Guide | PetSathi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets matching index.html and PetSathi theme -->
+  <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
+  <link rel="stylesheet" href="../../../css/inner.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* Font Awesome 6 Free Webfont definition - matching index.html */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+    }
+
+    /* Universal Font Awesome font protection against global.css */
+    body i,
+    body [class*="fa-"],
+    body [class*="fa-"]::before,
+    .fa-solid,
+    .fa-regular,
+    .fa-brands {
+      font-family: "Font Awesome 6 Free" !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    body .fa-solid,
+    .fa-solid {
+      font-weight: 900 !important;
+    }
+
+    body .fa-regular,
+    .fa-regular {
+      font-weight: 400 !important;
+    }
+
+    /* Scoped theme variables matching dogs/index.html */
+    :root {
+      --dog-green: #286849;
+      --dog-dark: #1d5039;
+      --dog-green-light: #eaf2e9;
+      --dog-green-border: #cbd9ce;
+      --dog-card-border: #e8ebe4;
+      --dog-cream: #fcfaf5;
+      --dog-soft: #f1f4ed;
+    }
+
+    /* Badge Strip matching Dog Index */
+    .dog-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* Section Headings matching dogs/index.html */
+    .section-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 35px;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .heading-label i {
+      font-size: 0.85rem;
+      color: #28764a;
+    }
+
+    .section-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+
+    .section-heading h2 em,
+    .section-heading h2 span {
+      color: #28764a;
+      font-style: normal;
+    }
+
+    .section-heading p {
+      max-width: 720px;
+      margin: 0;
+      color: #64736a;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* Search & Filter Section matching dogs/index.html rounded layout */
+    .filter-section {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px 26px;
+      margin-bottom: 35px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .filter-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .filter-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .filter-title i {
+      color: var(--green);
+    }
+
+    .filter-search-wrap {
+      position: relative;
+      flex: 1;
+      max-width: 360px;
+    }
+
+    .filter-search-input {
+      width: 100%;
+      padding: 10px 38px 10px 38px;
+      border: 1px solid #d5ded3;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #fafbfa;
+      color: var(--ink);
+    }
+
+    .filter-search-input:focus {
+      border-color: var(--green);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(40, 104, 73, 0.12);
+    }
+
+    .filter-search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9rem;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .search-clear-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.85rem;
+      display: none;
+      padding: 0;
+    }
+
+    .search-clear-btn:hover {
+      color: var(--ink);
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--soft);
+      border: 1px solid transparent;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #55665d;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+    }
+
+    .filter-btn:hover {
+      background: #e4ebe0;
+      color: var(--ink);
+    }
+
+    .filter-btn.active {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+      box-shadow: 0 4px 12px rgba(40, 104, 73, 0.25);
+    }
+
+    .filter-results-count {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-top: -4px;
+      display: none;
+    }
+
+    /* Grids */
+    .dog-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Media Cards (Types of Food & Safe Foods) */
+    .food-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+    }
+
+    .food-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: var(--dog-green-border);
+    }
+
+    .food-card-media {
+      position: relative;
+      height: 190px;
+      overflow: hidden;
+      background: #f0f3eb;
+    }
+
+    .food-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .food-card:hover .food-card-media img {
+      transform: scale(1.05);
+    }
+
+    .food-card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      z-index: 2;
+    }
+
+    .food-card-badge i {
+      color: var(--green);
+      font-size: 0.8rem;
+    }
+
+    .food-card-badge.badge-safe {
+      color: #237804;
+      background: #f6ffed;
+      border: 1px solid #b7eb8f;
+    }
+
+    .food-card-badge.badge-safe i {
+      color: #237804;
+    }
+
+    .food-card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .food-card-body h3,
+    .food-card-body h4 {
+      font-size: 1.15rem;
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .food-card-body p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin: 0 0 14px;
+      color: var(--muted);
+      flex-grow: 1;
+    }
+
+    .food-card-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      width: 100%;
+    }
+
+    .food-tag {
+      font-size: 0.74rem;
+      padding: 3px 10px;
+      background: var(--soft);
+      border-radius: 999px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Icon Nutrient Cards (Centered align per reviewer feedback) */
+    .nutrient-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .nutrient-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: var(--dog-green-border);
+    }
+
+    .nutrient-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .nutrient-card:hover .nutrient-icon-box {
+      background: var(--green);
+      color: white;
+    }
+
+    .nutrient-card h3 {
+      font-size: 1.08rem;
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .nutrient-card p {
+      font-size: 0.86rem;
+      line-height: 1.55;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Toxic Foods Section - PetSathi Green, Cream & White Theme */
+    .toxic-section-container {
+      background: #fbfbf9;
+      border: 1px solid #e8ede5;
+      border-radius: 28px;
+      padding: 38px 34px;
+      margin-block: 20px;
+    }
+
+    .toxic-card {
+      background: white;
+      border: 1px solid #e5ebe2;
+      border-radius: 18px;
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .toxic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(40, 104, 73, 0.08);
+      border-color: #cbd9ce;
+    }
+
+    .toxic-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: #fdf5ea;
+      color: #b26a1b;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .toxic-card:hover .toxic-icon-box {
+      background: #f8ebd5;
+    }
+
+    .toxic-card h3 {
+      font-size: 1.08rem;
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .toxic-tag-subtle {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #9e5b10;
+      background: #fcf4e8;
+      border: 1px solid #f4dfbe;
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .toxic-card p {
+      font-size: 0.85rem;
+      line-height: 1.55;
+      margin: 0;
+      color: #616e66;
+    }
+
+    .toxic-emergency-note {
+      background: #fbf8f2;
+      border: 1px solid #ece4d2;
+      border-radius: 14px;
+      padding: 14px 20px;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: #55442a;
+    }
+
+    .toxic-emergency-note i {
+      font-size: 1.25rem;
+      color: #b26a1b;
+      flex-shrink: 0;
+    }
+
+    /* Safe Food Section Note */
+    .safe-prep-banner {
+      background: #f6ffed;
+      border: 1px solid #b7eb8f;
+      border-radius: 14px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 26px;
+      font-size: 0.88rem;
+      color: #237804;
+    }
+
+    .safe-prep-banner i {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    /* Stage Cards (Age Guide) */
+    .stage-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+    }
+
+    .stage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: var(--dog-green-border);
+    }
+
+    .stage-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .stage-badge i {
+      font-size: 0.8rem;
+    }
+
+    .stage-card h3 {
+      font-size: 1.2rem;
+      margin: 0 0 8px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .stage-card p {
+      font-size: 0.86rem;
+      line-height: 1.55;
+      color: var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .stage-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--ink);
+      width: 100%;
+      text-align: left;
+    }
+
+    .stage-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.45;
+    }
+
+    .stage-card ul li span {
+      color: var(--green);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Schedule Cards */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .schedule-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .schedule-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--dog-green-border);
+    }
+
+    .schedule-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #eaf2e9;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .schedule-card h4 {
+      font-size: 0.96rem;
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .schedule-card p {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Recipe Cards */
+    .recipe-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 14px rgba(35, 57, 43, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .recipe-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: var(--dog-green-border);
+    }
+
+    .recipe-card-media {
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+      background: #f0f3eb;
+    }
+
+    .recipe-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .recipe-card:hover .recipe-card-media img {
+      transform: scale(1.05);
+    }
+
+    .recipe-card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .recipe-card-body h3 {
+      font-size: 1.15rem;
+      margin: 0 0 12px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .recipe-section-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--green);
+      margin: 6px 0 6px;
+    }
+
+    .recipe-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px;
+      font-size: 0.84rem;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: left;
+      width: 100%;
+    }
+
+    .recipe-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .recipe-list li i {
+      font-size: 0.4rem;
+      color: var(--green);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .recipe-precaution {
+      background: #fdfaf3;
+      border: 1px solid #fae6c6;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.78rem;
+      color: #7c5211;
+      margin-top: auto;
+      text-align: left;
+      width: 100%;
+      line-height: 1.45;
+    }
+
+    .recipe-precaution i {
+      color: #c97d10;
+      margin-right: 4px;
+    }
+
+    /* FAQ Accordion */
+    .faq-accordion {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .faq-item:hover {
+      border-color: var(--dog-green-border);
+    }
+
+    .faq-item.active {
+      border-color: var(--green);
+      box-shadow: 0 4px 18px rgba(40, 104, 73, 0.08);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 18px 22px;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      text-align: left;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .faq-question:hover {
+      color: var(--green);
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #eaf2e9;
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      color: var(--green);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      background: var(--green);
+      color: white;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 22px 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      border-top: 1px solid #f0f3ee;
+      padding-top: 14px;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      .schedule-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .dog-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .toxic-section-container {
+        padding: 26px 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .dog-grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .schedule-grid {
+        grid-template-columns: 1fr;
+      }
+      .filter-header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-search-wrap {
+        max-width: none;
+      }
+      .filter-section {
+        padding: 18px;
+      }
+    }
+  
+
+    /* Quick Guide Navigation Strip - Match Reference Design */
+    .guides-nav-strip {
+      position: relative;
+      background: #ffffff;
+      margin: 40px auto 35px;
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      padding: 42px 36px 38px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
+    }
+
+    /* Decorative Corner Paws */
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 0 0 100% 0;
+    }
+
+    .decor-bottom-right {
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 100% 0 0 0;
+    }
+
+    .decor-paw {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .decor-paw-1 {
+      top: 14px;
+      left: 28px;
+      font-size: 28px;
+      transform: rotate(-15deg);
+    }
+
+    .decor-paw-2 {
+      top: 38px;
+      left: 12px;
+      font-size: 19px;
+      transform: rotate(20deg);
+    }
+
+    .decor-paw-3 {
+      bottom: 36px;
+      right: 14px;
+      font-size: 19px;
+      transform: rotate(-25deg);
+    }
+
+    .decor-paw-4 {
+      bottom: 14px;
+      right: 28px;
+      font-size: 28px;
+      transform: rotate(15deg);
+    }
+
+    /* Centered Header & Pill Badge */
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .quick-nav-line {
+      height: 1px;
+      width: 110px;
+      background: #d6ead9;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #f4faf5;
+      border: 1px solid #b7deb8;
+      border-radius: 9999px;
+      color: #1e6f43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+    }
+
+    .quick-nav-badge i {
+      font-size: 0.95rem;
+      line-height: 1;
+      color: #1e6f43;
+      flex-shrink: 0;
+    }
+
+    .quick-nav-title {
+      font-family: 'Manrope', sans-serif !important;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      color: #1a251e;
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .quick-nav-title span {
+      color: #1e6f43;
+      font-weight: 800;
+    }
+
+    /* Quick Nav Search Input & Filter Pill Styling */
+    .guides-nav-search-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+
+    .guides-nav-search-bar {
+      display: flex;
+      align-items: center;
+      background: #fafcf7;
+      border: 1.5px solid #cce4d2;
+      border-radius: 9999px;
+      padding: 6px 18px;
+      box-shadow: 0 2px 10px rgba(35, 80, 50, 0.05);
+      transition: all 0.25s ease;
+    }
+
+    .guides-nav-search-bar:focus-within {
+      background: #ffffff;
+      border-color: #237847;
+      box-shadow: 0 4px 18px rgba(35, 120, 71, 0.16);
+    }
+
+    .guides-nav-search-icon {
+      color: #237847;
+      font-size: 1rem;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .guides-nav-search-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      outline: none;
+      font-family: 'DM Sans', 'Manrope', sans-serif;
+      font-size: 0.95rem;
+      color: #1a251e;
+      padding: 8px 0;
+    }
+
+    .guides-nav-search-input::placeholder {
+      color: #7a8c80;
+    }
+
+    .guides-nav-clear-btn {
+      background: none;
+      border: none;
+      color: #8fa094;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 4px 8px;
+      margin-left: 6px;
+      border-radius: 50%;
+      display: none;
+      transition: color 0.2s ease;
+    }
+
+    .guides-nav-clear-btn:hover {
+      color: #237847;
+    }
+
+    .search-feedback-text {
+      text-align: center;
+      font-size: 0.88rem;
+      color: #246b43;
+      font-weight: 600;
+      margin-top: 10px;
+      display: none;
+    }
+
+    /* Navigation Pills Grid */
+    .guides-nav-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+      margin: 0;
+    }
+
+    button.guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 18px 9px 9px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: inherit;
+      width: 100%;
+      text-align: left;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    button.guide-nav-item:hover {
+      background: #e4f4e8;
+      border-color: #237847;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    }
+
+    button.guide-nav-item.active {
+      background: #237847;
+      border-color: #237847;
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.2);
+    }
+
+    .guide-nav-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 1.15rem;
+      line-height: 1;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .guide-nav-icon i {
+      display: inline-block;
+      line-height: 1;
+    }
+
+    button.guide-nav-item:hover .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    button.guide-nav-item.active .guide-nav-icon {
+      background: #ffffff;
+      color: #237847;
+    }
+
+    .guide-nav-label {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1c2b20;
+      white-space: nowrap;
+    }
+
+    button.guide-nav-item.active .guide-nav-label {
+      color: #ffffff;
+    }
+
+    /* Dog Topics & Quick Info Heading Card - Exact User Specification */
+    .dog-topics-heading {
+      position: relative;
+      max-width: 1400px;
+      margin: 45px auto 35px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+    }
+
+    /* Curvy decorative wave layers matching reference image */
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .dog-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .dog-topics-heading h2 span {
+      color: #28764a;
+    }
+
+    /* Heading Radiating Rays / Sparkles - Clean Fan Radiating from Text */
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    /* Left burst: 3 rays radiating out to the left from the right edge */
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+      transform: rotate(0deg);
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    /* Right burst: 3 rays radiating out to the right from the left edge */
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+      transform: rotate(0deg);
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .dog-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* Decorative Paws (Font Awesome) - Exactly 2 on left, 2 on right */
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 58px;
+      transform: rotate(-25deg);
+    }
+
+    .paw-right-2 {
+      bottom: 24px;
+      right: 118px;
+      font-size: 38px;
+      transform: rotate(15deg);
+    }
+
+    .paw i,
+    .dog-topics-heading i,
+    .dog-topics-heading [class*="fa-"] {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      line-height: 1 !important;
+    }
+
+    /* Life Stage Cards Alignment Fix */
+    .stage-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 30px 26px;
+      background: #ffffff;
+      border: 1px solid #dcebc9;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(35, 75, 45, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .stage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 28px rgba(35, 100, 55, 0.12);
+      border-color: #246b43;
+    }
+
+    .stage-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      color: #237847;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .stage-badge i {
+      font-size: 0.85rem;
+    }
+
+    .stage-card h3 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1e3325;
+      margin: 0 0 10px;
+    }
+
+    .stage-card p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #55665b;
+      margin: 0 0 20px;
+    }
+
+    .stage-card ul {
+      margin-top: auto;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .stage-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #2b3b30;
+    }
+
+    .stage-card ul li span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #edf7f0;
+      color: #237847;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Toxic Section Theme Alignment - 100% PetSathi Green & Cream */
+    .toxic-section-container {
+      background: #fafcf7;
+      border: 1px solid #dcebc9;
+      border-radius: 32px;
+      padding: 38px 34px;
+      margin-block: 20px;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+    }
+
+    .toxic-card {
+      background: #ffffff;
+      border: 1px solid #dceade;
+      border-radius: 20px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .toxic-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(40, 104, 73, 0.1);
+      border-color: #246b43;
+    }
+
+    .toxic-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: #edf7f0;
+      color: #246b43;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      transition: all 0.25s ease;
+    }
+
+    .toxic-card:hover .toxic-icon-box {
+      background: #246b43;
+      color: #ffffff;
+    }
+
+    .toxic-tag-subtle {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #246b43;
+      background: #edf6df;
+      border: 1px solid #cce4d2;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .toxic-emergency-note {
+      background: #f4faf5;
+      border: 1px solid #cce4d2;
+      border-radius: 16px;
+      padding: 16px 22px;
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: #1e3325;
+    }
+
+    .toxic-emergency-note i {
+      font-size: 1.35rem;
+      color: #246b43;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .dog-topics-heading {
+        margin: 25px 0;
+        padding: 35px 16px 30px;
+        border-radius: 24px;
+      }
+
+      .corner-wave {
+        width: 170px;
+        height: 110px;
+      }
+
+      .dog-topics-heading h2 {
+        font-size: clamp(20px, 5vw, 26px);
+        gap: 8px;
+      }
+
+      .dog-topics-heading p {
+        font-size: 14px;
+      }
+
+      .paw-left-1 {
+        left: 35px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-left-2 {
+        left: 18px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .paw-right-1 {
+        right: 25px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-right-2 {
+        right: 65px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .guides-nav-strip {
+        padding: 26px 16px;
+      }
+
+      .guides-nav-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Header and Navigation (Preserved exactly from PetSathi) -->
+<header class="site-header">
+  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="../../../../index.html">Home</a>
+    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-explore">
+        <a href="index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a href="../other/reptiles.html">Reptiles</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
+    </div>
+    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
+    </div>
+    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <!-- 1. Hero Section -->
+  <section class="hero section-wrap" id="nutrition-hero">
+    <div class="hero-copy">
+      <div class="dog-badge-strip">🥗 PetSathi • Dog Food &amp; Nutrition Guide</div>
+      <h1>Healthy Food, <em>Happy Paws!</em></h1>
+      <p>
+        Fuel your dog's vitality with wholesome, species-appropriate nourishment. Proper nutrition strengthens the immune system, promotes a glossy coat, protects lean muscles, and fuels every enthusiastic tail wag. Discover balanced diets, safe human snacks, feeding schedules, and veterinary-approved guidelines.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#nutrition-basics" id="hero-cta-explore">Explore Nutrition Guide ↓</a>
+        <a class="button button-outline" href="index.html" id="hero-cta-back">← Back to Dog Guide</a>
+      </div>
+      <div class="hero-note">♥ &nbsp; Dedicated to healthy digestion and joyful meals.</div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+      <img
+        src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1000&q=85"
+        alt="Fresh wholesome dog food with balanced meat, vegetables, and kibble in a bowl"
+        class="hero-photo"
+        id="hero-food-image"
+      >
+      <div class="floating-card card-top">
+        🥩 <span><b>100% Balanced Nutrition</b><small>Proteins, fats &amp; micronutrients</small></span>
+      </div>
+      <div class="floating-card card-bottom">
+        🐾 <span><b>Tail-Wagging Vitality</b><small>Energy for walks &amp; playful days</small></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Guide Navigation & Food Filter Strip - Matching Dog Index Layout -->
+  <div class="guides-nav-strip" id="filter-controls-area">
+    <!-- Decorative Corner Paws -->
+    <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+      <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+      <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
+    </div>
+
+    <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+      <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+      <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+    </div>
+
+    <!-- Centered Header -->
+    <div class="quick-nav-header">
+      <div class="quick-nav-eyebrow-wrap">
+        <span class="quick-nav-line"></span>
+        <div class="quick-nav-badge">
+          <i class="fa-regular fa-compass quick-nav-badge-icon" aria-hidden="true"></i>
+          <span>QUICK NAVIGATION &amp; FILTER</span>
+        </div>
+        <span class="quick-nav-line"></span>
+      </div>
+      <h3 class="quick-nav-title">Explore Canine <span>Nutrition &amp; Diet Guide</span></h3>
+    </div>
+
+    <!-- Search Input Bar -->
+    <div class="guides-nav-search-wrap">
+      <div class="guides-nav-search-bar">
+        <i class="fa-solid fa-magnifying-glass guides-nav-search-icon" aria-hidden="true"></i>
+        <input
+          type="text"
+          id="food-search-box"
+          class="guides-nav-search-input"
+          placeholder="Search foods, nutrients, feeding tips, toxic items..."
+          aria-label="Search Dog Food and Nutrition Guide"
+        >
+        <button id="clear-search-btn" class="guides-nav-clear-btn" aria-label="Clear search input" type="button">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="search-feedback" class="search-feedback-text" role="status" aria-live="polite"></div>
+    </div>
+
+    <!-- 5 Quick Filter Navigation Pills matching Reference Design -->
+    <div class="guides-nav-grid">
+      <button class="guide-nav-item filter-btn active" data-filter="all" type="button">
+        <span class="guide-nav-icon">
+          <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+        </span>
+        <span class="guide-nav-label">All Topics</span>
+      </button>
+
+      <button class="guide-nav-item filter-btn" data-filter="nutrition" type="button">
+        <span class="guide-nav-icon">
+          <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+        </span>
+        <span class="guide-nav-label">Nutrition</span>
+      </button>
+
+      <button class="guide-nav-item filter-btn" data-filter="types" type="button">
+        <span class="guide-nav-icon">
+          <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+        </span>
+        <span class="guide-nav-label">Types of Food</span>
+      </button>
+
+      <button class="guide-nav-item filter-btn" data-filter="safe-foods" type="button">
+        <span class="guide-nav-icon">
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+        </span>
+        <span class="guide-nav-label">Safe Foods</span>
+      </button>
+
+      <button class="guide-nav-item filter-btn" data-filter="toxic-foods" type="button">
+        <span class="guide-nav-icon">
+          <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+        </span>
+        <span class="guide-nav-label">Toxic Foods</span>
+      </button>
+
+      <button class="guide-nav-item filter-btn" data-filter="feeding-guide" type="button">
+        <span class="guide-nav-icon">
+          <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+        </span>
+        <span class="guide-nav-label">Feeding Guide</span>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- Section 1: Understanding Dog Nutrition -->
+  <section class="section section-wrap searchable-section" id="nutrition-basics" data-category="nutrition">
+
+          <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+            Canine Dietary Foundation
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Understanding <span>Dog Nutrition</span> Essentials
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Every dog requires a balanced combination of macro and micronutrients to thrive across every life stage.
+          </p>
+        </div>
+      </div>
+
+    <div class="dog-grid-3">
+      <!-- Protein -->
+      <article class="nutrient-card searchable-item" data-title="Protein" data-tags="protein muscle amino acids growth tissue repair">
+        <div class="nutrient-icon-box">
+          <i class="fa-solid fa-drumstick-bite" aria-hidden="true"></i>
+        </div>
+        <h3>Protein</h3>
+        <p>
+          Supplies essential amino acids for strong muscle development, cellular renewal, enzyme production, and immune resilience.
+        </p>
+      </article>
+
+      <!-- Healthy Fats -->
+      <article class="nutrient-card searchable-item" data-title="Healthy Fats" data-tags="healthy fats omega-3 omega-6 skin coat brain energy">
+        <div class="nutrient-icon-box">
+          <i class="fa-solid fa-fish" aria-hidden="true"></i>
+        </div>
+        <h3>Healthy Fats</h3>
+        <p>
+          Concentrated energy source rich in Omega-3 and Omega-6 fatty acids that support brain function, cushion joints, and nourish a glossy coat.
+        </p>
+      </article>
+
+      <!-- Carbohydrates -->
+      <article class="nutrient-card searchable-item" data-title="Carbohydrates" data-tags="carbohydrates energy fiber digestive health grains">
+        <div class="nutrient-icon-box">
+          <i class="fa-solid fa-wheat-awn" aria-hidden="true"></i>
+        </div>
+        <h3>Carbohydrates</h3>
+        <p>
+          Provides digestible glucose for active daily energy alongside dietary fiber that sustains gut microbiome health and bowel regularity.
+        </p>
+      </article>
+
+      <!-- Vitamins -->
+      <article class="nutrient-card searchable-item" data-title="Vitamins" data-tags="vitamins vision immunity metabolic bone teeth antioxidant">
+        <div class="nutrient-icon-box">
+          <i class="fa-solid fa-capsules" aria-hidden="true"></i>
+        </div>
+        <h3>Vitamins</h3>
+        <p>
+          Vital organic compounds (A, B-complex, D, E, and K) that facilitate metabolic processes, sharpen vision, and maintain cellular defenses.
+        </p>
+      </article>
+
+      <!-- Minerals -->
+      <article class="nutrient-card searchable-item" data-title="Minerals" data-tags="minerals calcium phosphorus iron skeletal nerve">
+        <div class="nutrient-icon-box">
+          <i class="fa-solid fa-bone" aria-hidden="true"></i>
+        </div>
+        <h3>Minerals</h3>
+        <p>
+          Inorganic elements like calcium, phosphorus, magnesium, and iron ensuring strong skeletal density, nerve transmission, and oxygen flow.
+        </p>
+      </article>
+
+      <!-- Water -->
+      <article class="nutrient-card searchable-item" data-title="Water" data-tags="water hydration temperature circulation kidneys clean">
+        <div class="nutrient-icon-box">
+          <i class="fa-solid fa-droplet" aria-hidden="true"></i>
+        </div>
+        <h3>Water</h3>
+        <p>
+          The most critical nutrient. Regulates internal body temperature, lubricates joints, aids nutrient circulation, and flushes kidney waste.
+        </p>
+      </article>
+    </div>
+  
+  </section>
+
+  <!-- Section 2: Types of Dog Food -->
+  <section class="section section-wrap searchable-section" id="food-types" data-category="types">
+
+          <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+            Dietary Options
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Types of <span>Dog Food</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Explore the primary feeding styles available to pet parents and choose the option best suited to your dog’s lifestyle and health profile.
+          </p>
+        </div>
+      </div>
+
+    <div class="dog-grid-3">
+      <!-- Dry Dog Food (Kibble) -->
+      <article class="food-card searchable-item" data-title="Dry Dog Food Kibble" data-tags="kibble dry food dental shelf life convenient crunchy">
+        <div class="food-card-media">
+          <span class="food-card-badge"><i class="fa-solid fa-bowl-food" aria-hidden="true"></i> Most Popular</span>
+          <img
+            src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=600&q=80"
+            alt="Bowl filled with crunchy dry kibble dog food"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h3>Dry Dog Food (Kibble)</h3>
+          <p>
+            Economical, convenient to store, and crunchy. Helps scrape tartar off teeth and provides complete, pre-measured daily nutrition.
+          </p>
+          <div class="food-card-tags">
+            <span class="food-tag">Convenient</span>
+            <span class="food-tag">Long Shelf Life</span>
+            <span class="food-tag">Dental Support</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Wet Dog Food -->
+      <article class="food-card searchable-item" data-title="Wet Dog Food" data-tags="wet canned food gravy hydration palatable moisture">
+        <div class="food-card-media">
+          <span class="food-card-badge"><i class="fa-solid fa-droplet" aria-hidden="true"></i> High Moisture</span>
+          <img
+            src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=600&q=80"
+            alt="Tasty canned wet dog food in a dish"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h3>Wet Dog Food</h3>
+          <p>
+            High in moisture and rich in savory aroma. Ideal for picky eaters, senior dogs with missing teeth, or pets requiring extra daily hydration.
+          </p>
+          <div class="food-card-tags">
+            <span class="food-tag">Hydrating</span>
+            <span class="food-tag">Highly Palatable</span>
+            <span class="food-tag">Easy to Chew</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Homemade Dog Food -->
+      <article class="food-card searchable-item" data-title="Homemade Dog Food" data-tags="homemade cooked whole food fresh ingredients balanced">
+        <div class="food-card-media">
+          <span class="food-card-badge"><i class="fa-solid fa-kitchen-set" aria-hidden="true"></i> Fresh &amp; Whole</span>
+          <img
+            src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80"
+            alt="Freshly cooked whole food dog meal prepared at home"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h3>Homemade Dog Food</h3>
+          <p>
+            Prepared using real meats, grains, and dog-safe vegetables. Allows complete control over ingredients, though requires vet formulation.
+          </p>
+          <div class="food-card-tags">
+            <span class="food-tag">Whole Foods</span>
+            <span class="food-tag">Customizable</span>
+            <span class="food-tag">No Preservatives</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Raw Food Diet -->
+      <article class="food-card searchable-item" data-title="Raw Food Diet BARF" data-tags="raw food diet barf meat organs natural ancestral">
+        <div class="food-card-media">
+          <span class="food-card-badge"><i class="fa-solid fa-drumstick-bite" aria-hidden="true"></i> Ancestral Diet</span>
+          <img
+            src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=600&q=80"
+            alt="Raw cut meat and organs prepared for canine diet"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h3>Raw Food Diet (BARF)</h3>
+          <p>
+            Composed of uncooked meats, organ meats, and edible bones. Requires meticulous hygienic handling to prevent bacterial risks.
+          </p>
+          <div class="food-card-tags">
+            <span class="food-tag">Natural Enzymes</span>
+            <span class="food-tag">High Protein</span>
+            <span class="food-tag">Requires Care</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Prescription Dog Food -->
+      <article class="food-card searchable-item" data-title="Prescription Dog Food Veterinary Diet" data-tags="prescription medical veterinary renal allergy kidney gastrointestinal">
+        <div class="food-card-media">
+          <span class="food-card-badge"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Clinical Care</span>
+          <img
+            src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=600&q=80"
+            alt="Veterinary clinical diet bowl for specific health issues"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h3>Prescription Dog Food</h3>
+          <p>
+            Scientifically calibrated therapeutic diets prescribed by vets to manage kidney disease, food allergies, diabetes, and bladder stones.
+          </p>
+          <div class="food-card-tags">
+            <span class="food-tag">Vet Prescribed</span>
+            <span class="food-tag">Therapeutic</span>
+            <span class="food-tag">Targeted Health</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  
+  </section>
+
+  <!-- Section 3: Safe Foods for Dogs -->
+  <section class="section section-wrap searchable-section" id="safe-foods" data-category="safe-foods">
+
+          <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            Dog-Friendly Nutrition
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Safe Foods for <span>Dogs</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Healthy human whole foods you can safely offer as nutritious treats or wholesome meal toppers.
+          </p>
+        </div>
+      </div>
+
+    <div class="safe-prep-banner">
+      <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+      <div>
+        <strong>Safe Feeding Practice:</strong> Always serve human foods plain—without salt, butter, garlic, onions, or heavy seasonings. Introduce new foods gradually in small bite-sized portions to monitor your dog's digestion.
+      </div>
+    </div>
+
+    <div class="dog-grid-3">
+      <!-- Chicken -->
+      <article class="food-card searchable-item" data-title="Chicken" data-tags="chicken poultry lean meat protein boiled safe">
+        <div class="food-card-media">
+          <span class="food-card-badge badge-safe"><i class="fa-solid fa-check" aria-hidden="true"></i> Safe</span>
+          <img
+            src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=500&q=80"
+            alt="Boiled lean chicken breast for dogs"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h4>Chicken</h4>
+          <p>Lean, easily digestible protein. Serve plain boiled or baked with skin and cooked bones strictly removed.</p>
+          <div class="food-card-tags"><span class="food-tag">Lean Protein</span><span class="food-tag">Easy to Digest</span></div>
+        </div>
+      </article>
+
+      <!-- Carrots -->
+      <article class="food-card searchable-item" data-title="Carrots" data-tags="carrots crunchy vegetable beta-carotene vitamin A dental safe">
+        <div class="food-card-media">
+          <span class="food-card-badge badge-safe"><i class="fa-solid fa-check" aria-hidden="true"></i> Safe</span>
+          <img
+            src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&w=500&q=80"
+            alt="Fresh crunchy orange carrots"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h4>Carrots</h4>
+          <p>Low-calorie crunchy snack packed with beta-carotene and fiber. Chewing raw carrots also promotes cleaner teeth.</p>
+          <div class="food-card-tags"><span class="food-tag">Low Calorie</span><span class="food-tag">Dental Health</span></div>
+        </div>
+      </article>
+
+      <!-- Apples -->
+      <article class="food-card searchable-item" data-title="Apples" data-tags="apples fruit vitamin C fiber sweet snack safe">
+        <div class="food-card-media">
+          <span class="food-card-badge badge-safe"><i class="fa-solid fa-check" aria-hidden="true"></i> Safe</span>
+          <img
+            src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=500&q=80"
+            alt="Crisp sliced red apples for pets"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h4>Apples</h4>
+          <p>Provides vitamins A &amp; C plus dietary fiber. Always core completely and discard seeds, which contain trace cyanide.</p>
+          <div class="food-card-tags"><span class="food-tag">Vitamins A &amp; C</span><span class="food-tag">Remove Seeds</span></div>
+        </div>
+      </article>
+
+      <!-- Pumpkin -->
+      <article class="food-card searchable-item" data-title="Pumpkin" data-tags="pumpkin digestion diarrhea constipation fiber safe">
+        <div class="food-card-media">
+          <span class="food-card-badge badge-safe"><i class="fa-solid fa-check" aria-hidden="true"></i> Safe</span>
+          <img
+            src="https://images.unsplash.com/photo-1506917728037-b6af01a7d403?auto=format&fit=crop&w=500&q=80"
+            alt="Fresh pure pumpkin puree"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h4>Pumpkin</h4>
+          <p>Superfood for canine tummies. Soothes diarrhea and eases constipation. Use 100% pure pumpkin, never sugary pie mix.</p>
+          <div class="food-card-tags"><span class="food-tag">Gut Soother</span><span class="food-tag">Soluble Fiber</span></div>
+        </div>
+      </article>
+
+      <!-- Rice -->
+      <article class="food-card searchable-item" data-title="Rice" data-tags="rice plain boiled white brown grains bland diet safe">
+        <div class="food-card-media">
+          <span class="food-card-badge badge-safe"><i class="fa-solid fa-check" aria-hidden="true"></i> Safe</span>
+          <img
+            src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=500&q=80"
+            alt="Steamed plain white rice bowl"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h4>Rice</h4>
+          <p>Gentle and easily digestible carbohydrate. Plain boiled white or brown rice is the gold standard for upset stomachs.</p>
+          <div class="food-card-tags"><span class="food-tag">Bland Diet</span><span class="food-tag">Gentle on Gut</span></div>
+        </div>
+      </article>
+
+      <!-- Banana -->
+      <article class="food-card searchable-item" data-title="Banana" data-tags="banana potassium fruit magnesium sweet treat safe">
+        <div class="food-card-media">
+          <span class="food-card-badge badge-safe"><i class="fa-solid fa-check" aria-hidden="true"></i> Safe</span>
+          <img
+            src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=500&q=80"
+            alt="Fresh yellow banana pieces"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h4>Banana</h4>
+          <p>Rich in potassium, magnesium, and vitamin B6. Offer in moderate portions as an occasional sweet reward.</p>
+          <div class="food-card-tags"><span class="food-tag">Potassium</span><span class="food-tag">Moderate Sugar</span></div>
+        </div>
+      </article>
+
+      <!-- Eggs -->
+      <article class="food-card searchable-item" data-title="Eggs" data-tags="eggs cooked scrambled protein amino acids safe">
+        <div class="food-card-media">
+          <span class="food-card-badge badge-safe"><i class="fa-solid fa-check" aria-hidden="true"></i> Safe</span>
+          <img
+            src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=500&q=80"
+            alt="Boiled farm fresh egg for dog treat"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h4>Eggs</h4>
+          <p>Complete nutritional profile with fatty acids and vitamins. Serve thoroughly cooked (boiled or scrambled) with no butter.</p>
+          <div class="food-card-tags"><span class="food-tag">Complete Protein</span><span class="food-tag">Serve Cooked</span></div>
+        </div>
+      </article>
+
+      <!-- Sweet Potato -->
+      <article class="food-card searchable-item" data-title="Sweet Potato" data-tags="sweet potato dietary fiber vitamin A cooked safe">
+        <div class="food-card-media">
+          <span class="food-card-badge badge-safe"><i class="fa-solid fa-check" aria-hidden="true"></i> Safe</span>
+          <img
+            src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=600&q=80"
+            alt="Steamed nourishing sweet potato"
+            loading="lazy"
+          >
+        </div>
+        <div class="food-card-body">
+          <h4>Sweet Potato</h4>
+          <p>Loaded with dietary fiber and antioxidants. Steam or bake plain and serve mashed or chopped into small soft cubes.</p>
+          <div class="food-card-tags"><span class="food-tag">Antioxidants</span><span class="food-tag">Digestive Aid</span></div>
+        </div>
+      </article>
+    </div>
+  
+  </section>
+
+  <!-- Section 4: Toxic Foods to Avoid -->
+  <section class="section section-wrap searchable-section" id="toxic-foods" data-category="toxic-foods">
+
+    <div class="toxic-section-container">
+            <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+            Dietary Hazards to Avoid
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Toxic Foods – <span>Foods Dogs Should Avoid</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            These human foods contain substances harmful to canine metabolism and should be kept safely away from your dog.
+          </p>
+        </div>
+      </div>
+
+      <div class="dog-grid-3">
+        <!-- Chocolate -->
+        <article class="toxic-card searchable-item" data-title="Chocolate" data-tags="chocolate theobromine toxicity poison dangerous toxic">
+          <div class="toxic-icon-box">
+            <i class="fa-solid fa-cookie-bite" aria-hidden="true"></i>
+          </div>
+          <h3>
+            <span>Chocolate</span>
+            <span class="toxic-tag-subtle">Avoid Completely</span>
+          </h3>
+          <p>
+            Contains theobromine and caffeine. Can cause rapid heart rate, severe vomiting, seizures, muscle tremors, and fatal cardiac failure.
+          </p>
+        </article>
+
+        <!-- Grapes and Raisins -->
+        <article class="toxic-card searchable-item" data-title="Grapes and Raisins" data-tags="grapes raisins kidney failure renal poison toxic">
+          <div class="toxic-icon-box">
+            <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+          </div>
+          <h3>
+            <span>Grapes &amp; Raisins</span>
+            <span class="toxic-tag-subtle">Severe Hazard</span>
+          </h3>
+          <p>
+            Even minimal quantities can trigger acute, sudden kidney failure in dogs. Keep all fresh grapes and dried raisins strictly out of reach.
+          </p>
+        </article>
+
+        <!-- Onion and Garlic -->
+        <article class="toxic-card searchable-item" data-title="Onion and Garlic" data-tags="onion garlic allium red blood cells anemia toxic">
+          <div class="toxic-icon-box">
+            <i class="fa-solid fa-plant-wilt" aria-hidden="true"></i>
+          </div>
+          <h3>
+            <span>Onion &amp; Garlic</span>
+            <span class="toxic-tag-subtle">Avoid Completely</span>
+          </h3>
+          <p>
+            Allium species destroy red blood cells, causing hemolytic anemia, weakness, breathlessness, and organ damage. Includes powders.
+          </p>
+        </article>
+
+        <!-- Xylitol -->
+        <article class="toxic-card searchable-item" data-title="Xylitol Artificial Sweetener" data-tags="xylitol sweetener gum peanut butter hypoglycemia liver toxic">
+          <div class="toxic-icon-box">
+            <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
+          </div>
+          <h3>
+            <span>Xylitol (Sweetener)</span>
+            <span class="toxic-tag-subtle">Critical Risk</span>
+          </h3>
+          <p>
+            Found in sugar-free gum, candy, and peanut butter. Triggers rapid insulin release causing life-threatening hypoglycemia and liver collapse.
+          </p>
+        </article>
+
+        <!-- Macadamia Nuts -->
+        <article class="toxic-card searchable-item" data-title="Macadamia Nuts" data-tags="macadamia nuts weakness paralysis hyperthermia toxic">
+          <div class="toxic-icon-box">
+            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+          </div>
+          <h3>
+            <span>Macadamia Nuts</span>
+            <span class="toxic-tag-subtle">Harmful</span>
+          </h3>
+          <p>
+            Causes neurological distress, hind limb weakness, muscle tremors, vomiting, and elevated body temperature within 12 hours of ingestion.
+          </p>
+        </article>
+
+        <!-- Alcohol -->
+        <article class="toxic-card searchable-item" data-title="Alcohol" data-tags="alcohol beer wine ethanol intoxication coma toxic">
+          <div class="toxic-icon-box">
+            <i class="fa-solid fa-ban" aria-hidden="true"></i>
+          </div>
+          <h3>
+            <span>Alcohol &amp; Ethanol</span>
+            <span class="toxic-tag-subtle">Severe Hazard</span>
+          </h3>
+          <p>
+            Canine livers cannot process ethanol. Small sips cause alcohol poisoning, severe central nervous system depression, and respiratory arrest.
+          </p>
+        </article>
+
+        <!-- Coffee and Caffeine -->
+        <article class="toxic-card searchable-item" data-title="Coffee and Caffeine" data-tags="coffee tea caffeine palpitations tachycardia toxic">
+          <div class="toxic-icon-box">
+            <i class="fa-solid fa-mug-hot" aria-hidden="true"></i>
+          </div>
+          <h3>
+            <span>Coffee &amp; Caffeine</span>
+            <span class="toxic-tag-subtle">Dangerous</span>
+          </h3>
+          <p>
+            Coffee grounds, energy drinks, and tea bags elevate blood pressure and cause dangerous cardiac arrhythmias, hyperactivity, and tremors.
+          </p>
+        </article>
+
+        <!-- Cooked Bones -->
+        <article class="toxic-card searchable-item" data-title="Cooked Bones" data-tags="cooked bones splinter choking perforation obstruction toxic">
+          <div class="toxic-icon-box">
+            <i class="fa-solid fa-bone" aria-hidden="true"></i>
+          </div>
+          <h3>
+            <span>Cooked Bones</span>
+            <span class="toxic-tag-subtle">Choking Hazard</span>
+          </h3>
+          <p>
+            Cooking makes bones brittle. They splinter into sharp shards that can puncture the esophagus, stomach wall, or cause fatal bowel obstructions.
+          </p>
+        </article>
+      </div>
+
+      <div class="toxic-emergency-note">
+        <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+        <span><strong>Emergency Note:</strong> If your dog consumes any toxic item, immediately consult a licensed veterinarian or contact an emergency pet poison helpline. Do not induce vomiting without professional guidance.</span>
+      </div>
+    </div>
+  
+  </section>
+
+  <!-- Section 5: Feeding Guide According to Age -->
+  <section class="section section-wrap searchable-section" id="feeding-age" data-category="feeding-guide">
+
+          <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            Life Stage Nutrition
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Feeding Guide <span>According to Age</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Nutritional demands evolve dramatically from rapid puppy growth through mature adulthood to graceful golden years.
+          </p>
+        </div>
+      </div>
+
+    <div class="dog-grid-3">
+      <!-- Puppies -->
+      <article class="stage-card searchable-item" data-title="Puppies Feeding Guide" data-tags="puppy puppies feeding growth calories protein frequency small portions">
+        <span class="stage-badge"><i class="fa-solid fa-paw" aria-hidden="true"></i> 0 – 12 Months</span>
+        <h3>Puppies</h3>
+        <p>Rapid skeletal and muscle formation demands calorie-dense nutrition with balanced calcium-to-phosphorus ratios.</p>
+        <ul>
+          <li><span>✓</span> <strong>Growth Nutrition:</strong> High-protein formulation containing DHA for optimal brain development.</li>
+          <li><span>✓</span> <strong>Puppy-Specific Food:</strong> Calibrated kibble size for smaller jaws and baby teeth.</li>
+          <li><span>✓</span> <strong>Feeding Frequency:</strong> Feed 3 to 4 scheduled meals daily to sustain steady glucose.</li>
+          <li><span>✓</span> <strong>Portion Sizes:</strong> Adjust quantities monthly based on puppy growth charts.</li>
+        </ul>
+      </article>
+
+      <!-- Adult Dogs -->
+      <article class="stage-card searchable-item" data-title="Adult Dogs Feeding Guide" data-tags="adult dogs balanced maintenance calories routine weight">
+        <span class="stage-badge"><i class="fa-solid fa-dog" aria-hidden="true"></i> 1 – 7 Years</span>
+        <h3>Adult Dogs</h3>
+        <p>Focus shifts to steady physical maintenance, stable body weight, lean muscle retention, and daily vitality.</p>
+        <ul>
+          <li><span>✓</span> <strong>Balanced Diet:</strong> Consistent ratio of quality animal protein, complex carbs, and fats.</li>
+          <li><span>✓</span> <strong>Calorie Requirements:</strong> Calibrated to exercise level—working dogs need more, lapdogs less.</li>
+          <li><span>✓</span> <strong>Feeding Routine:</strong> Split daily food into 2 measured meals (morning and evening).</li>
+          <li><span>✓</span> <strong>Weight Stability:</strong> Measure exact portions to maintain ideal waistline tuck.</li>
+        </ul>
+      </article>
+
+      <!-- Senior Dogs -->
+      <article class="stage-card searchable-item" data-title="Senior Dogs Feeding Guide" data-tags="senior dogs older glucosamine joints low calorie easy chew">
+        <span class="stage-badge"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> 7+ Years</span>
+        <h3>Senior Dogs</h3>
+        <p>Metabolism slows down while joint care, digestive support, and organ function become paramount priorities.</p>
+        <ul>
+          <li><span>✓</span> <strong>Age-Appropriate Nutrition:</strong> Lower in calories, enriched with glucosamine for joints.</li>
+          <li><span>✓</span> <strong>Weight Management:</strong> Controlled dietary fat keeps strain off aging hips and knees.</li>
+          <li><span>✓</span> <strong>Special Dietary Needs:</strong> Softer kibble or warm-water-moistened meals ease chew.</li>
+          <li><span>✓</span> <strong>Digestive Support:</strong> Easily digestible proteins to reduce strain on aging kidneys.</li>
+        </ul>
+      </article>
+    </div>
+  
+  </section>
+
+  <!-- Section 6: Daily Feeding Schedule -->
+  <section class="section section-wrap searchable-section" id="feeding-schedule" data-category="feeding-guide">
+
+          <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+            Routine & Consistency
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Daily Feeding <span>Schedule</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Dogs thrive on predictable daily routines. A steady meal rhythm regulates canine metabolism and aids house training.
+          </p>
+        </div>
+      </div>
+
+    <div class="schedule-grid">
+      <!-- Morning -->
+      <div class="schedule-card searchable-item" data-title="Morning Feeding" data-tags="morning breakfast meal timing digestion schedule">
+        <div class="schedule-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></div>
+        <h4>Morning Feeding</h4>
+        <p>Offer the first portion after your morning walk to fuel early activity and kickstart digestion.</p>
+      </div>
+
+      <!-- Afternoon -->
+      <div class="schedule-card searchable-item" data-title="Afternoon Feeding" data-tags="afternoon puppy treat water light snack schedule">
+        <div class="schedule-icon"><i class="fa-solid fa-cloud-sun" aria-hidden="true"></i></div>
+        <h4>Afternoon Routine</h4>
+        <p>Ideal for puppies needing a 3rd meal, or a light healthy carrot crunch for adult dogs during training.</p>
+      </div>
+
+      <!-- Evening -->
+      <div class="schedule-card searchable-item" data-title="Evening Feeding" data-tags="evening dinner meal timing rest schedule">
+        <div class="schedule-icon"><i class="fa-solid fa-moon" aria-hidden="true"></i></div>
+        <h4>Evening Dinner</h4>
+        <p>Serve dinner at least 2–3 hours before bedtime to allow full digestion and a final bathroom break.</p>
+      </div>
+
+      <!-- Fresh Water -->
+      <div class="schedule-card searchable-item" data-title="Fresh Water Requirements" data-tags="fresh water clean bowl hydration 24/7 schedule">
+        <div class="schedule-icon"><i class="fa-solid fa-faucet-drip" aria-hidden="true"></i></div>
+        <h4>Fresh Water (24/7)</h4>
+        <p>Keep a clean bowl of fresh, cool drinking water available continuously and wash the bowl daily.</p>
+      </div>
+
+      <!-- Meal Timings -->
+      <div class="schedule-card searchable-item" data-title="Consistent Meal Timings" data-tags="meal timings consistency schedule routine bowel habits">
+        <div class="schedule-icon"><i class="fa-solid fa-stopwatch" aria-hidden="true"></i></div>
+        <h4>Consistent Timings</h4>
+        <p>Serve meals at identical times each day to stabilize hunger cues and maintain predictable habits.</p>
+      </div>
+    </div>
+  
+  </section>
+
+  <!-- Section 7: Frequently Asked Questions -->
+  <section class="section section-wrap" id="faqs" style="padding-bottom: 70px;">
+
+          <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+            Common Inquiries
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Frequently Asked <span>Questions</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Straightforward, expert answers to the most common questions pet parents ask about dog feeding and nutrition.
+          </p>
+        </div>
+      </div>
+
+    <div class="faq-accordion">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>1. How many times should I feed my dog daily?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Most healthy adult dogs thrive when fed <strong>twice daily</strong> (morning and evening). Young puppies require 3 to 4 meals per day until they reach 6 months of age to maintain steady blood sugar levels. Senior dogs typically do best with 2 smaller, easily digestible meals spaced evenly.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>2. Can dogs eat rice every day?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes, plain cooked rice is safe for dogs and is often used in bland diets to calm upset stomachs. However, it should only form a portion of a nutritionally complete diet alongside balanced animal protein, healthy fats, and essential vitamins and minerals.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>3. Can dogs drink milk?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Most adult dogs are lactose intolerant because they lack sufficient lactase enzyme to break down dairy sugars. While a tiny lap of cow's milk might not harm some dogs, it commonly causes diarrhea, abdominal cramping, gas, and vomiting. Plain water is always the best choice.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>4. Which fruits are safe for dogs?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Safe fruits include seedless apples, blueberries, seedless watermelon, bananas, and strawberries. <strong>Never feed grapes or raisins</strong>, as they cause acute kidney failure. Also remove all fruit pits and seeds (peaches, cherries, apples) as they contain cyanide and pose choking hazards.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>5. Is homemade food better than packaged food?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Homemade food offers whole, fresh ingredients without artificial preservatives, but it is challenging to balance long-term without veterinary nutritionist guidance. High-quality commercial dog foods labeled "Complete &amp; Balanced" ensure your dog receives all essential micronutrients in correct ratios.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>6. How much water does a dog need?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            As a general rule, a healthy dog requires approximately <strong>50 to 60 ml of water per kilogram of body weight</strong> daily (about 1 ounce per pound). Active dogs, nursing mothers, and dogs during hot weather need substantially more. Clean, cool water should always be accessible.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>7. Can puppies eat adult dog food?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            No. Puppies have significantly higher caloric, protein, and calcium requirements than adult dogs to support rapid bone and muscle growth. Feeding adult food to puppies can result in skeletal developmental disorders. Feed puppy-formulated diets until 12 months (or up to 18–24 months for large breeds).
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>8. How do I know if my dog is eating enough?</span>
+          <span class="faq-icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Evaluate your dog's energy levels, coat shine, and Body Condition Score (BCS). You should be able to feel (but not visibly see) their ribs with light pressure, and see a definite waistline when viewed from above. Sudden appetite drop or noticeable weight changes warrant a prompt veterinary checkup.
+          </p>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+
+  <section class="cta section-wrap">
+    <div>
+      <div class="eyebrow">START YOUR DOG'S JOURNEY</div>
+      <h2>Every Meal Fuels a <em>Vibrant Life.</em></h2>
+      <p>
+        Pair balanced, wholesome nutrition with daily outdoor exercise, grooming, and loving companionship for your dog's happiest, healthiest life.
+      </p>
+    </div>
+    <div class="cta-actions">
+      <a class="button button-light" href="index.html" id="cta-explore-more">Explore Dog Hub ↗</a>
+      <a class="button button-outline" href="../../walker/dogs.html" id="cta-book-walker">Find a Dog Walker</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer (Preserved exactly from PetSathi) -->
+<footer class="footer">
+  <div class="section-wrap footer-grid">
+    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+    <div><b>Quick Links</b><a href="../../../../index.html">Home</a><a href="../index.html">Explore Pets</a><a href="index.html">Dogs</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+  </div>
+  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+</footer>
+
+<script>
+  // Mobile Nav Toggle
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. FAQ Accordion
+    const faqButtons = document.querySelectorAll('.faq-question');
+    faqButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const isOpen = item.classList.contains('active');
+
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        if (isOpen) {
+          item.classList.remove('active');
+          button.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('active');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // 2. Search & Filter
+    const searchBox = document.getElementById('food-search-box');
+    const clearBtn = document.getElementById('clear-search-btn');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchableSections = document.querySelectorAll('.searchable-section');
+    const searchableItems = document.querySelectorAll('.searchable-item');
+    const searchFeedback = document.getElementById('search-feedback');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function applyFilters() {
+      let matchedItemsCount = 0;
+      const query = searchQuery.trim().toLowerCase();
+
+      searchableItems.forEach(item => {
+        const itemTitle = (item.getAttribute('data-title') || '').toLowerCase();
+        const itemTags = (item.getAttribute('data-tags') || '').toLowerCase();
+        const itemText = item.textContent.toLowerCase();
+        const parentSection = item.closest('.searchable-section');
+        const sectionCategory = parentSection ? parentSection.getAttribute('data-category') : '';
+
+        // Category filter matching
+        const matchesCategory = (currentFilter === 'all') || (sectionCategory === currentFilter);
+
+        // Search text matching
+        const matchesQuery = !query || itemTitle.includes(query) || itemTags.includes(query) || itemText.includes(query);
+
+        if (matchesCategory && matchesQuery) {
+          item.style.display = '';
+          matchedItemsCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Show/hide sections based on whether any child item is visible or category selected
+      searchableSections.forEach(section => {
+        const sectionCategory = section.getAttribute('data-category');
+        const visibleChildren = section.querySelectorAll('.searchable-item:not([style*="display: none"])');
+
+        if (currentFilter !== 'all' && sectionCategory !== currentFilter) {
+          section.style.display = 'none';
+        } else if (query && visibleChildren.length === 0) {
+          section.style.display = 'none';
+        } else {
+          section.style.display = '';
+        }
+      });
+
+      // Feedback count
+      if (query || currentFilter !== 'all') {
+        searchFeedback.style.display = 'block';
+        if (matchedItemsCount === 0) {
+          searchFeedback.textContent = `No items found matching "${query || currentFilter}". Try a different keyword.`;
+        } else {
+          searchFeedback.textContent = `Showing ${matchedItemsCount} matching nutrition item${matchedItemsCount === 1 ? '' : 's'}.`;
+        }
+      } else {
+        searchFeedback.style.display = 'none';
+        searchFeedback.textContent = '';
+      }
+
+      // Show/hide clear search button
+      if (clearBtn) {
+        clearBtn.style.display = query ? 'block' : 'none';
+      }
+    }
+
+    if (searchBox) {
+      searchBox.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        applyFilters();
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        searchBox.value = '';
+        searchQuery = '';
+        applyFilters();
+        searchBox.focus();
+      });
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        applyFilters();
+
+        // If filtering to a specific section, smoothly scroll to that section if visible
+        if (currentFilter !== 'all') {
+          const targetSection = document.querySelector(`.searchable-section[data-category="${currentFilter}"]`);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
+

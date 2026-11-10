@@ -4,13 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Comprehensive aquarium fish guide on PetSathi. Learn about popular aquarium fish species (Goldfish, Betta, Guppy, Molly, Neon Tetra, Angelfish, Platy, Zebra Danio), tank setup, water quality, and care tips.">
+  <meta name="description"
+    content="Comprehensive aquarium fish guide on PetSathi. Learn about popular aquarium fish species (Goldfish, Betta, Guppy, Molly, Neon Tetra, Angelfish, Platy, Zebra Danio), tank setup, water quality, and care tips.">
   <title>Aquarium Fish Care & Popular Species Guide | PetSathi</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <!-- Core PetSathi Stylesheets -->
   <link rel="stylesheet" href="../../../css/global.css">
@@ -177,23 +180,62 @@
       color: var(--green);
     }
 
-    /* Section Headers */
+    /* Section Headers with subtle green/cream background matching PetSathi styling */
     .section-title-wrap {
       text-align: center;
-      max-width: 760px;
-      margin: 0 auto 38px;
+      max-width: 860px;
+      margin: 40px auto 36px;
+      padding: 32px 36px 28px;
+      background: #fafcf7;
+      border: 1px solid #dcebc9;
+      border-radius: 28px;
+      box-shadow: 0 4px 20px rgba(35, 75, 45, 0.04);
+      position: relative;
+    }
+
+    .section-title-wrap .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      border-radius: 9999px;
+      color: #246b43;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin: 0 auto 12px;
+      width: fit-content;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.05);
+    }
+
+    .section-title-wrap .eyebrow i {
+      font-size: 0.85rem;
+      line-height: 1;
     }
 
     .section-title-wrap h2 {
-      margin: 8px 0 12px;
-      font-size: clamp(2rem, 3.4vw, 2.7rem);
+      margin: 6px 0 12px;
+      font-size: clamp(1.85rem, 3.2vw, 2.45rem);
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      line-height: 1.25;
+    }
+
+    .section-title-wrap h2 em {
+      color: #28764a;
+      font-style: normal;
     }
 
     .section-title-wrap p {
-      margin: 0;
+      margin: 0 auto;
       font-size: 0.98rem;
       color: #64746a;
       line-height: 1.7;
+      max-width: 700px;
     }
 
     /* Filter & Search Bar */
@@ -308,32 +350,38 @@
     /* Fish Grid Layout */
     .fish-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 26px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
       align-items: stretch;
+    }
+
+    @media (max-width: 960px) {
+      .fish-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .fish-card {
       background: white;
       border: 1px solid var(--line);
-      border-radius: 22px;
+      border-radius: 20px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.26s ease, box-shadow 0.26s ease, border-color 0.26s ease;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
       position: relative;
     }
 
     .fish-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 16px 36px rgba(35, 57, 43, 0.08);
-      border-color: #cbd8cd;
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
     }
 
     .fish-card-media {
       position: relative;
-      height: 220px;
-      background: #edf3ec;
+      height: 200px;
+      background: #f0f3eb;
       overflow: hidden;
     }
 
@@ -349,39 +397,28 @@
       transform: scale(1.05);
     }
 
-    .fish-number-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(4px);
-      display: grid;
-      place-items: center;
-      color: var(--green);
-      font-size: 0.78rem;
-      font-weight: 800;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-      z-index: 2;
-    }
-
     .fish-water-badge {
       position: absolute;
       top: 14px;
-      right: 14px;
-      padding: 5px 12px;
-      border-radius: 20px;
+      left: 14px;
       background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(4px);
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
       color: var(--dark);
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
       z-index: 2;
+    }
+
+    .fish-water-badge i {
+      color: var(--green);
+      font-size: 0.85rem;
+      display: inline-block;
     }
 
     .fish-card-body {
@@ -505,19 +542,30 @@
       color: #b91c1c;
     }
 
+    /* Fish Species Care Tip - Modeled after dogs/walking.html Pacing Tip design */
+    .fish-card-care-tip,
+    .card-fish-tip,
     .fish-tip-banner {
-      margin-top: 14px;
-      background: #fdf8eb;
-      border: 1px solid #fae4b8;
-      border-radius: 10px;
-      padding: 9px 12px;
-      font-size: 0.8rem;
-      color: #855314;
+      margin-top: auto;
+      padding: 11px 14px;
+      background: #fafcf7;
+      border: 1px dashed #dcebc9;
+      border-radius: 12px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.82rem;
+      color: #4b6b55;
       line-height: 1.5;
     }
 
+    .fish-card-care-tip strong,
+    .card-fish-tip strong,
     .fish-tip-banner b {
-      color: #633c09;
+      color: #246b43;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-right: 4px;
     }
 
     /* Comparison Table Section */
@@ -918,8 +966,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Aquarium Volume Calculator */
@@ -1199,18 +1254,23 @@
       .setup-steps-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .nitrogen-diagram {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .water-params-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .other-pets-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .calc-inputs-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .calc-results-wrap {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1220,37 +1280,46 @@
       .fish-hero {
         padding: 42px 18px 48px;
       }
+
       .fish-grid {
         grid-template-columns: 1fr;
       }
+
       .compat-selectors-row {
         grid-template-columns: 1fr;
         gap: 12px;
       }
+
       .compat-vs-badge {
         margin: 0 auto;
       }
+
       .care-tips-grid {
         grid-template-columns: 1fr;
       }
+
       .water-params-grid {
         grid-template-columns: 1fr;
       }
+
       .fish-cta-band {
         flex-direction: column;
         align-items: flex-start;
         padding: 36px 24px;
       }
+
       .table-scroll-hint {
         display: block;
       }
     }
 
     @media (max-width: 520px) {
+
       .fish-breadcrumb,
       .fish-cta-band {
         width: calc(100% - 32px);
       }
+
       .setup-steps-grid,
       .nitrogen-diagram,
       .other-pets-grid,
@@ -1258,13 +1327,1046 @@
       .calc-results-wrap {
         grid-template-columns: 1fr;
       }
+
       .controls-top-row {
         flex-direction: column;
         align-items: stretch;
       }
+
       .search-box-wrap {
         max-width: 100%;
       }
+    }
+
+    /* ==========================================================================
+       DOG/CAT-ALIGNED DESIGN SYSTEM ENHANCEMENTS FOR AQUARIUM FISH
+       ========================================================================== */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+    }
+
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    .fa-regular {
+      font-weight: 400 !important;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    #aquarium-topics,
+    #species-guide,
+    #aquarium-quick-info,
+    #tank-setup,
+    #water-quality,
+    #care-tips,
+    #compat-checker,
+    #aquarium-faq {
+      scroll-margin-top: 80px;
+    }
+
+    /* 1. Hero Section Layout & Floating Cards */
+    /* Hero Floating Cards - PetSathi Green Icons */
+    .hero-visual .floating-card i {
+      color: #286849 !important;
+      font-size: 1.35rem !important;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .fish-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* 2. Quick Navigation Hub - Pill Shaped, 1 Row on Desktop */
+    .guides-nav-strip {
+      position: relative;
+      background: #ffffff;
+      margin: 40px auto 45px;
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      padding: 42px 36px 38px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 0 0 100% 0;
+    }
+
+    .decor-bottom-right {
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 100% 0 0 0;
+    }
+
+    .decor-paw {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .decor-paw-1 {
+      top: 14px;
+      left: 28px;
+      font-size: 26px;
+      transform: rotate(-15deg);
+    }
+
+    .decor-paw-2 {
+      top: 38px;
+      left: 12px;
+      font-size: 19px;
+      transform: rotate(20deg);
+    }
+
+    .decor-paw-3 {
+      bottom: 36px;
+      right: 14px;
+      font-size: 19px;
+      transform: rotate(-25deg);
+    }
+
+    .decor-paw-4 {
+      bottom: 14px;
+      right: 28px;
+      font-size: 26px;
+      transform: rotate(15deg);
+    }
+
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .quick-nav-line {
+      height: 1px;
+      width: 110px;
+      background: #d6ead9;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #f4faf5;
+      border: 1px solid #b7deb8;
+      border-radius: 9999px;
+      color: #1e6f43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+    }
+
+    .quick-nav-badge i {
+      font-size: 0.95rem;
+      line-height: 1;
+      color: #1e6f43;
+      flex-shrink: 0;
+    }
+
+    .quick-nav-title {
+      font-family: 'Manrope', sans-serif !important;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      color: #1a251e;
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .quick-nav-title span {
+      color: #1e6f43;
+      font-weight: 800;
+    }
+
+    .guides-nav-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 0;
+    }
+
+    .guide-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 18px 9px 9px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .guide-nav-item:hover {
+      background: #e4f4e8;
+      border-color: #237847;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    }
+
+    .guide-nav-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #ffffff;
+      color: #1e6f43;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .guide-nav-item:hover .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    .guide-nav-label {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1c2b20;
+      white-space: nowrap;
+    }
+
+
+    /* Species Card Badges & Consistency */
+    .fish-badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .fish-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #1e6f43;
+      white-space: nowrap;
+    }
+
+    .fish-badge-pill i {
+      font-size: 0.72rem;
+      color: #28764a;
+    }
+
+    /* 3. Section Banner Heading with Soft Cream/Green Treatment */
+    .dog-topics-heading {
+      position: relative;
+      max-width: 1400px;
+      margin: 45px auto 35px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      box-sizing: border-box;
+    }
+
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
+    }
+
+    .heading-label i {
+      font-size: 14px;
+      color: #246b43;
+      line-height: 1;
+    }
+
+    .dog-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .dog-topics-heading h2 span {
+      color: #28764a;
+    }
+
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .dog-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .paw-right-2 {
+      bottom: 35px;
+      right: 140px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    /* 4. Essential Topics 6-Card Grid (3 Cards Desktop, 2 Tablet, 1 Mobile) */
+    .dog-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .dog-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .dog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
+    }
+
+    .dog-card-media {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: #f0f3eb;
+    }
+
+    .dog-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .dog-card:hover .dog-card-media img {
+      transform: scale(1.05);
+    }
+
+    .dog-card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .dog-card-badge i {
+      color: var(--green);
+      font-size: 0.85rem;
+    }
+
+    .dog-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .dog-card-body h3 {
+      font-size: 1.25rem;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .dog-card-body p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      flex-grow: 1;
+      color: var(--muted);
+    }
+
+    .dog-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green);
+      transition: color 0.2s, transform 0.2s;
+      align-self: flex-start;
+      text-decoration: none;
+    }
+
+    .dog-card-link:hover {
+      color: var(--dark);
+      transform: translateX(4px);
+    }
+
+    /* 5. Additional Information: Quick Information Section */
+    .dog-quick-info-section {
+      background: #ffffff;
+      border-top: none !important;
+      border-bottom: none;
+      padding-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    .quick-info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .quick-info-card {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      column-gap: 18px;
+      row-gap: 10px;
+      align-items: start;
+      width: 100%;
+      padding: 26px 30px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      box-sizing: border-box;
+    }
+
+    .quick-info-card:hover {
+      transform: translateY(-3px);
+      border-color: #cbd9ce;
+      box-shadow: var(--shadow);
+    }
+
+    .quick-info-icon-wrap {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      margin: 0;
+    }
+
+    .quick-info-icon-wrap i {
+      color: var(--green);
+      font-size: 1.25rem;
+    }
+
+    .quick-info-card h3 {
+      grid-column: 2;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .quick-info-card p {
+      grid-column: 2;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .quick-info-list {
+      grid-column: 1 / -1;
+      list-style: none;
+      padding: 18px 0 0;
+      margin: 8px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .quick-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .quick-info-list li span {
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* 6. Standard CTA Section matching dogs/index.html */
+    main>.cta,
+    .cta {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 25px !important;
+      width: 85% !important;
+      max-width: 1350px !important;
+      margin: 40px auto 92px !important;
+      margin-inline: auto !important;
+      padding: 48px 56px !important;
+      border: 1px solid #e6d6c6 !important;
+      border-radius: 30px !important;
+      background: #f2e8d9 !important;
+      background-image: none !important;
+      box-sizing: border-box !important;
+    }
+
+    .cta>div:first-child {
+      flex: 1 !important;
+      min-width: 0 !important;
+    }
+
+    .cta .eyebrow {
+      display: block !important;
+      margin: 0 0 14px 0 !important;
+      padding: 0 !important;
+      background: none !important;
+      background-color: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      color: #286849 !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 0.72rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 1.7px !important;
+      line-height: normal !important;
+      text-transform: uppercase !important;
+      text-align: left !important;
+      width: auto !important;
+    }
+
+    .cta h2 {
+      display: block !important;
+      margin: 0 0 8px 0 !important;
+      font-family: Georgia, 'Times New Roman', serif !important;
+      font-size: clamp(24px, 3.2vw, 36px) !important;
+      font-weight: 700 !important;
+      line-height: 1.2 !important;
+      letter-spacing: normal !important;
+      color: #1d5039 !important;
+      text-align: left !important;
+    }
+
+    .cta h2 em {
+      color: #286849 !important;
+      font-family: Georgia, 'Times New Roman', serif !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+    }
+
+    .cta p {
+      display: block !important;
+      margin: 0 !important;
+      color: #26372e !important;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 15px !important;
+      font-weight: 400 !important;
+      line-height: 1.65 !important;
+      font-style: normal !important;
+      max-width: 600px !important;
+      text-align: left !important;
+    }
+
+    .cta-actions {
+      display: flex !important;
+      gap: 14px !important;
+      flex-wrap: wrap !important;
+      flex-shrink: 0 !important;
+      align-items: center !important;
+    }
+
+    .cta .button-light {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      min-height: 49px !important;
+      padding: 0 22px !important;
+      border-radius: 999px !important;
+      background: #ffffff !important;
+      border: 1px solid #ffffff !important;
+      color: #1d5039 !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 1rem !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+      transition: 0.2s !important;
+      box-sizing: border-box !important;
+    }
+
+    .cta .button-light:hover {
+      background: #edf3ec !important;
+      color: #1d5039 !important;
+      transform: translateY(-2px) !important;
+    }
+
+    .cta .button-outline {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      min-height: 49px !important;
+      padding: 0 22px !important;
+      border-radius: 999px !important;
+      background: transparent !important;
+      color: #286849 !important;
+      border: 1px solid #286849 !important;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 1rem !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      transition: 0.2s !important;
+      box-sizing: border-box !important;
+    }
+
+    .cta .button-outline:hover {
+      background: #286849 !important;
+      color: #ffffff !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Responsive Adjustments matching dog & cat pages */
+    @media (max-width: 960px) {
+      .guides-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      main>.cta,
+      .cta {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 38px 28px !important;
+        gap: 22px !important;
+      }
+
+      .cta .eyebrow,
+      .cta h2,
+      .cta p {
+        text-align: center !important;
+        margin-inline: auto !important;
+      }
+
+      .cta-actions {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section-title-wrap {
+        padding: 24px 18px 20px;
+        border-radius: 20px;
+        margin: 30px auto 24px;
+      }
+
+      .dog-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guides-nav-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guides-nav-strip {
+        padding: 24px 18px;
+        border-radius: 24px;
+      }
+
+      .dog-card-media {
+        height: 180px;
+      }
+
+      main>.cta,
+      .cta {
+        width: calc(100% - 34px) !important;
+        padding: 34px 20px !important;
+        margin-bottom: 65px !important;
+        display: block !important;
+      }
+
+      .cta-actions {
+        width: 100% !important;
+        flex-direction: column !important;
+        margin-top: 18px !important;
+      }
+
+      .cta-actions .button {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+      }
+    }
+
+    /* PetSathi Green for Care Tip Icons in Nutrition, Health, and Maintenance */
+    .tip-icon-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      color: #1e6f43 !important;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .tip-icon-wrap i,
+    .tip-icon-wrap [class*="fa-"] {
+      color: #1e6f43 !important;
+    }
+
+    .care-tip-card:hover .tip-icon-wrap {
+      background: #e1f2e5;
+      transform: scale(1.05);
+    }
+
+    /* Water Quality Card Upgrades matching PetSathi styling */
+    .param-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.03);
+    }
+
+    .param-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(35, 75, 45, 0.08);
+      border-color: #cbd9ce;
+    }
+
+    .param-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .param-icon-disc {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #edf7f0;
+      border: 1px solid #d2e8d7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e6f43;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .param-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .param-badge.badge-danger {
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+    }
+
+    .param-badge.badge-safe {
+      background: #edf7f0;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+
+    .param-badge.badge-neutral {
+      background: #f0fdf4;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+
+    .param-card-content h3 {
+      font-family: Georgia, 'Times New Roman', serif !important;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1c2b20;
+      margin: 0 0 6px;
+    }
+
+    .param-formula {
+      font-size: 0.88rem;
+      color: #64746a;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif !important;
+    }
+
+    .param-card-content p {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #55665c;
+      margin: 0 0 16px;
+      flex-grow: 1;
+    }
+
+    /* Water Quality Action/Rule/Tip - Modeled after dogs/walking.html Pacing Tip design */
+    .fish-water-card-tip,
+    .param-action-note {
+      margin-top: auto;
+      padding: 11px 14px;
+      background: #fafcf7;
+      border: 1px dashed #dcebc9;
+      border-radius: 12px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.82rem;
+      color: #4b6b55;
+      line-height: 1.5;
+    }
+
+    .fish-water-card-tip strong,
+    .param-action-note .action-label {
+      color: #246b43;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-right: 4px;
+    }
+
+    .fish-water-card-tip strong i,
+    .param-action-note .action-label i {
+      color: #246b43;
+      font-size: 0.85rem;
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -1276,813 +2378,723 @@
        SITE HEADER & NAVIGATION
        ======================================================== -->
   <header class="site-header">
-  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
-  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
-  <nav class="main-nav" aria-label="Main navigation">
-    <a href="../../../../index.html">Home</a>
-    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-explore">
-        <a href="../dogs/index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="fish.html">Aquarium Fish</a><a href="reptiles.html">Reptiles</a>
+    <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true"
+        viewBox="0 0 40 40" role="img" focusable="false">
+        <circle cx="12" cy="12" r="4" fill="currentColor" />
+        <circle cx="21" cy="8" r="4" fill="currentColor" />
+        <circle cx="30" cy="12" r="4" fill="currentColor" />
+        <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
+          fill="currentColor" />
+      </svg><span>Pet<span>Sathi</span></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"
+        aria-hidden="true"></i></button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../../../../index.html">Home</a>
+      <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-explore">
+          <a href="../dogs/index.html">Dogs</a><a href="../cats/index.html">Cats</a><a
+            href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="fish.html">Aquarium
+            Fish</a><a href="reptiles.html">Reptiles</a>
+        </div>
       </div>
-    </div>
-    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
-    </div>
-    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
-    </div>
-    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
-  </nav>
-</header>
-
-  <!-- ========================================================
-       BREADCRUMB TRAIL
-       ======================================================== -->
-  <nav class="fish-breadcrumb" aria-label="Breadcrumb">
-    <a href="../../../../index.html">Home</a>
-    <span class="separator">/</span>
-    <a href="../index.html">Explore Pets</a>
-    <span class="separator">/</span>
-    <span>Other Pets</span>
-    <span class="separator">/</span>
-    <span class="current">Aquarium Fish Care Guide</span>
-  </nav>
+      <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a
+            href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
+      </div>
+      <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a
+            href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a>
+        </div>
+      </div>
+      <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small"
+        href="../../auth/register.html">Get Started</a>
+    </nav>
+  </header>
 
   <main id="main-content">
 
     <!-- ========================================================
-         HERO SECTION
+         1. HERO SECTION (Matching Dog and Cat pages layout)
          ======================================================== -->
-    <section class="fish-hero">
-      <div class="section-wrap">
-        <div class="eyebrow">PetSathi • Aquatic Pet Care Guide 🐠</div>
-        <h1>Discover the World of <em>Aquarium Fish</em></h1>
-        <p class="hero-subtitle">
-          From shimmering schooling tetras to elegant centerpieces, explore 8 popular aquarium fish species, essential tank requirements, water quality science, and beginner-friendly care advice for a flourishing aquatic ecosystem.
-        </p>
-
-        <div class="hero-btn-group">
-          <a class="button" href="#species-guide">Explore 8 Fish Species ↗</a>
-          <a class="button button-outline" href="#compat-checker">Tank Mate Compatibility</a>
-          <a class="button button-outline" href="#tank-setup">Setup & Water Science</a>
+    <section class="hero section-wrap" id="fish-hero">
+      <div class="hero-copy">
+        <div class="fish-badge-strip">
+          <i class="fa-solid fa-fish" aria-hidden="true"></i> PetSathi • Aquatic Companion Guide
         </div>
+        <h1>Everything You Need to Know About <em>Aquarium Fish</em></h1>
+        <p>
+          Welcome to PetSathi's dedicated aquarium fish care and companionship guide. From tranquil freshwater community
+          tanks to shimmering schooling tetras, aquariums bring peaceful serenity, natural beauty, and aquatic wonder to
+          every home. Explore popular fish species, balanced nutrition, water chemistry essentials, and tank maintenance
+          routines.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#species-guide" id="hero-cta-species">Explore Fish Species <i
+              class="fa-solid fa-arrow-right" style="font-size: 0.82rem; margin-left: 5px;"></i></a>
+          <a class="button button-outline" href="#aquarium-topics" id="hero-cta-topics">Explore Care Topics <i
+              class="fa-solid fa-arrow-down" style="font-size: 0.82rem; margin-left: 5px;"></i></a>
+        </div>
+        <div class="hero-note">♥ &nbsp; Dedicated to vibrant aquariums and thriving aquatic life.</div>
+      </div>
 
-        <div class="hero-badge-strip">
-          <div class="hero-badge-item">
-            <span class="icon">🐠</span>
-            <span>8 Popular Fish Documented</span>
-          </div>
-          <div class="hero-badge-item">
-            <span class="icon">🧪</span>
-            <span>Water Quality Parameters</span>
-          </div>
-          <div class="hero-badge-item">
-            <span class="icon">🔄</span>
-            <span>The Nitrogen Cycle Demystified</span>
-          </div>
-          <div class="hero-badge-item">
-            <span class="icon">🤝</span>
-            <span>Interactive Tank Mate Checker</span>
-          </div>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=1000&q=85"
+          alt="Colorful freshwater tropical aquarium fish swimming in a planted tank" class="hero-photo"
+          id="hero-fish-image">
+        <div class="floating-card card-top" id="hero-fish-serene-card">
+          <i class="fa-solid fa-fish" aria-hidden="true"></i> <span><b>Serene &amp;
+              Vibrant</b><small>Peaceful aquatic wonders</small></span>
+        </div>
+        <div class="floating-card card-bottom" id="hero-fish-water-card">
+          <i class="fa-solid fa-droplet" aria-hidden="true"></i> <span><b>Clear Water. Thriving
+              Life.</b><small>A balanced ecosystem</small></span>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         STICKY ANCHOR NAVIGATION STRIP
+         2. QUICK NAVIGATION HUB (Pill Shaped, 1 Row on Desktop)
          ======================================================== -->
-    <nav class="anchor-nav-strip" aria-label="Page sections">
-      <div class="anchor-nav-inner">
-        <a href="#species-guide">Fish Species (8)</a>
-        <a href="#comparison-matrix">Species Comparison</a>
-        <a href="#compat-checker">Compatibility Checker</a>
-        <a href="#tank-setup">Aquarium Setup</a>
-        <a href="#water-quality">Water Chemistry</a>
-        <a href="#tank-calculator">Volume Calculator</a>
-        <a href="#care-tips">Fish Care & Health</a>
-        <a href="#aquarium-faq">Care FAQs</a>
-        <a href="#other-pets">Explore Other Pets</a>
+    <div class="guides-nav-strip">
+      <!-- Decorative Corner Accents -->
+      <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+        <i class="fa-solid fa-water decor-paw decor-paw-1"></i>
+        <i class="fa-solid fa-fish decor-paw decor-paw-2"></i>
       </div>
-    </nav>
 
+      <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+        <i class="fa-solid fa-fish decor-paw decor-paw-3"></i>
+        <i class="fa-solid fa-water decor-paw decor-paw-4"></i>
+      </div>
+
+      <!-- Centered Header -->
+      <div class="quick-nav-header">
+        <div class="quick-nav-eyebrow-wrap">
+          <span class="quick-nav-line"></span>
+          <div class="quick-nav-badge">
+            <i class="fa-regular fa-compass quick-nav-badge-icon" aria-hidden="true"></i>
+            <span>QUICK NAVIGATION</span>
+          </div>
+          <span class="quick-nav-line"></span>
+        </div>
+        <h3 class="quick-nav-title">Explore Dedicated <span>Aquarium Knowledge Chapters</span></h3>
+      </div>
+
+      <!-- 4 Navigation Pills in 1 Row on Desktop -->
+      <div class="guides-nav-grid">
+        <a href="#species-guide" class="guide-nav-item" id="hub-link-species">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-fish" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Fish Species</span>
+        </a>
+
+        <a href="#tank-setup" class="guide-nav-item" id="hub-link-setup">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-cubes" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Aquarium Setup</span>
+        </a>
+
+        <a href="#fish-nutrition" class="guide-nav-item" id="hub-link-nutrition">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Fish Food &amp; Nutrition</span>
+        </a>
+
+        <a href="#fish-health" class="guide-nav-item" id="hub-link-health">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Fish Health &amp; Care</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         3. EXPLORE ESSENTIAL AQUARIUM TOPICS (6 Cards)
+         ======================================================== -->
+    <section class="section section-wrap" id="aquarium-topics">
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Aquatic Accents -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-water"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-water"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-book-open"></i>
+            Comprehensive Aquarium Guides
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Explore Essential <span>Aquarium Topics</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Browse through curated guides for fish species, tank setup, water quality, and everyday aquarium
+            maintenance.
+          </p>
+        </div>
+      </div>
+
+      <div class="dog-info-grid">
+        <!-- Card 1: Popular Fish Species -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1722908885997-b50e0cf08681?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Vibrant Betta splendens aquarium fish">
+            <span class="dog-card-badge"><i class="fa-solid fa-fish"></i> Species Guide</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Popular Fish Species</h3>
+            <p>
+              Discover popular companion fish—from gentle Guppies and schooling Neon Tetras to vibrant Bettas, elegant
+              Angelfish, and hardy Platies.
+            </p>
+            <a class="dog-card-link" href="#species-guide">Explore Fish Species <i class="fa-solid fa-arrow-right"
+                style="font-size: 0.82rem; margin-left: 5px;"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 2: Aquarium Setup -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1687482383862-aaa7360e8a57?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Aquascaped aquarium setup with live plants and substrate">
+            <span class="dog-card-badge"><i class="fa-solid fa-cubes"></i> Tank Setup</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Aquarium Setup</h3>
+            <p>
+              Choose the ideal tank dimensions, substrate, reliable filtration, heaters, LED lighting, and live plants
+              to create a thriving habitat.
+            </p>
+            <a class="dog-card-link" href="#tank-setup">Explore Tank Setup <i class="fa-solid fa-arrow-right"
+                style="font-size: 0.8rem; margin-left: 4px;"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 3: Fish Food & Nutrition -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&fit=crop&w=700&q=80"
+              alt="Healthy aquarium fish feeding in freshwater habitat">
+            <span class="dog-card-badge"><i class="fa-solid fa-bowl-food"></i> Nutrition</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Fish Food &amp; Nutrition</h3>
+            <p>
+              Learn about balanced nutrition across high-protein micro-pellets, spirulina flakes, sinking wafers, and
+              freeze-dried nutritious treats.
+            </p>
+            <a class="dog-card-link" href="#fish-nutrition">Explore Nutrition <i class="fa-solid fa-arrow-right"
+                style="font-size: 0.8rem; margin-left: 4px;"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 4: Fish Health & Wellness -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=700&q=80"
+              alt="Healthy active fish swimming in pristine water">
+            <span class="dog-card-badge"><i class="fa-solid fa-heart-pulse"></i> Wellness</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Fish Health &amp; Wellness</h3>
+            <p>
+              Recognize early signs of stress, fin rot, swim bladder disorder, and ich, with practical quarantine
+              protocols and water remedies.
+            </p>
+            <a class="dog-card-link" href="#fish-health">Explore Health &amp; Care <i class="fa-solid fa-arrow-right"
+                style="font-size: 0.8rem; margin-left: 4px;"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 5: Tank Cleaning & Maintenance -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?auto=format&fit=crop&w=700&q=80"
+              alt="Sparkling clean aquarium glass with active healthy fish">
+            <span class="dog-card-badge"><i class="fa-solid fa-broom"></i> Maintenance</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Tank Cleaning &amp; Maintenance</h3>
+            <p>
+              Master stress-free 20% weekly water changes, gravel vacuuming, gentle glass scraping, and filter sponge
+              rinses in tank water.
+            </p>
+            <a class="dog-card-link" href="#tank-maintenance">Explore Maintenance <i class="fa-solid fa-arrow-right"
+                style="font-size: 0.8rem; margin-left: 4px;"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 6: Water Quality & Safety -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <img src="https://images.unsplash.com/photo-1516683037151-9a17603a8dc7?auto=format&fit=crop&w=700&q=80"
+              alt="Crystal clear freshwater in a balanced aquarium">
+            <span class="dog-card-badge"><i class="fa-solid fa-flask"></i> Water Safety</span>
+          </div>
+          <div class="dog-card-body">
+            <h3>Water Quality &amp; Safety</h3>
+            <p>
+              Understand the biological nitrogen cycle, optimal pH balance (6.5–7.8), ammonia neutralization, water
+              conditioner, and stable heating.
+            </p>
+            <a class="dog-card-link" href="#water-quality">Explore Water Chemistry <i class="fa-solid fa-arrow-right"
+                style="font-size: 0.8rem; margin-left: 4px;"></i></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. ADDITIONAL INFORMATION: AQUARIUM MAINTENANCE ESSENTIALS
+         ======================================================== -->
+    <section class="section dog-quick-info-section" id="aquarium-quick-info">
+      <div class="section-wrap">
+        <div class="dog-topics-heading">
+          <!-- Curvy decorative corner shapes -->
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+              opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+            <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+              opacity="0.95" />
+          </svg>
+
+          <!-- Decorative Aquatic Accents -->
+          <div class="paw paw-left-1"><i class="fa-solid fa-water"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-fish"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-fish"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-water"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-shield-halved"></i>
+              Essential Aquarium Maintenance
+            </span>
+
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Quick Information for <span>Fish Keepers</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+
+            <p>
+              Understanding water balance, habitat setup, proper feeding, and health signs ensures a peaceful,
+              disease-free aquatic environment.
+            </p>
+          </div>
+        </div>
+
+        <div class="quick-info-grid">
+          <!-- 1. Tank Setup -->
+          <article class="quick-info-card" id="info-tank-setup">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <h3>Tank Setup &amp; Sizing Essentials</h3>
+            <p>
+              Beginner tanks between 15–29 gallons are significantly easier to keep stable than micro-bowls, as larger
+              water volumes dilute waste and buffer against temperature swings.
+            </p>
+            <ul class="quick-info-list">
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Filtration Sizing:</strong>
+                Select a filter rated for 3–4 times your total tank
+                volume per hour (GPH).</li>
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Stable Heating:</strong> Use
+                an adjustable submersible heater calibrated
+                between
+                75°F and 80°F for tropical species.</li>
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Live Plants &amp;
+                  Substrate:</strong> Add Java fern, Anubias, and washed
+                aquarium
+                gravel or aqua-soil for natural filtration.</li>
+            </ul>
+          </article>
+
+          <!-- 2. Water Quality -->
+          <article class="quick-info-card" id="info-water-quality">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-flask"></i>
+            </div>
+            <h3>Water Quality &amp; Nitrogen Cycle</h3>
+            <p>
+              Beneficial nitrifying bacteria convert deadly ammonia into nitrites, and then into less toxic nitrates.
+              Never add sensitive fish until the cycle completes.
+            </p>
+            <ul class="quick-info-list">
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Ammonia &amp;
+                  Nitrites:</strong> Must always measure 0 ppm in an established
+                aquarium.</li>
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Nitrate Target:</strong>
+                Keep nitrates below 20 ppm through consistent weekly
+                partial water changes.</li>
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Water Conditioning:</strong>
+                Always treat tap water with a quality
+                dechlorinator
+                before adding it to the aquarium.</li>
+            </ul>
+          </article>
+
+          <!-- 3. Feeding Care -->
+          <article class="quick-info-card" id="info-feeding">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-bowl-food"></i>
+            </div>
+            <h3>Mindful Feeding &amp; Nutrition</h3>
+            <p>
+              Overfeeding is the number one cause of cloudy water and fish mortality. Provide varied food and only what
+              your fish can finish in two minutes.
+            </p>
+            <ul class="quick-info-list">
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Feeding Schedule:</strong>
+                Feed once or twice daily in small portions that are
+                consumed within 2 to 3 minutes.</li>
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Diet Variety:</strong>
+                Alternate quality tropical flakes, micro-pellets,
+                spirulina wafers, and frozen daphnia or bloodworms.</li>
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Bottom Dwellers:</strong>
+                Use sinking wafers for Corydoras and Plecos so
+                surface
+                fish do not starve bottom feeders.</li>
+            </ul>
+          </article>
+
+          <!-- 4. Routine Maintenance & Fish Health -->
+          <article class="quick-info-card" id="info-health">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+            <h3>Routine Maintenance &amp; Fish Health</h3>
+            <p>
+              Regular gentle maintenance keeps water crystal clear and prevents common opportunistic pathogens like fin
+              rot and ich parasite infestations.
+            </p>
+            <ul class="quick-info-list">
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Weekly Water
+                  Changes:</strong> Drain and replace 20–25% of tank volume weekly
+                while vacuuming substrate debris.</li>
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Filter Care:</strong> Gently
+                rinse filter sponge in drained aquarium
+                water—never
+                under tap water—to safeguard bacteria.</li>
+              <li><span class="check-icon"><i class="fa-solid fa-check"></i></span> <strong>Daily Behavior
+                  Check:</strong> Observe fish during feeding for clamped fins,
+                erratic swimming, labored breathing, or white spots.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
     <!-- ========================================================
          1. POPULAR AQUARIUM FISH SPECIES SECTION
          ======================================================== -->
     <section class="section section-wrap" id="species-guide">
-      <div class="section-title-wrap">
-        <div class="eyebrow">Aquatic Profiles</div>
-        <h2>Popular <em>Aquarium Fish</em> Species</h2>
-        <p>
-          Discover physical characteristics, tank sizes, water parameters, and community compatibility for 8 widely beloved companion fish. Use the search and category filters below to find the right match for your tank.
-        </p>
-      </div>
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
 
-      <!-- Controls: Search & Category Filter -->
-      <div class="species-controls-wrap">
-        <div class="controls-top-row">
-          <div class="search-box-wrap">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="fish-search-input" placeholder="Search by name, temperature, or traits..." aria-label="Search fish species">
-            <button type="button" class="clear-search-btn" id="clear-search-btn" aria-label="Clear search">✕</button>
-          </div>
+        <!-- Decorative Aquatic Accents -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-water"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-water"></i></div>
 
-          <div class="species-counter">
-            Showing <b id="visible-species-count">8</b> of 8 species
-          </div>
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-fish"></i>
+            Species Profiles
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Popular <span>Aquarium Fish Species</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Discover behavioral traits, adult sizes, care requirements, and ideal water parameters for 8 widely beloved
+            companion fish.
+          </p>
         </div>
-
-        <div class="filter-pills-row">
-          <button type="button" class="filter-pill-btn active" data-filter="all">All Fish (8)</button>
-          <button type="button" class="filter-pill-btn" data-filter="beginner">Beginner Friendly</button>
-          <button type="button" class="filter-pill-btn" data-filter="schooling">Schooling Fish</button>
-          <button type="button" class="filter-pill-btn" data-filter="livebearer">Livebearers</button>
-          <button type="button" class="filter-pill-btn" data-filter="centerpiece">Centerpiece / Solitary</button>
-          <button type="button" class="filter-pill-btn" data-filter="coldwater">Coldwater / Subtropical</button>
-        </div>
-      </div>
-
-      <!-- No Results Message -->
-      <div id="no-results-message" style="display: none; text-align: center; padding: 40px; background: white; border-radius: 18px; border: 1px solid var(--line); margin-bottom: 24px;">
-        <p style="font-size: 1.1rem; color: var(--ink); font-weight: 700; margin-bottom: 6px;">No matching fish found</p>
-        <p style="color: var(--muted); margin: 0;">Try adjusting your keyword or switching to the "All Fish" filter tab.</p>
       </div>
 
       <!-- Species Cards Grid (8 Core Fish) -->
       <div class="fish-grid" id="fish-cards-container">
 
-        <!-- 1. GOLDFISH -->
-        <article class="fish-card" data-name="goldfish" data-water="coldwater freshwater" data-category="coldwater centerpiece" data-tags="coldwater large hardy single-tail fancy carassius auratus">
+        <!-- Card 1: Goldfish -->
+        <article class="fish-card" id="card-goldfish">
           <div class="fish-card-media">
-            <span class="fish-number-badge">01</span>
-            <span class="fish-water-badge">Coldwater</span>
-            <img class="fish-image" src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=800&q=80" alt="Vibrant orange fancy Goldfish swimming in clear water" loading="lazy">
+            <span class="fish-water-badge"><i class="fa-solid fa-water"></i> Coldwater</span>
+            <img class="fish-image"
+              src="https://images.unsplash.com/photo-1785822387462-1b8dd36804be?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Vibrant orange fancy Goldfish swimming in clear water" loading="lazy">
           </div>
           <div class="fish-card-body">
             <div class="fish-title-row">
               <h3>Goldfish</h3>
-              <div class="fish-sci-name">Carassius auratus • Cyprinidae</div>
+
             </div>
             <p class="fish-card-desc">
-              One of the oldest domesticated fish in the world, goldfish are hardy, personable grazers with rich individual personalities. Contrary to the outdated "fishbowl" myth, they require spacious aquariums and heavy filtration to thrive.
+              Personable, hardy grazers with peaceful temperaments. Contrary to outdated bowl myths, they require
+              spacious aquariums and heavy filtration to flourish.
             </p>
-
-            <div class="fish-attribute-block">
-              <div class="attribute-header"><span>📏</span> Size & Appearance</div>
-              <p class="attribute-text">
-                15–30 cm (6–12 inches). Broad spectrum of metallic orange, red, pearl white, calico, and velvet black. Body shapes range from streamlined single-tails (Comets, Shubunkins) to egg-shaped fancies (Fantails, Orandas).
-              </p>
+            <div class="fish-badges-row">
+              <span class="fish-badge-pill"><i class="fa-solid fa-cubes"></i> 20+ Gal</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-temperature-half"></i> 18°–23°C</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-flask"></i> pH 7.0–8.0</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-users"></i> Social Groups</span>
             </div>
-
-            <div class="fish-specs-grid">
-              <div class="spec-item">
-                <small>Min Tank Size</small>
-                <b>20–30 Gal (Fancy) / 50+ Gal (Comet)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water Temperature</small>
-                <b>18°C – 23°C (65°F – 74°F)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water pH & Hardness</small>
-                <b>pH 7.0 – 8.0 • 8–18 dGH</b>
-              </div>
-              <div class="spec-item">
-                <small>Filtration Need</small>
-                <b>Heavy (Bioload 5–8x turnover)</b>
-              </div>
-            </div>
-
-            <div class="fish-compat-box">
-              <div class="compat-line">
-                <span class="compat-label">Behaviour:</span>
-                <span>Peaceful bottom/mid grazer; highly social with similar goldfish.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Compatible:</span>
-                <span class="compat-value-good">Other fancy goldfish, Bristlenose Plecos (in large cool tanks).</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Avoid:</span>
-                <span class="compat-value-bad">Tropical fish (Bettas, Guppies, Tetras) & fin-nippers; temperature mismatch.</span>
-              </div>
-            </div>
-
-            <div class="fish-tip-banner">
-              <b>Care Tip:</b> Goldfish lack true stomachs and produce substantial waste; weekly 25% water changes are vital.
+            <div class="fish-card-care-tip">
+              <strong>Care Tip:</strong> Never use round bowls; supply 20+ gallons and 25% weekly water changes.
             </div>
           </div>
         </article>
 
-        <!-- 2. BETTA FISH -->
-        <article class="fish-card" data-name="betta fish" data-water="tropical freshwater" data-category="centerpiece" data-tags="tropical solitary labyrinth fighter betta splendens">
+        <!-- Card 2: Betta Fish -->
+        <article class="fish-card" id="card-betta">
           <div class="fish-card-media">
-            <span class="fish-number-badge">02</span>
-            <span class="fish-water-badge">Tropical Warm</span>
-            <img class="fish-image" src="https://images.unsplash.com/photo-1534043464124-3be32fe000c9?auto=format&fit=crop&w=800&q=80" alt="Brilliant blue and red Betta splendens with elaborate fins" loading="lazy">
+            <span class="fish-water-badge"><i class="fa-solid fa-temperature-arrow-up"></i> Tropical Warm</span>
+            <img class="fish-image"
+              src="https://images.unsplash.com/photo-1769006604234-8f6e32bb0d77?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Magnificent red and blue Betta fish displaying flowing fins" loading="lazy">
           </div>
           <div class="fish-card-body">
             <div class="fish-title-row">
               <h3>Betta Fish</h3>
-              <div class="fish-sci-name">Betta splendens • Siamese Fighting Fish</div>
+
             </div>
             <p class="fish-card-desc">
-              Famous for their dramatic flowing fins and kaleidoscope of iridescent colors, Bettas possess a specialized labyrinth organ allowing them to breathe atmospheric air. They need a gently filtered, heated tank with soft plants.
+              Renowned for magnificent flowing finnage and inquisitive personalities. Bettas possess a specialized
+              labyrinth organ and require calm, warm heated water.
             </p>
-
-            <div class="fish-attribute-block">
-              <div class="attribute-header"><span>📏</span> Size & Appearance</div>
-              <p class="attribute-text">
-                5–7 cm (2–2.8 inches). Renowned for spectacular tail variants including Crowntail, Halfmoon, Plakat, and Dumbo-ear, exhibiting metallic blues, crimson reds, royal purples, and pastels.
-              </p>
+            <div class="fish-badges-row">
+              <span class="fish-badge-pill"><i class="fa-solid fa-cubes"></i> 5+ Gallons</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-temperature-half"></i> 25°–28°C</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-flask"></i> pH 6.5–7.5</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-shield-halved"></i> Solitary Male</span>
             </div>
-
-            <div class="fish-specs-grid">
-              <div class="spec-item">
-                <small>Min Tank Size</small>
-                <b>5 Gallons (19 L) minimum</b>
-              </div>
-              <div class="spec-item">
-                <small>Water Temperature</small>
-                <b>25°C – 28°C (76°F – 82°F)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water pH & Hardness</small>
-                <b>pH 6.5 – 7.5 • 3–10 dGH</b>
-              </div>
-              <div class="spec-item">
-                <small>Filtration Need</small>
-                <b>Low / Gentle flow (Sponge filter)</b>
-              </div>
-            </div>
-
-            <div class="fish-compat-box">
-              <div class="compat-line">
-                <span class="compat-label">Behaviour:</span>
-                <span>Territorial solitary centerpiece; surface dweller; builds bubble nests.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Compatible:</span>
-                <span class="compat-value-good">Nerite snails, Amano shrimp, Corydoras catfish, peaceful tetras (10+ gal).</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Avoid:</span>
-                <span class="compat-value-bad">Other male bettas, fancy guppies (mistaken for rivals), fin-nipping barbs.</span>
-              </div>
-            </div>
-
-            <div class="fish-tip-banner">
-              <b>Care Tip:</b> Bowls are inadequate; bettas require a thermostat heater and low water flow to prevent fin rot.
+            <div class="fish-card-care-tip">
+              <strong>Care Tip:</strong> House males individually in heated 5+ gallon tanks with gentle sponge flow.
             </div>
           </div>
         </article>
 
-        <!-- 3. GUPPIES -->
-        <article class="fish-card" data-name="guppies" data-water="tropical freshwater" data-category="beginner schooling livebearer" data-tags="beginner livebearer colorful active poecilia reticulata millionfish">
+        <!-- Card 3: Guppy Fish -->
+        <article class="fish-card" id="card-guppy">
           <div class="fish-card-media">
-            <span class="fish-number-badge">03</span>
-            <span class="fish-water-badge">Tropical Community</span>
-            <img class="fish-image" src="https://images.unsplash.com/photo-1520302269557-464a93cf9617?auto=format&fit=crop&w=800&q=80" alt="Brightly colored male Guppy with fan tail" loading="lazy">
+            <span class="fish-water-badge"><i class="fa-solid fa-water"></i> Tropical Community</span>
+            <img class="fish-image"
+              src="https://images.unsplash.com/photo-1711826949355-30acbe1b385a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Brightly colored male Guppy with fan tail" loading="lazy">
           </div>
           <div class="fish-card-body">
             <div class="fish-title-row">
               <h3>Guppy Fish</h3>
-              <div class="fish-sci-name">Poecilia reticulata • Millionfish</div>
             </div>
             <p class="fish-card-desc">
-              One of the most celebrated freshwater fish in history. Guppies are endlessly energetic, colorful livebearers that bring nonstop movement and excitement to beginner and community aquariums.
+              Endlessly energetic and colorful livebearers that bring nonstop movement and excitement to beginner
+              planted community aquariums.
             </p>
-
-            <div class="fish-attribute-block">
-              <div class="attribute-header"><span>📏</span> Size & Appearance</div>
-              <p class="attribute-text">
-                Males 3–4 cm, Females 4–6 cm. Males display dazzling delta, sword, and veil tails with leopard spots, neon mosaics, cobras, and solid neons. Females are larger and more subdued.
-              </p>
+            <div class="fish-badges-row">
+              <span class="fish-badge-pill"><i class="fa-solid fa-cubes"></i> 10+ Gallons</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-temperature-half"></i> 22°–28°C</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-flask"></i> pH 7.0–8.2</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-users"></i> School (5+)</span>
             </div>
-
-            <div class="fish-specs-grid">
-              <div class="spec-item">
-                <small>Min Tank Size</small>
-                <b>10 Gallons (38 L)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water Temperature</small>
-                <b>22°C – 28°C (72°F – 82°F)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water pH & Hardness</small>
-                <b>pH 7.0 – 8.2 • 10–25 dGH (Hard water)</b>
-              </div>
-              <div class="spec-item">
-                <small>Filtration Need</small>
-                <b>Gentle to moderate flow</b>
-              </div>
-            </div>
-
-            <div class="fish-compat-box">
-              <div class="compat-line">
-                <span class="compat-label">Behaviour:</span>
-                <span>Active, inquisitive, upper-column swimmer; highly social community fish.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Compatible:</span>
-                <span class="compat-value-good">Platies, Mollies, Neon Tetras, Zebra Danios, Corydoras catfish, snails.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Avoid:</span>
-                <span class="compat-value-bad">Large predatory cichlids, aggressive fin-nippers (Tiger Barbs), aggressive bettas.</span>
-              </div>
-            </div>
-
-            <div class="fish-tip-banner">
-              <b>Care Tip:</b> Keep 1 male to 2–3 females to reduce stress, or maintain all-male groups to prevent endless fry.
+            <div class="fish-card-care-tip">
+              <strong>Care Tip:</strong> Keep 1 male to 2–3 females or maintain an all-male group to avoid
+              overpopulation.
             </div>
           </div>
         </article>
 
-        <!-- 4. MOLLY FISH -->
-        <article class="fish-card" data-name="molly fish" data-water="tropical freshwater brackish" data-category="beginner livebearer" data-tags="livebearer algae grazer black molly dalmatian sailfin poecilia sphenops">
+        <!-- Card 4: Molly Fish -->
+        <article class="fish-card" id="card-molly">
           <div class="fish-card-media">
-            <span class="fish-number-badge">04</span>
-            <span class="fish-water-badge">Tropical Community</span>
-            <img class="fish-image" src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=800&q=80" alt="Glossy black Molly fish exploring aquarium plants" loading="lazy">
+            <span class="fish-water-badge"><i class="fa-solid fa-water"></i> Tropical Community</span>
+            <img class="fish-image"
+              src="https://images.unsplash.com/photo-1711826949355-30acbe1b385a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Sleek black and marble Molly fish swimming" loading="lazy">
           </div>
           <div class="fish-card-body">
             <div class="fish-title-row">
               <h3>Molly Fish</h3>
-              <div class="fish-sci-name">Poecilia sphenops / P. latipinna</div>
             </div>
             <p class="fish-card-desc">
-              Mollies are robust, adaptable livebearers cherished for their appetite for natural algae and friendly disposition. They thrive particularly well in hard, mineral-rich water and even light brackish setups.
+              Robust, gentle livebearers cherished for their friendly nature and hearty appetite for natural aquarium
+              algae and vegetable flakes.
             </p>
-
-            <div class="fish-attribute-block">
-              <div class="attribute-header"><span>📏</span> Size & Appearance</div>
-              <p class="attribute-text">
-                7.5–12 cm (3–5 inches). Deep, rectangular bodies with broad dorsal fins (and impressive sailfin varieties). Color strains include Black Mollies, Dalmatian, Marble, Golden, and Lyretail.
-              </p>
+            <div class="fish-badges-row">
+              <span class="fish-badge-pill"><i class="fa-solid fa-cubes"></i> 20+ Gallons</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-temperature-half"></i> 24°–28°C</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-flask"></i> pH 7.5–8.5</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-users"></i> Groups (4+)</span>
             </div>
-
-            <div class="fish-specs-grid">
-              <div class="spec-item">
-                <small>Min Tank Size</small>
-                <b>20 Gallons (75 L)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water Temperature</small>
-                <b>24°C – 28°C (75°F – 82°F)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water pH & Hardness</small>
-                <b>pH 7.5 – 8.5 • 15–30 dGH (Hard water)</b>
-              </div>
-              <div class="spec-item">
-                <small>Filtration Need</small>
-                <b>Moderate to high oxygenation</b>
-              </div>
-            </div>
-
-            <div class="fish-compat-box">
-              <div class="compat-line">
-                <span class="compat-label">Behaviour:</span>
-                <span>Active, peaceful grazer; naturally nibbles green algae from plants and decor.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Compatible:</span>
-                <span class="compat-value-good">Platies, Guppies, Swordtails, Angelfish (in 30+ gal), Corydoras, Snails.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Avoid:</span>
-                <span class="compat-value-bad">Coldwater goldfish, obligate soft/acidic water species, fin-nippers.</span>
-              </div>
-            </div>
-
-            <div class="fish-tip-banner">
-              <b>Care Tip:</b> Include plant matter and spirulina flakes in their diet to satisfy their natural herbivorous grazing.
+            <div class="fish-card-care-tip">
+              <strong>Care Tip:</strong> Mollies prefer hard, alkaline water and appreciate spirulina-rich greens in
+              their diet.
             </div>
           </div>
         </article>
 
-        <!-- 5. NEON TETRA -->
-        <article class="fish-card" data-name="neon tetra" data-water="tropical freshwater" data-category="beginner schooling" data-tags="schooling peaceful micro characin paracheirodon innesi glowing amazon">
+        <!-- Card 5: Neon Tetra -->
+        <article class="fish-card" id="card-neon-tetra">
           <div class="fish-card-media">
-            <span class="fish-number-badge">05</span>
-            <span class="fish-water-badge">Tropical Schooling</span>
-            <img class="fish-image" src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?auto=format&fit=crop&w=800&q=80" alt="School of glowing Neon Tetras swimming together" loading="lazy">
+            <span class="fish-water-badge"><i class="fa-solid fa-users"></i> Tropical Schooling</span>
+            <img class="fish-image"
+              src="https://images.unsplash.com/photo-1737688670910-084f54254e73?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Schooling Neon Tetras glowing with blue and red stripes" loading="lazy">
           </div>
           <div class="fish-card-body">
             <div class="fish-title-row">
               <h3>Neon Tetra</h3>
-              <div class="fish-sci-name">Paracheirodon innesi • Characidae</div>
             </div>
             <p class="fish-card-desc">
-              Originating from the blackwater streams of the Amazon basin, the Neon Tetra is an aquarium icon. Their vivid, light-reflecting horizontal stripes create a mesmerizing kinetic spectacle when swimming in cohesive schools.
+              Amazonian schooling icons showcasing brilliant horizontal iridescent blue and crimson stripes that sparkle
+              beneath aquarium LED lighting.
             </p>
-
-            <div class="fish-attribute-block">
-              <div class="attribute-header"><span>📏</span> Size & Appearance</div>
-              <p class="attribute-text">
-                3–4 cm (1.2–1.5 inches). An electric cyan-blue horizontal stripe glows from nose to adipose fin, paired with a vibrant crimson-red stripe extending from mid-body through the caudal fin.
-              </p>
+            <div class="fish-badges-row">
+              <span class="fish-badge-pill"><i class="fa-solid fa-cubes"></i> 10+ Gallons</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-temperature-half"></i> 21°–26°C</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-flask"></i> pH 6.0–7.0</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-users"></i> School of 6–10+</span>
             </div>
-
-            <div class="fish-specs-grid">
-              <div class="spec-item">
-                <small>Min Tank Size</small>
-                <b>10 Gallons (38 L)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water Temperature</small>
-                <b>21°C – 26°C (70°F – 79°F)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water pH & Hardness</small>
-                <b>pH 6.0 – 7.0 • 2–10 dGH (Soft water)</b>
-              </div>
-              <div class="spec-item">
-                <small>Filtration Need</small>
-                <b>Gentle flow with live plant cover</b>
-              </div>
-            </div>
-
-            <div class="fish-compat-box">
-              <div class="compat-line">
-                <span class="compat-label">Behaviour:</span>
-                <span>Tightly schooling, peaceful mid-dweller; requires groups of 6–10+ minimum.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Compatible:</span>
-                <span class="compat-value-good">Harlequin Rasboras, Corydoras, Otocinclus, Platies, Dwarf Gourami, Bettas.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Avoid:</span>
-                <span class="compat-value-bad">Adult Angelfish (they prey on neons!), large cichlids, aggressive barbs.</span>
-              </div>
-            </div>
-
-            <div class="fish-tip-banner">
-              <b>Care Tip:</b> Keep in a school of at least 6–8 fish; solitary tetras become frightened, pale, and stressed.
+            <div class="fish-card-care-tip">
+              <strong>Care Tip:</strong> Always maintain a school of 6+ fish; solitary tetras become timid, pale, and
+              stressed.
             </div>
           </div>
         </article>
 
-        <!-- 6. ANGELFISH -->
-        <article class="fish-card" data-name="angelfish" data-water="tropical freshwater" data-category="centerpiece" data-tags="centerpiece cichlid majestic pterophyllum scalare tall planted">
+        <!-- Card 6: Freshwater Angelfish -->
+        <article class="fish-card" id="card-angelfish">
           <div class="fish-card-media">
-            <span class="fish-number-badge">06</span>
-            <span class="fish-water-badge">Tropical Centerpiece</span>
-            <img class="fish-image" src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&fit=crop&w=800&q=80" alt="Freshwater Angelfish with majestic vertical fins" loading="lazy">
+            <span class="fish-water-badge"><i class="fa-solid fa-gem"></i> Tropical Centerpiece</span>
+            <img class="fish-image"
+              src="https://images.unsplash.com/photo-1646022103851-022a7544a3b5?q=80&w=874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Regal Freshwater Angelfish gliding in aquarium" loading="lazy">
           </div>
           <div class="fish-card-body">
             <div class="fish-title-row">
               <h3>Freshwater Angelfish</h3>
-              <div class="fish-sci-name">Pterophyllum scalare • Cichlidae</div>
             </div>
             <p class="fish-card-desc">
-              With their regal disc-like bodies and sweeping wing-shaped fins, Angelfish are the undisputed monarchs of South American community aquariums. They are intelligent cichlids that quickly recognize their caregivers.
+              Regal cichlids with tall, elegant disc-shaped silhouettes and flowing pelvic fins that cruise calmly
+              through spacious planted setups.
             </p>
-
-            <div class="fish-attribute-block">
-              <div class="attribute-header"><span>📏</span> Size & Appearance</div>
-              <p class="attribute-text">
-                15 cm body length, reaching 20–25 cm (8–10 inches) tall including fins! Laterally compressed disc bodies with elongated dorsal, anal, and filiform pelvic fins. Strains: Silver, Koi, Zebra, Marble, and Black.
-              </p>
+            <div class="fish-badges-row">
+              <span class="fish-badge-pill"><i class="fa-solid fa-cubes"></i> 30+ Gal (Tall)</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-temperature-half"></i> 24°–29°C</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-flask"></i> pH 6.5–7.5</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-user-group"></i> Pairs / Groups</span>
             </div>
-
-            <div class="fish-specs-grid">
-              <div class="spec-item">
-                <small>Min Tank Size</small>
-                <b>30 Gal Tall (115 L) / 55+ Gal (Group)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water Temperature</small>
-                <b>24°C – 29°C (76°F – 84°F)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water pH & Hardness</small>
-                <b>pH 6.5 – 7.5 • 3–12 dGH</b>
-              </div>
-              <div class="spec-item">
-                <small>Filtration Need</small>
-                <b>Moderate flow; tall tanks (18"+ height)</b>
-              </div>
-            </div>
-
-            <div class="fish-compat-box">
-              <div class="compat-line">
-                <span class="compat-label">Behaviour:</span>
-                <span>Graceful, semi-aggressive cichlid; territorial during spawning; forms bonded pairs.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Compatible:</span>
-                <span class="compat-value-good">Medium-to-large tetras (Bleeding Heart, Lemon), Gouramis, Corydoras, Plecos.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Avoid:</span>
-                <span class="compat-value-bad">Tiny micro-fish (Neon Tetras get eaten!), Tiger Barbs (fin-nippers), Bettas.</span>
-              </div>
-            </div>
-
-            <div class="fish-tip-banner">
-              <b>Care Tip:</b> Tall tanks are essential; standard shallow aquariums stunt their magnificent vertical fin development.
+            <div class="fish-card-care-tip">
+              <strong>Care Tip:</strong> Provide tall aquariums (18"+ height) so vertical fins can develop without
+              obstruction.
             </div>
           </div>
         </article>
 
-        <!-- 7. PLATY FISH -->
-        <article class="fish-card" data-name="platy fish" data-water="tropical freshwater" data-category="beginner livebearer" data-tags="beginner livebearer hardy peaceful xiphophorus maculatus community">
+        <!-- Card 7: Platy Fish -->
+        <article class="fish-card" id="card-platy">
           <div class="fish-card-media">
-            <span class="fish-number-badge">07</span>
-            <span class="fish-water-badge">Tropical Community</span>
-            <img class="fish-image" src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=800&q=80" alt="Cheerful red and orange Platy swimming near plants" loading="lazy">
+            <span class="fish-water-badge"><i class="fa-solid fa-water"></i> Tropical Community</span>
+            <img class="fish-image"
+              src="https://plus.unsplash.com/premium_photo-1722908885987-628cef023cc9?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Bright colorful Platy fish swimming near aquatic plants" loading="lazy">
           </div>
           <div class="fish-card-body">
             <div class="fish-title-row">
               <h3>Platy Fish</h3>
-              <div class="fish-sci-name">Xiphophorus maculatus • Poeciliidae</div>
             </div>
             <p class="fish-card-desc">
-              Widely considered the ultimate beginner fish, Platies are peaceful, exceptionally resilient, and full of charm. They accept almost all water conditions within reason and interact peacefully with all fellow tankmates.
+              Curious, gentle, and remarkably resilient livebearers available in hundreds of vivid captive color morphs.
+              Highly recommended for beginners.
             </p>
-
-            <div class="fish-attribute-block">
-              <div class="attribute-header"><span>📏</span> Size & Appearance</div>
-              <p class="attribute-text">
-                5–7 cm (2–2.8 inches). Sturdy, compact bodies with rounded fins. Available in hundreds of striking captive-bred color morphs including Red Wagtail, Mickey Mouse, Sunset, Blue Coral, and Tuxedo.
-              </p>
+            <div class="fish-badges-row">
+              <span class="fish-badge-pill"><i class="fa-solid fa-cubes"></i> 10–15 Gallons</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-temperature-half"></i> 22°–27°C</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-flask"></i> pH 7.0–8.2</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-users"></i> Small Groups</span>
             </div>
-
-            <div class="fish-specs-grid">
-              <div class="spec-item">
-                <small>Min Tank Size</small>
-                <b>10–15 Gallons (38–57 L)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water Temperature</small>
-                <b>22°C – 27°C (72°F – 80°F)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water pH & Hardness</small>
-                <b>pH 7.0 – 8.3 • 10–25 dGH (Hard water)</b>
-              </div>
-              <div class="spec-item">
-                <small>Filtration Need</small>
-                <b>Standard internal / Hang-on-back</b>
-              </div>
-            </div>
-
-            <div class="fish-compat-box">
-              <div class="compat-line">
-                <span class="compat-label">Behaviour:</span>
-                <span>Active, gentle, curious; explores all levels of the aquarium without aggression.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Compatible:</span>
-                <span class="compat-value-good">Guppies, Mollies, Swordtails, Zebra Danios, Neon Tetras, Corydoras, Snails.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Avoid:</span>
-                <span class="compat-value-bad">Aggressive predatory cichlids, fin-nippers, coldwater goldfish.</span>
-              </div>
-            </div>
-
-            <div class="fish-tip-banner">
-              <b>Care Tip:</b> Platies relish nibbling on live plants and algae wafers alongside their core staple flake food.
+            <div class="fish-card-care-tip">
+              <strong>Care Tip:</strong> Platies relish nibbling fresh vegetable spirulina wafers alongside flake food.
             </div>
           </div>
         </article>
 
-        <!-- 8. ZEBRA DANIO -->
-        <article class="fish-card" data-name="zebra danio" data-water="subtropical tropical freshwater" data-category="beginner schooling coldwater" data-tags="schooling fast hardy cyprinid danio rerio surface torpedo">
+        <!-- Card 8: Zebra Danio -->
+        <article class="fish-card" id="card-danio">
           <div class="fish-card-media">
-            <span class="fish-number-badge">08</span>
-            <span class="fish-water-badge">Subtropical / Tropical</span>
-            <img class="fish-image" src="https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?auto=format&fit=crop&w=800&q=80" alt="Zebra Danio with metallic horizontal stripes" loading="lazy">
+            <span class="fish-water-badge"><i class="fa-solid fa-bolt"></i> Active Schooler</span>
+            <img class="fish-image"
+              src="https://images.unsplash.com/photo-1556938537-c3ca21a866a5?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Energetic Zebra Danio schooling in clear water" loading="lazy">
           </div>
           <div class="fish-card-body">
             <div class="fish-title-row">
               <h3>Zebra Danio</h3>
-              <div class="fish-sci-name">Danio rerio • Zebrafish</div>
             </div>
             <p class="fish-card-desc">
-              Unstoppable energy in a compact package! Zebra Danios are bullet-fast schooling fish that swim playfully against filter currents. Their legendary hardiness makes them ideal for newcomers cycling a modern freshwater setup.
+              Energetic, lightning-quick swimmers decorated with metallic horizontal stripes. Legendary hardiness makes
+              them ideal for new tanks.
             </p>
-
-            <div class="fish-attribute-block">
-              <div class="attribute-header"><span>📏</span> Size & Appearance</div>
-              <p class="attribute-text">
-                4–5 cm (1.5–2 inches). Slender, streamlined torpedo silhouette adorned with 5 horizontal metallic blue and golden-silver racing stripes extending cleanly through the anal and tail fins.
-              </p>
+            <div class="fish-badges-row">
+              <span class="fish-badge-pill"><i class="fa-solid fa-cubes"></i> 10–15 Gallons</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-temperature-half"></i> 18°–24°C</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-flask"></i> pH 6.5–7.8</span>
+              <span class="fish-badge-pill"><i class="fa-solid fa-users"></i> School of 6+</span>
             </div>
-
-            <div class="fish-specs-grid">
-              <div class="spec-item">
-                <small>Min Tank Size</small>
-                <b>10–15 Gallons Long (needs length)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water Temperature</small>
-                <b>18°C – 24°C (64°F – 75°F)</b>
-              </div>
-              <div class="spec-item">
-                <small>Water pH & Hardness</small>
-                <b>pH 6.5 – 7.8 • 5–15 dGH</b>
-              </div>
-              <div class="spec-item">
-                <small>Filtration Need</small>
-                <b>Moderate to brisk current</b>
-              </div>
-            </div>
-
-            <div class="fish-compat-box">
-              <div class="compat-line">
-                <span class="compat-label">Behaviour:</span>
-                <span>Hyperactive, playful surface/mid darter; strictly schooling (keep 6–8+).</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Compatible:</span>
-                <span class="compat-value-good">Platies, Mollies, larger tetras, Corydoras catfish, Bristlenose Plecos.</span>
-              </div>
-              <div class="compat-line">
-                <span class="compat-label">Avoid:</span>
-                <span class="compat-value-bad">Slow, calm long-finned fish (Bettas) who become stressed by danio hyperactivity.</span>
-              </div>
-            </div>
-
-            <div class="fish-tip-banner">
-              <b>Care Tip:</b> Use a tight-fitting aquarium lid; Danios are athletic surface jumpers when excited.
+            <div class="fish-card-care-tip">
+              <strong>Care Tip:</strong> Use a snug-fitting aquarium hood; danios are athletic jumpers when active.
             </div>
           </div>
         </article>
 
-      </div>
-    </section>
-
-    <!-- ========================================================
-         2. QUICK SPECIES COMPARISON MATRIX
-         ======================================================== -->
-    <section class="section section-wrap" id="comparison-matrix" style="padding-top: 20px;">
-      <div class="section-title-wrap">
-        <div class="eyebrow">At A Glance</div>
-        <h2>Side-by-Side <em>Species Matrix</em></h2>
-        <p>Compare minimum tank volumes, temperature bands, water chemistry, and social requirements across all 8 featured fish species.</p>
-      </div>
-
-      <div class="table-container">
-        <table class="fish-table" aria-label="Aquarium Fish Species Comparison Table">
-          <thead>
-            <tr>
-              <th scope="col">Species</th>
-              <th scope="col">Adult Size</th>
-              <th scope="col">Min Tank</th>
-              <th scope="col">Ideal Temp</th>
-              <th scope="col">pH Range</th>
-              <th scope="col">Social Need</th>
-              <th scope="col">Swimming Level</th>
-              <th scope="col">Difficulty</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="name-col">🐠 Goldfish</td>
-              <td>15–30 cm</td>
-              <td>20–30 Gal+</td>
-              <td>18°C – 23°C</td>
-              <td>7.0 – 8.0</td>
-              <td>Groups (2+)</td>
-              <td>Bottom & Middle</td>
-              <td>Beginner / Intermediate</td>
-            </tr>
-            <tr>
-              <td class="name-col">🐟 Betta Fish</td>
-              <td>5–7 cm</td>
-              <td>5 Gallons</td>
-              <td>25°C – 28°C</td>
-              <td>6.5 – 7.5</td>
-              <td>Solitary (Males)</td>
-              <td>Top & Middle</td>
-              <td>Beginner Friendly</td>
-            </tr>
-            <tr>
-              <td class="name-col">✨ Guppy Fish</td>
-              <td>3–6 cm</td>
-              <td>10 Gallons</td>
-              <td>22°C – 28°C</td>
-              <td>7.0 – 8.2</td>
-              <td>School (5+)</td>
-              <td>Top & Middle</td>
-              <td>Beginner Friendly</td>
-            </tr>
-            <tr>
-              <td class="name-col">🖤 Molly Fish</td>
-              <td>7.5–12 cm</td>
-              <td>20 Gallons</td>
-              <td>24°C – 28°C</td>
-              <td>7.5 – 8.5</td>
-              <td>Groups (4+)</td>
-              <td>Middle & Top</td>
-              <td>Beginner Friendly</td>
-            </tr>
-            <tr>
-              <td class="name-col">💙 Neon Tetra</td>
-              <td>3–4 cm</td>
-              <td>10 Gallons</td>
-              <td>21°C – 26°C</td>
-              <td>6.0 – 7.0</td>
-              <td>Strict School (6–10+)</td>
-              <td>Middle Column</td>
-              <td>Beginner Friendly</td>
-            </tr>
-            <tr>
-              <td class="name-col">👑 Angelfish</td>
-              <td>15 cm (25 cm tall)</td>
-              <td>30 Gal Tall</td>
-              <td>24°C – 29°C</td>
-              <td>6.5 – 7.5</td>
-              <td>Pairs or 5+ group</td>
-              <td>Middle & Open water</td>
-              <td>Intermediate</td>
-            </tr>
-            <tr>
-              <td class="name-col">🧡 Platy Fish</td>
-              <td>5–7 cm</td>
-              <td>10–15 Gal</td>
-              <td>22°C – 27°C</td>
-              <td>7.0 – 8.3</td>
-              <td>Small group (3+)</td>
-              <td>All Levels</td>
-              <td>Beginner Friendly</td>
-            </tr>
-            <tr>
-              <td class="name-col">⚡ Zebra Danio</td>
-              <td>4–5 cm</td>
-              <td>10–15 Gal</td>
-              <td>18°C – 24°C</td>
-              <td>6.5 – 7.8</td>
-              <td>Strict School (6+)</td>
-              <td>Top & Surface</td>
-              <td>Beginner Friendly</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="table-scroll-hint">👈 Swipe horizontally to view full comparison details 👉</div>
-    </section>
-
-    <!-- ========================================================
-         3. INTERACTIVE TANK COMPATIBILITY CHECKER TOOL
-         ======================================================== -->
-    <section class="section section-wrap" id="compat-checker">
-      <div class="section-title-wrap">
-        <div class="eyebrow">Smart Matchmaking</div>
-        <h2>Can They <em>Swim Together?</em></h2>
-        <p>Select any two fish species to evaluate their tank compatibility, temperament alignment, temperature overlap, and potential risks before purchasing.</p>
-      </div>
-
-      <div class="compat-tool-card">
-        <div class="compat-selectors-row">
-          <div class="compat-select-box">
-            <label for="compat-fish-1">Select First Fish</label>
-            <select id="compat-fish-1">
-              <option value="betta">Betta Fish (Siamese Fighting Fish)</option>
-              <option value="goldfish">Goldfish</option>
-              <option value="guppy">Guppy Fish</option>
-              <option value="molly">Molly Fish</option>
-              <option value="neon_tetra" selected>Neon Tetra</option>
-              <option value="angelfish">Angelfish</option>
-              <option value="platy">Platy Fish</option>
-              <option value="zebra_danio">Zebra Danio</option>
-            </select>
-          </div>
-
-          <div class="compat-vs-badge">VS</div>
-
-          <div class="compat-select-box">
-            <label for="compat-fish-2">Select Second Fish</label>
-            <select id="compat-fish-2">
-              <option value="betta" selected>Betta Fish (Siamese Fighting Fish)</option>
-              <option value="goldfish">Goldfish</option>
-              <option value="guppy">Guppy Fish</option>
-              <option value="molly">Molly Fish</option>
-              <option value="neon_tetra">Neon Tetra</option>
-              <option value="angelfish">Angelfish</option>
-              <option value="platy">Platy Fish</option>
-              <option value="zebra_danio">Zebra Danio</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="compat-action-wrap">
-          <button type="button" class="button" id="check-compat-btn">Check Tank Compatibility ↗</button>
-        </div>
-
-        <!-- Result Box -->
-        <div id="compat-result-card" class="compat-result-card status-compatible" style="display: block;">
-          <span id="compat-status-pill" class="status-badge badge-compatible">🟢 Compatible</span>
-          <h4 id="compat-result-title">Compatible in 10+ Gallon Planted Tanks</h4>
-          <p id="compat-result-desc">
-            Neon Tetras occupy the mid-water while Bettas inhabit the surface. Provided the tank has ample live plants and the school has 6+ tetras (which discourages fin-nipping), they make colorful, peaceful tank mates.
-          </p>
-        </div>
       </div>
     </section>
 
@@ -2090,10 +3102,44 @@
          4. AQUARIUM SETUP BASICS & NITROGEN CYCLE
          ======================================================== -->
     <section class="section section-wrap" id="tank-setup">
-      <div class="section-title-wrap">
-        <div class="eyebrow">Foundation of Success</div>
-        <h2>Aquarium Setup <em>Basics</em></h2>
-        <p>A thriving aquatic pet habitat relies on balanced biological filtration, proper positioning, and patience during the initial cycling phase.</p>
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Aquatic Accents -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-water"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-water"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-cubes"></i>
+            Habitat &amp; Environment
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Aquarium Setup &amp; <span>Cycling Basics</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            A thriving aquatic pet habitat relies on balanced biological filtration, proper positioning, substrate
+            selection, and patience during the initial cycling phase.
+          </p>
+        </div>
       </div>
 
       <!-- 4-Step Setup Walkthrough -->
@@ -2102,7 +3148,8 @@
           <div class="setup-step-num">01</div>
           <h3>Tank Selection & Placement</h3>
           <p>
-            Place your aquarium on a level, sturdy stand away from direct sunlight (which triggers runaway algae) and cold air drafts. Remember: 10 gallons of water weighs ~85 lbs (38 kg)!
+            Place your aquarium on a level, sturdy stand away from direct sunlight (which triggers runaway algae) and
+            cold air drafts. Remember: 10 gallons of water weighs ~85 lbs (38 kg)!
           </p>
         </div>
 
@@ -2110,7 +3157,8 @@
           <div class="setup-step-num">02</div>
           <h3>Substrate & Hardscape</h3>
           <p>
-            Rinse inert aquarium gravel or fine river sand thoroughly. Add smooth driftwood, non-calcareous rocks, and ceramic caves for resting territories. Avoid sharp plastic decorations that tear fins.
+            Rinse inert aquarium gravel or fine river sand thoroughly. Add smooth driftwood, non-calcareous rocks, and
+            ceramic caves for resting territories. Avoid sharp plastic decorations that tear fins.
           </p>
         </div>
 
@@ -2118,7 +3166,8 @@
           <div class="setup-step-num">03</div>
           <h3>Filtration & Aeration</h3>
           <p>
-            Install a filter rated for at least 4 to 5 times your tank volume per hour. Sponge filters are superb for Bettas and small fry, while Hang-on-Back (HOB) filters excel in community tanks.
+            Install a filter rated for at least 4 to 5 times your tank volume per hour. Sponge filters are superb for
+            Bettas and small fry, while Hang-on-Back (HOB) filters excel in community tanks.
           </p>
         </div>
 
@@ -2126,49 +3175,9 @@
           <div class="setup-step-num">04</div>
           <h3>Heating & Lighting</h3>
           <p>
-            Tropical fish require a submersible heater (3–5 watts per gallon) with a reliable thermometer. Set aquarium LED lights on an automatic timer for 6 to 8 hours daily to nourish plants without fostering algae.
+            Tropical fish require a submersible heater (3–5 watts per gallon) with a reliable thermometer. Set aquarium
+            LED lights on an automatic timer for 6 to 8 hours daily to nourish plants without fostering algae.
           </p>
-        </div>
-      </div>
-
-      <!-- The Nitrogen Cycle Diagram Box -->
-      <div class="nitrogen-box">
-        <div style="text-align: center; max-width: 680px; margin: 0 auto 16px;">
-          <div class="eyebrow" style="margin-bottom: 6px;">The #1 Rule of Fishkeeping</div>
-          <h3 style="font-size: 1.6rem; margin: 0 0 8px; color: var(--ink);">Understanding the <em>Nitrogen Cycle</em></h3>
-          <p style="font-size: 0.92rem; color: #55665c; margin: 0;">
-            Before introducing fish, beneficial bacteria must colonize the filter media to convert toxic fish wastes into harmless compounds. Never add a full load of fish on Day 1!
-          </p>
-        </div>
-
-        <div class="nitrogen-diagram">
-          <div class="nitro-stage nitro-stage-danger">
-            <span class="stage-icon">🐟 ➔ 💩</span>
-            <b>1. Waste & Ammonia</b>
-            <small>Fish respiration, uneaten food, and waste create <b>toxic Ammonia (NH₃)</b>. Lethal to fish even in tiny amounts.</small>
-          </div>
-
-          <div class="nitro-stage nitro-stage-warning">
-            <span class="stage-icon">🦠</span>
-            <b>2. Nitrosomonas Bacteria</b>
-            <small>Beneficial nitrifying bacteria consume Ammonia and oxidize it into <b>Nitrite (NO₂⁻)</b>. Still toxic to fish blood.</small>
-          </div>
-
-          <div class="nitro-stage nitro-stage-safe">
-            <span class="stage-icon">🌿</span>
-            <b>3. Nitrobacter Bacteria</b>
-            <small>A second colony of bacteria converts Nitrite into <b>Nitrate (NO₃⁻)</b>, which is far less harmful in low concentrations.</small>
-          </div>
-
-          <div class="nitro-stage">
-            <span class="stage-icon">🪣 ➔ 🪴</span>
-            <b>4. Water Changes & Plants</b>
-            <small>Weekly 20–25% partial water changes and live plants export Nitrate from the ecosystem, completing the cycle.</small>
-          </div>
-        </div>
-
-        <div style="background: #fafbfa; border: 1px solid #e1ebe2; border-radius: 12px; padding: 14px 18px; font-size: 0.86rem; color: #43544a; line-height: 1.6;">
-          <b>How to Cycle Your Tank:</b> Perform a "fishless cycle" using a small pinch of fish food or pure household ammonia and bottled nitrifying bacteria. Test water every few days until Ammonia and Nitrite drop to 0 ppm and Nitrates register, typically taking 2 to 4 weeks.
         </div>
       </div>
     </section>
@@ -2177,231 +3186,344 @@
          5. WATER QUALITY & CHEMISTRY ESSENTIALS
          ======================================================== -->
     <section class="section section-wrap" id="water-quality">
-      <div class="section-title-wrap">
-        <div class="eyebrow">Water Chemistry</div>
-        <h2>Water Quality & <em>Testing Standards</em></h2>
-        <p>Fish live immersed in their environment; pristine, chemically stable water is the single most important factor for disease prevention and longevity.</p>
-      </div>
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
 
+        <!-- Decorative Aquatic Accents -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-water"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-water"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-flask"></i>
+            Aquarium Chemistry
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Water Quality &amp; <span>Safety Standards</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Fish live immersed in their environment; pristine, chemically stable water is the single most important
+            factor for disease prevention, vitality, and longevity.
+          </p>
+        </div>
+      </div>
       <!-- 6 Key Parameter Cards -->
-      <div class="water-params-grid">
-        <div class="param-card">
-          <div class="param-header">
-            <h3>Ammonia (NH₃)</h3>
-            <span class="param-target" style="background: #fee2e2; color: #b91c1c;">Must Be 0.0 ppm</span>
+      <div class="water-params-grid" id="fish-water-params-container">
+        <!-- 1. Ammonia -->
+        <div class="fish-param-card param-card" id="fish-param-ammonia">
+          <div class="fish-param-header param-card-header">
+            <div class="fish-param-icon-disc param-icon-disc">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <span class="fish-param-badge param-badge badge-danger">Must Be 0.0 ppm</span>
           </div>
-          <p>Produced by gills and waste. Highly toxic at any detectable level; burns fish gills and causes gasping at the surface.</p>
-          <div class="param-note">Fix: Immediate 30–50% water change with dechlorinator.</div>
-        </div>
-
-        <div class="param-card">
-          <div class="param-header">
-            <h3>Nitrite (NO₂⁻)</h3>
-            <span class="param-target" style="background: #fee2e2; color: #b91c1c;">Must Be 0.0 ppm</span>
-          </div>
-          <p>Intermediate byproduct of the nitrogen cycle. Binds to hemoglobin, suffocating fish internally ("brown blood disease").</p>
-          <div class="param-note">Fix: Test filter biological media; dose beneficial bacteria.</div>
-        </div>
-
-        <div class="param-card">
-          <div class="param-header">
-            <h3>Nitrate (NO₃⁻)</h3>
-            <span class="param-target" style="background: #dcfce7; color: #15803d;">&lt; 20–40 ppm</span>
-          </div>
-          <p>Relatively non-toxic final product of biological filtration. Becomes stressful to fish immune systems when accumulating over 40 ppm.</p>
-          <div class="param-note">Fix: Perform routine weekly 20–25% partial water changes.</div>
-        </div>
-
-        <div class="param-card">
-          <div class="param-header">
-            <h3>pH Level</h3>
-            <span class="param-target">6.5 – 8.0 (Stable)</span>
-          </div>
-          <p>Measures acidity or alkalinity. Stability is much more critical than matching an exact decimal point; wild pH swings induce fatal osmotic shock.</p>
-          <div class="param-note">Tip: Avoid chemical pH adjusters; use natural driftwood or crushed coral.</div>
-        </div>
-
-        <div class="param-card">
-          <div class="param-header">
-            <h3>Temperature</h3>
-            <span class="param-target">Species Specific</span>
-          </div>
-          <p>Tropical species require 24°C–28°C, while goldfish thrive at 18°C–22°C. Fluctuations greater than 1°C per day stress fish and weaken immune defenses.</p>
-          <div class="param-note">Tip: Always check digital heater status daily.</div>
-        </div>
-
-        <div class="param-card">
-          <div class="param-header">
-            <h3>Chlorine & Chloramine</h3>
-            <span class="param-target" style="background: #fee2e2; color: #b91c1c;">Must Be 0.0 ppm</span>
-          </div>
-          <p>Disinfectants added to municipal tap water. Lethal to fish and instantly destroys the beneficial bacteria in your biological filter.</p>
-          <div class="param-note">Rule: ALWAYS dose tap water with dechlorinator before adding to tank!</div>
-        </div>
-      </div>
-
-      <!-- Interactive Parameter Profiles Tabs -->
-      <div style="background: white; border: 1px solid var(--line); border-radius: 20px; padding: 28px; box-shadow: 0 4px 18px rgba(35, 57, 43, 0.04);">
-        <h3 style="text-align: center; margin: 0 0 16px; font-size: 1.25rem;">Ideal Water Profiles by Aquarium Category</h3>
-
-        <div class="water-tabs-nav">
-          <button type="button" class="water-tab-btn active" data-target="tab-tropical">Tropical Community</button>
-          <button type="button" class="water-tab-btn" data-target="tab-betta">Betta Solitary</button>
-          <button type="button" class="water-tab-btn" data-target="tab-goldfish">Coldwater Goldfish</button>
-          <button type="button" class="water-tab-btn" data-target="tab-livebearer">Hardwater Livebearers</button>
-        </div>
-
-        <div id="tab-tropical" class="water-tab-pane active">
-          <h4 style="margin: 0 0 8px; color: var(--green);">Tropical Community Profile (Tetras, Rasboras, Corydoras)</h4>
-          <p style="font-size: 0.9rem; color: #55665c; margin: 0 0 14px;">Ideal for Amazonian and Southeast Asian community aquariums with live aquatic flora.</p>
-          <div class="fish-specs-grid" style="margin: 0;">
-            <div class="spec-item"><small>Target Temp</small><b>24°C – 26°C (75°F – 79°F)</b></div>
-            <div class="spec-item"><small>Target pH</small><b>6.5 – 7.2 (Neutral / Mildly Acidic)</b></div>
-            <div class="spec-item"><small>Hardness</small><b>4 – 10 dGH (Soft to Medium)</b></div>
-            <div class="spec-item"><small>Water Changes</small><b>20% every 7–10 days</b></div>
+          <div class="fish-param-content param-card-content">
+            <h3>Ammonia <span class="param-formula">(NH₃)</span></h3>
+            <p>Produced by fish gills and decaying organic waste. Highly toxic at any detectable level, burning delicate
+              gill membranes and causing gasping at the surface.</p>
+            <div class="fish-water-card-tip">
+              <strong><i class="fa-solid fa-rotate"></i> Action:</strong>
+              Immediate 30–50% partial water change with a quality dechlorinator.
+            </div>
           </div>
         </div>
 
-        <div id="tab-betta" class="water-tab-pane">
-          <h4 style="margin: 0 0 8px; color: var(--green);">Betta Splendens Profile</h4>
-          <p style="font-size: 0.9rem; color: #55665c; margin: 0 0 14px;">Warm, calm waters with abundant resting spots near the surface and zero surface turbulence.</p>
-          <div class="fish-specs-grid" style="margin: 0;">
-            <div class="spec-item"><small>Target Temp</small><b>26°C – 28°C (78°F – 82°F)</b></div>
-            <div class="spec-item"><small>Target pH</small><b>6.8 – 7.4</b></div>
-            <div class="spec-item"><small>Hardness</small><b>3 – 8 dGH</b></div>
-            <div class="spec-item"><small>Filtration Flow</small><b>Very Gentle / Baffled flow</b></div>
+        <!-- 2. Nitrite -->
+        <div class="fish-param-card param-card" id="fish-param-nitrite">
+          <div class="fish-param-header param-card-header">
+            <div class="fish-param-icon-disc param-icon-disc">
+              <i class="fa-solid fa-biohazard"></i>
+            </div>
+            <span class="fish-param-badge param-badge badge-danger">Must Be 0.0 ppm</span>
+          </div>
+          <div class="fish-param-content param-card-content">
+            <h3>Nitrite <span class="param-formula">(NO₂⁻)</span></h3>
+            <p>Intermediate byproduct of biological cycling. Binds tightly to hemoglobin, preventing internal oxygen
+              circulation and suffocating fish ("brown blood disease").</p>
+            <div class="fish-water-card-tip">
+              <strong><i class="fa-solid fa-rotate"></i> Action:</strong>
+              Test biological filter media and dose live beneficial nitrifying bacteria.
+            </div>
           </div>
         </div>
 
-        <div id="tab-goldfish" class="water-tab-pane">
-          <h4 style="margin: 0 0 8px; color: var(--green);">Coldwater Goldfish Profile</h4>
-          <p style="font-size: 0.9rem; color: #55665c; margin: 0 0 14px;">Cooler, highly oxygenated water with strong filtration to process high biological waste.</p>
-          <div class="fish-specs-grid" style="margin: 0;">
-            <div class="spec-item"><small>Target Temp</small><b>18°C – 22°C (64°F – 72°F)</b></div>
-            <div class="spec-item"><small>Target pH</small><b>7.2 – 7.8 (Slightly Alkaline)</b></div>
-            <div class="spec-item"><small>Hardness</small><b>8 – 18 dGH</b></div>
-            <div class="spec-item"><small>Filtration Capacity</small><b>5x – 8x tank volume / hr</b></div>
+        <!-- 3. Nitrate -->
+        <div class="fish-param-card param-card" id="fish-param-nitrate">
+          <div class="fish-param-header param-card-header">
+            <div class="fish-param-icon-disc param-icon-disc">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <span class="fish-param-badge param-badge badge-safe">&lt; 20–40 ppm</span>
+          </div>
+          <div class="fish-param-content param-card-content">
+            <h3>Nitrate <span class="param-formula">(NO₃⁻)</span></h3>
+            <p>Final end-product of the nitrogen cycle. Well-tolerated in modest amounts, but levels exceeding 40 ppm
+              weaken immune defenses and spur stubborn nuisance algae.</p>
+            <div class="fish-water-card-tip">
+              <strong><i class="fa-solid fa-rotate"></i> Action:</strong>
+              Perform routine weekly 20–25% partial water changes and maintain live plants.
+            </div>
           </div>
         </div>
 
-        <div id="tab-livebearer" class="water-tab-pane">
-          <h4 style="margin: 0 0 8px; color: var(--green);">Hardwater Livebearer Profile (Guppies, Mollies, Platies)</h4>
-          <p style="font-size: 0.9rem; color: #55665c; margin: 0 0 14px;">Mineral-rich water preventing shimmies and supporting robust scales and reproduction.</p>
-          <div class="fish-specs-grid" style="margin: 0;">
-            <div class="spec-item"><small>Target Temp</small><b>24°C – 27°C (75°F – 80°F)</b></div>
-            <div class="spec-item"><small>Target pH</small><b>7.4 – 8.2 (Alkaline)</b></div>
-            <div class="spec-item"><small>Hardness</small><b>12 – 25 dGH (Hard water)</b></div>
-            <div class="spec-item"><small>Dietary Note</small><b>Include spirulina & vegetable flakes</b></div>
+        <!-- 4. pH Level -->
+        <div class="fish-param-card param-card" id="fish-param-ph">
+          <div class="fish-param-header param-card-header">
+            <div class="fish-param-icon-disc param-icon-disc">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <span class="fish-param-badge param-badge badge-neutral">6.5 – 8.0 (Stable)</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         6. AQUARIUM VOLUME & EQUIPMENT CALCULATOR
-         ======================================================== -->
-    <section class="section section-wrap" id="tank-calculator">
-      <div class="section-title-wrap">
-        <div class="eyebrow">Interactive Tool</div>
-        <h2>Aquarium Volume & <em>Equipment Calculator</em></h2>
-        <p>Enter your aquarium tank dimensions to calculate water volume, recommended filtration turnover, and minimum heater wattage.</p>
-      </div>
-
-      <div class="calculator-card">
-        <div class="calc-inputs-grid">
-          <div class="calc-field">
-            <label for="calc-unit">Measurement Unit</label>
-            <select id="calc-unit">
-              <option value="cm" selected>Centimeters (cm)</option>
-              <option value="in">Inches (in)</option>
-            </select>
-          </div>
-          <div class="calc-field">
-            <label for="calc-length">Tank Length</label>
-            <input type="number" id="calc-length" placeholder="e.g. 60" value="60" min="1" step="0.5">
-          </div>
-          <div class="calc-field">
-            <label for="calc-width">Tank Width (Depth)</label>
-            <input type="number" id="calc-width" placeholder="e.g. 30" value="30" min="1" step="0.5">
-          </div>
-          <div class="calc-field">
-            <label for="calc-height">Tank Height</label>
-            <input type="number" id="calc-height" placeholder="e.g. 36" value="36" min="1" step="0.5">
+          <div class="fish-param-content param-card-content">
+            <h3>pH Level <span class="param-formula">(Acidity)</span></h3>
+            <p>Measures aquarium acidity or alkalinity. Long-term pH stability is far more critical than an exact
+              number; wild daily shifts induce severe osmotic shock.</p>
+            <div class="fish-water-card-tip">
+              <strong><i class="fa-solid fa-circle-info"></i> Tip:</strong>
+              Avoid volatile chemical adjusters; buffer naturally with driftwood or crushed coral.
+            </div>
           </div>
         </div>
 
-        <div style="text-align: center;">
-          <button type="button" class="button" id="calc-submit-btn">Calculate Volume & Equipment ↗</button>
+        <!-- 5. Temperature -->
+        <div class="fish-param-card param-card" id="fish-param-temp">
+          <div class="fish-param-header param-card-header">
+            <div class="fish-param-icon-disc param-icon-disc">
+              <i class="fa-solid fa-temperature-half"></i>
+            </div>
+            <span class="fish-param-badge param-badge badge-neutral">Species Specific</span>
+          </div>
+          <div class="fish-param-content param-card-content">
+            <h3>Temperature <span class="param-formula">(Thermal)</span></h3>
+            <p>Tropical species require 24°C–28°C, while goldfish flourish in cool 18°C–22°C water. Shifts greater than
+              1°C per day severely stress immune defenses.</p>
+            <div class="fish-water-card-tip">
+              <strong><i class="fa-solid fa-circle-info"></i> Tip:</strong>
+              Install an adjustable heater and verify digital thermometer readings daily.
+            </div>
+          </div>
         </div>
 
-        <div class="calc-results-wrap" id="calc-output-box" style="display: grid;">
-          <div class="calc-res-item">
-            <small>Water Volume (Liters)</small>
-            <b id="calc-result-liters">64.8 L</b>
+        <!-- 6. Chlorine & Chloramine -->
+        <div class="fish-param-card param-card" id="fish-param-chlorine">
+          <div class="fish-param-header param-card-header">
+            <div class="fish-param-icon-disc param-icon-disc">
+              <i class="fa-solid fa-shield-virus"></i>
+            </div>
+            <span class="fish-param-badge param-badge badge-danger">Must Be 0.0 ppm</span>
           </div>
-          <div class="calc-res-item">
-            <small>Water Volume (Gallons)</small>
-            <b id="calc-result-gallons">17.1 Gal</b>
-          </div>
-          <div class="calc-res-item">
-            <small>Min Filter Flow Rate</small>
-            <b id="calc-result-filter">292 L/h (77 GPH)</b>
-          </div>
-          <div class="calc-res-item">
-            <small>Recommended Heater</small>
-            <b id="calc-result-heater">75 Watts</b>
+          <div class="fish-param-content param-card-content">
+            <h3>Chlorine &amp; Chloramine</h3>
+            <p>Disinfectants added to municipal tap water. Highly lethal to fish gills and instantly eradicates the
+              beneficial nitrifying colonies in filter sponges.</p>
+            <div class="fish-water-card-tip">
+              <strong><i class="fa-solid fa-triangle-exclamation"></i> Rule:</strong>
+              Always dose tap water with high-grade dechlorinator before adding to the tank.
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         7. BASIC FISH CARE & HEALTH TIPS
+         6. FISH FOOD & NUTRITIONAL CARE
          ======================================================== -->
-    <section class="section section-wrap" id="care-tips">
-      <div class="section-title-wrap">
-        <div class="eyebrow">Daily Husbandry</div>
-        <h2>Basic Fish Care & <em>Wellness Tips</em></h2>
-        <p>Simple daily habits prevent the vast majority of aquarium problems. Follow these core care principles for vibrant, long-lived aquatic companions.</p>
+    <section class="section section-wrap" id="fish-nutrition">
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Aquatic Accents -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-water"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-water"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-bowl-food"></i>
+            Diet &amp; Nutrition
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Fish Food &amp; <span>Nutritional Care</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Healthy fish thrive on a diverse, species-appropriate diet. Learn proper feeding schedules, nutrient-rich
+            food types, and essential techniques to prevent overfeeding and preserve water clarity.
+          </p>
+        </div>
       </div>
 
       <div class="care-tips-grid">
         <div class="care-tip-card">
-          <div class="tip-icon-wrap">🥣</div>
+          <div class="tip-icon-wrap"><i class="fa-solid fa-clock"></i></div>
           <div class="tip-content">
-            <h3>Feeding Discipline: Avoid Overfeeding</h3>
+            <h3>Feeding Discipline &amp; The 2-Minute Rule</h3>
             <p>
-              A fish's stomach is approximately the size of its eyeball. Feed only what your fish can consume completely within 90 to 120 seconds, once or twice daily. Uneaten food rots quickly, triggering catastrophic ammonia spikes. Fast your fish one day a week to keep digestive systems clear.
+              A fish's stomach is approximately the size of its eyeball. Feed only what your fish can consume completely
+              within 90 to 120 seconds, once or twice daily. Uneaten food rots quickly, triggering catastrophic ammonia
+              spikes. Fast your fish one day a week to keep digestive systems clear.
             </p>
           </div>
         </div>
 
         <div class="care-tip-card">
-          <div class="tip-icon-wrap">🔍</div>
+          <div class="tip-icon-wrap"><i class="fa-solid fa-plate-wheat"></i></div>
+          <div class="tip-content">
+            <h3>High-Protein Flakes &amp; Micro-Pellets</h3>
+            <p>
+              Premium flake and extruded micro-pellet foods provide balanced essential vitamins, minerals, and amino
+              acids for omnivorous surface and mid-water species such as Neon Tetras, Guppies, and Platies.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap"><i class="fa-solid fa-circle-dot"></i></div>
+          <div class="tip-content">
+            <h3>Sinking Wafers for Bottom Dwellers</h3>
+            <p>
+              Catfish, Corydoras, and Plecos cannot easily compete at the water surface. Supply sinking algae wafers and
+              spirulina tablets after lights out so bottom dwellers receive complete nourishment without food theft.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap"><i class="fa-solid fa-snowflake"></i></div>
+          <div class="tip-content">
+            <h3>Frozen &amp; Freeze-Dried Treats</h3>
+            <p>
+              Supplement dry foods two or three times weekly with nutrient-dense frozen bloodworms, brine shrimp, and
+              daphnia. These high-protein treats boost immune resistance, natural foraging instinct, and scale radiance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         7. FISH HEALTH & WELLNESS PRACTICES
+         ======================================================== -->
+    <section class="section section-wrap" id="fish-health">
+      <span id="care-tips" style="display:block; position:relative; top:-90px; visibility:hidden;"></span>
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Aquatic Accents -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-water"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-water"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-heart-pulse"></i>
+            Preventive Wellness
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Fish Health &amp; <span>Wellness Practices</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Keep your aquatic companions vibrant and disease-free. Learn daily observation habits, early symptoms of
+            common ailments, quarantine protocols, and water remedies.
+          </p>
+        </div>
+      </div>
+
+      <div class="care-tips-grid">
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap"><i class="fa-solid fa-magnifying-glass"></i></div>
           <div class="tip-content">
             <h3>Daily 5-Minute Observation</h3>
             <p>
-              Spend five quiet minutes watching your tank every day during feeding. Observe swim patterns, check that all fish have healthy appetites, verify fins are fully open (not clamped), and confirm the heater and filter are running smoothly. Early detection saves lives.
+              Spend five quiet minutes watching your tank every day during feeding. Observe swim patterns, check that
+              all fish have healthy appetites, verify fins are fully open (not clamped), and confirm the heater and
+              filter are running smoothly. Early detection saves lives.
             </p>
           </div>
         </div>
 
         <div class="care-tip-card">
-          <div class="tip-icon-wrap">🩺</div>
+          <div class="tip-icon-wrap"><i class="fa-solid fa-virus"></i></div>
           <div class="tip-content">
-            <h3>Disease Prevention & Common Ailments</h3>
+            <h3>Disease Prevention &amp; Common Ailments</h3>
             <p>
-              Keep an eye out for <b>Ich (White Spot)</b> (looks like grains of salt sprinkled on scales), <b>Fin Rot</b> (frayed, milky fin edges caused by bacteria in dirty water), and <b>Swim Bladder Disorder</b>. Maintaining clean, warm, stable water is 90% of the cure.
+              Keep an eye out for <b>Ich (White Spot)</b> (looks like grains of salt sprinkled on scales), <b>Fin
+                Rot</b> (frayed, milky fin edges caused by bacteria in dirty water), and <b>Swim Bladder Disorder</b>.
+              Maintaining clean, warm, stable water is 90% of the cure.
             </p>
           </div>
         </div>
 
         <div class="care-tip-card">
-          <div class="tip-icon-wrap">🛡️</div>
+          <div class="tip-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
           <div class="tip-content">
             <h3>The Quarantine Tank (QT) Protocol</h3>
             <p>
-              Always quarantine newly purchased fish in a small, separate 5–10 gallon tank for 2 to 3 weeks before adding them to your main display aquarium. This simple precaution ensures hidden illnesses or parasites do not spread to your established community.
+              Always quarantine newly purchased fish in a small, separate 5–10 gallon tank for 2 to 3 weeks before
+              adding them to your main display aquarium. This simple precaution ensures hidden illnesses or parasites do
+              not spread to your established community.
+            </p>
+          </div>
+        </div>
+
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap"><i class="fa-solid fa-spa"></i></div>
+          <div class="tip-content">
+            <h3>Stress Minimization &amp; Water Recovery</h3>
+            <p>
+              Stress suppresses fish immunity. Provide peaceful plant hiding zones, maintain stable heater temperatures,
+              avoid sudden bright light flashes, and never overcrowd tank capacity.
             </p>
           </div>
         </div>
@@ -2409,133 +3531,113 @@
     </section>
 
     <!-- ========================================================
-         8. FREQUENTLY ASKED QUESTIONS (ACCORDION)
+         8. TANK CLEANING & ROUTINE MAINTENANCE
          ======================================================== -->
-    <section class="section section-wrap" id="aquarium-faq">
-      <div class="section-title-wrap">
-        <div class="eyebrow">Got Questions?</div>
-        <h2>Aquarium Care <em>FAQs</em></h2>
-        <p>Clear answers to the most common questions asked by new aquarium hobbyists.</p>
+    <section class="section section-wrap" id="tank-maintenance">
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Aquatic Accents -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-water"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-fish"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-water"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-broom"></i>
+            Husbandry &amp; Care
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Tank Cleaning &amp; <span>Routine Maintenance</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Master stress-free 20% weekly water changes, gentle substrate siphoning, filter media rinses in tank water,
+            and algae scraping to keep your aquarium crystal clear.
+          </p>
+        </div>
       </div>
 
-      <div class="faq-wrap">
-        <div class="faq-item open">
-          <button class="faq-question" type="button" aria-expanded="true">
-            <span>Can I keep a Goldfish or Betta in a small round glass bowl?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              <b>No, bowls are strictly inadequate for both species.</b> Unfiltered glass bowls offer very little surface area for gas exchange, hold too little volume to dilute ammonia, and cannot accommodate a reliable filter or heater. Bettas require at least 5 gallons with a heater set to 26°C, and Goldfish require 20–30+ gallons with heavy filtration due to their rapid growth and substantial waste production.
-            </div>
+      <div class="care-tips-grid">
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap"><i class="fa-solid fa-faucet-drip"></i></div>
+          <div class="tip-content">
+            <h3>Weekly 20–25% Partial Water Change</h3>
+            <p>
+              Never tear down or empty 100% of an established aquarium. Draining 20% to 25% of the water volume every 7
+              days removes accumulated nitrates and dissolved organics while keeping beneficial bacteria undisturbed.
+            </p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>How long should I wait before adding fish to a brand new aquarium?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              You should wait <b>2 to 4 weeks</b> while completing a full fishless nitrogen cycle. Simply letting a tank run with water and filter for 24 hours does NOT cycle it; nitrifying bacteria require an ammonia source (fish food or bottled ammonia) to establish colonies in your filter media before fish can safely survive.
-            </div>
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+          <div class="tip-content">
+            <h3>Substrate Vacuuming with Siphon Hose</h3>
+            <p>
+              Gently push a gravel siphon into open substrate areas to extract buried fish waste, decaying plant leaves,
+              and uneaten food debris. Swirl carefully around delicate plant root structures.
+            </p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>Why is my new aquarium water cloudy or milky?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              In a newly set up aquarium, milky cloudy water is typically a harmless <b>bacterial bloom</b>. It occurs as microscopic heterotrophic bacteria rapidly multiply in the water column while the biological ecosystem is finding its balance. Do not panic or do massive 100% water changes; it usually clears naturally on its own in 3 to 7 days as the biological filter matures.
-            </div>
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap"><i class="fa-solid fa-filter"></i></div>
+          <div class="tip-content">
+            <h3>Safe Filter Sponge Maintenance</h3>
+            <p>
+              Rinse your biological filter sponge exclusively in a bucket of drained aquarium water. Never wash filter
+              media under tap water—chlorine and chloramine instantly destroy the essential nitrifying bacterial
+              colonies.
+            </p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>How often should I clean the aquarium filter?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Clean filter media once every 3 to 4 weeks. <b>Crucial rule:</b> Never rinse filter sponges or bio-rings under chlorinated tap water, as chlorine instantly kills the beneficial nitrifying bacteria. Always gently squeeze and rinse filter media in a bucket of <i>siphoned tank water</i> during your regular water change.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>How do I introduce new fish into the aquarium safely?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Use the <b>acclimation method</b>: Float the sealed bag in your tank for 15 minutes to equalize temperature. Next, open the bag and gently add 1/2 cup of your aquarium water every 5 minutes for 20 minutes (or use a slow drip line). Finally, net the fish gently into your tank. <i>Never pour the pet store bag water into your aquarium!</i>
-            </div>
+        <div class="care-tip-card">
+          <div class="tip-icon-wrap"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="tip-content">
+            <h3>Glass Algae Scraping &amp; Equipment Check</h3>
+            <p>
+              Use an aquarium-safe magnetic cleaner or razor scraper on inner glass surfaces before your water change.
+              Inspect heater calibration, confirm thermometer readouts, and clean filter impellers every 30 days.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========================================================
-         9. NAVIGATION TO OTHER PET PAGES
+         10. CALL TO ACTION BANNER (Matching dogs/index.html)
          ======================================================== -->
-    <section class="section section-wrap" id="other-pets">
-      <div class="section-title-wrap">
-        <div class="eyebrow">Explore More Animals</div>
-        <h2>Discover Other <em>Pet Companions</em></h2>
-        <p>PetSathi is dedicated to loving, knowledgeable pet care across every furry, feathered, and aquatic companion.</p>
-      </div>
-
-      <div class="other-pets-grid">
-        <article class="other-pet-card">
-          <div class="other-pet-icon">🐕</div>
-          <h3>Dogs</h3>
-          <p>Explore canine breeds, nutrition, daily exercise routines, grooming, and walking tips.</p>
-          <a class="other-pet-link" href="../dogs/index.html">Explore Dogs ↗</a>
-        </article>
-
-        <article class="other-pet-card">
-          <div class="other-pet-icon">🐈</div>
-          <h3>Cats</h3>
-          <p>Learn about cat breeds, indoor enrichment, scratching behavior, grooming, and feline wellness.</p>
-          <a class="other-pet-link" href="../cats/index.html">Explore Cats ↗</a>
-        </article>
-
-        <article class="other-pet-card">
-          <div class="other-pet-icon">🐦</div>
-          <h3>Birds</h3>
-          <p>Discover 10 popular companion bird species, cage requirements, avian nutrition, and health.</p>
-          <a class="other-pet-link" href="../birds/species.html">Explore Birds ↗</a>
-        </article>
-
-        <article class="other-pet-card">
-          <div class="other-pet-icon">🐇</div>
-          <h3>Rabbits</h3>
-          <p>Find rabbit care guides, hay nutrition, bunny-proofing tips, and gentle handling techniques.</p>
-          <a class="other-pet-link" href="../rabbits/index.html">Explore Rabbits ↗</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         10. CALL TO ACTION BAND
-         ======================================================== -->
-    <section class="fish-cta-band">
+    <section class="cta section-wrap">
       <div>
-        <div class="eyebrow" style="color: #a8dfbc;">Growing With Care</div>
-        <h2>Building a Better World for <em>Every Pet</em></h2>
+        <div class="eyebrow">START YOUR AQUARIUM JOURNEY</div>
+        <h2>Every Fish Deserves a <em>Thriving Habitat.</em></h2>
         <p>
-          PetSathi connects companion animal lovers with reliable care guides, community knowledge, and future trusted walking and caregiving services.
+          Whether you are preparing to set up your first freshwater community tank or looking to optimize water quality
+          and daily nutrition for your aquatic family, PetSathi is here to guide and support you every step of the way.
         </p>
       </div>
-      <div class="fish-cta-actions">
-        <a class="button button-light" href="../../../../index.html">Back to Home ↗</a>
-        <a class="button button-outline" style="border-color: white; color: white;" href="../../auth/register.html">Get Started ↗</a>
+      <div class="cta-actions">
+        <a class="button button-light" href="#species-guide" id="cta-fish-species">Explore Fish Species <i
+            class="fa-solid fa-arrow-right" style="font-size: 0.82rem; margin-left: 5px;"></i></a>
+        <a class="button button-outline" href="../index.html" id="cta-all-pets">Explore All Pets</a>
       </div>
     </section>
 
@@ -2545,18 +3647,35 @@
        FOOTER (PETSATHI STANDARD)
        ======================================================== -->
   <footer class="footer">
-  <div class="section-wrap footer-grid">
-    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
-    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
-    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
-    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
-  </div>
-  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
-</footer>
+    <div class="section-wrap footer-grid">
+      <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark"
+            aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
+            <circle cx="12" cy="12" r="4" fill="currentColor" />
+            <circle cx="21" cy="8" r="4" fill="currentColor" />
+            <circle cx="30" cy="12" r="4" fill="currentColor" />
+            <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
+              fill="currentColor" />
+          </svg><span>Pet<span>Sathi</span></span></a>
+        <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
+      </div>
+      <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a
+          href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+      <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a
+          href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp;
+          Conditions</a></div>
+      <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank"
+          rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank"
+          rel="noopener noreferrer">Live Website</a></div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with
+        &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E;
+        &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+  </footer>
 
   <!-- Scripts -->
   <script src="../../../js/main.js"></script>
   <script src="../../../js/fish.js"></script>
 </body>
-</html>
 
+</html>

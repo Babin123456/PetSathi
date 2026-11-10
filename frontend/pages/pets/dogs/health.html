@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../../css/global.css" />
+    <link rel="stylesheet" href="../../../css/home.css" />
     <link rel="stylesheet" href="../../../css/inner.css" />
     <style>
       .health-search-bar {
@@ -58,28 +59,71 @@
       .health-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        gap: 24px;
         margin-bottom: 50px;
       }
       .health-card {
         background: white;
         border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 25px;
+        border-radius: 20px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .health-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+      }
+      .health-icon-wrap {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: #eaf2e9;
+        display: grid;
+        place-items: center;
+        font-size: 1.7rem;
+        margin-bottom: 18px;
       }
       .health-card h3 {
-        font-size: 1.2rem;
-        margin: 12px 0 8px;
+        font-size: 1.25rem;
+        margin: 0 0 12px;
+        color: var(--ink);
+      }
+      .health-card p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin: 0;
+        color: var(--muted);
       }
       .warning-card {
         background: #fdf6f0;
         border: 1px solid #f5c6b8;
-        border-radius: 18px;
-        padding: 25px;
+        border-radius: 20px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .warning-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
       }
       .warning-card h3 {
         color: #c0392b;
+        font-size: 1.25rem;
+        margin: 0 0 12px;
+      }
+      .warning-card p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin: 0;
+        color: var(--muted);
       }
       .faq-item {
         background: white;
@@ -115,43 +159,6 @@
         max-height: 250px;
         padding: 0 20px 18px;
       }
-      .footer-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-        gap: 40px;
-        padding-bottom: 40px;
-        border-bottom: 1px solid var(--line);
-        margin-bottom: 30px;
-      }
-      .footer-grid div {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .footer-grid b {
-        color: var(--ink);
-        font-size: 0.95rem;
-        margin-bottom: 4px;
-      }
-      .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 0.88rem;
-        color: var(--muted);
-        padding-bottom: 30px;
-      }
-      @media (max-width: 850px) {
-        .footer-grid {
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-        .footer-bottom {
-          flex-direction: column;
-          gap: 12px;
-          text-align: center;
-        }
-      }
       @media (max-width: 900px) {
         .health-grid {
           grid-template-columns: 1fr;
@@ -173,9 +180,79 @@
       </button>
       <nav class="main-nav">
         <a href="../../../index.html">Home</a>
-        <a href="../index.html">Explore Pets</a>
-        <a href="../../services/index.html">Services</a>
-        <a href="../../walker/index.html">Find a Walker</a>
+        <div class="nav-item">
+          <a class="active" href="index.html">Explore Pets ▾</a>
+          <div class="dropdown">
+            <a href="index.html" style="background: none; padding-left: 16px"
+              >🐕 Dogs</a
+            >
+            <a
+              href="../cats/index.html"
+              style="background: none; padding-left: 16px"
+              >🐈 Cats</a
+            >
+            <a
+              href="../birds/index.html"
+              style="background: none; padding-left: 16px"
+              >🐦 Birds</a
+            >
+            <a
+              href="../rabbits/index.html"
+              style="background: none; padding-left: 16px"
+              >🐇 Rabbits</a
+            >
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="../../services/index.html">Services ▾</a>
+          <div class="dropdown">
+            <a
+              href="../../services/dog-walking.html"
+              style="background: none; padding-left: 16px"
+              >🐕 Dog Walking</a
+            >
+            <a
+              href="../../services/cat-care.html"
+              style="background: none; padding-left: 16px"
+              >🐈 Cat Care</a
+            >
+            <a
+              href="../../services/pet-care.html"
+              style="background: none; padding-left: 16px"
+              >🐾 Pet Care</a
+            >
+            <a
+              href="../../services/guidance.html"
+              style="background: none; padding-left: 16px"
+              >💡 Pet Guidance</a
+            >
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="../../walker/index.html">Find a Walker ▾</a>
+          <div class="dropdown">
+            <a
+              href="../../walker/dogs.html"
+              style="background: none; padding-left: 16px"
+              >🐕 Dog Walkers</a
+            >
+            <a
+              href="../../walker/cats.html"
+              style="background: none; padding-left: 16px"
+              >🐈 Cat Caregivers</a
+            >
+            <a
+              href="../../walker/birds.html"
+              style="background: none; padding-left: 16px"
+              >🐦 Bird Caregivers</a
+            >
+            <a
+              href="../../walker/rabbits.html"
+              style="background: none; padding-left: 16px"
+              >🐇 Rabbit Caregivers</a
+            >
+          </div>
+        </div>
         <a href="../../about.html">About Us</a>
         <a href="../../auth/login.html">Log in</a>
         <a class="button button-small" href="../../auth/register.html"
@@ -273,6 +350,7 @@
               class="health-card searchable-item"
               data-keywords="skin infections dermatitis itching"
             >
+              <div class="health-icon-wrap">🦠</div>
               <h3>Skin Infections</h3>
               <p>
                 Caused by allergies, parasites, or bacterial growth leading to
@@ -283,6 +361,7 @@
               class="health-card searchable-item"
               data-keywords="ear infections otitis yeast bacteria"
             >
+              <div class="health-icon-wrap">🐾</div>
               <h3>Ear Infections</h3>
               <p>
                 Frequent in floppy-eared dogs; marked by head shaking, odor, and
@@ -293,6 +372,7 @@
               class="health-card searchable-item"
               data-keywords="dental problems plaque tartar tooth decay"
             >
+              <div class="health-icon-wrap">🦷</div>
               <h3>Dental Problems</h3>
               <p>
                 Periodontal disease resulting from tartar accumulation, bad
@@ -303,6 +383,7 @@
               class="health-card searchable-item"
               data-keywords="digestive issues vomiting diarrhea upset stomach"
             >
+              <div class="health-icon-wrap">🥣</div>
               <h3>Digestive Issues</h3>
               <p>
                 Stomach upsets triggered by dietary indiscretion, parasites, or
@@ -313,6 +394,7 @@
               class="health-card searchable-item"
               data-keywords="allergies environmental food itching"
             >
+              <div class="health-icon-wrap">🌿</div>
               <h3>Allergies</h3>
               <p>
                 Reactions to environmental triggers like pollen, fleas, or
@@ -323,6 +405,7 @@
               class="health-card searchable-item"
               data-keywords="obesity weight gain overweight joints"
             >
+              <div class="health-icon-wrap">⚖️</div>
               <h3>Obesity</h3>
               <p>
                 A preventable condition leading to secondary joint stress,
@@ -333,6 +416,7 @@
               class="health-card searchable-item"
               data-keywords="joint problems arthritis hip dysplasia mobility"
             >
+              <div class="health-icon-wrap">🦴</div>
               <h3>Joint Problems</h3>
               <p>
                 Degenerative conditions like canine arthritis or hip dysplasia
@@ -343,6 +427,7 @@
               class="health-card searchable-item"
               data-keywords="parasites worms ticks fleas"
             >
+              <div class="health-icon-wrap">🐛</div>
               <h3>Parasites & Worms</h3>
               <p>
                 Internal worms and external pests that compromise nutritional
@@ -371,6 +456,7 @@
               class="warning-card searchable-item"
               data-keywords="loss of appetite not eating food refusal"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">🍽️</div>
               <h3>Loss of Appetite</h3>
               <p>
                 Refusing meals for over 24 hours often signals underlying
@@ -381,6 +467,7 @@
               class="warning-card searchable-item"
               data-keywords="vomiting throwing up stomach upset"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">⚠️</div>
               <h3>Vomiting</h3>
               <p>
                 Occasional spitting up can be minor, but frequent or violent
@@ -391,6 +478,7 @@
               class="warning-card searchable-item"
               data-keywords="diarrhea loose stool digestive"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">💧</div>
               <h3>Diarrhea</h3>
               <p>
                 Watery or frequent stools can cause rapid dehydration and
@@ -401,6 +489,7 @@
               class="warning-card searchable-item"
               data-keywords="excessive scratching itching skin"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">⚡</div>
               <h3>Excessive Scratching</h3>
               <p>
                 Constant biting, licking, or scratching points to allergies,
@@ -411,6 +500,7 @@
               class="warning-card searchable-item"
               data-keywords="unusual tiredness fatigue lethargy low energy"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">🌙</div>
               <h3>Unusual Tiredness</h3>
               <p>
                 Lethargy and reluctance to engage in regular play or walks
@@ -421,6 +511,7 @@
               class="warning-card searchable-item"
               data-keywords="coughing sneezing respiratory cold"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">💨</div>
               <h3>Coughing or Sneezing</h3>
               <p>
                 Persistent hacking, reverse sneezing, or nasal discharge can
@@ -431,6 +522,7 @@
               class="warning-card searchable-item"
               data-keywords="excessive thirst drinking water dehydration"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">🥤</div>
               <h3>Excessive Thirst</h3>
               <p>
                 Unusual water consumption may point to metabolic issues like
@@ -441,6 +533,7 @@
               class="warning-card searchable-item"
               data-keywords="changes in behavior aggression hiding withdrawal"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">🔍</div>
               <h3>Changes in Behaviour</h3>
               <p>
                 Sudden aggression, anxiety, hiding, or confusion often stem from
@@ -451,6 +544,7 @@
               class="warning-card searchable-item"
               data-keywords="difficulty walking limp stiffness lameness"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">🐾</div>
               <h3>Difficulty Walking</h3>
               <p>
                 Limping, stiffness upon rising, or reluctance to climb stairs
@@ -477,6 +571,7 @@
               class="health-card searchable-item"
               data-keywords="core vaccines rabies dhpp mandatory"
             >
+              <div class="health-icon-wrap">💉</div>
               <h3>Core Vaccines</h3>
               <p>
                 Essential immunizations recommended for all dogs regardless of
@@ -487,6 +582,7 @@
               class="health-card searchable-item"
               data-keywords="rabies vaccination fatal virus law"
             >
+              <div class="health-icon-wrap">🛡️</div>
               <h3>Rabies Vaccination</h3>
               <p>
                 Legally required in most regions; protects against a fatal viral
@@ -497,6 +593,7 @@
               class="health-card searchable-item"
               data-keywords="dhpp vaccination distemper hepatitis parvovirus parainfluenza"
             >
+              <div class="health-icon-wrap">🧬</div>
               <h3>DHPP Vaccination</h3>
               <p>
                 The standard multi-antigen shot covering Distemper, Hepatitis,
@@ -507,6 +604,7 @@
               class="health-card searchable-item"
               data-keywords="non-core vaccines lifestyle bordetella leptospirosis"
             >
+              <div class="health-icon-wrap">🌟</div>
               <h3>Non-Core Vaccines</h3>
               <p>
                 Lifestyle-dependent vaccines such as Bordetella (kennel cough)
@@ -517,6 +615,7 @@
               class="health-card searchable-item"
               data-keywords="puppy vaccination schedule timeline boosters"
             >
+              <div class="health-icon-wrap">📅</div>
               <h3>Puppy Schedule</h3>
               <p>
                 Administered in a series starting at 6-8 weeks of age with
@@ -527,6 +626,7 @@
               class="health-card searchable-item"
               data-keywords="adult dog booster vaccinations annual revaccination"
             >
+              <div class="health-icon-wrap">🔄</div>
               <h3>Adult Boosters</h3>
               <p>
                 Periodic revaccination intervals (1 to 3 years depending on the
@@ -563,6 +663,7 @@
               class="health-card searchable-item"
               data-keywords="internal parasites roundworms tapeworms hookworms whipworms"
             >
+              <div class="health-icon-wrap">🪱</div>
               <h3>Internal Parasites</h3>
               <p>
                 Roundworms, tapeworms, and hookworms reside in the GI tract,
@@ -573,6 +674,7 @@
               class="health-card searchable-item"
               data-keywords="external parasites ticks fleas mites lice"
             >
+              <div class="health-icon-wrap">🕷️</div>
               <h3>External Parasites</h3>
               <p>
                 Ticks, fleas, and mites trigger severe skin irritation,
@@ -583,6 +685,7 @@
               class="health-card searchable-item"
               data-keywords="importance of deworming routine cleansing safety"
             >
+              <div class="health-icon-wrap">✨</div>
               <h3>Importance of Deworming</h3>
               <p>
                 Routine deworming prevents heavy parasitic burdens and protects
@@ -593,6 +696,7 @@
               class="health-card searchable-item"
               data-keywords="tick flea prevention topical oral collars"
             >
+              <div class="health-icon-wrap">🛡️</div>
               <h3>Tick & Flea Prevention</h3>
               <p>
                 Use vet-approved topical spot-ons, chewable tablets, or collars
@@ -603,6 +707,7 @@
               class="health-card searchable-item"
               data-keywords="regular veterinary checkups fecal exams screening"
             >
+              <div class="health-icon-wrap">📋</div>
               <h3>Regular Fecal Screening</h3>
               <p>
                 Periodic fecal examinations at the clinic ensure hidden internal
@@ -631,6 +736,7 @@
               class="health-card searchable-item"
               data-keywords="routine health examinations physical wellness"
             >
+              <div class="health-icon-wrap">🩺</div>
               <h3>Routine Physical Exams</h3>
               <p>
                 Comprehensive nose-to-tail wellness evaluations performed at
@@ -641,6 +747,7 @@
               class="health-card searchable-item"
               data-keywords="dental checkups oral hygiene tartar evaluation"
             >
+              <div class="health-icon-wrap">🦷</div>
               <h3>Dental Checkups</h3>
               <p>
                 Professional inspection of teeth and gums to catch periodontal
@@ -651,6 +758,7 @@
               class="health-card searchable-item"
               data-keywords="weight monitoring body condition score scaling"
             >
+              <div class="health-icon-wrap">⚖️</div>
               <h3>Weight Monitoring</h3>
               <p>
                 Tracking body mass index and body condition score to prevent
@@ -661,6 +769,7 @@
               class="health-card searchable-item"
               data-keywords="blood tests senior screening wellness panels"
             >
+              <div class="health-icon-wrap">🩸</div>
               <h3>Recommended Blood Tests</h3>
               <p>
                 Baseline bloodwork and organ function panels, especially
@@ -671,6 +780,7 @@
               class="health-card searchable-item"
               data-keywords="preventive health screening early detection"
             >
+              <div class="health-icon-wrap">🔍</div>
               <h3>Preventive Screening</h3>
               <p>
                 Early diagnostic testing to identify silent conditions before
@@ -697,6 +807,7 @@
               class="warning-card searchable-item"
               data-keywords="minor cuts wounds injury bleeding"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">🩹</div>
               <h3>Minor Cuts & Wounds</h3>
               <p>
                 Gently clean with saline solution and apply pet-safe antiseptic.
@@ -707,6 +818,7 @@
               class="warning-card searchable-item"
               data-keywords="bleeding pressure bandage trauma"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">🩸</div>
               <h3>Controlling Bleeding</h3>
               <p>
                 Apply firm, direct pressure using a clean cloth or sterile gauze
@@ -717,6 +829,7 @@
               class="warning-card searchable-item"
               data-keywords="suspected poisoning toxicity chocolate chemicals emergency"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">⚠️</div>
               <h3>Suspected Poisoning</h3>
               <p>
                 Keep packaging handy and call a vet immediately. Never induce
@@ -727,6 +840,7 @@
               class="warning-card searchable-item"
               data-keywords="heatstroke overheating panting emergency"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">☀️</div>
               <h3>Heatstroke</h3>
               <p>
                 Move to shade, apply cool (not cold) water to paws and fur, and
@@ -737,6 +851,7 @@
               class="warning-card searchable-item"
               data-keywords="choking airway blockage breathing difficulty"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">🚨</div>
               <h3>Choking</h3>
               <p>
                 If safe, check the mouth to remove visible obstructions. Use
@@ -747,6 +862,7 @@
               class="warning-card searchable-item"
               data-keywords="emergency veterinary contact information numbers"
             >
+              <div class="health-icon-wrap" style="background: #f7e3d7">📞</div>
               <h3>Emergency Contacts</h3>
               <p>
                 Keep your 24/7 local emergency vet hospital number and poison
@@ -784,6 +900,7 @@
               class="health-card searchable-item"
               data-keywords="importance of oral hygiene plaque tartar prevention"
             >
+              <div class="health-icon-wrap">🦷</div>
               <h3>Oral Hygiene Importance</h3>
               <p>
                 Prevents bacteria from entering the bloodstream and damaging the
@@ -794,6 +911,7 @@
               class="health-card searchable-item"
               data-keywords="brushing teeth daily canine toothpaste"
             >
+              <div class="health-icon-wrap">🪥</div>
               <h3>Brushing Dog Teeth</h3>
               <p>
                 Introduce daily or regular toothbrushing using flavored pet-safe
@@ -804,6 +922,7 @@
               class="health-card searchable-item"
               data-keywords="dental chews toys plaque removal"
             >
+              <div class="health-icon-wrap">🦴</div>
               <h3>Dental Chews & Toys</h3>
               <p>
                 Provide veterinary-approved dental chews that mechanically
@@ -814,6 +933,7 @@
               class="health-card searchable-item"
               data-keywords="signs of dental problems bad breath bleeding gums"
             >
+              <div class="health-icon-wrap">👃</div>
               <h3>Signs of Dental Trouble</h3>
               <p>
                 Look out for foul breath, yellowish-brown tartar, drooling, or
@@ -824,6 +944,7 @@
               class="health-card searchable-item"
               data-keywords="professional dental cleaning scaling polishing"
             >
+              <div class="health-icon-wrap">🏥</div>
               <h3>Professional Cleaning</h3>
               <p>
                 Under-anesthesia scaling and polishing performed by a vet to
@@ -853,6 +974,7 @@
               class="health-card searchable-item"
               data-keywords="separation anxiety distress alone panic"
             >
+              <div class="health-icon-wrap">🧩</div>
               <h3>Separation Anxiety</h3>
               <p>
                 Distress when left alone; manage with gradual desensitization
@@ -863,6 +985,7 @@
               class="health-card searchable-item"
               data-keywords="stress fear phobias thunderstorms noise"
             >
+              <div class="health-icon-wrap">⚡</div>
               <h3>Stress & Fear</h3>
               <p>
                 Reaction to loud noises or unfamiliar environments; provide
@@ -873,6 +996,7 @@
               class="health-card searchable-item"
               data-keywords="mental stimulation puzzle toys training enrichment"
             >
+              <div class="health-icon-wrap">🎾</div>
               <h3>Mental Stimulation</h3>
               <p>
                 Use puzzle toys, scent games, and obedience training to keep
@@ -883,6 +1007,7 @@
               class="health-card searchable-item"
               data-keywords="social interaction socialization dogs humans"
             >
+              <div class="health-icon-wrap">🤝</div>
               <h3>Social Interaction</h3>
               <p>
                 Positive exposure to other pets and people builds confidence and
@@ -909,6 +1034,7 @@
             data-keywords="preventive health care checklist sanitation water"
             style="background: var(--soft)"
           >
+            <div class="health-icon-wrap">📋</div>
             <ul style="margin: 0; padding-left: 20px; line-height: 2.2">
               <li>
                 <strong>Regular Health Monitoring:</strong> Inspect coat, eyes,
@@ -955,6 +1081,7 @@
               class="health-card searchable-item"
               data-keywords="age related health changes metabolism senior"
             >
+              <div class="health-icon-wrap">⭐</div>
               <h3>Age-Related Changes</h3>
               <p>
                 Slowing metabolism, graying muzzle, and decreased stamina
@@ -965,6 +1092,7 @@
               class="health-card searchable-item"
               data-keywords="arthritis joint problems pain relief senior"
             >
+              <div class="health-icon-wrap">🦴</div>
               <h3>Arthritis & Joint Care</h3>
               <p>
                 Provide orthopedic bedding, non-slip rugs, and joint supplements
@@ -975,6 +1103,7 @@
               class="health-card searchable-item"
               data-keywords="vision hearing changes cataracts deafness"
             >
+              <div class="health-icon-wrap">👁️</div>
               <h3>Vision & Hearing Decline</h3>
               <p>
                 Adapt home layouts for dogs experiencing cataracts or hearing
@@ -985,6 +1114,7 @@
               class="health-card searchable-item"
               data-keywords="senior veterinary checkups bi-annual screening"
             >
+              <div class="health-icon-wrap">🩺</div>
               <h3>Bi-Annual Vet Checkups</h3>
               <p>
                 Older dogs benefit from health screenings every 6 months to
@@ -1093,7 +1223,7 @@
           Explore more pet care guides or connect with trusted community members
           on PetSathi.
         </p>
-        <a class="button" href="../index.html" style="margin-top: 20px"
+        <a class="button" href="index.html" style="margin-top: 20px"
           >Back to Explore Pets ↗</a
         >
       </section>
@@ -1162,6 +1292,12 @@
       }
 
       function filterCategory(category, btn) {
+        document.getElementById("healthSearch").value = "";
+        const items = document.querySelectorAll(".searchable-item");
+        items.forEach((item) => {
+          item.style.display = "block";
+        });
+
         document
           .querySelectorAll(".filter-chip")
           .forEach((c) => c.classList.remove("active"));

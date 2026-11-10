@@ -17,7 +17,51 @@
     <link rel="stylesheet" href="../../../css/global.css" />
     <link rel="stylesheet" href="../../../css/home.css" />
     <link rel="stylesheet" href="../../../css/inner.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <style>
+      /* Font Awesome 6 Free Webfont definition & Protection */
+      @font-face {
+        font-family: "Font Awesome 6 Free";
+        font-style: normal;
+        font-weight: 900;
+        font-display: block;
+        src:
+          url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2")
+            format("woff2"),
+          url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf")
+            format("truetype");
+      }
+      body [class*="fa-"],
+      body [class*="fa-"]::before {
+        font-family: "Font Awesome 6 Free" !important;
+        font-weight: 900 !important;
+        font-style: normal !important;
+        line-height: 1 !important;
+      }
+      .fa-regular {
+        font-weight: 400 !important;
+      }
+
+      /* Disable global automatic pseudo-element icons inside dropdowns */
+      .dropdown a::before,
+      .dropdown a::after {
+        display: none !important;
+        content: none !important;
+      }
+      .dropdown a {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 10px 16px !important;
+      }
+      .dropdown a i {
+        width: 18px;
+        text-align: center;
+      }
+
       .dog-badge-strip {
         display: inline-flex;
         align-items: center;
@@ -149,9 +193,10 @@
         height: 56px;
         border-radius: 16px;
         background: #eaf2e9;
+        color: var(--green);
         display: grid;
         place-items: center;
-        font-size: 1.7rem;
+        font-size: 1.4rem;
         margin-bottom: 18px;
       }
       .quick-info-card h3 {
@@ -188,6 +233,165 @@
         font-weight: 700;
         flex-shrink: 0;
       }
+
+      /* Signature Section Heading Cards matching Riya's reference */
+      .dog-topics-heading {
+        position: relative;
+        max-width: 1400px;
+        margin: 45px auto 35px;
+        padding: 44px 35px 38px;
+        overflow: hidden;
+        text-align: center;
+        border-radius: 35px;
+        border: 1px solid #dcebc9;
+        background: #fafcf7;
+        box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      }
+      .corner-wave {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .wave-tl {
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 130px;
+      }
+      .wave-br {
+        bottom: 0;
+        right: 0;
+        width: 220px;
+        height: 130px;
+      }
+      .heading-content {
+        position: relative;
+        z-index: 2;
+      }
+      .heading-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 7px 20px;
+        margin-bottom: 16px;
+        border-radius: 50px;
+        background: #edf6df;
+        border: 1px solid #dcebc9;
+        color: #246b43;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+      .dog-topics-heading h2 {
+        color: #263b30;
+        font-family: Georgia, serif;
+        font-size: clamp(24px, 3.2vw, 36px);
+        font-weight: 700;
+        margin: 0 0 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .dog-topics-heading h2 span {
+        color: #28764a;
+      }
+      .heading-burst {
+        display: inline-block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        vertical-align: middle;
+      }
+      .heading-burst span {
+        position: absolute;
+        background: #60a872;
+        border-radius: 9999px;
+      }
+      .heading-burst.left span {
+        right: 0;
+        transform-origin: right center;
+      }
+      .heading-burst.left span:nth-child(1) {
+        top: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(35deg);
+      }
+      .heading-burst.left span:nth-child(2) {
+        top: 11px;
+        width: 18px;
+        height: 2.8px;
+      }
+      .heading-burst.left span:nth-child(3) {
+        bottom: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(-35deg);
+      }
+      .heading-burst.right span {
+        left: 0;
+        transform-origin: left center;
+      }
+      .heading-burst.right span:nth-child(1) {
+        top: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(-35deg);
+      }
+      .heading-burst.right span:nth-child(2) {
+        top: 11px;
+        width: 18px;
+        height: 2.8px;
+      }
+      .heading-burst.right span:nth-child(3) {
+        bottom: 3px;
+        width: 14px;
+        height: 2.8px;
+        transform: rotate(35deg);
+      }
+      .dog-topics-heading p {
+        max-width: 720px;
+        margin: 0 auto;
+        color: #64736a;
+        font-size: 15px;
+        line-height: 1.65;
+      }
+      .paw {
+        position: absolute;
+        color: rgba(115, 173, 91, 0.28);
+        z-index: 1;
+        pointer-events: none;
+      }
+      .paw-left-1 {
+        top: 66px;
+        left: 108px;
+        font-size: 58px;
+        transform: rotate(20deg);
+      }
+      .paw-left-2 {
+        bottom: 24px;
+        left: 82px;
+        font-size: 38px;
+        transform: rotate(-15deg);
+      }
+      .paw-right-1 {
+        top: 60px;
+        right: 75px;
+        font-size: 56px;
+        transform: rotate(18deg);
+      }
+      .paw-right-2 {
+        bottom: 35px;
+        right: 140px;
+        font-size: 38px;
+        transform: rotate(-15deg);
+      }
+
+      /* Quick Navigation Hub Matching Reference */
       .guides-nav-strip {
         background: white;
         border: 1px solid var(--line);
@@ -211,6 +415,7 @@
         border: 1px solid transparent;
         border-radius: 14px;
         transition: all 0.2s ease;
+        text-decoration: none;
       }
       .guide-nav-item:hover {
         background: white;
@@ -218,8 +423,16 @@
         transform: translateY(-3px);
         box-shadow: 0 6px 18px rgba(40, 104, 73, 0.08);
       }
-      .guide-nav-item span {
-        font-size: 1.8rem;
+      .guide-nav-icon {
+        font-size: 1.5rem;
+        color: var(--green);
+        width: 40px;
+        height: 40px;
+        background: #eaf2e9;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        flex-shrink: 0;
       }
       .guide-nav-item div b {
         display: block;
@@ -231,6 +444,7 @@
         font-size: 0.78rem;
         color: var(--muted);
       }
+
       .dog-cta-band {
         background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
         color: white;
@@ -316,16 +530,16 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="../../../../index.html" id="header-brand"
-        ><span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span></a
-      >
+      <a class="brand" href="../../../../index.html" id="header-brand">
+        <span class="brand-mark">🐾</span><span>Pet<span>Sathi</span></span>
+      </a>
       <button
         class="menu-toggle"
         id="menu-toggle-btn"
         aria-label="Toggle navigation"
         aria-expanded="false"
       >
-        ☰
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
       <nav class="main-nav" id="main-navigation">
         <a href="../../../../index.html" id="nav-home">Home</a>
@@ -334,10 +548,18 @@
             >Explore Pets ▾</a
           >
           <div class="dropdown">
-            <a href="index.html" id="dropdown-dogs">🐕 Dogs</a>
-            <a href="../cats/index.html" id="dropdown-cats">🐈 Cats</a>
-            <a href="../birds/index.html" id="dropdown-birds">🐦 Birds</a>
-            <a href="../rabbits/index.html" id="dropdown-rabbits">🐇 Rabbits</a>
+            <a href="index.html" id="dropdown-dogs"
+              ><i class="fa-solid fa-dog" aria-hidden="true"></i> Dogs</a
+            >
+            <a href="../cats/index.html" id="dropdown-cats"
+              ><i class="fa-solid fa-cat" aria-hidden="true"></i> Cats</a
+            >
+            <a href="../birds/index.html" id="dropdown-birds"
+              ><i class="fa-solid fa-dove" aria-hidden="true"></i> Birds</a
+            >
+            <a href="../rabbits/index.html" id="dropdown-rabbits"
+              ><i class="fa-solid fa-paw" aria-hidden="true"></i> Rabbits</a
+            >
           </div>
         </div>
         <div class="nav-item">
@@ -346,22 +568,25 @@
             <a
               href="../../services/dog-walking.html"
               id="dropdown-service-walking"
-              >Dog Walking</a
+              ><i class="fa-solid fa-person-walking" aria-hidden="true"></i> Dog
+              Walking</a
             >
             <a
               href="../../services/cat-care.html"
               id="dropdown-service-cat-care"
-              >Cat Care</a
+              ><i class="fa-solid fa-cat" aria-hidden="true"></i> Cat Care</a
             >
             <a
               href="../../services/pet-care.html"
               id="dropdown-service-pet-care"
-              >Pet Care</a
+              ><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Pet
+              Care</a
             >
             <a
               href="../../services/guidance.html"
               id="dropdown-service-guidance"
-              >Pet Guidance</a
+              ><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Pet
+              Guidance</a
             >
           </div>
         </div>
@@ -369,16 +594,20 @@
           <a href="../../walker/index.html" id="nav-walkers">Find a Walker ▾</a>
           <div class="dropdown">
             <a href="../../walker/dogs.html" id="dropdown-walker-dogs"
-              >Dog Walkers</a
+              ><i class="fa-solid fa-user-gear" aria-hidden="true"></i> Dog
+              Walkers</a
             >
             <a href="../../walker/cats.html" id="dropdown-walker-cats"
-              >Cat Caregivers</a
+              ><i class="fa-solid fa-user-shield" aria-hidden="true"></i> Cat
+              Caregivers</a
             >
             <a href="../../walker/birds.html" id="dropdown-walker-birds"
-              >Bird Caregivers</a
+              ><i class="fa-solid fa-user-check" aria-hidden="true"></i> Bird
+              Caregivers</a
             >
             <a href="../../walker/rabbits.html" id="dropdown-walker-rabbits"
-              >Rabbit Caregivers</a
+              ><i class="fa-solid fa-user-group" aria-hidden="true"></i> Rabbit
+              Caregivers</a
             >
           </div>
         </div>
@@ -463,16 +692,75 @@
       </section>
 
       <section class="section section-wrap" id="dog-topics">
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow">Comprehensive Dog Guides</div>
-            <h2>Explore Essential <em>Dog Topics</em></h2>
+        <div class="dog-topics-heading">
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.7"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.95"
+            />
+          </svg>
+          <div class="paw paw-left-1">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
           </div>
-          <p>
-            Browse through curated guides crafted to assist dog parents with
-            everyday health, wholesome diet, active outdoor walking, and
-            attentive home care.
-          </p>
+          <div class="paw paw-left-2">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-1">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="paw paw-right-2">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <div class="heading-content">
+            <span class="heading-label"
+              ><i class="fa-solid fa-book-open" aria-hidden="true"></i>
+              Comprehensive Dog Guides</span
+            >
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"
+                ><span></span><span></span><span></span
+              ></span>
+              Explore Essential <span>Dog Topics</span>
+              <span class="heading-burst right" aria-hidden="true"
+                ><span></span><span></span><span></span
+              ></span>
+            </h2>
+            <p>
+              Browse through curated guides crafted to assist dog parents with
+              everyday health, wholesome diet, active outdoor walking, and
+              attentive home care.
+            </p>
+          </div>
         </div>
 
         <div class="dog-info-grid">
@@ -626,21 +914,82 @@
 
       <section class="section dog-quick-info-section" id="quick-info">
         <div class="section-wrap">
-          <div class="section-heading">
-            <div>
-              <div class="eyebrow">Essential Canine Insights</div>
-              <h2>Quick Information for <em>Dog Parents</em></h2>
+          <div class="dog-topics-heading">
+            <svg
+              class="corner-wave wave-tl"
+              viewBox="0 0 220 130"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+                fill="#d8e8ce"
+                opacity="0.7"
+              />
+              <path
+                d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+                fill="#edf6e6"
+                opacity="0.95"
+              />
+            </svg>
+            <svg
+              class="corner-wave wave-br"
+              viewBox="0 0 220 130"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+                fill="#d8e8ce"
+                opacity="0.7"
+              />
+              <path
+                d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+                fill="#edf6e6"
+                opacity="0.95"
+              />
+            </svg>
+            <div class="paw paw-left-1">
+              <i class="fa-solid fa-paw" aria-hidden="true"></i>
             </div>
-            <p>
-              Understanding your companion is the cornerstone of a fulfilling
-              pet parenthood journey. Here is what makes dogs special and how to
-              care for them responsibly.
-            </p>
+            <div class="paw paw-left-2">
+              <i class="fa-solid fa-paw" aria-hidden="true"></i>
+            </div>
+            <div class="paw paw-right-1">
+              <i class="fa-solid fa-paw" aria-hidden="true"></i>
+            </div>
+            <div class="paw paw-right-2">
+              <i class="fa-solid fa-paw" aria-hidden="true"></i>
+            </div>
+            <div class="heading-content">
+              <span class="heading-label"
+                ><i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                Essential Canine Insights</span
+              >
+              <h2>
+                <span class="heading-burst left" aria-hidden="true"
+                  ><span></span><span></span><span></span
+                ></span>
+                Quick Information for <span>Dog Parents</span>
+                <span class="heading-burst right" aria-hidden="true"
+                  ><span></span><span></span><span></span
+                ></span>
+              </h2>
+              <p>
+                Understanding your companion is the cornerstone of a fulfilling
+                pet parenthood journey. Here is what makes dogs special and how
+                to care for them responsibly.
+              </p>
+            </div>
           </div>
 
           <div class="quick-info-grid">
             <article class="quick-info-card" id="info-companionship">
-              <div class="quick-info-icon-wrap">🐕</div>
+              <div class="quick-info-icon-wrap">
+                <i class="fa-solid fa-dog" aria-hidden="true"></i>
+              </div>
               <h3>Why Dogs Make Wonderful Companions</h3>
               <p>
                 Dogs are renowned for their unconditional devotion, empathetic
@@ -668,7 +1017,9 @@
             </article>
 
             <article class="quick-info-card" id="info-responsibilities">
-              <div class="quick-info-icon-wrap">📋</div>
+              <div class="quick-info-icon-wrap">
+                <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+              </div>
               <h3>Responsibilities of Dog Owners</h3>
               <p>
                 Welcoming a dog into your home is a rewarding, long-term
@@ -696,7 +1047,9 @@
             </article>
 
             <article class="quick-info-card" id="info-regular-care">
-              <div class="quick-info-icon-wrap">🩺</div>
+              <div class="quick-info-icon-wrap">
+                <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+              </div>
               <h3>Importance of Regular Dog Care</h3>
               <p>
                 Consistent, preventative health routines protect your dog from
@@ -725,29 +1078,41 @@
           </div>
 
           <div class="guides-nav-strip">
-            <div class="section-heading" style="margin-bottom: 0">
-              <div>
-                <div class="eyebrow">Quick Navigation Hub</div>
-                <h3 style="font-size: 1.5rem; margin: 0">
+            <div
+              class="dog-topics-heading"
+              style="
+                margin: 0 auto 20px;
+                border: none;
+                background: transparent;
+                box-shadow: none;
+                padding: 0;
+              "
+            >
+              <div class="heading-content">
+                <span class="heading-label"
+                  ><i class="fa-solid fa-compass" aria-hidden="true"></i> Quick
+                  Navigation Hub</span
+                >
+                <h3 style="font-size: 1.5rem; margin: 0; color: var(--ink)">
                   Explore Dedicated Dog Knowledge Chapters
                 </h3>
               </div>
-              <p>
-                Direct access to specialized dog care, breed profiles, walking
-                guidance, and walker companions.
-              </p>
             </div>
 
             <div class="guides-nav-grid">
               <a href="breeds.html" class="guide-nav-item" id="hub-link-breeds">
-                <span>🐕</span>
+                <span class="guide-nav-icon"
+                  ><i class="fa-solid fa-dog" aria-hidden="true"></i
+                ></span>
                 <div>
                   <b>Dog Breeds</b>
                   <small>Profiles & Characteristics</small>
                 </div>
               </a>
               <a href="health.html" class="guide-nav-item" id="hub-link-care">
-                <span>🩺</span>
+                <span class="guide-nav-icon"
+                  ><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i
+                ></span>
                 <div>
                   <b>Health & Wellness</b>
                   <small>Wellness, Vaccines & Care</small>
@@ -758,7 +1123,9 @@
                 class="guide-nav-item"
                 id="hub-link-walking"
               >
-                <span>🎾</span>
+                <span class="guide-nav-icon"
+                  ><i class="fa-solid fa-person-walking" aria-hidden="true"></i
+                ></span>
                 <div>
                   <b>Exercise & Walking</b>
                   <small>Activity Needs & Routines</small>
@@ -769,7 +1136,9 @@
                 class="guide-nav-item"
                 id="hub-link-walking-service"
               >
-                <span>🚶</span>
+                <span class="guide-nav-icon"
+                  ><i class="fa-solid fa-paw" aria-hidden="true"></i
+                ></span>
                 <div>
                   <b>Dog Walking Service</b>
                   <small>Explore Walking Companions</small>

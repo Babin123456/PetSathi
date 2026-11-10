@@ -18,9 +18,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-    /* Font Awesome protection */
+    /* Font Awesome 6 Free Webfont definition - matching dogs/index.html */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+    }
+
+    /* Universal Font Awesome font protection against global.css */
+    body i,
     body [class*="fa-"],
-    body [class*="fa-"]::before {
+    body [class*="fa-"]::before,
+    .fa-solid,
+    .fa-regular,
+    .fa-brands {
       font-family: "Font Awesome 6 Free" !important;
       font-style: normal !important;
       font-variant: normal !important;
@@ -28,24 +42,28 @@
       line-height: 1 !important;
     }
 
-    body .fa-brands,
-    body .fa-brands::before,
-    body [class*="fa-brands"] {
-      font-family: "Font Awesome 6 Brands" !important;
-    }
-
+    body .fa-solid,
     .fa-solid {
       font-weight: 900 !important;
     }
 
+    body .fa-regular,
     .fa-regular {
       font-weight: 400 !important;
     }
 
+    body .fa-brands,
+    body [class*="fa-brands"] {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
+    }
+
+    /* PetSathi Theme Tokens */
     :root {
-      --dog-green: #286849;
+      --dog-green: #246b43;
+      --dog-green-dark: #1a251e;
       --dog-green-light: #eaf2e9;
-      --dog-amber: #e59d38;
+      --dog-border: #cbd9ce;
       --card-radius: 20px;
     }
 
@@ -108,6 +126,11 @@
       margin-bottom: 14px;
     }
 
+    .breed-badge-strip i {
+      color: var(--green);
+      font-size: 0.85rem;
+    }
+
     .breed-detail-hero h1 {
       font-size: clamp(2.2rem, 4vw, 3.2rem);
       color: var(--ink);
@@ -161,6 +184,16 @@
       align-items: center;
     }
 
+    .breed-hero-actions .button {
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
     .breed-hero-media {
       position: relative;
       border-radius: 24px;
@@ -176,6 +209,11 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .breed-hero-media:hover img {
+      transform: scale(1.03);
     }
 
     .breed-origin-stamp {
@@ -188,7 +226,7 @@
       border-radius: 999px;
       font-size: 0.8rem;
       font-weight: 700;
-      color: var(--ink);
+      color: var(--green);
       display: flex;
       align-items: center;
       gap: 7px;
@@ -203,8 +241,8 @@
     .switcher-bar {
       background: #ffffff;
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px 20px;
+      border-radius: 20px;
+      padding: 16px 24px;
       margin: -24px auto 35px;
       max-width: 900px;
       display: flex;
@@ -233,51 +271,218 @@
     .switcher-select {
       flex: 1;
       min-width: 240px;
-      padding: 8px 14px;
-      border-radius: 10px;
-      border: 1px solid #c9d8cc;
-      background: #fdfdfd;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid #d4e3d7;
+      background: #fafcf8;
       font-family: inherit;
       font-size: 0.9rem;
       color: var(--ink);
+      font-weight: 600;
       cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .switcher-select:focus {
+      outline: none;
+      border-color: var(--green);
+    }
+
+    /* Section Heading Card - Matching dogs/index.html Theme */
+    .dog-topics-heading {
+      position: relative;
+      max-width: 1400px;
+      margin: 45px auto 35px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+    }
+
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
+    }
+
+    .heading-label i {
+      font-size: 14px;
+      color: #246b43;
+      line-height: 1;
+    }
+
+    .dog-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .dog-topics-heading h2 span {
+      color: #28764a;
+    }
+
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .dog-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .paw-right-2 {
+      bottom: 35px;
+      right: 140px;
+      font-size: 38px;
+      transform: rotate(-15deg);
     }
 
     /* Specifications Matrix */
     .specs-section {
-      padding: 20px 0 60px;
-    }
-
-    .section-title-wrap {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 35px;
-    }
-
-    .section-title-wrap .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #eaf2e9;
-      color: var(--green);
-      padding: 5px 14px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .section-title-wrap h2 {
-      font-size: clamp(1.8rem, 3vw, 2.3rem);
-      margin: 0 0 10px;
-      color: var(--ink);
-    }
-
-    .section-title-wrap h2 em {
-      font-style: normal;
-      color: var(--green);
+      padding: 10px 0 50px;
     }
 
     .specs-grid {
@@ -287,7 +492,7 @@
       background: #ffffff;
       border: 1px solid var(--line);
       border-radius: var(--card-radius);
-      padding: 30px;
+      padding: 28px;
       box-shadow: var(--shadow);
     }
 
@@ -296,9 +501,10 @@
       align-items: flex-start;
       gap: 16px;
       padding: 16px;
-      background: #fbfdfa;
-      border: 1px solid #e7efe5;
+      background: #fafcf7;
+      border: 1px solid #ebf2e8;
       border-radius: 14px;
+      height: 100%;
       transition: border-color 0.2s, transform 0.2s;
     }
 
@@ -319,6 +525,10 @@
       font-size: 1.15rem;
     }
 
+    .spec-icon-box i {
+      color: var(--green);
+    }
+
     .spec-content {
       display: flex;
       flex-direction: column;
@@ -334,7 +544,7 @@
     }
 
     .spec-val {
-      font-size: 1rem;
+      font-size: 0.96rem;
       font-weight: 700;
       color: var(--ink);
     }
@@ -353,6 +563,7 @@
       border-radius: var(--card-radius);
       padding: 32px;
       box-shadow: var(--shadow);
+      height: 100%;
     }
 
     .detail-card-header {
@@ -373,14 +584,18 @@
       font-size: 1.1rem;
     }
 
+    .detail-card-header .header-icon i {
+      color: var(--green);
+    }
+
     .detail-card-header h3 {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       color: var(--ink);
       margin: 0;
     }
 
     .detail-card p {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       line-height: 1.7;
       color: var(--muted);
       margin: 0 0 16px;
@@ -428,11 +643,11 @@
 
     .gallery-item {
       height: 240px;
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
       border: 1px solid var(--line);
       background: #f0f3eb;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      box-shadow: var(--shadow);
     }
 
     .gallery-item img {
@@ -448,7 +663,7 @@
 
     /* Related Breeds */
     .related-section {
-      margin-bottom: 70px;
+      margin-bottom: 60px;
     }
 
     .related-grid {
@@ -464,6 +679,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      height: 100%;
       transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
       text-decoration: none;
       color: inherit;
@@ -476,7 +692,7 @@
     }
 
     .related-card-media {
-      height: 180px;
+      height: 190px;
       overflow: hidden;
       background: #f4f7f2;
       position: relative;
@@ -490,11 +706,11 @@
     }
 
     .related-card:hover .related-card-media img {
-      transform: scale(1.06);
+      transform: scale(1.05);
     }
 
     .related-card-body {
-      padding: 20px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -521,50 +737,35 @@
       font-size: 0.86rem;
       font-weight: 700;
       color: var(--green);
+      margin-top: auto;
     }
 
-    /* CTA Section */
-    .dog-care-cta {
-      background: linear-gradient(135deg, #1b4b34 0%, #286849 100%);
-      border-radius: 28px;
-      padding: 48px 40px;
-      color: #ffffff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-      margin-top: 20px;
-      margin-bottom: 85px;
-      flex-wrap: wrap;
-      box-shadow: 0 12px 32px rgba(27, 75, 52, 0.15);
+    /* CTA Section matching index.html */
+    .cta {
+      margin-top: 0;
+      margin-bottom: 92px;
+      border: 1px solid #e6d6c6;
     }
 
-    .dog-care-cta h2 {
-      color: #ffffff;
-      margin: 0 0 10px;
-      font-size: clamp(1.8rem, 3vw, 2.2rem);
-    }
-
-    .dog-care-cta h2 em {
-      font-style: normal;
-      color: #a7e4b9;
-    }
-
-    .dog-care-cta p {
-      color: #e2f0e6;
-      max-width: 580px;
-      margin: 0;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .dog-cta-actions {
+    .cta-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
+      flex-shrink: 0;
     }
 
-    /* Responsive adjustments */
+    .cta .button-outline {
+      background: transparent;
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .cta .button-outline:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    /* Responsive Breakpoints */
     @media (max-width: 900px) {
       .breed-hero-grid {
         grid-template-columns: 1fr;
@@ -588,6 +789,72 @@
       }
     }
 
+    @media (max-width: 768px) {
+      .dog-topics-heading {
+        margin: 25px 0;
+        padding: 35px 16px 30px;
+        border-radius: 24px;
+      }
+
+      .corner-wave {
+        width: 170px;
+        height: 110px;
+      }
+
+      .dog-topics-heading h2 {
+        font-size: clamp(20px, 5vw, 26px);
+        gap: 8px;
+      }
+
+      .dog-topics-heading p {
+        font-size: 14px;
+      }
+
+      .heading-label {
+        font-size: 11px;
+        padding: 6px 14px;
+        margin-bottom: 12px;
+      }
+
+      .paw-left-1 {
+        left: 35px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-left-2 {
+        left: 18px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .paw-right-1 {
+        right: 25px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-right-2 {
+        right: 65px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .heading-burst {
+        width: 16px;
+        height: 18px;
+      }
+
+      .heading-burst span:nth-child(1),
+      .heading-burst span:nth-child(3) {
+        width: 10px;
+      }
+
+      .heading-burst span:nth-child(2) {
+        width: 13px;
+      }
+    }
+
     @media (max-width: 600px) {
       .gallery-grid {
         grid-template-columns: 1fr;
@@ -606,9 +873,14 @@
         width: 100%;
       }
 
-      .dog-care-cta {
-        padding: 32px 24px;
-        margin-bottom: 55px;
+      .cta-actions {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 18px;
+      }
+
+      .cta-actions .button {
+        width: 100%;
       }
     }
   </style>
@@ -672,7 +944,7 @@
         <div class="breed-hero-grid">
           <div class="breed-hero-copy">
             <div class="breed-badge-strip">
-              <i class="fa-solid fa-paw"></i>
+              <i class="fa-solid fa-paw" aria-hidden="true"></i>
               <span id="heroBadgeCategory">Large Dog Breed</span>
             </div>
             <h1 id="heroBreedTitle">Golden <em>Retriever</em></h1>
@@ -681,17 +953,17 @@
             </p>
 
             <div class="breed-tags-row" id="heroTagsRow">
-              <span class="breed-pill-tag"><i class="fa-solid fa-ruler-combined"></i> <span id="tagSize">Large</span></span>
-              <span class="breed-pill-tag"><i class="fa-solid fa-earth-asia"></i> <span id="tagOrigin">United Kingdom</span></span>
-              <span class="breed-pill-tag"><i class="fa-solid fa-heart"></i> <span id="tagTemperament">Friendly &amp; Intelligent</span></span>
+              <span class="breed-pill-tag"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i> <span id="tagSize">Large</span></span>
+              <span class="breed-pill-tag"><i class="fa-solid fa-earth-americas" aria-hidden="true"></i> <span id="tagOrigin">United Kingdom</span></span>
+              <span class="breed-pill-tag"><i class="fa-solid fa-heart" aria-hidden="true"></i> <span id="tagTemperament">Friendly &amp; Intelligent</span></span>
             </div>
 
             <div class="breed-hero-actions">
               <a href="breeds.html#popular-breeds" class="button button-outline">
-                <i class="fa-solid fa-arrow-left"></i> All Breeds Directory
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> All Breeds Directory
               </a>
               <a href="breeds.html#comparison" class="button">
-                <i class="fa-solid fa-code-compare"></i> Compare This Breed
+                <i class="fa-solid fa-code-compare" aria-hidden="true"></i> Compare This Breed
               </a>
             </div>
           </div>
@@ -699,7 +971,7 @@
           <div class="breed-hero-media">
             <img id="heroBreedImg" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80" alt="Breed Photo">
             <div class="breed-origin-stamp">
-              <i class="fa-solid fa-location-dot"></i>
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
               <span id="heroOriginStamp">Origin: United Kingdom</span>
             </div>
           </div>
@@ -711,7 +983,7 @@
     <div class="section-wrap">
       <div class="switcher-bar">
         <div class="switcher-label">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
           <span>Switch to Another Popular Breed:</span>
         </div>
         <select id="breedSwitcherSelect" class="switcher-select" onchange="onSwitcherChange(this.value)">
@@ -730,17 +1002,45 @@
     </div>
 
     <!-- Specifications Matrix Section -->
-    <section class="section-wrap specs-section">
-      <div class="section-title-wrap">
-        <div class="eyebrow"><i class="fa-solid fa-list-check"></i> Standardized Profile</div>
-        <h2>Breed Specifications &amp; <em>Characteristics</em></h2>
-        <p>Essential physical standards, coat care requirements, and life expectancy details recognized for this breed.</p>
+    <section class="section-wrap specs-section" id="specs-section">
+      <!-- Section Title Matching Dog Index Theme -->
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+            Standardized Canine Profile
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Breed Specifications &amp; <span>Characteristics</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Essential physical standards, coat care requirements, and life expectancy details recognized for this breed.
+          </p>
+        </div>
       </div>
 
       <div class="specs-grid">
         <!-- 1. Breed Name -->
         <div class="spec-item">
-          <div class="spec-icon-box"><i class="fa-solid fa-id-card"></i></div>
+          <div class="spec-icon-box"><i class="fa-solid fa-id-card" aria-hidden="true"></i></div>
           <div class="spec-content">
             <span class="spec-label">Breed Name</span>
             <span class="spec-val" id="specName">Golden Retriever</span>
@@ -749,7 +1049,7 @@
 
         <!-- 2. Origin -->
         <div class="spec-item">
-          <div class="spec-icon-box"><i class="fa-solid fa-earth-americas"></i></div>
+          <div class="spec-icon-box"><i class="fa-solid fa-earth-americas" aria-hidden="true"></i></div>
           <div class="spec-content">
             <span class="spec-label">Origin Country</span>
             <span class="spec-val" id="specOrigin">United Kingdom (Scotland)</span>
@@ -758,7 +1058,7 @@
 
         <!-- 3. Size -->
         <div class="spec-item">
-          <div class="spec-icon-box"><i class="fa-solid fa-ruler-combined"></i></div>
+          <div class="spec-icon-box"><i class="fa-solid fa-ruler-combined" aria-hidden="true"></i></div>
           <div class="spec-content">
             <span class="spec-label">Size Category</span>
             <span class="spec-val" id="specSize">Large Breed</span>
@@ -767,7 +1067,7 @@
 
         <!-- 4. Average Weight -->
         <div class="spec-item">
-          <div class="spec-icon-box"><i class="fa-solid fa-weight-scale"></i></div>
+          <div class="spec-icon-box"><i class="fa-solid fa-weight-scale" aria-hidden="true"></i></div>
           <div class="spec-content">
             <span class="spec-label">Average Weight</span>
             <span class="spec-val" id="specWeight">Male: 65–75 lbs | Female: 55–65 lbs</span>
@@ -776,7 +1076,7 @@
 
         <!-- 5. Average Height -->
         <div class="spec-item">
-          <div class="spec-icon-box"><i class="fa-solid fa-arrows-up-down"></i></div>
+          <div class="spec-icon-box"><i class="fa-solid fa-arrows-up-down" aria-hidden="true"></i></div>
           <div class="spec-content">
             <span class="spec-label">Average Height</span>
             <span class="spec-val" id="specHeight">Male: 23–24 in | Female: 21.5–22.5 in</span>
@@ -785,7 +1085,7 @@
 
         <!-- 6. Life Expectancy -->
         <div class="spec-item">
-          <div class="spec-icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="spec-icon-box"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></div>
           <div class="spec-content">
             <span class="spec-label">Life Expectancy</span>
             <span class="spec-val" id="specLifespan">10–12 Years</span>
@@ -794,7 +1094,7 @@
 
         <!-- 7. Coat Type -->
         <div class="spec-item">
-          <div class="spec-icon-box"><i class="fa-solid fa-shield-dog"></i></div>
+          <div class="spec-icon-box"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i></div>
           <div class="spec-content">
             <span class="spec-label">Coat Type</span>
             <span class="spec-val" id="specCoatType">Dense, water-repellent double coat with feathering</span>
@@ -803,7 +1103,7 @@
 
         <!-- 8. Coat Colours -->
         <div class="spec-item">
-          <div class="spec-icon-box"><i class="fa-solid fa-palette"></i></div>
+          <div class="spec-icon-box"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
           <div class="spec-content">
             <span class="spec-label">Coat Colours</span>
             <span class="spec-val" id="specCoatColors">Light Golden, Golden, Dark Golden</span>
@@ -812,7 +1112,7 @@
 
         <!-- 9. Temperament -->
         <div class="spec-item">
-          <div class="spec-icon-box"><i class="fa-solid fa-face-smile"></i></div>
+          <div class="spec-icon-box"><i class="fa-solid fa-face-smile" aria-hidden="true"></i></div>
           <div class="spec-content">
             <span class="spec-label">Temperament</span>
             <span class="spec-val" id="specTemperament">Friendly, intelligent, devoted, reliable</span>
@@ -821,7 +1121,7 @@
 
         <!-- 10. Shedding Level -->
         <div class="spec-item">
-          <div class="spec-icon-box"><i class="fa-solid fa-scissors"></i></div>
+          <div class="spec-icon-box"><i class="fa-solid fa-soap" aria-hidden="true"></i></div>
           <div class="spec-content">
             <span class="spec-label">Shedding Level</span>
             <span class="spec-val" id="specShedding">Moderate to High (Seasonal blowout)</span>
@@ -830,13 +1130,47 @@
       </div>
     </section>
 
-    <!-- Breed History & Interesting Facts -->
-    <section class="section-wrap">
+    <!-- Breed History & Interesting Facts Section -->
+    <section class="section-wrap" id="history-section">
+      <!-- Section Title Matching Dog Index Theme -->
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Canine Heritage &amp; Trivia
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Breed History &amp; <span>Interesting Facts</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Explore the historical origins, working background, and unique fascinating qualities of this breed.
+          </p>
+        </div>
+      </div>
+
       <div class="details-row-grid">
         <!-- History Block -->
         <article class="detail-card">
           <div class="detail-card-header">
-            <div class="header-icon"><i class="fa-solid fa-landmark"></i></div>
+            <div class="header-icon"><i class="fa-solid fa-landmark" aria-hidden="true"></i></div>
             <h3>Breed History &amp; Heritage</h3>
           </div>
           <div id="breedHistoryText">
@@ -848,86 +1182,136 @@
         <!-- Interesting Facts Block -->
         <article class="detail-card">
           <div class="detail-card-header">
-            <div class="header-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="header-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></div>
             <h3>Interesting &amp; Fun Facts</h3>
           </div>
           <ul class="facts-list" id="breedFactsList">
-            <li><i class="fa-solid fa-check"></i> Known for their "soft mouth" instinct, gentle enough to carry a raw egg unbroken.</li>
-            <li><i class="fa-solid fa-check"></i> Ranked among the top 4 most intelligent dog breeds globally.</li>
-            <li><i class="fa-solid fa-check"></i> Frequently serve as service, therapy, guide, and search-and-rescue companions.</li>
-            <li><i class="fa-solid fa-check"></i> Have webbed toes and water-repellent undercoats that make them exceptional swimmers.</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Known for their "soft mouth" instinct, gentle enough to carry a raw egg unbroken.</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Ranked among the top 4 most intelligent dog breeds globally.</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Frequently serve as service, therapy, guide, and search-and-rescue companions.</li>
+            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Have webbed toes and water-repellent undercoats that make them exceptional swimmers.</li>
           </ul>
         </article>
       </div>
     </section>
 
     <!-- Image Gallery -->
-    <section class="section-wrap gallery-section">
-      <div class="section-title-wrap">
-        <div class="eyebrow"><i class="fa-solid fa-images"></i> Visual Showcase</div>
-        <h2>Breed Photo <em>Gallery</em></h2>
-        <p>A closer look at this breed at rest, at play, and exploring the outdoors.</p>
+    <section class="section-wrap gallery-section" id="gallery-section">
+      <!-- Section Title Matching Dog Index Theme -->
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-images" aria-hidden="true"></i>
+            Visual Showcase
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Breed Photo <span>Gallery</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            A closer look at this breed at rest, at play, and exploring the outdoors.
+          </p>
+        </div>
       </div>
 
-      <div class="gallery-grid" id="galleryGrid">
-        <div class="gallery-item"><img id="galImg1" src="" alt="Gallery Image 1" loading="lazy"></div>
-        <div class="gallery-item"><img id="galImg2" src="" alt="Gallery Image 2" loading="lazy"></div>
-        <div class="gallery-item"><img id="galImg3" src="" alt="Gallery Image 3" loading="lazy"></div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img id="galImg1" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=700&q=80" alt="Breed Gallery Photo 1" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img id="galImg2" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=700&q=80" alt="Breed Gallery Photo 2" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img id="galImg3" src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=700&q=80" alt="Breed Gallery Photo 3" loading="lazy">
+        </div>
       </div>
     </section>
 
     <!-- Related Breeds -->
-    <section class="section-wrap related-section">
-      <div class="section-title-wrap">
-        <div class="eyebrow"><i class="fa-solid fa-network-wired"></i> Similar Companions</div>
-        <h2>Related Dog <em>Breeds</em></h2>
-        <p>Explore other popular breeds with matching size profiles, temperaments, or care routines.</p>
+    <section class="section-wrap related-section" id="related-section">
+      <!-- Section Title Matching Dog Index Theme -->
+      <div class="dog-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+            Similar Companions
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Related Dog <span>Breeds</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Explore other popular breeds with matching size profiles, temperaments, or care routines.
+          </p>
+        </div>
       </div>
 
       <div class="related-grid" id="relatedGrid">
-        <!-- Rendered via JS -->
+        <!-- Rendered dynamically by loadBreedData() -->
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section-wrap">
-      <div class="dog-care-cta">
-        <div>
-          <div class="eyebrow" style="color: #c4e4cc; margin-bottom: 10px;">Companionship &amp; Daily Care</div>
-          <h2>Ready to Care for Your <em>Dog?</em></h2>
-          <p>
-            Learn more about nutrition, exercise routines, grooming schedules, and professional walking services on PetSathi.
-          </p>
-        </div>
-        <div class="dog-cta-actions">
-          <a class="button button-light" href="breeds.html" style="background: #ffffff; color: var(--green); border-color: #ffffff;">
-            <i class="fa-solid fa-arrow-left"></i> All Dog Breeds
-          </a>
-          <a class="button button-outline" href="care.html" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
-            <i class="fa-solid fa-heart-pulse"></i> Dog Care Guide
-          </a>
-          <a class="button button-outline" href="../../services/dog-walking.html" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
-            <i class="fa-solid fa-person-walking"></i> Dog Walking Services
-          </a>
-        </div>
+    <!-- CTA Banner Section matching index.html -->
+    <section class="cta section-wrap">
+      <div>
+        <div class="eyebrow">START YOUR DOG'S JOURNEY</div>
+        <h2>Need Guidance Caring for <em>Your Companion?</em></h2>
+        <p>
+          Whether you're preparing to welcome this breed home or need expert daily care routines, PetSathi provides trusted nutrition guides, grooming advice, and verified dog walkers.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="button button-light" href="care.html" id="cta-dog-care">Explore Dog Care Guide ↗</a>
+        <a class="button button-outline" href="../../walker/dogs.html" id="cta-find-walker">Find a Dog Walker</a>
       </div>
     </section>
   </main>
 
-  <!-- Footer (Identical to Main PetSathi Theme) -->
+  <!-- Footer (Standard PetSathi Theme) -->
   <footer class="footer">
     <div class="section-wrap footer-grid">
-      <div>
-        <a class="brand" href="../../../../index.html" aria-label="PetSathi home">
-          <svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
+      <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark"
+            aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
             <circle cx="12" cy="12" r="4" fill="currentColor" />
             <circle cx="21" cy="8" r="4" fill="currentColor" />
             <circle cx="30" cy="12" r="4" fill="currentColor" />
             <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
               fill="currentColor" />
-          </svg>
-          <span>Pet<span>Sathi</span></span>
-        </a>
+          </svg><span>Pet<span>Sathi</span></span></a>
         <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
       </div>
       <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a
@@ -940,43 +1324,41 @@
           rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank"
           rel="noopener noreferrer">Live Website</a></div>
     </div>
-    <div class="section-wrap footer-bottom">
-      <span>&copy; 2026 PetSathi. All rights reserved.</span>
-      <span>Made with &hearts; for pets.</span>
-      <span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span>
-    </div>
+    <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with
+        &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E;
+        &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
   </footer>
 
   <script src="../../../js/main.js"></script>
 
-  <!-- Dedicated Breed Data Store & Dynamic Renderer -->
+  <!-- Complete 10-Breed Database Engine -->
   <script>
     const breedsDB = {
       "golden-retriever": {
         name: "Golden Retriever",
-        titleEm: "Retriever",
         titlePrefix: "Golden",
-        origin: "United Kingdom (Scotland)",
+        titleEm: "Retriever",
+        origin: "Scotland, United Kingdom",
         size: "Large",
-        categoryBadge: "Large • Devoted Family Companion",
+        categoryBadge: "Large • Loving Family Companion",
         weight: "Male: 65–75 lbs (29–34 kg) | Female: 55–65 lbs (25–29 kg)",
         height: "Male: 23–24 in (58–61 cm) | Female: 21.5–22.5 in (55–57 cm)",
         lifespan: "10–12 Years",
-        coatType: "Dense, water-repellent double coat with feathering",
+        coatType: "Dense, water-repellent double coat with rich feathering",
         coatColors: "Light Golden, Golden, Dark Golden",
-        temperament: "Friendly, intelligent, devoted, reliable, gentle",
-        shedding: "Moderate to High (Seasonal blowout)",
-        shortDesc: "Intelligent, friendly, and devoted companions celebrated for their gentle disposition, luxurious water-repellent golden coats, and supreme loyalty to families.",
+        temperament: "Intelligent, friendly, devoted, gentle, eager to please",
+        shedding: "Moderate to High",
+        shortDesc: "Intelligent, friendly, and devoted canine companions renowned for their gentle temperament, high trainability, and deep love for family life.",
         history: [
-          "Golden Retrievers were first developed in the mid-19th century in the Scottish Highlands by Dudley Marjoribanks (Lord Tweedmouth).",
-          "Tweedmouth bred a yellow retriever with the now-extinct Tweed Water Spaniel, later crossing with Bloodhound and Irish Setter lines to produce an incomparable retriever for hunting both on land and in marshy Scottish lochs.",
-          "Official kennel recognition followed in 1913, quickly propelling the Golden Retriever into one of the world's most cherished family companions and service dogs."
+          "Developed in the Scottish Highlands during the late 19th century by Dudley Marjoribanks (Lord Tweedmouth).",
+          "Tweedmouth crossed a Yellow Retriever with the now-extinct Tweed Water Spaniel, adding Bloodhound and Irish Setter lines to craft an exceptional gundog.",
+          "Recognized by The Kennel Club in 1913, Golden Retrievers quickly became one of the world's most cherished domestic breeds."
         ],
         facts: [
-          "Possess a renowned 'soft mouth' instinct, allowing them to carry delicate objects such as raw eggs without breaking them.",
-          "Consistently ranked in the top 4 most intelligent dog breeds worldwide.",
-          "Widely employed in guide assistance, scent detection, and search-and-rescue work.",
-          "Possess webbed feet and a double-layered water-shedding coat making them natural swimmers."
+          "Possess a 'soft mouth' instinct, allowing them to carry retrieved objects without marking them.",
+          "Consistently ranked in the top 4 smartest dog breeds in canine neuropsychology studies.",
+          "Frequently chosen worldwide as premier guide, therapy, and search-and-rescue dogs.",
+          "Equipped with webbed toes and water-shedding coats making them passionate swimmers."
         ],
         mainImage: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80",
         gallery: [
@@ -1350,7 +1732,7 @@
 
       // Facts
       const factsContainer = document.getElementById('breedFactsList');
-      factsContainer.innerHTML = breed.facts.map(f => `<li><i class="fa-solid fa-check"></i> <span>${f}</span></li>`).join('');
+      factsContainer.innerHTML = breed.facts.map(f => `<li><i class="fa-solid fa-check" aria-hidden="true"></i> <span>${f}</span></li>`).join('');
 
       // Gallery
       if (breed.gallery && breed.gallery.length >= 3) {
@@ -1376,7 +1758,7 @@
             <div class="related-card-body">
               <h4>${relBreed.name}</h4>
               <p>${relBreed.size} Breed • ${relBreed.origin}</p>
-              <span class="related-card-link">View Full Profile <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="related-card-link">View Full Profile <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
             </div>
           </a>
         `;

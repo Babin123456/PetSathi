@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -694,12 +694,12 @@
       font-weight: 800;
     }
 
-    /* 4 Pill Buttons Grid */
+    /* Navigation Pills Grid */
     .guides-nav-grid {
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 16px;
       margin: 0;
     }
@@ -983,6 +983,13 @@
           <span class="guide-nav-label">Dog Breeds</span>
         </a>
 
+        <a href="food.html" class="guide-nav-item" id="hub-link-food">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Food &amp; Nutrition</span>
+        </a>
+
         <a href="care.html" class="guide-nav-item" id="hub-link-care">
           <span class="guide-nav-icon">
             <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
@@ -1079,11 +1086,9 @@
           <div class="dog-card-body">
             <h3>Food & Nutrition</h3>
             <p>
-              Dog food, nutrition and healthy diet. Understand age-specific canine dietary needs, from puppy protein to
-              senior joint support. Learn about balanced meal portions, clean hydration, healthy treats, and dangerous
-              human foods to avoid.
+              Discover healthy foods, feeding guides and essential nutrition tips for your dog.
             </p>
-            <a class="dog-card-link" href="#quick-info" id="link-card-nutrition">Explore Nutrition & Diet ↗</a>
+            <a class="dog-card-link" href="food.html" id="link-card-nutrition">Explore Food &amp; Nutrition &rarr;</a>
           </div>
         </article>
 

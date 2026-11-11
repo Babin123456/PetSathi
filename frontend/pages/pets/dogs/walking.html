@@ -1,107 +1,4039 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Exercise and walking requirements for dogs - routines, leash manners, and dog walking companions on PetSathi.">
-  <title>Dog Exercise & Walking Guide | PetSathi</title>
+  <meta name="description"
+    content="Dog Exercise & Walking Guide on PetSathi. Comprehensive daily walking requirements, outdoor activities, essential accessories, safety tips, weather guide, and after-walk care.">
+  <title>Dog Walking & Exercise Guide | PetSathi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../../../css/global.css">
+  <link rel="stylesheet" href="../../../css/home.css">
   <link rel="stylesheet" href="../../../css/inner.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    /* Font Awesome 6 Free Webfont definition */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+    }
+
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    /* Dogs Landing Page Specific Styles */
+    .dog-badge-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .dog-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .dog-info-grid.grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dog-info-grid.grid-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .dog-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .dog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: #cbd9ce;
+    }
+
+    .dog-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .dog-card-body h3 {
+      font-size: 1.18rem;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .dog-card-body p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      flex-grow: 1;
+      color: var(--muted);
+    }
+
+    .dog-card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: #f1f6ec;
+      border: 1px solid #dcebc9;
+      border-radius: 50px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      align-self: flex-start;
+    }
+
+    .dog-card-media {
+      position: relative;
+      height: 210px;
+      overflow: hidden;
+      background: #f0f3eb;
+    }
+
+    .dog-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .dog-card:hover .dog-card-media img {
+      transform: scale(1.05);
+    }
+
+    .dog-card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      z-index: 2;
+      letter-spacing: 0.3px;
+    }
+
+    .dog-card-badge i {
+      color: var(--green);
+      font-size: 0.82rem;
+      line-height: 1;
+    }
+
+    .walking-time-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1e6f43;
+      margin-bottom: 12px;
+      align-self: flex-start;
+      box-shadow: 0 1px 3px rgba(30, 111, 67, 0.06);
+    }
+
+    .walking-time-badge i {
+      color: #286849;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+
+    .card-walk-tip {
+      margin-top: auto;
+      padding: 11px 14px;
+      background: #fafcf7;
+      border: 1px dashed #dcebc9;
+      border-radius: 12px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.82rem;
+      color: #4b6b55;
+      line-height: 1.5;
+    }
+
+    .card-walk-tip strong {
+      color: #246b43;
+      font-weight: 700;
+    }
+
+    /* Quick Information Section */
+    .dog-quick-info-section {
+      background: #ffffff;
+      border-top: none !important;
+      border-bottom: none;
+      padding: 50px 0;
+    }
+
+    .quick-info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      width: 100%;
+    }
+
+    .quick-info-grid.grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .quick-info-grid.grid-1 {
+      grid-template-columns: 1fr;
+    }
+
+    .quick-info-card {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      column-gap: 18px;
+      row-gap: 10px;
+      align-items: start;
+      width: 100%;
+      padding: 26px 30px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      transition: transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .quick-info-card:hover {
+      transform: translateY(-3px);
+      border-color: #cbd9ce;
+      box-shadow: var(--shadow);
+    }
+
+    .quick-info-icon-wrap {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #eaf2e9;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      margin: 0;
+    }
+
+    .quick-info-icon-wrap i {
+      color: var(--green);
+      font-size: 1.25rem;
+      display: inline-block;
+    }
+
+    .quick-info-card h3 {
+      grid-column: 2;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .quick-info-card p {
+      grid-column: 2;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .quick-info-list {
+      grid-column: 1 / -1;
+      list-style: none;
+      padding: 18px 0 0;
+      margin: 8px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .quick-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .quick-info-list li span {
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Section Subheadings */
+    .section-heading-clean {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-heading-clean .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      border-radius: 50px;
+      color: #246b43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-heading-clean h2 {
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 34px);
+      color: #263b30;
+      margin: 0 0 10px;
+      line-height: 1.25;
+    }
+
+    .section-heading-clean h2 em {
+      color: var(--green);
+      font-style: italic;
+    }
+
+    .section-heading-clean p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* Dog Topics & Quick Info Heading Card - Exact User Specification (Matching dogs/index.html) */
+    .dog-topics-heading {
+      position: relative;
+      max-width: 1400px;
+      margin: 45px auto 35px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+    }
+
+    /* Curvy decorative wave layers matching reference image */
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
+    }
+
+    .heading-label i {
+      font-size: 14px;
+      color: #246b43;
+      line-height: 1;
+    }
+
+    .dog-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .dog-topics-heading h2 span {
+      color: #28764a;
+    }
+
+    /* Heading Radiating Rays / Sparkles - Clean Fan Radiating from Text */
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    /* Left burst: 3 rays radiating out to the left from the right edge */
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    /* Right burst: 3 rays radiating out to the right from the left edge */
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .dog-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* Decorative Paws (Font Awesome) - Exactly 2 on left, 2 on right */
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .paw-right-2 {
+      bottom: 35px;
+      right: 140px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    /* Floating Cards (Hero Section) */
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #ffffff;
+      padding: 12px 18px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+    }
+
+    .floating-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #eaf5ed;
+      color: var(--green);
+      display: grid;
+      place-items: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(40, 104, 73, 0.08);
+    }
+
+    .floating-card b {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .floating-card small {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Quick Guide Navigation & Search/Filter Strip - Match Dogs Index */
+    .guides-nav-strip {
+      position: relative;
+      background: #ffffff;
+      margin: 40px auto;
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      padding: 38px 36px 34px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
+    }
+
+    /* Decorative Corner Paws */
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 0 0 100% 0;
+    }
+
+    .decor-bottom-right {
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 100% 0 0 0;
+    }
+
+    .decor-paw {
+      position: absolute;
+      font-size: 1.55rem;
+    }
+
+    .decor-paw-1 {
+      top: 22px;
+      left: 28px;
+      transform: rotate(-18deg);
+    }
+
+    .decor-paw-2 {
+      top: 50px;
+      left: 14px;
+      font-size: 1.15rem;
+      transform: rotate(12deg);
+      opacity: 0.85;
+    }
+
+    .decor-paw-3 {
+      bottom: 22px;
+      right: 28px;
+      transform: rotate(25deg);
+    }
+
+    .decor-paw-4 {
+      bottom: 50px;
+      right: 14px;
+      font-size: 1.15rem;
+      transform: rotate(-10deg);
+      opacity: 0.85;
+    }
+
+    /* Centered Header */
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      width: 100%;
+    }
+
+    .quick-nav-line {
+      height: 1px;
+      width: 48px;
+      background: #cdded1;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #edf6df;
+      color: #246b43;
+      border: 1px solid #dcebc9;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .quick-nav-badge i {
+      font-size: 0.8rem;
+    }
+
+    .quick-nav-title {
+      font-family: Georgia, 'Times New Roman', serif !important;
+      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      font-weight: 700;
+      color: #1a281f;
+      margin: 0 0 8px;
+      line-height: 1.25;
+    }
+
+    .quick-nav-title span {
+      color: #286849;
+    }
+
+    .quick-nav-subtitle {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0 auto;
+      max-width: 680px;
+      line-height: 1.5;
+    }
+
+    /* Controls Container */
+    .sf-controls-container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    /* Search Bar */
+    .sf-search-wrap {
+      position: relative;
+      width: 100%;
+    }
+
+    .sf-search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #eaf5ed;
+      color: #1e6f43;
+      display: grid;
+      place-items: center;
+      font-size: 1.05rem;
+      pointer-events: none;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .sf-search-input {
+      width: 100%;
+      height: 52px;
+      padding: 0 52px 0 62px;
+      border: 1px solid #cce4d2;
+      border-radius: 50px;
+      background: #fcfdfc;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.95rem;
+      color: var(--ink);
+      outline: none;
+      box-shadow: 0 2px 8px rgba(35, 75, 45, 0.03);
+      transition: all 0.25s ease;
+    }
+
+    .sf-search-input:focus {
+      background: #ffffff;
+      border-color: #237847;
+      box-shadow: 0 0 0 4px rgba(35, 120, 71, 0.12);
+    }
+
+    .sf-search-input:focus~.sf-search-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    .sf-clear-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #eef2ed;
+      border: none;
+      font-size: 0.88rem;
+      color: #5d6e64;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .sf-clear-btn:hover {
+      background: #dfe6e0;
+      color: #1c2b20;
+    }
+
+    /* Clean Inline Filters (No Box Enclosures, Small Badges) */
+    .sf-clean-filters {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 4px 2px;
+    }
+
+    .sf-filter-inline-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .sf-row-label {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1a281f;
+      min-width: 86px;
+      flex-shrink: 0;
+    }
+
+    .sf-mini-pills {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sf-mini-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 13px;
+      border-radius: 9999px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #3b5043;
+      background: #f2f7f3;
+      border: 1px solid #d2e4d6;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      user-select: none;
+      line-height: 1.35;
+    }
+
+    .sf-mini-pill:hover {
+      background: #e5f2e8;
+      border-color: #246b43;
+      color: #1a281f;
+      transform: translateY(-1px);
+    }
+
+    .sf-mini-pill.active {
+      background: #1e6f43;
+      color: #ffffff;
+      border-color: #1e6f43;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(30, 111, 67, 0.24);
+    }
+
+    /* Meta & Reset Bar */
+    .sf-meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed #dceade;
+    }
+
+    .sf-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #203326;
+    }
+
+    .sf-status-badge i {
+      color: #1e6f43;
+      font-size: 0.95rem;
+    }
+
+    .sf-reset-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .sf-reset-btn:hover {
+      background: #246b43;
+      color: #ffffff;
+      border-color: #246b43;
+    }
+
+
+    /* Walking Requirements: SINGLE HORIZONTAL CARD MODE (Matches exact full width of .dog-topics-heading; image left, details right) */
+    #requirements-grid.single-horizontal-card {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 28px auto 0;
+    }
+
+    #requirements-grid.single-horizontal-card .dog-card {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      width: 100%;
+      background: #ffffff;
+      border: 1.5px solid #286849;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 32px rgba(40, 104, 73, 0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      animation: cardFadeIn 0.3s ease;
+    }
+
+    #requirements-grid.single-horizontal-card .dog-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(40, 104, 73, 0.15);
+    }
+
+    #requirements-grid.single-horizontal-card .dog-card-media {
+      position: relative;
+      height: 100%;
+      min-height: 400px;
+    }
+
+    #requirements-grid.single-horizontal-card .dog-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    #requirements-grid.single-horizontal-card .dog-card-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+    }
+
+    #requirements-grid.single-horizontal-card .dog-card-body {
+      padding: 34px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #requirements-grid.single-horizontal-card .dog-card-body h3 {
+      font-family: Georgia, 'Times New Roman', serif !important;
+      font-size: 1.55rem;
+      color: #1a281f;
+      margin: 0 0 8px;
+      order: 1;
+    }
+
+    #requirements-grid.single-horizontal-card .dog-card-body .walking-time-badge {
+      order: 2;
+      align-self: flex-start;
+      margin-bottom: 14px;
+      background: #edf7f0;
+      color: #1e6f43;
+      border: 1px solid #cce4d2;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    /* Normal mode vs Filtered Horizontal mode dog descriptions */
+    #requirements-grid:not(.single-horizontal-card) .dog-desc-full {
+      display: none !important;
+    }
+
+    #requirements-grid:not(.single-horizontal-card) .dog-desc-normal {
+      display: block !important;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      color: var(--muted);
+      flex-grow: 1;
+    }
+
+    #requirements-grid.single-horizontal-card .dog-desc-normal {
+      display: none !important;
+    }
+
+    #requirements-grid.single-horizontal-card .dog-card-body p.dog-desc-full {
+      display: block !important;
+      order: 3;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.94rem;
+      line-height: 1.65;
+      color: #43544a;
+      margin: 0 0 14px;
+    }
+
+    /* Vertical Additional Points (No icons, clean bullet styling) */
+    #requirements-grid:not(.single-horizontal-card) .card-points-vertical {
+      display: none;
+    }
+
+    #requirements-grid.single-horizontal-card .card-points-vertical {
+      order: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 4px 0 16px;
+      padding: 14px 18px;
+      background: #fafdfa;
+      border: 1px solid #e2ece4;
+      border-left: 3px solid #286849;
+      border-radius: 12px;
+    }
+
+    .card-point-row {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: #314438;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .card-point-row::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #286849;
+      font-size: 1.1rem;
+      line-height: 1.35;
+      font-weight: bold;
+    }
+
+    .card-point-row strong {
+      color: #1a281f;
+      font-weight: 700;
+    }
+
+    #requirements-grid.single-horizontal-card .dog-card-body .card-walk-tip {
+      order: 5;
+      margin-top: 4px;
+      background: #f8faf8;
+      border: 1px solid #dcebc9;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 0.88rem;
+      color: #2e4335;
+    }
+
+    @keyframes cardFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 920px) {
+      .guides-nav-strip {
+        padding: 30px 20px 24px;
+      }
+
+      #requirements-grid.single-horizontal-card .dog-card {
+        grid-template-columns: 1fr;
+      }
+
+      #requirements-grid.single-horizontal-card .dog-card-media {
+        height: 250px;
+        min-height: auto;
+      }
+
+      #requirements-grid.single-horizontal-card .dog-card-body {
+        padding: 24px 20px;
+      }
+    }
+
+    /*  2. Benefits of Dog Walking - Clean, Compact Cards */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+
+    .benefit-card {
+      background: #ffffff;
+      border: 1px solid #dcebc9;
+      border-radius: 20px;
+      padding: 26px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
+      position: relative;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      border-color: #286849;
+      box-shadow: 0 12px 28px rgba(35, 75, 45, 0.1);
+    }
+
+    .benefit-icon-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: #edf7f0;
+      color: #286849;
+      border: 1px solid #cce4d2;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .benefit-card:hover .benefit-icon-wrap {
+      background: #286849;
+      color: #ffffff;
+      border-color: #286849;
+      transform: scale(1.06);
+    }
+
+    .benefit-icon-wrap i {
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .benefit-card h3 {
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #263b30;
+      margin: 0 0 8px;
+      line-height: 1.3;
+    }
+
+    .benefit-card p {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.92rem;
+      color: #5d6e64;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    @media (max-width: 1200px) {
+      .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .benefit-card {
+        padding: 20px 18px;
+      }
+    }
+
+
+    /* 4. Types of Outdoor Activities - Compact Cards */
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .activity-compact-card {
+      background: #ffffff;
+      border: 1px solid #dcebc9;
+      border-radius: 20px;
+      padding: 24px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
+      position: relative;
+    }
+
+    .activity-compact-card:hover,
+    .activity-compact-card.activity-highlighted {
+      transform: translateY(-6px);
+      border-color: #286849;
+      box-shadow: 0 14px 32px rgba(35, 75, 45, 0.18);
+    }
+
+    .activity-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #edf7f0;
+      color: #286849;
+      border: 1px solid #cce4d2;
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .activity-compact-card:hover .activity-icon-wrap,
+    .activity-compact-card.activity-highlighted .activity-icon-wrap {
+      background: #286849;
+      color: #ffffff;
+      border-color: #286849;
+      transform: scale(1.08);
+    }
+
+    .activity-compact-card h3 {
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #263b30;
+      margin: 0 0 8px;
+      line-height: 1.3;
+    }
+
+    .activity-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 50px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #1e6f43;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .activity-card-badge i {
+      font-size: 0.78rem;
+      color: #286849;
+      line-height: 1;
+    }
+
+    .activity-compact-card p {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.92rem;
+      color: #5d6e64;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .activities-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .activity-compact-card {
+        padding: 20px 18px;
+      }
+    }
+
+
+    /* 6. Walking Safety Tips - Clean,
+    Compact & Highlighted */
+    .safety-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .safety-tip-card {
+      background: #ffffff;
+      border: 1px solid #dcebc9;
+      border-radius: 18px;
+      padding: 22px 20px 20px;
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      column-gap: 16px;
+      row-gap: 6px;
+      align-items: start;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      box-shadow: 0 4px 16px rgba(35, 75, 45, 0.04);
+      position: relative;
+    }
+
+    .safety-tip-card:hover {
+      transform: translateY(-4px);
+      border-color: #286849;
+      box-shadow: 0 10px 24px rgba(35, 75, 45, 0.08);
+    }
+
+    /* Warning Card Accent */
+    .safety-tip-card.warning-highlight {
+      background: #fffcf8;
+      border: 1.5px solid #f6d8ae;
+      box-shadow: 0 4px 18px rgba(181, 106, 0, 0.06);
+    }
+
+    .safety-tip-card.warning-highlight:hover {
+      border-color: #d97706;
+      box-shadow: 0 10px 26px rgba(181, 106, 0, 0.12);
+    }
+
+    .safety-icon-wrap {
+      grid-column: 1;
+      grid-row: 1 / span 3;
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      background: #edf7f0;
+      color: #286849;
+      border: 1px solid #cce4d2;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    }
+
+    .safety-tip-card:hover .safety-icon-wrap {
+      background: #286849;
+      color: #ffffff;
+      border-color: #286849;
+      transform: scale(1.05);
+    }
+
+    .safety-tip-card.warning-highlight .safety-icon-wrap {
+      background: #fff3e0;
+      color: #b56a00;
+      border-color: #f7dfbe;
+    }
+
+    .safety-tip-card.warning-highlight:hover .safety-icon-wrap {
+      background: #b56a00;
+      color: #ffffff;
+      border-color: #b56a00;
+      transform: scale(1.05);
+    }
+
+    .safety-card-content {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .safety-tip-card h3 {
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: #263b30;
+      margin: 0 0 6px;
+      line-height: 1.3;
+    }
+
+    .safety-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .safety-badge.standard {
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      color: #1e6f43;
+    }
+
+    .safety-badge.warning {
+      background: #fff3e0;
+      border: 1px solid #f7dfbe;
+      color: #b56a00;
+    }
+
+    .safety-badge.warning i {
+      font-size: 0.7rem;
+      color: #b56a00;
+    }
+
+    .safety-tip-card p {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.9rem;
+      color: #5d6e64;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .safety-tip-card.warning-highlight p strong {
+      color: #92400e;
+    }
+
+    @media (max-width: 680px) {
+      .safety-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .safety-tip-card {
+        padding: 18px 16px;
+      }
+    }
+
+    /* Warning Signs Highlight Section (Clean Highlighted Box with Outline Badge) */
+    .dog-warning-heading {
+      position: relative;
+      max-width: 1400px;
+      margin: 45px auto 35px;
+      padding: 46px 35px 38px;
+      border-radius: 32px;
+      border: 1.5px solid #fecaca;
+      background: #fafcf7;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    /* Urgent '!!' badge on extreme top-left box outline with interactive hover effect (no glow) */
+    .warning-outline-badge {
+      position: absolute;
+      top: -16px;
+      left: -8px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #f87171;
+      border: 2.5px solid #ffffff;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transform: rotate(-30deg);
+      transition: transform 0.25s ease;
+      cursor: pointer;
+    }
+
+    .warning-outline-badge:hover {
+      transform: rotate(-20deg) scale(1.1);
+      box-shadow: none;
+    }
+
+    .warning-outline-badge .badge-icons {
+      display: inline-flex;
+      gap: 2px;
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .warning-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: #fee2e2;
+      border: 1px solid #fecaca;
+      border-radius: 50px;
+      color: #b91c1c;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+    }
+
+    .dog-warning-heading h2 {
+      font-family: Georgia, 'Times New Roman', serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      color: #21352a;
+      margin-bottom: 8px;
+    }
+
+    .dog-warning-heading h2 em {
+      font-style: italic;
+      color: #dc2626;
+    }
+
+    .section-heading-clean p {
+      color: #617369;
+      font-size: 0.95rem;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .warning-signs-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin: 26px 0;
+    }
+
+    /* Inside cards: Flat, clean, no hover */
+    .warning-sign-card {
+      background: #ffffff;
+      border: 1px solid #fee2e2;
+      border-radius: 16px;
+      padding: 20px 14px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      box-shadow: none;
+    }
+
+    .warning-sign-card:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: #fee2e2;
+    }
+
+    .warning-sign-card .quick-info-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #dc2626;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .warning-sign-card strong {
+      font-size: 0.92rem;
+      color: #21352a;
+      line-height: 1.3;
+    }
+
+    .warning-sign-card small {
+      font-size: 0.8rem;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+
+    /* Proper Red Notice Box: Clean, flat, exact 2 sentences flowing naturally till the end */
+    .warning-single-box {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-left: 4px solid #ef4444;
+      border-radius: 14px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      box-shadow: none;
+    }
+
+    .warning-single-box i {
+      font-size: 1.25rem;
+      color: #ef4444;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .warning-single-box p {
+      margin: 0;
+      max-width: none;
+      flex-grow: 1;
+      width: 100%;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    .warning-single-box strong {
+      color: #b91c1c;
+      font-weight: 700;
+    }
+
+    /* Weather-Based Walking Guide (1 Card Per Row) */
+    .weather-cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .weather-row-card {
+      background: #ffffff;
+      border: 1px solid #dcebc9;
+      border-radius: 20px;
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      column-gap: 32px;
+      align-items: center;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+    }
+
+    .weather-row-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(35, 75, 45, 0.08);
+      border-color: #286849;
+    }
+
+    .weather-summary-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-right: 1px solid #edf4eb;
+      padding-right: 28px;
+    }
+
+    .weather-badge-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .weather-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .weather-row-card:hover .weather-icon-box {
+      transform: scale(1.06);
+    }
+
+    .weather-summer .weather-icon-box {
+      background: #fff7ed;
+      color: #d97706;
+      border: 1.5px solid #fed7aa;
+    }
+
+    .weather-monsoon .weather-icon-box {
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1.5px solid #bfdbfe;
+    }
+
+    .weather-winter .weather-icon-box {
+      background: #f0fdfa;
+      color: #0d9488;
+      border: 1.5px solid #99f6e4;
+    }
+
+    .weather-rainy .weather-icon-box {
+      background: #f0fdf4;
+      color: #16a34a;
+      border: 1.5px solid #bbf7d0;
+    }
+
+    .weather-season-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border-radius: 50px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+    }
+
+    .weather-summer .weather-season-tag {
+      background: #fff7ed;
+      color: #b45309;
+      border: 1px solid #fed7aa;
+    }
+
+    .weather-monsoon .weather-season-tag {
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+    }
+
+    .weather-winter .weather-season-tag {
+      background: #f0fdfa;
+      color: #0f766e;
+      border: 1px solid #99f6e4;
+    }
+
+    .weather-rainy .weather-season-tag {
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+
+    .weather-summary-col h3 {
+      font-family: Georgia, 'Times New Roman', serif !important;
+      font-size: 1.28rem;
+      color: #263b30;
+      margin: 0;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .weather-summary-col p {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.88rem;
+      color: #617369;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .weather-precautions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+    }
+
+    .precaution-item {
+      display: block;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: #3f5247;
+      background: #fafcf9;
+      border: 1px solid #eaf2e6;
+      border-radius: 12px;
+      padding: 12px 16px;
+    }
+
+    .precaution-item strong {
+      color: #263b30;
+      font-weight: 700;
+    }
+
+    @media (max-width: 960px) {
+      .weather-row-card {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        padding: 20px;
+      }
+
+      .weather-summary-col {
+        border-right: none;
+        border-bottom: 1px solid #edf4eb;
+        padding-right: 0;
+        padding-bottom: 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .weather-precautions-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .weather-row-card {
+        padding: 18px 16px;
+      }
+    }
+
+    /* 8 & 9. Interactive Side-by-Side Checklist Cards (Dog Walking Etiquette & After-Walk Care) */
+    #etiquette-and-care {
+      padding-top: 55px;
+      padding-bottom: 55px;
+    }
+
+    .interactive-checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 24px;
+      margin-bottom: 35px;
+      align-items: stretch;
+    }
+
+    .interactive-checklist-card {
+      background: #ffffff;
+      border: 1px solid #dcebc9;
+      border-radius: 26px;
+      padding: 38px 34px;
+      min-height: 590px;
+      box-shadow: 0 4px 20px rgba(35, 75, 45, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+    }
+
+    .interactive-checklist-card:hover {
+      border-color: #286849;
+      box-shadow: 0 8px 28px rgba(35, 75, 45, 0.09);
+    }
+
+    .card-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .card-icon-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .checklist-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      color: #286849;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .interactive-checklist-card:hover .checklist-icon-box {
+      transform: scale(1.06);
+    }
+
+    .checklist-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 50px;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #1e6f43;
+    }
+
+    .interactive-checklist-card h3 {
+      font-family: Georgia, 'Times New Roman', serif !important;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #263b30;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .card-desc {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.95rem;
+      color: #55685d;
+      line-height: 1.6;
+      margin: 0 0 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #edf4eb;
+    }
+
+    .checklist-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex-grow: 1;
+    }
+
+    .checklist-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 15px 18px;
+      background: #fafcf9;
+      border: 1px solid #e5ede3;
+      border-radius: 14px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+      position: relative;
+    }
+
+    .checklist-row:hover {
+      background: #f4f8f1;
+      border-color: #cbdcc4;
+      transform: translateY(-1px);
+    }
+
+    /* Hide native checkbox */
+    .checklist-row input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      margin: 0;
+    }
+
+    /* Custom Checkbox Box */
+    .custom-box {
+      width: 22px;
+      height: 22px;
+      border-radius: 7px;
+      background: #ffffff;
+      border: 1.8px solid #9bbd9f;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all 0.2s ease;
+    }
+
+    /* Pure CSS checkmark */
+    .custom-box::after {
+      content: "";
+      width: 5px;
+      height: 9px;
+      border: solid #ffffff;
+      border-width: 0 2.2px 2.2px 0;
+      transform: rotate(45deg) scale(0);
+      transition: transform 0.18s ease-in-out;
+      margin-bottom: 2px;
+    }
+
+    /* Checked State */
+    .checklist-row input[type="checkbox"]:checked~.custom-box {
+      background: #286849;
+      border-color: #286849;
+    }
+
+    .checklist-row input[type="checkbox"]:checked~.custom-box::after {
+      transform: rotate(45deg) scale(1);
+    }
+
+    .checklist-row input[type="checkbox"]:checked~.row-content strong {
+      color: #1e6f43;
+    }
+
+    .checklist-row:has(input[type="checkbox"]:checked) {
+      background: #f2f8f2;
+      border-color: #c4e0be;
+    }
+
+    .row-content {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.94rem;
+      line-height: 1.58;
+      color: #3d5045;
+    }
+
+    .row-content strong {
+      color: #1c4a30;
+      font-weight: 700;
+      transition: color 0.2s ease;
+    }
+
+    @media (max-width: 960px) {
+      .interactive-checklist-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .interactive-checklist-card {
+        padding: 26px 20px;
+        min-height: auto;
+      }
+    }
+
+    /* CTA Banner Section matching main index.html */
+    .cta {
+      margin-top: 0;
+      margin-bottom: 92px;
+      border: 1px solid #e6d6c6;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .cta .button-outline {
+      background: transparent;
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .cta .button-outline:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    .cta .button-light {
+      background: white !important;
+      color: var(--green) !important;
+      border: 1px solid rgba(40, 104, 73, 0.25) !important;
+    }
+
+    .cta .button-light:hover {
+      background: #f7faf5 !important;
+      color: var(--dark) !important;
+      border-color: var(--green) !important;
+    }
+
+    /* Fallback no results */
+    .no-results-card {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px 20px;
+      background: white;
+      border: 1px dashed #d5e4d4;
+      border-radius: 20px;
+      color: var(--muted);
+      display: none;
+    }
+
+    @media (max-width: 1024px) {
+      .dog-info-grid.grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .warning-signs-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .dog-info-grid.grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 960px) {
+      .dog-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .dog-topics-heading,
+      .dog-warning-heading {
+        margin: 25px 0;
+        overflow: visible;
+        padding: 35px 16px 30px;
+        border-radius: 24px;
+      }
+
+      .corner-wave {
+        width: 170px;
+        height: 110px;
+      }
+
+      .dog-topics-heading h2,
+      .dog-warning-heading h2 {
+        font-size: clamp(20px, 5vw, 26px);
+        gap: 8px;
+      }
+
+      .dog-topics-heading p,
+      .dog-warning-heading p {
+        font-size: 14px;
+      }
+
+      .heading-label {
+        font-size: 11px;
+        padding: 6px 14px;
+        margin-bottom: 12px;
+      }
+
+      .paw-left-1 {
+        left: 35px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-left-2 {
+        left: 18px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .paw-right-1 {
+        right: 25px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-right-2 {
+        right: 65px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .heading-burst {
+        width: 16px;
+        height: 18px;
+      }
+
+      .heading-burst span:nth-child(1),
+      .heading-burst span:nth-child(3) {
+        width: 10px;
+      }
+
+      .heading-burst span:nth-child(2) {
+        width: 13px;
+      }
+
+      .heading-burst-svg {
+        width: 18px;
+        height: 22px;
+      }
+
+      .guides-nav-strip {
+        padding: 24px 18px;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .dog-info-grid,
+      .dog-info-grid.grid-4,
+      .dog-info-grid.grid-5,
+      .quick-info-grid.grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .warning-signs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quick-info-card {
+        grid-template-columns: 42px minmax(0, 1fr);
+        column-gap: 12px;
+        padding: 20px 16px;
+      }
+
+      .quick-info-icon-wrap {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+      }
+
+      .quick-info-card h3 {
+        font-size: 1.02rem;
+      }
+
+      .quick-info-list {
+        gap: 10px;
+        padding-top: 14px;
+      }
+
+      .quick-info-list li {
+        font-size: 0.85rem;
+      }
+
+      .filter-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta-actions {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 18px;
+      }
+
+      .cta-actions .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header class="site-header">
-  <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
-  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
-  <nav class="main-nav" aria-label="Main navigation">
-    <a href="../../../../index.html">Home</a>
-    <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-explore">
-        <a href="index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a href="../other/reptiles.html">Reptiles</a>
+  <header class="site-header">
+    <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true"
+        viewBox="0 0 40 40" role="img" focusable="false">
+        <circle cx="12" cy="12" r="4" fill="currentColor" />
+        <circle cx="21" cy="8" r="4" fill="currentColor" />
+        <circle cx="30" cy="12" r="4" fill="currentColor" />
+        <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
+          fill="currentColor" />
+      </svg><span>Pet<span>Sathi</span></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"
+        aria-hidden="true"></i></button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../../../../index.html">Home</a>
+      <div class="nav-item"><a href="../index.html">Explore Pets <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-explore">
+          <a href="index.html">Dogs</a><a href="../cats/index.html">Cats</a><a href="../birds/index.html">Birds</a><a
+            href="../rabbits/index.html">Rabbits</a><a href="../other/fish.html">Aquarium Fish</a><a
+            href="../other/reptiles.html">Reptiles</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a
+            href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
+      </div>
+      <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow"
+            aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a
+            href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a>
+        </div>
+      </div>
+      <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small"
+        href="../../auth/register.html">Get Started</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- 1. Hero Section: Walking Your Dog (Matching Dog Index Page Exactly) -->
+    <section class="hero section-wrap" id="walking-hero">
+      <div class="hero-copy">
+        <div class="dog-badge-strip">
+          🐾 PetSathi • Dog Walking & Exercise Guide
+        </div>
+        <h1>Happy Paws, <em>Healthy Walks!</em></h1>
+        <p>
+          Daily outdoor walks and purposeful exercise are essential for your canine companion's cardiovascular fitness,
+          sensory stimulation, and emotional wellbeing. Discover recommended walk routines by breed size and age,
+          outdoor activities, essential gear, and seasonal safety tips.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#benefits" id="hero-cta-tips">Explore Walking Tips ↓</a>
+          <a class="button button-outline" href="../../services/dog-walking.html" id="hero-cta-services">Find a Dog
+            Walker ↗</a>
+        </div>
+        <div class="hero-note">
+          ♥ &nbsp; Dedicated to active routines, safe steps, and wagging tails.
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=1000&q=85"
+          alt="Joyful fluffy white dog running and playing happily outdoors across a green park lawn" class="hero-photo"
+          id="hero-walking-image">
+        <div class="floating-card card-top">
+          <div class="floating-card-icon">
+            <i class="fa-solid fa-person-running" aria-hidden="true"></i>
+          </div>
+          <div>
+            <b>Daily Energy Outlet</b>
+            <small>30–90 min recommended</small>
+          </div>
+        </div>
+        <div class="floating-card card-bottom">
+          <div class="floating-card-icon">
+            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+          </div>
+          <div>
+            <b>Happy & Healthy</b>
+            <small>Cardio fitness & calm mind</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search & Filter Strip (Matching Quick Navigation Hub in dogs/index.html) -->
+    <div class="guides-nav-strip" id="search-filter" role="region" aria-label="Dog Walking Search and Filter">
+      <!-- Decorative Corner Paws -->
+      <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+        <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
+      </div>
+      <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+        <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+      </div>
+
+      <!-- Centered Header -->
+      <div class="quick-nav-header">
+        <div class="quick-nav-eyebrow-wrap">
+          <span class="quick-nav-line"></span>
+          <div class="quick-nav-badge">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <span>SEARCH &amp; FILTER</span>
+          </div>
+          <span class="quick-nav-line"></span>
+        </div>
+        <h3 class="quick-nav-title">Dog Walking <span>Search &amp; Filter</span></h3>
+        <p class="quick-nav-subtitle">Search walking tips by keyword, filter daily walking requirements by dog size, and
+          tailor outdoor activities</p>
+      </div>
+
+      <!-- Search & Filter Controls (Clean inline rows, no boxes, no 'All' buttons) -->
+      <div class="sf-controls-container">
+        <!-- 1. Search Bar -->
+        <div class="sf-search-wrap">
+          <span class="sf-search-icon" aria-hidden="true">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+          <input type="text" id="walking-search-input" class="sf-search-input"
+            placeholder="Search walking tips by keyword (e.g. hydration, puppy, jogging, leash, harness, weather)..."
+            aria-label="Search walking tips by keyword" autocomplete="off">
+          <button type="button" id="search-clear-btn" class="sf-clear-btn" aria-label="Clear search input"
+            style="display: none;">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- 2. Clean Inline Filter Rows (No boxes, small badges) -->
+        <div class="sf-clean-filters">
+          <!-- Dog size row -->
+          <div class="sf-filter-inline-row">
+            <span class="sf-row-label">Dog size:</span>
+            <div class="sf-mini-pills" id="size-filter-pills" role="tablist">
+              <button type="button" class="sf-mini-pill" data-size="small">Small Breeds</button>
+              <button type="button" class="sf-mini-pill" data-size="medium">Medium Breeds</button>
+              <button type="button" class="sf-mini-pill" data-size="large">Large Breeds</button>
+              <button type="button" class="sf-mini-pill" data-size="puppy">Puppies</button>
+              <button type="button" class="sf-mini-pill" data-size="senior">Senior Dogs</button>
+              <button type="button" class="sf-mini-pill" data-size="high-energy">High-Energy</button>
+            </div>
+          </div>
+
+          <!-- Activities row -->
+          <div class="sf-filter-inline-row">
+            <span class="sf-row-label">Activities:</span>
+            <div class="sf-mini-pills" id="activity-filter-pills" role="tablist">
+              <button type="button" class="sf-mini-pill" data-activity="daily-routine">Daily Routine</button>
+              <button type="button" class="sf-mini-pill" data-activity="low-intensity">Low Intensity</button>
+              <button type="button" class="sf-mini-pill" data-activity="high-intensity">High Intensity</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Meta & Reset Bar -->
+        <div class="sf-meta-bar">
+          <div class="sf-status-badge" id="filter-status-badge">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            <span id="filter-status-text">Showing all daily walking requirements and activities</span>
+          </div>
+          <button type="button" id="filter-reset-btn" class="sf-reset-btn" style="display: none;"
+            aria-label="Reset all filters">
+            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+            <span>Reset All Filters</span>
+          </button>
+        </div>
       </div>
     </div>
-    <div class="nav-item"><a href="../../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-services"><a href="../../services/dog-walking.html">Dog Walking</a><a href="../../services/cat-care.html">Cat Care</a><a href="../../services/pet-care.html">Pet Care</a></div>
+
+    <!-- 2. Benefits of Dog Walking -->
+    <section class="section section-wrap" id="benefits">
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+            Core Walking Advantages
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Benefits of <span>Dog Walking</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Consistent daily walks nurture physical stamina, mental clarity, healthy weight, and emotional wellbeing.
+          </p>
+        </div>
+      </div>
+
+      <!-- Compact Benefits Cards Grid -->
+      <div class="benefits-grid" id="benefits-grid">
+        <!-- 1. Physical fitness -->
+        <article class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+          </div>
+          <h3>Physical Fitness</h3>
+          <p>Boosts cardiovascular stamina, sustains joint flexibility, and builds lean muscle tone.</p>
+        </article>
+
+        <!-- 2. Better mental health -->
+        <article class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <i class="fa-solid fa-brain" aria-hidden="true"></i>
+          </div>
+          <h3>Better Mental Health</h3>
+          <p>Offers rich sensory scent exploration that relieves stress, eases anxiety, and calms nerves.</p>
+        </article>
+
+        <!-- 3. Healthy weight management -->
+        <article class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <i class="fa-solid fa-weight-scale" aria-hidden="true"></i>
+          </div>
+          <h3>Healthy Weight Management</h3>
+          <p>Burns daily calories to help prevent obesity, diabetes, and excess stress on canine joints.</p>
+        </article>
+
+        <!-- 4. Reduced boredom -->
+        <article class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <i class="fa-solid fa-face-smile" aria-hidden="true"></i>
+          </div>
+          <h3>Reduced Boredom</h3>
+          <p>Channels surplus energy away from destructive chewing, constant digging, and barking.</p>
+        </article>
+
+        <!-- 5. Improved socialisation -->
+        <article class="benefit-card">
+          <div class="benefit-icon-wrap">
+            <i class="fa-solid fa-paw" aria-hidden="true"></i>
+          </div>
+          <h3>Improved Socialisation</h3>
+          <p>Builds calm confidence around other dogs, passing pedestrians, and everyday outdoor noises.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Daily Walking Requirements -->
+    <section class="section section-wrap" id="requirements">
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            Tailored Activity Guidelines
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Daily Walking <span>Requirements</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Walking duration and aerobic intensity should always be tailored to your dog's physical build, developmental
+            life stage, and natural stamina.
+          </p>
+        </div>
+      </div>
+
+      <div class="dog-info-grid" id="requirements-grid">
+        <!-- 1. Small Breeds -->
+        <article class="dog-card" data-size="small" data-activities="daily-routine low-intensity"
+          data-keywords="small toy breeds pugs chihuahuas pomeranians french bulldogs 20-30 minutes duration pace windpipe harness low intensity daily routine">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i> Small Breeds</span>
+            <img
+              src="https://images.unsplash.com/photo-1782309088185-6738344c6c3a?q=80&w=864&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Happy small French Bulldog walking outdoors on leash" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-clock" aria-hidden="true"></i> 20–30 Minutes
+              Daily</span>
+            <h3>Small &amp; Toy Breeds</h3>
+            <p class="dog-desc-normal">
+              Compact breeds thrive on multiple short, gentle outings that protect delicate joints and airways. Keep
+              strolls at an easy, relaxed pace with plenty of sniffing breaks.
+            </p>
+            <p class="dog-desc-full">
+              Breeds like Chihuahuas, Pugs, Pomeranians, and French Bulldogs have shorter strides, compact bone
+              structures, and smaller respiratory volumes. Because a single city block can require hundreds more strides
+              for a toy breed than a larger canine, their daily exercise thrives on multiple manageable, gentle outings
+              rather than exhausting long journeys. Flat-faced brachycephalic dogs also experience airway resistance,
+              making steady low-aerobic strolls and indoor games the safest way to maintain cardiovascular stamina.
+            </p>
+            <!-- Additional vertical points (no icons, clean bullet styling) -->
+            <div class="card-points-vertical">
+              <div class="card-point-row"><strong>Daily Walk Frequency:</strong> Schedule two short 10 to 15-minute
+                walks daily to avoid physical exhaustion.</div>
+              <div class="card-point-row"><strong>Tracheal &amp; Airway Protection:</strong> Always walk with an
+                ergonomic step-in or Y-shaped chest harness; never attach a leash to a throat collar.</div>
+              <div class="card-point-row"><strong>Weather Regulation:</strong> Smaller bodies lose heat quickly in
+                winter and overheat rapidly in summer; equip insulating coats in the cold and avoid hot asphalt.</div>
+              <div class="card-point-row"><strong>Environmental Safety:</strong> Maintain a secure 4 to 6-foot standard
+                leash to safeguard against predatory wildlife and rough greetings from larger dogs.</div>
+            </div>
+            <!-- Pacing tips at the end -->
+            <div class="card-walk-tip">
+              <strong>Pacing Tip:</strong> Keep strides relaxed, allow frequent pauses for sniffing, and carry your dog
+              if they lag behind or show signs of heavy breathing.
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Medium Breeds -->
+        <article class="dog-card" data-size="medium" data-activities="daily-routine low-intensity high-intensity"
+          data-keywords="medium breeds beagles spaniels corgis bulldogs border collies 40-60 minutes duration pace brisk sniffing high intensity daily routine low intensity">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-dog" aria-hidden="true"></i> Medium Breeds</span>
+            <img
+              src="https://images.unsplash.com/photo-1775421263261-6cdb31eaf6b2?q=80&w=386&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Active medium breed dog enjoying an outdoor park walk" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-clock" aria-hidden="true"></i> 45–60 Minutes
+              Daily</span>
+            <h3>Medium Breeds</h3>
+            <p class="dog-desc-normal">
+              Active companions like Beagles and Spaniels need brisk daily walks paired with scent exploration. Regular
+              outdoor outings keep joints healthy and prevent indoor restlessness.
+            </p>
+            <p class="dog-desc-full">
+              Medium-sized canines such as Beagles, Cocker Spaniels, Corgis, and Bulldogs balance athletic endurance
+              with strong investigative curiosity. Equipped with moderate lung capacity and sturdy musculoskeletal
+              frames, they need continuous physical and sensory engagement to prevent pent-up indoor restlessness.
+              Incorporating brisk purposeful walking paired with free sensory exploration keeps their joint cartilage
+              lubricated, reinforces leash manners, and satisfies natural working instincts.
+            </p>
+            <!-- Additional vertical points (no icons, clean bullet styling) -->
+            <div class="card-points-vertical">
+              <div class="card-point-row"><strong>Daily Walk Frequency:</strong> Aim for two dedicated 20 to 30-minute
+                outings per day at a steady, brisk pace.</div>
+              <div class="card-point-row"><strong>Sensory Tracking ("Sniffaris"):</strong> Dedicate at least 5 to 10
+                minutes of every walk to unstructured, dog-led sniffing to decompress their mental state.</div>
+              <div class="card-point-row"><strong>Varied Walking Routes:</strong> Alternate neighborhood pathways, dirt
+                trails, and grass parks weekly to engage their olfactory and cognitive senses.</div>
+              <div class="card-point-row"><strong>Musculoskeletal Conditioning:</strong> Complement steady road walks
+                with dynamic play such as stop-and-go fetch and hill walking to strengthen hip stabilizers.</div>
+            </div>
+            <!-- Pacing tips at the end -->
+            <div class="card-walk-tip">
+              <strong>Pacing Tip:</strong> Maintain a brisk rhythmic tempo during the first half of the walk, then ease
+              into a leisurely sniff-heavy cooldown before heading inside.
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Large Breeds -->
+        <article class="dog-card" data-size="large" data-activities="daily-routine low-intensity high-intensity"
+          data-keywords="large giant breeds labradors retrievers german shepherds great danes 60-90 minutes joints stamina endurance high intensity daily routine low intensity">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-paw" aria-hidden="true"></i> Large Breeds</span>
+            <img
+              src="https://images.unsplash.com/photo-1770783608530-e370698a19ca?q=80&w=874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Athletic Golden Retriever ready for a brisk outdoor walk" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-clock" aria-hidden="true"></i> 60–90+ Minutes
+              Daily</span>
+            <h3>Large &amp; Giant Breeds</h3>
+            <p class="dog-desc-normal">
+              Built for endurance, large breeds require steady, structured walks to preserve joint health and muscle
+              tone. Maintain a consistent, moderate pace to manage energy and prevent excess weight.
+            </p>
+            <p class="dog-desc-full">
+              Robust breeds including Labradors, Golden Retrievers, German Shepherds, and Boxers possess dense muscular
+              frames and deep thoracic cavities built for endurance. Without adequate physical conditioning, large
+              breeds are susceptible to excessive weight gain and rapid joint degeneration. Structured daily walking
+              strengthens stabilizing musculature around hips and elbows, preserves metabolic balance, and curbs
+              destructive boredom-related chewing.
+            </p>
+            <!-- Additional vertical points (no icons, clean bullet styling) -->
+            <div class="card-points-vertical">
+              <div class="card-point-row"><strong>Daily Walk Frequency:</strong> Provide two 30 to 45-minute structured
+                daily walks on natural grass, dirt, or packed gravel surfaces.</div>
+              <div class="card-point-row"><strong>Bloat &amp; GDV Prevention:</strong> Strictly avoid rigorous exercise
+                or brisk walking 60 minutes before and after meals to prevent life-threatening gastric torsion.</div>
+              <div class="card-point-row"><strong>Joint &amp; Cartilage Longevity:</strong> Avoid repetitive high-impact
+                jumps from park benches or steep ledges; maintain steady, rhythmic aerobic stride lengths.</div>
+              <div class="card-point-row"><strong>Hydration Management:</strong> Carry a portable dog water dispenser
+                and offer small sips every 15 to 20 minutes during warm weather walks.</div>
+            </div>
+            <!-- Pacing tips at the end -->
+            <div class="card-walk-tip">
+              <strong>Pacing Tip:</strong> Keep strides steady and rhythmic, watch closely for hind-leg stiffness or
+              heavy panting, and take shady breaks during warm summer strolls.
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Puppies -->
+        <article class="dog-card" data-size="puppy" data-activities="daily-routine low-intensity"
+          data-keywords="growing puppies puppy growth plates 5-minute rule gentle short frequent breaks socialization low intensity daily routine">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-bone" aria-hidden="true"></i> Puppies</span>
+            <img
+              src="https://images.unsplash.com/photo-1760615303284-64a42fac2e98?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Young playful puppy exploring outdoor grass gently" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-clock" aria-hidden="true"></i> 5 Min Per Month of
+              Age</span>
+            <h3>Growing Puppies</h3>
+            <p class="dog-desc-normal">
+              Young pups have developing growth plates that need gentle, low-impact strolls over long distances. Focus
+              primarily on leash manners, positive socialization, and playful exploration.
+            </p>
+            <p class="dog-desc-full">
+              Puppies between 3 and 12 months have open growth plates composed of soft, developing cartilage that cannot
+              withstand prolonged repetitive impact. While young puppies are naturally curious and energetic, their bone
+              structure is fragile and easily strained by sustained forced walking. Their daily outdoor excursions
+              should prioritize gentle socialization, leash confidence, and positive habituation to varied sounds and
+              sights rather than distance traveled.
+            </p>
+            <!-- Additional vertical points (no icons, clean bullet styling) -->
+            <div class="card-points-vertical">
+              <div class="card-point-row"><strong>The 5-Minute Rule:</strong> Calculate maximum walk duration by
+                multiplying 5 minutes by the puppy's age in months (e.g. 15 minutes for a 3-month-old pup, twice daily).
+              </div>
+              <div class="card-point-row"><strong>Growth Plate Protection:</strong> Never jog, run, or take growing
+                puppies on long steep staircases; allow self-paced stops whenever they choose.</div>
+              <div class="card-point-row"><strong>Socialization Over Distance:</strong> Focus excursions on exploring
+                novel ground textures (grass, pavement, sand), viewing moving vehicles safely, and positive greeting
+                habits.</div>
+              <div class="card-point-row"><strong>Vaccination Safety:</strong> Avoid public high-traffic dog parks until
+                your veterinarian has completed their full initial vaccination series.</div>
+            </div>
+            <!-- Pacing tips at the end -->
+            <div class="card-walk-tip">
+              <strong>Pacing Tip:</strong> Never drag or force a reluctant puppy to keep moving; if they sit, lie down,
+              or look overwhelmed, carry them home immediately.
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. High-Energy & Working Dogs -->
+        <article class="dog-card" data-size="high-energy" data-activities="daily-routine low-intensity high-intensity"
+          data-keywords="high-energy working dogs huskies pointers australian shepherds 90+ minutes running agility stamina intense high intensity daily routine">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> High Energy</span>
+            <img
+              src="https://images.unsplash.com/photo-1761583780303-f4e89f7b2bd4?q=80&w=327&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="High-energy athletic dog running and exercising in a field" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-clock" aria-hidden="true"></i> 60–120 Min
+              Active</span>
+            <h3>High-Energy &amp; Working Dogs</h3>
+            <p class="dog-desc-normal">
+              High-drive working breeds need vigorous aerobic exercise and mental stimulation beyond simple neighborhood
+              walks. Pair fast-paced outings with obedience drills and agility games.
+            </p>
+            <p class="dog-desc-full">
+              High-drive breeds such as Siberian Huskies, Border Collies, Belgian Malinois, and Australian Shepherds
+              possess extraordinary stamina and intense work focus. Standard neighborhood leash walks barely scratch the
+              surface of their physiological energy reserves. To thrive mentally and emotionally, these dogs require
+              intensive physical exertion paired with cognitive problem-solving, structured obedience drills, and varied
+              aerobic challenges.
+            </p>
+            <!-- Additional vertical points (no icons, clean bullet styling) -->
+            <div class="card-points-vertical">
+              <div class="card-point-row"><strong>Daily Exercise Output:</strong> Require 60 to 120 minutes of daily
+                vigorous exercise split between morning cardio and afternoon agility or trail work.</div>
+              <div class="card-point-row"><strong>Cardiovascular Variety:</strong> Excel with canicross jogging, trail
+                running, bicycle-leash pacing, and long-range ball retrieval in secure fields.</div>
+              <div class="card-point-row"><strong>Cognitive Exhaustion:</strong> Intersperse physical mileage with
+                directional agility cues, scent trailing, heelwork drills, and impulse control tasks.</div>
+              <div class="card-point-row"><strong>Behavioral Safeguard:</strong> Unexercised working breeds quickly
+                develop stress-induced behaviors like destructive digging, fence reactivity, and persistent barking.
+              </div>
+            </div>
+            <!-- Pacing tips at the end -->
+            <div class="card-walk-tip">
+              <strong>Pacing Tip:</strong> Warm up with 10 minutes of brisk leash walking before initiating high-speed
+              runs, and always cool down with 5 minutes of relaxed walking and fresh water.
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Senior Dogs -->
+        <article class="dog-card" data-size="senior" data-activities="daily-routine low-intensity"
+          data-keywords="senior older dogs 7+ years arthritis joint stiffness 15-20 minutes slow sniff walks gentle padding low intensity daily routine">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Senior Dogs</span>
+            <img
+              src="https://images.unsplash.com/photo-1619590694371-7eed5838e880?q=80&w=883&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Gentle senior dog resting comfortably during a relaxed walk" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-clock" aria-hidden="true"></i> 20–30 Min Gentle
+              Pace</span>
+            <h3>Senior Dogs (7+ Years)</h3>
+            <p class="dog-desc-normal">
+              Aging companions benefit from gentle, slow-paced strolls that keep stiff joints mobile and minds engaged.
+              Follow their comfort level, choose soft surfaces, and never rush their pace.
+            </p>
+            <p class="dog-desc-full">
+              As canines enter their golden years, age-related osteoarthritis, reduced muscle mass, diminished vision,
+              and slower thermal regulation alter their exercise needs. While intense aerobic activity must be
+              curtailed, gentle daily mobility is vital to keep synovial fluid circulating through stiff joints,
+              maintain muscle tone, and stimulate mental sharpness. A senior dog's walk should be peaceful, comforting,
+              and entirely guided by their physical comfort.
+            </p>
+            <!-- Additional vertical points (no icons, clean bullet styling) -->
+            <div class="card-points-vertical">
+              <div class="card-point-row"><strong>Daily Walk Frequency:</strong> Schedule two to three brief 10 to
+                15-minute gentle strolls rather than a single prolonged trek.</div>
+              <div class="card-point-row"><strong>Cushioned Surface Selection:</strong> Walk exclusively on softer
+                grassy lawns, level packed dirt, or sandy paths; avoid harsh hard asphalt and steep inclines.</div>
+              <div class="card-point-row"><strong>Supportive Harness Gear:</strong> Use a padded chest harness with a
+                supportive back handle to assist with balance over curbs or uneven surfaces.</div>
+              <div class="card-point-row"><strong>Weather Protection:</strong> Senior dogs are especially vulnerable to
+                dampness, freezing cold, and humid heat; adjust walk timings to temperate morning and evening hours.
+              </div>
+            </div>
+            <!-- Pacing tips at the end -->
+            <div class="card-walk-tip">
+              <strong>Pacing Tip:</strong> Let your senior dog dictate the speed and pause as long as they want; never
+              rush them, and massage stiff leg joints with soothing balm after walks.
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Types of Outdoor Activities -->
+    <section class="section section-wrap" id="activities">
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-person-running" aria-hidden="true"></i>
+            Outdoor Exercise Variety
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Types of Outdoor <span>Activities</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Keep outdoor sessions stimulating and enjoyable by introducing different activity styles and sensory
+            terrains throughout the week.
+          </p>
+        </div>
+      </div>
+
+      <div class="activities-grid" id="activities-grid">
+        <!-- 1. Morning Walks -->
+        <article class="activity-compact-card" data-activity-types="daily-routine low-intensity"
+          data-suitable-sizes="small medium large puppy senior high-energy"
+          data-keywords="morning walks routine calm sunrise daylight refreshing awaken peaceful">
+          <div class="activity-icon-wrap">
+            <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
+          </div>
+          <h3>Morning Walks</h3>
+          <span class="activity-card-badge">Daily Routine</span>
+          <p>Calm, refreshing strolls in cool morning air that gently awaken muscles, provide mental stimulation, and
+            set a peaceful tone for the day.</p>
+        </article>
+
+        <!-- 2. Evening Walks -->
+        <article class="activity-compact-card" data-activity-types="daily-routine low-intensity"
+          data-suitable-sizes="small medium large puppy senior high-energy"
+          data-keywords="evening walks routine unwind twilight pavement calm decompression sleep">
+          <div class="activity-icon-wrap">
+            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+          </div>
+          <h3>Evening Walks</h3>
+          <span class="activity-card-badge">Unwind &amp; Settle</span>
+          <p>Pleasant twilight walks on cooler pavement allowing your dog to decompress, sniff neighborhood scents, and
+            settle quietly before sleep.</p>
+        </article>
+
+        <!-- 3. Running & Jogging -->
+        <article class="activity-compact-card" data-activity-types="high-intensity"
+          data-suitable-sizes="medium large high-energy"
+          data-keywords="running jogging cardio aerobic high-tempo athletic grass dirt endurance workout">
+          <div class="activity-icon-wrap">
+            <i class="fa-solid fa-person-running" aria-hidden="true"></i>
+          </div>
+          <h3>Running &amp; Jogging</h3>
+          <span class="activity-card-badge">High Cardio</span>
+          <p>Aerobic, high-tempo workouts best suited for fit adult athletic breeds on natural grass or dirt paths with
+            frequent hydration checks.</p>
+        </article>
+
+        <!-- 4. Fetch Games -->
+        <article class="activity-compact-card" data-activity-types="high-intensity"
+          data-suitable-sizes="small medium large puppy high-energy"
+          data-keywords="fetch games ball retrieval chasing outdoor park backyard sprint agility">
+          <div class="activity-icon-wrap">
+            <i class="fa-solid fa-baseball" aria-hidden="true"></i>
+          </div>
+          <h3>Fetch Games</h3>
+          <span class="activity-card-badge">Agility &amp; Play</span>
+          <p>Dynamic ball and frisbee retrieval play that exercises sprint bursts, sharpens responsiveness to recall
+            commands, and burns excess energy.</p>
+        </article>
+
+        <!-- 5. Hiking -->
+        <article class="activity-compact-card" data-activity-types="high-intensity"
+          data-suitable-sizes="medium large high-energy"
+          data-keywords="hiking trails nature forest elevation outdoor adventure endurance terrain">
+          <div class="activity-icon-wrap">
+            <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
+          </div>
+          <h3>Hiking</h3>
+          <span class="activity-card-badge">Trail Adventure</span>
+          <p>Scenic nature trail treks that challenge core coordination across uneven inclines while engaging your dog's
+            senses with rich woodland scents.</p>
+        </article>
+
+        <!-- 6. Park Visits -->
+        <article class="activity-compact-card" data-activity-types="low-intensity"
+          data-suitable-sizes="small medium large puppy senior high-energy"
+          data-keywords="park visits social sniffing green grass dog park outdoor recreation play">
+          <div class="activity-icon-wrap">
+            <i class="fa-solid fa-tree" aria-hidden="true"></i>
+          </div>
+          <h3>Park Visits</h3>
+          <span class="activity-card-badge">Sniffari &amp; Roam</span>
+          <p>Leisurely open lawn exploration in safe, designated community green spaces where dogs can freely sniff,
+            wander, and practice relaxed manners.</p>
+        </article>
+
+        <!-- 7. Social Walks -->
+        <article class="activity-compact-card" data-activity-types="low-intensity"
+          data-suitable-sizes="small medium large puppy senior high-energy"
+          data-keywords="social walks pack walking manners greetings leash behavior neighborhood">
+          <div class="activity-icon-wrap">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+          </div>
+          <h3>Social Walks</h3>
+          <span class="activity-card-badge">Pack Harmony</span>
+          <p>Calm parallel walks alongside friendly neighborhood dogs that encourage positive social confidence without
+            forced face-to-face greetings.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Essential Walking Accessories -->
+    <section class="section section-wrap" id="accessories">
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+            Must-Have Dog Gear
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Essential Walking <span>Accessories</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Equipping your dog with the proper gear ensures optimal comfort, effortless control, and reliable outdoor
+            safety on every walk.
+          </p>
+        </div>
+      </div>
+
+      <div class="dog-info-grid" id="accessories-grid">
+        <!-- 1. Collar & Harness -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-shield-dog" aria-hidden="true"></i> Control &amp;
+              Safety</span>
+            <img
+              src="https://images.unsplash.com/photo-1642519979241-e924e8666c83?q=80&w=876&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Dog wearing a comfortable ergonomic walking harness outdoors" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+              Non-Negotiable</span>
+            <h3>Collar &amp; Harness</h3>
+            <p>
+              An ergonomic Y-shaped chest harness distributes pulling forces evenly across your dog's ribcage and
+              shoulders, protecting sensitive neck cartilage and the trachea from sudden jerks or long-term damage.
+            </p>
+            <div class="card-walk-tip">
+              <strong>Gear Tip:</strong> Use a flat buckle collar solely for ID tags, and connect the leash to a
+              supportive Y-harness.
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Leash -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-link" aria-hidden="true"></i> Essential Lead</span>
+            <img
+              src="https://images.unsplash.com/photo-1708062270801-bb416b06ed85?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Dog walking outdoors on a durable nylon leash" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Standard
+              4–6ft</span>
+            <h3>Sturdy Leash</h3>
+            <p>
+              A durable 4-to-6 foot fixed nylon, biothane, or leather leash provides reliable close-range control and
+              clear handling feedback on sidewalks, avoiding the tangles and sudden snapping hazards of thin retractable
+              cords.
+            </p>
+            <div class="card-walk-tip">
+              <strong>Gear Tip:</strong> Avoid retractable cord leads near roadways; fixed leads prevent burns, drops,
+              and sudden runaways.
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. ID Tags -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-id-badge" aria-hidden="true"></i> Identification</span>
+            <img
+              src="https://plus.unsplash.com/premium_photo-1786925788196-748a39fe010d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Dog wearing collar with engraved identification tag" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Lifesaving
+              Gear</span>
+            <h3>ID Tags &amp; Microchip</h3>
+            <p>
+              A clearly engraved metallic tag featuring your pet's name, two current contact phone numbers, and city
+              registration details ensures immediate reuniting if your dog ever slips away unexpectedly.
+            </p>
+            <div class="card-walk-tip">
+              <strong>Gear Tip:</strong> Double-check tag ring tightness monthly and ensure your microchip database
+              details are up to date.
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Portable Water Bottle -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-bottle-water" aria-hidden="true"></i> Hydration</span>
+            <img
+              src="https://images.unsplash.com/photo-1541887796712-054f4b0f8e5d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Dog drinking fresh water outdoors during walk" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Health &amp;
+              Stamina</span>
+            <h3>Portable Water Bottle</h3>
+            <p>
+              Compact squeeze-dispenser bottles with built-in silicone drinking troughs provide instant, hygienic fresh
+              water, stopping dogs from drinking stagnant or parasite-ridden puddle water.
+            </p>
+            <div class="card-walk-tip">
+              <strong>Gear Tip:</strong> Offer hydration every 15–20 minutes during warm weather walks, even if your dog
+              does not seem thirsty.
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Poop Bags -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-trash-can" aria-hidden="true"></i> Sanitation</span>
+            <img
+              src="https://images.unsplash.com/photo-1644416198602-fba4e784ae5c?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Clean, responsible dog walking in a public park" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Eco
+              Hygiene</span>
+            <h3>Poop Bags &amp; Dispenser</h3>
+            <p>
+              Thick, leak-proof biodegradable waste bags clipped directly to your leash handle guarantee effortless,
+              responsible sanitation at community parks, pavements, and shared green lawns.
+            </p>
+            <div class="card-walk-tip">
+              <strong>Gear Tip:</strong> Always carry at least three bags per walk and never leave tied bags behind on
+              trail paths.
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Reflective Safety Gear -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i> Night
+              Visibility</span>
+            <img
+              src="https://images.unsplash.com/photo-1605104576616-e848caee8121?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Dog visible during evening walk with reflective safety gear" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Traffic
+              Safety</span>
+            <h3>Reflective Safety Gear</h3>
+            <p>
+              High-visibility reflective harness trims, luminescent collars, and rechargeable LED clip-on flashers
+              ensure approaching cyclists and motorists spot your dog from up to 500 feet away in low-light conditions.
+            </p>
+            <div class="card-walk-tip">
+              <strong>Gear Tip:</strong> Turn on a steady white or amber light on your dog's chest and a red light on
+              their back during dusk walks.
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Treat Pouch -->
+        <article class="dog-card">
+          <div class="dog-card-media">
+            <span class="dog-card-badge"><i class="fa-solid fa-cookie-bite" aria-hidden="true"></i> Positive
+              Training</span>
+            <img
+              src="https://images.unsplash.com/photo-1596645537562-f35cf71ee459?q=80&w=821&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+              alt="Dog eagerly receiving treat reward during outdoor walking training" loading="lazy">
+          </div>
+          <div class="dog-card-body">
+            <span class="walking-time-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Manners &amp;
+              Focus</span>
+            <h3>Training Treat Pouch</h3>
+            <p>
+              A clip-on waist bag filled with bite-sized, high-value rewards lets you instantly mark loose-leash
+              behavior, reward reliable recall, and redirect focus away from passing dogs or traffic distractions.
+            </p>
+            <div class="card-walk-tip">
+              <strong>Gear Tip:</strong> Keep rewards pea-sized so your dog swallows rapidly without breaking stride
+              during loose-leash training.
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. Walking Safety Tips -->
+    <section class="section section-wrap" id="safety-tips">
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            Essential Precautions
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Walking Safety <span>Tips</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Simple, proactive precautions prevent accidents, paw burns, and heat exhaustion, keeping every route
+            peaceful and secure.
+          </p>
+        </div>
+      </div>
+
+      <div class="safety-cards-grid" id="safety-grid">
+        <!-- 1. Always use a suitable leash -->
+        <article class="safety-tip-card" data-keywords="safety tips leash hydration pavement space cleanup visibility">
+          <div class="safety-icon-wrap">
+            <i class="fa-solid fa-link" aria-hidden="true"></i>
+          </div>
+          <div class="safety-card-content">
+            <h3>Always Use a Suitable Leash</h3>
+            <p>Keep a firm, comfortable grip on a standard 4–6ft fixed leash. Avoid thin retractable cords near roadways
+              to maintain immediate control and prevent sudden darting into traffic.</p>
+          </div>
+        </article>
+
+        <!-- 2. Avoid crowded or unsafe roads -->
+        <article class="safety-tip-card" data-keywords="safety tips leash hydration pavement space cleanup visibility">
+          <div class="safety-icon-wrap">
+            <i class="fa-solid fa-road" aria-hidden="true"></i>
+          </div>
+          <div class="safety-card-content">
+            <h3>Avoid Crowded or Unsafe Roads</h3>
+            <p>Stick to well-lit footpaths, wide sidewalks, and calm park trails. Steer clear of narrow congested roads
+              with fast vehicles, aggressive stray dogs, or broken glass debris.</p>
+          </div>
+        </article>
+
+        <!-- 3. Check pavement temperature (Critical Warning) -->
+        <article class="safety-tip-card warning-highlight"
+          data-keywords="summer hot pavement paw burns asphalt 7 second test heat palm pads temperature warning">
+          <div class="safety-icon-wrap">
+            <i class="fa-solid fa-temperature-arrow-up" aria-hidden="true"></i>
+          </div>
+          <div class="safety-card-content">
+            <h3>Check Pavement Temperature</h3>
+            <p>Perform the <strong>7-second palm test</strong>: firmly press the back of your bare hand on tarmac. If it
+              is too hot to hold comfortably, asphalt will severely burn and blister paw pads.</p>
+          </div>
+        </article>
+
+        <!-- 4. Carry drinking water -->
+        <article class="safety-tip-card" data-keywords="safety tips leash hydration pavement space cleanup visibility">
+          <div class="safety-icon-wrap">
+            <i class="fa-solid fa-bottle-water" aria-hidden="true"></i>
+          </div>
+          <div class="safety-card-content">
+            <h3>Carry Clean Drinking Water</h3>
+            <p>Always bring a portable water dispenser on walks over 15 minutes. Offer small, frequent sips in shaded
+              areas to prevent dehydration and dangerous heat exhaustion.</p>
+          </div>
+        </article>
+
+        <!-- 5. Avoid walking during extreme heat (Critical Warning) -->
+        <article class="safety-tip-card warning-highlight"
+          data-keywords="summer hot pavement paw burns asphalt 7 second test heat palm pads temperature warning">
+          <div class="safety-icon-wrap">
+            <i class="fa-solid fa-sun" aria-hidden="true"></i>
+          </div>
+          <div class="safety-card-content">
+            <h3>Avoid Walking During Extreme Heat</h3>
+            <p>Never walk during midday summer heat. Schedule walks strictly during early dawn or late dusk when air and
+              ground temperatures are mild to prevent fatal canine heatstroke.</p>
+          </div>
+        </article>
+
+        <!-- 6. Watch for signs of tiredness -->
+        <article class="safety-tip-card" data-keywords="safety tips leash hydration pavement space cleanup visibility">
+          <div class="safety-icon-wrap">
+            <i class="fa-solid fa-battery-half" aria-hidden="true"></i>
+          </div>
+          <div class="safety-card-content">
+            <h3>Watch for Signs of Tiredness</h3>
+            <p>Observe your pet for heavy panting, lagging behind, or planting their paws. Respect these natural fatigue
+              cues—pause in shade immediately and never force continued movement.</p>
+          </div>
+        </article>
+
+        <!-- 7. Clean up after your dog -->
+        <article class="safety-tip-card" data-keywords="safety tips leash hydration pavement space cleanup visibility">
+          <div class="safety-icon-wrap">
+            <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
+          </div>
+          <div class="safety-card-content">
+            <h3>Clean Up After Your Dog</h3>
+            <p>Carry multiple biodegradable poop bags on every walk. Promptly bag and dispose of waste in municipal bins
+              to maintain public health, protect local parks, and respect neighbors.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7. Weather-Based Walking Guide -->
+    <section class="section section-wrap" id="weather">
+      <div class="dog-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-cloud-sun-rain" aria-hidden="true"></i>
+            All-Weather Care
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Weather-Based <span>Walking Guide</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Seasonal weather shifts require smart adjustments to walking schedules, hydration, and paw protection.
+          </p>
+        </div>
+      </div>
+
+      <div class="weather-cards-list" id="weather-grid">
+        <!-- 1. Summer Walking -->
+        <article class="weather-row-card weather-summer"
+          data-keywords="summer hot weather heatstroke pavement morning evening cool shade hydration heat">
+          <div class="weather-summary-col">
+            <div class="weather-badge-top">
+              <div class="weather-icon-box">
+                <i class="fa-solid fa-sun" aria-hidden="true"></i>
+              </div>
+              <span class="weather-season-tag">Heat &amp; Hydration</span>
+            </div>
+            <h3>Summer Walking</h3>
+            <p>Beat intense ambient heat and scorching concrete with smart walk timing, shaded park routes, and constant
+              cooling.</p>
+          </div>
+          <div class="weather-precautions-grid">
+            <div class="precaution-item">
+              <strong>Walk at Dawn or Dusk:</strong> Schedule walks strictly before 8:00 AM or after 7:00 PM when air
+              and pavement temperatures are mild.
+            </div>
+            <div class="precaution-item">
+              <strong>7-Second Palm Test:</strong> Press bare hand to tarmac; if too hot for 7 seconds, walk only on
+              grassy turf.
+            </div>
+            <div class="precaution-item">
+              <strong>Double Cool Hydration:</strong> Carry a portable dispenser and offer frequent sips every 10–15
+              minutes in shade.
+            </div>
+            <div class="precaution-item">
+              <strong>Watch Heatstroke Signals:</strong> Stop immediately if your pet pants heavily, drools excessively,
+              or lags behind.
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Monsoon Walking -->
+        <article class="weather-row-card weather-monsoon"
+          data-keywords="monsoon rainy mud drying paws raincoat wet weather fungal tick check paws">
+          <div class="weather-summary-col">
+            <div class="weather-badge-top">
+              <div class="weather-icon-box">
+                <i class="fa-solid fa-cloud-showers-heavy" aria-hidden="true"></i>
+              </div>
+              <span class="weather-season-tag">Mud &amp; Paw Care</span>
+            </div>
+            <h3>Monsoon Walking</h3>
+            <p>Protect against waterborne parasites, mud contamination, and interdigital fungal irritations in humid
+              weather.</p>
+          </div>
+          <div class="weather-precautions-grid">
+            <div class="precaution-item">
+              <strong>Avoid Stagnant Puddles:</strong> Keep dogs away from standing water to prevent leptospirosis and
+              bacterial ingestion.
+            </div>
+            <div class="precaution-item">
+              <strong>Dry Paw Webbing:</strong> Thoroughly towel-dry paw pads and between toes after walks to prevent
+              itchy pododermatitis.
+            </div>
+            <div class="precaution-item">
+              <strong>Tick &amp; Flea Shield:</strong> Maintain active vet-approved parasite protection as moisture
+              boosts seasonal tick blooms.
+            </div>
+            <div class="precaution-item">
+              <strong>Dry Ears &amp; Belly:</strong> Damp floppy ears trap moisture quickly; dry with a microfiber towel
+              to stop yeast buildup.
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Winter Walking -->
+        <article class="weather-row-card weather-winter"
+          data-keywords="winter cold weather freezing snow salt paws jacket sweater hypothermia ice booties">
+          <div class="weather-summary-col">
+            <div class="weather-badge-top">
+              <div class="weather-icon-box">
+                <i class="fa-solid fa-snowflake" aria-hidden="true"></i>
+              </div>
+              <span class="weather-season-tag">Chill &amp; Joint Care</span>
+            </div>
+            <h3>Winter Walking</h3>
+            <p>Keep smaller, slender, or short-haired breeds cozy in brisk weather while protecting delicate paws from
+              chilly ground.</p>
+          </div>
+          <div class="weather-precautions-grid">
+            <div class="precaution-item">
+              <strong>Warm Insulating Vests:</strong> Dress lean, senior, or single-coated dogs in fleece jackets to
+              retain core heat.
+            </div>
+            <div class="precaution-item">
+              <strong>Midday Sunshine Walks:</strong> Schedule outdoor excursions during peak afternoon hours when
+              sunlight is warmest.
+            </div>
+            <div class="precaution-item">
+              <strong>Protective Paw Balm:</strong> Massage natural wax balm on paw pads before walks to prevent painful
+              cracking.
+            </div>
+            <div class="precaution-item">
+              <strong>Gentle Joint Warm-Up:</strong> Do a 5-minute indoor warm-up to loosen stiff joints before stepping
+              out into the cold.
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Rainy Weather -->
+        <article class="weather-row-card weather-rainy">
+          <div class="weather-summary-col">
+            <div class="weather-badge-top">
+              <div class="weather-icon-box">
+                <i class="fa-solid fa-umbrella" aria-hidden="true"></i>
+              </div>
+              <span class="weather-season-tag">Rain Gear &amp; Play</span>
+            </div>
+            <h3>Rainy Weather</h3>
+            <p>Conduct brief, focused outdoor bathroom breaks with protective gear and replace long walks with indoor
+              games.</p>
+          </div>
+          <div class="weather-precautions-grid">
+            <div class="precaution-item">
+              <strong>Reflective Dog Raincoats:</strong> Use a lightweight waterproof coat with underbelly coverage and
+              high-vis strips.
+            </div>
+            <div class="precaution-item">
+              <strong>Brief Potty Excursions:</strong> Keep walks short and focused to prevent prolonged cold exposure
+              and shivering.
+            </div>
+            <div class="precaution-item">
+              <strong>Entryway Towel Station:</strong> Have high-absorbency microfiber towels ready at the front door
+              for quick drying.
+            </div>
+            <div class="precaution-item">
+              <strong>Indoor Brain Games:</strong> Exercise canine minds inside with snuffle mats, scent games, and
+              puzzle feeders.
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 8 & 9. Etiquette Checklist & After-Walk Care (Side-by-Side Interactive Checklist) -->
+    <section class="section section-wrap" id="etiquette-and-care">
+      <div class="interactive-checklist-grid">
+        <!-- 8. Dog Walking Etiquette -->
+        <article class="interactive-checklist-card" id="info-etiquette">
+          <div class="card-top-bar">
+            <div class="card-icon-title-wrap">
+              <div class="checklist-icon-box">
+                <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+              </div>
+              <h3>Dog Walking Etiquette</h3>
+            </div>
+            <span class="checklist-badge"><i class="fa-solid fa-square-check" aria-hidden="true"></i> Checklist</span>
+          </div>
+          <p class="card-desc">Simple trail rules to keep walks friendly, safe, and polite for everyone.</p>
+
+          <div class="checklist-form">
+            <label class="checklist-row">
+              <input type="checkbox">
+              <span class="custom-box" aria-hidden="true"></span>
+              <span class="row-content">
+                <strong>Keep on Leash:</strong> Hold a firm grip on a standard 4–6ft leash to prevent sudden lunges.
+              </span>
+            </label>
+
+            <label class="checklist-row">
+              <input type="checkbox">
+              <span class="custom-box" aria-hidden="true"></span>
+              <span class="row-content">
+                <strong>Ask Before Approaching Dogs:</strong> Check with the other owner before allowing dogs to greet
+                nose-to-nose.
+              </span>
+            </label>
+
+            <label class="checklist-row">
+              <input type="checkbox">
+              <span class="custom-box" aria-hidden="true"></span>
+              <span class="row-content">
+                <strong>Give Space to Nervous Dogs:</strong> Step aside or cross the street if another dog seems anxious
+                or reactive.
+              </span>
+            </label>
+
+            <label class="checklist-row">
+              <input type="checkbox">
+              <span class="custom-box" aria-hidden="true"></span>
+              <span class="row-content">
+                <strong>Follow Park &amp; Path Rules:</strong> Stick to designated pet paths and respect posted leash
+                requirements.
+              </span>
+            </label>
+
+            <label class="checklist-row">
+              <input type="checkbox">
+              <span class="custom-box" aria-hidden="true"></span>
+              <span class="row-content">
+                <strong>Pick Up Dog Poop:</strong> Always carry waste bags and deposit them in municipal trash bins.
+              </span>
+            </label>
+          </div>
+        </article>
+
+        <!-- 9. After-Walk Care -->
+        <article class="interactive-checklist-card" id="info-aftercare">
+          <div class="card-top-bar">
+            <div class="card-icon-title-wrap">
+              <div class="checklist-icon-box">
+                <i class="fa-solid fa-notes-medical" aria-hidden="true"></i>
+              </div>
+              <h3>After-Walk Care</h3>
+            </div>
+            <span class="checklist-badge"><i class="fa-solid fa-square-check" aria-hidden="true"></i> Checklist</span>
+          </div>
+          <p class="card-desc">Quick, healthy routine to complete right after getting back home.</p>
+
+          <div class="checklist-form">
+            <label class="checklist-row">
+              <input type="checkbox">
+              <span class="custom-box" aria-hidden="true"></span>
+              <span class="row-content">
+                <strong>Cool Down &amp; Rest:</strong> Give your dog a calm, quiet place to relax and catch their
+                breath.
+              </span>
+            </label>
+
+            <label class="checklist-row">
+              <input type="checkbox">
+              <span class="custom-box" aria-hidden="true"></span>
+              <span class="row-content">
+                <strong>Offer Fresh Water:</strong> Provide clean, room-temperature water to rehydrate gradually without
+                cramping.
+              </span>
+            </label>
+
+            <label class="checklist-row">
+              <input type="checkbox">
+              <span class="custom-box" aria-hidden="true"></span>
+              <span class="row-content">
+                <strong>Wipe Paws &amp; Belly:</strong> Clean off mud, street dirt, lawn chemicals, and sidewalk grit
+                with a damp cloth.
+              </span>
+            </label>
+
+            <label class="checklist-row">
+              <input type="checkbox">
+              <span class="custom-box" aria-hidden="true"></span>
+              <span class="row-content">
+                <strong>Check for Ticks &amp; Thorns:</strong> Inspect between toes, underbelly, and ears for burs,
+                cuts, or ticks.
+              </span>
+            </label>
+
+            <label class="checklist-row">
+              <input type="checkbox">
+              <span class="custom-box" aria-hidden="true"></span>
+              <span class="row-content">
+                <strong>Check for Limping or Fatigue:</strong> Ensure heavy panting stops in 10–15 mins and there is no
+                limping or stiffness.
+              </span>
+            </label>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10. Signs Your Dog Needs a Break (Highlighted Warning Section) -->
+    <section class="section section-wrap" id="warning-signs">
+      <div class="dog-warning-heading">
+        <!-- Urgent '!!' circle badge on extreme top-left outline, no glow, dots pointing bottom-right -->
+        <div class="warning-outline-badge" title="Urgent Safety Alert">
+          <span class="badge-icons">
+            <i class="fa-solid fa-exclamation" aria-hidden="true"></i><i class="fa-solid fa-exclamation"
+              aria-hidden="true"></i>
+          </span>
+        </div>
+
+        <div class="section-heading-clean" style="margin-bottom: 20px; background: transparent !important;">
+          <span class="warning-eyebrow">
+            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Safety Alert
+          </span>
+          <h2>Signs Your Dog <em>Needs a Break</em></h2>
+          <p>
+            Dogs often push themselves past their physical limits just to stay by your side. Recognize these fatigue and
+            overheating warnings early.
+          </p>
+        </div>
+
+        <!-- 5 Warning Signs (Flat, No Glow, No Hover) -->
+        <div class="warning-signs-grid">
+          <div class="warning-sign-card">
+            <div class="quick-info-icon-wrap"><i class="fa-solid fa-lungs" aria-hidden="true"></i></div>
+            <strong>Excessive Panting</strong>
+            <small>Wide tongue, rapid heavy breathing</small>
+          </div>
+
+          <div class="warning-sign-card">
+            <div class="quick-info-icon-wrap"><i class="fa-solid fa-person-walking" aria-hidden="true"></i></div>
+            <strong>Slowing Down or Stopping</strong>
+            <small>Lagging behind or planting paws</small>
+          </div>
+
+          <div class="warning-sign-card">
+            <div class="quick-info-icon-wrap"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
+            <strong>Excessive Drooling</strong>
+            <small>Thick saliva or frothing at mouth</small>
+          </div>
+
+          <div class="warning-sign-card">
+            <div class="quick-info-icon-wrap"><i class="fa-solid fa-bone" aria-hidden="true"></i></div>
+            <strong>Limping</strong>
+            <small>Favoring a paw or stiff gait</small>
+          </div>
+
+          <div class="warning-sign-card">
+            <div class="quick-info-icon-wrap"><i class="fa-solid fa-hand" aria-hidden="true"></i></div>
+            <strong>Refusing to Continue Walking</strong>
+            <small>Sitting down, seeking shade or lying flat</small>
+          </div>
+        </div>
+
+        <!-- Proper Red Notice Box with Exact Two Sentences -->
+        <div class="warning-single-box">
+          <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+          <p>
+            <strong>Stop Exercising Immediately:</strong> If your dog displays any of these warning signs, pause
+            exercise at once. Move them to a cool, shaded area, offer small sips of water, and allow them to rest
+            quietly until breathing normalizes. In extreme conditions, contact a veterinarian immediately.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner Section matching main index.html -->
+    <section class="cta section-wrap">
+      <div>
+        <div class="eyebrow">START YOUR DOG'S JOURNEY</div>
+        <h2>Every Paw Deserves a <em>Happy Walk.</em></h2>
+        <p>
+          Whether you are establishing a daily walk routine or looking for trusted, loving dog walking companions in
+          your area, PetSathi is here to guide and support you every step of the way.
+        </p>
+      </div>
+      <div class="cta-actions">
+        <a class="button button-light" href="../../walker/dogs.html" id="cta-find-walker">Find a Dog Walker ↗</a>
+        <a class="button button-outline" href="../../services/dog-walking.html" id="cta-walking-service">Dog Walking
+          Service</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="section-wrap footer-grid">
+      <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark"
+            aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false">
+            <circle cx="12" cy="12" r="4" fill="currentColor" />
+            <circle cx="21" cy="8" r="4" fill="currentColor" />
+            <circle cx="30" cy="12" r="4" fill="currentColor" />
+            <path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z"
+              fill="currentColor" />
+          </svg><span>Pet<span>Sathi</span></span></a>
+        <p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p>
+      </div>
+      <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a
+          href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
+      <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a
+          href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp;
+          Conditions</a></div>
+      <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank"
+          rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank"
+          rel="noopener noreferrer">Live Website</a></div>
     </div>
-    <div class="nav-item"><a href="../../walker/index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
-      <div class="dropdown dropdown-walker"><a href="../../walker/dogs.html">Search Walkers</a><a href="../../walker/cats.html">Walker Profiles</a><a href="../../walker/index.html#bookings">My Bookings</a></div>
-    </div>
-    <a href="../../about.html">About Us</a><a href="../../auth/login.html">Log in</a><a class="button button-small" href="../../auth/register.html">Get Started</a>
-  </nav>
-</header>
+    <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with
+        &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E;
+        &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+  </footer>
 
-<main>
-  <section class="page-hero">
-    <div class="eyebrow">PetSathi • EXERCISE & WALKING</div>
-    <div class="page-emoji">🎾</div>
-    <h1>Dog Exercise & Walking Guide</h1>
-    <p>Discover daily exercise requirements, leash walking tips, weather safety, and find dedicated walking companions on PetSathi.</p>
-    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-      <a class="button" href="../../services/dog-walking.html">Explore Dog Walking Service ↗</a>
-      <a class="button button-outline" href="index.html">← Back to Dogs Landing Page</a>
-    </div>
-  </section>
+  <script src="../../../js/main.js"></script>
 
-  <section class="section-wrap inner-grid">
-    <article class="info-card">
-      <div class="info-emoji">🚶</div>
-      <h2>Daily Walking Needs</h2>
-      <p>Most dogs require 30 to 90 minutes of daily physical exercise depending on breed, age, and energy level. Consistent walks prevent obesity and boredom.</p>
-    </article>
+  <!-- Search & Filter Interactivity -->
+  <!-- Unified Dog Walking Search & Filter Script -->
+  <script>
+    (function () {
+      const searchInput = document.getElementById('walking-search-input');
+      const searchClearBtn = document.getElementById('search-clear-btn');
+      const sizeMiniPills = document.querySelectorAll('#size-filter-pills .sf-mini-pill');
+      const activityMiniPills = document.querySelectorAll('#activity-filter-pills .sf-mini-pill');
+      const statusText = document.getElementById('filter-status-text');
+      const resetBtn = document.getElementById('filter-reset-btn');
 
-    <article class="info-card">
-      <div class="info-emoji">🦮</div>
-      <h2>Leash Manners & Training</h2>
-      <p>Practice loose-leash walking using treats and positive reinforcement. Avoid forceful pulling and use ergonomic Y-shaped chest harnesses for safety.</p>
-    </article>
+      const reqGrid = document.getElementById('requirements-grid');
+      const actGrid = document.getElementById('activities-grid');
+      const reqCards = reqGrid ? reqGrid.querySelectorAll('.dog-card') : [];
+      const actCards = actGrid ? actGrid.querySelectorAll('.activity-compact-card') : [];
 
-    <article class="info-card">
-      <div class="info-emoji">👃</div>
-      <h2>The Power of "Sniffaris"</h2>
-      <p>Sniffing is mental fitness for dogs. Allowing your dog to pause and explore scents stimulates their brain and significantly reduces anxiety.</p>
-    </article>
+      let selectedSize = null;
+      let selectedActivity = null;
+      let currentQuery = '';
+      let highlightTimers = [];
+      let searchDebounceTimer = null;
 
-    <article class="info-card">
-      <div class="info-emoji">☀️</div>
-      <h2>Weather & Paw Safety</h2>
-      <p>In summer, test pavement heat with the 7-second palm test. Walk during cooler morning and evening hours, and always bring portable hydration.</p>
-    </article>
+      function clearActivityHighlights() {
+        highlightTimers.forEach(t => clearTimeout(t));
+        highlightTimers = [];
+        actCards.forEach(card => card.classList.remove('activity-highlighted'));
+      }
 
-    <article class="info-card">
-      <div class="info-emoji">🎾</div>
-      <h2>Interactive Play & Agility</h2>
-      <p>Complement walks with backyard fetch, agility tunnels, flirt poles, and tug games to exercise natural canine athleticism and build focus.</p>
-    </article>
+      function scrollToRequirements() {
+        const reqSec = document.getElementById('requirements');
+        if (reqSec) {
+          const yOffset = -24;
+          const y = reqSec.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
 
-    <article class="info-card">
-      <div class="info-emoji">🤝</div>
-      <h2>PetSathi Walking Companions</h2>
-      <p>Busy schedule? Connect with trusted, loving dog walkers in your neighbourhood through PetSathi to ensure your dog never misses a daily walk.</p>
-    </article>
-  </section>
+      // Check if search mentions any outdoor activity or activity type;
+      // If so, scroll down to activities and highlight matching card(s) for 3 seconds.
+      // Strictly leaves dogs cards and requirements section untouched!
+      function checkAndHighlightActivity(query, shouldScroll = true) {
+        const rawQ = query.trim().toLowerCase();
+        clearActivityHighlights();
 
-  <section class="inner-cta">
-    <h2>Need a Friendly Walker for Your Dog?</h2>
-    <p>PetSathi is connecting pet parents with caring, reliable walking companions in your area.</p>
-    <div style="margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-      <a class="button" href="../../walker/dogs.html">Find a Dog Walker ↗</a>
-      <a class="button button-outline" href="../../services/dog-walking.html">View Walking Service Details</a>
-    </div>
-  </section>
-</main>
+        if (!rawQ || rawQ.length < 2) return false;
 
-<footer class="footer">
-  <div class="section-wrap footer-grid">
-    <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
-    <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
-    <div><b>Information</b><a href="../../about.html">About Us</a><a href="../../contact.html">Contact Us</a><a href="../../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
-    <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
-  </div>
-  <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
-</footer>
-<script src="../../../js/main.js"></script>
+        const q = rawQ.replace(/[-_]/g, ' ');
+        const matchedActivities = [];
+
+        actCards.forEach(card => {
+          const title = (card.querySelector('h3') ? card.querySelector('h3').textContent : '').toLowerCase();
+          const kw = (card.getAttribute('data-keywords') || '').toLowerCase();
+          const rawTypes = (card.getAttribute('data-activity-types') || '').toLowerCase();
+          const typesNorm = rawTypes.replace(/[-_]/g, ' ');
+          const desc = (card.querySelector('p') ? card.querySelector('p').textContent : '').toLowerCase();
+
+          // Match by title, keywords, normalized types, or description
+          const isMatch = title.includes(rawQ) || title.includes(q) ||
+            kw.includes(rawQ) || kw.includes(q) ||
+            typesNorm.includes(rawQ) || typesNorm.includes(q) ||
+            rawTypes.includes(rawQ) ||
+            (rawQ.length >= 3 && desc.includes(rawQ)) ||
+            (rawQ.length >= 4 && (rawQ.includes('activit') || rawQ.includes('outdoor') || rawQ.includes('exercise')));
+
+          if (isMatch) {
+            matchedActivities.push(card);
+          }
+        });
+
+        if (matchedActivities.length > 0) {
+          // Make sure all activities are visible
+          actCards.forEach(card => { card.style.display = 'flex'; });
+
+          // Apply hover-like highlight for not more than 3 seconds
+          matchedActivities.forEach(card => {
+            card.classList.add('activity-highlighted');
+            const timer = setTimeout(() => {
+              card.classList.remove('activity-highlighted');
+            }, 3000);
+            highlightTimers.push(timer);
+          });
+
+          // Scroll down to the matched activity
+          if (shouldScroll) {
+            const target = matchedActivities.length === 1 ? matchedActivities[0] : (document.getElementById('activities') || matchedActivities[0]);
+            const yOffset = matchedActivities.length === 1 ? -120 : -40;
+            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+          }
+
+          if (statusText) {
+            const actNames = matchedActivities.map(c => c.querySelector('h3') ? c.querySelector('h3').textContent.trim() : 'Activity');
+            statusText.textContent = `Highlighted ${matchedActivities.length} activity: ${actNames.join(', ')} (highlight active for 3s)`;
+          }
+
+          if (resetBtn) {
+            resetBtn.style.display = 'inline-flex';
+          }
+
+          // Return true: Dogs requirements are NOT modified!
+          return true;
+        }
+
+        return false;
+      }
+
+      function applyFilter(shouldScroll = false) {
+        const q = currentQuery.trim().toLowerCase();
+        const isFiltered = (selectedSize !== null || selectedActivity !== null || q !== '');
+
+        let visibleReqCount = 0;
+        let visibleActCount = 0;
+
+        // 1. Filter Daily Walking Requirements
+        reqCards.forEach(card => {
+          const cardSize = card.getAttribute('data-size') || '';
+          const cardText = (card.innerText || '').toLowerCase();
+          const cardKw = (card.getAttribute('data-keywords') || '').toLowerCase();
+
+          let matchesSize = true;
+          if (selectedSize !== null) {
+            matchesSize = (cardSize === selectedSize);
+          }
+
+          let matchesActivity = true;
+          if (selectedActivity !== null) {
+            if (selectedActivity === 'daily-routine' || selectedActivity === 'low-intensity') {
+              // Daily routine and Low intensity show all dog types!
+              matchesActivity = true;
+            } else if (selectedActivity === 'high-intensity') {
+              // High intensity shows Medium breeds, Large breed, High energy dogs only!
+              matchesActivity = (cardSize === 'medium' || cardSize === 'large' || cardSize === 'high-energy');
+            }
+          }
+
+          let matchesQuery = true;
+          if (q) {
+            matchesQuery = cardText.includes(q) || cardKw.includes(q) || cardSize.includes(q);
+          }
+
+          const isVisible = matchesSize && matchesActivity && matchesQuery;
+          card.style.display = isVisible ? '' : 'none';
+          if (isVisible) visibleReqCount++;
+        });
+
+        // Horizontal Card Mode: ONLY when exactly 1 dog type is shown (e.g. filtered by Dog Size)
+        // In case when multiple or every dog are shown, keep them in 1 row 3 cards grid!
+        if (reqGrid) {
+          if (visibleReqCount === 1) {
+            reqGrid.classList.add('single-horizontal-card');
+          } else {
+            reqGrid.classList.remove('single-horizontal-card');
+          }
+        }
+
+        // 2. Filter Outdoor Activities
+        actCards.forEach(card => {
+          const actTypes = (card.getAttribute('data-activity-types') || '').split(/\s+/);
+          const suitableSizes = (card.getAttribute('data-suitable-sizes') || '').split(/\s+/);
+          const cardText = (card.innerText || '').toLowerCase();
+          const cardKw = (card.getAttribute('data-keywords') || '').toLowerCase();
+
+          let matchesActivity = true;
+          if (selectedActivity !== null) {
+            matchesActivity = actTypes.includes(selectedActivity);
+          }
+
+          let matchesSize = true;
+          if (selectedSize !== null) {
+            matchesSize = suitableSizes.includes(selectedSize);
+          }
+
+          let matchesQuery = true;
+          if (q) {
+            matchesQuery = cardText.includes(q) || cardKw.includes(q) || actTypes.some(t => t.includes(q));
+          }
+
+          const isVisible = matchesActivity && matchesSize && matchesQuery;
+          card.style.display = isVisible ? '' : 'none';
+          if (isVisible) visibleActCount++;
+        });
+
+        // 3. Search Clear Button
+        if (searchClearBtn) {
+          searchClearBtn.style.display = q ? 'grid' : 'none';
+        }
+
+        // 4. Update status & reset button
+        if (resetBtn) {
+          resetBtn.style.display = isFiltered ? 'inline-flex' : 'none';
+        }
+
+        if (statusText) {
+          if (!isFiltered) {
+            statusText.textContent = 'Showing all daily walking requirements and activities';
+          } else {
+            const parts = [];
+            if (selectedSize !== null) {
+              const sizeMap = {
+                'small': 'Small Breeds',
+                'medium': 'Medium Breeds',
+                'large': 'Large Breeds',
+                'puppy': 'Puppies',
+                'senior': 'Senior Dogs',
+                'high-energy': 'High-Energy Dogs'
+              };
+              parts.push(`Dog Size: ${sizeMap[selectedSize] || selectedSize}`);
+            }
+            if (selectedActivity !== null) {
+              const actMap = {
+                'daily-routine': 'Daily Routine',
+                'low-intensity': 'Low Intensity',
+                'high-intensity': 'High Intensity'
+              };
+              parts.push(`Activity: ${actMap[selectedActivity] || selectedActivity}`);
+            }
+            if (q) {
+              parts.push(`Keyword: "${q}"`);
+            }
+            statusText.textContent = `Filtered by ${parts.join(' • ')} (${visibleReqCount} routine${visibleReqCount === 1 ? '' : 's'}, ${visibleActCount} activities suggested)`;
+          }
+        }
+
+        // 5. Smooth scroll down to requirements if not activity search
+        if (shouldScroll) {
+          scrollToRequirements();
+        }
+      }
+
+      // Event Listeners: Dog Size mini pills
+      sizeMiniPills.forEach(pill => {
+        pill.addEventListener('click', function () {
+          clearActivityHighlights();
+          const val = this.getAttribute('data-size');
+          if (selectedSize === val) {
+            selectedSize = null;
+            this.classList.remove('active');
+          } else {
+            sizeMiniPills.forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+            selectedSize = val;
+            activityMiniPills.forEach(p => p.classList.remove('active'));
+            selectedActivity = null;
+          }
+          applyFilter(true);
+        });
+      });
+
+      // Event Listeners: Activity mini pills
+      activityMiniPills.forEach(pill => {
+        pill.addEventListener('click', function () {
+          clearActivityHighlights();
+          const val = this.getAttribute('data-activity');
+          if (selectedActivity === val) {
+            selectedActivity = null;
+            this.classList.remove('active');
+          } else {
+            activityMiniPills.forEach(p => p.classList.remove('active'));
+            this.classList.add('active');
+            selectedActivity = val;
+            sizeMiniPills.forEach(p => p.classList.remove('active'));
+            selectedSize = null;
+          }
+          applyFilter(true);
+        });
+      });
+
+      // Event Listeners: Search input
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          currentQuery = this.value;
+          clearTimeout(searchDebounceTimer);
+
+          const q = currentQuery.trim().toLowerCase();
+          if (!q) {
+            clearActivityHighlights();
+            if (searchClearBtn) searchClearBtn.style.display = 'none';
+            applyFilter(false);
+            return;
+          }
+
+          if (searchClearBtn) searchClearBtn.style.display = 'grid';
+
+          // Debounce search check (350ms):
+          // If query matches any activity, scroll & highlight for <= 3s without changing dogs
+          searchDebounceTimer = setTimeout(() => {
+            const isActivity = checkAndHighlightActivity(currentQuery, true);
+            if (!isActivity) {
+              applyFilter(false);
+            }
+          }, 350);
+        });
+
+        searchInput.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            clearTimeout(searchDebounceTimer);
+            const isActivity = checkAndHighlightActivity(this.value, true);
+            if (!isActivity) {
+              applyFilter(true);
+            }
+          }
+        });
+      }
+
+      // Clear search button
+      if (searchClearBtn) {
+        searchClearBtn.addEventListener('click', function () {
+          if (searchInput) {
+            searchInput.value = '';
+            currentQuery = '';
+            searchInput.focus();
+          }
+          clearActivityHighlights();
+          this.style.display = 'none';
+          applyFilter(false);
+        });
+      }
+
+      // Reset button
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          selectedSize = null;
+          selectedActivity = null;
+          currentQuery = '';
+          if (searchInput) searchInput.value = '';
+          clearActivityHighlights();
+
+          sizeMiniPills.forEach(p => p.classList.remove('active'));
+          activityMiniPills.forEach(p => p.classList.remove('active'));
+
+          applyFilter(false);
+        });
+      }
+    })();
+  </script>
 </body>
+
 </html>

@@ -241,637 +241,966 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Complete Guide to Dog Care & Health on PetSathi. Comprehensive advice on canine nutrition, grooming routines, veterinary wellness, puppy care, and household safety.">
-  <title>Complete Guide to Dog Care & Health | PetSathi</title>
-
-  <!-- Google Fonts -->
+  <meta name="description" content="A practical, complete guide to daily dog care, grooming, puppy and senior care, safety, and preventive veterinary visits.">
+  <title>Complete Guide to Dog Care | PetSathi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Global & Inner Stylesheets -->
   <link rel="stylesheet" href="../../../css/global.css">
   <link rel="stylesheet" href="../../../css/home.css">
   <link rel="stylesheet" href="../../../css/inner.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
-    /* Custom Scoped Styles for Dog Care Page */
-    :root {
-      --dog-accent: #286849;
-      --dog-accent-hover: #1d5039;
-      --dog-accent-soft: #edf4ee;
-      --dog-accent-border: #cde1d4;
-      --dog-badge-bg: #eaf2e9;
-      --dog-badge-text: #286849;
-      --dog-card-bg: #ffffff;
-      --dog-card-border: #e2e8df;
-      --dog-soft-bg: #f5f8f3;
-      --dog-peach: #fcf6f0;
-      --dog-peach-border: #f4decb;
-      --alert-red-bg: #fff1f0;
-      --alert-red-border: #ffccc7;
-      --alert-red-text: #a8071a;
-      --alert-amber-bg: #fffbe6;
-      --alert-amber-border: #ffe58f;
-      --alert-amber-text: #ad6800;
-      --alert-green-bg: #f6ffed;
-      --alert-green-border: #b7eb8f;
-      --alert-green-text: #237804;
-      --shadow-sm: 0 4px 14px rgba(35, 57, 43, 0.05);
-      --shadow-md: 0 12px 32px rgba(35, 57, 43, 0.08);
-      --shadow-lg: 0 20px 48px rgba(35, 57, 43, 0.12);
+    .care-page {
+      --care-green: #286849;
+      --care-dark: #1d5039;
+      --care-soft: #eaf2e9;
+      --care-copy: #64736a;
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
     }
 
-    /* Breadcrumbs */
-    .breadcrumb-nav {
-      padding: 10px 0 14px;
-      font-size: 0.85rem;
-      color: var(--muted);
+    .care-page,
+    .care-page * {
+      font-family: "DM Sans", sans-serif !important;
+    }
+
+    .care-page h1,
+    .care-page h2,
+    .care-page h3 {
+      font-family: Manrope, sans-serif !important;
+    }
+
+    .care-page .fa-solid,
+    .care-page .fa-solid::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      line-height: 1 !important;
+    }
+
+    .care-page .care-hero {
+      padding: 0;
+      background: linear-gradient(135deg, #f0f5ed 0%, #fcfaf5 70%) !important;
+    }
+
+    .care-breadcrumbs {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
       flex-wrap: wrap;
-    }
-    .breadcrumb-nav a {
+      margin-bottom: 24px;
       color: var(--muted);
-      transition: color 0.2s ease;
-    }
-    .breadcrumb-nav a:hover {
-      color: var(--green);
-    }
-    .breadcrumb-separator {
-      color: #b5c2b9;
-      font-size: 0.8rem;
-    }
-    .breadcrumb-current {
-      color: var(--ink);
-      font-weight: 600;
+      font-size: 0.84rem;
     }
 
-    /* Page Hero Overrides */
-    .care-hero {
-      background: linear-gradient(180deg, #edf4ee 0%, #fcfaf5 100%);
-      padding: 36px 20px 54px;
-      text-align: center;
-      border-bottom: 1px solid var(--line);
+    .care-breadcrumbs a:hover {
+      color: var(--care-green);
     }
-    .care-hero .eyebrow {
+
+    .care-breadcrumbs [aria-current="page"] {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .care-hero-layout {
+      display: grid;
+      min-height: 560px;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 48px;
+      padding-block: 34px 52px;
+    }
+
+    .care-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      background: rgba(40, 104, 73, 0.1);
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 6px 13px;
       border-radius: 999px;
-      margin-bottom: 14px;
+      background: var(--care-soft);
+      color: var(--care-green);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
+
     .care-hero h1 {
-      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
-      margin: 8px 0 16px;
+      max-width: 650px;
+      margin: 0 0 20px;
+      font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+      line-height: 1.12;
       letter-spacing: -2px;
     }
-    .care-hero p.hero-intro {
-      max-width: 780px;
-      margin: 0 auto 24px;
-      font-size: 1.08rem;
-      line-height: 1.8;
-      color: #4a5c52;
+
+    .care-hero h1 em {
+      color: var(--care-green);
+      font-style: normal;
     }
-    .hero-meta-strip {
+
+    .care-hero-copy > p {
+      max-width: 550px;
+      margin: 0;
+      color: #4f6155;
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .care-hero-actions {
       display: flex;
-      justify-content: center;
-      gap: 24px;
       flex-wrap: wrap;
-      margin: 24px auto 0;
-      padding-top: 20px;
-      border-top: 1px dashed #d5e0d3;
-      max-width: 860px;
+      gap: 12px;
+      margin-top: 27px;
     }
-    .hero-meta-item {
+
+    .care-hero-actions .button {
+      min-height: 46px;
+    }
+
+    .care-hero-visual {
+      position: relative;
+      display: grid;
+      min-height: 430px;
+      place-items: center;
+    }
+
+    .care-hero-blob {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      border-radius: 46% 54% 48% 52% / 54% 46% 54% 46%;
+      background: #e9f0e6;
+    }
+
+    .care-hero-image {
+      position: relative;
+      width: 86%;
+      max-width: 420px;
+      height: 400px;
+      border: 4px solid #fff;
+      border-radius: 36px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+
+    .care-floating-card {
+      position: absolute;
+      z-index: 2;
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.88rem;
-      color: var(--muted);
-      text-align: left;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: var(--shadow);
+      color: var(--care-green);
+      font-size: 1.2rem;
     }
-    .hero-meta-item strong {
-      display: block;
-      color: var(--ink);
-      font-size: 0.98rem;
-      font-family: Manrope, sans-serif;
-    }
-    .hero-meta-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: white;
+
+    .care-floating-card span {
       display: grid;
-      place-items: center;
-      font-size: 1.25rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--line);
-      flex-shrink: 0;
     }
 
-    /* Quick Jump Sticky Navigation Bar */
-    .quick-nav-bar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(252, 250, 245, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+    .care-floating-card b {
+      color: var(--ink);
+      font-size: 0.82rem;
+    }
+
+    .care-floating-card small {
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
+
+    .care-floating-card-top {
+      top: 24px;
+      right: -12px;
+    }
+
+    .care-floating-card-bottom {
+      bottom: 18px;
+      left: -12px;
+    }
+
+    .care-tools {
+      padding: 28px 0;
+      background: #fff;
       border-bottom: 1px solid var(--line);
-      padding: 10px 0;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
     }
-    .quick-nav-container {
-      display: flex;
+
+    .care-tools-inner {
+      display: grid;
+      grid-template-columns: minmax(230px, 0.8fr) minmax(0, 1.4fr);
       align-items: center;
-      gap: 8px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      padding: 4px 0;
+      gap: 20px 32px;
     }
-    .quick-nav-container::-webkit-scrollbar {
-      display: none;
-    }
-    .quick-nav-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: 999px;
+
+    .care-search-label {
+      display: block;
+      margin-bottom: 7px;
       font-size: 0.84rem;
-      font-weight: 600;
-      color: #4f6357;
-      background: white;
-      border: 1px solid var(--line);
-      white-space: nowrap;
-      transition: all 0.22s ease;
-    }
-    .quick-nav-link:hover,
-    .quick-nav-link.active {
-      background: var(--dog-accent);
-      color: white;
-      border-color: var(--dog-accent);
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-sm);
+      font-weight: 700;
     }
 
-    /* Section Foundations */
-    .care-section {
-      padding-block: 75px;
-      border-bottom: 1px solid var(--line);
+    .care-search-wrap {
+      position: relative;
     }
-    .care-section.alt-bg {
-      background: #f7f9f5;
+
+    .care-search-wrap i {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      color: var(--care-green);
+      transform: translateY(-50%);
     }
-    .section-header-wrap {
-      margin-bottom: 40px;
+
+    .care-search {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 14px 10px 42px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fcfaf5;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .care-search:focus-visible,
+    .care-filter:focus-visible,
+    .care-quick-link:focus-visible {
+      outline: 3px solid rgba(40, 104, 73, 0.25);
+      outline-offset: 2px;
+    }
+
+    .care-filter-label {
+      margin: 0 0 8px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .care-filter-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .care-filter {
+      min-height: 36px;
+      padding: 7px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--care-copy);
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .care-filter:hover,
+    .care-filter[aria-pressed="true"] {
+      border-color: var(--care-green);
+      background: var(--care-green);
+      color: #fff;
+    }
+
+    .care-results {
+      grid-column: 1 / -1;
+      margin: -6px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .care-quick-nav {
+      position: relative;
+      width: calc(100% - 40px);
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 42px 36px 38px;
+      overflow: hidden;
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      background: #fff;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+    }
+
+    .care-quick-header {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 30px;
       text-align: center;
     }
-    .section-header-wrap .eyebrow {
+
+    .care-quick-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .care-quick-line {
+      width: 110px;
+      height: 1px;
+      background: #d6ead9;
+    }
+
+    .care-quick-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 5px 12px;
-      background: #eaf2e9;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid #b7deb8;
       border-radius: 999px;
-      margin-bottom: 10px;
-    }
-    .section-header-wrap h2 {
-      font-size: clamp(1.8rem, 3.4vw, 2.7rem);
-      margin: 0 0 12px;
-    }
-    .section-header-wrap p {
-      max-width: 720px;
-      margin: 0 auto;
-      font-size: 1rem;
-      line-height: 1.7;
+      background: #f4faf5;
+      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+      color: #1e6f43;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
     }
 
-    /* Layout Grids */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
+    .care-quick-title {
+      margin: 0;
+      color: #1a251e;
+      font-family: Manrope, sans-serif !important;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
     }
-    .grid-3 {
+
+    .care-quick-title span {
+      color: #1e6f43;
+    }
+
+    .care-quick-links {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .care-quick-decor {
+      position: absolute;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .care-decor-top-left,
+    .care-decor-bottom-right {
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+    }
+
+    .care-decor-top-left {
+      top: -8px;
+      left: -8px;
+      border-radius: 0 0 100% 0;
+    }
+
+    .care-decor-bottom-right {
+      right: -8px;
+      bottom: -8px;
+      border-radius: 100% 0 0 0;
+    }
+
+    .care-decor-paw {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .care-decor-paw-1 {
+      top: 14px;
+      left: 28px;
+      font-size: 28px;
+      transform: rotate(-15deg);
+    }
+
+    .care-decor-paw-2 {
+      top: 38px;
+      left: 12px;
+      font-size: 19px;
+      transform: rotate(20deg);
+    }
+
+    .care-decor-paw-3 {
+      right: 14px;
+      bottom: 36px;
+      font-size: 19px;
+      transform: rotate(-25deg);
+    }
+
+    .care-decor-paw-4 {
+      right: 28px;
+      bottom: 14px;
+      font-size: 28px;
+      transform: rotate(15deg);
+    }
+
+    .care-quick-link {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      gap: 12px;
+      padding: 9px 18px 9px 9px;
+      border: 1px solid #cce4d2;
+      border-radius: 999px;
+      background: #edf7f0;
+      color: #1c2b20;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .care-quick-link:hover {
+      transform: translateY(-2px);
+      border-color: #237847;
+      background: #e4f4e8;
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
+    }
+
+    .care-quick-link > i {
+      display: grid;
+      flex: 0 0 42px;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
+      font-size: 1.05rem;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .care-quick-link:hover > i {
+      background: #1e6f43;
+      color: #fff;
+    }
+
+    .care-sections {
+      padding: 8px 0 12px;
+    }
+
+    .care-page .care-section {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      background: transparent !important;
+      scroll-margin-top: 28px;
+    }
+
+    .care-heading {
+      position: relative;
+      display: flex;
+      min-height: 200px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 45px auto 35px;
+      padding: 44px 35px 38px;
+      border: 1px solid #dcebc9;
+      border-radius: 35px;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      text-align: center;
+    }
+
+    .care-heading .corner-wave {
+      position: absolute;
+      width: 220px;
+      height: 130px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .care-heading .wave-tl {
+      top: 0;
+      left: 0;
+    }
+
+    .care-heading .wave-br {
+      right: 0;
+      bottom: 0;
+    }
+
+    .care-heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 16px;
+      padding: 7px 20px;
+      border: 1px solid #dcebc9;
+      border-radius: 999px;
+      background: #edf6df;
+      color: #246b43;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
+    }
+
+    .care-heading .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .care-heading-label i {
+      font-size: 0.9rem;
+    }
+
+    .care-heading h2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 0 0 12px;
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    .care-heading h2 > span:not(.heading-burst) {
+      color: #28764a;
+    }
+
+    .care-heading .heading-burst {
+      position: relative;
+      display: inline-block;
+      flex: 0 0 24px;
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+
+    .care-heading .heading-burst span {
+      position: absolute;
+      border-radius: 9999px;
+      background: #60a872;
+    }
+
+    .care-heading .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .care-heading .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .care-heading .heading-burst.left span:nth-child(1),
+    .care-heading .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+    }
+
+    .care-heading .heading-burst.left span:nth-child(1) {
+      transform: rotate(35deg);
+    }
+
+    .care-heading .heading-burst.right span:nth-child(1) {
+      transform: rotate(-35deg);
+    }
+
+    .care-heading .heading-burst span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .care-heading .heading-burst.left span:nth-child(3),
+    .care-heading .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+    }
+
+    .care-heading .heading-burst.left span:nth-child(3) {
+      transform: rotate(-35deg);
+    }
+
+    .care-heading .heading-burst.right span:nth-child(3) {
+      transform: rotate(35deg);
+    }
+
+    .care-heading .paw {
+      position: absolute;
+      z-index: 1;
+      display: inline-block;
+      color: rgba(115, 173, 91, 0.28);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .care-heading .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .care-heading .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .care-heading .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .care-heading .paw-right-2 {
+      right: 140px;
+      bottom: 35px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .care-heading p {
+      max-width: 760px;
+      margin: 0;
+      color: #64736a;
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .care-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
       gap: 24px;
     }
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
 
-    /* Content Cards */
     .care-card {
-      background: white;
+      min-width: 0;
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 20px;
-      padding: 28px;
+      background: #ffffff;
       display: flex;
       flex-direction: column;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    }
-    .care-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--dog-accent-border);
-    }
-    .card-icon-bubble {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: var(--dog-accent-soft);
-      color: var(--dog-accent);
-      display: grid;
-      place-items: center;
-      font-size: 1.6rem;
-      margin-bottom: 20px;
-    }
-    .care-card h3 {
-      font-size: 1.25rem;
-      margin: 0 0 12px;
-      color: var(--ink);
-    }
-    .care-card p {
-      font-size: 0.92rem;
-      line-height: 1.65;
-      margin: 0 0 16px;
-      color: var(--muted);
-    }
-    .care-card ul {
-      margin: 0;
-      padding-left: 18px;
-      font-size: 0.9rem;
-      color: #4a5c52;
-      line-height: 1.7;
-    }
-    .care-card li {
-      margin-bottom: 6px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
-    /* Media + Text Split Banner */
-    .media-split-box {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 36px;
+    .care-card:hover {
+      transform: translateY(-6px);
+      border-color: #cbd9ce;
+      box-shadow: var(--shadow);
     }
-    .media-split-image {
+
+    .care-card-media {
       position: relative;
-      min-height: 320px;
+      height: 200px;
+      overflow: hidden;
       background: #f0f3eb;
     }
-    .media-split-image img {
+
+    .care-card-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-    .media-split-badge {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(4px);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--dog-accent);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
-    .media-split-content {
-      padding: 36px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .media-split-content h3 {
-      font-size: 1.65rem;
-      margin: 0 0 14px;
-      letter-spacing: -0.5px;
-    }
-    .media-split-content p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin: 0 0 18px;
+      transition: transform 0.35s ease;
     }
 
-    /* Toxic & Safe Foods Table / Cards */
-    .food-status-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 24px;
+    .care-card:hover .care-card-media img {
+      transform: scale(1.05);
     }
-    .food-status-column {
-      border-radius: 20px;
-      padding: 26px;
-      border: 1px solid;
-    }
-    .food-status-column.toxic {
-      background: var(--alert-red-bg);
-      border-color: var(--alert-red-border);
-    }
-    .food-status-column.safe {
-      background: var(--alert-green-bg);
-      border-color: var(--alert-green-border);
-    }
-    .food-column-header {
+
+    .care-card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
-    .food-column-header h3 {
-      margin: 0;
+
+    .care-card-badge i {
+      color: var(--green);
+      font-size: 0.85rem;
+    }
+
+    .care-card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    .care-card h3 {
+      margin: 0 0 10px;
+      color: var(--ink);
       font-size: 1.25rem;
     }
-    .food-status-column.toxic h3 {
-      color: var(--alert-red-text);
-    }
-    .food-status-column.safe h3 {
-      color: var(--alert-green-text);
-    }
-    .food-item-list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .food-item-entry {
-      background: white;
-      border-radius: 12px;
-      padding: 14px 18px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .food-item-title {
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .food-item-desc {
-      font-size: 0.86rem;
-      color: #55675c;
-      line-height: 1.5;
-    }
 
-    /* Veterinary Disclaimer Banner */
-    .vet-disclaimer-box {
-      background: linear-gradient(135deg, #f0f7f3 0%, #e7efe9 100%);
-      border: 2px dashed #9bc3ac;
-      border-radius: 20px;
-      padding: 28px 32px;
-      margin: 36px 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
-    .vet-disclaimer-icon {
-      font-size: 2.2rem;
-      flex-shrink: 0;
-      line-height: 1;
-    }
-    .vet-disclaimer-text h4 {
-      margin: 0 0 6px;
-      font-size: 1.15rem;
-      color: var(--dog-accent-hover);
-    }
-    .vet-disclaimer-text p {
-      margin: 0;
-      font-size: 0.92rem;
-      line-height: 1.65;
-      color: #334e3f;
-    }
-
-    /* Routine Checklist Tracker */
-    .checklist-wrap {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 34px;
-      box-shadow: var(--shadow-sm);
-      margin-top: 36px;
-    }
-    .checklist-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 24px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
-    }
-    .checklist-progress-bar {
-      width: 100%;
-      height: 10px;
-      background: #eaf1ea;
-      border-radius: 999px;
-      overflow: hidden;
-      margin-bottom: 24px;
-    }
-    .checklist-progress-fill {
-      height: 100%;
-      width: 0%;
-      background: var(--dog-accent);
-      border-radius: 999px;
-      transition: width 0.3s ease;
-    }
-    .checklist-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    .checklist-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 14px 18px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fafbf9;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .checklist-item:hover {
-      background: white;
-      border-color: var(--dog-accent-border);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    }
-    .checklist-item.checked {
-      background: #f4faf5;
-      border-color: #b7dbbf;
-    }
-    .checklist-item input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      accent-color: var(--dog-accent);
-      margin-top: 2px;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-    .checklist-item-content {
-      display: flex;
-      flex-direction: column;
-    }
-    .checklist-item-title {
-      font-weight: 700;
-      font-size: 0.94rem;
-      color: var(--ink);
-    }
-    .checklist-item-hint {
-      font-size: 0.82rem;
+    .care-card p {
+      flex-grow: 1;
+      margin: 0 0 20px;
       color: var(--muted);
-      margin-top: 2px;
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
-    /* FAQ Accordion */
-    .faq-accordion {
-      max-width: 860px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .faq-item {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-    .faq-item:hover {
-      border-color: var(--dog-accent-border);
-    }
-    .faq-question {
-      width: 100%;
-      padding: 20px 24px;
-      text-align: left;
-      background: none;
-      border: none;
-      display: flex;
+    .care-card-link {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      font-family: Manrope, sans-serif;
-      font-size: 1.05rem;
+      align-self: flex-start;
+      gap: 6px;
+      color: var(--green);
+      font-size: 0.88rem;
       font-weight: 700;
-      color: var(--ink);
-      cursor: pointer;
-    }
-    .faq-toggle-icon {
-      font-size: 1.3rem;
-      color: var(--dog-accent);
-      transition: transform 0.28s ease;
-      flex-shrink: 0;
-    }
-    .faq-item.open .faq-toggle-icon {
-      transform: rotate(45deg);
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.32s cubic-bezier(0, 1, 0, 1), padding 0.25s ease;
-      padding: 0 24px;
-    }
-    .faq-item.open .faq-answer {
-      max-height: 500px;
-      padding: 0 24px 22px;
-    }
-    .faq-answer p {
-      margin: 0;
-      font-size: 0.93rem;
-      line-height: 1.7;
-      color: #4a5c52;
+      transition: color 0.2s, transform 0.2s;
     }
 
-    /* CTA Section */
-    .care-cta-section {
-      background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
-      color: white;
-      border-radius: 28px;
-      padding: 56px 40px;
+    .care-card-link:hover {
+      color: var(--dark);
+      transform: translateX(4px);
+    }
+
+    .care-no-results {
+      padding: 28px;
+      border: 1px dashed #cbd9ce;
+      border-radius: 16px;
+      color: var(--care-copy);
       text-align: center;
-      margin: 60px 0;
-      box-shadow: 0 20px 50px rgba(29, 80, 57, 0.25);
-    }
-    .care-cta-section h2 {
-      color: white;
-      font-size: clamp(2rem, 3.8vw, 3rem);
-      margin: 0 0 16px;
-    }
-    .care-cta-section p {
-      color: #e2ede6;
-      max-width: 680px;
-      margin: 0 auto 30px;
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-    .care-cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 980px) {
-      .grid-3 {
+    .care-note {
+      margin: 26px 0 50px;
+      padding: 18px 20px;
+      border: 1px solid #cbd9ce;
+      border-radius: 16px;
+      background: #f0f5ed;
+      color: #42584a;
+      font-size: 0.9rem;
+    }
+
+    .care-note i {
+      margin-right: 7px;
+      color: var(--care-green);
+    }
+
+    @media (max-width: 960px) {
+      .care-hero-layout {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 28px;
+      }
+
+      .care-quick-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .care-card-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-      .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .media-split-box {
-        grid-template-columns: 1fr;
-      }
-      .media-split-image {
-        min-height: 250px;
       }
     }
 
-    @media (max-width: 768px) {
-      .grid-2,
-      .grid-3,
-      .grid-4,
-      .food-status-grid,
-      .checklist-grid {
+    @media (max-width: 640px) {
+      .care-hero {
+        padding: 0;
+      }
+
+      .care-hero-layout,
+      .care-tools-inner {
         grid-template-columns: 1fr;
       }
+
+      .care-hero-layout {
+        min-height: 0;
+        gap: 10px;
+        padding-block: 20px 36px;
+      }
+
+      .care-hero-copy {
+        padding-top: 4px;
+      }
+
+      .care-hero h1 {
+        font-size: clamp(2.35rem, 10vw, 2.9rem);
+      }
+
+      .care-hero-visual {
+        min-height: 340px;
+      }
+
+      .care-hero-blob {
+        width: 82%;
+      }
+
+      .care-hero-image {
+        width: 78%;
+        height: 300px;
+        border-radius: 48% 48% 24px 24px;
+      }
+
+      .care-floating-card-top {
+        top: 24px;
+        right: 0;
+      }
+
+      .care-floating-card-bottom {
+        bottom: 8px;
+        left: 0;
+      }
+
+      .care-results {
+        grid-column: auto;
+      }
+
+      .care-quick-nav {
+        width: calc(100% - 32px);
+        margin: 26px auto;
+        padding: 28px 18px;
+        border-radius: 24px;
+      }
+
+      .care-quick-eyebrow {
+        gap: 9px;
+      }
+
+      .care-quick-line {
+        width: 38px;
+      }
+
+      .care-quick-links {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .care-quick-link {
+        padding-right: 14px;
+        font-size: 0.88rem;
+      }
+
       .care-section {
-        padding-block: 55px;
+        padding: 34px 0;
       }
-      .care-cta-section {
-        padding: 40px 24px;
+
+      .care-heading {
+        min-height: 190px;
+        margin: 25px 0;
+        padding: 35px 16px 30px;
+        border-radius: 24px;
       }
-      .vet-disclaimer-box {
-        flex-direction: column;
-        padding: 22px;
+
+      .care-heading .corner-wave {
+        width: 170px;
+        height: 110px;
       }
-      .checklist-wrap {
-        padding: 24px 18px;
+
+      .care-heading h2 {
+        gap: 8px;
+        font-size: clamp(20px, 5vw, 26px);
+      }
+
+      .care-heading .heading-burst {
+        flex-basis: 16px;
+        width: 16px;
+        height: 18px;
+      }
+
+      .care-heading .heading-burst span:nth-child(1),
+      .care-heading .heading-burst span:nth-child(3) {
+        width: 10px;
+      }
+
+      .care-heading .heading-burst span:nth-child(2) {
+        width: 13px;
+      }
+
+      .care-heading .care-heading-label {
+        margin-bottom: 12px;
+        padding: 6px 14px;
+        font-size: 11px;
+      }
+
+      .care-heading .paw-left-1,
+      .care-heading .paw-right-1 {
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .care-heading .paw-left-1 {
+        left: 35px;
+      }
+
+      .care-heading .paw-right-1 {
+        right: 25px;
+      }
+
+      .care-heading .paw-left-2,
+      .care-heading .paw-right-2 {
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .care-heading .paw-left-2 {
+        left: 18px;
+      }
+
+      .care-heading .paw-right-2 {
+        right: 65px;
+      }
+
+      .care-heading p {
+        font-size: 0.9rem;
+      }
+
+      .care-card-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .care-card-body {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .care-card {
+        transition: none;
+      }
+
+      .care-card:hover,
+      .care-card-link:hover {
+        transform: none;
+      }
+
+      .care-card-media img {
+        transition: none;
+      }
+
+      .care-quick-link {
+        transition: none;
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
@@ -896,805 +1225,57 @@
   </nav>
 </header>
 
-<main id="main-content">
-
-  <!-- Hero Section -->
-  <section class="page-hero care-hero" aria-labelledby="hero-title">
+<main id="main-content" class="care-page">
+  <section class="care-hero" aria-labelledby="care-hero-title">
     <div class="section-wrap">
-      <!-- Breadcrumb Navigation -->
-      <nav class="breadcrumb-nav" aria-label="Breadcrumbs">
-        <a href="../../../../index.html">Home</a>
-        <span class="breadcrumb-separator">/</span>
-        <a href="../index.html">Explore Pets</a>
-        <span class="breadcrumb-separator">/</span>
-        <a href="index.html">Dogs</a>
-        <span class="breadcrumb-separator">/</span>
-        <span class="breadcrumb-current" aria-current="page">Care & Health</span>
-      </nav>
+      <nav class="care-breadcrumbs" aria-label="Breadcrumbs">
+        <a href="../../../../index.html">Home</a><span aria-hidden="true">/</span>
+        <a href="../index.html">Explore Pets</a><span aria-hidden="true">/</span>
+        <a href="index.html">Dogs</a><span aria-hidden="true">/</span>
+        
 
-      <div class="eyebrow">PetSathi • CANINE WELLNESS COMPANION</div>
-      <h1 id="hero-title">Complete Guide to Dog Care</h1>
-      <p class="hero-intro">
-        Everything you need to nurture a healthy, joyful, and thriving canine companion. From balanced daily nutrition and grooming rituals to veterinary preventative care, puppy milestones, and household safety.
-      </p>
-
-      <div class="hero-meta-strip">
-        <div class="hero-meta-item">
-          <div class="hero-meta-icon" aria-hidden="true">🐾</div>
-          <div>
-            <strong>All Life Stages</strong>
-            <span>Puppies to seniors</span>
-          </div>
-        </div>
-        <div class="hero-meta-item">
-          <div class="hero-meta-icon" aria-hidden="true">🥣</div>
-          <div>
-            <strong>Balanced Diet</strong>
-            <span>Proteins, hydration, safety</span>
-          </div>
-        </div>
-        <div class="hero-meta-item">
-          <div class="hero-meta-icon" aria-hidden="true">🛁</div>
-          <div>
-            <strong>Grooming Essentials</strong>
-            <span>Coat, nails, ears & dental</span>
-          </div>
-        </div>
-        <div class="hero-meta-item">
-          <div class="hero-meta-icon" aria-hidden="true">🩺</div>
-          <div>
-            <strong>Veterinary Care</strong>
-            <span>Vaccines, prevention & signs</span>
-          </div>
-        </div>
+  <section class="care-tools" aria-label="Search and filter care topics">
+    
+    
+        
       </div>
+      <p class="care-results" id="careResults" role="status" aria-live="polite"></p>
     </div>
   </section>
 
-  <!-- Sticky Quick Jump Navigation Bar -->
-  <nav class="quick-nav-bar" aria-label="Quick jump to dog care sections">
-    <div class="section-wrap">
-      <div class="quick-nav-container">
-        <a class="quick-nav-link" href="#nutrition">Food & Nutrition</a>
-        <a class="quick-nav-link" href="#grooming">Grooming & Hygiene</a>
-        <a class="quick-nav-link" href="#health">🩺 Health & Wellness</a>
-        <a class="quick-nav-link" href="#puppy">Puppy Care</a>
-        <a class="quick-nav-link" href="#safety">️ Safety Tips</a>
-        <a class="quick-nav-link" href="#daily-checklist">✅ Daily Checklist</a>
-        <a class="quick-nav-link" href="#faqs">❓ FAQs</a>
+  <nav class="care-quick-nav" aria-label="Dog care sections">
+    <div class="care-quick-decor care-decor-top-left" aria-hidden="true">
+      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-1"></i>
+      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-2"></i>
+    </div>
+    <div class="care-quick-decor care-decor-bottom-right" aria-hidden="true">
+      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-3"></i>
+      <i class="fa-solid fa-paw care-decor-paw care-decor-paw-4"></i>
+    </div>
+    <div class="care-quick-header">
+      <div class="care-quick-eyebrow">
+        <span class="care-quick-line" aria-hidden="true"></span>
+        <span class="care-quick-badge"><i class="fa-solid fa-compass" aria-hidden="true"></i> Quick Navigation</span>
+        <span class="care-quick-line" aria-hidden="true"></span>
       </div>
+      <h2 class="care-quick-title">Explore Dedicated <span>Dog Care Chapters</span></h2>
+    </div>
+    <div class="care-quick-links">
+      <a class="care-quick-link" href="#daily-care"><i class="fa-solid fa-sun" aria-hidden="true"></i><span>Daily Care</span></a>
+      <a class="care-quick-link" href="#coat-care"><i class="fa-solid fa-brush" aria-hidden="true"></i><span>Grooming</span></a>
+      <a class="care-quick-link" href="#puppy-care"><i class="fa-solid fa-dog" aria-hidden="true"></i><span>Life Stages</span></a>
+      <a class="care-quick-link" href="#safety"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Health &amp; Safety</span></a>
     </div>
   </nav>
 
-  <!-- SECTION B: Food and Nutrition -->
-  <section id="nutrition" class="care-section" aria-labelledby="heading-nutrition">
-    <div class="section-wrap">
-      <div class="section-header-wrap">
-        <div class="eyebrow">NOURISHMENT & VITALITY</div>
-        <h2 id="heading-nutrition">Canine Food & Nutrition</h2>
-        <p>
-          High-quality, balanced nutrition is the foundation of your dog's energy, immune resilience, shiny coat, and longevity. Tailoring meals to your dog's age, weight, and activity level ensures lifelong health.
-        </p>
-      </div>
-
-      <!-- Feature Split Banner -->
-      <div class="media-split-box">
-        <div class="media-split-image">
-          <span class="media-split-badge">Wholesome Diet</span>
-          <img
-            src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=800&q=85"
-            alt="Healthy dog patiently waiting beside a clean bowl of nutritious food"
-            loading="lazy"
-          >
-        </div>
-        <div class="media-split-content">
-          <h3>The Pillars of Balanced Nutrition</h3>
-          <p>
-            Dogs are omnivorous carnivores that require a precise balance of animal proteins, healthy fats, complex carbohydrates, essential vitamins, minerals, and ample hydration:
-          </p>
-          <ul>
-            <li><strong>High-Quality Protein:</strong> Provides amino acids crucial for muscle development, tissue repair, and hormone synthesis.</li>
-            <li><strong>Healthy Fats & Omega Oils:</strong> Omega-3 and Omega-6 fatty acids support cellular membranes, brain cognition, and a lustrous coat.</li>
-            <li><strong>Digestible Carbohydrates & Fiber:</strong> Provide steady cellular energy and support gentle intestinal motility.</li>
-            <li><strong>Vitamins & Minerals:</strong> Balanced calcium, phosphorus, vitamin A, and B-complex vitamins for skeletal density and immunity.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Feeding Guidelines Grid -->
-      <div class="grid-3">
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">⚖️</div>
-          <h3>Consistent Feeding Guidelines</h3>
-          <p>
-            Avoid free-choice open feeding, which often leads to canine obesity. Practice controlled, measured meal times.
-          </p>
-          <ul>
-            <li><strong>Measured Portions:</strong> Use a standard measuring cup or kitchen scale based on package guidelines and vet recommendations.</li>
-            <li><strong>Predictable Routine:</strong> Feed adult dogs twice daily at set morning and evening hours to encourage regular digestion.</li>
-            <li><strong>Gradual Diet Transitions:</strong> When switching foods, transition over 7 to 10 days by blending 25%, 50%, and 75% new food to prevent stomach upset.</li>
-          </ul>
-        </article>
-
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">💧</div>
-          <h3>Continuous Fresh Water Access</h3>
-          <p>
-            Water constitutes over 60% of an adult dog's body weight and is vital for cellular metabolism, renal filtration, and thermoregulation.
-          </p>
-          <ul>
-            <li><strong>Unrestricted 24/7 Access:</strong> Dogs must always have free, continuous access to clean drinking water. Never restrict water intake unless explicitly instructed by a veterinarian before surgery.</li>
-            <li><strong>Hydration & Diet Variance:</strong> Average baseline fluid turnover is approximately 50–60 ml per kg of body weight daily in temperate conditions, but actual water drunk from a bowl varies greatly: dogs on wet or fresh diets (>70% moisture) drink far less than dogs on dry kibble (~10% moisture).</li>
-            <li><strong>Daily Sanitation:</strong> Wash water bowls daily with hot water and pet-safe soap to eliminate bacterial slime and biofilm buildup.</li>
-          </ul>
-        </article>
-
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">⏳</div>
-          <h3>Age-Appropriate Feeding</h3>
-          <p>
-            Canine nutritional requirements shift substantially across biological life stages:
-          </p>
-          <ul>
-            <li><strong>Puppies (0–12 Months):</strong> Higher caloric density, protein, and DHA for skeletal growth and brain maturation; feed 3–4 meals daily.</li>
-            <li><strong>Adult Dogs (1–7 Years):</strong> Balanced maintenance formula calibrated to daily exercise levels to sustain lean muscle mass.</li>
-            <li><strong>Senior Dogs (7+ Years):</strong> Controlled calories to prevent weight gain, elevated fiber for digestion, and joint-supporting compounds.</li>
-          </ul>
-        </article>
-      </div>
-
-      <!-- Foods Dogs Should Avoid -->
-      <div style="margin-top: 48px;">
-        <div class="section-header-wrap" style="margin-bottom: 24px;">
-          <div class="eyebrow" style="background: var(--alert-red-bg); color: var(--alert-red-text);">CRITICAL KNOWLEDGE</div>
-          <h3>Foods Dogs Must Strictly Avoid</h3>
-          <p>
-            Certain foods that are delicious and safe for humans contain chemical compounds that are toxic or life-threatening to dogs. Keep these well out of reach.
-          </p>
-        </div>
-
-        <div class="food-status-grid">
-          <!-- Toxic Foods -->
-          <div class="food-status-column toxic">
-            <div class="food-column-header">
-              <span style="font-size: 1.5rem;" aria-hidden="true">🚫</span>
-              <h3>Toxic & Dangerous Foods</h3>
-            </div>
-            <div class="food-item-list">
-              <div class="food-item-entry">
-                <span class="food-item-title">🍫 Chocolate & Cocoa</span>
-                <span class="food-item-desc">Contains theobromine and caffeine; can cause severe vomiting, rapid heart rate, seizures, and cardiac distress.</span>
-              </div>
-              <div class="food-item-entry">
-                <span class="food-item-title">🍇 Grapes & Raisins</span>
-                <span class="food-item-desc">Even tiny amounts can trigger sudden acute kidney failure in dogs. Keep all raisins, trail mixes, and grapes away.</span>
-              </div>
-              <div class="food-item-entry">
-                <span class="food-item-title">🧅 Onions, Garlic & Chives</span>
-                <span class="food-item-desc">Contain thiosulfates that damage canine red blood cells, resulting in severe hemolytic anemia and weakness.</span>
-              </div>
-              <div class="food-item-entry">
-                <span class="food-item-title">🍬 Xylitol (Birch Sugar)</span>
-                <span class="food-item-desc">Found in sugar-free gum, candy, and some peanut butters; causes rapid, life-threatening hypoglycemia and acute liver failure.</span>
-              </div>
-              <div class="food-item-entry">
-                <span class="food-item-title">🦴 Cooked Bones</span>
-                <span class="food-item-desc">Brittle cooked bones easily splinter into sharp shards that can puncture the esophagus, stomach, or intestinal walls.</span>
-              </div>
-              <div class="food-item-entry">
-                <span class="food-item-title">☕ Caffeine & Alcohol</span>
-                <span class="food-item-desc">Induces dangerous central nervous system depression, hypothermia, metabolic acidosis, and cardiac arrest.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Safe Treats in Moderation -->
-          <div class="food-status-column safe">
-            <div class="food-column-header">
-              <span style="font-size: 1.5rem;" aria-hidden="true">✅</span>
-              <h3>Dog-Safe Treats (In Moderation)</h3>
-            </div>
-            <div class="food-item-list">
-              <div class="food-item-entry">
-                <span class="food-item-title">🥕 Crunchy Carrots</span>
-                <span class="food-item-desc">Low in calories, high in beta-carotene and dietary fiber; gentle scraping helps clean teeth during chewing.</span>
-              </div>
-              <div class="food-item-entry">
-                <span class="food-item-title">🍎 Crisp Apples (Without Core or Seeds)</span>
-                <span class="food-item-desc">Rich in vitamins A and C. Always remove the stem, core, and seeds as seeds contain traces of cyanide.</span>
-              </div>
-              <div class="food-item-entry">
-                <span class="food-item-title">🎃 Plain Cooked Pumpkin</span>
-                <span class="food-item-desc">Pure canned pumpkin (no spices or sugar) is wonderful for soothing mild digestive upsets and regulating bowel motility.</span>
-              </div>
-              <div class="food-item-entry">
-                <span class="food-item-title">🫐 Fresh Blueberries</span>
-                <span class="food-item-desc">Packed with natural antioxidants, fiber, and phytochemicals; excellent low-calorie training reward.</span>
-              </div>
-              <div class="food-item-entry">
-                <span class="food-item-title">🥒 Cool Cucumbers</span>
-                <span class="food-item-desc">Hydrating and virtually calorie-free treat, especially refreshing for overweight dogs during warm summer months.</span>
-              </div>
-              <div class="food-item-entry">
-                <span class="food-item-title">🥜 100% Pure Peanut Butter (Xylitol-Free)</span>
-                <span class="food-item-desc">Rich in protein and healthy fats; always verify the ingredients list has zero xylitol or artificial sweeteners.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION C: Grooming and Hygiene -->
-  <section id="grooming" class="care-section alt-bg" aria-labelledby="heading-grooming">
-    <div class="section-wrap">
-      <div class="section-header-wrap">
-        <div class="eyebrow">COAT, SKIN & HYGIENE</div>
-        <h2 id="heading-grooming">Grooming & Hygiene Rituals</h2>
-        <p>
-          Regular grooming is far more than aesthetic upkeep — it is an essential health practice. Hands-on grooming allows you to detect skin irritations, lumps, parasites, and infections early.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <!-- Bathing -->
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🛁</div>
-          <h3>Individualized Bathing Routines</h3>
-          <p>
-            Bathing frequency depends heavily on coat type, skin health, and lifestyle. Over-bathing strips the coat of natural protective lipid barriers.
-          </p>
-          <ul>
-            <li><strong>Frequency Guidelines:</strong> Most indoor dogs with healthy skin only require bathing every 2 to 3 months or when visibly dirty. Active outdoor dogs or non-shedding breeds with hair coats benefit from bathing every 4 to 8 weeks.</li>
-            <li><strong>Medical Needs:</strong> Dogs with allergic dermatitis, seborrhea, or fungal infections require specific, veterinary-directed medicated bathing protocols.</li>
-            <li><strong>Dog-Specific pH Shampoo:</strong> Canine epidermis has a near-neutral pH (~7.0–7.4), whereas human skin is acidic (~5.5). Always use dog-formulated shampoo to avoid severe pruritus and barrier disruption.</li>
-            <li><strong>Comfort & Ear Care:</strong> Use lukewarm water (test on inner wrist) and place cotton balls gently in the ears to prevent moisture that predisposes to yeast otitis.</li>
-          </ul>
-        </article>
-
-        <!-- Brushing & Coat Care -->
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🪮</div>
-          <h3>Brushing & Coat Care</h3>
-          <p>
-            Regular brushing removes loose undercoat, stimulates cutaneous circulation, distributes sebum, and prevents painful matting.
-          </p>
-          <ul>
-            <li><strong>Short-Haired Breeds:</strong> Brush weekly with a soft bristle brush or rubber curry mitt to remove dead hair and promote glossiness.</li>
-            <li><strong>Double-Coated Breeds:</strong> Use an undercoat rake and slicker brush 2–3 times weekly, increasing during seasonal spring/fall shedding.</li>
-            <li><strong>Long/Curly-Haired Breeds:</strong> Require daily combing and slicker brushing down to the skin to prevent mats that restrict blood flow.</li>
-            <li><strong>Hands-On Inspection:</strong> Use grooming sessions to examine skin for erythema, dandruff, hot spots, ectoparasites, or new masses.</li>
-          </ul>
-        </article>
-
-        <!-- Nail Trimming -->
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">✂️</div>
-          <h3>Safe Nail Trimming</h3>
-          <p>
-            Overgrown nails alter paw biomechanics, cause compensatory skeletal strain, and can curl painfully into the digital pads.
-          </p>
-          <ul>
-            <li><strong>Schedule Based on Wear:</strong> Dogs walking daily on concrete may naturally wear nails down, while indoor dogs or grass walkers typically need trims every 3 to 4 weeks. Use the 'floor click' sound as an indicator.</li>
-            <li><strong>Anatomy & The Quick:</strong> The quick contains blood vessels and nerves. In light nails, it appears as a pink inner core; in dark nails, remove small progressive slivers and stop when a central grayish/black circle appears.</li>
-            <li><strong>Safety Prep:</strong> Keep styptic powder (silver nitrate/ferric subsulfate) or cornstarch on hand to quickly stem bleeding if the quick is nicked.</li>
-            <li><strong>Positive Counter-Conditioning:</strong> Introduce clippers or motorized rotary grinders gradually with high-value treats to foster cooperation.</li>
-          </ul>
-        </article>
-
-        <!-- Ear Cleaning -->
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">👂</div>
-          <h3>Gentle Ear Cleaning</h3>
-          <p>
-            Dogs with floppy ears (like Spaniels and Retrievers) are particularly susceptible to moisture and bacterial or yeast infections.
-          </p>
-          <ul>
-            <li><strong>Weekly Visual Check:</strong> Healthy ears are pale pink, odorless, and free of excessive brown wax or discharge.</li>
-            <li><strong>Safe Cleaner:</strong> Use a veterinarian-approved ear cleaning solution; squeeze a few drops into the ear canal.</li>
-            <li><strong>Ear Base Massage:</strong> Gently massage the base of the ear for 20 seconds to dissolve wax, then let your dog shake its head.</li>
-            <li><strong>No Cotton Swabs (Q-tips):</strong> Never insert cotton swabs deep into the canal, which can rupture the eardrum; wipe only outer visible areas.</li>
-          </ul>
-        </article>
-
-        <!-- Dental Hygiene -->
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🦷</div>
-          <h3>Daily Dental Hygiene</h3>
-          <p>
-            Periodontal disease affects over 80% of dogs over 3 years old and can seed harmful bacteria into the kidneys, liver, and heart.
-          </p>
-          <ul>
-            <li><strong>Enzymatic Canine Toothpaste:</strong> Never use human toothpaste (fluoride and foaming agents are toxic). Use dog-safe poultry or malt paste.</li>
-            <li><strong>Targeted Brushing:</strong> Aim to brush teeth 3 to 7 times weekly with a soft finger brush or double-headed dog toothbrush.</li>
-            <li><strong>Veterinary Dental Chews:</strong> Approved dental chews and dental water additives complement brushing to reduce plaque and calculus.</li>
-            <li><strong>Warning Indicators:</strong> Foul breath, bleeding gums, loose teeth, or pawing at the mouth require professional veterinary dental evaluation.</li>
-          </ul>
-        </article>
-
-        <!-- Paw & Pad Care -->
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🐾</div>
-          <h3>Paw & Pad Protection</h3>
-          <p>
-            Paws endure harsh walking surfaces, hot asphalt in summer, and ice or de-icing salts in winter.
-          </p>
-          <ul>
-            <li><strong>Post-Walk Wipe Downs:</strong> Wipe paws after walks to remove road salts, toxic chemicals, and outdoor allergens.</li>
-            <li><strong>Pad Moisturizers:</strong> Apply pet-safe paw balms if pads become cracked, rough, or peeling.</li>
-            <li><strong>Interdigital Checks:</strong> Check between toes for foxtails, burrs, pebbles, ticks, or reddened skin.</li>
-            <li><strong>Surface Testing:</strong> Test hot pavement with the back of your hand for 7 seconds — if too hot for you, it will burn your dog's pads.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION D: Health and Wellness -->
-  <section id="health" class="care-section" aria-labelledby="heading-health">
-    <div class="section-wrap">
-      <div class="section-header-wrap">
-        <div class="eyebrow">PREVENTATIVE MEDICINE & CARE</div>
-        <h2 id="heading-health">Health, Wellness & Preventative Care</h2>
-        <p>
-          Proactive preventative healthcare is the most effective way to protect your dog against preventable diseases and ensure a long, energetic life by your side.
-        </p>
-      </div>
-
-      <!-- Veterinary Disclaimer Callout -->
-      <aside class="vet-disclaimer-box" role="note" aria-label="Veterinary Medical Disclaimer">
-        <div class="vet-disclaimer-icon" aria-hidden="true">🩺</div>
-        <div class="vet-disclaimer-text">
-          <h4>Veterinary Guidance & Health Disclaimer</h4>
-          <p>
-            The educational information provided on PetSathi is designed to support responsible canine companionship and awareness. <strong>PetSathi does not provide medical diagnoses, prescriptions, drug dosages, or treatments.</strong> Always consult a qualified, licensed veterinarian for specific medical examinations, vaccinations, diagnostic assessments, and personalized treatment plans for your pet.
-          </p>
-        </div>
-      </aside>
-
-      <!-- 4 Core Health Pillars -->
-      <div class="grid-2" style="margin-bottom: 32px;">
-        <!-- Veterinary Exams -->
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🏥</div>
-          <h3>Regular Veterinary Wellness Exams</h3>
-          <p>
-            Proactive physical examinations identify silent subclinical disease processes long before overt symptoms manifest:
-          </p>
-          <ul>
-            <li><strong>Annual Wellness Check:</strong> Young and healthy adult dogs should receive a comprehensive physical examination at least once per year.</li>
-            <li><strong>Senior Care Schedule (AAHA Guidelines):</strong> The American Animal Hospital Association recommends examinations every 6 months for senior dogs (typically age 7 and older, or 5+ for giant breeds) because physiological changes and degenerative diseases progress rapidly in aging canines.</li>
-            <li><strong>Clinical Scope:</strong> Veterinary teams auscultate cardiac and respiratory fields, palpate abdominal organs, assess body condition score (BCS), inspect dentition, and grade orthopedic joint mobility.</li>
-            <li><strong>Baseline Diagnostics:</strong> Periodic complete blood counts (CBC), chemistry panels, urinalysis, and fecal screenings establish reliable individual baseline markers.</li>
-          </ul>
-        </article>
-
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">💉</div>
-          <h3>Vaccination Awareness</h3>
-          <p>
-            Vaccines trigger protective antibodies against highly contagious and potentially fatal viral and bacterial diseases:
-          </p>
-          <ul>
-            <li><strong>Core Vaccines (Essential):</strong> Rabies (required by law in most jurisdictions) and DHPP / DAPP (protecting against Distemper, Infectious Hepatitis, Parvovirus, and Parainfluenza).</li>
-            <li><strong>Non-Core Vaccines (Lifestyle-Dependent):</strong> Bordetella (kennel cough for social dogs), Leptospirosis (wildlife & water exposure), and Lyme disease (tick endemic zones).</li>
-            <li><strong>Puppy Booster Series:</strong> Puppies receive a sequence of maternal antibody-clearing boosters starting at 6–8 weeks through 16 weeks of age.</li>
-            <li><strong>Adult Boosters:</strong> Boosters are administered annually or every 3 years according to veterinary protocol and antibody titer testing.</li>
-          </ul>
-        </article>
-
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🪱</div>
-          <h3>Internal Parasite Screening & Deworming</h3>
-          <p>
-            Intestinal worms steal essential nutrients, cause gastrointestinal hemorrhaging, and can transmit to human family members (zoonosis):
-          </p>
-          <ul>
-            <li><strong>Common Endoparasites:</strong> Roundworms, hookworms, whipworms, and tapeworms can inhabit the digestive tract.</li>
-            <li><strong>Microscopic Fecal Screenings:</strong> Bring a fresh stool sample to your veterinarian at least once or twice yearly for parasite egg floatation.</li>
-            <li><strong>Preventative Protocol:</strong> Many monthly heartworm medications also contain broad-spectrum dewormers to protect against intestinal parasites.</li>
-            <li><strong>Heartworm Prevention:</strong> Transmitted by mosquitoes, heartworms live in pulmonary vessels and heart ventricles; year-round preventative medication is vital.</li>
-          </ul>
-        </article>
-
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🛡️</div>
-          <h3>Flea & Tick Prevention</h3>
-          <p>
-            Ectoparasites cause acute allergic dermatitis, transmit systemic diseases, and can quickly infest your living environment:
-          </p>
-          <ul>
-            <li><strong>Year-Round Defense:</strong> Maintain vet-prescribed monthly oral chews, spot-on topical treatments, or preventative collars year-round.</li>
-            <li><strong>Lyme & Tick-Borne Illness:</strong> Ticks transmit Lyme disease, Ehrlichiosis, and Anaplasmosis. Prompt tick removal within 24 hours significantly reduces transmission.</li>
-            <li><strong>Post-Walk Tick Inspections:</strong> After outdoor walks, inspect between toes, inside ears, under the tail, around the groin, and under the collar.</li>
-            <li><strong>Safe Removal:</strong> Use fine-tipped tweezers or a specialized tick-remover tool; grasp close to the skin and pull straight upward without twisting.</li>
-          </ul>
-        </article>
-      </div>
-
-      <!-- Emergency vs Urgent Clinical Signs Box -->
-      <div style="background: white; border: 1px solid var(--alert-red-border); border-radius: 20px; padding: 32px; box-shadow: var(--shadow-sm);">
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
-          <span style="font-size: 2rem;" aria-hidden="true">🚨</span>
-          <div>
-            <h3 style="margin: 0; color: var(--alert-red-text); font-size: 1.35rem;">
-              Critical Emergencies vs. Prompt Veterinary Symptoms
-            </h3>
-            <p style="margin: 4px 0 0; font-size: 0.9rem; color: #5a6b61;">
-              Recognizing the clinical difference between immediate life threats and non-immediate symptoms saves lives.
-            </p>
-          </div>
-        </div>
-
-        <div class="grid-2" style="margin-top: 20px; gap: 20px;">
-          <!-- Critical Emergency (Immediate Hospitalization) -->
-          <div style="background: var(--alert-red-bg); padding: 22px; border-radius: 14px; border: 2px solid #ffa39e;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-              <span style="font-size: 1.3rem;" aria-hidden="true">⛔</span>
-              <strong style="color: var(--alert-red-text); font-size: 1.05rem;">IMMEDIATE EMERGENCY (Go to ER Vet Now)</strong>
-            </div>
-            <p style="font-size: 0.87rem; color: #5c1118; margin: 0 0 10px; line-height: 1.5;">
-              These symptoms indicate acute decompensation or life-threatening organ failure. Transport to the nearest 24/7 veterinary emergency hospital immediately:
-            </p>
-            <ul style="margin: 0; padding-left: 18px; font-size: 0.87rem; color: #431015; line-height: 1.6;">
-              <li><strong>Suspected Gastric Dilatation-Volvulus (Bloat):</strong> Non-productive retching, pacing, severe restlessness, and an acutely distended, tight abdomen.</li>
-              <li><strong>Acute Respiratory Distress:</strong> Cyanotic (blue/purple) or pale white mucous membranes/gums, gasping, or open-mouth struggling to breathe.</li>
-              <li><strong>Severe Neurological Events:</strong> Sudden collapse, unresponsiveness, active seizures lasting >3 minutes, or multiple cluster seizures.</li>
-              <li><strong>Complete Urinary Blockage:</strong> Straining painfully with zero urine output (a critical emergency, particularly in male dogs).</li>
-              <li><strong>Acute Toxic Ingestion:</strong> Known ingestion of antifreeze, rodenticides, xylitol, human medications, or concentrated dark chocolate.</li>
-              <li><strong>Major Trauma:</strong> Hit-by-car accidents, penetrating bite wounds, or arterial hemorrhage.</li>
-            </ul>
-          </div>
-
-          <!-- Prompt Attention (Within 24 Hours) -->
-          <div style="background: var(--alert-amber-bg); padding: 22px; border-radius: 14px; border: 2px solid var(--alert-amber-border);">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
-              <span style="font-size: 1.3rem;" aria-hidden="true">⚠️</span>
-              <strong style="color: var(--alert-amber-text); font-size: 1.05rem;">PROMPT ATTENTION (Contact Vet Within 24h)</strong>
-            </div>
-            <p style="font-size: 0.87rem; color: #613b00; margin: 0 0 10px; line-height: 1.5;">
-              These symptoms are not immediately life-threatening if the dog remains alert and responsive, but require prompt veterinary diagnosis:
-            </p>
-            <ul style="margin: 0; padding-left: 18px; font-size: 0.87rem; color: #523200; line-height: 1.6;">
-              <li><strong>Prolonged Digestive Upset:</strong> Vomiting or loose diarrhea persisting past 24 hours while remaining hydrated and alert.</li>
-              <li><strong>Persistent Musculoskeletal Lameness:</strong> Limping, stiffness, or reluctance to rise lasting more than a day without trauma.</li>
-              <li><strong>Dermatological & Ear Signs:</strong> Persistent head shaking, foul ear odor, dark waxy discharge, or intense localized skin scratching.</li>
-              <li><strong>Metabolic Shifts:</strong> Progressive decrease in appetite (anorexia >24 hours) or noticeable increases in daily water consumption and urination.</li>
-              <li><strong>Ophthalmic Signs:</strong> Squinting, cloudiness, or persistent ocular discharge.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION E: Puppy Care -->
-  <section id="puppy" class="care-section alt-bg" aria-labelledby="heading-puppy">
-    <div class="section-wrap">
-      <div class="section-header-wrap">
-        <div class="eyebrow">EARLY LIFE FOUNDATIONS</div>
-        <h2 id="heading-puppy">Puppy Care & Development</h2>
-        <p>
-          The first months of a puppy's life lay the emotional, behavioural, and physical foundation for adulthood. Gentle patience, structured routines, and positive reinforcement guide them towards becoming confident companions.
-        </p>
-      </div>
-
-      <!-- Feature Split Banner for Puppy -->
-      <div class="media-split-box">
-        <div class="media-split-image">
-          <span class="media-split-badge">Puppy Milestones</span>
-          <img
-            src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?auto=format&fit=crop&w=800&q=85"
-            alt="Adorable young puppy exploring a safe garden environment"
-            loading="lazy"
-          >
-        </div>
-        <div class="media-split-content">
-          <h3>Preparing a Safe Sanctuary</h3>
-          <p>
-            Puppies are naturally inquisitive explorers who explore the world with their mouths. Preparing a dedicated safe environment protects both your puppy and your home:
-          </p>
-          <ul>
-            <li><strong>Conceal Electrical Cords:</strong> Use heavy-duty cord protectors or tuck wires behind heavy furniture.</li>
-            <li><strong>Remove Toxic Household Plants:</strong> Check that peace lilies, sago palms, philodendrons, and aloe are completely inaccessible.</li>
-            <li><strong>Secure Garbage & Chemicals:</strong> Install child-proof safety latches on floor-level cabinets storing cleaners or trash.</li>
-            <li><strong>Designated Sleep Zone:</strong> Position a comfortable, size-appropriate crate with washable fleece bedding in a quiet corner.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 4 Pillars of Puppy Upbringing -->
-      <div class="grid-4">
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🍼</div>
-          <h3>Puppy Nutrition Basics</h3>
-          <p>
-            Young pups require double the energy per kilogram compared to adult dogs to fuel rapid cellular and skeletal development.
-          </p>
-          <ul>
-            <li>Feed specialized puppy formula high in protein and DHA for healthy cognitive and retinal growth.</li>
-            <li>Divide daily rations into 3 to 4 smaller meals to prevent hypoglycemia in small breeds.</li>
-            <li>Keep meals on a predictable schedule to make house-training potty timing easy to anticipate.</li>
-          </ul>
-        </article>
-
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🎓</div>
-          <h3>Early Positive Training</h3>
-          <p>
-            Puppy brains are sponges. Early positive reinforcement builds trust, clarity, and enthusiastic cooperation.
-          </p>
-          <ul>
-            <li>Reward desired behaviors immediately with high-value treats, praise, and gentle head scratches.</li>
-            <li>Never use physical corrections, yelling, or punishment, which foster anxiety and fear-based aggression.</li>
-            <li>Keep training lessons brief, upbeat, and fun (3 to 5 minutes multiple times per day).</li>
-          </ul>
-        </article>
-
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🌍</div>
-          <h3>The Critical Socialization Window</h3>
-          <p>
-            The primary sensitive socialization period occurs between <strong>3 and 12–14 weeks of age</strong> and permanently shapes confidence and behavioral health.
-          </p>
-          <ul>
-            <li><strong>AVSAB Standard of Care:</strong> The American Veterinary Society of Animal Behavior states that socialization should begin before complete vaccination (as early as 7–8 weeks) in controlled, clean environments, because behavioral issues—not infectious disease—are statistically the leading cause of death in young dogs.</li>
-            <li><strong>Positive Controlled Exposures:</strong> Safely expose puppies to diverse people, surface textures (grass, pavement, carpet), gentle children, and common household noises.</li>
-            <li><strong>Prerequisites for Classes:</strong> Ensure playmates are clinically healthy, up-to-date on initial puppy vaccines (at least one dose 7 days prior), and that classes take place on sanitized, non-public surfaces.</li>
-          </ul>
-        </article>
-
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">💤</div>
-          <h3>Sleep & Playtime Balance</h3>
-          <p>
-            Balancing physical exploration with abundant restorative sleep prevents over-arousal, behavioral frustration, and stress.
-          </p>
-          <ul>
-            <li><strong>16 to 20 Hours of Sleep:</strong> Growing puppies require extensive sleep for memory consolidation, immune development, and growth hormone release.</li>
-            <li><strong>Preventing Over-Tiredness:</strong> Overtired puppies exhibit hyperactive biting and distress. Enforce quiet, scheduled crate naps after 30–60 minutes of active awake time.</li>
-            <li><strong>Age-Appropriate Play:</strong> Keep structured training and gentle interactive play to brief 5–10 minute intervals to protect immature growth plates from joint strain.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION F: Safety Tips -->
-  <section id="safety" class="care-section" aria-labelledby="heading-safety">
-    <div class="section-wrap">
-      <div class="section-header-wrap">
-        <div class="eyebrow">ACCIDENT PREVENTION</div>
-        <h2 id="heading-safety">Canine Safety & Household Protection</h2>
-        <p>
-          Dogs encounter numerous hidden hazards in human domestic spaces and outdoor environments. Proactive prevention prevents emergency veterinary interventions.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🧪</div>
-          <h3>Lock Away Harmful Substances</h3>
-          <p>
-            Common domestic items present severe toxic risks if ingested by curious pets:
-          </p>
-          <ul>
-            <li><strong>Human Medications:</strong> Acetaminophen, ibuprofen, antidepressants, and ADHD prescriptions are leading causes of pet poisoning.</li>
-            <li><strong>Household Cleaners:</strong> Bleach, ammonia, drain unblockers, and disinfectant pods must be locked in high cupboards.</li>
-            <li><strong>Automotive Antifreeze:</strong> Ethylene glycol has a sweet taste but is fatal even in teaspoon amounts; immediately clean any garage puddles.</li>
-            <li><strong>Garden Pest Poisons:</strong> Rodenticides and slug pellets are extremely attractive and deadly to dogs. Avoid their use entirely.</li>
-          </ul>
-        </article>
-
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">💧</div>
-          <h3>Outdoor Water Hazards</h3>
-          <p>
-            Natural and stagnant outdoor water sources harbor invisible biological and chemical dangers:
-          </p>
-          <ul>
-            <li><strong>Stagnant Puddles:</strong> Puddles contaminated with wild animal urine frequently transmit Leptospirosis, which attacks kidneys and liver.</li>
-            <li><strong>Blue-Green Algae:</strong> Never allow dogs to swim in or drink from warm, stagnant ponds with green scum; cyanobacteria toxins cause fatal neurotoxicity.</li>
-            <li><strong>Salt Water Ingestion:</strong> Ingesting large amounts of ocean seawater on beach outings causes severe osmotic dehydration and hypernatremia.</li>
-            <li><strong>Toilet Bowl Water:</strong> Keep toilet lids closed; continuous chemical cleaner disc residue can burn oral mucosa and cause vomiting.</li>
-          </ul>
-        </article>
-
-        <article class="care-card">
-          <div class="card-icon-bubble" aria-hidden="true">🏡</div>
-          <h3>Secure Environment & Microchipping</h3>
-          <p>
-            Physical security and reliable identification ensure lost pets find their way home safely:
-          </p>
-          <ul>
-            <li><strong>Secure Yard Fencing:</strong> Inspect fence perimeter regularly for digging holes, loose boards, or climbable objects near boundaries.</li>
-            <li><strong>Registered Microchip:</strong> Ensure your dog is implanted with an ISO microchip and keep contact phone numbers up to date in the registry.</li>
-            <li><strong>Sturdy Harness & Collar:</strong> Attach a visible ID tag with your active phone number; use a secure harness for walking.</li>
-            <li><strong>Weather Extremes:</strong> Never leave dogs in parked cars during hot weather; temperatures can reach fatal levels in under 10 minutes.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Daily Care Checklist -->
-  <section id="daily-checklist" class="care-section alt-bg" aria-labelledby="heading-checklist">
-    <div class="section-wrap">
-      <div class="checklist-wrap">
-        <div class="checklist-header">
-          <div>
-            <div class="eyebrow" style="margin-bottom: 6px;">DAILY CARE COMPANION</div>
-            <h3 id="heading-checklist" style="margin: 0; font-size: 1.5rem;">Daily Dog Care Checklist</h3>
-          </div>
-          <div style="font-weight: 700; color: var(--dog-accent);" id="checklistCounter">
-            0 of 8 completed (0%)
-          </div>
-        </div>
-
-        <div class="checklist-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-          <div class="checklist-progress-fill" id="checklistProgressFill"></div>
-        </div>
-
-        <div class="checklist-grid" id="checklistContainer">
-          <label class="checklist-item">
-            <input type="checkbox" data-task="water">
-            <div class="checklist-item-content">
-              <span class="checklist-item-title">Refresh Water Bowl</span>
-              <span class="checklist-item-hint">Wipe bowl clean and provide cool, fresh drinking water.</span>
-            </div>
-          </label>
-
-          <label class="checklist-item">
-            <input type="checkbox" data-task="meals">
-            <div class="checklist-item-content">
-              <span class="checklist-item-title">Measured Morning & Evening Meals</span>
-              <span class="checklist-item-hint">Feed age-appropriate portions on a consistent schedule.</span>
-            </div>
-          </label>
-
-          <label class="checklist-item">
-            <input type="checkbox" data-task="walk">
-            <div class="checklist-item-content">
-              <span class="checklist-item-title">Daily Exercise & Outdoor Walk</span>
-              <span class="checklist-item-hint">At least 30–60 minutes of physical walk and mental sniffing.</span>
-            </div>
-          </label>
-
-          <label class="checklist-item">
-            <input type="checkbox" data-task="teeth">
-            <div class="checklist-item-content">
-              <span class="checklist-item-title">Dental Tooth Brushing / Chew</span>
-              <span class="checklist-item-hint">Brush with canine toothpaste or give a veterinary dental chew.</span>
-            </div>
-          </label>
-
-          <label class="checklist-item">
-            <input type="checkbox" data-task="brush">
-            <div class="checklist-item-content">
-              <span class="checklist-item-title">Coat Brushing & Hands-On Check</span>
-              <span class="checklist-item-hint">Remove loose fur and check skin for ticks, fleas, or redness.</span>
-            </div>
-          </label>
-
-          <label class="checklist-item">
-            <input type="checkbox" data-task="mental">
-            <div class="checklist-item-content">
-              <span class="checklist-item-title">Mental Stimulation & Play</span>
-              <span class="checklist-item-hint">10–15 minutes of puzzle toys, training practice, or fetch.</span>
-            </div>
-          </label>
-
-          <label class="checklist-item">
-            <input type="checkbox" data-task="paws">
-            <div class="checklist-item-content">
-              <span class="checklist-item-title">Post-Walk Paw Wipe</span>
-              <span class="checklist-item-hint">Check paw pads for burrs, sharp pebbles, or chemical residue.</span>
-            </div>
-          </label>
-
-          <label class="checklist-item">
-            <input type="checkbox" data-task="affection">
-            <div class="checklist-item-content">
-              <span class="checklist-item-title">Loving Bonding Time</span>
-              <span class="checklist-item-hint">Cuddle, gentle petting, and relaxing companionship before sleep.</span>
-            </div>
-          </label>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Frequently Asked Questions -->
-  <section id="faqs" class="care-section" aria-labelledby="heading-faqs">
-    <div class="section-wrap">
-      <div class="section-header-wrap">
-        <div class="eyebrow">QUICK ANSWERS</div>
-        <h2 id="heading-faqs">Frequently Asked Questions</h2>
-        <p>
-          Common questions dog parents ask regarding everyday wellness, nutrition, grooming, and veterinary care.
-        </p>
-      </div>
-
-      <div class="faq-accordion" id="faqAccordion">
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>How often should I take my dog to the veterinarian?</span>
-            <span class="faq-toggle-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Healthy adult dogs should visit their veterinarian at least once a year for a comprehensive wellness checkup, dental check, and booster vaccinations. Senior dogs (generally age 7 and older) benefit from biannual checkups every six months. Puppies require several visits every 3 to 4 weeks until approximately 16 weeks of age to receive core vaccine boosters and deworming treatments.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>Can I feed my dog homemade food instead of commercial kibble?</span>
-            <span class="faq-toggle-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              While homemade diets can be beneficial, dogs require very precise ratios of amino acids, calcium, phosphorus, zinc, essential fatty acids, and vitamins. Unbalanced home cooking frequently leads to severe nutritional deficiencies or skeletal imbalances. If you choose a home-prepared diet, always collaborate with a board-certified veterinary nutritionist to formulate a complete, balanced recipe tailored to your pet.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>How can I tell if my dog is in pain or feeling sick?</span>
-            <span class="faq-toggle-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Dogs often mask discomfort. Subtler indicators of pain include reluctance to jump or climb stairs, pacing, panting without heat or exercise, trembling, squinting, changes in sleeping posture, decreased appetite, hiding, or growling when touched in sensitive areas. If you observe behavioral changes, contact your veterinarian for an exam.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>How often should I trim my dog's nails?</span>
-            <span class="faq-toggle-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Most dogs need nail trims every 3 to 4 weeks. Dogs that walk regularly on concrete sidewalks may naturally wear down their nails, requiring trims less frequently, whereas indoor dogs or those walking on grass need more frequent care. If you can hear their nails clicking against hard floors, it is time for a gentle trim.
-            </p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>Why is human toothpaste unsafe for dogs?</span>
-            <span class="faq-toggle-icon" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>
-              Human toothpaste contains fluoride, detergents, and frequently xylitol (artificial sweetener). Because dogs cannot spit out paste and will swallow it, these ingredients can cause severe gastrointestinal irritation, fluoride toxicity, or lethal hypoglycemia. Always use veterinary-formulated enzymatic dog toothpaste, which is completely safe to swallow and available in dog-friendly flavors like poultry or malt.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="section-wrap" aria-labelledby="cta-heading">
-    <div class="care-cta-section">
-      <h2 id="cta-heading">Be the Best Dog Parent You Can Be</h2>
-      <p>
-        Responsible pet parenthood is a rewarding journey of companionship, patience, and love. Explore more canine resources, find reliable pet walkers, or learn about different dog breeds on PetSathi.
-      </p>
-      <div class="care-cta-buttons">
-        <a class="button button-light" href="index.html" id="cta-back-dogs">← Back to Dogs Landing Page</a>
-        <a class="button button-outline" style="border-color: white; color: white;" href="breeds.html" id="cta-explore-breeds">Explore Dog Breeds ↗</a>
-        <a class="button button-outline" style="border-color: white; color: white;" href="walking.html" id="cta-walking-guide">Exercise & Walking Guide ↗</a>
-      </div>
-    </div>
-  </section>
-
+  <div class="care-sections section-wrap" id="careSections"></div>
+  <div class="section-wrap">
+    <p class="care-no-results" id="careNoResults" hidden>No topics match your search. Try another word or choose a different category.</p>
+    <aside class="care-note">
+      <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+      Every dog is different. Ask your veterinarian for advice tailored to your dog's age, breed, health, and lifestyle.
+    </aside>
+  </div>
 </main>
 
 <!-- Standard PetSathi Footer -->
@@ -1710,93 +1291,316 @@
 
 <script src="../../../js/main.js"></script>
 <script>
-  // Interactive Daily Checklist Tracker
-  document.addEventListener('DOMContentLoaded', () => {
-    const checkboxes = document.querySelectorAll('#checklistContainer input[type="checkbox"]');
-    const counter = document.getElementById('checklistCounter');
-    const fillBar = document.getElementById('checklistProgressFill');
-
-    function updateProgress() {
-      let checkedCount = 0;
-      checkboxes.forEach(cb => {
-        const item = cb.closest('.checklist-item');
-        if (cb.checked) {
-          checkedCount++;
-          if (item) item.classList.add('checked');
-        } else {
-          if (item) item.classList.remove('checked');
-        }
-      });
-
-      const total = checkboxes.length;
-      const percentage = total > 0 ? Math.round((checkedCount / total) * 100) : 0;
-
-      if (counter) {
-        counter.textContent = `${checkedCount} of ${total} completed (${percentage}%)`;
-      }
-      if (fillBar) {
-        fillBar.style.width = `${percentage}%`;
-        fillBar.parentElement.setAttribute('aria-valuenow', percentage);
-      }
+  const careSections = [
+    {
+      id: "daily-care",
+      title: "Daily Dog Care",
+      description: "Simple everyday habits support your dog's comfort and wellbeing.",
+      image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-clock", "Daily Care Routine", "Keep meals, walks, play, and rest on a steady, age-appropriate schedule.", "Daily Care"],
+        ["fa-soap", "Cleaning & Hygiene", "Wash bowls, tidy bedding, and clean muddy paws with pet-safe products.", "Daily Care"],
+        ["fa-droplet", "Fresh Water", "Provide clean drinking water throughout the day and refresh the bowl regularly.", "Daily Care"],
+        ["fa-bed", "Comfortable Sleeping Space", "Set up a quiet, dry, draft-free place with washable, supportive bedding.", "Daily Care"],
+        ["fa-stethoscope", "Daily Health Observation", "Notice changes in appetite, energy, movement, toileting, skin, or behavior.", "Daily Care"]
+      ]
+    },
+    {
+      id: "bathing",
+      title: "Bathing & Cleaning",
+      description: "Gentle, occasional baths help keep skin and coat clean without stripping natural oils.",
+      image: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-calendar-days", "Bathing Frequency", "Bathe when your dog is dirty or as advised for their coat and skin; needs vary.", "Grooming"],
+        ["fa-pump-soap", "Choose Dog Shampoo", "Use a mild, dog-formulated shampoo; human products may irritate canine skin.", "Grooming"],
+        ["fa-list-check", "Proper Bathing Steps", "Use lukewarm water, protect the eyes and ears, and rinse the coat thoroughly.", "Grooming"],
+        ["fa-wind", "Drying & Cleaning Tips", "Towel-dry well and keep your dog warm; use a dryer only on a low, safe setting.", "Grooming"]
+      ]
+    },
+    {
+      id: "coat-care",
+      title: "Brushing & Coat Care",
+      description: "Regular brushing removes loose fur and helps you spot skin changes early.",
+      image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-paw", "Types of Dog Coats", "Short, double, curly, and long coats each need a suitable brush and routine.", "Grooming"],
+        ["fa-calendar-check", "Brushing Frequency", "Brush more often during shedding or for long coats; follow your dog's needs.", "Grooming"],
+        ["fa-brush", "Remove Loose Fur", "Brush gently in the direction of growth and use a coat-appropriate grooming tool.", "Grooming"],
+        ["fa-scissors", "Prevent Tangles & Mats", "Check friction areas often and ease out small tangles; seek grooming help for tight mats.", "Grooming"]
+      ]
+    },
+    {
+      id: "dental-care",
+      title: "Dental Care",
+      description: "A gentle routine can help protect your dog's teeth and gums.",
+      image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-tooth", "Brush Your Dog's Teeth", "Introduce brushing slowly with a soft pet toothbrush and a calm, positive routine.", "Health"],
+        ["fa-pump-soap", "Use Dog Toothpaste", "Choose toothpaste made for dogs; human toothpaste is not intended to be swallowed.", "Health"],
+        ["fa-bone", "Dental Chews", "Choose appropriately sized dental chews and supervise your dog while chewing.", "Health"],
+        ["fa-face-smile", "Prevent Bad Breath", "Daily oral care helps; persistent odor, bleeding, or difficulty eating needs a vet check.", "Health"]
+      ]
+    },
+    {
+      id: "paw-care",
+      title: "Nail & Paw Care",
+      description: "Keep nails at a comfortable length and check paws after walks and outdoor play.",
+      image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-scissors", "Nail Trimming", "Trim small amounts at a time with pet nail clippers, or ask a groomer or vet for help.", "Grooming"],
+        ["fa-paw", "Paw Cleaning", "Wipe paws after walks and check between toes for dirt, seeds, or irritation.", "Grooming"],
+        ["fa-magnifying-glass", "Check Cuts & Injuries", "Look for swelling, cracks, limping, or lodged objects; contact a vet if concerned.", "Health"],
+        ["fa-sun", "Hot Weather Paw Protection", "Walk during cooler hours and avoid hot pavement that can burn paw pads.", "Safety"]
+      ]
+    },
+    {
+      id: "ear-eye-care",
+      title: "Ear & Eye Care",
+      description: "Gentle checks can help you notice irritation before it becomes uncomfortable.",
+      image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-ear-listen", "Safe Ear Cleaning", "Clean only the visible outer ear with a vet-approved product; never insert cotton swabs.", "Health"],
+        ["fa-triangle-exclamation", "Recognise Ear Infections", "Head shaking, odor, redness, or discharge should be checked by a veterinarian.", "Health"],
+        ["fa-eye", "Eye Cleaning", "Wipe around the eyes gently with a clean, damp cloth; use a fresh area for each eye.", "Daily Care"],
+        ["fa-eye-low-vision", "Identify Irritation", "Squinting, cloudiness, excessive tearing, or rubbing warrants prompt veterinary advice.", "Health"]
+      ]
+    },
+    {
+      id: "seasonal-care",
+      title: "Seasonal Care",
+      description: "Adjust walks, rest, and outdoor time as the weather changes.",
+      image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-sun", "Summer Care", "Offer shade and water, avoid hot midday walks, and never leave a dog in a parked car.", "Safety"],
+        ["fa-snowflake", "Winter Care", "Provide a warm, dry resting place and shorten outdoor time if your dog is uncomfortable.", "Safety"],
+        ["fa-cloud-rain", "Monsoon Care", "Dry your dog after wet walks, check paws for debris, and prevent long stays in damp bedding.", "Safety"]
+      ]
+    },
+    {
+      id: "puppy-care",
+      title: "Puppy Care",
+      description: "Build confidence with a safe home, predictable routines, and kind, reward-based learning.",
+      image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-basket-shopping", "New Puppy Essentials", "Prepare food and water bowls, a bed, a leash, safe toys, and a vet appointment.", "Puppy Care"],
+        ["fa-house", "First Day at Home", "Give your puppy a quiet space, familiar routines, and time to explore at their own pace.", "Puppy Care"],
+        ["fa-graduation-cap", "Toilet Training Basics", "Offer frequent outdoor breaks and praise success; clean accidents without punishment.", "Puppy Care"],
+        ["fa-people-group", "Positive Socialisation", "Introduce people, sounds, and places gradually, using safe, positive experiences.", "Puppy Care"],
+        ["fa-shield-halved", "Puppy-Proof Your Home", "Secure cords, medicines, cleaning supplies, small objects, and unsafe foods.", "Puppy Care"]
+      ]
+    },
+    {
+      id: "senior-care",
+      title: "Senior Dog Care",
+      description: "Older dogs may benefit from comfort-focused routines and closer health monitoring.",
+      image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-heart", "Care for Older Dogs", "Watch for changes in appetite, weight, sleep, hearing, vision, or daily habits.", "Senior Dog Care"],
+        ["fa-bed", "Comfortable Sleeping Arrangements", "Choose supportive bedding in an easy-to-reach, warm, quiet spot.", "Senior Dog Care"],
+        ["fa-person-walking", "Mobility Support", "Use non-slip surfaces and gentle, regular activity suited to your dog's ability.", "Senior Dog Care"],
+        ["fa-calendar-check", "Regular Vet Checkups", "Ask your veterinarian how often checkups and screening are right for your dog.", "Senior Dog Care"]
+      ]
+    },
+    {
+      id: "safety",
+      title: "Dog Safety",
+      description: "Prevent common hazards at home and outdoors, and know when to get urgent help.",
+      image: "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-house-lock", "Home Safety", "Keep bins, cords, small objects, medications, and chemicals out of reach.", "Safety"],
+        ["fa-person-walking", "Outdoor Safety", "Use a secure lead where needed, keep ID current, and supervise outdoor time.", "Safety"],
+        ["fa-bottle-medical", "Toxic Household Products", "Store cleaners, medicines, pesticides, and automotive products securely.", "Safety"],
+        ["fa-triangle-exclamation", "Emergency Warning Signs", "Difficulty breathing, collapse, severe bleeding, or suspected poisoning needs urgent veterinary care.", "Safety"],
+        ["fa-kit-medical", "First-Aid Basics", "Keep your vet and emergency clinic numbers handy; call for guidance before treatment.", "Safety"]
+      ]
+    },
+    {
+      id: "vet-care",
+      title: "Vet Visits & Preventive Care",
+      description: "Your veterinarian can tailor preventive care to your dog's age, health, and local risks.",
+      image: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80",
+      cards: [
+        ["fa-user-doctor", "Veterinary Checkups", "Schedule routine visits and share any changes in your dog's health or behavior.", "Health"],
+        ["fa-syringe", "Vaccination Schedule", "Follow a vaccine plan recommended by your veterinarian for your dog's needs.", "Health"],
+        ["fa-prescription-bottle-medical", "Deworming", "Ask your vet about an appropriate parasite prevention and testing schedule.", "Health"],
+        ["fa-bug", "Tick & Flea Prevention", "Use veterinarian-recommended prevention and check your dog's coat after outdoor time.", "Health"],
+        ["fa-stethoscope", "When to See a Vet", "Seek advice for sudden behavior changes, ongoing symptoms, pain, or appetite loss.", "Health"]
+      ]
     }
+  ];
 
-    checkboxes.forEach(cb => {
-      cb.addEventListener('change', updateProgress);
-    });
+  const sectionsContainer = document.getElementById("careSections");
+  const searchInput = document.getElementById("careSearch");
+  const resultCount = document.getElementById("careResults");
+  const noResults = document.getElementById("careNoResults");
+  const filterButtons = [...document.querySelectorAll(".care-filter")];
+  let activeCategory = "all";
 
-    // FAQ Accordion
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    faqQuestions.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.faq-item');
-        const isOpen = item.classList.contains('open');
+  function createCareCard(card, imageUrl) {
+    const [icon, title, description, category] = card;
+    const article = document.createElement("article");
+    article.className = "care-card";
+    article.dataset.category = category;
+    article.dataset.search = `${title} ${description}`.toLocaleLowerCase();
 
-        // Close other FAQ items
-        document.querySelectorAll('.faq-item').forEach(other => {
-          if (other !== item) {
-            other.classList.remove('open');
-            const otherBtn = other.querySelector('.faq-question');
-            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-          }
-        });
+    const media = document.createElement("div");
+    media.className = "care-card-media";
+    const image = document.createElement("img");
+    image.src = imageUrl;
+    image.alt = `${title} for dogs`;
+    image.loading = "lazy";
+    image.decoding = "async";
 
-        // Toggle current item
-        if (isOpen) {
-          item.classList.remove('open');
-          btn.setAttribute('aria-expanded', 'false');
-        } else {
-          item.classList.add('open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
+    const badge = document.createElement("span");
+    badge.className = "care-card-badge";
+    const iconElement = document.createElement("i");
+    iconElement.className = `fa-solid ${icon}`;
+    iconElement.setAttribute("aria-hidden", "true");
+    badge.append(iconElement, document.createTextNode(category));
 
-    // Quick Jump Scrollspy
-    const navLinks = document.querySelectorAll('.quick-nav-link');
-    const sections = document.querySelectorAll('section[id]');
+    const content = document.createElement("div");
+    content.className = "care-card-body";
+    const heading = document.createElement("h3");
+    heading.textContent = title;
+    const copy = document.createElement("p");
+    copy.textContent = description;
+    const link = document.createElement("a");
+    link.className = "care-card-link";
+    link.href = "#careSearch";
+    link.dataset.careCategory = category;
+    link.append(document.createTextNode(`Explore ${category.toLowerCase()}`));
+    const linkIcon = document.createElement("i");
+    linkIcon.className = "fa-solid fa-arrow-right";
+    linkIcon.setAttribute("aria-hidden", "true");
+    link.append(linkIcon);
 
-    function onScroll() {
-      let currentId = '';
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 140 && rect.bottom >= 140) {
-          currentId = section.getAttribute('id');
-        }
-      });
-      if (currentId) {
-        navLinks.forEach(link => {
-          const isActive = link.getAttribute('href') === `#${currentId}`;
-          link.classList.toggle('active', isActive);
-          if (isActive) {
-            link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-          }
-        });
-      }
-    }
+    media.append(image, badge);
+    content.append(heading, copy, link);
+    article.append(media, content);
+    return article;
+  }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
+  careSections.forEach((section) => {
+    const sectionElement = document.createElement("section");
+    sectionElement.className = "care-section";
+    sectionElement.id = section.id;
+    sectionElement.setAttribute("aria-labelledby", `${section.id}-title`);
+
+    const heading = document.createElement("div");
+    heading.className = "care-heading";
+    const waveTop = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    waveTop.classList.add("corner-wave", "wave-tl");
+    waveTop.setAttribute("viewBox", "0 0 220 130");
+    waveTop.setAttribute("fill", "none");
+    waveTop.setAttribute("aria-hidden", "true");
+    waveTop.innerHTML = '<path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity=".7"></path><path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity=".95"></path>';
+    const waveBottom = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    waveBottom.classList.add("corner-wave", "wave-br");
+    waveBottom.setAttribute("viewBox", "0 0 220 130");
+    waveBottom.setAttribute("fill", "none");
+    waveBottom.setAttribute("aria-hidden", "true");
+    waveBottom.innerHTML = '<path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity=".7"></path><path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity=".95"></path>';
+    const makePaw = (className) => {
+      const paw = document.createElement("i");
+      paw.className = `fa-solid fa-paw paw ${className}`;
+      paw.setAttribute("aria-hidden", "true");
+      return paw;
+    };
+    const content = document.createElement("div");
+    content.className = "heading-content";
+    const label = document.createElement("span");
+    label.className = "care-heading-label";
+    const labelIcon = document.createElement("i");
+    labelIcon.className = "fa-solid fa-book-open";
+    labelIcon.setAttribute("aria-hidden", "true");
+    label.append(labelIcon, document.createTextNode(" Dog Care Guide"));
+    const title = document.createElement("h2");
+    title.id = `${section.id}-title`;
+    const words = section.title.split(" ");
+    const titleAccent = document.createElement("span");
+    titleAccent.textContent = words.pop();
+    const burst = (side) => {
+      const ornament = document.createElement("span");
+      ornament.className = `heading-burst ${side}`;
+      ornament.setAttribute("aria-hidden", "true");
+      ornament.innerHTML = "<span></span><span></span><span></span>";
+      return ornament;
+    };
+    title.append(burst("left"), document.createTextNode(`${words.join(" ")} `), titleAccent, burst("right"));
+    const description = document.createElement("p");
+    description.textContent = section.description;
+    content.append(label, title, description);
+    heading.append(
+      waveTop,
+      waveBottom,
+      makePaw("paw-left-1"),
+      makePaw("paw-left-2"),
+      makePaw("paw-right-1"),
+      makePaw("paw-right-2"),
+      content
+    );
+
+    const grid = document.createElement("div");
+    grid.className = "care-card-grid";
+    section.cards.forEach((card) => grid.append(createCareCard(card, section.image)));
+    sectionElement.append(heading, grid);
+    sectionsContainer.append(sectionElement);
   });
+
+  function updateCareResults() {
+    const query = searchInput.value.trim().toLocaleLowerCase();
+    let visibleCount = 0;
+
+    document.querySelectorAll(".care-card").forEach((card) => {
+      const matchesCategory = activeCategory === "all" || card.dataset.category === activeCategory;
+      const matchesSearch = !query || card.dataset.search.includes(query);
+      const isVisible = matchesCategory && matchesSearch;
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+
+    document.querySelectorAll(".care-section").forEach((section) => {
+      section.hidden = !section.querySelector(".care-card:not([hidden])");
+    });
+
+    noResults.hidden = visibleCount > 0;
+    resultCount.textContent = `Showing ${visibleCount} ${visibleCount === 1 ? "topic" : "topics"}`;
+  }
+
+  searchInput.addEventListener("input", updateCareResults);
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeCategory = button.dataset.category;
+      filterButtons.forEach((filter) => {
+        filter.setAttribute("aria-pressed", String(filter === button));
+      });
+      updateCareResults();
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    const cardLink = event.target.closest(".care-card-link");
+    if (cardLink) {
+      const categoryButton = filterButtons.find((button) => button.dataset.category === cardLink.dataset.careCategory);
+      if (categoryButton) {
+        searchInput.value = "";
+        categoryButton.click();
+      }
+    }
+
+    const link = event.target.closest('a[href^="#"]');
+    const target = link && document.getElementById(link.getAttribute("href").slice(1));
+    if (!target || !target.classList.contains("care-section")) return;
+
+    searchInput.value = "";
+    activeCategory = "all";
+    filterButtons.forEach((button) => {
+      button.setAttribute("aria-pressed", String(button.dataset.category === "all"));
+    });
+    updateCareResults();
+  });
+
+  updateCareResults();
 </script>
 </body>
 >>>>>>> main

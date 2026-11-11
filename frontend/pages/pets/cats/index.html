@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore everything you need to know about cats on PetSathi - cat breeds, nutrition, care and health, behaviour, grooming, and indoor enrichment.">
-  <title>Cats Information & Care Guide | PetSathi</title>
+  <meta name="description"
+    content="Explore everything you need to know about cats on PetSathi - cat breeds, nutrition, care and health, behaviour, grooming, and indoor enrichment.">
+  <title>Cats Information &amp; Care Guide | PetSathi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../../../css/global.css">
   <link rel="stylesheet" href="../../../css/home.css">
   <link rel="stylesheet" href="../../../css/inner.css">
   <style>
-    /* Cats Landing Page Specific Enhancements */
+
+    /* Font Awesome 6 Free Webfont definition */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: block;
+      src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2") format("woff2"),
+        url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.ttf") format("truetype");
+    }
+
+    /* Cats Landing Page Specific Styles */
     .cat-badge-strip {
       display: inline-flex;
       align-items: center;
@@ -82,7 +97,29 @@
       display: flex;
       align-items: center;
       gap: 5px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .cat-card-badge i {
+      color: var(--green);
+      font-size: 0.85rem;
+      display: inline-block;
+    }
+
+    body .cat-card-badge i,
+    body .cat-card-badge i::before,
+    body .cat-card-badge [class*="fa-"],
+    body .cat-card-badge [class*="fa-"]::before,
+    body .cat-card [class*="fa-"],
+    body .cat-card [class*="fa-"]::before,
+    body [class*="fa-"],
+    body [class*="fa-"]::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
     }
 
     .cat-card-body {
@@ -122,160 +159,655 @@
       transform: translateX(4px);
     }
 
-    /* Why Cats Make Wonderful Companions Section */
-    .companions-section {
-      background: #fbfbf8;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+    /* Quick Information Section */
+    .cat-quick-info-section {
+      background: #ffffff;
+      border-top: none !important;
+      border-bottom: none;
+      padding-top: 60px;
     }
 
-    .companion-grid {
+    .quick-info-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      width: 100%;
     }
 
-    .companion-grid .companion-card:nth-child(4),
-    .companion-grid .companion-card:nth-child(5) {
-      grid-column: span 1;
-    }
 
-    .companion-card {
-      background: white;
+    .quick-info-card {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      column-gap: 18px;
+      row-gap: 10px;
+      align-items: start;
+      width: 100%;
+      padding: 26px 30px;
+      background: #ffffff;
       border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 28px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      display: flex;
-      flex-direction: column;
+      border-radius: 18px;
+      transition: transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
     }
 
-    .companion-card:hover {
-      transform: translateY(-5px);
+    .quick-info-card:hover {
+      transform: translateY(-3px);
+      border-color: #cbd9ce;
       box-shadow: var(--shadow);
     }
 
-    .companion-icon-wrap {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
+    .quick-info-icon-wrap {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
       background: #eaf2e9;
+      color: var(--green);
       display: grid;
       place-items: center;
-      font-size: 1.6rem;
-      margin-bottom: 18px;
-    }
-
-    .companion-card h3 {
-      font-size: 1.2rem;
-      margin: 0 0 8px;
-      color: var(--ink);
-    }
-
-    .companion-card p {
-      font-size: 0.89rem;
-      line-height: 1.65;
+      font-size: 1.25rem;
       margin: 0;
+    }
+
+    .quick-info-icon-wrap i {
+      color: var(--green);
+      font-size: 1.25rem;
+      display: inline-block;
+    }
+
+    body .quick-info-icon-wrap i,
+    body .quick-info-icon-wrap i::before,
+    body .quick-info-icon-wrap [class*="fa-"],
+    body .quick-info-icon-wrap [class*="fa-"]::before {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
+    }
+
+    .quick-info-card h3 {
+      grid-column: 2;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .quick-info-card p {
+      grid-column: 2;
+      font-size: 0.9rem;
+      line-height: 1.6;
       color: var(--muted);
+      margin: 0;
     }
 
-    /* Quick Guide Links Hub */
+    .quick-info-list {
+      grid-column: 1 / -1;
+      list-style: none;
+      padding: 18px 0 0;
+      margin: 8px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .quick-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .quick-info-list li span {
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .section-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading p {
+      max-width: 760px;
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Dog Topics & Quick Info Heading Card - Exact User Specification */
+    .cat-topics-heading {
+      position: relative;
+      max-width: 1400px;
+      margin: 45px auto 35px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+    }
+
+    /* Curvy decorative wave layers matching reference image */
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wave-tl {
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .wave-br {
+      bottom: 0;
+      right: 0;
+      width: 220px;
+      height: 130px;
+    }
+
+    .heading-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      margin-bottom: 16px;
+      border-radius: 50px;
+      background: #edf6df;
+      border: 1px solid #dcebc9;
+      color: #246b43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(36, 107, 67, 0.06);
+    }
+
+    .heading-label i {
+      font-size: 14px;
+      color: #246b43;
+      line-height: 1;
+    }
+
+    .cat-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cat-topics-heading h2 span {
+      color: #28764a;
+    }
+
+    /* Heading Radiating Rays / Sparkles - Clean Fan Radiating from Text */
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+
+    /* Left burst: 3 rays radiating out to the left from the right edge */
+    .heading-burst.left span {
+      right: 0;
+      transform-origin: right center;
+    }
+
+    .heading-burst.left span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .heading-burst.left span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.left span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    /* Right burst: 3 rays radiating out to the right from the left edge */
+    .heading-burst.right span {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .heading-burst.right span:nth-child(1) {
+      top: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(-35deg);
+    }
+
+    .heading-burst.right span:nth-child(2) {
+      top: 11px;
+      width: 18px;
+      height: 2.8px;
+    }
+
+    .heading-burst.right span:nth-child(3) {
+      bottom: 3px;
+      width: 14px;
+      height: 2.8px;
+      transform: rotate(35deg);
+    }
+
+    .cat-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* Decorative Paws (Font Awesome) - Exactly 2 on left, 2 on right */
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .paw-left-1 {
+      top: 66px;
+      left: 108px;
+      font-size: 58px;
+      transform: rotate(20deg);
+    }
+
+    .paw-left-2 {
+      bottom: 24px;
+      left: 82px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw-right-1 {
+      top: 60px;
+      right: 75px;
+      font-size: 56px;
+      transform: rotate(18deg);
+    }
+
+    .paw-right-2 {
+      bottom: 35px;
+      right: 140px;
+      font-size: 38px;
+      transform: rotate(-15deg);
+    }
+
+    .paw i,
+    .cat-topics-heading i,
+    .cat-topics-heading [class*="fa-"] {
+      font-family: "Font Awesome 6 Free" !important;
+      font-weight: 900 !important;
+      font-style: normal !important;
+      line-height: 1 !important;
+    }
+
+    @media (max-width: 768px) {
+      .cat-topics-heading {
+        margin: 25px 0;
+        padding: 35px 16px 30px;
+        border-radius: 24px;
+      }
+
+      .corner-wave {
+        width: 170px;
+        height: 110px;
+      }
+
+      .cat-topics-heading h2 {
+        font-size: clamp(20px, 5vw, 26px);
+        gap: 8px;
+      }
+
+      .cat-topics-heading p {
+        font-size: 14px;
+      }
+
+      .heading-label {
+        font-size: 11px;
+        padding: 6px 14px;
+        margin-bottom: 12px;
+      }
+
+      .paw-left-1 {
+        left: 35px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-left-2 {
+        left: 18px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .paw-right-1 {
+        right: 25px;
+        top: 25px;
+        font-size: 34px;
+      }
+
+      .paw-right-2 {
+        right: 65px;
+        bottom: 14px;
+        font-size: 24px;
+      }
+
+      .heading-burst {
+        width: 16px;
+        height: 18px;
+      }
+
+      .heading-burst span:nth-child(1),
+      .heading-burst span:nth-child(3) {
+        width: 10px;
+      }
+
+      .heading-burst span:nth-child(2) {
+        width: 13px;
+      }
+    }
+
+    /* Quick Guide Navigation Strip - Match Reference Design */
     .guides-nav-strip {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 32px;
-      margin-top: 40px;
-      box-shadow: 0 10px 30px rgba(35, 57, 43, 0.04);
+      position: relative;
+      background: #ffffff;
+      margin: 40px auto;
+      max-width: 1200px;
+      width: calc(100% - 40px);
+      border: 1px solid #dceade;
+      border-radius: 32px;
+      padding: 42px 36px 38px;
+      box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
+      overflow: hidden;
     }
 
-    .guides-nav-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    /* Decorative Corner Paws */
+    .quick-nav-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      color: #cde4d3;
+      opacity: 0.55;
+    }
+
+    .decor-top-left {
+      top: -8px;
+      left: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 0 0 100% 0;
+    }
+
+    .decor-bottom-right {
+      bottom: -8px;
+      right: -8px;
+      width: 130px;
+      height: 130px;
+      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
+      border-radius: 100% 0 0 0;
+    }
+
+    .decor-paw {
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .decor-paw-1 {
+      top: 14px;
+      left: 28px;
+      font-size: 28px;
+      transform: rotate(-15deg);
+    }
+
+    .decor-paw-2 {
+      top: 38px;
+      left: 12px;
+      font-size: 19px;
+      transform: rotate(20deg);
+    }
+
+    .decor-paw-3 {
+      bottom: 36px;
+      right: 14px;
+      font-size: 19px;
+      transform: rotate(-25deg);
+    }
+
+    .decor-paw-4 {
+      bottom: 14px;
+      right: 28px;
+      font-size: 28px;
+      transform: rotate(15deg);
+    }
+
+    /* Centered Header & Pill Badge */
+    .quick-nav-header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .quick-nav-eyebrow-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 16px;
-      margin-top: 20px;
+      margin-bottom: 14px;
+    }
+
+    .quick-nav-line {
+      height: 1px;
+      width: 110px;
+      background: #d6ead9;
+    }
+
+    .quick-nav-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #f4faf5;
+      border: 1px solid #b7deb8;
+      border-radius: 9999px;
+      color: #1e6f43;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 1px 4px rgba(35, 100, 55, 0.04);
+    }
+
+    .quick-nav-badge i {
+      font-size: 0.95rem;
+      line-height: 1;
+      color: #1e6f43;
+      flex-shrink: 0;
+    }
+
+    .quick-nav-title {
+      font-family: 'Manrope', sans-serif !important;
+      font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+      font-weight: 800;
+      color: #1a251e;
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .quick-nav-title span {
+      color: #1e6f43;
+      font-weight: 800;
+    }
+
+    /* Navigation Pills Grid */
+    .guides-nav-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 0;
     }
 
     .guide-nav-item {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 16px;
-      background: var(--soft);
-      border: 1px solid transparent;
-      border-radius: 14px;
-      transition: all 0.2s ease;
+      gap: 12px;
+      padding: 9px 18px 9px 9px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
     .guide-nav-item:hover {
-      background: white;
-      border-color: var(--green);
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(40, 104, 73, 0.08);
+      background: #e4f4e8;
+      border-color: #237847;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(35, 100, 55, 0.12);
     }
 
-    .guide-nav-item span {
-      font-size: 1.8rem;
+    .guide-nav-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #d1ecda;
+      color: #1e6f43;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-size: 1.15rem;
+      line-height: 1;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .guide-nav-item div b {
-      display: block;
+    .guide-nav-icon i {
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .guide-nav-item:hover .guide-nav-icon {
+      background: #1e6f43;
+      color: #ffffff;
+    }
+
+    .guide-nav-label {
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
       font-size: 0.95rem;
-      color: var(--ink);
+      font-weight: 700;
+      color: #1c2b20;
+      white-space: nowrap;
     }
 
-    .guide-nav-item div small {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--muted);
+    /* Font Awesome font protection against global.css */
+    .guides-nav-strip i,
+    .guides-nav-strip [class*="fa-"],
+    .fa-solid,
+    .fa-regular,
+    .fa-brands {
+      font-family: "Font Awesome 6 Free" !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
     }
 
-    /* Cat Banner / CTA Section Enhancements */
-    .cat-cta-band {
-      background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
-      color: white;
-      border-radius: 28px;
-      padding: 50px 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 36px;
-      margin-block: 40px 75px;
+    .guides-nav-strip .fa-solid,
+    .fa-solid {
+      font-weight: 900 !important;
     }
 
-    .cat-cta-band h2 {
-      color: white;
-      margin: 0 0 12px;
+    .guides-nav-strip .fa-regular,
+    .fa-regular {
+      font-weight: 400 !important;
     }
 
-    .cat-cta-band h2 em {
-      color: #f4c79f;
-      font-style: normal;
+    .guides-nav-strip .fa-brands,
+    .fa-brands {
+      font-family: "Font Awesome 6 Brands" !important;
+      font-weight: 400 !important;
     }
 
-    .cat-cta-band p {
-      color: #e0ece2;
-      font-size: 1.02rem;
-      max-width: 580px;
-      margin: 0;
-      line-height: 1.7;
+
+    /* CTA Banner Section matching main index.html */
+    .cta {
+      margin-top: 0;
+      margin-bottom: 92px;
+      border: 1px solid #e6d6c6;
     }
 
-    .cat-cta-actions {
+    .cta-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
       flex-shrink: 0;
     }
 
-    .button-translucent {
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      color: white;
+    .cta .button-outline {
+      background: transparent;
+      color: var(--green);
+      border-color: var(--green);
     }
 
-    .button-translucent:hover {
-      background: rgba(255, 255, 255, 0.28);
+    .cta .button-outline:hover {
+      background: var(--green);
       color: white;
     }
 
@@ -283,19 +815,9 @@
       .cat-info-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .companion-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .companion-grid .companion-card:nth-child(5) {
-        grid-column: span 2;
-      }
+
       .guides-nav-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-      .cat-cta-band {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 36px 30px;
       }
     }
 
@@ -303,37 +825,68 @@
       .cat-info-grid {
         grid-template-columns: 1fr;
       }
-      .companion-grid {
-        grid-template-columns: 1fr;
+
+      .quick-info-card {
+        grid-template-columns: 42px minmax(0, 1fr);
+        column-gap: 12px;
+        padding: 20px 16px;
       }
-      .companion-grid .companion-card:nth-child(5) {
-        grid-column: span 1;
+
+      .quick-info-icon-wrap {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
       }
+
+      .quick-info-card h3 {
+        font-size: 1.02rem;
+      }
+
+      .quick-info-list {
+        gap: 10px;
+        padding-top: 14px;
+      }
+
+      .quick-info-list li {
+        font-size: 0.85rem;
+      }
+
       .guides-nav-grid {
         grid-template-columns: 1fr;
       }
+
       .guides-nav-strip {
         padding: 22px 18px;
       }
+
       .cat-card-media {
         height: 180px;
       }
-      .cat-cta-band {
-        padding: 28px 20px;
-      }
-      .cat-cta-actions {
+
+      .cta-actions {
         width: 100%;
+        flex-direction: column;
+        margin-top: 18px;
       }
-      .cat-cta-actions .button {
+
+      .cta-actions .button {
         width: 100%;
       }
     }
+  
+
+    /* Specific adjustments for 6-card grid */
+    .cat-card-media {
+      height: 200px;
+    }
+
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-<!-- Header and Navigation (matches main PetSathi homepage) -->
+  <!-- Header and Navigation -->
 <header class="site-header">
   <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
   <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
@@ -354,306 +907,399 @@
   </nav>
 </header>
 
-<main>
-  <!-- Hero Section -->
-  <section class="hero section-wrap" id="cat-hero">
-    <div class="hero-copy">
-      <div class="cat-badge-strip">🐾 PetSathi • Cat Companion Guide</div>
-      <h1>Everything You Need to Know About <em>Cats</em></h1>
-      <p>
-        Welcome to PetSathi's dedicated cat guide. From curious kittens to wise senior companions,
-        cats bring warmth, grace, and delightful play into our homes. Explore breed characteristics,
-        balanced nutrition, wellness advice, and enrichment ideas to ensure your feline companion thrives.
-      </p>
-      <div class="hero-actions">
-        <a class="button" href="breeds.html">Explore Cat Breeds ↗</a>
-        <a class="button button-outline" href="#cat-topics">Explore Care Topics ↓</a>
-      </div>
-      <div class="hero-note">♥ &nbsp; Dedicated to happy paws and purring companions.</div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="hero-blob"></div>
-      <img
-        src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85"
-        alt="Beautiful domestic cat resting serenely"
-        class="hero-photo"
-      >
-      <div class="floating-card card-top">
-        ✨ <span><b>Gentle & Curious</b><small>Loving indoor companions</small></span>
-      </div>
-      <div class="floating-card card-bottom">
-        🐾 <span><b>Happy Purrs Everyday</b><small>Complete care & wellness</small></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quick Category Strip -->
-  <section class="trust-strip">
-    <span>FELINE KNOWLEDGE BASE</span>
-    <div>🐈 Breeds　　🩺 Health & Care　　🥣 Food & Nutrition　　🧶 Play & Behaviour　　🛁 Grooming</div>
-  </section>
-
-  <!-- Cat Information Cards Section -->
-  <section class="section section-wrap" id="cat-topics">
-    <div class="section-heading">
-      <div>
-        <div class="eyebrow">Comprehensive Cat Guides</div>
-        <h2>Explore Essential <em>Cat Topics</em></h2>
-      </div>
-      <p>
-        Browse through curated guides crafted to assist cat parents with everyday health,
-        nourishment, playful engagement, and attentive care.
-      </p>
-    </div>
-
-    <div class="cat-info-grid">
-      <!-- Card 1: Cat Breeds -->
-      <article class="cat-card" id="breeds">
-        <div class="cat-card-media">
-          <span class="cat-card-badge">🐈 Breeds</span>
-          <img
-            src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=85"
-            alt="Adorable domestic shorthair cat with amber eyes"
-          >
-        </div>
-        <div class="cat-card-body">
-          <h3>Cat Breeds</h3>
-          <p>
-            Discover popular feline breeds—from majestic Maine Coons and affectionate Persians
-            to sleek Siamese and playful Bengals. Learn their temperaments, coat patterns, and lifestyles.
-          </p>
-          <a class="cat-card-link" href="breeds.html">Explore Cat Breeds ↗</a>
-        </div>
-      </article>
-
-      <!-- Card 2: Cat Care & Health -->
-      <article class="cat-card" id="care">
-        <div class="cat-card-media">
-          <span class="cat-card-badge">🩺 Wellness</span>
-          <img
-            src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=700&q=85"
-            alt="Fluffy ginger cat receiving gentle care"
-          >
-        </div>
-        <div class="cat-card-body">
-          <h3>Cat Care & Health</h3>
-          <p>
-            Learn fundamental feline health routines, including regular veterinary visits, essential vaccinations,
-            dental hygiene, parasite prevention, and recognizing early warning signs of illness.
-          </p>
-          <a class="cat-card-link" href="care.html">Explore Care & Health ↗</a>
-        </div>
-      </article>
-
-      <!-- Card 3: Food & Nutrition -->
-      <article class="cat-card" id="nutrition">
-        <div class="cat-card-media">
-          <span class="cat-card-badge">🥣 Nutrition</span>
-          <img
-            src="https://images.unsplash.com/photo-1596854331442-3cf47265cefb?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
-            alt="Cat enjoying mealtime"
-          >
-        </div>
-        <div class="cat-card-body">
-          <h3>Food & Nutrition</h3>
-          <p>
-            Understand your cat's obligate carnivore diet. Find balanced recommendations for protein intake,
-            wet vs. dry food, moisture requirements, fresh water fountains, and foods to avoid.
-          </p>
-          <a class="cat-card-link" href="nutrition.html">Explore Food & Nutrition ↗</a>
-        </div>
-      </article>
-
-      <!-- Card 4: Behaviour & Training -->
-      <article class="cat-card" id="behaviour">
-        <div class="cat-card-media">
-          <span class="cat-card-badge">🧠 Psychology</span>
-          <img
-            src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=700&q=85"
-            alt="Playful cat with wide curious eyes"
-          >
-        </div>
-        <div class="cat-card-body">
-          <h3>Behaviour & Training</h3>
-          <p>
-            Decode feline body language, tail twitches, slow blinks, and purrs. Master gentle litter box training,
-            scratching post orientation, and positive reinforcement bonding techniques.
-          </p>
-          <a class="cat-card-link" href="behaviour.html">Explore Behaviour & Training ↗</a>
-        </div>
-      </article>
-
-      <!-- Card 5: Grooming & Hygiene -->
-      <article class="cat-card" id="grooming">
-        <div class="cat-card-media">
-          <span class="cat-card-badge">🛁 Hygiene</span>
-          <img
-            src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=700&q=85"
-            alt="Well-groomed cat resting comfortably"
-          >
-        </div>
-        <div class="cat-card-body">
-          <h3>Grooming & Hygiene</h3>
-          <p>
-            Keep your cat's coat glossy and mat-free while reducing hairballs. Get practical advice on safe claw trimming,
-            ear cleanliness, and keeping the litter box pristine and odour-free.
-          </p>
-          <a class="cat-card-link" href="care.html">Explore Grooming & Hygiene ↗</a>
-        </div>
-      </article>
-
-      <!-- Card 6: Indoor Activities & Enrichment -->
-      <article class="cat-card" id="enrichment">
-        <div class="cat-card-media">
-          <span class="cat-card-badge">🧶 Enrichment</span>
-          <img
-            src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=700&q=85"
-            alt="Active indoor cat playing on a warm blanket"
-          >
-        </div>
-        <div class="cat-card-body">
-          <h3>Indoor Activities & Enrichment</h3>
-          <p>
-            Keep indoor cats active and mentally stimulated with vertical climbing trees, feather wands,
-            puzzle treat feeders, window perches, and engaging daily play sessions.
-          </p>
-          <a class="cat-card-link" href="behaviour.html">Explore Activities & Enrichment ↗</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Why Cats Make Wonderful Companions Section -->
-  <section class="section companions-section">
-    <div class="section-wrap">
-      <div class="section-heading">
-        <div>
-          <div class="eyebrow">Feline Joys</div>
-          <h2>Why Cats Make <em>Wonderful Companions</em></h2>
-        </div>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section-wrap" id="cat-hero">
+      <div class="hero-copy">
+        <div class="cat-badge-strip">🐾 PetSathi • Feline Companion Guide</div>
+        <h1>Everything You Need to Know About <em>Cats</em></h1>
         <p>
-          Millions of pet lovers across the world cherish life with cats. Here is what makes
-          sharing your home with a feline companion truly magical.
+          Welcome to PetSathi's dedicated cat care and companionship guide. From curious, playful kittens to calm and
+          affectionate seniors, cats bring gentle warmth, playful energy, and soothing purrs to every home. Explore breed
+          characteristics, balanced nutrition, indoor enrichment, grooming hygiene, and healthcare essentials.
         </p>
+        <div class="hero-actions">
+          <a class="button" href="breeds.html" id="hero-cta-breeds">Explore Cat Breeds ↗</a>
+          <a class="button button-outline" href="#cat-topics" id="hero-cta-topics">Explore Care Topics ↓</a>
+        </div>
+        <div class="hero-note">♥ &nbsp; Dedicated to happy paws and purring companions.</div>
       </div>
 
-      <div class="companion-grid">
-        <!-- 1. Companionship -->
-        <article class="companion-card">
-          <div class="companion-icon-wrap">🛋️</div>
-          <h3>Gentle Companionship</h3>
-          <p>
-            Cats offer a soothing, calming presence. Whether curled up beside you as you read or peacefully
-            napping near your desk while you work, their quiet company lowers stress and fills the home with tranquility.
-          </p>
-        </article>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85"
+          alt="Beautiful domestic cat resting serenely" class="hero-photo"
+          id="hero-cat-image">
+        <div class="floating-card card-top">
+          ✨ <span><b>Gentle &amp; Curious</b><small>Loving indoor companions</small></span>
+        </div>
+        <div class="floating-card card-bottom">
+          🐾 <span><b>Happy Purrs Everyday</b><small>Complete care &amp; wellness</small></span>
+        </div>
+      </div>
+    </section>
 
-        <!-- 2. Independent Nature -->
-        <article class="companion-card">
-          <div class="companion-icon-wrap">🐾</div>
-          <h3>Independent Nature</h3>
-          <p>
-            Cats are naturally self-reliant, tidy, and respectful of personal space. They groom themselves meticulously,
-            use litter boxes instinctively, and comfortably enjoy quiet time while you are away.
-          </p>
-        </article>
-
-        <!-- 3. Playfulness -->
-        <article class="companion-card">
-          <div class="companion-icon-wrap">🧶</div>
-          <h3>Infectious Playfulness</h3>
-          <p>
-            From acrobatic leaps and comical midnight zoomies to pouncing on shadow reflections and batting toy mice,
-            cats never lose their playful curiosity, bringing boundless laughter to every room.
-          </p>
-        </article>
-
-        <!-- 4. Emotional Bonding -->
-        <article class="companion-card">
-          <div class="companion-icon-wrap">💚</div>
-          <h3>Deep Emotional Bonding</h3>
-          <p>
-            Feline affection is genuine and heartfelt. Through rhythmic purrs, slow-motion blinks, and warm head bunting,
-            cats establish strong, empathetic bonds of loyalty and trust with their human families.
-          </p>
-        </article>
-
-        <!-- 5. Responsible Cat Ownership -->
-        <article class="companion-card">
-          <div class="companion-icon-wrap">🛡️</div>
-          <h3>Responsible Cat Ownership</h3>
-          <p>
-            A happy cat thrives with committed, attentive care. Providing a safe indoor sanctuary, timely vaccinations,
-            spaying/neutering, balanced nutrition, and lifelong love ensures your furry companion enjoys a long, vibrant life.
-          </p>
-        </article>
+    <!-- Quick Navigation Hub -->
+    <div class="guides-nav-strip">
+      <!-- Decorative Corner Paws -->
+      <div class="quick-nav-decor decor-top-left" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
+        <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
       </div>
 
-      <!-- Quick Navigation Hub -->
-      <div class="guides-nav-strip">
-        <div class="section-heading" style="margin-bottom: 0;">
-          <div>
-            <div class="eyebrow">Quick Navigation</div>
-            <h3 style="font-size: 1.5rem; margin: 0;">Explore Dedicated Cat Knowledge Chapters</h3>
+      <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
+        <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
+        <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
+      </div>
+
+      <!-- Centered Header -->
+      <div class="quick-nav-header">
+        <div class="quick-nav-eyebrow-wrap">
+          <span class="quick-nav-line"></span>
+          <div class="quick-nav-badge">
+            <i class="fa-regular fa-compass quick-nav-badge-icon" aria-hidden="true"></i>
+            <span>QUICK NAVIGATION</span>
           </div>
-          <p>Direct links to our specialized cat care, breed profiles, feeding, and psychology guides.</p>
+          <span class="quick-nav-line"></span>
         </div>
+        <h3 class="quick-nav-title">Explore Dedicated <span>Cat Knowledge Chapters</span></h3>
+      </div>
 
-        <div class="guides-nav-grid">
-          <a href="breeds.html" class="guide-nav-item">
-            <span>🐈</span>
-            <div>
-              <b>Cat Breeds</b>
-              <small>Profiles & Characteristics</small>
-            </div>
-          </a>
-          <a href="care.html" class="guide-nav-item">
-            <span>🩺</span>
-            <div>
-              <b>Cat Care & Health</b>
-              <small>Wellness, Grooming & Safety</small>
-            </div>
-          </a>
-          <a href="nutrition.html" class="guide-nav-item">
-            <span>🥣</span>
-            <div>
-              <b>Food & Nutrition</b>
-              <small>Diet, Feeding & Hydration</small>
-            </div>
-          </a>
-          <a href="behaviour.html" class="guide-nav-item">
-            <span>🧠</span>
-            <div>
-              <b>Behaviour & Training</b>
-              <small>Body Language & Play</small>
-            </div>
-          </a>
-        </div>
+      <!-- Navigation Pills -->
+      <div class="guides-nav-grid">
+        <a href="breeds.html" class="guide-nav-item" id="hub-link-breeds">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-cat" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Cat Breeds</span>
+        </a>
+
+        <a href="care.html" class="guide-nav-item" id="hub-link-care">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Care &amp; Grooming</span>
+        </a>
+
+        <a href="nutrition.html" class="guide-nav-item" id="hub-link-food">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Food &amp; Nutrition</span>
+        </a>
+
+        <a href="care.html#health" class="guide-nav-item" id="hub-link-health">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Health &amp; Wellness</span>
+        </a>
+
+        <a href="behaviour.html" class="guide-nav-item" id="hub-link-behaviour">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-brain" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Behaviour &amp; Training</span>
+        </a>
+
+        <a href="care.html#safety" class="guide-nav-item" id="hub-link-safety">
+          <span class="guide-nav-icon">
+            <i class="fa-solid fa-shield-cat" aria-hidden="true"></i>
+          </span>
+          <span class="guide-nav-label">Safety &amp; Indoor Living</span>
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- CTA Section -->
-  <section class="section-wrap">
-    <div class="cat-cta-band">
+    <!-- Six Essential Cat Topics Cards -->
+    <section class="section section-wrap" id="cat-topics">
+      <div class="cat-topics-heading">
+        <!-- Curvy decorative corner shapes matching reference image -->
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+        </svg>
+
+        <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-book-open"></i>
+            Comprehensive Cat Guides
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Explore Essential <span>Cat Topics</span>
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
+          <p>
+            Browse through curated guides for your cat's health, balanced nutrition, grooming hygiene, and indoor comfort.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 Topic Cards Grid -->
+      <div class="cat-info-grid">
+
+        <!-- 1. Cat Breeds -->
+        <article class="cat-card" id="card-breeds">
+          <div class="cat-card-media">
+            <span class="cat-card-badge">
+              <i class="fa-solid fa-cat" aria-hidden="true"></i>
+              Breeds
+            </span>
+            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=85"
+              alt="Adorable domestic shorthair cat with bright amber eyes" loading="lazy">
+          </div>
+          <div class="cat-card-body">
+            <h3>Cat Breeds</h3>
+            <p>
+              Discover popular feline breeds from regal Persians to agile Bengals, exploring traits and ideal homes.
+            </p>
+            <div class="cat-card-footer">
+              <a class="cat-card-link" href="breeds.html" id="link-card-breeds">Explore Cat Breeds ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Cat Care & Grooming -->
+        <article class="cat-card" id="card-grooming">
+          <div class="cat-card-media">
+            <span class="cat-card-badge">
+              <i class="fa-solid fa-soap" aria-hidden="true"></i>
+              Grooming
+            </span>
+            <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=700&q=85"
+              alt="Fluffy ginger cat being gently groomed" loading="lazy">
+          </div>
+          <div class="cat-card-body">
+            <h3>Cat Care &amp; Grooming</h3>
+            <p>
+              Master regular brushing routines, safe claw trimming, dental care, and hairball control for a gleaming coat.
+            </p>
+            <div class="cat-card-footer">
+              <a class="cat-card-link" href="care.html" id="link-card-grooming">Explore Care &amp; Grooming ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Cat Food & Nutrition -->
+        <article class="cat-card" id="card-nutrition">
+          <div class="cat-card-media">
+            <span class="cat-card-badge">
+              <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+              Nutrition
+            </span>
+            <img src="https://images.unsplash.com/photo-1589883661923-6476cb0ae9f2?auto=format&fit=crop&w=700&q=85"
+              alt="Nutritious healthy food for cats" loading="lazy">
+          </div>
+          <div class="cat-card-body">
+            <h3>Cat Food &amp; Nutrition</h3>
+            <p>
+              Understand obligate carnivore dietary needs, protein balances, wet vs. dry meals, and vital hydration.
+            </p>
+            <div class="cat-card-footer">
+              <a class="cat-card-link" href="nutrition.html" id="link-card-nutrition">Explore Food &amp; Nutrition ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Cat Health & Wellness -->
+        <article class="cat-card" id="card-health">
+          <div class="cat-card-media">
+            <span class="cat-card-badge">
+              <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+              Wellness
+            </span>
+            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=700&q=85"
+              alt="Healthy happy cat enjoying veterinarian checkup" loading="lazy">
+          </div>
+          <div class="cat-card-body">
+            <h3>Cat Health &amp; Wellness</h3>
+            <p>
+              Essential vaccine schedules, parasite prevention, dental checkups, and early detection of subtle illness signs.
+            </p>
+            <div class="cat-card-footer">
+              <a class="cat-card-link" href="care.html#health" id="link-card-health">Explore Health &amp; Wellness ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Cat Behaviour & Training -->
+        <article class="cat-card" id="card-behaviour">
+          <div class="cat-card-media">
+            <span class="cat-card-badge">
+              <i class="fa-solid fa-brain" aria-hidden="true"></i>
+              Training
+            </span>
+            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=700&q=85"
+              alt="Curious playful cat engaging in interactive activity" loading="lazy">
+          </div>
+          <div class="cat-card-body">
+            <h3>Cat Behaviour &amp; Training</h3>
+            <p>
+              Decode tail twitches, purring tones, scratch post training, and positive reinforcement techniques.
+            </p>
+            <div class="cat-card-footer">
+              <a class="cat-card-link" href="behaviour.html" id="link-card-behaviour">Explore Behaviour &amp; Training ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Cat Safety & Indoor Living -->
+        <article class="cat-card" id="card-safety">
+          <div class="cat-card-media">
+            <span class="cat-card-badge">
+              <i class="fa-solid fa-shield-cat" aria-hidden="true"></i>
+              Indoor Living
+            </span>
+            <img src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=700&q=85"
+              alt="Serene indoor cat resting safely by window" loading="lazy">
+          </div>
+          <div class="cat-card-body">
+            <h3>Cat Safety &amp; Indoor Living</h3>
+            <p>
+              Cat-proof your home, eliminate toxic plants, provide vertical perches, and build an enriching indoor sanctuary.
+            </p>
+            <div class="cat-card-footer">
+              <a class="cat-card-link" href="care.html#safety" id="link-card-safety">Explore Safety &amp; Indoor Living ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Additional Cat Information Sections -->
+    <section class="section cat-quick-info-section" id="quick-info">
+      <div class="section-wrap">
+        <div class="cat-topics-heading">
+          <!-- Curvy decorative corner shapes matching reference image -->
+          <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6"
+            opacity="0.95" />
+          </svg>
+          <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6"
+            opacity="0.95" />
+          </svg>
+
+          <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
+          <div class="paw paw-left-1"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-left-2"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-1"><i class="fa-solid fa-paw"></i></div>
+          <div class="paw paw-right-2"><i class="fa-solid fa-paw"></i></div>
+
+          <div class="heading-content">
+            <span class="heading-label">
+              <i class="fa-solid fa-lightbulb"></i>
+              Essential Feline Insights
+            </span>
+
+            <h2>
+              <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+              Quick Information for <span>Cat Parents</span>
+              <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+            </h2>
+
+            <p>
+              Understanding your feline companion is the cornerstone of a fulfilling pet parenthood journey. Here is what
+              makes cats special and how to care for them responsibly.
+            </p>
+          </div>
+        </div>
+
+        <div class="quick-info-grid">
+          <!-- 1. Why cats make wonderful companions -->
+          <article class="quick-info-card" id="info-companionship">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-cat" aria-hidden="true"></i>
+            </div>
+            <h3>Why Cats Make Wonderful Companions</h3>
+            <p>
+              Cats offer calming affection, independent companionship, and joyful purrs that reduce stress.
+            </p>
+            <ul class="quick-info-list">
+              <li><span>✓</span> Soothing presence and gentle lap cuddles that naturally relieve daily anxiety.</li>
+              <li><span>✓</span> Independent nature makes them adaptable to both quiet apartments and busy homes.</li>
+              <li><span>✓</span> Clean and tidy habits with instinctive litter box usage from an early age.</li>
+              <li><span>✓</span> Playful antics and inquisitive behavior that bring laughter and energy indoors.</li>
+            </ul>
+          </article>
+
+          <!-- 2. Essential daily cat care checklist -->
+          <article class="quick-info-card" id="info-daily-care">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+            </div>
+            <h3>Daily Care Checklist</h3>
+            <p>
+              Consistency and attentive daily routines keep your cat physically fit, mentally alert, and contented.
+            </p>
+            <ul class="quick-info-list">
+              <li><span>✓</span> Fresh, clean water provided daily through bowls or circulating fountains.</li>
+              <li><span>✓</span> Balanced meals measured carefully to prevent feline obesity and support energy.</li>
+              <li><span>✓</span> Daily litter box scooping and maintaining a clean, odor-free hygiene station.</li>
+              <li><span>✓</span> At least 15 to 20 minutes of interactive play with wand toys or laser pointers.</li>
+            </ul>
+          </article>
+
+          <!-- 3. Creating a happy indoor home -->
+          <article class="quick-info-card" id="info-indoor-life">
+            <div class="quick-info-icon-wrap">
+              <i class="fa-solid fa-shield-cat" aria-hidden="true"></i>
+            </div>
+            <h3>Creating a Safe Indoor Sanctuary</h3>
+            <p>
+              An enriched indoor environment ensures protection from hazards while fulfilling natural hunting instincts.
+            </p>
+            <ul class="quick-info-list">
+              <li><span>✓</span> Vertical cat trees, window perches, and cozy elevated hiding spots.</li>
+              <li><span>✓</span> Sturdy sisal scratching posts to maintain claw health and protect furniture.</li>
+              <li><span>✓</span> Safe home environment free of toxic lilies, exposed cords, and open window ledges.</li>
+              <li><span>✓</span> Annual veterinary wellness checkups, core vaccinations, and routine parasite control.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner Section -->
+    <section class="cta section-wrap">
       <div>
-        <div class="eyebrow" style="color: #c3ddc8;">Start Your Feline Journey</div>
-        <h2>Ready to Give Your Cat the <em>Best Care?</em></h2>
+        <div class="eyebrow">START YOUR FELINE JOURNEY</div>
+        <h2>Every Paw Deserves a <em>Loving Home.</em></h2>
         <p>
-          Whether you are planning to welcome a new cat or looking to elevate your cat's everyday comfort,
-          PetSathi provides the knowledge and support you need for a happy, healthy companion.
+          Whether you are welcoming a playful kitten or nurturing a gentle senior cat, PetSathi is here
+          to guide and support you every step of the way with expert advice and loving community care.
         </p>
       </div>
-      <div class="cat-cta-actions">
-        <a class="button button-light" href="care.html">Explore Cat Care Guide ↗</a>
-        <a class="button button-translucent" href="breeds.html">Browse Cat Breeds</a>
+      <div class="cta-actions">
+        <a class="button button-light" href="care.html" id="cta-care-guide">Explore Cat Care Guide ↗</a>
+        <a class="button button-outline" href="breeds.html" id="cta-breeds">Browse Cat Breeds</a>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
+  </main>
 
-<!-- Footer (matches main PetSathi homepage) -->
+  <!-- Footer -->
 <footer class="footer">
   <div class="section-wrap footer-grid">
     <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
@@ -664,6 +1310,17 @@
   <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
 </footer>
 
-<script src="../../../js/main.js"></script>
+  <script>
+    // Mobile Nav Toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    }
+  </script>
 </body>
+
 </html>

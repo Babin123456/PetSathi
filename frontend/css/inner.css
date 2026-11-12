@@ -97,6 +97,124 @@
   color: #7a704f;
   font-size: 0.82rem;
 }
+/* =========================================
+   MY BOOKINGS
+========================================= */
+
+.booking-section {
+  padding-block: 65px;
+}
+
+.booking-section .section-heading h2 {
+  margin-bottom: 0;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.booking-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking-card:hover {
+  border-color: #b8cfbb;
+  box-shadow: 0 10px 24px rgba(35, 57, 43, 0.08);
+  transform: translateY(-3px);
+}
+
+.booking-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.booking-id {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.booking-badge {
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: #6d7a71;
+  font-size: 0.66rem;
+  font-weight: 800;
+}
+
+.booking-badge.is-progress {
+  background: #fbf1d8;
+  color: #8a6517;
+}
+
+.booking-badge.is-complete {
+  background: #e2f1dd;
+  color: #1f5d3e;
+}
+
+.booking-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: -0.3px;
+}
+
+.booking-when {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.booking-details {
+  display: grid;
+  gap: 5px;
+  margin: 2px 0 4px;
+  font-size: 0.78rem;
+}
+
+.booking-details > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed #edf0e9;
+}
+
+.booking-details dt {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.booking-details dd {
+  margin: 0;
+  color: #46594c;
+  text-align: right;
+}
+
+.booking-action {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+@media (max-width: 950px) {
+  .booking-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 700px) {
   .inner-grid {
     grid-template-columns: 1fr;
@@ -106,5 +224,8 @@
   }
   .form-wrap {
     padding: 24px;
+  }
+  .booking-grid {
+    grid-template-columns: 1fr;
   }
 }

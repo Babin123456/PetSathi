@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PetSathi walk safety and handover checklist. Share pre-walk instructions, acknowledge safety steps, and record post-walk observations for every booking.">
+  <title>Walk Safety &amp; Handover Checklist | PetSathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/inner.css">
+  <link rel="stylesheet" href="../../css/handover.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../../../index.html">Home</a>
+      <div class="nav-item"><a href="../pets/index.html">Explore Pets <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-explore">
+          <a href="../pets/dogs/index.html">Dogs</a><a href="../pets/cats/index.html">Cats</a><a href="../pets/birds/index.html">Birds</a><a href="../pets/rabbits/index.html">Rabbits</a><a href="../pets/other/fish.html">Aquarium Fish</a><a href="../pets/other/reptiles.html">Reptiles</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="../services/index.html">Services <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-services"><a href="../services/dog-walking.html">Dog Walking</a><a href="../services/cat-care.html">Cat Care</a><a href="../services/pet-care.html">Pet Care</a></div>
+      </div>
+      <div class="nav-item"><a href="index.html">Find a Walker <span class="nav-arrow" aria-hidden="true">&#x25BE;</span></a>
+        <div class="dropdown dropdown-walker"><a href="dogs.html">Search Walkers</a><a href="cats.html">Walker Profiles</a><a href="index.html#bookings">My Bookings</a></div>
+      </div>
+      <a href="../about.html">About Us</a><a href="../auth/login.html">Log in</a><a class="button button-small" href="../auth/register.html">Get Started</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="handover-hero">
+      <div class="handover-hero-inner">
+        <div class="eyebrow">PetSathi &bull; Walk safety</div>
+        <div class="handover-hero-emoji" aria-hidden="true">🦮</div>
+        <h1>Walk safety &amp; <em>handover checklist</em></h1>
+        <p>Keep every walk organised and transparent. Owners share essential care instructions, walkers confirm safety checks, and both sides stay informed from pickup to handover.</p>
+        <div class="handover-hero-notes" aria-label="Checklist stages">
+          <span><b>1</b> Owner instructions</span>
+          <span><b>2</b> Walker acknowledgement</span>
+          <span><b>3</b> Post-walk report</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="handover-shell section-wrap">
+      <div class="handover-toolbar">
+        <div class="booking-picker">
+          <label for="bookingSelect">Select booking</label>
+          <select id="bookingSelect" aria-describedby="bookingMeta"></select>
+          <p class="booking-meta" id="bookingMeta"></p>
+        </div>
+        <div class="role-switch" role="group" aria-label="Preview checklist as">
+          <span class="role-switch-label">Preview as</span>
+          <button type="button" class="role-btn is-active" data-role="owner" aria-pressed="true">Owner</button>
+          <button type="button" class="role-btn" data-role="walker" aria-pressed="false">Walker</button>
+        </div>
+      </div>
+
+      <p class="demo-note">
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+        <span>Demo mode: role access is simulated in the browser and checklist progress is saved locally. The same records can be connected to the bookings table through the included MySQL schema.</span>
+      </p>
+
+      <div class="progress-panel" aria-live="polite">
+        <div class="progress-head">
+          <div>
+            <span class="progress-kicker">Checklist progress</span>
+            <strong id="progressText">0 of 3 stages complete</strong>
+          </div>
+          <span class="progress-percent" id="progressPercent">0%</span>
+        </div>
+        <div class="progress-track" aria-hidden="true"><span id="progressFill"></span></div>
+        <ol class="progress-steps" id="progressSteps">
+          <li data-step="owner">
+            <span class="step-dot" aria-hidden="true">1</span>
+            <span class="step-copy"><strong>Owner instructions</strong><small id="stepOwnerState">Pending</small></span>
+          </li>
+          <li data-step="ack">
+            <span class="step-dot" aria-hidden="true">2</span>
+            <span class="step-copy"><strong>Walker acknowledgement</strong><small id="stepAckState">Pending</small></span>
+          </li>
+          <li data-step="post">
+            <span class="step-dot" aria-hidden="true">3</span>
+            <span class="step-copy"><strong>Post-walk report</strong><small id="stepPostState">Pending</small></span>
+          </li>
+        </ol>
+      </div>
+
+      <p class="role-banner" id="roleBanner" role="status"></p>
+
+      <div class="handover-grid">
+        <section class="checklist-card checklist-card-owner" id="ownerCard" aria-labelledby="ownerTitle">
+          <div class="checklist-card-head">
+            <span class="checklist-icon" aria-hidden="true">📝</span>
+            <span class="checklist-heading">
+              <span class="checklist-step-label">Step 1 &bull; Owner</span>
+              <h2 id="ownerTitle">Pre-walk instructions</h2>
+              <p>Share routine, behaviour, and emergency information with the assigned walker.</p>
+            </span>
+            <span class="status-pill" id="ownerStatus">Pending</span>
+          </div>
+
+          <form id="ownerForm" novalidate>
+            <fieldset id="ownerFieldset">
+              <legend class="sr-only">Pre-walk information provided by the pet owner</legend>
+
+              <div class="field-grid">
+                <div class="form-field">
+                  <label for="petName">Pet name <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input type="text" id="petName" name="petName" maxlength="40" autocomplete="off" placeholder="e.g. Max" required>
+                  <small class="field-error" data-error-for="petName"></small>
+                </div>
+                <div class="form-field">
+                  <label for="petId">Pet identification <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input type="text" id="petId" name="petId" maxlength="80" autocomplete="off" placeholder="Breed, colour, age, or ID tag" required>
+                  <small class="field-error" data-error-for="petId"></small>
+                </div>
+                <div class="form-field full">
+                  <label for="behaviour">Behaviour &amp; temperament <span class="required-mark" aria-hidden="true">*</span></label>
+                  <textarea id="behaviour" name="behaviour" maxlength="500" rows="3" placeholder="How does your pet behave with strangers, other dogs, traffic, or loud noises?" required></textarea>
+                  <small class="field-error" data-error-for="behaviour"></small>
+                </div>
+                <div class="form-field full">
+                  <label for="requirements">Special walking requirements <span class="required-mark" aria-hidden="true">*</span></label>
+                  <textarea id="requirements" name="requirements" maxlength="500" rows="3" placeholder="Preferred route, walk duration, water breaks, leash rules, or items to carry." required></textarea>
+                  <small class="field-error" data-error-for="requirements"></small>
+                </div>
+                <div class="form-field">
+                  <label for="emergencyName">Emergency contact name <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input type="text" id="emergencyName" name="emergencyName" maxlength="60" autocomplete="name" placeholder="Full name" required>
+                  <small class="field-error" data-error-for="emergencyName"></small>
+                </div>
+                <div class="form-field">
+                  <label for="emergencyPhone">Emergency contact number <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input type="tel" id="emergencyPhone" name="emergencyPhone" maxlength="20" autocomplete="tel" placeholder="+91 98765 43210" required>
+                  <small class="field-error" data-error-for="emergencyPhone"></small>
+                </div>
+                <div class="form-field full">
+                  <label for="precautions">Safety precautions <span class="optional-mark">Optional</span></label>
+                  <textarea id="precautions" name="precautions" maxlength="400" rows="2" placeholder="Allergies, no-treat rules, medical notes, or anything the walker must avoid."></textarea>
+                  <small class="field-error" data-error-for="precautions"></small>
+                </div>
+              </div>
+
+              <div class="form-field check-field">
+                <label class="check-row" for="ownerConfirm">
+                  <input type="checkbox" id="ownerConfirm" name="ownerConfirm">
+                  <span>I confirm these instructions are accurate and complete for this walk.</span>
+                </label>
+                <small class="field-error" data-error-for="ownerConfirm"></small>
+              </div>
+
+              <button class="button checklist-submit" type="submit">Save owner instructions</button>
+              <p class="checklist-feedback" id="ownerFeedback" role="status"></p>
+            </fieldset>
+          </form>
+        </section>
+
+        <section class="checklist-card" id="ackCard" aria-labelledby="ackTitle">
+          <div class="checklist-card-head">
+            <span class="checklist-icon" aria-hidden="true">🛡️</span>
+            <span class="checklist-heading">
+              <span class="checklist-step-label">Step 2 &bull; Walker</span>
+              <h2 id="ackTitle">Pre-walk acknowledgement</h2>
+              <p>Confirm every safety check before leaving with the pet.</p>
+            </span>
+            <span class="status-pill" id="ackStatus">Pending</span>
+          </div>
+
+          <div class="owner-summary" id="ownerSummary" hidden>
+            <h3>Owner instructions received</h3>
+            <dl id="ownerSummaryList"></dl>
+          </div>
+
+          <p class="locked-note" id="ackLockedNote" hidden>
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            <span>Waiting for the owner to save pre-walk instructions.</span>
+          </p>
+
+          <form id="ackForm" novalidate>
+            <fieldset id="ackFieldset" disabled>
+              <legend class="sr-only">Walker pre-walk acknowledgement</legend>
+              <div class="checklist-items" id="ackItems">
+                <label class="check-row" for="ackIdentity">
+                  <input type="checkbox" id="ackIdentity" value="identity">
+                  <span>Pet identity verified against the booking details.</span>
+                </label>
+                <label class="check-row" for="ackEquipment">
+                  <input type="checkbox" id="ackEquipment" value="equipment">
+                  <span>Leash, collar or harness, and safety equipment checked.</span>
+                </label>
+                <label class="check-row" for="ackInstructions">
+                  <input type="checkbox" id="ackInstructions" value="instructions">
+                  <span>Owner instructions, behaviour notes, and route reviewed.</span>
+                </label>
+                <label class="check-row" for="ackEmergency">
+                  <input type="checkbox" id="ackEmergency" value="emergency">
+                  <span>Emergency contact information received and saved.</span>
+                </label>
+                <label class="check-row" for="ackPickup">
+                  <input type="checkbox" id="ackPickup" value="pickup">
+                  <span>Pet successfully picked up and ready for the walk.</span>
+                </label>
+              </div>
+              <small class="field-error" data-error-for="ack"></small>
+
+              <button class="button checklist-submit" type="submit">Confirm walker acknowledgement</button>
+              <p class="checklist-feedback" id="ackFeedback" role="status"></p>
+            </fieldset>
+          </form>
+        </section>
+
+        <section class="checklist-card" id="postCard" aria-labelledby="postTitle">
+          <div class="checklist-card-head">
+            <span class="checklist-icon" aria-hidden="true">🐾</span>
+            <span class="checklist-heading">
+              <span class="checklist-step-label">Step 3 &bull; Walker</span>
+              <h2 id="postTitle">Post-walk report</h2>
+              <p>Record the walk outcome, behaviour, and safe handover.</p>
+            </span>
+            <span class="status-pill" id="postStatus">Pending</span>
+          </div>
+
+          <p class="locked-note" id="postLockedNote" hidden>
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            <span>Complete the pre-walk acknowledgement before submitting the report.</span>
+          </p>
+
+          <form id="postForm" novalidate>
+            <fieldset id="postFieldset" disabled>
+              <legend class="sr-only">Post-walk confirmation</legend>
+
+              <div class="field-grid">
+                <div class="form-field">
+                  <label for="walkStatus">Walk completion status <span class="required-mark" aria-hidden="true">*</span></label>
+                  <select id="walkStatus" name="walkStatus" required>
+                    <option value="">Select status</option>
+                    <option value="completed">Walk completed</option>
+                    <option value="partially_completed">Partially completed</option>
+                    <option value="not_completed">Could not complete</option>
+                  </select>
+                  <small class="field-error" data-error-for="walkStatus"></small>
+                </div>
+                <div class="form-field">
+                  <label for="walkDuration">Walk duration (minutes) <span class="required-mark" aria-hidden="true">*</span></label>
+                  <input type="number" id="walkDuration" name="walkDuration" min="1" max="480" step="1" inputmode="numeric" placeholder="e.g. 30" required>
+                  <small class="field-error" data-error-for="walkDuration"></small>
+                </div>
+                <div class="form-field full">
+                  <label for="petBehaviour">General pet behaviour <span class="required-mark" aria-hidden="true">*</span></label>
+                  <select id="petBehaviour" name="petBehaviour" required>
+                    <option value="">Select behaviour</option>
+                    <option value="calm">Calm and relaxed</option>
+                    <option value="energetic">Energetic and playful</option>
+                    <option value="anxious">Anxious or nervous</option>
+                    <option value="reactive">Reactive to surroundings</option>
+                    <option value="other">Other observation</option>
+                  </select>
+                  <small class="field-error" data-error-for="petBehaviour"></small>
+                </div>
+                <div class="form-field full">
+                  <label for="incidents">Unusual incidents or observations <span class="optional-mark">Optional</span></label>
+                  <textarea id="incidents" name="incidents" maxlength="500" rows="3" placeholder="Note anything the owner should know: encounters, injuries, eating habits, or changes in mood."></textarea>
+                  <small class="field-error" data-error-for="incidents"></small>
+                </div>
+              </div>
+
+              <div class="form-field check-field">
+                <label class="check-row" for="handoverConfirm">
+                  <input type="checkbox" id="handoverConfirm" name="handoverConfirm">
+                  <span>The pet was safely handed back to the owner or authorised person.</span>
+                </label>
+                <small class="field-error" data-error-for="handoverConfirm"></small>
+              </div>
+
+              <button class="button checklist-submit" type="submit">Submit post-walk report</button>
+              <p class="checklist-feedback" id="postFeedback" role="status"></p>
+            </fieldset>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="inner-cta">
+      <h2>A safer walk starts with a clear handover.</h2>
+      <p>Go back to your bookings to review upcoming walks, or explore the walker directory to meet trusted companions.</p>
+      <a class="button button-small" href="index.html#bookings">Back to My Bookings &#8599;</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="section-wrap footer-grid">
+      <div><a class="brand" href="../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
+      <div><b>Explore</b><a href="../../../index.html#home">Home</a><a href="../pets/index.html">Explore Pets</a><a href="../services/index.html">Services</a><a href="index.html">Find a Walker</a></div>
+      <div><b>Information</b><a href="../about.html">About Us</a><a href="../contact.html">Contact Us</a><a href="../faq.html">FAQ / Help Center</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms &amp; Conditions</a></div>
+      <div><b>Connect With Us</b><a href="https://github.com/Riya-Kharade/PetSathi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/riyakharade/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://petsathi-nsoc.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website</a></div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
+  </footer>
+  <script src="../../js/main.js"></script>
+  <script src="../../js/handover.js"></script>
+</body>
+</html>

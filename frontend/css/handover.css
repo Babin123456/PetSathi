@@ -1,0 +1,932 @@
+/* =========================================
+   PETSATHI WALK SAFETY & HANDOVER CHECKLIST
+========================================= */
+
+:root {
+  --handover-green: #286849;
+  --handover-dark: #1d5039;
+  --handover-ink: #26372e;
+  --handover-muted: #718078;
+  --handover-line: #e3e9df;
+  --handover-soft: #f4f8f1;
+  --handover-warn: #8a6517;
+  --handover-danger: #9d3f38;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.handover-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 70px 20px 58px;
+  border-top: 1px solid var(--handover-line);
+  border-bottom: 1px solid var(--handover-line);
+  text-align: center;
+}
+
+.handover-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(40, 104, 73, .09), transparent 34%),
+    radial-gradient(circle at 88% 84%, rgba(226, 173, 63, .1), transparent 32%),
+    linear-gradient(130deg, #eef6e9 0%, #fbf8ee 58%, #f9efe5 100%);
+  pointer-events: none;
+}
+
+.handover-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(820px, 100%);
+  margin: auto;
+}
+
+.handover-hero-emoji {
+  margin-bottom: 4px;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.handover-hero h1 {
+  margin: 8px 0 15px;
+  color: var(--handover-ink);
+  font-size: clamp(2.45rem, 5vw, 4rem);
+  letter-spacing: -2.5px;
+}
+
+.handover-hero h1 em {
+  color: var(--handover-green);
+  font-style: normal;
+}
+
+.handover-hero p {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  color: #5e7165;
+  font-size: .96rem;
+  line-height: 1.8;
+}
+
+.handover-hero-notes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.handover-hero-notes span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 9px;
+  border: 1px solid rgba(40, 104, 73, .16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .72);
+  color: #45594c;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.handover-hero-notes b {
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: var(--handover-green);
+  color: #fff;
+  font-size: .7rem;
+}
+
+/* =========================================
+   PAGE SHELL & TOOLBAR
+========================================= */
+
+.handover-shell {
+  padding-block: 42px 76px;
+}
+
+.handover-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.booking-picker {
+  flex: 1 1 390px;
+  min-width: 0;
+}
+
+.booking-picker > label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--handover-ink);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.booking-picker select {
+  width: min(420px, 100%);
+  padding: 11px 40px 11px 13px;
+  border: 1px solid #d6e0d3;
+  border-radius: 11px;
+  background: #fff;
+  color: var(--handover-ink);
+  font: inherit;
+  font-size: .9rem;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.booking-picker select:focus {
+  border-color: #7fa58a;
+  box-shadow: 0 0 0 3px rgba(40, 104, 73, .1);
+}
+
+.booking-meta {
+  margin: 8px 0 0;
+  color: var(--handover-muted);
+  font-size: .8rem;
+  line-height: 1.55;
+}
+
+.booking-meta strong {
+  color: var(--handover-ink);
+}
+
+.role-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid var(--handover-line);
+  border-radius: 999px;
+  background: var(--handover-soft);
+}
+
+.role-switch-label {
+  padding: 0 9px 0 7px;
+  color: var(--handover-muted);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+
+.role-btn {
+  padding: 8px 15px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #5d6b62;
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+.role-btn:hover {
+  color: var(--handover-dark);
+}
+
+.role-btn.is-active {
+  background: var(--handover-green);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(40, 104, 73, .18);
+}
+
+.role-btn:focus-visible {
+  outline: 2px solid var(--handover-green);
+  outline-offset: 2px;
+}
+
+.demo-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0 0 20px;
+  padding: 11px 14px;
+  border: 1px solid #ece7d5;
+  border-radius: 11px;
+  background: #fdfaf0;
+  color: #7a704f;
+  font-size: .78rem;
+  line-height: 1.55;
+}
+
+.demo-note i {
+  margin-top: 3px;
+  color: #a38a45;
+}
+
+/* =========================================
+   PROGRESS PANEL
+========================================= */
+
+.progress-panel {
+  padding: 21px 23px;
+  border: 1px solid var(--handover-line);
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(35, 57, 43, .04);
+}
+
+.progress-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.progress-head > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.progress-kicker {
+  color: var(--handover-muted);
+  font-size: .71rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.progress-head strong {
+  color: var(--handover-ink);
+  font-size: .95rem;
+}
+
+.progress-percent {
+  display: grid;
+  place-items: center;
+  min-width: 60px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: #edf4e9;
+  color: var(--handover-green);
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.progress-track {
+  height: 9px;
+  margin: 15px 0 17px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #edf0e9;
+}
+
+.progress-track > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2f7a57, #6ca37d);
+  transition: width .35s ease;
+}
+
+.progress-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.progress-steps li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid var(--handover-line);
+  border-radius: 12px;
+  background: #fbfdf9;
+  transition: border-color .2s, background .2s;
+}
+
+.step-dot {
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #edf0e9;
+  color: #718078;
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.step-copy {
+  min-width: 0;
+}
+
+.step-copy strong,
+.step-copy small {
+  display: block;
+}
+
+.step-copy strong {
+  overflow: hidden;
+  color: var(--handover-ink);
+  font-size: .79rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.step-copy small {
+  margin-top: 1px;
+  color: var(--handover-muted);
+  font-size: .7rem;
+}
+
+.progress-steps li.is-complete {
+  border-color: #c4dbc0;
+  background: #f2f8ef;
+}
+
+.progress-steps li.is-complete .step-dot {
+  background: var(--handover-green);
+  color: #fff;
+}
+
+.progress-steps li.is-progress {
+  border-color: #eddfb7;
+  background: #fdf9ee;
+}
+
+.progress-steps li.is-progress .step-dot {
+  background: #f0dfae;
+  color: #725613;
+}
+
+.progress-steps li.is-locked {
+  opacity: .68;
+}
+
+.role-banner {
+  margin: 15px 0 22px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--handover-green);
+  border-radius: 0 10px 10px 0;
+  background: #f4f8f1;
+  color: #4d6456;
+  font-size: .81rem;
+  line-height: 1.55;
+}
+
+/* =========================================
+   CHECKLIST CARDS
+========================================= */
+
+.handover-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 21px;
+  align-items: start;
+}
+
+.checklist-card {
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid var(--handover-line);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 26px rgba(35, 57, 43, .035);
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.checklist-card-owner {
+  grid-column: 1 / -1;
+}
+
+.checklist-card:focus-within {
+  border-color: #b8cfbb;
+  box-shadow: 0 12px 30px rgba(35, 57, 43, .07);
+}
+
+.checklist-card.is-readonly {
+  background: #fcfdfb;
+}
+
+.checklist-card.is-locked {
+  background: #fbfcfa;
+}
+
+.checklist-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 19px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #edf0e9;
+}
+
+.checklist-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 45px;
+  width: 45px;
+  height: 45px;
+  border-radius: 13px;
+  background: #edf4e9;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.checklist-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.checklist-step-label {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--handover-green);
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.checklist-heading h2 {
+  margin: 0 0 4px;
+  color: var(--handover-ink);
+  font-size: 1.16rem;
+  letter-spacing: -.3px;
+}
+
+.checklist-heading p {
+  margin: 0;
+  color: var(--handover-muted);
+  font-size: .78rem;
+  line-height: 1.55;
+}
+
+.status-pill {
+  flex: 0 0 auto;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #edf0e9;
+  color: #6d7a71;
+  font-size: .68rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.status-pill.is-complete {
+  background: #e2f1dd;
+  color: #1f5d3e;
+}
+
+.status-pill.is-progress {
+  background: #fbf1d8;
+  color: var(--handover-warn);
+}
+
+.status-pill.is-locked {
+  background: #eef0ec;
+  color: #7d8880;
+}
+
+.checklist-card.is-reading-handover .checklist-card-head {
+  margin-bottom: 15px;
+}
+
+/* =========================================
+   FORMS
+========================================= */
+
+.checklist-card fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.checklist-card fieldset:disabled {
+  opacity: .86;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.form-field.full {
+  grid-column: 1 / -1;
+}
+
+.form-field > label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 6px;
+  color: var(--handover-ink);
+  font-size: .8rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.required-mark {
+  color: #b85349;
+  font-size: .8rem;
+}
+
+.optional-mark {
+  margin-left: auto;
+  color: var(--handover-muted);
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #d9e2d6;
+  border-radius: 10px;
+  background: #fdfefc;
+  color: var(--handover-ink);
+  font: inherit;
+  font-size: .85rem;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #a2aca5;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 76px;
+  line-height: 1.6;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #7fa58a;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(40, 104, 73, .1);
+}
+
+.form-field input:disabled,
+.form-field select:disabled,
+.form-field textarea:disabled {
+  background: #f5f7f3;
+  color: #66736b;
+  cursor: not-allowed;
+}
+
+.form-field.has-error input:not([type="checkbox"]),
+.form-field.has-error select,
+.form-field.has-error textarea,
+.check-field.has-error .check-row,
+.checklist-items.has-error .check-row {
+  border-color: #ca746c;
+  box-shadow: 0 0 0 3px rgba(202, 116, 108, .08);
+}
+
+.field-error {
+  display: block;
+  min-height: 0;
+  margin-top: 4px;
+  color: var(--handover-danger);
+  font-size: .72rem;
+  line-height: 1.4;
+}
+
+/* Checkbox rows */
+
+.checklist-items {
+  display: grid;
+  gap: 9px;
+}
+
+.check-field {
+  margin-top: 17px;
+}
+
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 11px 13px;
+  border: 1px solid var(--handover-line);
+  border-radius: 11px;
+  background: #fbfdf9;
+  color: #4f6256;
+  font-size: .82rem;
+  font-weight: 400;
+  line-height: 1.55;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+
+.check-row:hover {
+  border-color: #c8dbc5;
+  background: #f6faf3;
+}
+
+.check-row input {
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 0;
+  accent-color: var(--handover-green);
+  cursor: pointer;
+}
+
+.check-row:has(input:checked) {
+  border-color: #bdd5b8;
+  background: #f1f8ed;
+}
+
+.check-row:has(input:disabled) {
+  cursor: not-allowed;
+}
+
+.check-row input:disabled {
+  cursor: not-allowed;
+}
+
+.check-row input:focus-visible {
+  outline: 2px solid var(--handover-green);
+  outline-offset: 2px;
+}
+
+/* Submit + feedback */
+
+.checklist-submit {
+  width: 100%;
+  margin-top: 18px;
+  border: 0;
+  font: inherit;
+  font-size: .86rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.checklist-submit:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.checklist-feedback {
+  display: none;
+  margin: 11px 0 0;
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-size: .77rem;
+  line-height: 1.5;
+}
+
+.checklist-feedback.is-success,
+.checklist-feedback.is-error {
+  display: block;
+}
+
+.checklist-feedback.is-success {
+  border: 1px solid #cde1ca;
+  background: #f0f7ed;
+  color: var(--handover-dark);
+}
+
+.checklist-feedback.is-error {
+  border: 1px solid #e8c6c2;
+  background: #fcf1f0;
+  color: var(--handover-danger);
+}
+
+/* =========================================
+   OWNER SUMMARY & LOCKED NOTES
+========================================= */
+
+.owner-summary {
+  margin-bottom: 16px;
+  padding: 15px;
+  border: 1px solid #d9e8d5;
+  border-radius: 12px;
+  background: #f6fbf3;
+}
+
+.owner-summary[hidden],
+.locked-note[hidden] {
+  display: none;
+}
+
+.owner-summary h3 {
+  margin: 0 0 9px;
+  color: var(--handover-dark);
+  font-size: .83rem;
+  letter-spacing: 0;
+}
+
+.owner-summary dl {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 6px 11px;
+  margin: 0;
+  font-size: .76rem;
+  line-height: 1.5;
+}
+
+.owner-summary dt {
+  color: var(--handover-muted);
+  font-weight: 700;
+}
+
+.owner-summary dd {
+  margin: 0;
+  color: #46594c;
+  overflow-wrap: anywhere;
+}
+
+.locked-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0 0 15px;
+  padding: 11px 13px;
+  border: 1px solid #ece7d5;
+  border-radius: 11px;
+  background: #fdfaf0;
+  color: #7a704f;
+  font-size: .77rem;
+  line-height: 1.55;
+}
+
+.locked-note i {
+  margin-top: 2px;
+}
+
+.inner-cta .button {
+  margin-top: 18px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .handover-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checklist-card-owner {
+    grid-column: auto;
+  }
+
+  .progress-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step-copy strong {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 650px) {
+  .handover-hero {
+    padding: 52px 17px 46px;
+  }
+
+  .handover-hero h1 {
+    letter-spacing: -1.6px;
+  }
+
+  .handover-shell {
+    padding-block: 32px 56px;
+  }
+
+  .handover-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .role-switch {
+    align-self: flex-start;
+  }
+
+  .booking-picker select {
+    width: 100%;
+  }
+
+  .progress-panel {
+    padding: 17px;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field.full {
+    grid-column: auto;
+  }
+
+  .checklist-card {
+    padding: 18px;
+  }
+
+  .checklist-card-head {
+    flex-wrap: wrap;
+  }
+
+  .status-pill {
+    margin-left: 57px;
+  }
+
+  .owner-summary dl {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .owner-summary dd {
+    margin-bottom: 7px;
+  }
+}
+
+@media (max-width: 420px) {
+  .handover-hero-notes {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .handover-hero-notes span {
+    justify-content: flex-start;
+  }
+
+  .role-switch {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .role-btn {
+    flex: 1;
+  }
+
+  .progress-head {
+    align-items: flex-start;
+  }
+
+  .checklist-card {
+    padding: 15px;
+  }
+
+  .status-pill {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-track > span,
+  .check-row,
+  .form-field input,
+  .form-field select,
+  .form-field textarea,
+  .checklist-card {
+    transition: none;
+  }
+}

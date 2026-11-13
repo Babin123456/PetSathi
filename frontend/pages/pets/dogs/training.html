@@ -1041,6 +1041,227 @@
         width: 100%;
       }
     }
+
+        /* Issue #131: Search and filter improvements */
+        .training-search-filter-section {
+          max-width: 1160px;
+          margin: 18px auto 36px;
+          padding: 26px 28px 22px;
+          border: 1px solid var(--dog-green-border);
+          border-radius: 22px;
+          background: #fff;
+          box-shadow: var(--dog-shadow-sm);
+        }
+
+        .search-filter-header {
+          margin-bottom: 18px;
+        }
+
+        .search-filter-header h2 {
+          font-size: clamp(1.25rem, 2vw, 1.5rem);
+        }
+
+        .search-bar-wrap {
+          max-width: 760px;
+          margin-bottom: 16px;
+        }
+
+        .search-bar-inner {
+          min-height: 48px;
+          padding: 4px 12px 4px 16px;
+          border: 1px solid #d5e2d8;
+          border-radius: 12px;
+          background: #f8faf6;
+        }
+
+        .training-search-input {
+          min-width: 0;
+          padding: 9px 0;
+          font-size: .92rem;
+        }
+
+        .filter-pills-row {
+          justify-content: center;
+          gap: 8px;
+          margin-bottom: 14px;
+        }
+
+        .filter-pill {
+          min-height: 36px;
+          padding: 7px 12px;
+          border-radius: 9px;
+          font-size: .8rem;
+        }
+
+        .filter-pill:hover {
+          transform: none;
+        }
+
+        .training-grid-3 {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          align-items: stretch;
+          gap: 18px;
+        }
+
+        .training-card {
+          min-width: 0;
+          min-height: 190px;
+          height: 100%;
+          padding: 22px 20px;
+          align-items: center;
+          text-align: center;
+          border-radius: 16px;
+        }
+
+        .training-card-header {
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 10px;
+          margin-bottom: 10px;
+        }
+
+        .training-card-icon {
+          width: 46px;
+          height: 46px;
+          border-radius: 13px;
+          font-size: 1.15rem;
+        }
+
+        .training-card h3 {
+          font-size: 1.02rem;
+          line-height: 1.3;
+          text-align: center;
+        }
+
+        .training-card > p {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          max-width: 34ch;
+          min-height: 2.8em;
+          margin: 0;
+          font-size: .86rem;
+          line-height: 1.4;
+        }
+
+        .training-card .card-tip-box,
+        .training-card .card-approach-box {
+          width: 100%;
+          margin-top: 14px;
+          text-align: left;
+          font-size: .8rem;
+          line-height: 1.45;
+        }
+
+        /* Training tips cards */
+        .tips-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          align-items: stretch;
+          gap: 18px;
+        }
+
+        .tip-item-card {
+          min-width: 0;
+          min-height: 180px;
+          height: 100%;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 10px;
+          padding: 22px 18px;
+          text-align: center;
+          border-radius: 16px;
+        }
+
+        .tip-item-icon {
+          width: 46px;
+          height: 46px;
+          border-radius: 13px;
+          font-size: 1.15rem;
+        }
+
+        .tip-item-content h3 {
+          font-size: 1rem;
+          margin-bottom: 6px;
+        }
+
+        .tip-item-content p {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          margin: 0;
+          font-size: .85rem;
+          line-height: 1.45;
+        }
+
+        /* Puppy training image */
+        .section-banner-photo {
+          height: clamp(150px, 22vw, 210px);
+          max-width: 1000px;
+          margin: 0 auto 22px;
+          border-radius: 16px;
+          object-position: center 35%;
+        }
+
+        .training-section .dog-topics-heading {
+          margin-top: 30px;
+          margin-bottom: 26px;
+          background: #fff;
+          border-radius: 22px;
+          padding-top: 30px;
+          padding-bottom: 28px;
+        }
+
+        /* Tablet */
+        @media (max-width: 960px) {
+          .training-grid-3,
+          .tips-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+          .training-search-filter-section {
+            padding: 20px 14px 16px;
+          }
+
+          .filter-pills-row {
+            justify-content: flex-start;
+            gap: 7px;
+          }
+
+          .filter-pill {
+            min-height: 34px;
+            padding: 6px 10px;
+          }
+
+          .training-grid-3,
+          .tips-grid {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 14px;
+          }
+
+          .training-card,
+          .tip-item-card {
+            min-height: 0;
+            padding: 20px 16px;
+          }
+
+          .training-card > p {
+            min-height: 0;
+          }
+
+          .section-banner-photo {
+            height: 150px;
+          }
+        }
+
   </style>
 </head>
 

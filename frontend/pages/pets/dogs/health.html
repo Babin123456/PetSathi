@@ -443,11 +443,6 @@
   }
 }
 
-.health-hero {
-  grid-template-columns: 1fr 0.9fr;
-  padding: 45px 5%;
-  gap: 30px;
-}
 
 .health-hero-visual {
   min-height: 300px;
@@ -592,8 +587,84 @@
   padding: 14px 24px;
 }
 
+
+/* ===== Dog Health Hero Redesign ===== */
+
+.health-hero {
+  width: calc(100% - 48px);
+  max-width: 1400px;
+  margin: 35px auto 55px;
+  padding: 60px 6%;
+  min-height: 510px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: 48px;
+  background: #f7faf3;
+  border: 1px solid #e2eddc;
+  border-radius: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.health-hero-content {
+  min-width: 0;
+  max-width: 600px;
+}
+
+.health-hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 17px;
+  margin: 0 0 22px;
+  border-radius: 50px;
+  background: #eaf3df;
+  color: #267247;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.health-hero h1 {
+  margin: 0 0 20px;
+  color: #263b30;
+  font-family: Georgia, serif;
+  font-size: clamp(2.5rem, 4.5vw, 4.3rem);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.health-hero h1 em {
+  color: #28764a;
+  font-style: normal;
+}
+
+.health-hero-content > p {
+  max-width: 520px;
+  margin: 0 0 28px;
+  color: #64736a;
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.health-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.health-hero-actions .button {
+  border-radius: 50px;
+  padding: 14px 24px;
+}
+
 .health-hero-visual {
   position: relative;
+  width: 100%;
+  min-width: 0;
   min-height: 370px;
   display: flex;
   align-items: center;
@@ -612,9 +683,9 @@
 }
 
 .health-hero-image-frame img {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
   object-position: center;
 }
@@ -645,6 +716,83 @@
   background: #eaf3e8;
   color: #28764a;
   font-size: 1.1rem;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .health-hero {
+    grid-template-columns: 1fr 0.9fr;
+    padding: 45px 5%;
+    gap: 30px;
+  }
+
+  .health-hero-visual {
+    min-height: 300px;
+  }
+
+  .health-hero-image-frame {
+    height: 310px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .health-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: calc(100% - 24px);
+    padding: 36px 20px;
+    margin: 20px auto 35px;
+    text-align: center;
+  }
+
+  .health-hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .health-hero .eyebrow {
+    margin: 0 auto 20px;
+  }
+
+  .health-hero h1 {
+    font-size: clamp(2.2rem, 9vw, 2.8rem);
+    line-height: 1.12;
+  }
+
+  .health-hero-content > p {
+    max-width: 100%;
+    margin: 0 auto 24px;
+  }
+
+  .health-hero-actions {
+    justify-content: center;
+  }
+
+  .health-hero-visual {
+    width: 100%;
+    min-height: 0;
+    display: block;
+  }
+
+  .health-hero-image-frame {
+    width: 100%;
+    max-width: 100%;
+    height: 260px;
+    border-radius: 130px 130px 24px 24px;
+  }
+
+  .health-hero-note {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: fit-content;
+    max-width: 100%;
+    margin: -20px auto 0;
+    z-index: 2;
+  }
 }
 
 /* Final mobile override for Dog Health hero */

@@ -436,12 +436,720 @@
         max-height: 250px;
         padding: 0 20px 18px;
       }
-      @media (max-width: 900px) {
-        .health-grid,
-        .guides-nav-grid {
-          grid-template-columns: 1fr;
-        }
+     @media (max-width: 900px) {
+  .health-grid,
+  .guides-nav-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.health-hero-visual {
+  min-height: 300px;
+}
+
+.health-hero-image-frame {
+  height: 310px;
+}
+
+
+@media (max-width: 650px) {
+  .health-hero {
+    grid-template-columns: 1fr;
+    padding: 38px 22px 32px;
+    margin: 22px 12px 40px;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .health-hero-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .health-hero .eyebrow {
+    margin: 0 auto 20px;
+  }
+
+  .health-hero h1 {
+    font-size: clamp(2.25rem, 9vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: -1.2px;
+  }
+
+  .health-hero-content > p {
+    max-width: 100%;
+    margin: 0 auto 24px;
+    font-size: 0.95rem;
+  }
+
+  .health-hero-actions {
+    justify-content: center;
+  }
+
+  .health-hero-visual {
+    width: 100%;
+    min-height: 0;
+    display: block;
+  }
+
+  .health-hero-image-frame {
+    width: 100%;
+    max-width: 100%;
+    height: 270px;
+    border-radius: 150px 150px 24px 24px;
+  }
+
+  .health-hero-note {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: fit-content;
+    max-width: 100%;
+    margin: -25px auto 0;
+    z-index: 2;
+    font-size: 0.78rem;
+    text-align: left;
+  }
+}
+
       }
+
+/* Dog Health Hero Redesign */
+.health-hero {
+  max-width: 1400px;
+  margin: 35px auto 55px;
+  padding: 65px 7%;
+  min-height: 510px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 55px;
+  background: #f7faf3;
+  border: 1px solid #e2eddc;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.health-hero-content {
+  max-width: 600px;
+}
+
+.health-hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 17px;
+  margin-bottom: 22px;
+  border-radius: 50px;
+  background: #eaf3df;
+  color: #267247;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.health-hero h1 {
+  margin: 0 0 20px;
+  color: #263b30;
+  font-family: Georgia, serif;
+  font-size: clamp(2.5rem, 4.5vw, 4.3rem);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.health-hero h1 em {
+  color: #28764a;
+  font-style: normal;
+}
+
+.health-hero-content > p {
+  max-width: 520px;
+  margin: 0 0 28px;
+  color: #64736a;
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.health-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.health-hero-actions .button {
+  border-radius: 50px;
+  padding: 14px 24px;
+}
+
+
+/* ===== Dog Health Hero Redesign ===== */
+
+.health-hero {
+  width: calc(100% - 48px);
+  max-width: 1400px;
+  margin: 35px auto 55px;
+  padding: 60px 6%;
+  min-height: 510px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: 48px;
+  background: #f7faf3;
+  border: 1px solid #e2eddc;
+  border-radius: 32px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.health-hero-content {
+  min-width: 0;
+  max-width: 600px;
+}
+
+.health-hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 17px;
+  margin: 0 0 22px;
+  border-radius: 50px;
+  background: #eaf3df;
+  color: #267247;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.health-hero h1 {
+  margin: 0 0 20px;
+  color: #263b30;
+  font-family: Georgia, serif;
+  font-size: clamp(2.5rem, 4.5vw, 4.3rem);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.health-hero h1 em {
+  color: #28764a;
+  font-style: normal;
+}
+
+.health-hero-content > p {
+  max-width: 520px;
+  margin: 0 0 28px;
+  color: #64736a;
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.health-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.health-hero-actions .button {
+  border-radius: 50px;
+  padding: 14px 24px;
+}
+
+.health-hero-visual {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 370px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.health-hero-image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  height: 390px;
+  border-radius: 48% 48% 28px 28px;
+  overflow: hidden;
+  background: #e3efdf;
+  box-shadow: 0 22px 55px rgba(35, 75, 45, 0.13);
+}
+
+.health-hero-image-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.health-hero-note {
+  position: absolute;
+  left: -15px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 19px;
+  background: #fff;
+  border: 1px solid #e3eddf;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(35, 75, 45, 0.12);
+  color: #263b30;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.health-hero-note i {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eaf3e8;
+  color: #28764a;
+  font-size: 1.1rem;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .health-hero {
+    grid-template-columns: 1fr 0.9fr;
+    padding: 45px 5%;
+    gap: 30px;
+  }
+
+  .health-hero-visual {
+    min-height: 300px;
+  }
+
+  .health-hero-image-frame {
+    height: 310px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .health-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: calc(100% - 24px);
+    padding: 36px 20px;
+    margin: 20px auto 35px;
+    text-align: center;
+  }
+
+  .health-hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .health-hero .eyebrow {
+    margin: 0 auto 20px;
+  }
+
+  .health-hero h1 {
+    font-size: clamp(2.2rem, 9vw, 2.8rem);
+    line-height: 1.12;
+  }
+
+  .health-hero-content > p {
+    max-width: 100%;
+    margin: 0 auto 24px;
+  }
+
+  .health-hero-actions {
+    justify-content: center;
+  }
+
+  .health-hero-visual {
+    width: 100%;
+    min-height: 0;
+    display: block;
+  }
+
+  .health-hero-image-frame {
+    width: 100%;
+    max-width: 100%;
+    height: 260px;
+    border-radius: 130px 130px 24px 24px;
+  }
+
+  .health-hero-note {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: fit-content;
+    max-width: 100%;
+    margin: -20px auto 0;
+    z-index: 2;
+  }
+}
+
+/* Final mobile override for Dog Health hero */
+@media screen and (max-width: 650px) {
+  .health-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+    padding: 36px 20px !important;
+    margin: 20px 12px 35px !important;
+    text-align: center !important;
+  }
+
+  .health-hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .health-hero .eyebrow {
+    margin: 0 auto 20px !important;
+  }
+
+  .health-hero h1 {
+    font-size: clamp(2.2rem, 9vw, 2.8rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  .health-hero-content > p {
+    max-width: 100% !important;
+    margin: 0 auto 24px !important;
+  }
+
+  .health-hero-actions {
+    justify-content: center !important;
+  }
+
+  .health-hero-visual {
+    width: 100% !important;
+    min-height: 0 !important;
+    display: block !important;
+  }
+
+  .health-hero-image-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 260px !important;
+    border-radius: 130px 130px 24px 24px !important;
+  }
+
+  .health-hero-note {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: -20px auto 0 !important;
+    z-index: 2;
+  }
+}
+
+/* ===== Dog Health Cards - Visual Refresh ===== */
+
+.health-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  margin-bottom: 56px;
+  align-items: stretch;
+}
+
+.health-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  padding: 30px;
+  border: 1px solid #e3eadf;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #ffffff 0%, #f9fcf7 100%);
+  box-shadow: 0 8px 24px rgba(32, 66, 43, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.health-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #477b50, #b5cf9e);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.health-card:hover {
+  transform: translateY(-7px);
+  border-color: #b9cfb3;
+  box-shadow: 0 18px 38px rgba(32, 66, 43, 0.11);
+}
+
+.health-card:hover::before {
+  opacity: 1;
+}
+
+.health-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: #eaf3e6;
+  color: var(--green);
+  font-size: 1.55rem;
+  margin-bottom: 22px;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.health-card:hover .health-icon-wrap {
+  transform: scale(1.06);
+  background: #dcebd5;
+}
+
+.health-card h3 {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.health-card p {
+  font-size: 0.94rem;
+  line-height: 1.75;
+  color: #687568;
+}
+
+.warning-card {
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(110, 57, 35, 0.05);
+}
+
+@media (max-width: 900px) {
+  .health-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .health-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .health-card,
+  .warning-card {
+    padding: 24px;
+    min-height: auto;
+  }
+}
+
+/* ===== Health Priority Section ===== */
+
+.health-priority {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+  margin: 80px 0 36px;
+  padding: 38px;
+  border: 1px solid #e3eadf;
+  border-radius: 30px;
+  background: #f5f8f1;
+}
+
+.health-priority-image {
+  width: 100%;
+  height: 390px;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.health-priority-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.health-priority-content .eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.health-priority-content h2 {
+  margin: 0 0 18px;
+  color: var(--ink);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.health-priority-content p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.health-priority-points {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.health-priority-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.health-priority-point span:first-child {
+  display: grid;
+  place-items: center;
+  flex: 0 0 25px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #e0edda;
+  color: var(--green);
+  font-weight: 800;
+}
+
+.health-priority-content .health-disclaimer {
+  margin-top: 18px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* ===== Final CTA ===== */
+
+.health-final-cta {
+  position: relative;
+  overflow: hidden;
+  margin: 36px 0 70px;
+  padding: 58px 28px;
+  border-radius: 28px;
+  background: #244d36;
+  color: white;
+  text-align: center;
+}
+
+.health-final-cta::before,
+.health-final-cta::after {
+  content: "🐾";
+  position: absolute;
+  color: rgba(255, 255, 255, 0.09);
+  font-size: 100px;
+  pointer-events: none;
+}
+
+.health-final-cta::before {
+  top: -20px;
+  left: 5%;
+  transform: rotate(-20deg);
+}
+
+.health-final-cta::after {
+  right: 5%;
+  bottom: -25px;
+  transform: rotate(18deg);
+}
+
+.health-final-cta h2 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 14px;
+  color: white;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.health-final-cta p {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 0 auto 26px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.health-final-cta .button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: white;
+  color: #244d36;
+  font-weight: 750;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.health-final-cta .button:hover {
+  transform: translateY(-3px);
+  background: #eaf3e6;
+}
+
+@media (max-width: 800px) {
+  .health-priority {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 56px;
+    padding: 24px;
+  }
+
+  .health-priority-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .health-priority {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .health-priority-image {
+    height: 240px;
+  }
+
+  .health-final-cta {
+    margin-bottom: 45px;
+    padding: 46px 22px;
+    border-radius: 22px;
+  }
+
+  .health-final-cta::before,
+  .health-final-cta::after {
+    font-size: 65px;
+  }
+}
+
     </style>
   </head>
   <body>
@@ -525,73 +1233,47 @@
     </header>
 
     <main>
-      <section class="page-hero">
-        <div class="eyebrow">Dog Care & Protection</div>
-        <h1>Keeping Your Dog <em>Happy & Healthy!</em></h1>
-        <p>
-          Explore essential information on dog health, preventive care, early
-          symptom detection, and expert wellness guidelines to ensure your
-          companion lives a vibrant life.
-        </p>
 
-        <div class="health-search-bar">
-          <input
-            type="text"
-            id="healthSearch"
-            placeholder="Search health topics, symptoms, vaccines..."
-            onkeyup="filterHealthContent()"
-          />
-          <button class="button button-small" style="border-radius: 999px">
-            Search
-          </button>
-        </div>
+<section class="health-hero">
+  <div class="health-hero-content">
+    <div class="eyebrow">
+      <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+      Dog Care & Protection
+    </div>
 
-        <div class="filter-chips">
-          <button
-            class="filter-chip active"
-            onclick="filterCategory('all', this)"
-          >
-            All Topics
-          </button>
-          <button
-            class="filter-chip"
-            onclick="filterCategory('problems', this)"
-          >
-            Common Problems
-          </button>
-          <button
-            class="filter-chip"
-            onclick="filterCategory('symptoms', this)"
-          >
-            Symptoms
-          </button>
-          <button
-            class="filter-chip"
-            onclick="filterCategory('vaccination', this)"
-          >
-            Vaccination
-          </button>
-          <button
-            class="filter-chip"
-            onclick="filterCategory('firstaid', this)"
-          >
-            First Aid
-          </button>
-          <button
-            class="filter-chip"
-            onclick="filterCategory('preventive', this)"
-          >
-            Preventive Care
-          </button>
-          <button class="filter-chip" onclick="filterCategory('senior', this)">
-            Senior Health
-          </button>
-        </div>
+    <h1>
+      Keeping Your Dog
+      <em>Happy & Healthy!</em>
+    </h1>
 
-        <a class="button button-outline" href="#problems-section"
-          >Explore Health Guide ↓</a
-        >
-      </section>
+    <p>
+      Every wag deserves a healthy life. Explore practical guidance on
+      preventive care, vaccinations, early warning signs, and everyday
+      wellness to help your companion thrive.
+    </p>
+
+    <div class="health-hero-actions">
+      <a class="button" href="#problems-section">
+        Explore Health Guide <i class="fa-solid fa-arrow-down"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="health-hero-visual">
+    <div class="health-hero-image-frame">
+      <img
+        src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85"
+        alt="Happy golden retriever enjoying a healthy life"
+      />
+    </div>
+
+    <div class="health-hero-note">
+      <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+      <span>Care today. Healthier tomorrows.</span>
+    </div>
+  </div>
+</section>
+
 
       <div class="section-wrap" style="padding-block: 60px">
         <!-- Quick Navigation Hub -->
@@ -2332,16 +3014,64 @@
         </div>
       </div>
 
-      <section class="inner-cta">
-        <h2>Your dog's health is our top priority.</h2>
-        <p>
-          Explore more pet care guides or connect with trusted community members
-          on PetSathi.
-        </p>
-        <a class="button" href="index.html" style="margin-top: 20px"
-          >Back to Explore Pets ↗</a
-        >
-      </section>
+
+<section class="health-priority">
+  <div class="health-priority-image">
+    <img
+  src="https://images.sbs.com.au/drupal/yourlanguage/public/untitled_design_8_1.jpg?imwidth=1280"
+  alt="Veterinarian caring for a dog during a health checkup"
+  loading="lazy"
+/>
+  </div>
+
+  <div class="health-priority-content">
+    <span class="eyebrow">A little care goes a long way</span>
+
+    <h2>Your dog's health deserves attention every day.</h2>
+
+    <p>
+      Good health starts with consistent care. Pay attention to changes
+      in your dog's behaviour, maintain regular veterinary checkups,
+      and build healthy daily habits.
+    </p>
+
+    <div class="health-priority-points">
+      <div class="health-priority-point">
+        <span>✓</span>
+        <span>Schedule routine veterinary checkups.</span>
+      </div>
+
+      <div class="health-priority-point">
+        <span>✓</span>
+        <span>Keep vaccinations and preventive care up to date.</span>
+      </div>
+
+      <div class="health-priority-point">
+        <span>✓</span>
+        <span>Notice unusual symptoms and seek professional advice.</span>
+      </div>
+    </div>
+
+    <p class="health-disclaimer">
+      This guide is for general awareness and does not replace
+      professional veterinary diagnosis or treatment.
+    </p>
+  </div>
+</section>
+
+<section class="health-final-cta">
+  <h2>Every paw deserves a healthy, happy life.</h2>
+
+  <p>
+    Keep exploring PetSathi for helpful pet-care resources and
+    make every step of your dog's wellness journey count.
+  </p>
+
+  <a class="button" href="index.html">
+    Explore PetSathi ↗
+  </a>
+</section>
+
     </main>
 
     <footer class="footer">

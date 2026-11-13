@@ -593,78 +593,17 @@
       margin-top: 2px;
     }
 
-    /* Quick Guide Navigation & Search/Filter Strip - Match Dogs Index */
+    /* Compact Dog Walking Search and Filter */
     .guides-nav-strip {
       position: relative;
       background: #ffffff;
-      margin: 40px auto;
-      max-width: 1200px;
-      width: calc(100% - 40px);
+      margin: 28px auto;
+      max-width: 1080px;
+      width: calc(100% - 48px);
       border: 1px solid #dceade;
-      border-radius: 32px;
-      padding: 38px 36px 34px;
+      border-radius: 24px;
+      padding: 22px 28px;
       box-shadow: 0 4px 24px rgba(35, 80, 50, 0.04);
-      overflow: hidden;
-    }
-
-    /* Decorative Corner Paws */
-    .quick-nav-decor {
-      position: absolute;
-      pointer-events: none;
-      z-index: 0;
-      color: #cde4d3;
-      opacity: 0.55;
-    }
-
-    .decor-top-left {
-      top: -8px;
-      left: -8px;
-      width: 130px;
-      height: 130px;
-      background: radial-gradient(circle at 10% 10%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
-      border-radius: 0 0 100% 0;
-    }
-
-    .decor-bottom-right {
-      bottom: -8px;
-      right: -8px;
-      width: 130px;
-      height: 130px;
-      background: radial-gradient(circle at 90% 90%, #eaf5ed 0%, rgba(234, 245, 237, 0) 70%);
-      border-radius: 100% 0 0 0;
-    }
-
-    .decor-paw {
-      position: absolute;
-      font-size: 1.55rem;
-    }
-
-    .decor-paw-1 {
-      top: 22px;
-      left: 28px;
-      transform: rotate(-18deg);
-    }
-
-    .decor-paw-2 {
-      top: 50px;
-      left: 14px;
-      font-size: 1.15rem;
-      transform: rotate(12deg);
-      opacity: 0.85;
-    }
-
-    .decor-paw-3 {
-      bottom: 22px;
-      right: 28px;
-      transform: rotate(25deg);
-    }
-
-    .decor-paw-4 {
-      bottom: 50px;
-      right: 14px;
-      font-size: 1.15rem;
-      transform: rotate(-10deg);
-      opacity: 0.85;
     }
 
     /* Centered Header */
@@ -672,15 +611,15 @@
       position: relative;
       z-index: 1;
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
 
     .quick-nav-eyebrow-wrap {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 12px;
+      gap: 10px;
+      margin-bottom: 8px;
       width: 100%;
     }
 
@@ -697,10 +636,10 @@
       background: #edf6df;
       color: #246b43;
       border: 1px solid #dcebc9;
-      padding: 5px 14px;
+      padding: 4px 12px;
       border-radius: 50px;
       font-family: 'DM Sans', 'Manrope', sans-serif !important;
-      font-size: 0.74rem;
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 1.1px;
       text-transform: uppercase;
@@ -712,10 +651,10 @@
 
     .quick-nav-title {
       font-family: Georgia, 'Times New Roman', serif !important;
-      font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+      font-size: clamp(1.25rem, 2.2vw, 1.65rem);
       font-weight: 700;
       color: #1a281f;
-      margin: 0 0 8px;
+      margin: 0 0 5px;
       line-height: 1.25;
     }
 
@@ -725,10 +664,10 @@
 
     .quick-nav-subtitle {
       font-family: 'DM Sans', 'Manrope', sans-serif !important;
-      font-size: 0.92rem;
+      font-size: 0.85rem;
       color: var(--muted);
       margin: 0 auto;
-      max-width: 680px;
+      max-width: 620px;
       line-height: 1.5;
     }
 
@@ -738,8 +677,8 @@
       z-index: 1;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      max-width: 1060px;
+      gap: 10px;
+      max-width: 940px;
       margin: 0 auto;
     }
 
@@ -768,17 +707,22 @@
 
     .sf-search-input {
       width: 100%;
-      height: 52px;
-      padding: 0 52px 0 62px;
+      height: 44px;
+      padding: 0 48px 0 60px;
       border: 1px solid #cce4d2;
       border-radius: 50px;
       background: #fcfdfc;
       font-family: 'DM Sans', 'Manrope', sans-serif !important;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: var(--ink);
       outline: none;
       box-shadow: 0 2px 8px rgba(35, 75, 45, 0.03);
       transition: all 0.25s ease;
+    }
+
+    .sf-search-input::placeholder {
+      color: #718176;
+      opacity: 1;
     }
 
     .sf-search-input:focus {
@@ -820,7 +764,7 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      padding: 4px 2px;
+      padding: 0;
     }
 
     .sf-filter-inline-row {
@@ -835,7 +779,7 @@
       font-size: 0.9rem;
       font-weight: 700;
       color: #1a281f;
-      min-width: 86px;
+      min-width: 78px;
       flex-shrink: 0;
     }
 
@@ -849,7 +793,8 @@
     .sf-mini-pill {
       display: inline-flex;
       align-items: center;
-      padding: 5px 13px;
+      gap: 7px;
+      padding: 4px 11px 4px 5px;
       border-radius: 9999px;
       font-family: 'DM Sans', 'Manrope', sans-serif !important;
       font-size: 0.82rem;
@@ -864,11 +809,29 @@
       line-height: 1.35;
     }
 
+    .sf-pill-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #dcefe1;
+      color: #1e6f43;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      font-size: 0.72rem;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
     .sf-mini-pill:hover {
       background: #e5f2e8;
       border-color: #246b43;
       color: #1a281f;
       transform: translateY(-1px);
+    }
+
+    .sf-mini-pill:hover .sf-pill-icon {
+      background: #1e6f43;
+      color: #ffffff;
     }
 
     .sf-mini-pill.active {
@@ -879,6 +842,18 @@
       box-shadow: 0 2px 8px rgba(30, 111, 67, 0.24);
     }
 
+    .sf-mini-pill.active .sf-pill-icon {
+      background: #ffffff;
+      color: #1e6f43;
+    }
+
+    .sf-mini-pill:focus-visible,
+    .sf-reset-btn:focus-visible,
+    .sf-clear-btn:focus-visible {
+      outline: 3px solid rgba(35, 120, 71, 0.32);
+      outline-offset: 2px;
+    }
+
     /* Meta & Reset Bar */
     .sf-meta-bar {
       display: flex;
@@ -886,7 +861,7 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      padding-top: 10px;
+      padding-top: 7px;
       border-top: 1px dashed #dceade;
     }
 
@@ -1098,7 +1073,11 @@
 
     @media (max-width: 920px) {
       .guides-nav-strip {
-        padding: 30px 20px 24px;
+        padding: 20px 22px;
+      }
+
+      .sf-filter-inline-row {
+        align-items: flex-start;
       }
 
       #requirements-grid.single-horizontal-card .dog-card {
@@ -2175,11 +2154,45 @@
       }
 
       .guides-nav-strip {
-        padding: 24px 18px;
+        padding: 18px 16px;
+        width: calc(100% - 32px);
+        margin: 20px auto;
+      }
+
+      .quick-nav-line {
+        width: 40px;
+      }
+
+      .sf-row-label {
+        min-width: 72px;
       }
     }
 
     @media (max-width: 640px) {
+
+      .quick-nav-header {
+        margin-bottom: 14px;
+      }
+
+      .sf-filter-inline-row {
+        gap: 6px;
+      }
+
+      .sf-row-label {
+        min-width: 100%;
+      }
+
+      .sf-mini-pills {
+        gap: 6px;
+      }
+
+      .sf-mini-pill {
+        font-size: 0.75rem;
+      }
+
+      .sf-status-badge {
+        align-items: flex-start;
+      }
 
       .dog-info-grid,
       .dog-info-grid.grid-4,
@@ -2324,16 +2337,6 @@
 
     <!-- Search & Filter Strip (Matching Quick Navigation Hub in dogs/index.html) -->
     <div class="guides-nav-strip" id="search-filter" role="region" aria-label="Dog Walking Search and Filter">
-      <!-- Decorative Corner Paws -->
-      <div class="quick-nav-decor decor-top-left" aria-hidden="true">
-        <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
-        <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
-      </div>
-      <div class="quick-nav-decor decor-bottom-right" aria-hidden="true">
-        <i class="fa-solid fa-paw decor-paw decor-paw-3"></i>
-        <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
-      </div>
-
       <!-- Centered Header -->
       <div class="quick-nav-header">
         <div class="quick-nav-eyebrow-wrap">
@@ -2371,12 +2374,30 @@
           <div class="sf-filter-inline-row">
             <span class="sf-row-label">Dog size:</span>
             <div class="sf-mini-pills" id="size-filter-pills" role="tablist">
-              <button type="button" class="sf-mini-pill" data-size="small">Small Breeds</button>
-              <button type="button" class="sf-mini-pill" data-size="medium">Medium Breeds</button>
-              <button type="button" class="sf-mini-pill" data-size="large">Large Breeds</button>
-              <button type="button" class="sf-mini-pill" data-size="puppy">Puppies</button>
-              <button type="button" class="sf-mini-pill" data-size="senior">Senior Dogs</button>
-              <button type="button" class="sf-mini-pill" data-size="high-energy">High-Energy</button>
+              <button type="button" class="sf-mini-pill" data-size="small">
+                <span class="sf-pill-icon" aria-hidden="true"><i class="fa-solid fa-dog"></i></span>
+                <span>Small Breeds</span>
+              </button>
+              <button type="button" class="sf-mini-pill" data-size="medium">
+                <span class="sf-pill-icon" aria-hidden="true"><i class="fa-solid fa-dog"></i></span>
+                <span>Medium Breeds</span>
+              </button>
+              <button type="button" class="sf-mini-pill" data-size="large">
+                <span class="sf-pill-icon" aria-hidden="true"><i class="fa-solid fa-dog"></i></span>
+                <span>Large Breeds</span>
+              </button>
+              <button type="button" class="sf-mini-pill" data-size="puppy">
+                <span class="sf-pill-icon" aria-hidden="true"><i class="fa-solid fa-bone"></i></span>
+                <span>Puppies</span>
+              </button>
+              <button type="button" class="sf-mini-pill" data-size="senior">
+                <span class="sf-pill-icon" aria-hidden="true"><i class="fa-solid fa-heart"></i></span>
+                <span>Senior Dogs</span>
+              </button>
+              <button type="button" class="sf-mini-pill" data-size="high-energy">
+                <span class="sf-pill-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+                <span>High-Energy</span>
+              </button>
             </div>
           </div>
 
@@ -2384,9 +2405,18 @@
           <div class="sf-filter-inline-row">
             <span class="sf-row-label">Activities:</span>
             <div class="sf-mini-pills" id="activity-filter-pills" role="tablist">
-              <button type="button" class="sf-mini-pill" data-activity="daily-routine">Daily Routine</button>
-              <button type="button" class="sf-mini-pill" data-activity="low-intensity">Low Intensity</button>
-              <button type="button" class="sf-mini-pill" data-activity="high-intensity">High Intensity</button>
+              <button type="button" class="sf-mini-pill" data-activity="daily-routine">
+                <span class="sf-pill-icon" aria-hidden="true"><i class="fa-solid fa-calendar-day"></i></span>
+                <span>Daily Routine</span>
+              </button>
+              <button type="button" class="sf-mini-pill" data-activity="low-intensity">
+                <span class="sf-pill-icon" aria-hidden="true"><i class="fa-solid fa-leaf"></i></span>
+                <span>Low Intensity</span>
+              </button>
+              <button type="button" class="sf-mini-pill" data-activity="high-intensity">
+                <span class="sf-pill-icon" aria-hidden="true"><i class="fa-solid fa-person-running"></i></span>
+                <span>High Intensity</span>
+              </button>
             </div>
           </div>
         </div>

@@ -1,129 +1,125 @@
-# 🤝 Contributing to PetSathi
+# 💗 PetSathi Code of Conduct
 
-Thank you for your interest in contributing to **PetSathi**, an open-source project for **NSoC Winter Edition**! We welcome contributions from beginners and experienced developers, designers, testers, and documentation writers.
+## 📢 Community Introduction – Start Here First!
 
-Please read these guidelines before starting your contribution.
+Welcome to PetSathi! 🐾
+
+Before participating in project development, requesting an issue assignment, or contributing code, **every new contributor must introduce themselves in our official PetSathi Welcome Announcement.**
+
+👉 [Introduce Yourself – PetSathi Welcome Discussion](https://github.com/Riya-Kharade/PetSathi/discussions/6)
+
+Please share the following details in the discussion:
+
+1. **Name:** Your name or GitHub username.
+2. **Introduction:** A short introduction about yourself.
+3. **Technical Skills:** Technologies and tools you know.
+4. **Area of Interest:** Frontend, Backend, UI/UX, Database, Documentation, etc.
+5. **Open-Source Experience:** Is this your first open-source contribution?
+
+### Important Guidelines
+
+- Introducing yourself in the Welcome Announcement is mandatory for new contributors.
+- Read `README.md` and `CONTRIBUTING.md` before starting work.
+- Explore the available GitHub issues.
+- Comment on an issue to express your interest.
+- Wait for maintainer assignment before starting development.
+- Do not start working on an issue until it is assigned to you.
+
+**Our goal is to know our contributors, understand their interests, and build a collaborative community! 💚**
 
 ---
 
-## 🌱 How You Can Contribute
+## Our Pledge
 
-You can contribute by:
+PetSathi is an open-source project created for collaboration and learning as part of **NSoC Winter Edition**.
 
-- Building or improving frontend pages.
-- Improving responsive design and accessibility.
-- Creating pet category pages and useful pet-care information.
-- Working on PHP backend features in the relevant development level.
-- Improving MySQL database design and queries.
-- Fixing bugs and improving existing features.
-- Adding tests and improving documentation.
-- Suggesting useful features or reporting problems.
+We want everyone who participates in the project to feel welcome, respected, and safe, regardless of their experience level, background, identity, or contribution type.
 
-## 🐛 Raise an Issue First
+We are committed to providing a friendly, inclusive, and harassment-free environment for everyone.
 
-You are welcome to **raise an issue** if you:
+## 🌟 Expected Behaviour
 
-- Find a bug or broken page.
-- Have an idea for a new feature.
-- Notice a design or accessibility problem.
-- Want clarification about a task.
-- Have a suggestion to improve PetSathi.
+All contributors, maintainers, and community members are expected to:
 
-Before creating an issue:
+- Be respectful, kind, and considerate.
+- Welcome beginners and help them learn.
+- Communicate clearly and constructively.
+- Give feedback about code and ideas, not attack people.
+- Respect different opinions and approaches.
+- Be patient when reviewing pull requests or answering questions.
+- Accept constructive feedback gracefully.
+- Give credit to others for their work.
+- Respect project guidelines and maintainer decisions.
+- Keep discussions focused on improving PetSathi.
 
-1. Search existing issues to check whether the same topic has already been reported.
-2. Use a clear and descriptive title.
-3. Explain the problem or suggestion.
-4. Add steps to reproduce the problem, expected behaviour, and screenshots where useful.
-5. Mention which part of the project is affected.
+## 🚫 Unacceptable Behaviour
 
-Please do not create duplicate issues. If a similar issue already exists, add useful information to that discussion instead.
+The following behaviour is not acceptable:
 
-## 📌 Issue Assignment Rules
+- Harassment, bullying, threats, or intimidation.
+- Discrimination or offensive comments.
+- Personal attacks, insults, or deliberately humiliating others.
+- Trolling or repeated disruptive behaviour.
+- Publishing someone's private information without permission.
+- Sharing spam, malicious links, or inappropriate content.
+- Deliberately disrupting discussions, issues, or pull requests.
+- Claiming another person's work as your own.
+- Any other conduct that makes the project community unsafe or unwelcoming.
 
-- Contributors should comment on an issue to express interest before starting work.
-- Wait for the maintainer to assign or confirm the issue before beginning.
-- **A maximum of 3 open issues can be assigned to one contributor at a time.**
-- Complete or close your currently assigned issues before requesting more assignments.
-- Do not work on an issue already assigned to another contributor unless the maintainer gives permission.
-- If you cannot continue working on an assigned issue, inform the maintainer so it can be reassigned.
-- Do not claim an issue only to reserve it without making progress.
-- The maintainer may close duplicate, unclear, out-of-scope, or inactive issues after discussion.
+## 💬 Communication Guidelines
 
-## 🔀 Contribution Workflow
+- Keep GitHub issues and pull requests relevant to the project.
+- Use clear and respectful language.
+- Do not create duplicate issues or spam the repository.
+- Do not repeatedly tag maintainers or contributors without a valid reason.
+- Ask questions politely when you need help.
+- Introduce yourself in the official Welcome Announcement before requesting an issue assignment.
+- Respect the issue assignment limit and contribution workflow described in `CONTRIBUTING.md`.
 
-1. **Explore the repository:** Read the README and check the current development level.
-2. **Find or raise an issue:** Choose an available issue or create a new one.
-3. **Get approval:** Comment on the issue and wait for assignment or confirmation.
-4. **Fork the repository:** Create your own copy on GitHub.
-5. **Create a branch:** Use a meaningful branch name.
-6. **Make your changes:** Keep changes focused on the assigned issue.
-7. **Test your work:** Check that your changes work and do not break existing pages.
-8. **Commit your changes:** Use a clear commit message.
-9. **Open a pull request:** Link the related issue and explain your changes.
-10. **Respond to review:** Make requested updates politely and promptly.
+## 🔐 Privacy and Security
 
-## 🌿 Branch Naming
+- Do not share personal information, passwords, access tokens, or private messages publicly.
+- Do not commit credentials, API keys, or sensitive configuration.
+- Report security concerns privately to the project maintainers instead of publishing exploitable details in a public issue.
 
-Use clear branch names, for example:
+## ⚖️ Maintainer Responsibilities
 
-```text
-feature/dog-category-page
-feature/homepage-responsive-design
-fix/navbar-mobile-layout
-docs/update-project-readme
-```
+Project maintainers are responsible for:
 
-## 💬 Commit Message Examples
+- Explaining and applying project guidelines fairly.
+- Reviewing contributions respectfully.
+- Helping maintain a welcoming environment.
+- Addressing reports of unacceptable behaviour.
+- Taking appropriate action when this Code of Conduct is violated.
 
-```text
-feat: add dog category landing page
-fix: correct mobile navigation layout
-docs: improve pet care page content
-style: update homepage card spacing
-```
+## 📢 Reporting a Concern
 
-## 📝 Pull Request Guidelines
+If you experience or witness unacceptable behaviour:
 
-Every pull request should:
+1. Do not engage in arguments or retaliation.
+2. Save relevant links or details if it is safe to do so.
+3. Contact the project maintainer privately through an available repository contact method.
+4. Share only the information needed to explain the concern.
 
-- Have a clear and descriptive title.
-- Explain what was changed and why.
-- Mention the related issue using `Closes #issue-number` when appropriate.
-- Include screenshots for UI changes.
-- Mention the testing performed.
-- Contain only changes related to the assigned issue.
-- Avoid unrelated formatting changes or unnecessary file modifications.
+Reports will be handled as respectfully and confidentially as reasonably possible. Please do not post private or sensitive details in public issues.
 
-A pull request may be reviewed, requested for changes, approved, or closed by the maintainers.
+## 🚨 Consequences
 
-## ✅ Basic Development Rules
+Depending on the severity and context, maintainers may:
 
-- Follow the existing folder structure and naming conventions.
-- Write clean, readable, and maintainable code.
-- Use meaningful variable, function, class, and file names.
-- Keep HTML, CSS, JavaScript, and PHP responsibilities organized.
-- Make pages responsive for desktop, tablet, and mobile.
-- Use semantic HTML and accessible labels.
-- Add comments only where they help explain non-obvious logic.
-- Do not add unnecessary dependencies.
-- Do not commit API keys, passwords, database credentials, personal data, or other secrets.
-- Do not copy code or assets without checking their license and giving required attribution.
-- Do not change project configuration or dependencies without a clear reason.
-- Keep the project aligned with the current development level.
+- Give a warning.
+- Remove inappropriate comments or content.
+- Temporarily restrict participation.
+- Close issues or pull requests.
+- Remove a contributor from the project.
+- Block a person from the repository in serious or repeated cases.
 
-## 🚧 Current Development Level
+Maintainers will aim to respond fairly and proportionately.
 
-Please check [`ISSUES.md`](ISSUES.md) before selecting a task.
+## 🐾 Our Community Promise
 
-**Level 1:** Frontend pages and static UI only. No PHP backend or MySQL integration is required in this level.
+Let's build PetSathi with kindness, collaboration, and respect.
 
-**Level 2:** Backend and database work is planned to begin on **3 November 2026**. Please do not implement Level 2 functionality as part of a Level 1 issue unless the maintainers announce otherwise.
+Every contribution matters, whether it is a line of code, a bug report, a design improvement, or helping another contributor.
 
-## 🙌 Need Help?
-
-If you are unsure about an issue, folder, technology, or implementation approach, ask a question in the relevant GitHub issue before making major changes.
-
-Thank you for helping make PetSathi better!
-
-**Happy Contributing! 🐾**
+**Introduce yourself. Share your ideas. Collaborate. Build together. 💗**

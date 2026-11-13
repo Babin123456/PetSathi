@@ -8,16 +8,12 @@
       content="Discover PetSathi — an open-source pet care and pet-walking platform created during NSoC 2026. Explore our vision, mission, and how we empower pet owners and walking companions."
     />
     <title>About Us | Vision, Mission & Community | PetSathi</title>
-
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/about.css" />
     <link
@@ -25,7 +21,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <style>
-      /* Font Awesome 6 Free Webfont definition & Protection against global.css */
       @font-face {
         font-family: "Font Awesome 6 Free";
         font-style: normal;
@@ -52,6 +47,12 @@
         font-weight: 400 !important;
       }
 
+      .hero-badges-row .badge-item i {
+        color: #286849 !important;
+        font-size: 1rem;
+        margin-right: 6px;
+      }
+
       html {
         scroll-behavior: smooth;
       }
@@ -66,9 +67,6 @@
         scroll-margin-top: 90px;
       }
 
-      /* --------------------------------------------------------------------------
-       1. Quick Navigation Hub - Exact Structure & Design from dogs/index.html
-       -------------------------------------------------------------------------- */
       .guides-nav-strip {
         position: relative;
         background: #ffffff;
@@ -82,7 +80,6 @@
         overflow: hidden;
       }
 
-      /* Decorative Corner Paws matching dogs/index.html */
       .quick-nav-decor {
         position: absolute;
         pointer-events: none;
@@ -151,7 +148,6 @@
         transform: rotate(15deg);
       }
 
-      /* Centered Header & Pill Badge matching dogs/index.html */
       .quick-nav-header {
         position: relative;
         z-index: 1;
@@ -213,7 +209,6 @@
         font-weight: 800;
       }
 
-      /* 5 Pill Buttons Grid (One Row on Desktop) */
       .guides-nav-grid {
         position: relative;
         z-index: 1;
@@ -283,9 +278,6 @@
         text-overflow: ellipsis;
       }
 
-      /* --------------------------------------------------------------------------
-       2. Section Heading Cards - Exact Signature Style from dogs/index.html
-       -------------------------------------------------------------------------- */
       .dog-topics-heading {
         position: relative;
         max-width: 1400px;
@@ -299,7 +291,6 @@
         box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
       }
 
-      /* Curvy decorative wave layers matching reference image */
       .corner-wave {
         position: absolute;
         pointer-events: none;
@@ -367,7 +358,6 @@
         color: #28764a;
       }
 
-      /* Heading Radiating Rays / Sparkles - Clean Fan Radiating from Text */
       .heading-burst {
         display: inline-block;
         position: relative;
@@ -383,7 +373,6 @@
         border-radius: 9999px;
       }
 
-      /* Left burst: 3 rays radiating out to the left from the right edge */
       .heading-burst.left span {
         right: 0;
         transform-origin: right center;
@@ -409,7 +398,6 @@
         transform: rotate(-35deg);
       }
 
-      /* Right burst: 3 rays radiating out to the right from the left edge */
       .heading-burst.right span {
         left: 0;
         transform-origin: left center;
@@ -444,7 +432,6 @@
         line-height: 1.65;
       }
 
-      /* Decorative Paws (Font Awesome) - Exactly 2 on left, 2 on right */
       .paw i {
         font-size: inherit;
         color: inherit;
@@ -489,9 +476,6 @@
         transform: rotate(-15deg);
       }
 
-      /* --------------------------------------------------------------------------
-       3. Vision & Mission Cards - Side by Side on Desktop
-       -------------------------------------------------------------------------- */
       .vm-cards-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -566,9 +550,6 @@
         margin: 0;
       }
 
-      /* --------------------------------------------------------------------------
-       4. Core Values Cards (4 in 1 Row on Desktop)
-       -------------------------------------------------------------------------- */
       .values-container {
         margin-top: 15px;
       }
@@ -644,7 +625,6 @@
         margin: 0;
       }
 
-      /* Purpose cards in Our Story */
       .purpose-card {
         border: 1px solid #dcebc9 !important;
         border-radius: 20px !important;
@@ -680,7 +660,6 @@
         border-color: #246b43 !important;
       }
 
-      /* Section padding cleanup & divider removals */
       .story-section,
       .vision-mission-section,
       .how-helps-section,
@@ -693,7 +672,6 @@
         padding-block: 50px;
       }
 
-      /* How It Helps Tab and Card Icons */
       .help-card-icon {
         font-size: 1.4rem;
         color: #246b43 !important;
@@ -724,7 +702,6 @@
         color: #ffffff;
       }
 
-      /* Platform Features Icons */
       .feature-icon-circle {
         color: #246b43 !important;
         background: #edf6df !important;
@@ -748,7 +725,6 @@
         margin-right: 6px;
       }
 
-      /* Responsive */
       @media (max-width: 1100px) {
         .guides-nav-grid {
           grid-template-columns: repeat(3, 1fr);
@@ -817,9 +793,6 @@
         }
       }
 
-      /* --------------------------------------------------------------------------
-       FAQ List - Match Width of Section Heading (Full Width of section-wrap)
-       -------------------------------------------------------------------------- */
       .faq-list {
         max-width: 100% !important;
         width: 100% !important;
@@ -861,9 +834,6 @@
         line-height: 1.65 !important;
       }
 
-      /* --------------------------------------------------------------------------
-       Numerical Stats Cards - Proper Spacing, Letters, Typography & Hover
-       -------------------------------------------------------------------------- */
       .stats-section {
         background: transparent !important;
         padding-block: 20px 45px !important;
@@ -981,9 +951,6 @@
         margin: 0;
       }
 
-      /* --------------------------------------------------------------------------
-       CTA Banner Section - Matching dogs/index.html Exactly
-       -------------------------------------------------------------------------- */
       main > .cta,
       .cta {
         display: flex !important;
@@ -1192,9 +1159,6 @@
   </head>
 
   <body>
-    <!-- 
-       Site Header & Navigation
-        -->
     <header class="site-header">
       <a class="brand" href="../../index.html" aria-label="PetSathi home"
         ><svg
@@ -1265,11 +1229,7 @@
       </nav>
     </header>
 
-    <!-- 
-       Main Content
-        -->
     <main>
-      <!-- 1. HERO SECTION -->
       <section class="about-hero section-wrap">
         <div class="about-hero-copy">
           <div class="hero-pill-tag">
@@ -1286,9 +1246,18 @@
             everyone.
           </p>
           <div class="hero-badges-row">
-            <span class="badge-item"><span>💚</span> 100% Open Source</span>
-            <span class="badge-item"><span>🐕</span> Multi-Pet Support</span>
-            <span class="badge-item"><span>🤝</span> Community Driven</span>
+            <span class="badge-item"
+              ><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> 100%
+              Open Source</span
+            >
+            <span class="badge-item"
+              ><i class="fa-solid fa-paw" aria-hidden="true"></i> Multi-Pet
+              Support</span
+            >
+            <span class="badge-item"
+              ><i class="fa-solid fa-people-group" aria-hidden="true"></i>
+              Community Driven</span
+            >
           </div>
           <div class="about-hero-actions">
             <a class="button" href="#mission-vision">Our Mission & Vision ▾</a>
@@ -1324,9 +1293,7 @@
         </div>
       </section>
 
-      <!-- 1. Quick Guide Navigation Strip - Match dogs/index.html Reference Design -->
       <section class="guides-nav-strip" aria-label="Quick Navigation">
-        <!-- Decorative Corner Paws -->
         <div class="quick-nav-decor decor-top-left" aria-hidden="true">
           <i class="fa-solid fa-paw decor-paw decor-paw-1"></i>
           <i class="fa-solid fa-paw decor-paw decor-paw-2"></i>
@@ -1336,7 +1303,6 @@
           <i class="fa-solid fa-paw decor-paw decor-paw-4"></i>
         </div>
 
-        <!-- Centered Header -->
         <div class="quick-nav-header">
           <div class="quick-nav-eyebrow-wrap">
             <span class="quick-nav-line"></span>
@@ -1354,7 +1320,6 @@
           </h2>
         </div>
 
-        <!-- 5 Pill Buttons Grid (One Row on Desktop) -->
         <div class="guides-nav-grid" aria-label="About Page Quick Links">
           <a href="#our-story" class="guide-nav-item" id="nav-link-our-story">
             <span class="guide-nav-icon"
@@ -1409,10 +1374,8 @@
         </div>
       </section>
 
-      <!-- 2. OUR STORY & PURPOSE SECTION -->
       <section class="story-section section-wrap" id="our-story">
         <div class="dog-topics-heading">
-          <!-- Curvy decorative corner shapes matching reference image -->
           <svg
             class="corner-wave wave-tl"
             viewBox="0 0 220 130"
@@ -1450,7 +1413,6 @@
             />
           </svg>
 
-          <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
           <div class="paw paw-left-1">
             <i class="fa-solid fa-paw" aria-hidden="true"></i>
           </div>
@@ -1533,7 +1495,6 @@
           </div>
         </div>
 
-        <!-- Purpose Cards -->
         <div class="purpose-cards">
           <article class="purpose-card">
             <div class="card-icon">
@@ -1571,11 +1532,9 @@
         </div>
       </section>
 
-      <!-- 4. VISION, MISSION & VALUES SECTION -->
       <section class="vision-mission-section" id="mission-vision">
         <div class="section-wrap">
           <div class="dog-topics-heading">
-            <!-- Curvy decorative corner shapes matching reference image -->
             <svg
               class="corner-wave wave-tl"
               viewBox="0 0 220 130"
@@ -1613,7 +1572,6 @@
               />
             </svg>
 
-            <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
             <div class="paw paw-left-1">
               <i class="fa-solid fa-paw" aria-hidden="true"></i>
             </div>
@@ -1650,9 +1608,7 @@
             </div>
           </div>
 
-          <!-- 3. Vision & Mission Cards (Side by side on desktop, 2-3 lines description, no bullets) -->
           <div class="vm-cards-grid">
-            <!-- Vision Card -->
             <article class="vm-card">
               <div class="vm-icon-bubble">
                 <i class="fa-solid fa-eye" aria-hidden="true"></i>
@@ -1665,7 +1621,6 @@
               </p>
             </article>
 
-            <!-- Mission Card -->
             <article class="vm-card">
               <div class="vm-icon-bubble">
                 <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
@@ -1679,10 +1634,8 @@
             </article>
           </div>
 
-          <!-- 4. Core Values Cards (4 in one row desktop, 2 tablet, 1 mobile) -->
           <div class="values-container" id="core-values">
             <div class="dog-topics-heading">
-              <!-- Curvy decorative corner shapes matching reference image -->
               <svg
                 class="corner-wave wave-tl"
                 viewBox="0 0 220 130"
@@ -1720,7 +1673,6 @@
                 />
               </svg>
 
-              <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
               <div class="paw paw-left-1">
                 <i class="fa-solid fa-paw" aria-hidden="true"></i>
               </div>
@@ -1758,7 +1710,6 @@
             </div>
 
             <div class="values-grid">
-              <!-- Value 1 -->
               <article class="value-card">
                 <div class="value-icon-wrap">
                   <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
@@ -1770,7 +1721,6 @@
                 </p>
               </article>
 
-              <!-- Value 2 -->
               <article class="value-card">
                 <div class="value-icon-wrap">
                   <i
@@ -1785,7 +1735,6 @@
                 </p>
               </article>
 
-              <!-- Value 3 -->
               <article class="value-card">
                 <div class="value-icon-wrap">
                   <i
@@ -1800,7 +1749,6 @@
                 </p>
               </article>
 
-              <!-- Value 4 -->
               <article class="value-card">
                 <div class="value-icon-wrap">
                   <i class="fa-solid fa-people-roof" aria-hidden="true"></i>
@@ -1816,10 +1764,8 @@
         </div>
       </section>
 
-      <!-- 5. HOW PETSATHI HELPS PET OWNERS -->
       <section class="how-helps-section section-wrap" id="how-it-helps">
         <div class="dog-topics-heading">
-          <!-- Curvy decorative corner shapes matching reference image -->
           <svg
             class="corner-wave wave-tl"
             viewBox="0 0 220 130"
@@ -1857,7 +1803,6 @@
             />
           </svg>
 
-          <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
           <div class="paw paw-left-1">
             <i class="fa-solid fa-paw" aria-hidden="true"></i>
           </div>
@@ -1894,7 +1839,6 @@
           </div>
         </div>
 
-        <!-- Tab Switcher -->
         <div class="tabs-navigation" role="tablist">
           <button
             class="tab-btn active"
@@ -1925,7 +1869,6 @@
           </button>
         </div>
 
-        <!-- Tab Content: Pet Owners -->
         <div class="tab-panel active" id="panel-owners" role="tabpanel">
           <div class="help-grid">
             <div class="help-card">
@@ -1983,7 +1926,6 @@
           </div>
         </div>
 
-        <!-- Tab Content: Pet Walkers -->
         <div class="tab-panel" id="panel-walkers" role="tabpanel">
           <div class="help-grid">
             <div class="help-card">
@@ -2040,7 +1982,6 @@
           </div>
         </div>
 
-        <!-- Tab Content: Contributors -->
         <div class="tab-panel" id="panel-community" role="tabpanel">
           <div class="help-grid">
             <div class="help-card">
@@ -2102,11 +2043,9 @@
         </div>
       </section>
 
-      <!-- 6. KEY PLATFORM FEATURES SECTION -->
       <section class="features-section" id="platform-features">
         <div class="section-wrap">
           <div class="dog-topics-heading">
-            <!-- Curvy decorative corner shapes matching reference image -->
             <svg
               class="corner-wave wave-tl"
               viewBox="0 0 220 130"
@@ -2144,7 +2083,6 @@
               />
             </svg>
 
-            <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
             <div class="paw paw-left-1">
               <i class="fa-solid fa-paw" aria-hidden="true"></i>
             </div>
@@ -2182,7 +2120,6 @@
           </div>
 
           <div class="features-grid">
-            <!-- Feature 1 -->
             <article class="feature-item-card">
               <div class="feature-top">
                 <div class="feature-icon-circle">
@@ -2205,7 +2142,6 @@
               ></a>
             </article>
 
-            <!-- Feature 2 -->
             <article class="feature-item-card">
               <div class="feature-top">
                 <div class="feature-icon-circle">
@@ -2231,7 +2167,6 @@
               ></a>
             </article>
 
-            <!-- Feature 3 -->
             <article class="feature-item-card">
               <div class="feature-top">
                 <div class="feature-icon-circle">
@@ -2254,7 +2189,6 @@
               ></a>
             </article>
 
-            <!-- Feature 4 -->
             <article class="feature-item-card">
               <div class="feature-top">
                 <div class="feature-icon-circle">
@@ -2277,7 +2211,6 @@
               ></a>
             </article>
 
-            <!-- Feature 5 -->
             <article class="feature-item-card">
               <div class="feature-top">
                 <div class="feature-icon-circle">
@@ -2300,7 +2233,6 @@
               ></a>
             </article>
 
-            <!-- Feature 6 -->
             <article class="feature-item-card">
               <div class="feature-top">
                 <div class="feature-icon-circle">
@@ -2326,7 +2258,6 @@
         </div>
       </section>
 
-      <!-- 7. IMPACT & BY THE NUMBERS -->
       <section class="stats-section">
         <div class="section-wrap">
           <div class="stats-grid">
@@ -2373,10 +2304,8 @@
         </div>
       </section>
 
-      <!-- 8. PET COMMUNITY GALLERY -->
       <section class="gallery-section section-wrap">
         <div class="dog-topics-heading">
-          <!-- Curvy decorative corner shapes matching reference image -->
           <svg
             class="corner-wave wave-tl"
             viewBox="0 0 220 130"
@@ -2414,7 +2343,6 @@
             />
           </svg>
 
-          <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
           <div class="paw paw-left-1">
             <i class="fa-solid fa-paw" aria-hidden="true"></i>
           </div>
@@ -2495,11 +2423,9 @@
         </div>
       </section>
 
-      <!-- 9. FREQUENTLY ASKED QUESTIONS (FAQ) -->
       <section class="faq-section" id="faq">
         <div class="section-wrap">
           <div class="dog-topics-heading">
-            <!-- Curvy decorative corner shapes matching reference image -->
             <svg
               class="corner-wave wave-tl"
               viewBox="0 0 220 130"
@@ -2537,7 +2463,6 @@
               />
             </svg>
 
-            <!-- Decorative Paws (Font Awesome) - Exactly 2 left, 2 right -->
             <div class="paw paw-left-1">
               <i class="fa-solid fa-paw" aria-hidden="true"></i>
             </div>
@@ -2659,7 +2584,6 @@
         </div>
       </section>
 
-      <!-- CTA Banner Section matching dogs/index.html -->
       <section class="cta section-wrap">
         <div>
           <div class="eyebrow">START YOUR DOG'S JOURNEY</div>
@@ -2688,9 +2612,6 @@
       </section>
     </main>
 
-    <!-- 
-       Site Footer
-        -->
     <footer class="footer">
       <div class="section-wrap footer-grid">
         <div>
@@ -2761,7 +2682,6 @@
       </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="../js/main.js"></script>
     <script src="../js/about.js"></script>
   </body>

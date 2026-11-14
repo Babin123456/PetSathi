@@ -1,785 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Complete Guide to Cat Care & Health on PetSathi. Comprehensive advice on daily routines, grooming, hygiene, veterinary wellness, kitten care, and indoor feline safety.">
-  <title>Complete Guide to Cat Care & Health | PetSathi</title>
-
-  <!-- Google Fonts -->
+  <meta name="description"
+    content="Complete Guide to Cat Care &amp; Health on PetSathi - daily care routines, nutrition, coat grooming, dental care, kitten milestones, senior wellness, and vet advice.">
+  <title>Complete Guide to Cat Care &amp; Health | PetSathi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Global & Inner Stylesheets -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../../../css/global.css">
   <link rel="stylesheet" href="../../../css/home.css">
   <link rel="stylesheet" href="../../../css/inner.css">
-
   <style>
-    /* Custom Scoped Styles for Cat Care Page */
-    :root {
-      --cat-accent: #e58b5f;
-      --cat-accent-hover: #d27447;
-      --cat-accent-soft: #fcf1eb;
-      --cat-accent-border: #f5d4c2;
-      --cat-badge-bg: #edf3ec;
-      --cat-badge-text: #24573d;
-      --cat-card-bg: #ffffff;
-      --cat-card-border: #e2e8df;
-      --cat-soft-bg: #f5f8f3;
-      --cat-alert-red-bg: #fff1f0;
-      --cat-alert-red-border: #ffccc7;
-      --cat-alert-red-text: #a8071a;
-      --cat-alert-amber-bg: #fffbe6;
-      --cat-alert-amber-border: #ffe58f;
-      --cat-alert-amber-text: #ad6800;
-      --cat-alert-green-bg: #f6ffed;
-      --cat-alert-green-border: #b7eb8f;
-      --cat-alert-green-text: #237804;
-      --shadow-sm: 0 4px 14px rgba(35, 57, 43, 0.05);
-      --shadow-md: 0 12px 32px rgba(35, 57, 43, 0.08);
-      --shadow-lg: 0 20px 48px rgba(35, 57, 43, 0.12);
+
+    /* Font Awesome protection */
+    .fa-solid, .fa-regular, .fa-brands, [class*="fa-"] {
+      font-family: "Font Awesome 6 Free" !important;
+      font-style: normal !important;
+      font-variant: normal !important;
+      text-rendering: auto !important;
+      line-height: 1 !important;
     }
+    .fa-solid { font-weight: 900 !important; }
+    .fa-regular { font-weight: 400 !important; }
 
     /* Breadcrumbs */
     .breadcrumb-nav {
-      padding: 6px 0 16px;
-      font-size: 0.84rem;
-      color: var(--muted);
       display: flex;
       align-items: center;
       gap: 8px;
+      font-size: 0.85rem;
+      color: #64736a;
+      margin-bottom: 24px;
       flex-wrap: wrap;
     }
     .breadcrumb-nav a {
-      color: var(--muted);
-      transition: color 0.2s ease;
+      color: #246b43;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
     }
     .breadcrumb-nav a:hover {
-      color: var(--green);
+      color: #16442a;
+      text-decoration: underline;
     }
-    .breadcrumb-separator {
-      color: #b5c2b9;
-      font-size: 0.8rem;
-    }
-    .breadcrumb-current {
-      color: var(--ink);
-      font-weight: 600;
-    }
+    .breadcrumb-separator { color: #b0c4b5; }
+    .breadcrumb-current { color: #263b30; font-weight: 700; }
 
-    /* Page Hero Overrides */
-    .page-hero.care-hero {
-      background: linear-gradient(180deg, #edf3ec 0%, #fcfaf5 100%);
-      padding: 40px 20px 50px;
-      text-align: center;
-      border-bottom: 1px solid var(--line);
-    }
-    .care-hero .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      background: rgba(40, 104, 73, 0.1);
-      border-radius: 999px;
-      margin-bottom: 14px;
-    }
-    .care-hero h1 {
-      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
-      margin: 8px 0 16px;
-      letter-spacing: -2px;
-    }
-    .care-hero p.hero-intro {
-      max-width: 760px;
-      margin: 0 auto 28px;
-      font-size: 1.08rem;
-      line-height: 1.8;
-      color: #4a5c52;
-    }
-    .hero-meta-strip {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      flex-wrap: wrap;
-      margin: 24px auto 0;
-      padding-top: 20px;
-      border-top: 1px dashed #d5e0d3;
-      max-width: 820px;
-    }
-    .hero-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.88rem;
-      color: var(--muted);
-      text-align: left;
-    }
-    .hero-meta-item strong {
-      display: block;
-      color: var(--ink);
-      font-size: 1rem;
-      font-family: Manrope, sans-serif;
-    }
-    .hero-meta-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: white;
+    /* Main Hero Section matching cats/index.html */
+    .hero {
       display: grid;
-      place-items: center;
-      font-size: 1.25rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--line);
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 48px;
+      padding-top: 24px;
+      padding-bottom: 60px;
     }
-
-    /* Quick Jump Navigation Bar */
-    .quick-nav-bar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(252, 250, 245, 0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-      padding: 10px 0;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
-    }
-    .quick-nav-container {
-      display: flex;
+    .cat-badge-strip {
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      padding: 4px 0;
-    }
-    .quick-nav-container::-webkit-scrollbar {
-      display: none;
-    }
-    .quick-nav-label {
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 1px;
+      padding: 6px 16px;
+      background: #edf7f0;
+      border: 1px solid #cce4d2;
+      border-radius: 9999px;
+      color: #237847;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-right: 6px;
-      white-space: nowrap;
+      margin-bottom: 16px;
     }
-    .quick-pill {
+    .hero-copy h1 {
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      line-height: 1.15;
+      color: #1a251e;
+      margin: 0 0 18px;
+    }
+    .hero-copy h1 em {
+      color: #28764a;
+      font-style: normal;
+    }
+    .hero-copy p {
+      font-size: 1.05rem;
+      line-height: 1.68;
+      color: #55665b;
+      margin: 0 0 28px;
+      max-width: 580px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .hero-note {
+      font-size: 0.84rem;
+      color: #718176;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-blob {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      background: radial-gradient(circle, #edf7f0 0%, #d8e8ce 100%);
+      border-radius: 50%;
+      z-index: 0;
+      filter: blur(20px);
+      opacity: 0.7;
+    }
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 440px;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 32px;
+      box-shadow: 0 16px 40px rgba(35, 75, 45, 0.12);
+      border: 3px solid #ffffff;
+    }
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(6px);
+      border: 1px solid #dceade;
+      border-radius: 18px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(35, 75, 45, 0.08);
+      font-size: 0.82rem;
+      color: #1a251e;
+    }
+    .floating-card b { display: block; font-size: 0.85rem; color: #1e3325; }
+    .floating-card small { color: #64736a; font-size: 0.75rem; }
+    .card-top { top: 20px; right: -10px; }
+    .card-bottom { bottom: 20px; left: -10px; }
+
+    /* Section Backgrounds */
+    .bg-white { background: #ffffff; }
+    .bg-cream { background: #fafcf7; border-top: 1px solid #dcebc9; border-bottom: 1px solid #dcebc9; }
+    .bg-soft-green { background: #f4faf5; border-top: 1px solid #dcebc9; border-bottom: 1px solid #dcebc9; }
+
+    .care-block {
+      padding: 56px 0 64px;
+    }
+
+    /* Cat Topics Curved Wave Heading Banner */
+    .cat-topics-heading {
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto 36px;
+      padding: 44px 35px 38px;
+      overflow: hidden;
+      text-align: center;
+      border-radius: 35px;
+      border: 1px solid #dcebc9;
+      background: #fafcf7;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+    }
+    .corner-wave {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wave-tl { top: 0; left: 0; width: 220px; height: 130px; }
+    .wave-br { bottom: 0; right: 0; width: 220px; height: 130px; }
+    .heading-content { position: relative; z-index: 2; }
+    .heading-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #edf7f0;
+      color: #246b43;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border: 1px solid #cce4d2;
+      margin-bottom: 12px;
+    }
+    .heading-label i { color: #246b43; }
+    .cat-topics-heading h2 {
+      color: #263b30;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(24px, 3.2vw, 36px);
+      font-weight: 700;
+      margin: 0 0 12px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .cat-topics-heading h2 span { color: #28764a; }
+    .heading-burst {
+      display: inline-block;
+      position: relative;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+    .heading-burst span {
+      position: absolute;
+      background: #60a872;
+      border-radius: 9999px;
+    }
+    .heading-burst.left span { right: 0; transform-origin: right center; }
+    .heading-burst.left span:nth-child(1) { top: 3px; width: 14px; height: 2.8px; transform: rotate(35deg); }
+    .heading-burst.left span:nth-child(2) { top: 11px; width: 18px; height: 2.8px; transform: rotate(0deg); }
+    .heading-burst.left span:nth-child(3) { bottom: 3px; width: 14px; height: 2.8px; transform: rotate(-35deg); }
+    .heading-burst.right span { left: 0; transform-origin: left center; }
+    .heading-burst.right span:nth-child(1) { top: 3px; width: 14px; height: 2.8px; transform: rotate(-35deg); }
+    .heading-burst.right span:nth-child(2) { top: 11px; width: 18px; height: 2.8px; transform: rotate(0deg); }
+    .heading-burst.right span:nth-child(3) { bottom: 3px; width: 14px; height: 2.8px; transform: rotate(35deg); }
+
+    .cat-topics-heading p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: #64736a;
+      font-family: 'DM Sans', 'Manrope', sans-serif !important;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+    .paw {
+      position: absolute;
+      color: rgba(115, 173, 91, 0.28);
+      z-index: 1;
+      pointer-events: none;
+      display: inline-block;
+      line-height: 1;
+    }
+    .paw-left-1 { top: 66px; left: 108px; font-size: 58px; transform: rotate(20deg); }
+    .paw-left-2 { bottom: 24px; left: 82px; font-size: 38px; transform: rotate(-15deg); }
+    .paw-right-1 { top: 60px; right: 75px; font-size: 58px; transform: rotate(-25deg); }
+    .paw-right-2 { bottom: 24px; right: 118px; font-size: 38px; transform: rotate(15deg); }
+
+    /* 3 Cards Per Row Grid - Exactly Matching Cat Index */
+    .cat-care-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    .cat-care-card {
+      background: #ffffff;
+      border: 1px solid #dceade;
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 18px rgba(35, 75, 45, 0.04);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .cat-care-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(35, 120, 71, 0.12);
+      border-color: #246b43;
+    }
+    .cat-care-media {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      background: #f0f3eb;
+    }
+    .cat-care-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .cat-care-card:hover .cat-care-media img {
+      transform: scale(1.05);
+    }
+    .cat-care-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #1e3325;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .cat-care-badge i {
+      color: #246b43;
+    }
+    .cat-care-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .cat-care-body h3 {
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a251e;
+      margin: 0 0 10px;
+    }
+    .cat-care-body p {
+      font-size: 0.9rem;
+      line-height: 1.62;
+      color: #55665b;
+      margin: 0 0 16px;
+      flex-grow: 1;
+    }
+    .cat-care-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #2b3b30;
+    }
+    .cat-care-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .cat-care-checklist li span {
+      color: #246b43;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .cat-care-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 7px 15px;
-      border-radius: 999px;
-      background: white;
-      border: 1px solid var(--line);
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--ink);
-      white-space: nowrap;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-    .quick-pill:hover,
-    .quick-pill.active {
-      background: var(--green);
-      color: white;
-      border-color: var(--green);
-      transform: translateY(-1px);
-    }
-    .quick-pill span {
-      font-size: 0.95rem;
-    }
-
-    /* Content Section Styling */
-    .care-section {
-      padding: 75px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .care-section:nth-child(even) {
-      background: #fafcf8;
-    }
-    .care-section-header {
-      margin-bottom: 38px;
-    }
-    .care-section-header.text-center {
-      text-align: center;
-    }
-    .care-section-header.text-center p {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .care-section-header h2 {
-      margin: 4px 0 12px;
-    }
-    .care-section-header p {
-      font-size: 1.02rem;
-      line-height: 1.7;
-      color: #55675e;
-      margin: 0;
-    }
-
-    /* Cards Grid */
-    .care-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
-    }
-    .care-cards-grid.three-col {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .care-cards-grid.two-col {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Care Card */
-    .care-card {
-      background: white;
-      border: 1px solid var(--cat-card-border);
-      border-radius: 20px;
-      padding: 30px 26px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      position: relative;
-    }
-    .care-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-      border-color: #cbd9ce;
-    }
-    .care-card-icon-box {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
-      background: var(--cat-soft-bg);
-      border: 1px solid #dce8db;
-      display: grid;
-      place-items: center;
-      font-size: 1.7rem;
-      margin-bottom: 20px;
-      color: var(--green);
-    }
-    .care-card h3 {
-      font-size: 1.3rem;
-      margin: 0 0 10px;
-      letter-spacing: -0.5px;
-      color: var(--ink);
-    }
-    .care-card p.card-lead {
-      font-size: 0.94rem;
-      line-height: 1.65;
-      color: #5c6c63;
-      margin: 0 0 16px;
-    }
-    .care-points-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .care-points-list li {
       font-size: 0.88rem;
-      line-height: 1.55;
-      color: #4f5f56;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    .care-points-list li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 800;
-      font-size: 0.88rem;
-      margin-top: 1px;
-      flex-shrink: 0;
-    }
-    .care-card-badge {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--cat-badge-bg);
-      color: var(--cat-badge-text);
-      font-size: 0.74rem;
       font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+      color: #246b43;
+      text-decoration: none;
+      transition: transform 0.2s, color 0.2s;
+      align-self: flex-start;
       margin-top: auto;
     }
+    .cat-care-link:hover {
+      color: #1a5b35;
+      transform: translateX(4px);
+    }
 
-    /* Featured Banner Card (Photo + Content) */
-    .featured-banner {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    /* Redesigned CTA Banner Matching Cat Index */
+    .cat-cta-band {
+      position: relative;
+      background: #fafcf7;
+      border: 1px solid #dcebc9;
+      border-radius: 32px;
+      padding: 48px 52px;
+      display: flex;
       align-items: center;
-      margin-bottom: 35px;
-      box-shadow: var(--shadow-sm);
+      justify-content: space-between;
+      gap: 36px;
+      margin: 50px auto 75px;
+      box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+      overflow: hidden;
     }
-    .featured-banner.reverse {
-      grid-template-columns: 1fr 1fr;
-    }
-    .featured-banner-img {
-      width: 100%;
-      height: 100%;
-      min-height: 340px;
-      object-fit: cover;
-    }
-    .featured-banner-content {
-      padding: 42px 36px;
-    }
-    .featured-banner-content .eyebrow {
+    .cat-cta-band .eyebrow {
+      color: #1e6f43;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
       margin-bottom: 8px;
     }
-    .featured-banner-content h3 {
-      font-size: 1.7rem;
-      margin: 0 0 14px;
-      letter-spacing: -0.8px;
-    }
-    .featured-banner-content p {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: #55675e;
-      margin-bottom: 20px;
-    }
-
-    /* Interactive Daily Care Checklist */
-    .checklist-container {
-      background: white;
-      border: 1px solid var(--cat-card-border);
-      border-radius: 24px;
-      padding: 34px;
-      box-shadow: var(--shadow-sm);
-      margin-top: 35px;
-    }
-    .checklist-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 22px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
-    }
-    .checklist-header h3 {
-      margin: 0;
-      font-size: 1.35rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .checklist-progress-wrap {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .checklist-progress-bar {
-      width: 140px;
-      height: 10px;
-      background: #e6ede6;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-    .checklist-progress-fill {
-      height: 100%;
-      width: 0%;
-      background: var(--green);
-      border-radius: 999px;
-      transition: width 0.3s ease;
-    }
-    .checklist-counter {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--green);
-    }
-    .checklist-items-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 14px;
-    }
-    .checklist-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 14px 16px;
-      background: var(--cat-soft-bg);
-      border: 1px solid #e1e9df;
-      border-radius: 14px;
-      cursor: pointer;
-      user-select: none;
-      transition: all 0.2s ease;
-    }
-    .checklist-item:hover {
-      background: #ebf2e8;
-      border-color: #cbd9ce;
-    }
-    .checklist-item.checked {
-      background: #eef6ed;
-      border-color: #9ecc9c;
-    }
-    .checklist-item input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
-      accent-color: var(--green);
-      margin-top: 2px;
-      cursor: pointer;
-    }
-    .checklist-item-text {
-      font-size: 0.88rem;
-      color: var(--ink);
-      line-height: 1.45;
-    }
-    .checklist-item.checked .checklist-item-text {
-      color: #63776b;
-      text-decoration: line-through;
-    }
-    .checklist-item-time {
-      display: block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--green);
-      margin-bottom: 2px;
-    }
-
-    /* Warning & Medical Triage Boxes */
-    .triage-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 30px;
-    }
-    .triage-card {
-      border-radius: 20px;
-      padding: 28px 24px;
-    }
-    .triage-card.emergency {
-      background: var(--cat-alert-red-bg);
-      border: 1px solid var(--cat-alert-red-border);
-      color: var(--cat-alert-red-text);
-    }
-    .triage-card.urgent {
-      background: var(--cat-alert-amber-bg);
-      border: 1px solid var(--cat-alert-amber-border);
-      color: var(--cat-alert-amber-text);
-    }
-    .triage-card h4 {
-      font-size: 1.18rem;
-      margin: 0 0 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: Manrope, sans-serif;
-    }
-    .triage-card ul {
-      margin: 0;
-      padding-left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    /* Medical Disclaimer Banner */
-    .vet-disclaimer-box {
-      margin-top: 35px;
-      background: #f4f6f1;
-      border: 1px solid #dbe3d8;
-      border-left: 4px solid var(--green);
-      border-radius: 12px;
-      padding: 20px 24px;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    .vet-disclaimer-icon {
-      font-size: 1.8rem;
-      line-height: 1;
-    }
-    .vet-disclaimer-text h4 {
-      margin: 0 0 6px;
-      font-size: 0.98rem;
-      color: var(--ink);
-    }
-    .vet-disclaimer-text p {
-      margin: 0;
-      font-size: 0.85rem;
-      line-height: 1.6;
-      color: #5c6c63;
-    }
-
-    /* Interactive Hazard Filter Widget */
-    .hazard-widget {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 30px;
-      box-shadow: var(--shadow-sm);
-      margin-top: 35px;
-    }
-    .hazard-tabs {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-    .hazard-tab-btn {
-      padding: 9px 18px;
-      border-radius: 999px;
-      background: #f0f4ed;
-      border: 1px solid #dfe5dc;
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: #4a5c52;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .hazard-tab-btn.active,
-    .hazard-tab-btn:hover {
-      background: #d9534f;
-      color: white;
-      border-color: #d9534f;
-    }
-    .hazard-content-group {
-      display: none;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-    }
-    .hazard-content-group.active {
-      display: grid;
-    }
-    .hazard-item-card {
-      background: #fdfcfb;
-      border: 1px solid #fae2e0;
-      border-radius: 16px;
-      padding: 18px 20px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-    .hazard-item-icon {
-      font-size: 1.8rem;
-      line-height: 1;
-    }
-    .hazard-item-info h5 {
-      margin: 0 0 5px;
-      font-size: 1rem;
-      color: #9e2a2b;
-      font-family: Manrope, sans-serif;
-    }
-    .hazard-item-info p {
-      margin: 0 0 8px;
-      font-size: 0.84rem;
-      line-height: 1.5;
-      color: #5f6b64;
-    }
-    .hazard-item-safe {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--green);
-      display: inline-block;
-    }
-
-    /* FAQ Accordion */
-    .faq-accordion {
-      max-width: 900px;
-      margin: 30px auto 0;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .faq-item {
-      background: white;
-      border: 1px solid var(--cat-card-border);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: border-color 0.2s ease;
-    }
-    .faq-item:hover {
-      border-color: #cbd9ce;
-    }
-    .faq-question {
-      width: 100%;
-      text-align: left;
-      padding: 18px 22px;
-      background: none;
-      border: none;
-      font: inherit;
-      font-size: 1.02rem;
-      font-weight: 700;
-      color: var(--ink);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      cursor: pointer;
-    }
-    .faq-toggle-icon {
-      font-size: 1.2rem;
-      color: var(--green);
-      transition: transform 0.25s ease;
-      flex-shrink: 0;
-    }
-    .faq-item.open .faq-toggle-icon {
-      transform: rotate(45deg);
-    }
-    .faq-answer {
-      display: none;
-      padding: 0 22px 20px;
-      font-size: 0.92rem;
-      line-height: 1.7;
-      color: #55675e;
-      border-top: 1px solid #f1f4ed;
-    }
-    .faq-item.open .faq-answer {
-      display: block;
-    }
-
-    /* CTA Section */
-    .cat-cta-band {
-      background: var(--dark);
-      color: white;
-      padding: 55px 45px;
-      border-radius: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      box-shadow: var(--shadow-md);
-      margin: 60px 0 30px;
-    }
     .cat-cta-band h2 {
+      color: #1a251e;
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: clamp(1.8rem, 2.5vw, 2.3rem);
       margin: 0 0 10px;
-      color: white;
+      line-height: 1.25;
     }
-    .cat-cta-band h2 em {
-      color: #f4c79f;
-    }
+    .cat-cta-band h2 span { color: #28764a; }
     .cat-cta-band p {
-      color: #dbe7df;
-      max-width: 580px;
+      color: #55665b;
+      font-size: 0.98rem;
+      max-width: 620px;
       margin: 0;
-      font-size: 1.02rem;
-      line-height: 1.7;
+      line-height: 1.65;
     }
     .cat-cta-actions {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      gap: 14px;
+      flex-wrap: wrap;
       flex-shrink: 0;
     }
-
-    /* Back to Top Floating Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: var(--green);
-      color: white;
-      border: none;
-      display: grid;
-      place-items: center;
-      font-size: 1.2rem;
-      box-shadow: var(--shadow-md);
-      cursor: pointer;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.2s ease;
-      z-index: 90;
+    .cat-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #237847;
+      color: #ffffff !important;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(35, 120, 71, 0.2);
+      border: 1px solid #237847;
     }
-    .back-to-top.visible {
-      opacity: 1;
-      pointer-events: auto;
+    .cat-btn-primary:hover {
+      background: #1a5b35;
+      border-color: #1a5b35;
+      transform: translateY(-2px);
     }
-    .back-to-top:hover {
-      background: var(--dark);
-      transform: translateY(-3px);
+    .cat-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #ffffff;
+      color: #237847 !important;
+      padding: 14px 26px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: 1.5px solid #cce4d2;
     }
-
-    /* Responsive Media Queries */
-    @media (max-width: 992px) {
-      .care-cards-grid.three-col {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .featured-banner {
-        grid-template-columns: 1fr;
-      }
-      .featured-banner-img {
-        height: 260px;
-        min-height: auto;
-      }
-      .triage-grid {
-        grid-template-columns: 1fr;
-      }
-      .cat-cta-band {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 28px;
-      }
-      .cat-cta-band p {
-        margin: 0 auto;
-      }
-      .cat-cta-actions {
-        width: 100%;
-        max-width: 320px;
-      }
+    .cat-btn-outline:hover {
+      background: #edf7f0;
+      border-color: #237847;
+      transform: translateY(-2px);
     }
 
-    @media (max-width: 768px) {
-      .care-cards-grid.three-col,
-      .care-cards-grid.two-col {
-        grid-template-columns: 1fr;
-      }
-      .hero-meta-strip {
-        gap: 16px;
-      }
-      .hero-meta-item {
-        font-size: 0.8rem;
-      }
-      .checklist-container,
-      .hazard-widget {
-        padding: 22px 18px;
-      }
-      .checklist-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    /* Responsive Queries (Requirement 3: Desktop 3, Tablet 2, Mobile 1) */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; }
+      .cat-care-grid { grid-template-columns: repeat(2, 1fr); }
+      .cat-cta-band { flex-direction: column; align-items: flex-start; padding: 36px 30px; }
+    }
+    @media (max-width: 640px) {
+      .cat-care-grid { grid-template-columns: 1fr; }
+      .hero-photo { height: 280px; }
+      .cat-care-media { height: 180px; }
+      .cat-cta-band { padding: 28px 20px; }
+      .cat-cta-actions, .cat-btn-primary, .cat-btn-outline { width: 100%; }
+      .cat-topics-heading { padding: 35px 16px 30px; }
     }
 
-    @media (max-width: 480px) {
-      .page-hero.care-hero {
-        padding: 30px 15px 40px;
-      }
-      .care-hero h1 {
-        font-size: 2.1rem;
-      }
-      .featured-banner-content {
-        padding: 26px 20px;
-      }
-      .care-card {
-        padding: 24px 20px;
-      }
-    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-  <!-- Site Header (Identical to Main PetSathi Homepage) -->
-  <header class="site-header">
+  <!-- Header and Navigation -->
+<header class="site-header">
   <a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a>
   <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
   <nav class="main-nav" aria-label="Main navigation">
@@ -800,10 +497,10 @@
 </header>
 
   <main>
-    <!-- Page Hero -->
-    <section class="page-hero care-hero">
-      <div class="section-wrap">
-        <!-- Breadcrumbs -->
+    <!-- Main Hero Section (Requirement 1 - Matching Cat Index Layout) -->
+    <section class="hero section-wrap" id="cat-care-hero">
+      <div class="hero-copy">
+        <!-- Breadcrumb Nav -->
         <nav class="breadcrumb-nav" aria-label="Breadcrumb">
           <a href="../../../../index.html">Home</a>
           <span class="breadcrumb-separator">/</span>
@@ -811,1057 +508,444 @@
           <span class="breadcrumb-separator">/</span>
           <a href="index.html">Cats</a>
           <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">Cat Care & Health</span>
+          <span class="breadcrumb-current">Cat Care &amp; Health</span>
         </nav>
 
-        <div class="eyebrow">PetSathi • FELINE HEALTH & CARE GUIDE</div>
-        <div class="page-emoji">🐱</div>
+        <div class="cat-badge-strip">🐾 PetSathi • Feline Care Guide</div>
         <h1>Complete Guide to <em>Cat Care</em></h1>
-        <p class="hero-intro">
-          Cats are affectionate, enigmatic, and wonderfully independent companions. Giving your feline friend a joyful, flourishing life takes mindful daily habits, attentive grooming, preventive veterinary care, and an enriching home environment. Explore our vet-informed guide below to practice responsible cat care with love and confidence.
+        <p>
+          Welcome to PetSathi's dedicated feline wellness and daily care guide. From energetic kittens to dignified senior companions, cats bring peaceful companionship and playful purrs to our homes. Explore daily routines, grooming hygiene, dental care, and preventative veterinary practices.
         </p>
-
-        <!-- Hero Actions -->
-        <div class="hero-actions" style="justify-content: center; margin-top: 15px;">
-          <a class="button" href="#daily-care">Start with Daily Care ↓</a>
-          <a class="button button-outline" href="#care-checklist">Daily Routine Checklist 📋</a>
+        <div class="hero-actions">
+          <a class="button" href="#daily-foundations">Explore Care Topics ↓</a>
           <a class="button button-outline" href="index.html">← Cats Overview</a>
         </div>
+        <div class="hero-note">♥ &nbsp; Dedicated to happy paws and healthy, purring companions.</div>
+      </div>
 
-        <!-- Hero Highlights Strip -->
-        <div class="hero-meta-strip">
-          <div class="hero-meta-item">
-            <div class="hero-meta-icon">💧</div>
-            <div>
-              <strong>Hydration Focus</strong>
-              <span>Clean water & wet meals</span>
-            </div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="hero-meta-icon">🩺</div>
-            <div>
-              <strong>Preventative Care</strong>
-              <span>Annual exams & core vaccines</span>
-            </div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="hero-meta-icon">🧶</div>
-            <div>
-              <strong>Enrichment First</strong>
-              <span>Daily play & vertical territory</span>
-            </div>
-          </div>
-          <div class="hero-meta-item">
-            <div class="hero-meta-icon">🛡️</div>
-            <div>
-              <strong>Indoor Safety</strong>
-              <span>Hazard-proofing & screened windows</span>
-            </div>
-          </div>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=1000&q=85"
+          alt="Fluffy domestic ginger cat being gently cared for" class="hero-photo"
+          id="hero-care-cat-image">
+        <div class="floating-card card-top">
+          ✨ <span><b>Gentle &amp; Mindful</b><small>Attentive daily care routines</small></span>
+        </div>
+        <div class="floating-card card-bottom">
+          🐾 <span><b>Happy &amp; Flourishing</b><small>Lifelong health &amp; comfort</small></span>
         </div>
       </div>
     </section>
 
-    <!-- Quick Jump Navigation Sticky Bar -->
-    <nav class="quick-nav-bar" aria-label="Section Quick Jump">
-      <div class="section-wrap quick-nav-container">
-        <span class="quick-nav-label">Jump to:</span>
-        <a href="#daily-care" class="quick-pill"><span></span> Daily Care</a>
-        <a href="#grooming-hygiene" class="quick-pill"><span></span> Grooming & Hygiene</a>
-        <a href="#health-wellness" class="quick-pill"><span>🩺</span> Health & Wellness</a>
-        <a href="#kitten-care" class="quick-pill"><span>🍼</span> Kitten Care</a>
-        <a href="#indoor-safety" class="quick-pill"><span>🏠</span> Indoor Safety</a>
-        <a href="#care-checklist" class="quick-pill"><span></span> Care Checklist</a>
-        <a href="#care-faqs" class="quick-pill"><span>❓</span> FAQs</a>
-      </div>
-    </nav>
-
-    <!-- ==============================================
-         1. DAILY CAT CARE
-         ============================================== -->
-    <section id="daily-care" class="care-section">
+    <!-- Section 1: Daily Foundations (3 Cards, Background White) -->
+    <section class="care-block bg-white" id="daily-foundations">
       <div class="section-wrap">
-        <div class="care-section-header text-center">
-          <div class="eyebrow">Foundation of Wellbeing</div>
-          <h2>Daily <em>Cat Care</em> Essentials</h2>
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-sun" aria-hidden="true"></i>
+            Daily Foundations
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Everyday <span>Cat Care</span> Essentials
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
           <p>
-            Cats are habitual creatures who flourish in predictable, serene surroundings. Consistently fulfilling these five everyday fundamentals establishes lasting health, trust, and feline peace of mind.
+            Consistent daily habits, measured feeding, and clean hygiene form the basis of a happy feline life.
           </p>
         </div>
+      </div>
 
-        <!-- Featured Banner: Daily Routine -->
-        <div class="featured-banner">
-          <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80"
-               alt="Cozy cat resting comfortably in clean sleeping area"
-               class="featured-banner-img"
-               loading="lazy">
-          <div class="featured-banner-content">
-            <div class="eyebrow">Everyday Consistency</div>
-            <h3>Building a Predictable Feline World</h3>
-            <p>
-              In the wild, unpredictable routines cause stress. In your home, feeding at consistent hours, cleaning water bowls daily, and observing bathroom habits provide your cat with deep psychological security and vibrant energy.
-            </p>
-            <ul class="care-points-list" style="margin-bottom: 0;">
-              <li>Fresh water replenishment every single morning</li>
-              <li>Scooping litter at least 1–2 times daily</li>
-              <li>20–30 minutes of interactive hunting play</li>
-            </ul>
+        <div class="cat-care-grid">
+        <article class="cat-care-card" id="card-daily-care">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              Daily Routine
+            </span>
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=85" alt="Cat relaxing peacefully in sunny living room" loading="lazy">
           </div>
-        </div>
-
-        <!-- Daily Care Cards Grid -->
-        <div class="care-cards-grid three-col">
-          <!-- 1. Clean Drinking Water -->
-          <article class="care-card">
-            <div class="care-card-icon-box">💧</div>
-            <h3>Clean Drinking Water</h3>
-            <p class="card-lead">
-              Cats naturally possess a very low thirst drive. Because their desert ancestors obtained hydration from prey, domestic cats are chronically vulnerable to dehydration and kidney complications.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Separate food & water:</strong> Cats instinctively avoid drinking near food to prevent contamination. Place water bowls 4–6 feet away.</li>
-              <li><strong>Circulating fountains:</strong> Running water aeration stimulates their natural drinking reflex and increases fluid intake up to 300%.</li>
-              <li><strong>Whisker-friendly bowls:</strong> Use wide, shallow stainless steel or ceramic dishes to prevent sensitive whisker fatigue.</li>
-              <li><strong>Daily sanitization:</strong> Wash bowls daily with warm water to prevent slippery bacterial biofilm buildup.</li>
+          <div class="cat-care-body">
+            <h3>Daily Cat Care</h3>
+            <p>Establish consistent daily rhythms of measured meals, mental stimulation, and comfortable sleeping perches.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> Scheduled morning and evening feeding routines</li><li><span>✓</span> Daily fresh water refill and bowl washing</li><li><span>✓</span> 15–20 minutes of active wand toy play</li>
             </ul>
-            <span class="care-card-badge">Hydration Priority</span>
-          </article>
-
-          <!-- 2. Clean Litter Box -->
-          <article class="care-card">
-            <div class="care-card-icon-box">📦</div>
-            <h3>Pristine Litter Box Hygiene</h3>
-            <p class="card-lead">
-              Felines are remarkably clean animals. A dirty litter box is the number one cause of house-soiling, stress-induced cystitis, and urinary tract infections.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>The N + 1 Rule:</strong> Maintain one litter box per cat, plus one extra (e.g., 2 boxes for 1 cat) placed on different floors or quiet spots.</li>
-              <li><strong>Scoop daily:</strong> Remove clumps and feces at least 1–2 times every day to keep the tray spotless and odor-free.</li>
-              <li><strong>Unscented clumping litter:</strong> Felines have delicate noses; artificial perfumes irritate airways and repel cats from the tray.</li>
-              <li><strong>Quiet accessibility:</strong> Position boxes in low-traffic, easily accessible areas with multiple escape routes so they never feel trapped.</li>
-            </ul>
-            <span class="care-card-badge">Hygiene Crucial</span>
-          </article>
-
-          <!-- 3. Comfortable Sleeping Area -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🛏️</div>
-            <h3>Cozy & Safe Sleeping Areas</h3>
-            <p class="card-lead">
-              Adult cats sleep 12 to 16 hours daily (kittens and seniors up to 20 hours). Restorative sleep is fundamental for immune resilience and emotional health.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Multiple resting options:</strong> Provide both elevated perches (window sills, cat trees) and enclosed cave-style hideaways.</li>
-              <li><strong>Warmth & sunlight:</strong> Cats regulate body temperature by sleeping in warm sun patches and draft-free corners.</li>
-              <li><strong>Washable soft bedding:</strong> Use soft plush cushions and washable blankets infused with familiar, soothing family scents.</li>
-              <li><strong>Sleep boundaries:</strong> Never startle or awaken a sleeping cat abruptly; allow them to wake up undisturbed and relaxed.</li>
-            </ul>
-            <span class="care-card-badge">Rest & Recovery</span>
-          </article>
-
-          <!-- 4. Daily Interaction & Playtime -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🧶</div>
-            <h3>Interactive Play & Bonding</h3>
-            <p class="card-lead">
-              Play is not just recreation for cats—it is an essential outlet for their hardwired predatory instincts that prevents boredom, depression, and obesity.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>The predatory cycle:</strong> Structure play sessions around the sequence: <em>Stalk → Chase → Pounce → Catch → Eat</em>.</li>
-              <li><strong>Wand & feather toys:</strong> Dedicate 15–30 minutes daily to active wand and teaser games that exercise agility and coordination.</li>
-              <li><strong>Laser pointer etiquette:</strong> Always end laser games by aiming the dot onto a physical, catchable toy so your cat gains the rewarding feeling of a catch.</li>
-              <li><strong>Mental enrichment:</strong> Introduce puzzle feeders, cardboard tunnels, and sniffing mats for cognitive stimulation.</li>
-            </ul>
-            <span class="care-card-badge">Mental Enrichment</span>
-          </article>
-
-          <!-- 5. Regular Observation of Behaviour -->
-          <article class="care-card">
-            <div class="care-card-icon-box">👀</div>
-            <h3>Vigilant Behaviour Observation</h3>
-            <p class="card-lead">
-              Because cats evolved as both predators and prey, they instinctively mask illness, pain, and vulnerability. Daily observation of subtle signals is your best diagnostic tool.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Appetite & thirst checks:</strong> Sudden refusal to eat or unexpected drinking surges require prompt evaluation.</li>
-              <li><strong>Litter box monitoring:</strong> Straining, frequent fruitless visits, or crying in the box is a medical emergency.</li>
-              <li><strong>Coat condition & posture:</strong> An unkempt coat, hunched spine, or excessive licking of one area signals distress.</li>
-              <li><strong>Social demeanor:</strong> A normally gregarious cat suddenly retreating into dark closets is communicating discomfort.</li>
-            </ul>
-            <span class="care-card-badge">Health Surveillance</span>
-          </article>
-
-          <!-- 6. Daily Care Summary & Harmony -->
-          <article class="care-card" style="background: linear-gradient(135deg, #f0f6ee 0%, #ffffff 100%);">
-            <div class="care-card-icon-box">✨</div>
-            <h3>The Feline Comfort Circle</h3>
-            <p class="card-lead">
-              When hydration, litter cleanliness, cozy rest, active play, and affectionate vigilance merge into a seamless daily rhythm, your cat enjoys peak vitality.
-            </p>
-            <ul class="care-points-list">
-              <li>Keeps stress hormones (cortisol) at baseline levels</li>
-              <li>Prevents common behavioural issues like destructive scratching</li>
-              <li>Strengthens lifelong affection and deep mutual trust with owners</li>
-              <li>Supports an active, joyful life extending into senior years</li>
-            </ul>
-            <span class="care-card-badge" style="background: var(--green); color: white;">Lifelong Harmony</span>
-          </article>
-        </div>
-
-        <!-- Interactive Daily Care Routine Checklist -->
-        <div id="care-checklist" class="checklist-container">
-          <div class="checklist-header">
-            <div>
-              <h3><span>📋</span> Interactive Daily Cat Care Tracker</h3>
-              <p style="margin: 4px 0 0; font-size: 0.88rem; color: var(--muted);">
-                Click to tick off your cat care duties for today. Strive for 100% daily completion!
-              </p>
-            </div>
-            <div class="checklist-progress-wrap">
-              <div class="checklist-progress-bar">
-                <div class="checklist-progress-fill" id="checklistProgressFill"></div>
-              </div>
-              <span class="checklist-counter" id="checklistCounter">0 / 6 Completed</span>
-            </div>
+            <a class="cat-care-link" href="#daily-routines">View Daily Routines ↗</a>
           </div>
-
-          <div class="checklist-items-grid">
-            <label class="checklist-item" id="task1">
-              <input type="checkbox" onchange="toggleCareTask(this)">
-              <div class="checklist-item-text">
-                <span class="checklist-item-time">Morning • Hydration</span>
-                Rinse and refill water bowls with fresh, cool filtered water.
-              </div>
-            </label>
-
-            <label class="checklist-item" id="task2">
-              <input type="checkbox" onchange="toggleCareTask(this)">
-              <div class="checklist-item-text">
-                <span class="checklist-item-time">Morning • Feeding</span>
-                Serve measured morning meal & check eating enthusiasm.
-              </div>
-            </label>
-
-            <label class="checklist-item" id="task3">
-              <input type="checkbox" onchange="toggleCareTask(this)">
-              <div class="checklist-item-text">
-                <span class="checklist-item-time">Morning • Litter Box</span>
-                Scoop litter box clumps & inspect stool firmness/urine size.
-              </div>
-            </label>
-
-            <label class="checklist-item" id="task4">
-              <input type="checkbox" onchange="toggleCareTask(this)">
-              <div class="checklist-item-text">
-                <span class="checklist-item-time">Afternoon • Enrichment</span>
-                15 minutes of interactive feather wand play & mental stimulation.
-              </div>
-            </label>
-
-            <label class="checklist-item" id="task5">
-              <input type="checkbox" onchange="toggleCareTask(this)">
-              <div class="checklist-item-text">
-                <span class="checklist-item-time">Evening • Coat & Teeth</span>
-                Gentle coat brushing session & oral/dental inspection.
-              </div>
-            </label>
-
-            <label class="checklist-item" id="task6">
-              <input type="checkbox" onchange="toggleCareTask(this)">
-              <div class="checklist-item-text">
-                <span class="checklist-item-time">Night • Box & Sanctuary</span>
-                Final evening litter box scoop & ensure cozy sleeping spots.
-              </div>
-            </label>
+        </article>
+        <article class="cat-care-card" id="card-feeding-nutrition">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+              Nutrition
+            </span>
+            <img src="https://images.unsplash.com/photo-1589883661923-6476cb0ae9f2?auto=format&fit=crop&w=700&q=85" alt="Healthy nutritious cat food bowl" loading="lazy">
           </div>
+          <div class="cat-care-body">
+            <h3>Feeding & Nutrition</h3>
+            <p>Support your obligate carnivore with balanced protein, essential taurine, and high moisture wet meals.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> High-protein formulation tailored to age</li><li><span>✓</span> Daily wet food for optimal kidney hydration</li><li><span>✓</span> Controlled calorie portions to prevent obesity</li>
+            </ul>
+            <a class="cat-care-link" href="nutrition.html">Explore Nutrition Guide ↗</a>
+          </div>
+        </article>
+        <article class="cat-care-card" id="card-litter-box">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-box" aria-hidden="true"></i>
+              Hygiene
+            </span>
+            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=700&q=85" alt="Clean and comfortable cat resting area" loading="lazy">
+          </div>
+          <div class="cat-care-body">
+            <h3>Litter Box Care</h3>
+            <p>Maintain spotless, stress-free litter hygiene to support urinary tract wellness and natural digging habits.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> Scoop waste daily and refresh litter weekly</li><li><span>✓</span> Maintain the N+1 box rule per household cat</li><li><span>✓</span> Place boxes in quiet, accessible locations</li>
+            </ul>
+            <a class="cat-care-link" href="#litter-care">Learn Litter Habits ↗</a>
+          </div>
+        </article>
         </div>
       </div>
     </section>
 
-    <!-- ==============================================
-         2. GROOMING & HYGIENE
-         ============================================== -->
-    <section id="grooming-hygiene" class="care-section">
+    <!-- Section 2: Grooming & Coat Hygiene (3 Cards, Background Cream) -->
+    <section class="care-block bg-cream" id="grooming-hygiene">
       <div class="section-wrap">
-        <div class="care-section-header text-center">
-          <div class="eyebrow">Coat, Claws & Cleanliness</div>
-          <h2>Cat Grooming & <em>Hygiene Guide</em></h2>
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-soap" aria-hidden="true"></i>
+            Coat & Grooming
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Grooming <span>& Coat Care</span> Standards
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
           <p>
-            While felines spend roughly 30% to 50% of their waking hours self-grooming with their barbed tongues, dedicated parental support prevents painful mats, periodontal decay, ingrown claws, and ear infections.
+            Gentle brushing, mindful bathing routines, and claw maintenance keep your cat comfortable and clean.
           </p>
         </div>
+      </div>
 
-        <!-- Featured Banner: Grooming -->
-        <div class="featured-banner reverse">
-          <div class="featured-banner-content">
-            <div class="eyebrow">Coat & Skin Health</div>
-            <h3>Grooming as a Positive Bonding Ritual</h3>
-            <p>
-              Regular grooming does much more than keep your cat looking beautiful. It removes loose shedding fur before it turns into painful hairballs, stimulates healthy blood circulation, spreads natural protective skin oils, and provides a quiet, affectionate bonding experience.
-            </p>
-            <ul class="care-points-list" style="margin-bottom: 0;">
-              <li>Reduces loose shedding hair and painful intestinal hairballs</li>
-              <li>Allows early detection of skin lumps, fleas, and scratches</li>
-              <li>Keeps long-haired coats silky, tangle-free, and matless</li>
-            </ul>
+        <div class="cat-care-grid">
+        <article class="cat-care-card" id="card-grooming-coat">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-soap" aria-hidden="true"></i>
+              Coat Care
+            </span>
+            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=700&q=85" alt="Domestic cat with glossy groomed coat" loading="lazy">
           </div>
-          <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=800&q=80"
-               alt="Cat grooming clean silky coat"
-               class="featured-banner-img"
-               loading="lazy">
-        </div>
-
-        <!-- Grooming Cards Grid -->
-        <div class="care-cards-grid three-col">
-          <!-- 1. Brushing & Coat Maintenance -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🪮</div>
-            <h3>Brushing & Coat Maintenance</h3>
-            <p class="card-lead">
-              Different coat types require tailored grooming schedules. Brushing removes dead hair, distributes sebum, and prevents mats that pull on delicate skin.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Short-haired cats:</strong> Brush 1–2 times weekly using a soft bristle brush or rubber grooming mitt.</li>
-              <li><strong>Long-haired breeds:</strong> (Persian, Maine Coon, Ragdoll) require daily brushing with a slicker brush and metal greyhound comb.</li>
-              <li><strong>Hairball prevention:</strong> Regular brushing catches shedding hair before it is ingested and compacts into the stomach.</li>
-              <li><strong>Gentle technique:</strong> Always brush along the direction of hair growth; never tug sharply on stubborn tangles.</li>
+          <div class="cat-care-body">
+            <h3>Grooming & Coat Care</h3>
+            <p>Routine coat brushing removes loose undercoat, minimizes hairballs, and distributes natural protective skin oils.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> Brush short-haired cats 2x weekly; long-haired daily</li><li><span>✓</span> Reduces painful mats and hairball ingestion</li><li><span>✓</span> Creates relaxing trust-building bonding moments</li>
             </ul>
-            <span class="care-card-badge">Routine Care</span>
-          </article>
-
-          <!-- 2. Bathing Considerations -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🛁</div>
-            <h3>Bathing Considerations</h3>
-            <p class="card-lead">
-              Cats rarely require full water baths. Their saliva contains natural cleansing enzymes, and their papillae comb their coat continuously.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>When baths are necessary:</strong> Only bathe if they get into toxic substances, sticky grease, mud, or need medicated fungal treatment.</li>
-              <li><strong>Feline-specific shampoo:</strong> NEVER use human, baby, or dog shampoo; cat skin pH is sensitive and stripped by human soaps.</li>
-              <li><strong>Lukewarm water & traction:</strong> Use 2–3 inches of warm water with a rubber non-slip mat in the sink or tub for grip.</li>
-              <li><strong>Calm handling:</strong> Avoid spraying water near face and ears; towel dry gently in a warm, closed room.</li>
+            <a class="cat-care-link" href="#coat-grooming">Grooming Techniques ↗</a>
+          </div>
+        </article>
+        <article class="cat-care-card" id="card-bathing-hygiene">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-shower" aria-hidden="true"></i>
+              Hygiene
+            </span>
+            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=700&q=85" alt="Clean fluffy cat looking refreshed" loading="lazy">
+          </div>
+          <div class="cat-care-body">
+            <h3>Bathing & Hygiene</h3>
+            <p>Gentle waterless foam washes and cat-safe baths preserve delicate feline skin without causing undue stress.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> Cats self-groom meticulously throughout the day</li><li><span>✓</span> Use feline-safe, soap-free shampoo when bathing</li><li><span>✓</span> Keep water lukewarm and dry thoroughly</li>
             </ul>
-            <span class="care-card-badge">Occasional Need</span>
-          </article>
-
-          <!-- 3. Nail Trimming & Scratching -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🐾</div>
-            <h3>Nail Trimming & Scratchers</h3>
-            <p class="card-lead">
-              Indoor cat claws do not wear down naturally. Unchecked claws can curl inward, painfully puncturing the sensitive paw pads.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Trim every 2–3 weeks:</strong> Squeeze paw pad gently to extend claw and clip only the sharp clear hook tip.</li>
-              <li><strong>Avoid the quick:</strong> Keep safely away from the pink blood vessel inside the claw; keep styptic powder on hand.</li>
-              <li><strong>Dedicated scratching posts:</strong> Provide tall sisal rope poles and horizontal cardboard scratchers so cats can naturally shed outer claw sheaths.</li>
-              <li><strong>PetSathi Anti-Declaw Policy:</strong> Declawing is an inhumane amputation of the toe bone. Humane trims and scratchers solve furniture scratching.</li>
+            <a class="cat-care-link" href="#bathing-guide">Bathing Instructions ↗</a>
+          </div>
+        </article>
+        <article class="cat-care-card" id="card-nail-paw">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-paw" aria-hidden="true"></i>
+              Paw Care
+            </span>
+            <img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?auto=format&fit=crop&w=700&q=85" alt="Cat extending healthy paws and claws" loading="lazy">
+          </div>
+          <div class="cat-care-body">
+            <h3>Nail & Paw Care</h3>
+            <p>Routine claw trimming and sisal scratching posts protect furniture while keeping feline paw pads healthy.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> Trim claw tips every 2–3 weeks carefully</li><li><span>✓</span> Provide sturdy vertical and horizontal scratchers</li><li><span>✓</span> Inspect paw pads for dryness, cracks, or debris</li>
             </ul>
-            <span class="care-card-badge">Every 2-3 Weeks</span>
-          </article>
-
-          <!-- 4. Ear Cleaning -->
-          <article class="care-card">
-            <div class="care-card-icon-box">👂</div>
-            <h3>Ear Cleaning & Inspection</h3>
-            <p class="card-lead">
-              A cat's inner ear flaps should be pale pink, smooth, odorless, and free of waxy buildup, crust, or redness.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Weekly check:</strong> Inspect ears in good lighting for dirt, odor, or excess dark wax.</li>
-              <li><strong>Safe cleaning:</strong> Moisten a cotton pad with vet-approved feline ear cleaning fluid and gently wipe the outer ear flap.</li>
-              <li><strong>NO cotton swabs (Q-tips):</strong> Never insert swabs down the ear canal! This can puncture the eardrum or compact debris.</li>
-              <li><strong>Ear mites indicator:</strong> Dark, crumbly debris resembling coffee grounds paired with head-shaking requires prescription ear drops.</li>
-            </ul>
-            <span class="care-card-badge">Weekly Inspection</span>
-          </article>
-
-          <!-- 5. Dental Hygiene -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🪥</div>
-            <h3>Dental Hygiene & Oral Care</h3>
-            <p class="card-lead">
-              Over 70% of cats show signs of periodontal oral disease by age 3. Untreated mouth bacteria enter the bloodstream and damage kidneys and heart.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Enzymatic feline toothpaste:</strong> Use poultry or malt flavoured pet toothpaste. NEVER use human toothpaste (fluoride and xylitol are toxic!).</li>
-              <li><strong>Finger brush routine:</strong> Brush gently 2–3 times a week using a soft silicone finger brush or feline dental wipe.</li>
-              <li><strong>VOHC-approved treats:</strong> Supplement with dental treats carrying the Veterinary Oral Health Council seal of efficacy.</li>
-              <li><strong>Professional dental scaling:</strong> Schedule veterinary oral exams and ultrasonic cleanings under anesthesia when needed.</li>
-            </ul>
-            <span class="care-card-badge">Essential Oral Care</span>
-          </article>
-
-          <!-- 6. Litter Box Hygiene & Sanitization -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🧼</div>
-            <h3>Litter Box Sanitization</h3>
-            <p class="card-lead">
-              Beyond daily scooping, the litter box itself requires periodic deep sanitization to eliminate stubborn bacteria and odor absorption.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Full wash every 2–4 weeks:</strong> Discard all old litter, wash the plastic tray thoroughly with warm water and mild unscented soap.</li>
-              <li><strong>Avoid harsh chemicals:</strong> NEVER use bleach, ammonia, or pine cleaners. Ammonia mimics urine and repels cats from using the box.</li>
-              <li><strong>Litter depth:</strong> Fill with 2–3 inches of fresh litter so cats can comfortably dig and cover waste.</li>
-              <li><strong>Replace plastic trays yearly:</strong> Cat claws create micro-scratches in plastic that trap bacteria and odor permanently.</li>
-            </ul>
-            <span class="care-card-badge">Monthly Sanitization</span>
-          </article>
+            <a class="cat-care-link" href="#nail-trimming">Trimming Guide ↗</a>
+          </div>
+        </article>
         </div>
       </div>
     </section>
 
-    <!-- ==============================================
-         3. HEALTH & WELLNESS
-         ============================================== -->
-    <section id="health-wellness" class="care-section">
+    <!-- Section 3: Health & Physical Wellness (3 Cards, Background Soft-Green) -->
+    <section class="care-block bg-soft-green" id="health-wellness">
       <div class="section-wrap">
-        <div class="care-section-header text-center">
-          <div class="eyebrow">Preventative Healthcare</div>
-          <h2>Cat Health & <em>Veterinary Wellness</em></h2>
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+            Health & Wellness
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Veterinary <span>& Physical Wellness</span> Checkups
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
           <p>
-            Routine preventative veterinary care adds years of vibrant life to your feline friend. Learn about required immunizations, parasite prevention, and the critical warning signs that necessitate urgent medical attention.
+            Routine dental hygiene, sensory care, and preventative veterinary checkups ensure lifelong vitality.
           </p>
         </div>
+      </div>
 
-        <!-- Featured Banner: Health & Vet -->
-        <div class="featured-banner">
-          <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80"
-               alt="Healthy, calm domestic cat receiving wellness examination"
-               class="featured-banner-img"
-               loading="lazy">
-          <div class="featured-banner-content">
-            <div class="eyebrow">Proactive Veterinary Medicine</div>
-            <h3>Why Routine Checkups Are Non-Negotiable</h3>
-            <p>
-              Cats are evolutionary masters at concealing illness until a condition is significantly advanced. Routine wellness exams detect silent diseases—such as kidney insufficiency, thyroid conditions, hypertension, and diabetes—long before symptoms appear.
-            </p>
-            <ul class="care-points-list" style="margin-bottom: 0;">
-              <li><strong>Adult cats (1–7 yrs):</strong> Annual comprehensive physical exams</li>
-              <li><strong>Senior cats (7+ yrs):</strong> Twice-yearly exams with blood and urine panels</li>
-              <li><strong>Core immunizations:</strong> Protection against life-threatening viral pathogens</li>
-            </ul>
+        <div class="cat-care-grid">
+        <article class="cat-care-card" id="card-dental-care">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-tooth" aria-hidden="true"></i>
+              Dental Health
+            </span>
+            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=700&q=85" alt="Playful cat showing healthy teeth and mouth" loading="lazy">
           </div>
-        </div>
-
-        <!-- Preventative Care Pillars Grid -->
-        <div class="care-cards-grid three-col">
-          <!-- 1. Vaccination Awareness -->
-          <article class="care-card">
-            <div class="care-card-icon-box">💉</div>
-            <h3>Vaccination Awareness</h3>
-            <p class="card-lead">
-              Vaccines stimulate the immune system to recognize and eradicate dangerous pathogens without causing illness.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>FVRCP Core Vaccine:</strong> Shields against Feline Viral Rhinotracheitis (Herpesvirus-1), Calicivirus, and Panleukopenia (Feline Distemper).</li>
-              <li><strong>Rabies Core Vaccine:</strong> Essential and legally mandated in most regions; rabies is fatal and zoonotic.</li>
-              <li><strong>FeLV (Feline Leukemia):</strong> Strongly recommended for all kittens and cats with outdoor access or multi-cat exposure.</li>
-              <li><strong>Booster schedule:</strong> Maintain booster shots as prescribed by your vet (typically every 1 to 3 years).</li>
+          <div class="cat-care-body">
+            <h3>Dental Care</h3>
+            <p>Combat feline gingivitis and tartar accumulation through routine enzymatic brushing and dental checkups.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> Brush teeth 3 times weekly with poultry-flavored paste</li><li><span>✓</span> Veterinary dental exams detect resorptive lesions</li><li><span>✓</span> Enzymatic chews and water additives aid breath</li>
             </ul>
-            <span class="care-card-badge">Immunization Core</span>
-          </article>
-
-          <!-- 2. Deworming Awareness -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🔬</div>
-            <h3>Deworming Awareness</h3>
-            <p class="card-lead">
-              Internal intestinal parasites can quietly rob your cat of essential nutrients, causing anemia, weight loss, and gastrointestinal distress.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Common worms:</strong> Roundworms, hookworms, and tapeworms (frequently contracted by swallowing fleas while grooming).</li>
-              <li><strong>Fecal tests:</strong> Bring a fresh stool sample to your veterinarian's annual checkup for microscopic egg screening.</li>
-              <li><strong>Targeted dewormers:</strong> Administer veterinary-prescribed broad-spectrum dewormers rather than unverified over-the-counter tablets.</li>
-              <li><strong>Zoonotic protection:</strong> Routine deworming protects both your feline companion and human family members.</li>
+            <a class="cat-care-link" href="#dental-hygiene">Dental Care Tips ↗</a>
+          </div>
+        </article>
+        <article class="cat-care-card" id="card-ear-eye">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-eye" aria-hidden="true"></i>
+              Sensory Health
+            </span>
+            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=700&q=85" alt="Close up of cat's alert eyes and clean ears" loading="lazy">
+          </div>
+          <div class="cat-care-body">
+            <h3>Ear & Eye Care</h3>
+            <p>Inspect delicate ears and eyes weekly for early detection of mites, excess discharge, or conjunctivitis.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> Wipe eye corners with warm damp cotton pads</li><li><span>✓</span> Check ears for dark coffee-ground mite wax</li><li><span>✓</span> Seek vet care for squinting or cloudiness</li>
             </ul>
-            <span class="care-card-badge">Parasite Defense</span>
-          </article>
-
-          <!-- 3. Flea & Tick Prevention -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🛡️</div>
-            <h3>Flea & Tick Prevention</h3>
-            <p class="card-lead">
-              Even strict indoor cats are susceptible to fleas brought in on human footwear, dogs, or screen doors.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Flea consequences:</strong> Severe itching, Flea Allergy Dermatitis (FAD), tapeworm transmission, and life-threatening anemia in small kittens.</li>
-              <li><strong>Year-round topical preventatives:</strong> Use vet-approved spot-on treatments applied to the back of the neck once a month.</li>
-              <li><strong>DEADLY WARNING:</strong> NEVER use dog flea or tick medication on a cat! Permethrin in dog treatments is a fatal neurotoxin to cats.</li>
-              <li><strong>Home treatment:</strong> If fleas are found, wash all pet bedding in hot water and vacuum carpets thoroughly.</li>
+            <a class="cat-care-link" href="#ear-eye-care">Sensory Health Guide ↗</a>
+          </div>
+        </article>
+        <article class="cat-care-card" id="card-vet-checkups">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+              Preventative
+            </span>
+            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=700&q=85" alt="Veterinarian examining cat gently" loading="lazy">
+          </div>
+          <div class="cat-care-body">
+            <h3>Veterinary Checkups</h3>
+            <p>Preventative wellness exams, rabies/FVRCP vaccines, and microchip registrations protect long-term vitality.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> Annual wellness checkups for adult cats</li><li><span>✓</span> Year-round flea, tick, and heartworm protection</li><li><span>✓</span> Core vaccinations and baseline blood panels</li>
             </ul>
-            <span class="care-card-badge" style="color: #a8071a; background: #fff1f0;">Safety Critical</span>
-          </article>
-        </div>
-
-        <!-- Warning Signs Triage Grid -->
-        <div style="margin-top: 45px;">
-          <div class="care-section-header">
-            <div class="eyebrow" style="color: #a8071a;">Triage & Emergency Awareness</div>
-            <h3 style="font-size: 1.6rem; margin: 0 0 10px;">Common Signs Requiring Veterinary Attention</h3>
-            <p>
-              Knowing how to differentiate between an urgent issue and a true life-threatening emergency can save your cat's life. When in doubt, always call your veterinary clinic immediately.
-            </p>
+            <a class="cat-care-link" href="#vet-exams">Wellness Schedules ↗</a>
           </div>
-
-          <div class="triage-grid">
-            <!-- Emergency Card -->
-            <div class="triage-card emergency">
-              <h4>🚨 Immediate Emergency (Go to ER Vet Now)</h4>
-              <ul>
-                <li><strong>Urinary blockage in male cats:</strong> Straining, crying, or inability to produce urine. Urethral blockage is fatal within 24–48 hours.</li>
-                <li><strong>Respiratory distress:</strong> Open-mouth breathing, panting, wheezing, or bluish-grey tongue/gums.</li>
-                <li><strong>Sudden paralysis or collapse:</strong> Inability to walk on back legs (aortic thromboembolism / saddle thrombus).</li>
-                <li><strong>Ingestion of toxic plants:</strong> Any contact with Lilies (pollen, petals, water) requires emergency dialysis intervention.</li>
-                <li><strong>Uncontrollable vomiting or seizures:</strong> Repeated violent vomiting episodes or sustained neurological twitching.</li>
-                <li><strong>Severe trauma:</strong> Falls from windows, vehicle accidents, deep puncture wounds, or active bleeding.</li>
-              </ul>
-            </div>
-
-            <!-- Urgent Card -->
-            <div class="triage-card urgent">
-              <h4>⚠️ Urgent Attention (Schedule Exam Within 24h)</h4>
-              <ul>
-                <li><strong>Total refusal to eat (Anorexia):</strong> Cats that do not eat for 24–48 hours are at high risk of fatal hepatic lipidosis (fatty liver).</li>
-                <li><strong>Persistent diarrhea or vomiting:</strong> Episodes persisting for more than 24 hours leading to acute dehydration.</li>
-                <li><strong>Extreme shifts in thirst & urination:</strong> Drinking water bowl dry or flooding the litter box (indicators of diabetes or kidney disease).</li>
-                <li><strong>Eye cloudiness or discharge:</strong> Squinting, crusting, or cloudy cornea that could lead to vision loss.</li>
-                <li><strong>Unexplained weight loss:</strong> Gradual body mass loss despite normal appetite (classic hyperthyroidism signal).</li>
-                <li><strong>Sudden social withdrawal:</strong> Hiding constantly in dark spots or showing sudden uncharacteristic aggression when touched.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Medical Disclaimer Box -->
-          <div class="vet-disclaimer-box">
-            <div class="vet-disclaimer-icon">🩺</div>
-            <div class="vet-disclaimer-text">
-              <h4>Veterinary Consultation & Informational Disclaimer</h4>
-              <p>
-                The health, medical, and wellness information published on PetSathi is created solely for general educational, preventive, and responsible pet care purposes. It does <strong>not</strong> provide medical diagnoses, clinical treatment plans, or medicine dosages. If your cat exhibits symptoms of illness, distress, or injury, please immediately consult a licensed veterinary doctor or your local 24/7 emergency veterinary hospital. Never administer human medicines (like paracetamol or ibuprofen) to your cat, as they are lethal.
-              </p>
-            </div>
-          </div>
+        </article>
         </div>
       </div>
     </section>
 
-    <!-- ==============================================
-         4. KITTEN CARE
-         ============================================== -->
-    <section id="kitten-care" class="care-section">
+    <!-- Section 4: Life Stages & Seasonal Care (3 Cards, Background White) -->
+    <section class="care-block bg-white" id="life-stages-seasonal">
       <div class="section-wrap">
-        <div class="care-section-header text-center">
-          <div class="eyebrow">The Wonder Years</div>
-          <h2>Comprehensive Guide to <em>Kitten Care</em></h2>
+      <div class="cat-topics-heading">
+        <svg class="corner-wave wave-tl" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+        <svg class="corner-wave wave-br" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.7" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.95" />
+        </svg>
+
+        <div class="paw paw-left-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-left-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-1"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+        <div class="paw paw-right-2"><i class="fa-solid fa-paw" aria-hidden="true"></i></div>
+
+        <div class="heading-content">
+          <span class="heading-label">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            Specialized Care
+          </span>
+
+          <h2>
+            <span class="heading-burst left" aria-hidden="true"><span></span><span></span><span></span></span>
+            Life Stage <span>& Seasonal Care</span> Guides
+            <span class="heading-burst right" aria-hidden="true"><span></span><span></span><span></span></span>
+          </h2>
+
           <p>
-            Raising a kitten is one of life's most joyful journeys. The first twelve months shape your kitten's lifetime personality, health, and trust. Explore the essential milestones for nurturing a confident, flourishing kitten.
+            Tailored care guidelines for energetic kittens, dignified seniors, and seasonal environmental safety.
           </p>
         </div>
+      </div>
 
-        <!-- Featured Banner: Kitten Care -->
-        <div class="featured-banner">
-          <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=800&q=80"
-               alt="Two curious healthy kittens ready for socialization"
-               class="featured-banner-img"
-               loading="lazy">
-          <div class="featured-banner-content">
-            <div class="eyebrow">The Golden Growth Window</div>
-            <h3>Gentle Handling & Early Socialization</h3>
-            <p>
-              The prime feline socialization window occurs between 2 and 9–12 weeks of age. Positive exposure during this period to gentle human hands, carrier crates, household sounds, and veterinary exams builds a bold, friendly adult cat.
-            </p>
-            <ul class="care-points-list" style="margin-bottom: 0;">
-              <li>High-protein kitten formula rich in brain-boosting DHA</li>
-              <li>Gentle paw, ear, and mouth desensitization drills</li>
-              <li>18–20 hours of restorative developmental sleep daily</li>
-            </ul>
+        <div class="cat-care-grid">
+        <article class="cat-care-card" id="card-kitten-care">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-baby" aria-hidden="true"></i>
+              0–12 Months
+            </span>
+            <img src="https://images.unsplash.com/photo-1535930891776-0c2dfb7fda1a?auto=format&fit=crop&w=700&q=85" alt="Curious playful young kitten exploring" loading="lazy">
           </div>
-        </div>
-
-        <!-- Kitten Care Modules Grid -->
-        <div class="care-cards-grid three-col">
-          <!-- 1. Preparing a Safe Home -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🏡</div>
-            <h3>Preparing a Safe "Basecamp" Home</h3>
-            <p class="card-lead">
-              A full house is overwhelming for a tiny kitten. Set up a dedicated, quiet starter room (like a spare bedroom) for their first 7 to 14 days.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Basecamp essentials:</strong> Place a low-entry litter box, water dish, kitten food, cozy bed, and scratching post in this room.</li>
-              <li><strong>Block narrow gaps:</strong> Seal off tight spaces behind appliances, under recliners, or behind heavy wardrobes where a kitten could get wedged.</li>
-              <li><strong>Tuck away cords:</strong> Use split-wire conduits to cover electrical wires; unplug chargers when not in use.</li>
-              <li><strong>Remove poisonous plants:</strong> Verify that not a single toxic plant (especially Lilies) is present anywhere in your home.</li>
+          <div class="cat-care-body">
+            <h3>Kitten Care</h3>
+            <p>Nurture rapid growth, early socialization, litter habits, and immune development during the crucial first year.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> High-calorie kitten food rich in brain DHA</li><li><span>✓</span> 3-dose booster vaccine schedule at 8, 12, 16 wks</li><li><span>✓</span> Gentle handling to build lifelong human trust</li>
             </ul>
-            <span class="care-card-badge">Day 1 Preparation</span>
-          </article>
-
-          <!-- 2. Kitten Feeding Basics -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🍼</div>
-            <h3>Kitten Feeding Basics & Nutrition</h3>
-            <p class="card-lead">
-              Kittens grow at incredible speed, requiring double the caloric energy per pound of an adult cat to fuel rapid muscular and skeletal growth.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Kitten-specific formula:</strong> Feed food clearly labeled for growth or kittens, enriched with DHA for cognitive and retinal vision development.</li>
-              <li><strong>Frequent small meals:</strong> Feed 3 to 4 meals daily until 6 months of age; balance premium canned wet food with kitten dry kibble.</li>
-              <li><strong>NO cow's milk:</strong> Kittens quickly lose lactase enzymes after weaning; cow's milk causes severe diarrhea, dehydration, and painful colic.</li>
-              <li><strong>Fresh water access:</strong> Provide shallow water dishes and replenish them daily.</li>
+            <a class="cat-care-link" href="#kitten-guide">Kitten Milestones ↗</a>
+          </div>
+        </article>
+        <article class="cat-care-card" id="card-senior-care">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+              7+ Years
+            </span>
+            <img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=700&q=85" alt="Calm senior cat resting serenely" loading="lazy">
+          </div>
+          <div class="cat-care-body">
+            <h3>Senior Cat Care</h3>
+            <p>Support golden-age felines with glucosamine joint care, lower-rimmed litter boxes, and warm resting nooks.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> Bi-annual senior wellness exams and kidney panels</li><li><span>✓</span> Elevated food bowls and orthopedic beds</li><li><span>✓</span> Gentle assisted grooming for stiff joints</li>
             </ul>
-            <span class="care-card-badge">Growth Nutrition</span>
-          </article>
-
-          <!-- 3. Litter Training -->
-          <article class="care-card">
-            <div class="care-card-icon-box">📦</div>
-            <h3>Gentle Litter Training</h3>
-            <p class="card-lead">
-              Felines are instinctively compelled to dig and bury their eliminations. Litter training is usually swift and natural with consistent guidance.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Low-entry box:</strong> Use a shallow litter tray with sides under 3 inches so tiny paws can step inside effortlessly.</li>
-              <li><strong>Routine placement:</strong> Gently place the kitten in the box right after waking up, within 15 minutes of eating, and after lively play.</li>
-              <li><strong>Non-clumping paper litter:</strong> For kittens under 10 weeks, use unscented paper or wood pellets to prevent accidental clumping litter ingestion.</li>
-              <li><strong>Never punish accidents:</strong> Clean accidents calmly with an enzymatic pet urine cleaner to neutralize scent cues.</li>
+            <a class="cat-care-link" href="#senior-care">Senior Care Guide ↗</a>
+          </div>
+        </article>
+        <article class="cat-care-card" id="card-seasonal-care">
+          <div class="cat-care-media">
+            <span class="cat-care-badge">
+              <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
+              All Seasons
+            </span>
+            <img src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=700&q=85" alt="Indoor cat resting comfortably near window" loading="lazy">
+          </div>
+          <div class="cat-care-body">
+            <h3>Seasonal Care</h3>
+            <p>Adapt indoor comfort to summer heatwaves and winter drafts while removing seasonal toxic plants and holiday hazards.</p>
+            <ul class="cat-care-checklist">
+              <li><span>✓</span> Provide cool tile mats and hydration in summer</li><li><span>✓</span> Eliminate toxic lilies, poinsettias, and cords</li><li><span>✓</span> Draft-free warm sunny sleeping spaces in winter</li>
             </ul>
-            <span class="care-card-badge">Instinctive Training</span>
-          </article>
-
-          <!-- 4. Socialization -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🤝</div>
-            <h3>Socialization & Desensitization</h3>
-            <p class="card-lead">
-              Early positive experiences dictate how confident and adaptable your cat will be around people, sounds, and unfamiliar environments.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Paws & ears handling:</strong> Gently handle their paws, press pads to inspect claws, and touch ears daily, pairing with treats.</li>
-              <li><strong>Carrier comfort:</strong> Leave the travel carrier open in the room with a warm blanket inside; let them use it as a cozy sleeping den.</li>
-              <li><strong>Household sounds:</strong> Gently introduce everyday sounds (running water, doorbells, vacuum cleaner in another room) at low intensity.</li>
-              <li><strong>Friendly visitors:</strong> Encourage calm guests to offer treats and gentle chin rubs without forcing interactions.</li>
-            </ul>
-            <span class="care-card-badge">Critical Window</span>
-          </article>
-
-          <!-- 5. Sleep & Playtime Etiquette -->
-          <article class="care-card">
-            <div class="care-card-icon-box">💤</div>
-            <h3>Sleep & Playtime Etiquette</h3>
-            <p class="card-lead">
-              Kittens oscillate between explosive bursts of energetic zoomies and deep, restorative sleep essential for neurological consolidation.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>18–20 hours of sleep:</strong> Never awaken a sleeping kitten; sleep supports vital growth hormone synthesis.</li>
-              <li><strong>Interactive play:</strong> Offer feather wands, crinkle balls, and kicker plushies for 10–15 minutes several times a day.</li>
-              <li><strong>Hands are NOT toys:</strong> Never use bare fingers or hands as play targets! This teaches kittens to bite and scratch human flesh.</li>
-              <li><strong>Bite redirection:</strong> If a kitten nips at hands, freeze, say a gentle "no", and immediately redirect their jaws onto a soft kicker toy.</li>
-            </ul>
-            <span class="care-card-badge">Behavior Foundation</span>
-          </article>
-
-          <!-- 6. Veterinary Care Awareness -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🩺</div>
-            <h3>Veterinary Care & Spay/Neuter</h3>
-            <p class="card-lead">
-              Establishing a relationship with a trusted veterinarian during kittenhood ensures timely immunizations and preventative health protection.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>First vet checkup:</strong> Schedule a baseline exam within the first week of adoption for a fecal check and deworming.</li>
-              <li><strong>Kitten vaccine series:</strong> Core boosters at 8, 12, and 16 weeks of age (FVRCP + Rabies).</li>
-              <li><strong>Spaying / Neutering:</strong> Usually recommended between 4 and 6 months before sexual maturity to prevent spraying and reproductive cancers.</li>
-              <li><strong>Permanent microchip:</strong> A tiny, painless microchip ensures lifetime identification if your cat ever slips outdoors.</li>
-            </ul>
-            <span class="care-card-badge">Lifelong Protection</span>
-          </article>
+            <a class="cat-care-link" href="#seasonal-care">Seasonal Safety Tips ↗</a>
+          </div>
+        </article>
         </div>
       </div>
     </section>
 
-    <!-- ==============================================
-         5. INDOOR CAT SAFETY
-         ============================================== -->
-    <section id="indoor-safety" class="care-section">
-      <div class="section-wrap">
-        <div class="care-section-header text-center">
-          <div class="eyebrow">Secure Home Sanctuary</div>
-          <h2>Indoor Cat Safety & <em>Hazard Prevention</em></h2>
-          <p>
-            Indoor cats enjoy significantly longer life expectancies than free-roaming cats, living away from road traffic, predators, and infectious outdoor fights. However, their curious nature demands careful indoor hazard-proofing.
-          </p>
-        </div>
-
-        <!-- Featured Banner: Safety -->
-        <div class="featured-banner reverse">
-          <div class="featured-banner-content">
-            <div class="eyebrow">Preventing High-Rise Accidents</div>
-            <h3>Secure Windows, Balconies & Screens</h3>
-            <p>
-              "High-Rise Syndrome" is a tragic reality where cats fall from open windows or balconies while tracking birds, moths, or laser dots. Felines do not possess fear of heights, and standard insect netting tears easily under cat weight.
-            </p>
-            <ul class="care-points-list" style="margin-bottom: 0;">
-              <li>Install bite-proof, heavy-duty pet screens or metal window limiters</li>
-              <li>Enclose balconies with UV-stabilized cat safety netting or a catio</li>
-              <li>Never leave tilt-and-turn hopper windows cracked open without wedge guards</li>
-            </ul>
-          </div>
-          <img src="https://images.unsplash.com/photo-1577023311546-cdc07a8454d9?auto=format&fit=crop&w=800&q=80"
-               alt="Cat safely observing outdoors from secure screened sunny window"
-               class="featured-banner-img"
-               loading="lazy">
-        </div>
-
-        <!-- Safety Pillars Grid -->
-        <div class="care-cards-grid three-col">
-          <!-- 1. Safe Windows & Balconies -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🪟</div>
-            <h3>Safe Windows & Balconies</h3>
-            <p class="card-lead">
-              Windows provide vital outdoor entertainment for cats, but unsecured openings present catastrophic fall hazards.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Reinforced screens:</strong> Standard fiberglass fly screens tear under feline claws. Upgrade to durable claw-resistant pet mesh.</li>
-              <li><strong>Window restrictors:</strong> Install window stops that prevent sashes from sliding open more than 2 inches.</li>
-              <li><strong>Tilt-window wedge guards:</strong> Tilted hopper windows create a lethal V-shaped gap where cats can slide and suffocate. Use side wedge protectors.</li>
-              <li><strong>The "Catio" solution:</strong> Build an enclosed outdoor cat patio so felines can savor sunshine and fresh air with zero fall risk.</li>
-            </ul>
-            <span class="care-card-badge">Fall Prevention</span>
-          </article>
-
-          <!-- 2. Keeping Harmful Substances Away -->
-          <article class="care-card">
-            <div class="care-card-icon-box">☠️</div>
-            <h3>Harmful Substances & Poisons</h3>
-            <p class="card-lead">
-              Feline livers lack critical glucuronidation enzymes needed to metabolize common household compounds, making ordinary items lethal.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>DEADLY LILIES:</strong> All true lilies and daylilies are 100% fatal! A speck of pollen licked from fur causes acute kidney failure in 48h.</li>
-              <li><strong>Human pharmaceuticals:</strong> Paracetamol (Tylenol), Ibuprofen, and Aspirin cause fatal red blood cell destruction. Keep all medicines locked.</li>
-              <li><strong>Essential oils:</strong> Diffusers dispersing tea tree, eucalyptus, wintergreen, or citrus oils cause acute feline liver toxicity.</li>
-              <li><strong>Toxic foods:</strong> Onions, garlic, chives, chocolate, grapes, raisins, alcohol, and caffeine must never be fed.</li>
-            </ul>
-            <span class="care-card-badge" style="color: #a8071a; background: #fff1f0;">Toxin Alert</span>
-          </article>
-
-          <!-- 3. Safe Toys & Linear Foreign Bodies -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🧶</div>
-            <h3>Safe Toys & The String Hazard</h3>
-            <p class="card-lead">
-              Linear foreign bodies (strings, threads, ribbons) are the most common cause of emergency gastrointestinal surgery in cats.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Lethal strings:</strong> Never leave sewing thread, yarn, dental floss, gift ribbons, or hair elastics unattended!</li>
-              <li><strong>Accordion saw effect:</strong> When swallowed, one end anchors while the other passes down, causing the intestines to bunch and tear fatally.</li>
-              <li><strong>Supervised wand play:</strong> Always put string wand toys away in closed drawers immediately after play finishes.</li>
-              <li><strong>Inspect toy integrity:</strong> Check cat toys regularly for loose plastic eyes, glued feathers, or metal bells that could detach.</li>
-            </ul>
-            <span class="care-card-badge">Choking & Surgery Risk</span>
-          </article>
-
-          <!-- 4. Vertical Space & Safe Hiding -->
-          <article class="care-card">
-            <div class="care-card-icon-box">🌳</div>
-            <h3>Vertical Space & Hiding Havens</h3>
-            <p class="card-lead">
-              In feline psychology, height equals safety and territory. Cats feel secure and in control when surveying rooms from high elevations.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Cat trees & wall perches:</strong> Provide sturdy multi-level cat trees and wall-mounted shelves to expand horizontal living space vertically.</li>
-              <li><strong>Enclosed hiding retreats:</strong> Offer igloo beds, cardboard boxes, and quiet cupboard nooks where cats can decompress away from commotion.</li>
-              <li><strong>Stress reduction:</strong> Hiding spaces provide vital sanctuary during thunderstorms, vacuuming, or noisy family gatherings.</li>
-              <li><strong>Respect the refuge:</strong> Never drag a frightened cat out of their hiding spot; allow them to emerge when they feel calm.</li>
-            </ul>
-            <span class="care-card-badge">Territorial Comfort</span>
-          </article>
-
-          <!-- 5. Household Hazards Checklist -->
-          <article class="care-card">
-            <div class="care-card-icon-box">⚠️</div>
-            <h3>Everyday Household Hazards</h3>
-            <p class="card-lead">
-              Everyday household appliances and fixtures present overlooked dangers for curious, agile felines.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Washer & dryer safety:</strong> Always look inside laundry machine drums and check before closing doors and starting cycles.</li>
-              <li><strong>Toilet lids down:</strong> Keep toilet lids closed to prevent kitten drowning and ingestion of toxic toilet rim fresheners.</li>
-              <li><strong>Hot stove induction locks:</strong> Use burner covers or cooktop child locks to avoid burned paw pads after cooking.</li>
-              <li><strong>Secure trash cans:</strong> Use locking step-cans to stop cats from scavenging sharp cooked chicken bones or plastic wrappers.</li>
-            </ul>
-            <span class="care-card-badge">Home Hazard Proof</span>
-          </article>
-
-          <!-- 6. Fire & Cord Protection -->
-          <article class="care-card">
-            <div class="care-card-icon-box">⚡</div>
-            <h3>Fire, Blind Cords & Electrical Safety</h3>
-            <p class="card-lead">
-              Agile cats jump onto mantels and counters where dangling wires or open flames pose immediate risks.
-            </p>
-            <ul class="care-points-list">
-              <li><strong>Flameless candles:</strong> Never leave open-flame candles unattended; switch to battery-powered LED candles.</li>
-              <li><strong>Tie up blind cords:</strong> Dangling drapery cords pose severe strangulation risks. Tie cords high out of reach or install cordless blinds.</li>
-              <li><strong>Cord split-tubing:</strong> Encase TV, PC, and lamp cords in protective plastic tubing to eliminate electric shock from chewing.</li>
-              <li><strong>Microchip registration:</strong> Keep your microchip contact details updated in case of unexpected escape during home repairs or emergencies.</li>
-            </ul>
-            <span class="care-card-badge">Accident Shield</span>
-          </article>
-        </div>
-
-        <!-- Interactive Household Hazard Explorer -->
-        <div class="hazard-widget">
-          <div class="care-section-header" style="margin-bottom: 20px;">
-            <div class="eyebrow" style="color: #9e2a2b;">Quick Hazard Check</div>
-            <h3 style="font-size: 1.4rem; margin: 0 0 6px;">Common Household Feline Hazards Explorer</h3>
-            <p style="font-size: 0.9rem;">
-              Filter through dangerous substances and explore cat-safe alternatives for your home.
-            </p>
-          </div>
-
-          <div class="hazard-tabs">
-            <button class="hazard-tab-btn active" onclick="switchHazardTab('plants', this)">🌿 Toxic Plants</button>
-            <button class="hazard-tab-btn" onclick="switchHazardTab('foods', this)">🍫 Poisonous Foods</button>
-            <button class="hazard-tab-btn" onclick="switchHazardTab('household', this)">💊 Household Chemicals</button>
-          </div>
-
-          <!-- Group 1: Plants -->
-          <div class="hazard-content-group active" id="hazard-plants">
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🌺</div>
-              <div class="hazard-item-info">
-                <h5>Lilies (Lilium & Hemerocallis)</h5>
-                <p>100% Fatal! All parts, pollen, and even vase water cause acute irreversible renal failure within 48–72 hours.</p>
-                <span class="hazard-item-safe">Safe alternative: Spider plants, Boston ferns, Cat grass</span>
-              </div>
-            </div>
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🪴</div>
-              <div class="hazard-item-info">
-                <h5>Pothos & Philodendron</h5>
-                <p>Contains insoluble calcium oxalate crystals that cause intense mouth burning, tongue swelling, and vomiting.</p>
-                <span class="hazard-item-safe">Safe alternative: Calathea, Peperomia, Parlor palm</span>
-              </div>
-            </div>
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🌵</div>
-              <div class="hazard-item-info">
-                <h5>Aloe Vera</h5>
-                <p>Contains saponins and anthraquinones that cause abdominal cramping, severe diarrhea, and lethargy.</p>
-                <span class="hazard-item-safe">Safe alternative: Haworthia zebra, Christmas cactus</span>
-              </div>
-            </div>
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🌴</div>
-              <div class="hazard-item-info">
-                <h5>Sago Palm (Cycas revoluta)</h5>
-                <p>Extremely toxic cycasin causes severe liver failure, blood clotting disorders, and death within days.</p>
-                <span class="hazard-item-safe">Safe alternative: Areca palm, Ponytail palm</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Group 2: Foods -->
-          <div class="hazard-content-group" id="hazard-foods">
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🧅</div>
-              <div class="hazard-item-info">
-                <h5>Onions, Garlic & Chives</h5>
-                <p>Causes oxidative hemolysis (Heinz body anemia) by destroying feline red blood cells. Dangerous even cooked or powdered.</p>
-                <span class="hazard-item-safe">Safe alternative: Plain cooked unseasoned chicken breast</span>
-              </div>
-            </div>
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🍫</div>
-              <div class="hazard-item-info">
-                <h5>Chocolate & Caffeine</h5>
-                <p>Theobromine and caffeine cause heart arrhythmias, tremors, seizures, and cardiovascular collapse.</p>
-                <span class="hazard-item-safe">Safe alternative: Feline catnip treats, freeze-dried salmon</span>
-              </div>
-            </div>
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🍇</div>
-              <div class="hazard-item-info">
-                <h5>Grapes & Raisins</h5>
-                <p>Known to trigger acute renal failure in pets; small quantities can cause severe toxicity.</p>
-                <span class="hazard-item-safe">Safe alternative: Small cubes of plain cantaloupe or pumpkin</span>
-              </div>
-            </div>
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🍬</div>
-              <div class="hazard-item-info">
-                <h5>Xylitol & Artificial Sweeteners</h5>
-                <p>Causes rapid insulin release resulting in life-threatening hypoglycemia and acute hepatic necrosis.</p>
-                <span class="hazard-item-safe">Safe alternative: Commercial veterinary dental treats</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Group 3: Household -->
-          <div class="hazard-content-group" id="hazard-household">
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">💊</div>
-              <div class="hazard-item-info">
-                <h5>Paracetamol / Acetaminophen (Tylenol)</h5>
-                <p>Deadly poison to cats! Destroys hemoglobin into methemoglobin; cats literally suffocate internally from red cell failure.</p>
-                <span class="hazard-item-safe">Never administer human painkillers without veterinary guidance</span>
-              </div>
-            </div>
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🌿</div>
-              <div class="hazard-item-info">
-                <h5>Essential Oils (Tea Tree, Eucalyptus)</h5>
-                <p>Volatile hydrocarbons in diffusers settle on fur and are swallowed during grooming, causing toxic liver failure.</p>
-                <span class="hazard-item-safe">Safe alternative: Feliway feline facial pheromone diffusers</span>
-              </div>
-            </div>
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🧵</div>
-              <div class="hazard-item-info">
-                <h5>Sewing Needles, Thread & Ribbons</h5>
-                <p>Linear foreign bodies that saw through intestines when peristalsis bunches the bowel. Requires major emergency surgery.</p>
-                <span class="hazard-item-safe">Safe alternative: Supervised wand toys stored in closed drawers</span>
-              </div>
-            </div>
-            <div class="hazard-item-card">
-              <div class="hazard-item-icon">🚗</div>
-              <div class="hazard-item-info">
-                <h5>Antifreeze (Ethylene Glycol)</h5>
-                <p>Sweet taste entices pets; causes fatal calcium oxalate kidney crystal formation within hours of ingestion.</p>
-                <span class="hazard-item-safe">Keep garage doors closed and clean spills immediately</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==============================================
-         6. FREQUENTLY ASKED QUESTIONS (FAQS)
-         ============================================== -->
-    <section id="care-faqs" class="care-section" style="background: #ffffff;">
-      <div class="section-wrap">
-        <div class="care-section-header text-center">
-          <div class="eyebrow">Expert Answers</div>
-          <h2>Frequently Asked <em>Cat Care Questions</em></h2>
-          <p>
-            Got questions about keeping your cat thriving? Here are practical, vet-aligned answers to the dilemmas pet parents ask most.
-          </p>
-        </div>
-
-        <div class="faq-accordion">
-          <!-- FAQ 1 -->
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              <span>How much water should my cat drink every day?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                On average, a healthy cat requires approximately <strong>50 to 60 ml of water per kilogram of body weight</strong> each day (around 200–250 ml for a 4–5 kg cat). Cats fed exclusively on dry kibble must drink significantly more water than cats eating canned wet food (which naturally contains 75–80% moisture). Using circulating pet fountains, adding warm water or bone broth to meals, and placing water bowls away from food dishes are great ways to maintain optimal hydration.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 2 -->
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              <span>Why has my cat suddenly stopped using the litter box?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Sudden litter box avoidance is rarely "spite"—it is almost always driven by <strong>medical discomfort or environmental stress</strong>. First, consult your vet immediately to rule out Feline Lower Urinary Tract Disease (FLUTD), bladder stones, or urinary tract infections, which cause painful urination that cats associate with the box. If medical issues are cleared, check for dirty litter, perfumed litters, hooded boxes that trap odor, loud appliances near the box, or bullying from other household pets.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 3 -->
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              <span>How often should an indoor cat visit the veterinarian?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Healthy adult cats (aged 1 to 7 years) should undergo a comprehensive veterinary wellness checkup <strong>at least once a year</strong>. Senior cats (7 to 10+ years) and geriatric felines should visit the clinic <strong>every 6 months</strong> for senior bloodwork (evaluating kidney parameters, liver enzymes, and thyroid levels), blood pressure checks, and arthritis assessments. Kittens need visits every 3–4 weeks until 16 weeks of age for their primary vaccine series.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 4 -->
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              <span>Can I give my cat cow's milk as a treat?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                No, this is a widespread myth. Once kittens are weaned from their mother's milk, they stop producing lactase, the digestive enzyme required to break down lactose in cow's milk. Feeding cow's milk commonly causes painful gas, abdominal cramps, diarrhea, and severe dehydration. If you wish to treat your cat, choose specialized lactose-free feline milk or a small spoonful of plain cooked meat.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              <span>What should I do if I suspect my cat swallowed a string or ribbon?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                <strong>Never pull on a string</strong> protruding from your cat's mouth or anus! Pulling can slice through taut, bunched intestines like a wire cheese cutter, causing fatal internal hemorrhaging. Instead, contact your veterinarian or an emergency animal hospital immediately. If caught within 1–2 hours, an endoscopy can safely retrieve the string from the stomach before it enters the intestines.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 6 -->
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              <span>How can I help my cat live a long, vibrant life (15–20+ years)?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                The cornerstones of feline longevity are: (1) Keeping your cat safely indoors or providing protected outdoor catios; (2) Maintaining a lean body condition to avoid diabetes and joint arthritis; (3) Feeding high-moisture protein-rich diets; (4) Daily mental and physical play sessions; (5) Consistent dental hygiene; and (6) Regular preventative veterinary exams with senior blood screens for early disease detection.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==============================================
-         7. RESPONSIBLE OWNERSHIP CTA SECTION
-         ============================================== -->
+    <!-- Redesigned CTA Banner Matching Cat Index -->
     <section class="section-wrap">
       <div class="cat-cta-band">
+        <svg
+          class="corner-wave wave-tl"
+          viewBox="0 0 220 130"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z" fill="#d8e8ce" opacity="0.5" />
+          <path d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z" fill="#edf6e6" opacity="0.8" />
+        </svg>
+        <svg
+          class="corner-wave wave-br"
+          viewBox="0 0 220 130"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z" fill="#d8e8ce" opacity="0.5" />
+          <path d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z" fill="#edf6e6" opacity="0.8" />
+        </svg>
+
         <div>
-          <div class="eyebrow" style="color: #c3ddc8;">Dedicated Feline Guardianship</div>
-          <h2>Every Purr Begins with <em>Responsible Care</em></h2>
+          <div class="eyebrow">DEDICATED FELINE GUARDIANSHIP</div>
+          <h2>Every Purr Begins with <span>Mindful Care.</span></h2>
           <p>
-            Being a cat guardian is a lifelong bond built on love, respect, and mindful care. Whether you are exploring unique cat breed characteristics or seeking trusted pet walking and boarding support, PetSathi is here to walk alongside you and your feline friend.
+            Being a cat guardian is a lifelong bond built on love, respect, and attentive wellness routines. PetSathi provides trusted nutrition guides, grooming techniques, and verified pet caregivers to support you and your cat every day.
           </p>
         </div>
         <div class="cat-cta-actions">
-          <a class="button button-light" href="index.html">← Back to Cats Landing Page</a>
-          <a class="button button-outline" style="border-color: rgba(255,255,255,0.4); color: white;" href="../../services/cat-care.html">Explore Cat Services ↗</a>
-          <a class="button button-outline" style="border-color: rgba(255,255,255,0.4); color: white;" href="../../walker/cats.html">Find a Cat Caregiver ↗</a>
+          <a class="cat-btn-primary" href="index.html" id="cta-cat-overview">Explore Cats Overview ↗</a>
+          <a class="cat-btn-outline" href="../../walker/cats.html" id="cta-find-caregiver">Find a Cat Caregiver</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Floating Back to Top Button -->
-  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">↑</button>
-
-  <!-- Site Footer (Matches Main PetSathi Homepage) -->
-  <footer class="footer">
+  <!-- Footer -->
+<footer class="footer">
   <div class="section-wrap footer-grid">
     <div><a class="brand" href="../../../../index.html" aria-label="PetSathi home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 40 40" role="img" focusable="false"><circle cx="12" cy="12" r="4" fill="currentColor"/><circle cx="21" cy="8" r="4" fill="currentColor"/><circle cx="30" cy="12" r="4" fill="currentColor"/><path d="M20 17c-6 0-11 5-11 11 0 4 3 6 6 6 2 0 3-2 5-2s3 2 5 2c4 0 6-2 6-6 0-6-5-11-11-11Z" fill="currentColor"/></svg><span>Pet<span>Sathi</span></span></a><p>Your pet's trusted companion. Making pet care easier, one paw at a time.</p></div>
     <div><b>Explore</b><a href="../../../../index.html#home">Home</a><a href="../index.html">Explore Pets</a><a href="../../services/index.html">Services</a><a href="../../walker/index.html">Find a Walker</a></div>
@@ -1871,110 +955,7 @@
   <div class="section-wrap footer-bottom"><span>&copy; 2026 PetSathi. All rights reserved.</span><span>Made with &hearts; for pets.</span><span>&#x0924;&#x0941;&#x092E;&#x091A;&#x094D;&#x092F;&#x093E; Pet &#x091A;&#x093E; &#x0935;&#x093F;&#x0936;&#x094D;&#x0935;&#x093E;&#x0938;&#x0942; &#x0938;&#x093E;&#x0925;&#x0940;!</span></div>
 </footer>
 
-  <!-- Scripts -->
   <script src="../../../js/main.js"></script>
-  <script>
-    // --- Interactive Daily Care Checklist Tracker ---
-    function updateChecklistProgress() {
-      const items = document.querySelectorAll('.checklist-item input[type="checkbox"]');
-      const total = items.length;
-      let completed = 0;
-
-      items.forEach(item => {
-        if (item.checked) {
-          completed++;
-          item.closest('.checklist-item').classList.add('checked');
-        } else {
-          item.closest('.checklist-item').classList.remove('checked');
-        }
-      });
-
-      const percent = Math.round((completed / total) * 100);
-      const fillBar = document.getElementById('checklistProgressFill');
-      const counterText = document.getElementById('checklistCounter');
-
-      if (fillBar) fillBar.style.width = percent + '%';
-      if (counterText) {
-        if (completed === total) {
-          counterText.innerHTML = '🎉 All 6 Complete! Great Job!';
-          counterText.style.color = '#286849';
-        } else {
-          counterText.textContent = completed + ' / ' + total + ' Completed';
-          counterText.style.color = 'var(--green)';
-        }
-      }
-    }
-
-    function toggleCareTask(checkbox) {
-      updateChecklistProgress();
-    }
-
-    // --- Interactive Hazard Tabs Switcher ---
-    function switchHazardTab(tabName, btn) {
-      document.querySelectorAll('.hazard-tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.hazard-content-group').forEach(group => group.classList.remove('active'));
-
-      if (btn) btn.classList.add('active');
-      const targetGroup = document.getElementById('hazard-' + tabName);
-      if (targetGroup) targetGroup.classList.add('active');
-    }
-
-    // --- Interactive FAQ Accordion ---
-    function toggleFaq(btn) {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-
-      // Close all items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-
-      // If clicked item was not open, open it
-      if (!isOpen) {
-        item.classList.add('open');
-      }
-    }
-
-    // --- Back to Top Floating Button & Quick Nav Highlighting ---
-    const backToTopBtn = document.getElementById('backToTopBtn');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        backToTopBtn?.classList.add('visible');
-      } else {
-        backToTopBtn?.classList.remove('visible');
-      }
-
-      // Quick Nav Highlight
-      const sections = document.querySelectorAll('section[id]');
-      const scrollPos = window.scrollY + 120;
-
-      sections.forEach(sec => {
-        const top = sec.offsetTop;
-        const height = sec.offsetHeight;
-        const id = sec.getAttribute('id');
-        const pill = document.querySelector(`.quick-pill[href="#${id}"]`);
-
-        if (scrollPos >= top && scrollPos < top + height) {
-          document.querySelectorAll('.quick-pill').forEach(p => p.classList.remove('active'));
-          pill?.classList.add('active');
-        }
-      });
-    });
-
-    backToTopBtn?.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // --- Image Error Fallback Handler ---
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('error', function() {
-        this.src = 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80';
-      });
-    });
-
-    // Initialize checklist on load
-    document.addEventListener('DOMContentLoaded', () => {
-      updateChecklistProgress();
-    });
-  </script>
 </body>
+
 </html>

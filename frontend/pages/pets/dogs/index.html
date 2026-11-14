@@ -445,46 +445,159 @@
         color: var(--muted);
       }
 
-      .dog-cta-band {
-        background: linear-gradient(135deg, #1d5039 0%, #286849 100%);
-        color: white;
-        border-radius: 28px;
-        padding: 50px 56px;
+      /* Search Bar - Consistent with Cat / Navigation Design */
+      .guides-nav-search-wrap {
+        position: relative;
+        z-index: 1;
+        max-width: 680px;
+        margin: 0 auto 28px;
+      }
+      .guides-nav-search-bar {
+        display: flex;
+        align-items: center;
+        background: #fafcf7;
+        border: 1.5px solid #cce4d2;
+        border-radius: 9999px;
+        padding: 6px 20px;
+        box-shadow: 0 2px 10px rgba(35, 80, 50, 0.04);
+        transition: all 0.25s ease;
+      }
+      .guides-nav-search-bar:focus-within {
+        background: #ffffff;
+        border-color: #237847;
+        box-shadow: 0 4px 18px rgba(35, 120, 71, 0.15);
+      }
+      .guides-nav-search-icon {
+        color: #237847;
+        font-size: 1rem;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+      .guides-nav-search-input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        outline: none;
+        font-family: 'DM Sans', 'Manrope', sans-serif;
+        font-size: 0.95rem;
+        color: #1a251e;
+        padding: 8px 0;
+      }
+      .guides-nav-search-input::placeholder {
+        color: #64736a;
+        opacity: 0.9;
+      }
+      .guides-nav-clear-btn {
+        background: none;
+        border: none;
+        color: #8fa094;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 4px 8px;
+        margin-left: 6px;
+        border-radius: 50%;
+        display: none;
+        transition: color 0.2s ease;
+      }
+      .guides-nav-clear-btn:hover {
+        color: #237847;
+      }
+      .search-feedback-text {
+        text-align: center;
+        font-size: 0.88rem;
+        color: #246b43;
+        font-weight: 600;
+        margin-top: 10px;
+        display: none;
+      }
+
+      /* Start Your Dog's Journey Redesigned Section */
+      .dog-journey-cta {
+        position: relative;
+        background: #fafcf7;
+        border: 1px solid #dcebc9;
+        border-radius: 32px;
+        padding: 48px 52px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 36px;
-        margin-block: 40px 75px;
+        margin: 45px auto 75px;
+        box-shadow: 0 4px 24px rgba(35, 75, 45, 0.04);
+        overflow: hidden;
       }
-      .dog-cta-band h2 {
-        color: white;
-        margin: 0 0 12px;
+      .dog-journey-cta .eyebrow {
+        color: #1e6f43;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        margin-bottom: 8px;
       }
-      .dog-cta-band h2 em {
-        color: #f4c79f;
-        font-style: normal;
+      .dog-journey-cta h2 {
+        color: #1a251e;
+        font-family: Georgia, "Times New Roman", serif !important;
+        font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+        margin: 0 0 10px;
+        line-height: 1.25;
       }
-      .dog-cta-band p {
-        color: #e0ece2;
-        font-size: 1.02rem;
-        max-width: 580px;
+      .dog-journey-cta h2 span {
+        color: #28764a;
+      }
+      .dog-journey-cta p {
+        color: #55665b;
+        font-size: 0.98rem;
+        max-width: 620px;
         margin: 0;
-        line-height: 1.7;
+        line-height: 1.65;
       }
-      .dog-cta-actions {
+      .dog-journey-actions {
         display: flex;
         gap: 14px;
         flex-wrap: wrap;
         flex-shrink: 0;
       }
-      .button-translucent {
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.35);
-        color: white;
+      .dog-journey-btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: #237847;
+        color: #ffffff !important;
+        padding: 14px 28px;
+        border-radius: 9999px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        box-shadow: 0 4px 14px rgba(35, 120, 71, 0.2);
+        border: 1px solid #237847;
       }
-      .button-translucent:hover {
-        background: rgba(255, 255, 255, 0.28);
-        color: white;
+      .dog-journey-btn-primary:hover {
+        background: #1a5b35;
+        border-color: #1a5b35;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(35, 120, 71, 0.3);
+      }
+      .dog-journey-btn-outline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: #ffffff;
+        color: #237847 !important;
+        padding: 14px 26px;
+        border-radius: 9999px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        border: 1.5px solid #cce4d2;
+      }
+      .dog-journey-btn-outline:hover {
+        background: #edf7f0;
+        border-color: #237847;
+        transform: translateY(-2px);
       }
       @media (max-width: 960px) {
         .dog-info-grid,
@@ -497,7 +610,7 @@
         .guides-nav-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-        .dog-cta-band {
+        .dog-journey-cta {
           flex-direction: column;
           align-items: flex-start;
           padding: 36px 30px;
@@ -513,17 +626,24 @@
           grid-column: span 1;
         }
         .guides-nav-strip {
-          padding: 22px 18px;
+          padding: 24px 18px;
         }
         .dog-card-media {
           height: 180px;
         }
-        .dog-cta-band {
+        .dog-journey-cta {
           padding: 28px 20px;
         }
-        .dog-cta-actions,
-        .dog-cta-actions .button {
+        .dog-journey-actions,
+        .dog-journey-btn-primary,
+        .dog-journey-btn-outline {
           width: 100%;
+        }
+        .guides-nav-search-bar {
+          padding: 4px 14px;
+        }
+        .guides-nav-search-input {
+          font-size: 0.9rem;
         }
       }
     </style>
@@ -1077,7 +1197,7 @@
             </article>
           </div>
 
-          <div class="guides-nav-strip">
+          <div class="guides-nav-strip" id="quick-nav-hub">
             <div
               class="dog-topics-heading"
               style="
@@ -1097,6 +1217,25 @@
                   Explore Dedicated Dog Knowledge Chapters
                 </h3>
               </div>
+            </div>
+
+            <!-- Search Bar (Consistent with Cat Index / PetSathi Guides) -->
+            <div class="guides-nav-search-wrap">
+              <div class="guides-nav-search-bar">
+                <i class="fa-solid fa-magnifying-glass guides-nav-search-icon" aria-hidden="true"></i>
+                <input
+                  type="text"
+                  id="dog-topics-search"
+                  class="guides-nav-search-input"
+                  placeholder="Search dog topics, breeds, nutrition, walking, health &amp; care..."
+                  aria-label="Search dog topics and care guides"
+                  autocomplete="off"
+                >
+                <button type="button" id="clear-search-btn" class="guides-nav-clear-btn" aria-label="Clear search input">
+                  <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div id="search-feedback" class="search-feedback-text" role="status" aria-live="polite"></div>
             </div>
 
             <div class="guides-nav-grid">
@@ -1149,29 +1288,64 @@
         </div>
       </section>
 
-      <section class="section-wrap">
-        <div class="dog-cta-band">
+      <section class="section-wrap" id="start-journey">
+        <div class="dog-journey-cta">
+          <!-- Curvy corner SVG waves matching PetSathi theme -->
+          <svg
+            class="corner-wave wave-tl"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 0 L220 0 C175 12 130 22 95 20 C60 18 30 32 0 60 Z"
+              fill="#d8e8ce"
+              opacity="0.5"
+            />
+            <path
+              d="M0 0 L220 0 C165 24 120 40 85 46 C50 52 22 82 6 104 C2 114 0 122 0 130 Z"
+              fill="#edf6e6"
+              opacity="0.8"
+            />
+          </svg>
+          <svg
+            class="corner-wave wave-br"
+            viewBox="0 0 220 130"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M220 130 L0 130 C45 118 90 108 125 110 C160 112 190 98 220 70 Z"
+              fill="#d8e8ce"
+              opacity="0.5"
+            />
+            <path
+              d="M220 130 L0 130 C55 106 100 90 135 84 C170 78 198 48 214 26 C218 16 220 8 220 0 Z"
+              fill="#edf6e6"
+              opacity="0.8"
+            />
+          </svg>
+
           <div>
-            <div class="eyebrow" style="color: #c3ddc8">
+            <div class="eyebrow">
               Start Your Dog's Journey
             </div>
-            <h2>Every Paw Deserves a <em>Happy Walk.</em></h2>
+            <h2>Every Paw Deserves a <span>Happy Walk.</span></h2>
             <p>
-              Whether you are preparing to adopt your first puppy or looking to
-              give your faithful companion the best daily walks and wellness
-              support, PetSathi is here to guide and support you every step of
-              the way.
+              Whether preparing to adopt your first puppy or nurturing a faithful senior companion, PetSathi provides dedicated daily walks, trusted caregivers, and caring guidance at every step.
             </p>
           </div>
-          <div class="dog-cta-actions">
+          <div class="dog-journey-actions">
             <a
-              class="button button-light"
+              class="dog-journey-btn-primary"
               href="../../walker/dogs.html"
               id="cta-find-walker"
               >Find a Dog Walker ↗</a
             >
             <a
-              class="button button-translucent"
+              class="dog-journey-btn-outline"
               href="../../services/dog-walking.html"
               id="cta-walking-service"
               >Dog Walking Service</a
@@ -1231,6 +1405,69 @@
       </div>
     </footer>
 
+        <script>
+      // Real-time Dog Topics Search Functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('dog-topics-search');
+        const clearBtn = document.getElementById('clear-search-btn');
+        const feedback = document.getElementById('search-feedback');
+        const dogCards = document.querySelectorAll('.dog-card');
+        const infoCards = document.querySelectorAll('.quick-info-card');
+
+        if (!searchInput) return;
+
+        function filterContent() {
+          const query = searchInput.value.trim().toLowerCase();
+          let matchCount = 0;
+
+          if (clearBtn) {
+            clearBtn.style.display = query ? 'inline-block' : 'none';
+          }
+
+          dogCards.forEach(card => {
+            const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+            const text = (card.querySelector('p')?.textContent || '').toLowerCase();
+            const badge = (card.querySelector('.dog-card-badge')?.textContent || '').toLowerCase();
+            const matches = !query || title.includes(query) || text.includes(query) || badge.includes(query);
+
+            card.style.display = matches ? '' : 'none';
+            if (matches) matchCount++;
+          });
+
+          infoCards.forEach(card => {
+            const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+            const text = (card.querySelector('p')?.textContent || '').toLowerCase();
+            const listText = (card.querySelector('ul')?.textContent || '').toLowerCase();
+            const matches = !query || title.includes(query) || text.includes(query) || listText.includes(query);
+
+            card.style.display = matches ? '' : 'none';
+            if (matches) matchCount++;
+          });
+
+          if (feedback) {
+            if (query) {
+              feedback.style.display = 'block';
+              feedback.textContent = matchCount === 0
+                ? `No topics found matching "${query}". Try another term like "nutrition", "walking", or "breeds".`
+                : `Showing ${matchCount} matching dog guide${matchCount === 1 ? '' : 's'}.`;
+            } else {
+              feedback.style.display = 'none';
+              feedback.textContent = '';
+            }
+          }
+        }
+
+        searchInput.addEventListener('input', filterContent);
+
+        if (clearBtn) {
+          clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            filterContent();
+            searchInput.focus();
+          });
+        }
+      });
+    </script>
     <script src="../../../js/main.js"></script>
   </body>
 </html>
